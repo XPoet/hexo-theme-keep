@@ -1,7 +1,7 @@
 <!-- is_post() 检查当前页面是否为文章 -->
 <% if (!is_post()) { %>
     <li class="post-item">
-        <h2>文章标题：<%= post.title %></h2>
+        <h2>文章标题：<a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
         <h4>生成日期：<%= post.date %></h4>
         <h4>文章路径：<%= post.path %></h4>
         <h4>文章分类：
@@ -15,4 +15,9 @@
             <% }); %>
         </h4>
     </li>
+<% } %>
+
+<!-- 如果点开的当前页面是文章内容 -->
+<% if (is_post()) { %>
+    <%- partial('article') %>
 <% } %>
