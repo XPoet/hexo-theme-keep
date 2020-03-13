@@ -1,0 +1,18 @@
+<!-- is_post() 检查当前页面是否为文章 -->
+<% if (!is_post()) { %>
+    <li class="post-item">
+        <h2>文章标题：<%= post.title %></h2>
+        <h4>生成日期：<%= post.date %></h4>
+        <h4>文章路径：<%= post.path %></h4>
+        <h4>文章分类：
+            <% post.categories.forEach(function(category) { %>
+                <a class="category-link-item" href="<%- url_for(category.path) %>" rel="category"><%= category.name %></a>
+            <% }); %>
+        </h4>
+        <h4>文章标签：
+            <% post.tags.forEach(tag => { %>
+                <a class="tag-link-item" href="<%- url_for(tag.path) %>" rel="tag"><%= tag.name %></a>
+            <% }); %>
+        </h4>
+    </li>
+<% } %>

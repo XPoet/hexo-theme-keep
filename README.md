@@ -26,28 +26,13 @@ git pull
 ## Configuration
 
 ``` yml
-# Header
 menu:
   Home: /
   Archives: /archives
+  About: /adout
 rss: /atom.xml
 
-# Content
-excerpt_link: Read More
-fancybox: true
+favicon: images/favicon.png
 
-# Sidebar
-sidebar: right
-widgets:
-- category
-- tag
-- tagcloud
-- archives
-- recent_posts
-
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-twitter:
-google_plus:
+avatar: images/favicon.png
 ```

@@ -1,0 +1,17 @@
+<header>
+    <h2 class="site-title">
+        网站标题：<%= config.title %>
+    </h2>
+    <h3 class="site-description">
+        网站描述：<%= config.description %>
+    </h3>
+    <nav class="site-nav" role="navigation">
+        <ul class="menu-list">
+            <% for (let i in theme.menu) { %>
+                <li class="menu-item">
+                    <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>

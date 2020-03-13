@@ -1,0 +1,67 @@
+<head>
+    <meta charset="utf-8">
+
+    <!--
+        hexo内置的模板页面有index、post、page、archive、category、tag
+        https://hexo.io/zh-cn/docs/templates
+
+        模板	       用途	      回退
+        index	   首页
+        post	   文章	     index
+        page	   分页	     index
+        archive	   归档	     index
+        category   分类归档	 archive
+        tag	       标签归档	 archive
+    -->
+
+    <%
+    // 使用hexo内置的辅助函数，根据不同页面，动态设置不同的页面标题 -->
+    let title = page.title;
+
+    // 检查当前页面是否为存档页面
+    if (is_archive()) {
+
+        // 在模板中，透过 __() 或 _p() 辅助函数，即可取得翻译后的字符串。
+        // __()用于一般使用。
+        // _p()用于复数字符串。
+        title = __('archive_a');
+
+        if (is_month()) {
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()) {
+            title += ': ' + page.year;
+        }
+
+        // 检查当前页面是否为分类页面
+    } else if (is_category()) {
+
+        title = __('category') + ': ' + page.category;
+
+
+        // 检查当前页面是否为分类页面
+    } else if (is_tag()) {
+
+        title = __('tag') + ': ' + page.tag;
+
+
+        // 新建about页面， 使用 hexo 命令：hexo new page about
+    } else if (page.title === 'about') {
+
+        title = __('about');
+    }
+    %>
+    <title>
+        <% if (title){ %><%= title %> |
+        <% } %>
+        <%= config.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <% if (theme.rss){ %>
+        <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
+    <% } %>
+    <% if (theme.favicon){ %>
+        <!-- 使用 hexo 辅助函数 favicon_tag()，导入网站的favicon图标 -->
+        <%- favicon_tag(theme.favicon) %>
+    <% } %>
+    <!-- 使用 hexo 辅助函数css()，导入css文件 -->
+    <%- css('css/style') %>
+</head>
