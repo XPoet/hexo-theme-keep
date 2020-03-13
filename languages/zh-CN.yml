@@ -10,10 +10,8 @@ archive_a: 归档
 archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最新文章
-newer: Newer
-older: Older
-share: Share
+share: 分享
 powered_by: Powered by
 rss_feed: RSS Feed
-category: Category
-tag: Tag
+category: 分类
+tag: 标签
