@@ -1,0 +1,52 @@
+<div class="article-post">
+    <!-- 检查当前页面是否为存档页面 -->
+    <% if (!is_archive()) { %>
+        <ul class="article-post-list">
+            <% page.posts.forEach(post => { %>
+                <li class="article-post-item">
+                    <div class="article-post-title">
+                        <h3>
+                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        </h3>
+                    </div>
+
+                    <div class="article-post-content">
+                        <p><%= post.content %></p>
+                    </div>
+
+                    <div class="article-post-meta">
+
+                        <span class="article-date">
+                                <i class="fa fa-calendar"></i>
+                                <%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %>
+                            </span>
+
+                        <span class="article-tags">
+                                <i class="fa fa-tags"></i>
+                                <ul>
+                                    <% post.tags.forEach(tag => { %>
+                                        <li>
+                                            <a href="<%- url_for(tag.path) %>" rel="tag"><%= tag.name %></a>
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </span>
+
+                        <span class="article-categories">
+                                <i class="fa fa-table"></i>
+                                <ul>
+                                    <% post.categories.forEach(category => { %>
+                                        <li>
+                                            <a href="<%- url_for(category.path) %>" rel="tag"><%= category.name %></a>
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </span>
+
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+</div>

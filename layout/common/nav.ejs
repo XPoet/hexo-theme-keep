@@ -1,0 +1,9 @@
+<nav class="nav" role="navigation">
+    <ul class="menu-list">
+        <% for (let i in theme.menu) { %>
+            <li class="menu-item">
+                <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+            </li>
+        <% } %>
+    </ul>
+</nav>

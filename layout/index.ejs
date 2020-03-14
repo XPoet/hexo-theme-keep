@@ -1,19 +1,9 @@
 <!-- index 首页 -->
-<div class="home">
-    <div class="header">
-        <%- partial('header') %>
+<div class="page-container">
+    <div class="page-left">
+        <%- partial('left-side') %>
     </div>
-    <hr>
-    <div class="content">
-        <ul>
-            <% page.posts.forEach(post => { %>
-                <%- partial('post', {post: post, index: true}) %>
-            <% }) %>
-        </ul>
+    <div class="page-right">
+        <%- partial('right-side') %>
     </div>
-    <hr>
-    <div class="footer">
-        <%- partial('footer') %>
-    </div>
-
 </div>
