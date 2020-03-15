@@ -49,4 +49,24 @@
         </ul>
     <% } %>
 
+    <!-- 分页器 -->
+    <div class="paginator">
+
+        <!--<ul class="paginator-btn-box">
+            <li class="paginator-btn prev-page">
+                <a class="btn" role="navigation" href=""><%- __('prev') %></a>
+            </li>
+            <li class="paginator-btn next-page">
+                <a class="btn" role="navigation" href=""><%- __('next') %></a>
+            </li>
+        </ul>-->
+
+        <%- paginator({
+            prev_text: __('prev'),
+            next_text: __('next'),
+            escape: false
+        }) %>
+
+    </div>
+
 </div>
