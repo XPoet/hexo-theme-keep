@@ -3,6 +3,12 @@
         <%- partial('common/nav') %>
     </div>
     <div class="article-post-container">
-        <%- partial('common/article-post') %>
+        <% if (is_archive()) { %>
+            <!-- 载入归档页内容 -->
+            <%- partial('common/archive-post') %>
+        <% } else { %>
+            <!-- 载入首页内容 -->
+            <%- partial('common/article-post') %>
+        <% } %>
     </div>
 </div>

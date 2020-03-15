@@ -1,0 +1,11 @@
+<!-- 归档页面 内容 -->
+<ul class="archive-post-container">
+    <% site.posts.forEach(post => { %>
+        <li class="post-item">
+            <div> 文章标题：<%= post.title %> </div>
+            <div> 建立日期：<%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %> </div>
+            <div> 更新日期：<%= date(post.updated, 'YYYY-MM-DD HH:MM:SS') %> </div>
+            <div> 页面摘要：<%= post.excerpt ? post.excerpt : '页面无摘要' %> </div>
+        </li>
+    <% }) %>
+</ul>
