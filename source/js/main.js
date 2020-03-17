@@ -6,3 +6,9 @@ console.log('this is main.js');
         e.setAttribute('role', 'navigation');
     });
 })();
+
+// app.locals.structureArchiveList = function (posts) {
+//     posts.forEach(post => {
+//         console.log('post: ', post);
+//     });
+// };

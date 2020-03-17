@@ -1,11 +1,42 @@
 <!-- 归档页面 内容 -->
-<ul class="archive-post-container">
-    <% site.posts.forEach(post => { %>
-        <li class="post-item">
-            <div> 文章标题：<%= post.title %> </div>
-            <div> 建立日期：<%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %> </div>
-            <div> 更新日期：<%= date(post.updated, 'YYYY-MM-DD HH:MM:SS') %> </div>
-            <div> 页面摘要：<%= post.excerpt ? post.excerpt : '页面无摘要' %> </div>
-        </li>
-    <% }) %>
-</ul>
+<% if (is_archive()) { %>
+
+    <div class="archive-container">
+
+        <!-- 把所有文章按年份分类显示 -->
+        <% let last; %>
+        <% site.posts.each(function(post, i){ %>
+            <% let year = post.date.year(); %>
+            <% if (last != year) { %>
+                <% if (last != null){ %>
+    </div></section>
+    <% } %>
+    <% last = year; %>
+    <section class="archives-wrap">
+        <div class="archive-year">
+            <%= year %>
+        </div>
+        <div class="archive-article-list">
+            <% } %>
+            <div class="archive-article-item">
+                <a class="archive-article-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                <span class="archive-article-date"> <%= date(post.date, 'MM-DD') %> </span>
+            </div>
+            <% }) %>
+            <% if (site.posts.length){ %>
+        </div>
+    </section>
+    <% } %>
+
+    </div>
+
+
+<% } %>
+
+
+
+
+
+
+
+
