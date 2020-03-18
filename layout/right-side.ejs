@@ -3,12 +3,25 @@
         <%- partial('common/nav') %>
     </div>
     <div class="article-post-container">
-        <% if (is_archive()) { %>
-            <!-- 载入归档页内容 -->
+        <% if (is_home()) { %>
+            <!-- 载入首页的内容 -->
+            <%- partial('common/home-post') %>
+
+        <% } else if (is_archive()) { %>
+            <!-- 载入归档页面的内容 -->
             <%- partial('common/archive-post') %>
-        <% } else { %>
-            <!-- 载入首页内容 -->
+
+        <% } else if (is_post()) { %>
+            <!-- 载入文章页面的内容 -->
             <%- partial('common/article-post') %>
+
+        <% } else if (is_category()) { %>
+            <!-- 载入分类页面的内容 -->
+            <%- partial('common/category-post') %>
+
+        <% } else if (is_tag()) { %>
+            <!-- 载入标签页面的内容 -->
+            <%- partial('common/tag-post') %>
         <% } %>
     </div>
 </div>

@@ -1,136 +1,136 @@
-.article-post {
+.post {
+  background-color: #fff;
+  padding: 30px;
 
-  background: #fff
-  padding 30px
+  .post-title {
+    h1 {
+      text-transform: uppercase;
+      font-size: 30px;
+      letter-spacing: 5px;
+      line-height: 1;
+    }
 
-  .article-post-list {
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 600;
+      color: #5f5f5f;
 
-    .article-post-item {
+    }
 
-      margin-bottom 30px
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1;
+      font-weight: 600;
+      color: #464646;
+      font-size: 22px;
+      margin: 0;
 
-      .article-post-title {
-        h1 {
-          text-transform: uppercase;
-          font-size: 30px;
-          letter-spacing: 5px;
-          line-height: 1;
-        }
+    }
 
-        h2 {
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-size: 28px;
-          line-height: 1;
-          font-weight: 600;
-          color: #5f5f5f;
+    a {
+      text-decoration: none;
+      letter-spacing: 1px;
+      color: #5f5f5f;
 
-        }
-
-        h3 {
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          line-height: 1;
-          font-weight: 600;
-          color: #464646;
-          font-size: 22px;
-          margin: 0;
-
-        }
-
-        a {
-          text-decoration: none;
-          letter-spacing: 1px;
-          color: #5f5f5f;
-
-          &:hover {
-            text-decoration: underline;
-          }
-
-        }
+      &:hover {
+        text-decoration: underline;
       }
 
+    }
+  }
 
-      .article-post-content {
-        a {
-          text-decoration: none;
-          letter-spacing: 1px;
-          color: #4786D6;
-        }
+  .post-content {
+    a {
+      text-decoration: none;
+      letter-spacing: 1px;
+      color: #4786D6;
+    }
 
-        a:hover {
-          color: #2F69B3;
-        }
+    a:hover {
+      color: #2F69B3;
+    }
 
-        h3 {
-          color: #5F5F5F;
-          font-size: 22px;
-          font-weight: 600;
-        }
+    h3 {
+      color: #5F5F5F;
+      font-size: 22px;
+      font-weight: 600;
+    }
 
-        h4 {
-          color: #5F5F5F;
-          font-size: 16px;
-        }
-      }
+    h4 {
+      color: #5F5F5F;
+      font-size: 16px;
+    }
+  }
 
 
-      .article-post-meta {
-        padding-bottom: 30px;
-        border-bottom: 1px solid #f2f2f2;
-        color: #bbbbbb;
+  .post-footer {
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid #f2f2f2;
+
+
+    .meta {
+      max-width: 100%;
+      height: 25px;
+      color: #bbbbbb;
+
+      .info {
+        float: left;
         font-size: 12px;
 
-        .article-date, .article-tags, .article-categories {
-          margin-right: 15px;
+        .date {
+          margin-right: 10px;
         }
+      }
 
-        .article-tags, .article-categories {
+      a {
+        text-decoration: none;
+        color: #bbbbbb;
+        padding-right: 10px;
+
+        &:hover {
+          color: #4786D6;
+        }
+      }
+
+      i {
+        margin-right: 6px;
+      }
+    }
+
+
+    .tags {
+      padding-bottom: 15px;
+      font-size: 13px;
+
+      ul {
+        list-style-type: none;
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style-type: none;
+          margin: 0;
+          padding-right: 5px;
           display: inline;
+        }
+      }
 
-          ul {
-            display: inline;
+      a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.44);
+        font-weight: 400;
 
-            li {
-              display: inline;
-            }
-          }
-
-          a {
-            text-decoration: none;
-            color: rgba(0, 0, 0, 0.44);
-            font-weight: 400;
-
-            &:hover {
-              text-decoration: none;
-            }
-          }
+        &:hover {
+          text-decoration: none;
         }
       }
     }
   }
 
 
-  .paginator {
-
-    padding-bottom 40px
-
-    .page-number {
-      display none !important
-    }
-
-    a.prev {
-      float left
-    }
-
-    a.next {
-      float right
-    }
-
-  }
-
 }
-
-
-
-

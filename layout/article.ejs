@@ -1,7 +1,0 @@
-<!-- is_post() 检查当前页面是否为文章 -->
-<% if (is_post()) { %>
-    <h2 class="article-title">文章标题：<%= page.title %> </h2>
-    <div>本文作者: <%= config.author %> </div>
-    <div>发布时间：<%= date(page.date, 'YYYY-MM-DD HH:MM:SS') %> </div>
-    <div class="article-content"> <%- page.content %> </div>
-<% } %>

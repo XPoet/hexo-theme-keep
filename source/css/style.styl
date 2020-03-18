@@ -6,56 +6,10 @@
 @import "right-side.styl"
 @import "footer.styl"
 @import "common/nav.styl"
-@import "common/article-post.styl"
+@import "common/home-post.styl"
 @import "common/archive-post.styl"
+@import "common/article-post.styl"
 @import "common/site-info.styl"
-
-.header {
-  .site-title {
-    color skyblue
-  }
-
-  .site-description {
-    color palevioletred
-  }
-
-  .site-nav {
-    display inline-block
-
-    ul {
-      li {
-        float: left
-        margin 10px 20px
-      }
-    }
-
-  }
-}
-
-
-.post-container {
-  .post-item {
-    margin 20px
-  }
-}
-
-.tag-container, .category-container {
-  .tag-item, .category-item {
-    margin 30px 20px
-    padding 10px
-    border 1px solid #ccc
-  }
-}
-
-.tag-link-item, .category-link-item {
-  margin 0 5px
-}
-
-.article-title {
-  color: lightseagreen
-}
-.article-content {
-  border 2px solid #ccc
-  padding 10px
-  margin 10px
-}
+@import "common/paginator.styl"
+@import "highlight"
+@import "variables.styl"

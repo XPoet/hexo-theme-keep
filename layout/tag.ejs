@@ -1,20 +1,2 @@
-<h1>标签页面</h1>
-<!--
-is_tag() 检查当前页面是否为标签归档页面。
-is_tag('hobby') 如果给定一个字符串作为参数，将会检查目前是否为指定标签。
--->
-<h2>当前标签：<%= page.tag %></h2>
-<% if (is_tag()) { %>
-    <ul class="tag-container">
-        <!-- page.posts 获取当前分类下的所有文章 -->
-        <% page.posts.forEach(post => { %>
-            <li class="tag-item">
-                <div> 文章标题：<%= post.title %> </div>
-                <div> 建立日期：<%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %> </div>
-                <div> 更新日期：<%= date(post.updated, 'YYYY-MM-DD HH:MM:SS') %> </div>
-                <div> 页面摘要：<%= post.excerpt ? post.excerpt : '无摘要' %> </div>
-            </li>
-        <% }) %>
-    </ul>
-
-<% } %>
+<!-- 标签页面 -->
+<%- partial('page') %>
