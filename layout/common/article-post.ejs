@@ -4,10 +4,7 @@
         <div class="post-title">
             <h3><a><%= page.title %></a></h3>
         </div>
-        <div class="post-content">
-            <%- page.content %>
-        </div>
-        <div class="post-footer">
+        <div class="post-meta-info">
             <div class="meta">
                 <div class="info">
                     <span>
@@ -27,6 +24,9 @@
                     </span>
                 </div>
             </div>
+        </div>
+        <div class="post-content">
+            <%- page.content %>
         </div>
         <div class="comment-container">
             <%- partial('valine') %>

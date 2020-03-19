@@ -11,7 +11,8 @@
                     </div>
 
                     <div class="article-post-content">
-                        <%- post.content %>
+                        <!-- truncate() 移除超过 length 长度的字符串。length 的默认值是 30。 -->
+                        <%- truncate(strip_html(post.content), {length: 80}) %>
                     </div>
 
                     <div class="article-post-meta">

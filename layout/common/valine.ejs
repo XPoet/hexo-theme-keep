@@ -1,12 +1,14 @@
-<script src='https://unpkg.com/valine@1.3.10/dist/Valine.min.js'></script>
-<div id="valine"></div>
-<script>
-    new Valine({
-        el: '#valine',
-        appId: 'XXX',
-        appKey: 'XXX',
-        notify: true,
-        verify: false,
-        placeholder: '评论一下再走吧'
-    })
-</script>
+<% if(theme.valine.enable && theme.valine.appid && theme.valine.appkey) { %>
+    <script src='https://unpkg.com/valine@1.3.10/dist/Valine.min.js'></script>
+    <div id="valine"></div>
+    <script>
+        new Valine({
+            el: '#valine',
+            appId: '<%= theme.valine.appid %>',
+            appKey: '<%= theme.valine.appkey %>',
+            notify: '<%= theme.valine.notify %>',
+            verify: '<%= theme.valine.verify %>',
+            placeholder: '<%= theme.valine.placeholder %>'
+        })
+    </script>
+<%  } %>
