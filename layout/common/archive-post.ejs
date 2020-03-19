@@ -1,42 +1,32 @@
 <!-- 归档页面 内容 -->
-<% if (is_archive()) { %>
-
-    <div class="archive-container">
-
-        <!-- 把所有文章按年份分类显示 -->
-        <% let last; %>
-        <% site.posts.each(function(post, i){ %>
-            <% let year = post.date.year(); %>
-            <% if (last != year) { %>
-                <% if (last != null){ %>
-    </div></section>
-    <% } %>
-    <% last = year; %>
-    <section class="archives-wrap">
-        <div class="archive-year">
-            <%= year %>
-        </div>
-        <div class="archive-article-list">
-            <% } %>
-            <div class="archive-article-item">
-                <a class="archive-article-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-                <span class="archive-article-date"> <%= date(post.date, 'MM-DD') %> </span>
-            </div>
-            <% }) %>
-            <% if (site.posts.length){ %>
-        </div>
-    </section>
-    <% } %>
-
-    </div>
-
-
+<!-- 如果是归档页面，将网站所有文章列出来，否则列出其他页（分类，标签）下的文章 -->
+<% const posts = is_archive() ? site.posts : page.posts %>
+<div class="archive-container">
+    <!-- 把所有文章按年份分类显示 -->
+    <% let last; %>
+    <% posts.each(function(post, i){ %>
+        <% let year = post.date.year(); %>
+        <% if (last != year) { %>
+            <% if (last != null){ %>
+</div></section>
 <% } %>
-
-
-
-
-
+<% last = year; %>
+<section class="archives-wrap">
+    <div class="archive-year">
+        <%= year %>
+    </div>
+    <div class="archive-article-list">
+        <% } %>
+        <div class="archive-article-item">
+            <a class="archive-article-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <span class="archive-article-date"> <%= date(post.date, 'MM-DD') %> </span>
+        </div>
+        <% }) %>
+        <% if (posts.length){ %>
+    </div>
+</section>
+<% } %>
+</div>
 
 
 

@@ -1,20 +1,10 @@
-<h1>分页页面</h1>
 <!--
  is_category() 检查当前页面是否为分类归档页面。
 如果给定一个字符串作为参数，将会检查目前是否为指定分类。
- -->
-<h2>当前分类：<%= page.category %></h2>
+-->
 <% if (is_category()) { %>
-    <ul class="category-container">
-        <!-- page.posts 获取当前分类下的所有文章 -->
-        <% page.posts.forEach(post => { %>
-            <li class="category-item">
-                <div> 文章标题：<%= post.title %> </div>
-                <div> 建立日期：<%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %> </div>
-                <div> 更新日期：<%= date(post.updated, 'YYYY-MM-DD HH:MM:SS') %> </div>
-                <div> 页面摘要：<%= post.excerpt ? post.excerpt : '无摘要' %> </div>
-            </li>
-        <% }) %>
-    </ul>
-
+    <div class="category-container">
+        <div class="category-name"><%- __('category') %>：<%= page.category %> [共<%= page.posts.length %>篇]</div>
+    </div>
+    <%- partial('archive-post') %>
 <% } %>

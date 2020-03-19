@@ -22,6 +22,10 @@
         <% } else if (is_tag()) { %>
             <!-- 载入标签页面的内容 -->
             <%- partial('common/tag-post') %>
+
+        <% } else if (page.title == 'about') { %>
+            <!-- 载入关于页面的内容 -->
+            <%- partial('common/about') %>
         <% } %>
     </div>
 </div>

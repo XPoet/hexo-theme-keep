@@ -1,6 +1,6 @@
 <!-- is_post() 检查当前页面是否为文章 -->
 <% if (is_post()) { %>
-    <div class="post">
+    <div class="article-container">
         <div class="post-title">
             <h3><a><%= page.title %></a></h3>
         </div>
@@ -14,7 +14,7 @@
                     <span>
                         <i class="fa fa-list"></i>
                         <% page.categories.forEach(category => { %>
-                            <a href="<%- url_for(category.path) %>" rel="tag"><%= category.name %></a>
+                            <a href="<%- url_for(category.path) %>" rel="category"><%= category.name %></a>
                         <% }) %>
                     </span>
                     <span>
@@ -28,6 +28,12 @@
         <div class="post-content">
             <%- page.content %>
         </div>
+
+        <!-- TODO: 上一篇，下一篇 -->
+        <!--<div class="post-prev-next">
+            <a class="prev btn" rel="prev" role="navigation" href="/">上一篇</a>
+            <a class="next btn" rel="next" role="navigation" href="/">下一篇</a>
+        </div>-->
         <div class="comment-container">
             <%- partial('valine') %>
         </div>
