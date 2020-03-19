@@ -15,35 +15,42 @@
                         <%- truncate(strip_html(post.content), {length: 80}) %>
                     </div>
 
-                    <div class="article-post-meta">
+                    <!-- date -->
+                    <div class="article-meta">
+                        <span class="article-date article-item">
+                            <i class="fa fa-calendar-o"></i>
+                            <%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %>
+                        </span>
 
-                        <span class="article-date">
-                                <i class="fa fa-calendar"></i>
-                                <%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %>
-                            </span>
+                        <!-- categories -->
+                        <% if (post.categories.length) { %>
+                            <span class="article-categories article-item">
+                            <i class="fa fa-bookmark"></i>
+                            <ul>
+                                <% post.categories.forEach((category, i) => { %>
+                                    <li>
+                                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(category.path) %>"
+                                                                     rel="tag"><%= category.name %></a>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        </span>
+                        <% } %>
 
-                        <span class="article-tags">
-                                <i class="fa fa-tags"></i>
-                                <ul>
-                                    <% post.tags.forEach(tag => { %>
-                                        <li>
-                                            <a href="<%- url_for(tag.path) %>" rel="tag"><%= tag.name %></a>
-                                        </li>
-                                    <% }); %>
-                                </ul>
-                            </span>
-
-                        <span class="article-categories">
-                                <i class="fa fa-table"></i>
-                                <ul>
-                                    <% post.categories.forEach(category => { %>
-                                        <li>
-                                            <a href="<%- url_for(category.path) %>" rel="tag"><%= category.name %></a>
-                                        </li>
-                                    <% }); %>
-                                </ul>
-                            </span>
-
+                        <!-- tags -->
+                        <% if (post.tags.length) { %>
+                            <span class="article-tags article-item">
+                            <i class="fa fa-tags"></i>
+                            <ul>
+                                <% post.tags.forEach((tag, i) => { %>
+                                    <li>
+                                      <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"
+                                                                   rel="tag"><%= tag.name %></a>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        </span>
+                        <% } %>
                     </div>
                 </li>
             <% }) %>
