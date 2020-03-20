@@ -15,42 +15,8 @@
                         <%- truncate(strip_html(post.content), {length: 80}) %>
                     </div>
 
-                    <!-- date -->
-                    <div class="article-meta">
-                        <span class="article-date article-item">
-                            <i class="fa fa-calendar-o"></i>
-                            <%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %>
-                        </span>
-
-                        <!-- categories -->
-                        <% if (post.categories.length) { %>
-                            <span class="article-categories article-item">
-                            <i class="fa fa-bookmark"></i>
-                            <ul>
-                                <% post.categories.forEach((category, i) => { %>
-                                    <li>
-                                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(category.path) %>"
-                                                                     rel="tag"><%= category.name %></a>
-                                    </li>
-                                <% }); %>
-                            </ul>
-                        </span>
-                        <% } %>
-
-                        <!-- tags -->
-                        <% if (post.tags.length) { %>
-                            <span class="article-tags article-item">
-                            <i class="fa fa-tags"></i>
-                            <ul>
-                                <% post.tags.forEach((tag, i) => { %>
-                                    <li>
-                                      <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"
-                                                                   rel="tag"><%= tag.name %></a>
-                                    </li>
-                                <% }); %>
-                            </ul>
-                        </span>
-                        <% } %>
+                    <div class="article-meta-info-container">
+                        <%- partial('article-meta-info', {articleData: post, index: true}) %>
                     </div>
                 </li>
             <% }) %>

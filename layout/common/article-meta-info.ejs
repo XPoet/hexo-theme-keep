@@ -1,0 +1,34 @@
+<div class="article-meta-info">
+    <!-- date -->
+    <span class="article-date article-meta-item">
+                <i class="fa fa-calendar-o"></i> <%= date(articleData.date, 'YYYY-MM-DD HH:MM:SS') %>
+    </span>
+
+    <!-- categories -->
+    <% if (articleData.categories.length) { %>
+        <span class="article-categories article-meta-item">
+            <i class="fa fa-bookmark"></i>
+            <ul>
+                <% articleData.categories.forEach((category, i) => { %>
+                    <li>
+                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                    </li>
+                <% }); %>
+            </ul>
+        </span>
+    <% } %>
+
+    <!-- tags -->
+    <% if (articleData.tags.length) { %>
+        <span class="article-tags article-meta-item">
+            <i class="fa fa-tags"></i>
+            <ul>
+                <% articleData.tags.forEach((tag, i) => { %>
+                    <li>
+                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+                    </li>
+                <% }); %>
+            </ul>
+        </span>
+    <% } %>
+</div>
