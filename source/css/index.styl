@@ -1,5 +1,5 @@
-left-side-width = 30%
-right-side-width = 70%
+$left-side-width = 30%
+$right-side-width = 70%
 
 .page-container {
   position absolute
@@ -11,15 +11,26 @@ right-side-width = 70%
 
   .page-left {
     float: left
-    width: left-side-width
+    width: $left-side-width
     height: 100%
     position: fixed
   }
 
   .page-right {
     float: right
-    width: right-side-width
+    width: $right-side-width
     height: 100%
   }
 
+  @media screen and (max-width: 960px) {
+    .page-left {
+      display none
+    }
+
+    .page-right {
+      width: 100%
+    }
+  }
+
 }
+
