@@ -5,27 +5,27 @@
     <div class="article-post-container animated">
         <% if (is_home()) { %>
             <!-- 载入首页的内容 -->
-            <%- partial('common/home-post') %>
+            <%- partial('home-post') %>
 
         <% } else if (is_archive()) { %>
             <!-- 载入归档页面的内容 -->
-            <%- partial('common/archive-post') %>
+            <%- partial('archive-post') %>
 
         <% } else if (is_post()) { %>
             <!-- 载入文章页面的内容 -->
-            <%- partial('common/article-post') %>
+            <%- partial('article-post') %>
 
         <% } else if (is_category()) { %>
             <!-- 载入分类页面的内容 -->
-            <%- partial('common/category-post') %>
+            <%- partial('category-post') %>
 
         <% } else if (is_tag()) { %>
             <!-- 载入标签页面的内容 -->
-            <%- partial('common/tag-post') %>
+            <%- partial('tag-post') %>
 
         <% } else if (page.title == 'about') { %>
             <!-- 载入关于页面的内容 -->
-            <%- partial('common/about') %>
+            <%- partial('about') %>
         <% } %>
     </div>
 </div>

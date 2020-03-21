@@ -7,7 +7,7 @@
         </div>
 
         <div class="article-meta-info">
-            <%- partial('article-meta-info', {articleData: page, index: true}) %>
+            <%- partial('common/article-meta-info', {articleData: page, index: true}) %>
         </div>
 
         <div class="article-content">
@@ -30,7 +30,7 @@
             <% } %>
         </div>
         <div class="comment-container">
-            <%- partial('valine') %>
+            <%- partial('common/valine') %>
         </div>
     </div>
 
