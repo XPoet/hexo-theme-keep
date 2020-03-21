@@ -1,0 +1,41 @@
+.animated {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name fade-in-down
+}
+
+.animated.hinge {
+  animation-duration: 1s;
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+the-transition() {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+
+the-transition-ease-in() {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transition-delay: 0s;
+}
+
+
+the-transition-ease-out() {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}

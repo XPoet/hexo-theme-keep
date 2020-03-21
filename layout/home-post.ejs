@@ -6,7 +6,7 @@
                 <li class="article-post-item">
                     <div class="article-post-title">
                         <h3>
-                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            <a class="article-title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
                         </h3>
                     </div>
 
@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="article-meta-info-container">
-                        <%- partial('common/article-meta-info', {articleData: post, index: true}) %>
+                        <%- partial('common/article-meta-info', {articleObject: post, index: true}) %>
                     </div>
                 </li>
             <% }) %>
@@ -25,15 +25,13 @@
         <div class="paginator">
             <% if (page.prev)  { %>
                 <a class="prev btn"
-                   href="<%- url_for(page.prev == 1 ? '':'/page/' + page.prev) %>"
-                   role="navigation"
+                   href="<%- url_for(page.prev == 1 ? '' : '/page/' + page.prev) %>"
                 ><%- __('prev') %></a>
             <% } %>
 
             <% if (page.next)  { %>
                 <a class="next btn"
                    href="<%- url_for('/page/' + page.next) %>"
-                   role="navigation"
                 ><%- __('next') %></a>
             <% } %>
         </div>

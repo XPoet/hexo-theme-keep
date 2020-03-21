@@ -1,5 +1,4 @@
-$left-side-width = 30%
-$right-side-width = 70%
+@require 'variables.styl'
 
 .page-container {
   position absolute
@@ -7,7 +6,7 @@ $right-side-width = 70%
   right: 0
   top: 0
   bottom: 0
-  background: #fff
+  background: $background-color
 
   .page-left {
     float: left
@@ -20,11 +19,12 @@ $right-side-width = 70%
     float: right
     width: $right-side-width
     height: 100%
+    position relative
   }
 
   @media screen and (max-width: 960px) {
     .page-left {
-      display none
+      display: none
     }
 
     .page-right {

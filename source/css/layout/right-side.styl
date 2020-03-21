@@ -1,20 +1,21 @@
-nav-container-height = 60px;
+@require 'variables.styl'
 
 .right-side-container {
+
   width: 100%;
   height: auto;
-  margin-top: nav-container-height;
+  margin-top: $nav-height;
 
   .nav-container {
-    width 100%
-    height nav-container-height
     position: fixed;
     top: 0;
+    width $right-side-width
+    height: $nav-height;
     z-index: 999;
   }
 
   .article-post-container {
-    background: #fff
-    padding 30px
+    background: $background-color;
+    padding: 30px;
   }
 }

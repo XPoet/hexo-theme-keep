@@ -1,11 +1,15 @@
+@require 'variables.styl'
+
+$archive-year-font-size = 24px;
+
 .archive-container {
 
   .archives-wrap {
     margin-bottom 20px
 
     .archive-year {
-      font-size: 24px;
-      color: #666;
+      font-size: $archive-year-font-size;
+      color: $article-title-color ;
       font-weight: 600;
     }
 
@@ -16,10 +20,10 @@
         font-size 16px
 
         a.archive-article-title {
-          color #8f8f8f
+          color $archive-article-title-color
 
           &:hover {
-            color: #4786D6;
+            color: $a-hover-color;
           }
         }
 

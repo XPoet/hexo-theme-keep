@@ -1,32 +1,32 @@
+@require '../variables.styl'
+
+$description-font-size = 16px
+
 .site-info {
 
   text-align: center;
 
   .avatar {
-    padding 2px
-    border-radius 50%
-    border 1px solid #ddd
+    padding: 2px;
+    border-radius: 50%;
+    border: 1px solid $border-color;
     width: 150px;
   }
 
-
   .title {
-    margin 5px 0;
+    margin: 5px 0;
     text-transform: uppercase;
 
     a {
-      color: #464646;
+      color: $logo-title-color;
       font-size: 30px;
       font-weight: bold;
     }
   }
 
-
   .description {
     padding 5px
-    font-size: 16px;
-    color: #565654;
+    font-size: $description-font-size;
   }
-
 
 }

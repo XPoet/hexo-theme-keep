@@ -1,3 +1,5 @@
+@require 'variables.styl'
+
 .home-container {
 
   .article-post-list {
@@ -6,51 +8,29 @@
 
       margin-bottom 30px
       padding-bottom 20px
-      border-bottom: 1px solid #f2f2f2;
+      border-bottom: 1px solid $border-color;
 
       .article-post-title {
-        h1 {
-          text-transform: uppercase;
-          font-size: 30px;
-          letter-spacing: 5px;
-          line-height: 1;
-        }
-
-        h2 {
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-size: 28px;
-          line-height: 1;
-          font-weight: 600;
-          color: #5f5f5f;
-
-        }
 
         h3 {
           text-transform: uppercase;
-          letter-spacing: 1px;
-          line-height: 1;
           font-weight: 600;
-          color: #464646;
+          color: $article-title-color;
           font-size: 22px;
           margin: 0;
         }
 
+
         a {
-          text-decoration: none;
-          letter-spacing: 1px;
-          color: #5f5f5f;
-
-          &:hover {
-            text-decoration: underline;
-          }
-
+          color: $article-title-color;
         }
+
+
       }
 
       .article-post-content {
         padding 15px 0
-        line-height 28px
+        line-height 2em
       }
 
     }
@@ -74,6 +54,9 @@
 
   }
 }
+
+
+
 
 
 

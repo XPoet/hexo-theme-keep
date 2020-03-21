@@ -4,7 +4,9 @@
 -->
 <% if (is_category()) { %>
     <div class="category-container">
-        <div class="category-name"><%- __('category') %>：<%= page.category %> [共<%= page.posts.length %>篇]</div>
+        <div class="category-name">
+            <i class="fa fa-bookmark"></i> <%- __('category') %>：<%= page.category %> [<%= page.posts.length %>]
+        </div>
     </div>
     <%- partial('archive-post') %>
 <% } %>

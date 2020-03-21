@@ -1,15 +1,16 @@
 <div class="article-meta-info">
+
     <!-- date -->
     <span class="article-date article-meta-item">
-                <i class="fa fa-calendar-o"></i> <%= date(articleData.date, 'YYYY-MM-DD HH:mm:ss') %>
+        <i class="fa fa-calendar-o"></i> <%= date(articleObject.date, 'YYYY-MM-DD HH:mm:ss') %>
     </span>
 
     <!-- categories -->
-    <% if (articleData.categories.length) { %>
+    <% if (articleObject.categories.length) { %>
         <span class="article-categories article-meta-item">
             <i class="fa fa-bookmark"></i>
             <ul>
-                <% articleData.categories.forEach((category, i) => { %>
+                <% articleObject.categories.forEach((category, i) => { %>
                     <li>
                         <%= i === 0 ? '' : '| ' %><a href="<%- url_for(category.path) %>"><%= category.name %></a>
                     </li>
@@ -19,11 +20,11 @@
     <% } %>
 
     <!-- tags -->
-    <% if (articleData.tags.length) { %>
+    <% if (articleObject.tags.length) { %>
         <span class="article-tags article-meta-item">
             <i class="fa fa-tags"></i>
             <ul>
-                <% articleData.tags.forEach((tag, i) => { %>
+                <% articleObject.tags.forEach((tag, i) => { %>
                     <li>
                         <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
                     </li>

@@ -1,8 +1,13 @@
-<nav class="nav" role="navigation">
+<nav class="nav">
+    <div class="fold-left-side">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div></div>
     <ul class="menu-list">
         <% for (let i in theme.menu) { %>
             <li class="menu-item">
-                <a class="<%- is_current(theme.menu[i]) ? 'current':'' %>" href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()) %></a>
+                <a class="<%- is_current(theme.menu[i]) ? 'current' : '' %>"
+                   href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()) %></a>
             </li>
         <% } %>
     </ul>
