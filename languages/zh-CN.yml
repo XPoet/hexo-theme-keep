@@ -11,7 +11,8 @@ archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最新文章
 share: 分享
-powered_by: Powered by
+powered_by: 由 %s 驱动
+theme_for: 主题为
 rss_feed: RSS Feed
 category: 分类
 tag: 标签

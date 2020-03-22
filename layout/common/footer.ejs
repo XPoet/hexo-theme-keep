@@ -1,5 +1,10 @@
 <footer class="footer">
-    <div class="copyright-info">
-        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author%>
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy; <%= date(new Date(), 'YYYY') %> <a href="https://github.com/XPoet" target="_blank"><%= config.author %></a>
+        </div>
+        <div class="theme-info">
+            <%- __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a>. <%- __('theme_for') %> <a href="https://github.com/XPoet/hexo-theme-poem" target="_blank">poem</a>
+        </div>
     </div>
 </footer>
