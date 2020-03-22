@@ -1,8 +1,11 @@
-// 左侧宽度占比
-$left-side-width = 30%
+// 左侧宽度占比，从主题配置文件中获取
+$left-side-width = hexo-config("page.left_side_width") + '%'
 
-// 右侧宽度占比
-$right-side-width = 70%
+// 右侧宽度占比，从主题配置文件中获取
+$right-side-width = hexo-config("page.right_side_width") + '%'
+
+// 媒体查询屏幕最大宽度，从主题配置文件中获取
+$media-max-width = hexo-config('page.media_max_width') px
 
 // 背景颜色
 $background-color = #fff
@@ -32,14 +35,13 @@ $default-font-line-height = 20px
 $default-font-weight = 400
 
 // 默认字体颜色
-$default-font-color = #777
+$default-font-color = #787878
 
 // 文章标题颜色
 $article-title-color = #666
 
 // 归档文章标题颜色
 $archive-article-title-color = #8f8f8f
-
 
 // 导航栏高度
 $nav-height = 60px
@@ -51,7 +53,7 @@ $nav-selected-color = #4a4a4a
 $a-color = #666
 
 // 超链接a标签悬浮颜色
-$a-hover-color = #4786d6
+$a-hover-color = #2273d8
 
 // 按钮颜色
 $button-color = $default-font-color

@@ -1,26 +1,29 @@
 @require 'variables.styl'
 
 $archive-year-font-size = 24px;
+$archive-article-item-title-font-size = 16px;
+$archive-article-date-font-size = 14px;
 
 .archive-container {
 
   .archives-wrap {
-    margin-bottom 20px
+    margin-bottom: 20px;
 
     .archive-year {
       font-size: $archive-year-font-size;
-      color: $article-title-color ;
+      color: $article-title-color;
       font-weight: 600;
     }
 
     .archive-article-list {
+      padding-left: 10px;
 
       .archive-article-item {
-        margin 10px 0
-        font-size 16px
+        margin: 10px 0;
+        font-size: $archive-article-item-title-font-size;
 
         a.archive-article-title {
-          color $archive-article-title-color
+          color: $archive-article-title-color;
 
           &:hover {
             color: $a-hover-color;
@@ -28,7 +31,8 @@ $archive-year-font-size = 24px;
         }
 
         .archive-article-date {
-          float right
+          font-size: $archive-article-date-font-size;
+          float: right;
         }
       }
     }

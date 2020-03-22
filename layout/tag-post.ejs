@@ -4,7 +4,7 @@ is_tag('hobby') 如果给定一个字符串作为参数，将会检查目前是�
 -->
 <% if (is_tag()) { %>
     <div class="tag-container">
-        <div class="tag-name"><%- __('tag') %>：<%= page.tag %> [共<%= page.posts.length %>篇]</div>
+        <div class="tag-name"><i class="fa fa-tag"></i> <%- __('tag') %>：<%= page.tag %> [<%= page.posts.length %>]</div>
     </div>
     <%- partial('archive-post') %>
 <% } %>

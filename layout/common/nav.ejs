@@ -1,8 +1,20 @@
+<script>
+    /**
+     * 折叠左侧栏
+     */
+    let isOpenLeftSide = true;
+    const foldLeftSide = () => {
+        document.querySelector('.page-left').style.display = isOpenLeftSide ? 'none' : 'block';
+        document.querySelector('.page-right').style.width = isOpenLeftSide ? '100%' : '<%= theme.page.right_side_width + '%' %>';
+        isOpenLeftSide = !isOpenLeftSide;
+    };
+</script>
 <nav class="nav">
-    <div class="fold-left-side">
+    <button class="fold-left-side-btn"
+            onclick="foldLeftSide()"
+    >
         <i class="fa fa-bars"></i>
-    </div>
-    <div></div>
+    </button>
     <ul class="menu-list">
         <% for (let i in theme.menu) { %>
             <li class="menu-item">

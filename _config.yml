@@ -8,6 +8,13 @@ favicon: images/favicon.png
 
 avatar: images/favicon.png
 
+page:
+  left_side_width: 25
+  right_side_width: 75
+  media_max_width: 960
+
+
+
 # 代码高亮设置
 # Code Highlight theme
 # Available value:
