@@ -1,10 +1,27 @@
 <footer class="footer">
     <div class="info-container">
-        <div class="copyright-info">
-            &copy; <%= date(new Date(), 'YYYY') %> <a href="https://github.com/XPoet" target="_blank"><%= config.author %></a>
+        <div class="copyright-info info-item">
+            &copy; <%= date(new Date(), 'YYYY') %> <a href="https://github.com/XPoet"
+                                                      target="_blank"><%= config.author %></a>
         </div>
-        <div class="theme-info">
-            <%- __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a>. <%- __('theme_for') %> <a href="https://github.com/XPoet/hexo-theme-poem" target="_blank">poem</a>
+        <div class="theme-info info-item">
+            <%- __('powered_by') %> <a href="https://hexo.io/" target="_blank">Hexo</a>. <%- __('theme_for') %> <a
+                    href="https://github.com/XPoet/hexo-theme-poem" target="_blank">poem</a>
         </div>
+        <% if (theme.busuanzi_count.enable) { %>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                <% if (theme.busuanzi_count.site_uv) { %>
+                    <span id="busuanzi_container_site_uv" style="display: none">
+                        访问人数 <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                <% } %>
+                <% if (theme.busuanzi_count.site_pv) { %>
+                    <span id="busuanzi_container_site_pv" style="display: none">
+                        总访问量 <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                <% } %>
+            </div>
+        <% } %>
     </div>
 </footer>

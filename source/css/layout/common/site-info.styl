@@ -4,6 +4,7 @@ $logo-title-font-size = 28px
 $description-font-size = 16px
 
 .site-info {
+  padding 20px
 
   text-align: center;
 
@@ -28,6 +29,39 @@ $description-font-size = 16px
   .description {
     padding 5px
     font-size: $description-font-size;
+  }
+
+  .links-of-author-container {
+    margin-top: 10px;
+
+    ul.links-of-author-list {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      li.links-of-author-item {
+        float: left
+        margin 0 5px
+      }
+    }
+
+  }
+
+
+  .cc-license-container {
+    margin-top: 40px;
+
+    .cc-opacity {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-55%);
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+
+      }
+    }
   }
 
 }

@@ -9,8 +9,8 @@ favicon: images/favicon.png
 avatar: images/favicon.png
 
 page:
-  left_side_width: 25
-  right_side_width: 75
+  left_side_width: 28
+  right_side_width: 72
   media_max_width: 960
 
 
@@ -20,10 +20,11 @@ page:
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/itPoet || github
+  GitHub: https://github.com/XPoet || github
   E-Mail: mailto:i@xpoet.cn || envelope
-  # Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
+  Google: https://plus.google.com/yourname || google
+  Twitter: https://twitter.com/yourname || twitter
+  Weibo: https://www.facebook.com/yourname || weibo
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
@@ -32,7 +33,6 @@ social:
   #Skype: skype:yourname?call|chat || skype
 
 
-# 代码高亮设置
 # Code Highlight theme
 # Available value:
 #   normal | night | night eighties | night blue | night bright
@@ -49,3 +49,22 @@ valine:
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: 评论一下再走吧~
+
+
+# Show PV/UV of the website/page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi/
+busuanzi_count:
+  # count values only if the other configs are false
+  enable: true
+  # custom uv span for the whole site
+  site_uv: true
+  site_uv_header:
+  site_uv_footer:
+  # custom pv span for the whole site
+  site_pv: true
+  site_pv_header:
+  site_pv_footer:
+  # custom pv span for one page only
+  page_pv: false
+  page_pv_header:
+  page_pv_footer:
