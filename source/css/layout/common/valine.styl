@@ -1,13 +1,63 @@
+@require '../variables.styl'
 .valine-container {
-  .vcontrol {
-    .col-20 a {
-      display: none;
+
+  #valine {
+
+    .vheader {
+
+      .vinput {
+
+        &:focus {
+          border-bottom: 1px solid $a-hover-color !important;
+        }
+      }
+    }
+
+
+    .vcontrol {
+      .col-20 a {
+        display: none;
+      }
+
+      .col-80 {
+        button.vsubmit {
+          background: transparent !important;
+          color: $default-font-color !important;
+          border: 1px solid $default-font-color !important;
+
+
+          &:hover {
+            color: $a-hover-color !important;
+            border: 1px solid $a-hover-color !important;
+          }
+        }
+
+      }
+
+
+    }
+
+
+    .vlist {
+      .vcard {
+        .vhead {
+          .vnick {
+
+            &::before {
+              background: $a-hover-color !important;
+            }
+            color: $a-hover-color;
+          }
+        }
+      }
+    }
+
+    .info {
+      .txt-right {
+        display none
+      }
     }
   }
 
-  .info {
-    .txt-right {
-      display none
-    }
-  }
+
 }
