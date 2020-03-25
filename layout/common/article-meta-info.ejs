@@ -2,7 +2,7 @@
 
     <!-- date -->
     <span class="article-date article-meta-item">
-        <i class="fa fa-calendar-o"></i> <%= date(articleObject.date, 'YYYY-MM-DD HH:mm:ss') %>
+        <i class="fa fa-calendar-o"></i> <%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD') %>
     </span>
 
     <!-- categories -->
@@ -32,4 +32,12 @@
             </ul>
         </span>
     <% } %>
+
+    <!-- page pv -->
+    <% if (theme.busuanzi_count.page_pv && is_post()) { %>
+        <span class="article-pv article-meta-item">
+            <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    <% } %>
+
 </div>
