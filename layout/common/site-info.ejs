@@ -1,16 +1,19 @@
 <div class="site-info">
-    <div class="avatar-container">
+
+    <div class="avatar-warp info-item">
         <%- image_tag(theme.avatar, {class: 'avatar'}) %>
     </div>
-    <div class="title">
+
+    <div class="title info-item">
         <a href="/"><%= config.title %></a>
     </div>
-    <div class="description">
+
+    <div class="description info-item">
         <%= config.description %>
     </div>
 
     <!-- 社交链接 -->
-    <div class="links-of-author-container">
+    <div class="links-of-author-warp info-item">
         <ul class="links-of-author-list">
             <% for (let link in theme.social) { %>
                 <% const linkItem = theme.social[link].split(' || ') %>
@@ -24,10 +27,4 @@
         </ul>
     </div>
 
-    <!-- 知识共享标识 -->
-    <div class="cc-license-container">
-        <a class="cc-opacity" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-            <img src="/images/cc-by-nc-sa.svg">
-        </a>
-    </div>
 </div>

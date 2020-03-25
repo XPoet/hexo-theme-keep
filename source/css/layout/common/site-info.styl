@@ -5,8 +5,11 @@ $description-font-size = 16px
 
 .site-info {
   padding 20px
-
   text-align: center;
+
+  .info-item {
+    margin: 5px 0;
+  }
 
   .avatar {
     padding: 2px;
@@ -15,8 +18,8 @@ $description-font-size = 16px
     width: 120px;
   }
 
+
   .title {
-    margin: 5px 0;
     text-transform: uppercase;
 
     a {
@@ -26,13 +29,14 @@ $description-font-size = 16px
     }
   }
 
+
   .description {
-    padding 5px
+    padding: 5px;
     font-size: $description-font-size;
   }
 
-  .links-of-author-container {
-    margin-top: 10px;
+
+  .links-of-author-warp {
 
     ul.links-of-author-list {
       position: absolute;
@@ -49,7 +53,6 @@ $description-font-size = 16px
 
 
   .cc-license-container {
-    margin-top: 40px;
 
     .cc-opacity {
       position: absolute;
@@ -59,7 +62,6 @@ $description-font-size = 16px
 
       &:hover {
         opacity: 1;
-
       }
     }
   }

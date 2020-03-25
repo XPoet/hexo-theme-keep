@@ -4,10 +4,6 @@
  * https://hexo.io/zh-cn/api/helper.html
  * eg 用法：<%= helper_test('xxx') %>
  */
-hexo.extend.helper.register('helper_test', function (character) {
-    return character + '😁';
-});
-
 hexo.extend.helper.register('isInHomePaging', function (pagePath, route) {
     if (pagePath.length > 5 && route === '/' ) {
         return pagePath.slice(0, 5) === 'page/';

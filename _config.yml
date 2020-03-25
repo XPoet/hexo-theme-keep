@@ -2,6 +2,7 @@ menu:
   Home: /
   Archives: /archives
   About: /about
+
 rss: /atom.xml
 
 favicon: images/favicon.png
@@ -13,12 +14,11 @@ page:
   right_side_width: 72
   media_max_width: 960
 
-
 # Social Links.
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
+# Value after `||` delimeter is the name of FontAwesome icon.
 social:
   GitHub: https://github.com/XPoet || github
   E-Mail: mailto:i@xpoet.cn || envelope
@@ -28,9 +28,7 @@ social:
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
-  #Skype: skype:yourname?call|chat || skype
 
 
 # Code Highlight theme
@@ -46,7 +44,7 @@ valine:
   enable: true
   appid:  ih2nzG3ilVNdLgJK4kBXTjOq-gzGzoHsz # your leancloud application appid
   appkey: gdf6tXXLBTLg9qpjS2y6Tbw7 # your leancloud application appkey
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  notify: false # mail notifier, https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: 评论一下再走吧~
 
@@ -68,3 +66,7 @@ busuanzi_count:
   page_pv: false
   page_pv_header:
   page_pv_footer:
+
+
+# Theme version
+version: 0.0.1
