@@ -1,7 +1,3 @@
-<!--
-is_tag() 检查当前页面是否为标签归档页面。
-is_tag('hobby') 如果给定一个字符串作为参数，将会检查目前是否为指定标签。
--->
 <% if (is_tag()) { %>
     <div class="tag-container">
         <div class="tag-name"><i class="fa fa-tag"></i> <%- __('tag') %>：<%= page.tag %> [<%= page.posts.length %>]</div>

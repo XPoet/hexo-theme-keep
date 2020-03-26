@@ -1,8 +1,5 @@
-<!-- 归档页面 内容 -->
-<!-- 如果是归档页面，将网站所有文章列出来，否则列出其他页（分类，标签）下的文章 -->
 <% const posts = is_archive() ? site.posts : page.posts %>
 <div class="archive-container">
-    <!-- 把所有文章按年份分类显示 -->
     <% let last; %>
     <% posts.each(function(post, i){ %>
         <% let year = post.date.year(); %>

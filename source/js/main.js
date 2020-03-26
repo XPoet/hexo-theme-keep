@@ -1,1 +1,1 @@
-console.log('this is main.js');
+console.log('hexo-theme-ils v0.1.0');

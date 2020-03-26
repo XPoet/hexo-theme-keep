@@ -1,5 +1,4 @@
 <div class="home-container">
-    <!-- 检查当前页面是否为首页 -->
     <% if (is_home()) { %>
         <ul class="article-post-list">
             <% page.posts.forEach(post => { %>
@@ -11,7 +10,6 @@
                     </div>
 
                     <div class="article-post-content">
-                        <!-- truncate() 移除超过 length 长度的字符串。length 的默认值是 30。 -->
                         <%- truncate(strip_html(post.content), {length: 150}) %>
                     </div>
 

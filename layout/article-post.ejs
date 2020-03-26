@@ -1,6 +1,4 @@
-<!-- is_post() 检查当前页面是否为文章 -->
 <% if (is_post()) { %>
-    <!-- 文章内容详情页面 -->
     <div class="article-container">
         <div class="article-title">
             <h3><a class="article-title-hover-animation"><%= page.title %></a></h3>
@@ -30,6 +28,7 @@
                 </div>
             <% } %>
         </div>
+
         <div class="comment-container">
             <%- partial('common/valine') %>
         </div>
