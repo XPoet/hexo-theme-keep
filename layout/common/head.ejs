@@ -3,7 +3,7 @@
     <%
     let title = page.title;
     if (is_archive()) {
-        title = __('archive_a');
+        title = __('archive');
         if (is_month()) {
             title += ': ' + page.year + '/' + page.month;
         } else if (is_year()) {
@@ -18,9 +18,8 @@
     }
     %>
     <title>
-        <% if (title){ %><%= title %> |
-        <% } %>
-        <%= config.title %></title>
+        <% if (title){ %><%= title %> | <% } %><%= config.title %>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <% if (theme.rss){ %>
         <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">

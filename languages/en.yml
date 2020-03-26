@@ -6,7 +6,6 @@ tweets: Tweets
 prev: Prev
 next: Next
 comment: Comments
-archive: Archives
 page: Page %d
 recent_posts: Recent Posts
 share: Share
@@ -16,7 +15,7 @@ rss_feed: RSS Feed
 category: Category
 tag: Tag
 home: Home
-archives: Archives
+archive: Archives
 about: About
 site_uv: "UV: "
 site_pv: "PV: "
