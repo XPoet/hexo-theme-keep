@@ -10,7 +10,7 @@ archive: Archives
 page: Page %d
 recent_posts: Recent Posts
 share: Share
-powered_by: Powered by
+powered_by: "Powered by %s"
 theme_for: Theme for
 rss_feed: RSS Feed
 category: Category
@@ -18,5 +18,5 @@ tag: Tag
 home: Home
 archives: Archives
 about: About
-site_uv: 'UV: '
-site_pv: 'PV: '
+site_uv: "UV: "
+site_pv: "PV: "
