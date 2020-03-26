@@ -1,3 +1,8 @@
+# Theme Info
+theme_name: ILS
+
+theme_version: 0.1.0
+
 menu:
   Home: /
   Archives: /archives
@@ -7,7 +12,7 @@ rss: /atom.xml
 
 favicon: images/favicon.png
 
-avatar: images/favicon.png
+avatar: images/avatar.png
 
 # Site page layout setting.
 page:
@@ -67,7 +72,3 @@ busuanzi_count:
   page_pv: true
   page_pv_header:
   page_pv_footer:
-
-
-# Theme version
-version: 0.0.1

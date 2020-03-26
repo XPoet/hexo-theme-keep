@@ -1,38 +1,25 @@
-# Poem
+# ILS
+
+> ILS(I Love Sample)
 
 A simple and beautiful theme for Hexo.
-
-- [Preview](https://github.com/XPoet/hexo-theme-poem)
+- [Preview](https://xpoet.cn)
 
 ## Installation
 
 ### Install
 
 ``` bash
-$ git clone git@github.com:XPoet/hexo-theme-poem.git themes/poem
+$ git clone --depath=1 git@github.com:XPoet/hexo-theme-ils.git themes/ils
 ```
 
 ### Enable
 
-Modify `theme` setting in `_config.yml` to `poem`.
+Modify `theme` setting in `_config.yml` to `ils`.
 
 ### Update
 
 ``` bash
-cd themes/poem
+cd themes/ils
 git pull
-```
-
-## Configuration
-
-``` yml
-menu:
-  Home: /
-  Archives: /archives
-  About: /adout
-rss: /atom.xml
-
-favicon: images/favicon.png
-
-avatar: images/favicon.png
 ```
