@@ -1,8 +1,9 @@
 # ILS
 
-> ILS(I Love Sample)
+> ILS(I Love Simple)
 
 A simple and beautiful theme for Hexo.
+
 - [Preview](https://xpoet.cn)
 
 ## Installation
