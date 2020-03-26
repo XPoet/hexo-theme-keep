@@ -9,6 +9,7 @@ favicon: images/favicon.png
 
 avatar: images/favicon.png
 
+# Site page layout setting.
 page:
   left_side_width: 28
   right_side_width: 72
