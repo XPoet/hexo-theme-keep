@@ -13,12 +13,12 @@
             <div class="website-count info-item">
                 <% if (theme.busuanzi_count.site_uv) { %>
                     <span id="busuanzi_container_site_uv" style="display: none">
-                        在 <span id="busuanzi_value_site_uv"></span> 次与你相遇
+                        <%- __('site_uv') %><span id="busuanzi_value_site_uv"></span>
                     </span>
                 <% } %>
                 <% if (theme.busuanzi_count.site_pv) { %>
                     <span id="busuanzi_container_site_pv" style="display: none">
-                        发生 <span id="busuanzi_value_site_pv"></span> 次回眸
+                        <%- __('site_pv') %><span id="busuanzi_value_site_pv"></span>
                     </span>
                 <% } %>
             </div>
