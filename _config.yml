@@ -26,11 +26,11 @@ page:
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon.
 social:
-  GitHub: https://github.com/yourname || github
-  E-Mail: mailto:yourmail || envelope
-  Google: https://plus.google.com/yourname || google
-  Twitter: https://twitter.com/yourname || twitter
-  Weibo: https://www.facebook.com/yourname || weibo
+  #GitHub: https://github.com/yourname || github
+  #E-Mail: mailto:yourmail || envelope
+  #Google: https://plus.google.com/yourname || google
+  #Twitter: https://twitter.com/yourname || twitter
+  #Weibo: https://www.facebook.com/yourname || weibo
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
