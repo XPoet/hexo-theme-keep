@@ -1,29 +1,20 @@
-<% const posts = is_archive() ? site.posts : page.posts %>
+<%
+const postList = createNewArchivePosts(is_archive() ? site.posts : page.posts)
+%>
 <div class="archive-container">
-    <% let last; %>
-    <% posts.each(function(post, i){ %>
-        <% let year = post.date.year(); %>
-        <% if (last != year) { %>
-            <% if (last != null){ %>
-</div></section>
-<% } %>
-<% last = year; %>
-<section class="archives-wrap">
-    <div class="archive-year">
-        <%= year %>
-    </div>
-    <div class="archive-article-list">
-        <% } %>
-        <div class="archive-article-item">
-            <a class="archive-article-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-            <span class="archive-article-date"> <%= date(post.date, 'MM-DD') %> </span>
-        </div>
-        <% }) %>
-        <% if (posts.length){ %>
-    </div>
-</section>
-<% } %>
+    <% postList.forEach(postYear => { %>
+        <section class="archive-item">
+            <div class="archive-year"><%= postYear.year %></div>
+            <ul class="article-list">
+                <% postYear.postList.forEach(post => { %>
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="<%- url_for(post.path) %>"
+                        ><%= post.title %></a>
+                        <span class="article-date"><%= date(post.date, 'MM-DD') %></span>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    <% }) %>
 </div>
-
-
-

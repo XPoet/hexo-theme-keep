@@ -52,7 +52,7 @@ valine:
   appkey: # your leancloud application appkey
   notify: false # mail notifier, https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: 评论一下再走吧~
+  placeholder: Comment input placeholder
 
 
 # Show PV/UV of the website/page with busuanzi.
