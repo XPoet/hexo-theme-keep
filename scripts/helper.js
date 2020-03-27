@@ -9,7 +9,7 @@ hexo.extend.helper.register('isInHomePaging', function (pagePath, route) {
 hexo.extend.helper.register('createNewArchivePosts', function (posts) {
     const postList = [], postYearList = [];
     posts.forEach(post => postYearList.push(post.date.year()));
-    Array.from(new Set(postYearList)).forEach(year => {
+    Array.from(new Set(postYearList)).reverse().forEach(year => {
         postList.push({
             year: year,
             postList: []
