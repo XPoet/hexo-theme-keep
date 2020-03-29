@@ -3,6 +3,12 @@
 <%- partial('common/head') %>
 <body>
 <%- body %>
+<div class="search-popup-container">
+    <%- partial('common/local-search') %>
+</div>
 <%- partial('common/scripts') %>
+<% if (theme.local_search.enable) { %>
+    <%- next_js('local-search.js') %>
+<% } %>
 </body>
 </html>

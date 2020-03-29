@@ -20,4 +20,8 @@
             </li>
         <% } %>
     </ul>
+    <% if (theme.local_search.enable) { %>
+        <button class="search-btn btn popup-trigger"><i class="fa fa-search"></i> <%= __('search') %></button>
+        <%- next_js('local-search.js') %>
+    <% } %>
 </nav>

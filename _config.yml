@@ -72,3 +72,24 @@ busuanzi_count:
   page_pv: false
   page_pv_header:
   page_pv_footer:
+
+
+# Local Search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  enable: true
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
+  trigger: auto
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  # Preload the search data when the page loads.
+  preload: false
+
+
+# Assets
+css: css
+js: js
+images: images

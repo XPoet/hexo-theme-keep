@@ -9,7 +9,7 @@
   .nav-container {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 70%;
     height: $nav-height;
     z-index: 999;
   }
@@ -18,4 +18,14 @@
     background: $background-color;
     padding: 30px;
   }
+
+  @media screen and (max-width: $media-max-width) {
+
+    .nav-container {
+      width: 100%;
+    }
+
+
+  }
+
 }

@@ -1,1 +1,3 @@
-console.log('hexo-theme-ils v0.1.0');
+window.addEventListener('DOMContentLoaded', () => {
+    console.log(`${CONFIG.themeName} v${CONFIG.themeVersion}`);
+});

@@ -17,5 +17,5 @@ tag: Tag
 home: Home
 archive: Archives
 about: About
-site_uv: "UV: "
-site_pv: "PV: "
+site_uv: UV
+site_pv: PV
