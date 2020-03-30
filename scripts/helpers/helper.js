@@ -18,6 +18,6 @@ hexo.extend.helper.register('createNewArchivePosts', function (posts) {
     postList.forEach(item => {
         posts.forEach(post => item.year === post.date.year() && item.postList.push(post))
     });
-    postList.forEach(item => item.postList.sort((a, b) => a.date.unix() - b.date.unix()));
+    postList.forEach(item => item.postList.sort((a, b) => b.date.unix() - a.date.unix()));
     return postList;
 });
