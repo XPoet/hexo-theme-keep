@@ -20,6 +20,7 @@ page:
   right_side_width: 70
   media_max_width: 960
 
+
 # Social Links.
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
@@ -42,6 +43,7 @@ social:
 #   normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
+
 
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
