@@ -1,15 +1,5 @@
-<script>
-    let isOpenLeftSide = true;
-    const foldLeftSide = () => {
-        document.querySelector('.page-left').style.display = isOpenLeftSide ? 'none' : 'block';
-        document.querySelector('.page-right').style.width = isOpenLeftSide ? '100%' : '<%= theme.page.right_side_width + '%' %>';
-        isOpenLeftSide = !isOpenLeftSide;
-    };
-</script>
 <nav class="nav">
-    <button class="fold-left-side-btn"
-            onclick="foldLeftSide()"
-    >
+    <button class="fold-left-side-btn">
         <i class="fa fa-bars"></i>
     </button>
     <ul class="menu-list">

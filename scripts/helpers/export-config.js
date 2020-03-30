@@ -14,7 +14,8 @@ hexo.extend.helper.register('export_config', function() {
     root      : config.root,
     localsearch: theme.local_search,
     themeName: theme.theme_name,
-    themeVersion: theme.theme_version
+    themeVersion: theme.theme_version,
+    pageLayout: theme.page
   };
   if (config.search) {
     exportConfig.path = config.search.path;
