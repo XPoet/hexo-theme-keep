@@ -1,6 +1,6 @@
 # ILS
 
-> ILS(I Love Simple)
+> ILS(I Like Simple 我喜欢简约)
 
 A simple and beautiful theme for Hexo.
 
