@@ -4,7 +4,10 @@ const postList = createNewArchivePosts(is_archive() ? site.posts : page.posts)
 <div class="archive-container">
     <% postList.forEach(postYear => { %>
         <section class="archive-item">
-            <div class="archive-year"><%= postYear.year %></div>
+            <div class="archive-item-header">
+                <span class="archive-year"><%= postYear.year %></span>
+                <i class="archive-year-number">- <%= postYear.postList.length %> -</i>
+            </div>
             <ul class="article-list">
                 <% postYear.postList.forEach(post => { %>
                     <li class="article-item">
