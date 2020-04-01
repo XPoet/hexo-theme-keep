@@ -49,7 +49,7 @@ highlight_theme: normal
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: true
+  enable: false
   appid:  # your leancloud application appid
   appkey: # your leancloud application appkey
   notify: false # mail notifier, https://github.com/xCss/Valine/wiki
@@ -79,7 +79,7 @@ busuanzi_count:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: true
+  enable: false
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto

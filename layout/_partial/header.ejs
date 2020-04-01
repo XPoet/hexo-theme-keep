@@ -7,19 +7,20 @@
         </a>
 
         <ul class="menu-list vertical-center">
-            <li class="">
-                <a href="">HOME</a>
-            </li>
-            <li class="">
-                <a href="/">ARCHIVE</a>
-            </li>
-            <li class="">
-                <a href="/">ABOUT</a>
-            </li>
-            <li class="">
-                <a href=""><i class="fa fa-search"></i></a>
-            </li>
+            <% for (let i in theme.menu) { %>
+                <li class="menu-item">
+                    <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'current' : is_current(theme.menu[i]) ? 'current' : '' %>"
+                       href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()) %></a>
+                </li>
+            <% } %>
+            <% if (theme.local_search.enable) { %>
+                <li>
+                    <button class="search-btn btn popup-trigger"><i class="fa fa-search"></i></button>
+                </li>
+                <%- next_js('local-search.js') %>
+            <% } %>
         </ul>
+
         <div class="menu-bar vertical-center">
             <i class="fa fa-bars"></i>
         </div>
@@ -27,15 +28,11 @@
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
-            <li class="drawer-menu-item drawer-menu-active">
-                <a href="">HOME</a>
-            </li>
-            <li class="drawer-menu-item">
-                <a href="/">ARCHIVE</a>
-            </li>
-            <li class="drawer-menu-item">
-                <a href="/">ABOUT</a>
-            </li>
+            <% for (let i in theme.menu) { %>
+                <li class="drawer-menu-item <%- isInHomePaging(page.path, theme.menu[i]) ? 'drawer-menu-active' : is_current(theme.menu[i]) ? 'drawer-menu-active' : '' %>">
+                    <a href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()) %></a>
+                </li>
+            <% } %>
         </ul>
     </div>
 
