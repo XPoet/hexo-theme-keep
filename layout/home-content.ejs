@@ -1,20 +1,27 @@
 <div class="home-content-container">
 
     <ul class="home-article-list">
+
         <% page.posts.forEach(post => { %>
             <li class="home-article-item">
-                <div class="home-article-title">
-                    <h3>
-                        <a class="article-title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
-                    </h3>
-                </div>
+                <h3 class="home-article-title">
+                    <a class="article-title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                </h3>
 
-                <div class="home-article-content">
-                    <%- truncate(strip_html(post.content), {length: 150}) %>
+                <div class="home-article-content markdown">
+                    <% if (post.excerpt) { %>
+                        <%- post.excerpt %>
+                    <% } else { %>
+                        <%- truncate(strip_html(post.content), {length: 150}) %>
+                    <% } %>
                 </div>
 
                 <div class="home-article-meta-info">
-                    <%- partial('_partial/article-meta-info', {articleObject: post, index: true}) %>
+                    <span class="article-date">
+                        <i class="fa fa-calendar-o"></i> <%= date(post.date, 'YYYY-MM-DD') %>
+                    </span>
+                    <hr>
+                    <a href="<%- url_for(post.path) %>">阅读全文</a>
                 </div>
             </li>
         <% }) %>
