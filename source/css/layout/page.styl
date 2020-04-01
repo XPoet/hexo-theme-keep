@@ -1,20 +1,30 @@
-$page-top-height = 100px;
-$page-top-shrink-height = 60px;
+@require "common/variables.styl"
 
 .page-template {
-  padding-top: $page-top-height;
+  padding-top: $header-height;
 
   .page-top {
     position: fixed;
     top: 0;
     width: 100%;
-    height: $page-top-height;
+    height: $header-height;
     z-index: 999;
     transition: all 0.5s ease;
   }
 
   .page-middle {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main-content {
+      width: 80%;
+      height: 100%;
+      position: relative;
+    }
+
+
   }
 
   .page-bottom {
@@ -23,9 +33,9 @@ $page-top-shrink-height = 60px;
 }
 
 .page-top-shrink {
-  padding-top: $page-top-shrink-height
+  padding-top: $header-shrink-height;
 
   .page-top {
-    height: $page-top-shrink-height
+    height: $header-shrink-height;
   }
 }

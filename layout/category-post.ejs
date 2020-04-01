@@ -1,8 +1,0 @@
-<% if (is_category()) { %>
-    <div class="category-container">
-        <div class="category-name">
-            <i class="fa fa-bookmark"></i> <%- __('category') %>：<%= page.category %> [<%= page.posts.length %>]
-        </div>
-    </div>
-    <%- partial('archive-post') %>
-<% } %>

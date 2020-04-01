@@ -3,7 +3,26 @@
         <%- partial('_partial/header') %>
     </div>
     <div class="page-middle">
-        <%- partial('_partial/page-main') %>
+        <main class="main-content">
+            <% if (is_home()) { %>
+                <%- partial('home-content') %>
+
+            <% } else if (is_archive()) { %>
+                <%- partial('archive-content') %>
+
+            <% } else if (is_post()) { %>
+                <%- partial('article-content') %>
+
+            <% } else if (is_category()) { %>
+                <%- partial('category-content') %>
+
+            <% } else if (is_tag()) { %>
+                <%- partial('tag-content') %>
+
+            <% } else if (page.title == 'about') { %>
+                <%- partial('about') %>
+            <% } %>
+        </main>
     </div>
     <div class="page-bottom">
         <%- partial('_partial/footer') %>
