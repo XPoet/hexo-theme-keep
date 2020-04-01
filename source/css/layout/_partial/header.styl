@@ -1,5 +1,4 @@
 @require "../common/variables.styl"
-@import "../common/root.styl"
 
 .header-wrapper {
   width: 100%;
@@ -12,28 +11,27 @@
   transition: height 0.5s ease, max-width 0.5s cubic-bezier(0, 0.2, 0.8, 1);
 
   .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: $main-content-width;
     height: 100%;
     position: relative;
     transition: transform 0.5s ease;
-    z-index: 999;
-
-    .vertical-center {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+    z-index: $z-index-5;
 
     .logo-title {
-      left: 0;
       font-size: 28px;
       font-weight: bold;
-      color: #555;
+      letter-spacing: 1px;
+      color: $first-text-color;
+      transform-origin: left center;
+      transition: all 0.5s ease;
     }
 
 
     .menu-list {
-      right: 0;
 
       .menu-item {
         float: left;
@@ -44,9 +42,12 @@
           margin-left: 0;
         }
 
+
         a {
 
           &:hover {
+
+            color: $normal-text-color;
 
             &::after {
               content: '';
@@ -56,7 +57,7 @@
               width: 100%;
               height: 2px;
               transform: translateX(-50%);
-              background: $a-hover-color;
+              background: $primary-color;
               transition: all 0.5s ease;
             }
           }
@@ -65,8 +66,8 @@
 
 
         .active {
-          color: #555;
-          font-weight: 700;
+          color: $second-text-color;
+          font-weight: bold;
           transition: all 0.5s ease;
 
           &::after {
@@ -77,7 +78,7 @@
             width: 100%;
             height: 2px;
             transform: translateX(-50%);
-            background: $a-hover-color;
+            background: $primary-color;
             transition: all 0.5s ease;
           }
         }
@@ -87,12 +88,41 @@
 
 
     .menu-bar {
-      right: 0;
-      font-size: 20px;
       display: none;
+      position: relative;
       cursor: pointer;
-    }
 
+      .menu-bar-middle {
+        width: 18px;
+        height: 2px;
+        margin: 6px 0;
+        position: relative;
+        background: $normal-text-color;
+        transition: all 0.3s ease;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -6px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: $normal-text-color;
+          transition: all 0.3s ease;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: $normal-text-color;
+          transition: all 0.3s ease;
+        }
+      }
+    }
   }
 
 
@@ -104,9 +134,9 @@
     left: 0;
     transform: scaleY(0);
     transform-origin: top;
-    background: white;
+    background: $background-color;
     transition: all 0.5s ease;
-    z-index: 998;
+    z-index: $z-index-2;
 
     .drawer-menu-list {
       display: flex;
@@ -116,22 +146,31 @@
       list-style-type: none;
 
       .drawer-menu-item {
-        display: block;
-        margin: 8px auto;
-        padding: 0 30px;
-        border-radius: 22px;
-        text-align: center;
-        line-height: 42px;
-        font-size: 14px;
-        color: #9ca3ad;
-        transition: all 0.5s ease;
+
+        a {
+          display: block;
+          margin: 8px auto;
+          padding: 0 20px;
+          border-radius: 20px;
+          text-align: center;
+          line-height: 34px;
+          color: $normal-text-color;
+          transition: all 0.5s ease;
+
+          &:hover {
+            color: $second-text-color;
+            font-weight: bold;
+          }
+        }
+
+        .active {
+          border: 1px solid $primary-color;
+          color: $second-text-color;
+          font-weight: bold;
+        }
+
       }
 
-
-      .drawer-menu-active {
-        background: $a-hover-color;
-        color: white;
-      }
 
     }
   }
@@ -143,10 +182,10 @@
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    z-index: $z-index-1;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
   }
 
 
@@ -154,25 +193,27 @@
 
 .header-drawer-show {
 
-  .menu-bar {
-    background: rgba(0, 0, 0, 0);
+  .header-content {
+    .menu-bar {
+      .menu-bar-middle {
 
-    &::before {
-      background: #2c3e50;
-      transform: translateY(6px) rotate(45deg);
-    }
+        background: transparent;
 
-    &::after {
-      background: #2c3e50;
-      transform: translateY(-6px) rotate(-45deg);
+        &::before {
+          transform: translateY(6px) rotate(45deg);
+        }
+
+
+        &::after {
+          transform: translateY(-6px) rotate(-45deg);
+        }
+      }
     }
   }
-
 
   .header-drawer {
     transform: scaleY(1);
   }
-
 
   .window-mask {
     visibility: visible;
@@ -183,22 +224,26 @@
 
 
 .header-wrapper-shrink {
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  background: $background-color;
+  box-shadow: 0 1px 2px $border-color;
 
   .header-content {
+
+    .logo-title {
+      transform: scale(0.86);
+    }
 
     .menu-list {
 
       .menu-item {
         a:hover {
           &::after {
-            bottom: -22px;
+            bottom: -20px;
           }
         }
 
         .active::after {
-          bottom: -22px;
+          bottom: -20px;
         }
       }
 
