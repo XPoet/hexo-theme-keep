@@ -1,7 +1,7 @@
 # Theme Info
-theme_name: ILS
+theme_name: ILS-X
 
-theme_version: 0.1.1
+theme_version: 1.0.0
 
 menu:
   Home: /
@@ -54,16 +54,10 @@ busuanzi_count:
   enable: false
   # custom uv span for the whole site
   site_uv: false
-  site_uv_header:
-  site_uv_footer:
   # custom pv span for the whole site
   site_pv: false
-  site_pv_header:
-  site_pv_footer:
   # custom pv span for one page only
   page_pv: false
-  page_pv_header:
-  page_pv_footer:
 
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
