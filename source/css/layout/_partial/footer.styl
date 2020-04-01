@@ -1,12 +1,23 @@
+@require '../common/variables.styl'
 .footer {
 
+  color: $third-text-color;
+
+  a {
+    color: $third-text-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
   .info-container {
-    padding-bottom 10px
-    text-align center
+    padding-bottom: 10px;
+    text-align: center;
   }
 
   .info-item {
-    margin 5px 0
+    margin: 5px 0;
   }
 
 }

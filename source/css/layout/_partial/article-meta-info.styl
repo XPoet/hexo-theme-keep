@@ -1,15 +1,18 @@
 @require '../common/variables.styl'
 
-$article-meta-info-color = #aaa;
 $article-meta-info-font-size = 12px;
 
 .article-meta-info {
 
-  color: $article-meta-info-color;
+  color: $third-text-color;
   font-size: $article-meta-info-font-size;
 
   .article-meta-item {
     margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .article-tags, .article-categories {
@@ -20,7 +23,7 @@ $article-meta-info-font-size = 12px;
     }
 
     a {
-      color: $article-meta-info-color;
+      color: $third-text-color;
 
       &:hover {
         color: $primary-color;
