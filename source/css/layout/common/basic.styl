@@ -9,7 +9,6 @@ html, body {
   font-size: $default-font-size;
   font-family: $default-font-family;
   font-weight: $default-font-weight;
-  -webkit-font-smoothing antialiased;
 }
 
 ul, li, ol {
@@ -58,6 +57,7 @@ a:hover, a:active {
   }
 }
 
+
 // 文章标题悬浮动画
 .article-title-hover-animation {
   display: inline-block;
@@ -97,4 +97,9 @@ clearfix() {
   &:after {
     clear: both;
   }
+}
+
+::selection {
+  background: $a-hover-color;
+  color: #fff;
 }

@@ -20,7 +20,6 @@ page:
   right_side_width: 70
   media_max_width: 960
 
-
 # Social Links.
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
@@ -37,25 +36,22 @@ social:
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #Instagram: https://instagram.com/yourname || instagram
 
-
 # Code Highlight theme
 # Available value:
 #   normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
-
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey: # your leancloud application appkey
+  enable: true
+  appid:  ih2nzG3ilVNdLgJK4kBXTjOq-gzGzoHsz # your leancloud application appid
+  appkey: gdf6tXXLBTLg9qpjS2y6Tbw7 # your leancloud application appkey
   notify: false # mail notifier, https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Comment input placeholder
-
+  placeholder: 评论一下再走吧~
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -74,7 +70,6 @@ busuanzi_count:
   page_pv: false
   page_pv_header:
   page_pv_footer:
-
 
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
