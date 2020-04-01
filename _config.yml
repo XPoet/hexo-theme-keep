@@ -14,12 +14,6 @@ favicon: images/favicon.png
 
 avatar: images/avatar.png
 
-# Site page layout setting.
-page:
-  left_side_width: 30
-  right_side_width: 70
-  media_max_width: 960
-
 # Social Links.
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
@@ -46,9 +40,9 @@ highlight_theme: normal
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: true
-  appid:  ih2nzG3ilVNdLgJK4kBXTjOq-gzGzoHsz # your leancloud application appid
-  appkey: gdf6tXXLBTLg9qpjS2y6Tbw7 # your leancloud application appkey
+  enable: false
+  appid:    # your leancloud application appid
+  appkey:   # your leancloud application appkey
   notify: false # mail notifier, https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: 评论一下再走吧~

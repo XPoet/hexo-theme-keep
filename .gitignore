@@ -42,6 +42,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# 提交代码时暂时忽略 _config.yml
-_config.yml
