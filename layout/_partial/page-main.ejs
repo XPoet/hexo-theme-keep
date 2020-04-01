@@ -1,0 +1,73 @@
+<main class="page-main-container">
+    <div class="main-content">
+
+        <!-- 左侧边栏-->
+        <div class="left-sidebar">
+
+            <!-- 文章列表 -->
+            <ul class="active-list">
+                <% for(let i = 0; i < 8; i++) { %>
+                    <li class="active-item">
+
+                        <h2 class="title">
+                            <a href="/">
+                                这个世界很苦，但你要很甜
+                            </a>
+                        </h2>
+
+                        <p class="summary">
+                            在薄情的世界里深情的活着。 01 昨天，许久没找我聊天的外甥女，突然发个大哭的表情过来说，小姨，我要活不下去了。
+                            我知道在上高二的她，能让她大悲大喜的事情，除了考试成绩还是考...
+                        </p>
+
+                        <div class="meta-info">
+                            <span class="date meta-info-item">
+                                <i class="fa fa-calendar"></i> 2020-03-31 08:55:00
+                            </span>
+                            <span class="tags meta-info-item">
+                                <i class="fa fa-tags"></i>TS
+                            </span>
+                            <span class="views meta-info-item">
+                                <i class="fa fa-eye"></i>1234
+                            </span>
+                        </div>
+
+                    </li>
+                <% } %>
+            </ul>
+
+        </div>
+
+        <!-- 右侧边栏 -->
+        <!--<div class="right-sidebar">
+
+            &lt;!&ndash; 友情链接 &ndash;&gt;
+            <div class="friend-link">
+
+                <div class="friend-link-title">
+                    <span>友情链接</span>
+                    <a class="page-change" href=""><i class="fa fa-refresh"></i> 换一批</a>
+                </div>
+
+                <ul class="friend-link-list">
+                    <% for(let i = 0; i < 5; i++){ %>
+                        <li class="friend-link-item">
+                            <div class="avatar-box">
+                                <%- image_tag(theme.avatar, {class: 'avatar'}) %>
+                            </div>
+                            <a class="go-friend-link" target="_blank" href="">+前往探索</a>
+                            <a class="friend-name" href="">X诗人</a>
+                            <p class="friend-intro">代码如诗，代码如诗</p>
+                        </li>
+                    <% } %>
+                </ul>
+                <div class="view-more">
+                    查看更多
+                </div>
+            </div>
+
+
+        </div>-->
+
+    </div>
+</main>

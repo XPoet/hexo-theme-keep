@@ -1,0 +1,31 @@
+$page-top-height = 100px;
+$page-top-shrink-height = 60px;
+
+.page-template {
+  padding-top: $page-top-height;
+
+  .page-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $page-top-height;
+    z-index: 999;
+    transition: all 0.5s ease;
+  }
+
+  .page-middle {
+    width: 100%;
+  }
+
+  .page-bottom {
+    width: 100%;
+  }
+}
+
+.page-top-shrink {
+  padding-top: $page-top-shrink-height
+
+  .page-top {
+    height: $page-top-shrink-height
+  }
+}

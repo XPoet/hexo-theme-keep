@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="<%= config.language %>">
-<%- partial('common/head') %>
+<%- partial('_partial/head') %>
 <body>
 <%- body %>
-<div class="search-popup-container">
-    <%- partial('common/local-search') %>
-</div>
-<%- partial('common/scripts') %>
-<% if (theme.local_search.enable) { %>
-    <%- next_js('local-search.js') %>
-<% } %>
+<%- partial('_partial/scripts') %>
 </body>
 </html>

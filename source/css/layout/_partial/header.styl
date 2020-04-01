@@ -1,0 +1,157 @@
+.header-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.5s ease, max-width 0.5s cubic-bezier(0, 0.2, 0.8, 1);
+
+  .header-content {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.5s ease;
+    z-index: 999;
+
+    .vertical-center {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .logo {
+      left: 0;
+      font-size: 28px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .menu-list {
+      right: 0;
+
+      li {
+        float: left;
+        margin-left: 20px;
+        font-size: 14px;
+      }
+    }
+
+
+    .menu-bar {
+      right: 0;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+  }
+
+
+  .header-drawer {
+    width: 100%;
+    padding: 100px 0 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    background: white;
+    transition: all 0.5s ease;
+    z-index: 998;
+
+    .drawer-menu-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      list-style-type: none;
+
+      .drawer-menu-item {
+        display: block;
+        margin: 8px auto;
+        padding: 0 30px;
+        border-radius: 22px;
+        text-align: center;
+        line-height: 42px;
+        font-size: 14px;
+        color: #9ca3ad;
+        transition: all 0.5s ease;
+      }
+
+
+      .drawer-menu-active {
+        background: #f45a6f;
+        color: white;
+      }
+
+    }
+  }
+
+
+  .window-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+
+}
+
+.header-drawer-show {
+
+  .menu-bar {
+    background: rgba(0, 0, 0, 0);
+
+    &::before {
+      background: #2c3e50;
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    &::after {
+      background: #2c3e50;
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+
+
+  .header-drawer {
+    transform: scaleY(1);
+  }
+
+
+  .window-mask {
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+
+
+.header-wrapper-shrink {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  .header-drawer {
+    padding: 60px 0 20px 0;
+  }
+}
+
+
+@media screen and (max-width: 760px) {
+  .menu-list {
+    display: none;
+  }
+
+  .menu-bar {
+    display: block !important;
+  }
+
+}
