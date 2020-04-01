@@ -1,4 +1,5 @@
 @require "../common/variables.styl"
+@import "../common/root.styl"
 
 .header-wrapper {
   width: 100%;
@@ -23,21 +24,76 @@
       transform: translateY(-50%);
     }
 
-    .logo {
+    .logo-title {
       left: 0;
       font-size: 28px;
       font-weight: bold;
       color: #555;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: $a-hover-color;
+        transition: all 0.5s ease;
+      }
     }
+
 
     .menu-list {
       right: 0;
 
-      li {
+      .menu-item {
         float: left;
-        margin-left: 20px;
-        font-size: 14px;
+        position: relative;
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        a {
+
+          &:hover {
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -10px;
+              left: 50%;
+              width: 100%;
+              height: 2px;
+              transform: translateX(-50%);
+              background: $a-hover-color;
+              transition: all 0.5s ease;
+            }
+          }
+
+        }
+
+
+        .active {
+          color: #555;
+          font-weight: 700;
+          transition: all 0.5s ease;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            transform: translateX(-50%);
+            background: $a-hover-color;
+            transition: all 0.5s ease;
+          }
+        }
       }
+
     }
 
 
@@ -84,7 +140,7 @@
 
 
       .drawer-menu-active {
-        background: #f45a6f;
+        background: $a-hover-color;
         color: white;
       }
 
@@ -141,9 +197,38 @@
   background: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
+  .header-content {
+
+    .logo-title {
+      &::after {
+        opacity: 0;
+      }
+    }
+
+
+    .menu-list {
+
+      .menu-item {
+        a:hover {
+          &::after {
+            bottom: -22px;
+          }
+        }
+
+        .active::after {
+          bottom: -22px;
+        }
+      }
+
+    }
+  }
+
+
   .header-drawer {
     padding: $header-shrink-height 0 20px 0;
   }
+
+
 }
 
 

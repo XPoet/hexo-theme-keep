@@ -1,103 +1,36 @@
 <div class="home-content-container">
-    <!-- 左侧边栏-->
-    <div class="left-sidebar">
 
-        <!-- 文章列表 -->
-        <!--<ul class="active-list">
-                <% for(let i = 0; i < 8; i++) { %>
-                    <li class="active-item">
-
-                        <h2 class="title">
-                            <a href="/">
-                                这个世界很苦，但你要很甜
-                            </a>
-                        </h2>
-
-                        <p class="summary">
-                            在薄情的世界里深情的活着。 01 昨天，许久没找我聊天的外甥女，突然发个大哭的表情过来说，小姨，我要活不下去了。
-                            我知道在上高二的她，能让她大悲大喜的事情，除了考试成绩还是考...
-                        </p>
-
-                        <div class="meta-info">
-                            <span class="date meta-info-item">
-                                <i class="fa fa-calendar"></i> 2020-03-31 08:55:00
-                            </span>
-                            <span class="tags meta-info-item">
-                                <i class="fa fa-tags"></i>TS
-                            </span>
-                            <span class="views meta-info-item">
-                                <i class="fa fa-eye"></i>1234
-                            </span>
-                        </div>
-
-                    </li>
-                <% } %>
-            </ul>-->
-
-        <div class="home-container">
-            <ul class="article-post-list">
-                <% page.posts.forEach(post => { %>
-                    <li class="article-post-item">
-                        <div class="article-post-title">
-                            <h3>
-                                <a class="article-title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
-                            </h3>
-                        </div>
-
-                        <div class="article-post-content">
-                            <%- truncate(strip_html(post.content), {length: 150}) %>
-                        </div>
-
-                        <div class="article-post-meta-info">
-                            <%- partial('_partial/article-meta-info', {articleObject: post, index: true}) %>
-                        </div>
-                    </li>
-                <% }) %>
-            </ul>
-            <div class="paginator">
-                <% if (page.prev)  { %>
-                    <a class="prev btn"
-                       href="<%- url_for(page.prev == 1 ? '' : '/page/' + page.prev) %>"
-                    ><%- __('prev') %></a>
-                <% } %>
-
-                <% if (page.next)  { %>
-                    <a class="next btn"
-                       href="<%- url_for('/page/' + page.next) %>"
-                    ><%- __('next') %></a>
-                <% } %>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- 右侧边栏 -->
-    <div class="right-sidebar">
-
-        <!-- 友情链接  -->
-        <!--<div class="friend-link">
-
-                <div class="friend-link-title">
-                    <span>友情链接</span>
-                    <a class="page-change" href=""><i class="fa fa-refresh"></i> 换一批</a>
+    <ul class="home-article-list">
+        <% page.posts.forEach(post => { %>
+            <li class="home-article-item">
+                <div class="home-article-title">
+                    <h3>
+                        <a class="article-title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                    </h3>
                 </div>
 
-                <ul class="friend-link-list">
-                    <% for(let i = 0; i < 5; i++){ %>
-                        <li class="friend-link-item">
-                            <div class="avatar-box">
-                                <%- image_tag(theme.avatar, {class: 'avatar'}) %>
-                            </div>
-                            <a class="go-friend-link" target="_blank" href="">+前往探索</a>
-                            <a class="friend-name" href="">X诗人</a>
-                            <p class="friend-intro">代码如诗，代码如诗</p>
-                        </li>
-                    <% } %>
-                </ul>
-                <div class="view-more">
-                    查看更多
+                <div class="home-article-content">
+                    <%- truncate(strip_html(post.content), {length: 150}) %>
                 </div>
-            </div>-->
 
+                <div class="home-article-meta-info">
+                    <%- partial('_partial/article-meta-info', {articleObject: post, index: true}) %>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+
+    <div class="paginator">
+        <% if (page.prev)  { %>
+            <a class="prev btn"
+               href="<%- url_for(page.prev == 1 ? '' : '/page/' + page.prev) %>"
+            ><%- __('prev') %></a>
+        <% } %>
+
+        <% if (page.next)  { %>
+            <a class="next btn"
+               href="<%- url_for('/page/' + page.next) %>"
+            ><%- __('next') %></a>
+        <% } %>
     </div>
 </div>

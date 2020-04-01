@@ -1,165 +1,54 @@
 @require "common/variables.styl"
 
 .home-content-container {
-  .left-sidebar {
-    float: left;
-    width: 70%;
 
-    /*.active-list {
+  .home-article-list {
 
-      .active-item {
-        padding-bottom: 30px;
-        margin-top: 10px;
-        border-bottom: 1px solid #eee;
+    .home-article-item {
 
-        .meta-info {
-          font-size: 12px;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $border-color;
 
-          .meta-info-item {
-            margin-right: 5px;
-          }
+      .home-article-title {
 
+        h3 {
+          font-weight: 600;
+          color: $article-title-color;
+          font-size: 22px;
+          margin: 0;
+        }
+
+        a {
+          color: $article-title-color;
         }
       }
 
-    }*/
-
-    .home-container {
-
-      .article-post-list {
-
-        .article-post-item {
-
-          margin-bottom: 30px;
-          padding-bottom: 30px;
-          border-bottom: 1px solid $border-color;
-
-          .article-post-title {
-
-            h3 {
-              font-weight: 600;
-              color: $article-title-color;
-              font-size: 22px;
-              margin: 0;
-            }
-
-            a {
-              color: $article-title-color;
-            }
-          }
-
-          .article-post-content {
-            padding: 15px 0;
-            line-height: 2em;
-          }
-
-        }
-      }
-
-      .paginator {
-
-        padding-bottom: 40px;
-
-        .page-number {
-          display: none !important;
-        }
-
-        a.prev {
-          float: left;
-        }
-
-        a.next {
-          float: right;
-        }
-
-      }
-    }
-
-
-  }
-
-
-  .right-sidebar {
-    float: right;
-    width: 30%;
-
-    /*.friend-link {
-      text-align: center;
-      border: 1px solid #eeeeee;
-
-      .friend-link-title {
-
-        text-align: left;
-
-        .page-change {
-          float: right;
-          display: inline-block;
-          font-size: 14px;
-          color: #969696;
-        }
-
-      }
-
-
-      .friend-link-list {
-        margin: 0 0 20px;
-        text-align: left;
-        .friend-link-item {
-
-          margin-top: 15px;
-
-          .avatar-box {
-            float: left;
-            width: 48px;
-            height: 48px;
-            margin-right: 10px;
-
-            img.avatar {
-              width: 100%;
-              height: 100%;
-              border-radius: 2px;
-            }
-          }
-
-
-          .go-friend-link {
-            float: right;
-            margin-top: 2px;
-            padding: 0;
-            font-size: 13px;
-            color: #42c02e;
-          }
-
-          .friend-name {
-            padding-top: 2px;
-            margin-right: 60px;
-            font-size: 14px;
-            display: block;
-          }
-
-          p.friend-intro {
-            margin-top: 2px;
-            font-size: 12px;
-            color: #969696;
-          }
-
-
-        }
-
-      }
-
-
-      .view-more {
-        left: 0;
-        width: 100%;
-        font-size: 13px;
-        color: #787878;
-        background-color: #f7f7f7;
-        border: 1px solid #dcdcdc;
-        border-radius: 4px;
+      .home-article-content {
+        padding: 15px 0;
+        line-height: 2em;
       }
 
     }
-*/
   }
+
+
+  .paginator {
+
+    padding-bottom: 40px;
+
+    .page-number {
+      display: none !important;
+    }
+
+    a.prev {
+      float: left;
+    }
+
+    a.next {
+      float: right;
+    }
+
+  }
+
 }

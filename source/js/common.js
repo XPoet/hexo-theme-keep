@@ -1,19 +1,19 @@
 let isHeaderShrink = false;
-let header = document.querySelector('.header-wrapper');
-let pageTemplateContainer = document.querySelector('.page-template');
-let menuBar = document.querySelector('.menu-bar');
-let windowMask = document.querySelector('.window-mask');
-
-
+const header = document.querySelector('.header-wrapper');
+const pageTemplateContainer = document.querySelector('.page-template');
+const menuBar = document.querySelector('.menu-bar');
+const windowMask = document.querySelector('.window-mask');
+const headerHeight = header.getBoundingClientRect().height;
 
 window.addEventListener('scroll', function (e) {
-    var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
 
-    if (!isHeaderShrink && scrollTop > 10) {
+    const scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+    if (!isHeaderShrink && scrollTop > headerHeight) {
         isHeaderShrink = true;
         header.classList.add('header-wrapper-shrink');
         pageTemplateContainer.classList.add('page-top-shrink');
-    } else if (isHeaderShrink && scrollTop <= 10) {
+    } else if (isHeaderShrink && scrollTop <= headerHeight) {
         isHeaderShrink = false;
         header.classList.remove('header-wrapper-shrink');
         pageTemplateContainer.classList.remove('page-top-shrink');

@@ -2,15 +2,18 @@
 
     <div class="header-content">
 
-        <a class="logo vertical-center" href="/">
+        <a class="logo-title vertical-center" href="/">
             <%= config.title %>
         </a>
 
         <ul class="menu-list vertical-center">
             <% for (let i in theme.menu) { %>
                 <li class="menu-item">
-                    <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'current' : is_current(theme.menu[i]) ? 'current' : '' %>"
-                       href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()) %></a>
+                    <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
+                       href="<%- url_for(theme.menu[i]) %>"
+                    >
+                        <%= __(i.toLowerCase()).toUpperCase() %>
+                    </a>
                 </li>
             <% } %>
             <% if (theme.local_search.enable) { %>
