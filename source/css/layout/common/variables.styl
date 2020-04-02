@@ -31,6 +31,15 @@ $third-text-color = #9ca3ad; // 第三文本颜色
 $normal-text-color = #616161; // 通用文本颜色（默认字体颜色）
 $border-color = #ccc; // 边框颜色
 
+// dark mode color
+$dark-background-color = #333; // 背景颜色
+$dark-primary-color = #ce3e29; // 主题颜色
+$dark-first-text-color = #eee; // 第一文本颜色
+$dark-second-text-color = #ccc; // 第二文本颜色
+$dark-third-text-color = #aaa; // 第三文本颜色
+$dark-normal-text-color = #bbb; // 通用文本颜色（默认字体颜色）
+$dark-border-color = #888; // 边框颜色
+
 
 // ===============================
 // font
@@ -45,28 +54,44 @@ $default-font-weight = 400;
 
 
 :root {
-  --background-color: #fff;
-  --first-text-color: #3e3d4f;
-  --second-text-color: #525e6b;
-  --third-text-color: #9ca3ad;
-  --normal-text-color: #616161;
+  --background-color: $background-color;
+  --primary-color: $primary-color;
+  --first-text-color: $first-text-color;
+  --second-text-color: $second-text-color;
+  --third-text-color: $third-text-color;
+  --normal-text-color: $normal-text-color;
+  --border-color: $border-color;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #444;
-    --first-text-color: #edf2f9;
-    --second-text-color: #e0e3ec;
-    --third-text-color: #9ca3ad;
-    --normal-text-color: #f8f8f8;
+    --background-color: $dark-background-color;
+    --primary-color: $dark-primary-color;
+    --first-text-color: $dark-first-text-color;
+    --second-text-color: $dark-second-text-color;
+    --third-text-color: $dark-third-text-color;
+    --normal-text-color: $dark-normal-text-color;
+    --dark-border-color: $dark-border-color;
   }
 }
 
 
 .dark-mode {
-  --background-color: #444;
-  --first-text-color: #edf2f9;
-  --second-text-color: #e0e3ec;
-  --third-text-color: #9ca3ad;
-  --normal-text-color: #f8f8f8;
+  --background-color: $dark-background-color;
+  --primary-color: $dark-primary-color;
+  --first-text-color: $dark-first-text-color;
+  --second-text-color: $dark-second-text-color;
+  --third-text-color: $dark-third-text-color;
+  --normal-text-color: $dark-normal-text-color;
+  --dark-border-color: $dark-border-color;
+}
+
+.light-mode {
+  --background-color: $background-color;
+  --primary-color: $primary-color;
+  --first-text-color: $first-text-color;
+  --second-text-color: $second-text-color;
+  --third-text-color: $third-text-color;
+  --normal-text-color: $normal-text-color;
+  --border-color: $border-color;
 }
