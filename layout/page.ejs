@@ -2,6 +2,7 @@
     <div class="page-top">
         <%- partial('_partial/header') %>
     </div>
+
     <div class="page-middle">
         <main class="main-content">
             <% if (is_home()) { %>
@@ -32,3 +33,6 @@
         <%- partial('_partial/footer') %>
     </div>
 </div>
+<% if (theme.local_search.enable) { %>
+    <%- partial('_partial/local-search') %>
+<% } %>

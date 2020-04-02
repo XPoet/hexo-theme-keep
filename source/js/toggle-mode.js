@@ -1,7 +1,7 @@
 /**
  * 日间/夜间 模式切换
  */
-const modeToggleBtn = document.querySelector('.mode-toggle-btn');
+const modeToggleBtn = document.querySelector('.mode-toggle');
 const iconDom = modeToggleBtn.querySelector('i');
 const modeConfig = JSON.parse(localStorage.getItem('ils_x'));
 if (modeConfig) {

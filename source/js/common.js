@@ -5,7 +5,7 @@ const menuBar = document.querySelector('.menu-bar');
 const windowMask = document.querySelector('.window-mask');
 const headerHeight = header.getBoundingClientRect().height;
 
-window.addEventListener('scroll', function (e) {
+window.addEventListener('scroll', function (_e) {
 
     const scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
 
@@ -20,15 +20,10 @@ window.addEventListener('scroll', function (e) {
     }
 });
 
-menuBar.addEventListener('click', function (e) {
+menuBar.addEventListener('click', function (_e) {
     header.classList.toggle('header-drawer-show');
 });
 
-windowMask.addEventListener('click', function (e) {
+windowMask.addEventListener('click', function (_e) {
     header.classList.toggle('header-drawer-show');
-});
-
-
-const searchBtn = document.querySelector('.search-btn');
-searchBtn.addEventListener('click', function (e) {
 });

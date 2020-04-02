@@ -1,9 +1,12 @@
 <div class="tools-container">
     <ul class="tools-list">
-        <li class="search-btn">
-            <i class="fa fa-search"></i>
-        </li>
-        <li class="mode-toggle-btn">
+        <% if (theme.local_search.enable) { %>
+            <li class="search popup-trigger">
+                <i class="fa fa-search"></i>
+            </li>
+            <%- next_js('local-search.js') %>
+        <% } %>
+        <li class="mode-toggle">
             <i class="fa fa-moon-o"></i>
         </li>
     </ul>
