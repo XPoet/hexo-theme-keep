@@ -1,7 +1,7 @@
 # Theme Info
-theme_name: ILS
+theme_name: ILS-X
 
-theme_version: 0.1.1
+theme_version: 1.0.0
 
 menu:
   Home: /
@@ -13,12 +13,6 @@ rss: /atom.xml
 favicon: images/favicon.png
 
 avatar: images/avatar.png
-
-# Site page layout setting.
-page:
-  left_side_width: 30
-  right_side_width: 70
-  media_max_width: 960
 
 # Social Links.
 # Usage: `Key: permalink || icon`
@@ -46,9 +40,9 @@ highlight_theme: normal
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
-  enable: true
-  appid:  ih2nzG3ilVNdLgJK4kBXTjOq-gzGzoHsz # your leancloud application appid
-  appkey: gdf6tXXLBTLg9qpjS2y6Tbw7 # your leancloud application appkey
+  enable: false
+  appid:    # your leancloud application appid
+  appkey:   # your leancloud application appkey
   notify: false # mail notifier, https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: 评论一下再走吧~
@@ -57,24 +51,18 @@ valine:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: true
+  enable: false
   # custom uv span for the whole site
-  site_uv: true
-  site_uv_header:
-  site_uv_footer:
+  site_uv: false
   # custom pv span for the whole site
-  site_pv: true
-  site_pv_header:
-  site_pv_footer:
+  site_pv: false
   # custom pv span for one page only
-  page_pv: true
-  page_pv_header:
-  page_pv_footer:
+  page_pv: false
 
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: true
+  enable: false
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
