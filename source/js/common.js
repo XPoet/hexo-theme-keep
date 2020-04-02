@@ -28,3 +28,20 @@ windowMask.addEventListener('click', function (e) {
     header.classList.toggle('header-drawer-show');
 });
 
+
+const searchBtn = document.querySelector('.search-btn');
+searchBtn.addEventListener('click', function (e) {
+
+});
+
+const modeToggleBtn = document.querySelector('.mode-toggle-btn');
+modeToggleBtn.addEventListener('click', function (e) {
+    if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+        console.log('dark mode');
+    } else {
+        document.body.classList.toggle('dark-mode');
+    }
+});

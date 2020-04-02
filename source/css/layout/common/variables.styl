@@ -2,52 +2,71 @@
 // ils-x variables
 // ==================================
 
-// 头部默认高度
-$header-height = 100px
+// ===============================
+// layout
+// ===============================
+$header-height = 100px; // 头部默认高度
+$header-shrink-height = 60px; // 头部收缩高度
+$main-content-width = 70%; // 中间内容区域宽度
 
-// 头部收缩高度
-$header-shrink-height = 60px
-
-// 中间内容区域宽度
-$main-content-width = 70%
-
+// ===============================
 // z-index
-$z-index-1 = 1001
-$z-index-2 = 1002
-$z-index-3 = 1003
-$z-index-4 = 1004
-$z-index-5 = 1005
+// ===============================
+$z-index-1 = 1001;
+$z-index-2 = 1002;
+$z-index-3 = 1003;
+$z-index-4 = 1004;
+$z-index-5 = 1005;
+$z-index-6 = 1006;
 
-// 主题颜色
-$primary-color = #ce3e29
 
-// 第一文本颜色
-$first-text-color = #2c3e50
+// ===============================
+// color
+// ===============================
+$primary-color = #ce3e29; // 主题颜色
+$background-color = #fff; // 背景颜色
+$first-text-color = #2c3e50; // 第一文本颜色
+$second-text-color = #525e6b; // 第二文本颜色
+$third-text-color = #9ca3ad; // 第三文本颜色
+$normal-text-color = #616161; // 通用文本颜色（默认字体颜色）
+$border-color = #ccc; // 边框颜色
 
-// 第二文本颜色
-$second-text-color = #525e6b
 
-// 第三文本颜色
-$third-text-color = #9ca3ad
+// ===============================
+// font
+// ===============================
+//$default-font-family = 'PingHei', 'PingFang SC', 'Microsoft YaHei';
+//$default-font-family = 'PingFang SC', 'Hiragino Sans GB', 'STHeiti Light';
+//$default-font-family = 'Microsoft YaHei', 'SimHei', 'WenQuanYi Micro Hei', sans-serif;
+$default-font-family = "Exo 2", "Trebuchet MS", "Helvetica", "Arial";
+$default-font-size = 14px;
+$default-font-line-height = 20px;
+$default-font-weight = 400;
 
-// 通用文本颜色（默认字体颜色）
-$normal-text-color = #616161
 
-// 背景颜色
-$background-color = #fff
+:root {
+  --background-color: #fff;
+  --first-text-color: #3e3d4f;
+  --second-text-color: #525e6b;
+  --third-text-color: #9ca3ad;
+  --normal-text-color: #616161;
+}
 
-// 边框颜色
-$border-color = #ccc
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #444;
+    --first-text-color: #edf2f9;
+    --second-text-color: #e0e3ec;
+    --third-text-color: #9ca3ad;
+    --normal-text-color: #f8f8f8;
+  }
+}
 
-// 默认字体样式
-//$default-font-family = 'PingHei', 'PingFang SC', 'Microsoft YaHei'
-$default-font-family = "Exo 2", "Trebuchet MS", "Helvetica", "Arial", 'PingFang SC', 'Hiragino Sans GB', 'STHeiti Light', 'Microsoft YaHei', 'SimHei', 'WenQuanYi Micro Hei', sans-serif
 
-// 默认字体大小
-$default-font-size = 14px
-
-// 默认字体行高
-$default-font-line-height = 20px
-
-// 默认字体加粗程度
-$default-font-weight = 400
+.dark-mode {
+  --background-color: #444;
+  --first-text-color: #edf2f9;
+  --second-text-color: #e0e3ec;
+  --third-text-color: #9ca3ad;
+  --normal-text-color: #f8f8f8;
+}

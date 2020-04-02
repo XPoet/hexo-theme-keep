@@ -4,8 +4,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  color: $normal-text-color;
-  background: $background-color;
+  color: var(--normal-text-color);;
+  background: var(--background-color);;
   font-size: $default-font-size;
   font-family: $default-font-family;
   font-weight: $default-font-weight;
@@ -33,7 +33,7 @@ p {
 
 a {
   text-decoration: none;
-  color: $normal-text-color;
+  color: var(--normal-text-color);;
 }
 
 a:hover, a:active {
@@ -64,7 +64,7 @@ a:hover, a:active {
 .article-title-hover-animation {
   display: inline-block;
   position: relative;
-  color: $second-text-color;
+  color: var(--second-text-color);;
   border-bottom: none;
   line-height: 1.3;
   vertical-align: top;
@@ -76,7 +76,7 @@ a:hover, a:active {
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: $second-text-color;
+    background-color: var(--second-text-color);;
     visibility: hidden;
     transform: scaleX(0);
     the-transition();

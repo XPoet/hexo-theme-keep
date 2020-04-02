@@ -2,6 +2,8 @@
 
 .page-template {
   padding-top: $header-height;
+  position: relative;
+
 
   .page-top {
     position: fixed;
@@ -24,6 +26,15 @@
       position: relative;
       padding: 40px 0;
     }
+
+
+    .sidebar-tools {
+      position: fixed;
+      top: $header-height + 30px;
+      right: 5%;
+      transition: all 0.5s ease;
+    }
+
   }
 
   .page-bottom {
@@ -36,5 +47,9 @@
 
   .page-top {
     height: $header-shrink-height;
+  }
+
+  .sidebar-tools {
+    top: $header-shrink-height + 30px !important;
   }
 }
