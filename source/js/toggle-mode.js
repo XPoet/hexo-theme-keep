@@ -3,6 +3,8 @@
  */
 const modeToggleBtn = document.querySelector('.mode-toggle');
 const iconDom = modeToggleBtn.querySelector('i');
+// const articleContent = document.querySelector('.article-content');
+const articleContent = document.querySelector('.main-content');
 const modeConfig = JSON.parse(localStorage.getItem('ils_x'));
 if (modeConfig) {
 
@@ -10,20 +12,24 @@ if (modeConfig) {
 
         if (modeConfig.isDark) {
             document.body.classList.remove('light-mode');
+            articleContent.classList.remove('night-code-theme');
             iconDom.className = 'fa fa-lightbulb-o';
         } else {
             iconDom.className = 'fa fa-moon-o';
             document.body.classList.add('light-mode');
+            articleContent.classList.add('night-code-theme');
         }
 
     } else {
 
         if (modeConfig.isDark) {
             document.body.classList.remove('dark-mode');
+            articleContent.classList.remove('night-code-theme');
             iconDom.className = 'fa fa-moon-o';
         } else {
             document.body.classList.add('dark-mode');
             iconDom.className = 'fa fa-lightbulb-o';
+            articleContent.classList.add('night-code-theme');
         }
 
     }
@@ -33,7 +39,14 @@ if (modeConfig) {
 const setItemUtil = (modeClass, prefersColorScheme) => {
     document.body.classList.toggle(modeClass);
     const isDark = document.body.className.indexOf(modeClass) === -1;
-    iconDom.className = isDark ? 'fa fa-moon-o' : 'fa fa-lightbulb-o';
+
+    if (isDark) {
+        iconDom.className = 'fa fa-moon-o';
+        articleContent.classList.remove('night-code-theme');
+    } else {
+        iconDom.className = 'fa fa-lightbulb-o';
+        articleContent.classList.add('night-code-theme');
+    }
     localStorage.setItem('ils_x', JSON.stringify(
         {
             prefersColorScheme: prefersColorScheme,

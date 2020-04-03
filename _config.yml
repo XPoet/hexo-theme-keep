@@ -30,12 +30,6 @@ social:
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #Instagram: https://instagram.com/yourname || instagram
 
-# Code Highlight theme
-# Available value:
-#   normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
-
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
@@ -62,7 +56,7 @@ busuanzi_count:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto

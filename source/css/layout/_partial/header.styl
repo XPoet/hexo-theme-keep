@@ -143,7 +143,6 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      list-style-type: none;
 
       .drawer-menu-item {
 
@@ -225,7 +224,7 @@
 
 .header-wrapper-shrink {
   background: var(--background-color);
-  box-shadow: 0 1px 2px $border-color;
+  box-shadow: 0 1px 2px var(--border-color);
 
   .header-content {
 
@@ -266,6 +265,10 @@
 
   .menu-bar {
     display: block !important;
+  }
+
+  .header-content {
+    width: $main-content-width * 1.2 !important;
   }
 
 }

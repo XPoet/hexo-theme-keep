@@ -1,24 +1,41 @@
-@require "theme"
-@require "diff"
+@require "code-theme.styl"
 
 $code-block {
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size $code-font-size;
-  color: $highlight-foreground;
-  background: $highlight-background;
-  line-height: $line-height-code-block;
+  font-size 1em;
+  color: var(--highlight-foreground);
+  background: var(--highlight-background);
+  line-height: 1.6em;
+  transition: all 0.5s ease;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2)
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
 }
 
-pre, code { font-family: $code-font-family; }
+
+pre, code {
+  font-family: "Source Code Pro", consolas, Menlo;
+}
 
 code {
-  padding: 4px;
+  padding: 5px;
   word-wrap: break-word;
-  color: $code-foreground;
-  background: $code-background;
-  border-radius: $code-border-radius;
+  color: var(--code-foreground);
+  background: var(--code-background);
+  border-radius: 2px;
   font-size: $code-font-size;
 }
 
@@ -28,7 +45,7 @@ pre {
 
   code {
     padding: 0;
-    color: $highlight-foreground;
+    color: var(--highlight-foreground);
     background: none;
     text-shadow: none;
   }
@@ -36,7 +53,7 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 1px
+  border-radius: 1px;
 
   pre {
     border: none;
@@ -57,36 +74,39 @@ pre {
   }
 
   figcaption {
-    clearfix();
     font-size: 1em;
-    color: $highlight-foreground;
+    color: var(--highlight-foreground);
     line-height: 1em;
     margin-bottom: 1em;
 
     a {
       float: right;
-      color: $highlight-foreground;
+      color: var(--highlight-foreground);
 
-      &:hover { border-bottom-color: $highlight-foreground; }
+      &:hover {
+        border-bottom-color: var(--highlight-foreground);
+      }
     }
   }
 
   .gutter pre {
-    padding-left: 10px
-    padding-right: 10px
-    color: $highlight-gutter.color
-    text-align: center
-    background-color: $highlight-gutter.bg-color
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--highlight-gutter-color);
+    text-align: center;
+    background-color: var(--highlight-gutter-bg-color);
   }
 
   .code pre {
     width: 100%
     padding-left: 10px
     padding-right: 10px
-    background-color: $highlight-background
+    background-color: var(--highlight-background)
   }
 
-  .line { height: 20px; }
+  .line {
+    height: 20px;
+  }
 }
 
 
@@ -100,17 +120,29 @@ pre {
 .gist table {
   width: auto;
 
-  td { border: none; }
+  td {
+    border: none;
+  }
 }
 
 // For diff highlight
-pre .deletion { background: $highlight-deletion; }
-pre .addition { background: $highlight-addition; }
-pre .meta     { color: $highlight-purple; }
+pre .deletion {
+  background: var(--highlight-deletion);
+}
+
+pre .addition {
+  background: var(--highlight-addition);
+}
+
+pre .meta {
+  color: var(--highlight-purple);
+}
 
 pre {
 
-  .comment { color: $highlight-comment; }
+  .comment {
+    color: var(--highlight-comment);
+  }
 
   .variable
   .attribute
@@ -124,7 +156,7 @@ pre {
   .css .id
   .css .class
   .css .pseudo {
-    color: $highlight-red;
+    color: var(--highlight-red);
   }
 
   .number
@@ -134,7 +166,7 @@ pre {
   .params
   .constant
   .command {
-    color: $highlight-orange;
+    color: var(--highlight-orange);
   }
 
   .ruby .class .title
@@ -148,12 +180,12 @@ pre {
   .special
   .number
   .formula {
-    color: $highlight-green;
+    color: highlight-green;
   }
 
   .title
   .css .hexcolor {
-    color: $highlight-aqua;
+    color: var(--highlight-aqua);
   }
 
   .function
@@ -164,12 +196,12 @@ pre {
   .perl .sub
   .javascript .title
   .coffeescript .title {
-    color: $highlight-blue;
+    color: var(--highlight-blue);
   }
 
   .keyword
   .javascript .function {
-    color: $highlight-purple;
+    color: var(--highlight-purple);
   }
 
 }

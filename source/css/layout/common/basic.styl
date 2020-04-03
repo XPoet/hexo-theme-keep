@@ -10,11 +10,13 @@ html, body {
   font-family: $default-font-family;
   font-weight: $default-font-weight;
   line-height: $default-font-line-height;
-  -webkit-font-smoothing antialiased;
+  //-webkit-font-smoothing antialiased;
   transition: all 0.5s ease;
 }
 
-ul, li, ol {
+ul,
+li,
+ol {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -29,17 +31,13 @@ button {
   background: transparent;
 }
 
-p {
-  line-height: 2em;
-}
-
 a {
   text-decoration: none;
   color: var(--normal-text-color);
 }
 
 a:hover, a:active {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 
@@ -49,15 +47,15 @@ a:hover, a:active {
   position: relative;
   text-align: center;
   cursor: pointer;
-  color: $button-color;
-  border: 1px solid $border-color;
+  color: var(--third-text-color);
+  border: 1px solid var(--third-text-color);
   white-space: nowrap;
   border-radius: 10em;
   padding: 0.5em 1em;
 
   &:hover {
-    color: $primary-color;
-    border: 1px solid $primary-color;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
   }
 }
 
@@ -92,19 +90,7 @@ a:hover, a:active {
 }
 
 
-// Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
-clearfix() {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
 ::selection {
-  background: $primary-color;
+  background: var(--selection-color);
   color: #fff;
 }

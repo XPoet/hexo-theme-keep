@@ -1,17 +1,20 @@
 @require 'variables.styl'
 
-.markdown {
+.markdown-body {
 
   blockquote {
     border-left: 5px solid var(--normal-text-color);
     margin: 0;
     padding: 0 0 0 10px;
-    background: $border-color;
+    color : var(--third-text-color);
   }
 
+  p {
+    line-height: 2em;
+  }
 
   a {
-    color: $primary-color;
+    color: var(--primary-color);
   }
 
 
@@ -23,39 +26,39 @@
   h1 {
     color: var(--second-text-color);
     font-size: 2.2em;
-    font-weight: 700;
+    font-weight: 600;
   }
 
 
   h2 {
     color: var(--second-text-color);
     font-size: 2em;
-    font-weight: 650;
+    font-weight: 600;
   }
 
   h3 {
     color: var(--second-text-color);
     font-size: 1.8em;
-    font-weight: 600;
+    font-weight: 550;
   }
 
 
   h4 {
     color: var(--second-text-color);
     font-size: 1.6em;
-    font-weight: 550;
+    font-weight: 500;
   }
 
   h5 {
     color: var(--second-text-color);
     font-size: 1.4em;
-    font-weight: 500;
+    font-weight: 450;
   }
 
   h6 {
     color: var(--second-text-color);
     font-size: 1.2em;
-    font-weight: 500;
+    font-weight: 400;
   }
 
 
@@ -63,23 +66,23 @@
     padding: 2px;
     margin: 2px 0;
     width: 100%;
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color);
   }
 
   table:not(figure.highlight) {
 
-    border: solid $border-color;
+    border: solid var(--border-color);
     border-width: 1px 0 0 1px;
 
     thead {
 
-      background: $border-color;
+      background: var(--border-color);
 
       tr {
         th {
           margin: 0;
           padding: 4px;
-          border: solid $border-color;
+          border: solid var(--border-color);
           border-width: 0 1px 1px 0;
         }
       }
@@ -92,7 +95,7 @@
 
         td {
           padding: 4px;
-          border: solid $border-color;
+          border: solid var(--border-color);
           border-width: 0 1px 1px 0;
         }
       }

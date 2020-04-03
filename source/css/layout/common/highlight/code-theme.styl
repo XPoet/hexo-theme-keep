@@ -1,0 +1,70 @@
+@require '../variables.styl'
+
+$code-foreground = lighten($normal-text-color, 2%)
+$code-background = darken($background-color, 5%)
+$highlight-foreground = lighten($normal-text-color, 2%)
+$highlight-background = darken($background-color, 2%)
+$highlight-gutter-color = lighten($normal-text-color, 5%)
+$highlight-gutter-bg-color = darken($background-color, 5%)
+$highlight-comment = #8e908c
+$highlight-red = #c82829
+$highlight-orange = #f5871f
+$highlight-yellow = #eab700
+$highlight-green = #718c00
+$highlight-aqua = #3e999f
+$highlight-blue = #4271ae
+$highlight-purple = #8959a8
+$highlight-deletion = #fdd
+$highlight-addition = #dfd
+
+$night-code-foreground = lighten($dark-normal-text-color, 2%)
+$night-code-background = darken($dark-background-color, 10%)
+$night-highlight-foreground = lighten($dark-normal-text-color, 2%)
+$night-highlight-background = darken($dark-background-color, 8%)
+$night-highlight-gutter-color = lighten($dark-normal-text-color, 5%)
+$night-highlight-gutter-bg-color = darken($dark-background-color, 10%)
+$night-highlight-comment = #969896
+$night-highlight-red = #cc6666
+$night-highlight-orange = #de935f
+$night-highlight-yellow = #f0c674
+$night-highlight-green = #b5bd68
+$night-highlight-aqua = #8abeb7
+$night-highlight-blue = #81a2be
+$night-highlight-purple = #b294bb
+$night-highlight-deletion = #008000
+$night-highlight-addition = #800000
+
+.normal-code-theme {
+  --code-foreground: $code-foreground;
+  --code-background: $code-background;
+  --highlight-background: $highlight-background;
+  --highlight-foreground: $highlight-foreground;
+  --highlight-comment: $highlight-comment;
+  --highlight-red: $highlight-red;
+  --highlight-orange: $highlight-orange;
+  --highlight-yellow: $highlight-yellow;
+  --highlight-green: $highlight-green;
+  --highlight-aqua: $highlight-aqua;
+  --highlight-blue: $highlight-blue;
+  --highlight-purple: $highlight-purple;
+  --highlight-gutter-color: $highlight-gutter-color;
+  --highlight-gutter-bg-color: $highlight-gutter-bg-color;
+}
+
+
+.night-code-theme {
+  --code-foreground: $night-code-foreground;
+  --code-background: $night-code-background;
+  --highlight-background: $night-highlight-background;
+  --highlight-foreground: $night-highlight-foreground;
+  --highlight-comment: $night-highlight-comment;
+  --highlight-red: $night-highlight-red;
+  --highlight-orange: $night-highlight-orange;
+  --highlight-yellow: $night-highlight-yellow;
+  --highlight-green: $night-highlight-green;
+  --highlight-aqua: $night-highlight-aqua;
+  --highlight-blue: $night-highlight-blue;
+  --highlight-purple: $night-highlight-purple;
+  --highlight-gutter-color: $night-highlight-gutter-color;
+  --highlight-gutter-bg-color: $night-highlight-gutter-bg-color;
+}

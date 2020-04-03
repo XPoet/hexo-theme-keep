@@ -8,7 +8,7 @@
                     <a class="article-title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
                 </h3>
 
-                <div class="home-article-content markdown">
+                <div class="home-article-content markdown-body">
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
