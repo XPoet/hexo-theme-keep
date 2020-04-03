@@ -3,40 +3,68 @@
 
   #vcomments {
 
-    .vheader {
+    .vwrap {
 
-      .vinput {
+      border: 1px solid var(--third-text-color);
 
-        &:focus {
-          border-bottom: 1px solid $primary-color !important;
+      .vheader {
+
+        .vinput {
+
+          color: var(--normal-text-color);
+          border-color: var(--third-text-color);
+
+          &:focus {
+            border-bottom: 1px solid var(--primary-color) !important;
+          }
         }
       }
-    }
 
 
-    .vcontrol {
-      .col-20 a {
-        display: none;
-      }
+      .vedit {
 
-      .col-80 {
-        button.vsubmit {
-          background: transparent !important;
-          color: var(--normal-text-color); !important;
-          border: 1px solid var(--normal-text-color); !important;
+        .veditor {
+          color: var(--normal-text-color);
+        }
 
-
-          &:hover {
-            color: $primary-color !important;
-            border: 1px solid $primary-color !important;
+        .vctrl {
+          span {
+            color: var(--normal-text-color);
           }
         }
 
       }
 
+      .vcontrol {
+        .col-20 a {
+          display: none;
+        }
+
+        .col-80 {
+          button.vsubmit {
+            background: transparent !important;
+            color: var(--normal-text-color) !important;
+            border: 1px solid var(--normal-text-color) !important;
+
+            &:hover {
+              color: var(--primary-color) !important;
+              border: 1px solid var(--primary-color) !important;
+            }
+          }
+        }
+      }
+
 
     }
 
+
+    .vcount {
+      color: var(--normal-text-color);
+
+      .vnum {
+        color: var(--second-text-color);
+      }
+    }
 
     .vlist {
       .vcard {
@@ -44,19 +72,33 @@
           .vnick {
 
             &::before {
-              background: $primary-color !important;
+              background: var(--primary-color) !important;
             }
-            color: $primary-color;
+            color: var(--primary-color);
+          }
+
+          .vsys {
+            color: var(--normal-text-color);
+            background: var(--border-color) !important;
+            opacity: 0.8;
+          }
+        }
+
+        .vcontent {
+          P {
+            color: var(--normal-text-color);
           }
         }
       }
     }
+
 
     .info {
       .txt-right {
         display none
       }
     }
+
   }
 
 

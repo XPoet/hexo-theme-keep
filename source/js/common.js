@@ -6,9 +6,7 @@ const windowMask = document.querySelector('.window-mask');
 const headerHeight = header.getBoundingClientRect().height;
 
 window.addEventListener('scroll', function (_e) {
-
-    const scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-
+    const scrollTop = document.body.scrollHeight || document.documentElement.scrollHeight;
     if (!isHeaderShrink && scrollTop > headerHeight) {
         isHeaderShrink = true;
         header.classList.add('header-wrapper-shrink');
@@ -27,3 +25,5 @@ menuBar.addEventListener('click', function (_e) {
 windowMask.addEventListener('click', function (_e) {
     header.classList.toggle('header-drawer-show');
 });
+
+
