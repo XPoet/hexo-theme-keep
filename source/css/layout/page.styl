@@ -35,6 +35,24 @@
       transition: all 0.5s ease;
     }
 
+    .scroll-to-top {
+      position: fixed;
+      right: 5%;
+      bottom: 20px;
+      border-radius: 2px;
+      padding: 2px 6px;
+      color: var(--frist-text-color);
+      background: var(--border-color);
+      cursor: pointer;
+
+      button {
+        color: var(--frist-text-color);
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
   }
 
   .page-bottom {
@@ -58,4 +76,13 @@
   .main-content {
     width: $main-content-width * 1.2 !important;
   }
+
+  .sidebar-tools {
+    right: 2% !important;
+  }
+
+  .scroll-to-top {
+    right: 2% !important;
+  }
+
 }
