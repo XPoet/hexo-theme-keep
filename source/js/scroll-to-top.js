@@ -1,5 +1,4 @@
-const scrollToTop = document.querySelector('.scroll-to-top');
-scrollToTop.addEventListener('click', () => {
+scrollToTopDom.addEventListener('click', () => {
     let scrollTopTimer = setInterval(function () {
         let top = document.body.scrollTop || document.documentElement.scrollTop;
         let speed = top / 4;
@@ -13,9 +12,4 @@ scrollToTop.addEventListener('click', () => {
         }
     }, 30);
 });
-
-if (document.body.scrollHeight <= window.document.documentElement.clientHeight) {
-    scrollToTop.style.display = 'none';
-}
-
 
