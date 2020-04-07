@@ -1,8 +1,8 @@
 # theme basic info
 theme_info:
-  author: XPoet
   name: ILS-X
   version: 1.0.0
+  author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
 # navigation menu
