@@ -1,11 +1,25 @@
-.animated {
+the-transition() {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+the-transition-ease-in() {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transition-delay: 0s;
+}
+
+the-transition-ease-out() {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+
+.fade-in-down-animation {
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-name fade-in-down
-}
-
-.animated.hinge {
-  animation-duration: 1s;
 }
 
 @keyframes fade-in-down {
@@ -20,22 +34,30 @@
   }
 }
 
-the-transition() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-}
+.title-hover-animation {
+  display: inline-block;
+  position: relative;
+  color: var(--second-text-color);
+  border-bottom: none;
+  line-height: 1.3;
+  vertical-align: top;
 
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--second-text-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    the-transition();
+  }
 
-the-transition-ease-in() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in;
-  transition-delay: 0s;
-}
+  &:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 
-
-the-transition-ease-out() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
 }

@@ -1,3 +1,3 @@
 window.addEventListener('DOMContentLoaded', () => {
-    console.log(`${CONFIG.themeName} v${CONFIG.themeVersion}`);
+    console.log(`${CONFIG.themeInfo.name} v${CONFIG.themeInfo.version}`);
 });

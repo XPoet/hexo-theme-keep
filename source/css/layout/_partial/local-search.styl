@@ -1,6 +1,6 @@
 @require '../common/variables.styl'
 
-$icon-size = 18px;
+$icon-size = 1.2em;
 
 .search-pop-overlay {
   display: none;
@@ -25,10 +25,13 @@ $icon-size = 18px;
   width: 70%;
   z-index: $z-index-6;
 
+
   .search-icon, .popup-btn-close {
     color: var(--normal-text-color);
     font-size: $icon-size;
     padding: 0 10px;
+    display: flex;
+    align-items: center;
   }
 
   .popup-btn-close {
@@ -54,7 +57,7 @@ input.search-input {
   border: 0;
   outline: 0;
   width: 100%;
-  font-size: 16px;
+  font-size: 1.2em;
 
   &::-webkit-search-cancel-button {
     display: none;

@@ -1,16 +1,16 @@
-<% if(theme.valine.enable && theme.valine.appid && theme.valine.appkey) { %>
+<% if(theme.comments.valine.enable && theme.comments.valine.appid && theme.comments.valine.appkey) { %>
     <div class="valine-container">
         <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
         <div id="vcomments"></div>
         <script>
             new Valine({
                 el: '#vcomments',
-                appId: '<%= theme.valine.appid %>',
-                appKey: '<%= theme.valine.appkey %>',
-                notify: '<%= theme.valine.notify %>',
-                verify: '<%= theme.valine.verify %>',
+                appId: '<%= theme.comments.valine.appid %>',
+                appKey: '<%= theme.comments.valine.appkey %>',
+                notify: '<%= theme.comments.valine.notify %>',
+                verify: '<%= theme.comments.valine.verify %>',
                 avatar: 'wavatar',
-                placeholder: '<%= theme.valine.placeholder %>',
+                placeholder: '<%= theme.comments.valine.placeholder %>',
                 lang: '<%= config.language%>'.toLowerCase()
             })
         </script>

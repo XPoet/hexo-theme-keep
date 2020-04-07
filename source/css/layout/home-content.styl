@@ -18,15 +18,15 @@
           top: 50%;
           transform: translateY(-50%);
           left: -16px;
-          width: 2px;
-          height: 20px;
+          width: 3px;
+          height: 22px;
           background: $primary-color;
           transition: all 0.5s ease;
         }
 
         font-weight: 600;
         color: var(--second-text-color);
-        font-size: 22px;
+        font-size: 1.5em;
         margin: 0;
 
         a {
@@ -43,17 +43,27 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        color: var(--third-text-color);
+        font-size: 0.9em;
 
-        span {
-          letter-spacing: 1px;
+        span.article-date {
+          letter-spacing: 0.5px;
         }
 
         hr {
           border: none;
           flex: 1;
           height: 1px;
-          background: $border-color;
+          background: var(--border-color);
           margin: 0 10px;
+        }
+
+        a {
+          color: var(--third-text-color);
+
+          &:hover {
+            color: var(--primary-color)
+          }
         }
       }
 

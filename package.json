@@ -1,5 +1,5 @@
 {
-  "name": "hexo-theme-poem",
+  "name": "hexo-theme-ils",
   "version": "0.0.1",
   "description": "A simple and beautiful theme for Hexo.",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/XPoet/hexo-theme-poem.git"
+    "url": "git+ssh://git@github.com/XPoet/hexo-theme-ils.git"
   },
   "author": "XPoet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/XPoet/hexo-theme-poem/issues"
+    "url": "https://github.com/XPoet/hexo-theme-ils/issues"
   },
-  "homepage": "https://github.com/XPoet/hexo-theme-poem#readme"
+  "homepage": "https://github.com/XPoet/hexo-theme-ils#readme"
 }

@@ -1,7 +1,7 @@
 scrollToTopDom.addEventListener('click', () => {
     let scrollTopTimer = setInterval(function () {
         let top = document.body.scrollTop || document.documentElement.scrollTop;
-        let speed = top / 4;
+        let speed = top / 3;
         if (document.body.scrollTop !== 0) {
             document.body.scrollTop -= speed;
         } else {
@@ -12,4 +12,3 @@ scrollToTopDom.addEventListener('click', () => {
         }
     }, 30);
 });
-

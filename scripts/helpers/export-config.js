@@ -13,9 +13,7 @@ hexo.extend.helper.register('export_config', function() {
     hostname  : url.parse(config.url).hostname || config.url,
     root      : config.root,
     localsearch: theme.local_search,
-    themeName: theme.theme_name,
-    themeVersion: theme.theme_version,
-    pageLayout: theme.page
+    themeInfo: theme.theme_info
   };
   if (config.search) {
     exportConfig.path = config.search.path;
