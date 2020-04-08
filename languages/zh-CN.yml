@@ -2,7 +2,6 @@ categories: 分类
 search: 搜索...
 tags: 标签
 tagcloud: 标签云
-tweets: 推文
 prev: 上一页
 next: 下一页
 comment: 留言
@@ -19,3 +18,4 @@ archives: 归档
 about: 关于
 site_uv: 访问人数
 site_pv: 总访问量
+links: 友链

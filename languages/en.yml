@@ -2,7 +2,6 @@ categories: Categories
 search: Search...
 tags: Tags
 tagcloud: Tag Cloud
-tweets: Tweets
 prev: Prev
 next: Next
 comment: Comments
@@ -19,3 +18,4 @@ archives: Archives
 about: About
 site_uv: UV
 site_pv: PV
+links: Links
