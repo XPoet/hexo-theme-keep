@@ -1,6 +1,6 @@
 # theme basic info
 theme_info:
-  name: ILS-X
+  name: ILS
   version: 1.0.0
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
@@ -10,6 +10,8 @@ menu:
   Home: /
   Archives: /archives
   About: /about
+  # Links: /links
+  # ...
 
 # RSS
 rss: /atom.xml
@@ -17,10 +19,9 @@ rss: /atom.xml
 # favicon
 favicon: images/favicon.png
 
-# comment system
+# comment plugin
 comments:
   # Valine.
-  # You can get your appid and appkey from https://leancloud.cn
   # more info please open https://github.com/xCss/Valine
   valine:
     enable: false
@@ -28,7 +29,7 @@ comments:
     appkey:   # your leancloud application appkey
     notify: false # mail notifier, https://github.com/xCss/Valine/wiki
     verify: false # Verification code
-    placeholder: 填写昵称和邮箱才能收到回复通知哦~
+    placeholder: your placeholder
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
