@@ -28,29 +28,26 @@
         }
 
         .vctrl {
-          span {
-            color: var(--normal-text-color);
+          .vicon {
+
+            fill: var(--normal-text-color);
+
+            &.actived {
+              fill: var(--primary-color);
+            }
           }
         }
 
       }
 
-      .vcontrol {
-        .col-20 a {
-          display: none;
-        }
+      button.vsubmit {
+        background: transparent !important;
+        color: var(--normal-text-color) !important;
+        border: 1px solid var(--normal-text-color) !important;
 
-        .col-80 {
-          button.vsubmit {
-            background: transparent !important;
-            color: var(--normal-text-color) !important;
-            border: 1px solid var(--normal-text-color) !important;
-
-            &:hover {
-              color: var(--primary-color) !important;
-              border: 1px solid var(--primary-color) !important;
-            }
-          }
+        &:hover {
+          color: var(--primary-color) !important;
+          border: 1px solid var(--primary-color) !important;
         }
       }
 
@@ -66,39 +63,29 @@
       }
     }
 
-    .vlist {
-      .vcard {
-        .vhead {
-          .vnick {
-
-            &::before {
-              background: var(--primary-color) !important;
-            }
-            color: var(--primary-color);
-          }
-
-          .vsys {
-            color: var(--normal-text-color);
-            background: var(--border-color) !important;
-            opacity: 0.8;
-          }
+    .vcard {
+      .vhead {
+        .vnick {
+          color: var(--primary-color);
         }
 
-        .vcontent {
-          P {
-            color: var(--normal-text-color);
-          }
+        .vsys {
+          color: var(--normal-text-color);
+          background: var(--border-color) !important;
+          opacity: 0.8;
+        }
+      }
+
+      .vcontent {
+        P {
+          color: var(--normal-text-color);
         }
       }
     }
 
 
-    .info {
-      .txt-right {
-        //display: none;
-
-
-      }
+    .vcopy {
+      color: var(--third-text-color);
     }
 
   }
