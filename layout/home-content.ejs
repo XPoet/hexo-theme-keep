@@ -3,7 +3,9 @@
         <% page.posts.forEach(post => { %>
             <li class="home-article-item">
                 <h3 class="home-article-title">
-                    <a class="title-hover-animation" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                    <a class="title-hover-animation" href="<%- url_for(post.path) %>">
+                        <%= (post.top ? `[${__('top')}] ` : '') + post.title %>
+                    </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
