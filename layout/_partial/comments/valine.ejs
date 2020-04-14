@@ -1,4 +1,8 @@
-<% if(theme.comments.valine.enable && theme.comments.valine.appid && theme.comments.valine.appkey) { %>
+<% if(
+        theme.comments.valine.enable
+        && theme.comments.valine.appid
+        && theme.comments.valine.appkey
+) { %>
     <div class="valine-container">
         <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
         <div id="vcomments"></div>
@@ -11,7 +15,7 @@
                 verify: '<%= theme.comments.valine.verify %>',
                 avatar: 'wavatar',
                 placeholder: '<%= theme.comments.valine.placeholder %>',
-                lang: '<%= config.language%>'.toLowerCase()
+                lang: '<%= config.language %>'.toLowerCase()
             })
         </script>
     </div>

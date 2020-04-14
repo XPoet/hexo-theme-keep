@@ -1,0 +1,9 @@
+<div class="comments-container">
+    <% if (theme.comments.valine.enable && theme.comments.gitalk.enable) { %>
+        <%- partial('valine') %>
+    <% } else if (theme.comments.valine.enable) { %>
+        <%- partial('valine') %>
+    <% } else if (theme.comments.gitalk.enable) { %>
+        <%- partial('gitalk') %>
+    <% } %>
+</div>

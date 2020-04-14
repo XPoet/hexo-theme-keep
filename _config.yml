@@ -30,6 +30,16 @@ comments:
     notify: false # mail notifier, https://github.com/xCss/Valine/wiki
     verify: false # Verification code
     placeholder: your placeholder
+  
+  # Gitalk
+  # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
+  gitalk:
+    enable: false
+    github_id:     # GitHub repo owner
+    repository:    # Repository name to store issues
+    client_id:     # GitHub Application Client ID
+    client_secret: # GitHub Application Client Secret
+    distraction_free_mode: false # Facebook-like distraction free mode
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
