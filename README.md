@@ -4,10 +4,10 @@
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-ils.svg)](https://github.com/XPoet/hexo-theme-ils/releases)
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-ils.svg)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
 
-**一款简约大气的Hexo主题。**  
+**一款简约大气的 Hexo 主题。**  
 **A simple and atmospheric theme for Hexo.**
 
-- [Preview 预览](https://xpoet.cn)
+**[Online Preview 在线预览](https://xpoet.cn)**
 
 如你所见，ILS 界面设计十分简洁、清爽，但功能齐全、不失优雅，这正是 ILS 的开发理念。也曾尝试过花里胡哨，发现不仅容易审美疲劳，而且背驰了写博客的初衷，记录生活、展示文字，应该才是搭建博客网站的最终追求，为此 ILS 应运而生。简约大气、不缺美感、突出内容、化繁为简、配置简单、长期维护，如果你也喜欢或认可这些主题特点，一起来折腾吧~
 
@@ -46,6 +46,9 @@
 - ......
 
 ## Get start 快速开始
+
+在开始使用主题之前，强烈建议你先阅读 「Easy Hexo 团队」撰写的 Hexo 教程！
+链接：https://easyhexo.com/
 
 ### Install 安装
 
@@ -115,7 +118,7 @@ comments:
     notify: false # mail notifier, https://github.com/xCss/Valine/wiki
     verify: false # Verification code
     placeholder: your placeholder
-  
+
   # Gitalk
   # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
   # 如何使用 gitalk, 请前往 https://github.com/gitalk/gitalk
@@ -165,24 +168,31 @@ local_search:
 ```
 
 ### Comment function 评论功能
+
 主题内置了 Valine 和 Gitalk 两款评论插件，你只能使用其他一款，如果两款评论插件的 enable 都设为了 true，将使用 Valine。
 
 #### Valine 用法
+
 前往 https://github.com/xCss/Valine 查看 Valine 如何使用，获取必要的参数，填写在配置文件里。
 
 #### Gitalk 用法
+
 1. 在自己的 GitHub 账号下创建新的 OAuth App ，传送门：https://github.com/settings/applications/new，Homepage URL 和 Authorization callback URL 均填写自己的域名。
 2. 在自己的 GitHub 账号下创建新的 repository 并打开 Issues，用于存储评论内容。
-3. 把 自己的 GitHub 用户名称、repository 名称 、OAuth App 的 Client ID 、Client Secret 分别填写在主题配置文件里。  
+3. 把 自己的 GitHub 用户名称、repository 名称 、OAuth App 的 Client ID 、Client Secret 分别填写在主题配置文件里。
 
 **前往 https://github.com/gitalk/gitalk 查看 Gitalk 用法的更多信息。**
 
 ### Post top 文章顶置
-实现文章顶置功能，需在 Hexo 博客根目录下安装插件 **hexo-generator-index-pin-top**  
+
+实现文章顶置功能，需在 Hexo 博客根目录下安装插件 **hexo-generator-index-pin-top**
+
 ```bash
 npm install hexo-generator-index-pin-top
 ```
+
 然后在 `_posts` 文件夹里的需要顶置的文章页添加 `top` 属性，**top** 值越大，顶置越靠前，参考如下。
+
 ```markdown
 ---
 title: 千呼万唤始出来，hexo-theme-ils v1.0.0 正式分布
