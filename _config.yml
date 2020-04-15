@@ -14,7 +14,8 @@ menu:
   # ...
 
 # RSS
-rss: /atom.xml
+rss:
+  enable: false
 
 # favicon
 favicon: images/favicon.png

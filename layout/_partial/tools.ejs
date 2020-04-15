@@ -9,5 +9,10 @@
         <li class="mode-toggle">
             <i class="fa fa-moon-o"></i>
         </li>
+        <% if (theme.local_search.enable) { %>
+            <li class="rss">
+                <a href="<%= config.feed.path %>" target="_blank"><i class="fa fa-rss"></i></a>
+            </li>
+        <% } %>
     </ul>
 </div>

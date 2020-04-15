@@ -98,8 +98,9 @@ menu:
   ...
 
 # RSS
-# RSS 订阅，v1.0.0 未实现（欢迎PR）。
-rss: /atom.xml
+# 若要启用 RSS 订阅功能，需安装 Hexo 插件 hexo-generator-feed。
+rss:
+  enable: false
 
 # favicon
 # 网站 icon 图标，换成自己的图片即可。
