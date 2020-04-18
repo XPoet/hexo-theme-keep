@@ -1,1 +1,9 @@
-<%- js(['js/main.js', 'js/header-shrink.js', 'js/toggle-mode.js', 'js/scroll-to-top.js']) %>
+<%- js([
+    'js/main.js',
+    'js/header-shrink.js',
+    'js/toggle-mode.js',
+    'js/scroll-to-top.js'
+]) %>
+<% if (theme.codeblock.copy_button.enable) { %>
+    <%- js('js/code-copy.js') %>
+<% } %>

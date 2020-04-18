@@ -15,7 +15,7 @@ menu:
 
 # RSS
 rss:
-  enable: false
+  enable: true
 
 # favicon
 favicon: images/favicon.png
@@ -67,3 +67,9 @@ local_search:
   unescape: false
   # Preload the search data when the page loads.
   preload: false
+
+# Code Block
+codeblock:
+  style: flat  # Available values: default | flat | mac
+  copy_button:
+    enable: true
