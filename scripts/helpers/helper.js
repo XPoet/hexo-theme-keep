@@ -15,7 +15,7 @@ hexo.extend.helper.register('createNewArchivePosts', function (posts) {
             postList: []
         })
     });
-    postList.sort((a, b) => b.year - a.year);
+    postList.sort((a, b) => b.year - a.year)
     postList.forEach(item => {
         posts.forEach(post => item.year === post.date.year() && item.postList.push(post))
     });
