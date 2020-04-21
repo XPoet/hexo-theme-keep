@@ -4,26 +4,39 @@
     </div>
 
     <div class="page-middle">
+
         <main class="main-content normal-code-theme">
-            <% if (is_home()) { %>
-                <%- partial('home-content') %>
+            <div class="main-content-left">
+                <% if (is_home()) { %>
+                    <%- partial('home-content') %>
 
-            <% } else if (is_archive()) { %>
-                <%- partial('archive-content') %>
+                <% } else if (is_archive()) { %>
+                    <%- partial('archive-content') %>
 
-            <% } else if (is_post()) { %>
-                <%- partial('article-content') %>
+                <% } else if (is_post()) { %>
+                    <%- partial('article-content') %>
 
-            <% } else if (is_category()) { %>
-                <%- partial('category-content') %>
+                <% } else if (is_category()) { %>
+                    <%- partial('category-content') %>
 
-            <% } else if (is_tag()) { %>
-                <%- partial('tag-content') %>
+                <% } else if (is_tag()) { %>
+                    <%- partial('tag-content') %>
 
-            <% } else if (page.title == 'about') { %>
-                <%- partial('about') %>
-            <% } %>
+                <% } else if (page.title == 'about') { %>
+                    <%- partial('about') %>
+                <% } %>
+            </div>
+            <div class="main-content-right">
+                <!-- TODO -->
+            </div>
         </main>
+
+        <% if (is_post() && theme.toc.enable) { %>
+            <div class="sidebar-toc">
+                <%- partial('_partial/sidebar-toc') %>
+            </div>
+        <% } %>
+
         <div class="sidebar-tools">
             <%- partial('_partial/tools') %>
         </div>
@@ -32,6 +45,7 @@
             <span class="scroll-percent"></span>
             <button><i class="fa fa-caret-up"></i></button>
         </div>
+
     </div>
 
     <div class="page-bottom">

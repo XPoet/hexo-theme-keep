@@ -4,6 +4,16 @@
     'js/toggle-mode.js',
     'js/scroll-to-top.js'
 ]) %>
-<% if (theme.codeblock.copy_button.enable) { %>
-    <%- js('js/code-copy.js') %>
+
+<% if (is_post()) { %>
+
+    <% if (theme.codeblock.copy_button.enable) { %>
+        <%- js('js/code-copy.js') %>
+    <% } %>
+
+    <% if (theme.toc.enable) { %>
+        <%- js(['lib/anime.min.js', 'js/toc.js']) %>
+    <% } %>
+
 <% } %>
+

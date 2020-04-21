@@ -4,7 +4,6 @@
   padding-top: $header-height;
   position: relative;
 
-
   .page-top {
     position: fixed;
     top: 0;
@@ -14,31 +13,54 @@
     transition: all 0.5s ease;
   }
 
+
   .page-middle {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
 
     .main-content {
       width: $main-content-width;
       height: 100%;
       position: relative;
-      padding: 40px 0;
+
+      .main-content-left {
+        position: relative;
+        float: left;
+        padding: 40px 0;
+        width: 100%;
+      }
+
+      .main-content-right {
+        position: relative;
+        float: right;
+        width: 0;
+      }
     }
 
+
+    .sidebar-toc {
+      position: fixed;
+      top: $header-height + 50px;
+      right: 3%;
+      transition: all 0.5s ease;
+      width: 180px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
 
     .sidebar-tools {
       position: fixed;
       top: $header-height + 50px;
-      right: 5%;
+      left: 4%;
       transition: all 0.5s ease;
     }
+
 
     .scroll-to-top {
       display: none;
       position: fixed;
-      right: 5%;
+      right: 4%;
       bottom: 20px;
       border-radius: 2px;
       padding: 2px 6px;
@@ -71,6 +93,10 @@
   .sidebar-tools {
     top: $header-shrink-height + 50px !important;
   }
+
+  .sidebar-toc {
+    top: $header-shrink-height + 50px !important;
+  }
 }
 
 @media screen and (max-width: $media-max-width) {
@@ -79,6 +105,10 @@
   }
 
   .sidebar-tools {
+    left: 2% !important;
+  }
+
+  .sidebar-toc {
     right: 2% !important;
   }
 

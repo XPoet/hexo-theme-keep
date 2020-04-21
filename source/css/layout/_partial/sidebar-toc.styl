@@ -1,0 +1,78 @@
+@require '../common/variables.styl'
+
+.post-toc-wrap {
+
+  width: 100%;
+  height: 100%;
+
+
+  .post-toc {
+    padding: 5px;
+    font-size: 0.85em;
+    border: 1px solid var(--border-color);
+
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0 2px 5px 10px;
+      text-align: left;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      > ol {
+        padding-left: 0;
+      }
+
+      a {
+        transition-property: all;
+        the-transition();
+      }
+    }
+
+    .nav-item {
+      line-height: 1.8;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      if (!hexo-config('toc.wrap')) {
+        white-space: nowrap;
+      }
+    }
+
+    .nav {
+      .nav-child {
+        display: hexo-config('toc.expand_all') ? block:none;
+      }
+
+      .active > .nav-child {
+        display: block;
+      }
+
+      .active-current > .nav-child {
+        display: block;
+
+        > .nav-item {
+          display: block;
+        }
+      }
+
+      .active > a {
+        border-bottom-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+
+      .active-current > a {
+        color: var(--primary-color);
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+
+}
+
