@@ -1,16 +1,20 @@
 @require 'variables.styl'
 @require 'animated.styl'
+@require 'magic-theme.styl'
 
 html, body {
   margin: 0;
   padding: 0;
   color: var(--normal-text-color);
-  background: var(--background-color);
+  if (hexo-config('magic.enable') == true) {
+    background: var(--magic-background-color);
+  } else {
+    background: var(--background-color);
+  }
   font-size: $default-font-size;
   font-family: $default-font-family;
   font-weight: $default-font-weight;
   line-height: $default-font-line-height;
-  transition: all 0.5s ease;
 }
 
 ::selection {
@@ -49,14 +53,20 @@ button {
   position: relative;
   text-align: center;
   cursor: pointer;
-  color: var(--third-text-color);
-  border: 1px solid var(--third-text-color);
   white-space: nowrap;
-  border-radius: 10em;
+  border-radius: 5px;
   padding: 0.5em 1em;
+  background: var(--background-color);
+  transition();
+  magic-style(1.1);
 
   &:hover {
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    color: var(--background-color);
+    background: var(--primary-color);
   }
+
+  //&:hover {
+  //  color: var(--primary-color);
+  //  border: 1px solid var(--primary-color);
+  //}
 }

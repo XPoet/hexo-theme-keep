@@ -2,6 +2,20 @@
 
 .article-content-container {
 
+  background: var(--background-color);
+
+  if (hexo-config('magic.enable') == true) {
+    box-shadow: 0 0 3px var(--border-color);
+    padding: 30px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+
+    &:hover {
+      box-shadow: 0 0 8px var(--border-color);
+      transform: scaleX(1.008) scaleY(1.004);
+    }
+  }
+
   .article-title {
 
     h3 {
@@ -21,6 +35,7 @@
   }
 
   .article-content {
+    text-align: justify;
     padding-bottom: 30px;
     border-bottom: 1px solid $border-color;
   }

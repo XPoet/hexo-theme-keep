@@ -85,3 +85,10 @@ toc:
   expand_all: false
   # Maximum heading depth of generated toc.
   max_depth: 6
+
+# magic theme style
+magic:
+  enable: true
+  sidebar:
+    enable: false
+    position: right

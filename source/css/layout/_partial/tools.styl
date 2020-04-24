@@ -1,34 +1,54 @@
 @require '../common/variables.styl'
+@require '../common/magic-theme.styl'
+
+$li-padding = 10px;
+$li-border-radius = 5px;
+$li-margin-bottom = 10px;
+
 
 .tools-container {
 
   .tools-list {
     li {
       cursor: pointer;
-      padding: 5px;
-      border-radius: 50%;
-      border: 1px solid var(--third-text-color);
-      width: 26px;
-      height: 26px;
+      padding: $li-padding;
+      border-radius: $li-border-radius;
       font-size: 1.2em;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
+      margin-bottom: $li-margin-bottom;
+      background: var(--background-color);
+
+      if (hexo-config('magic.enable') == true) {
+        magic-style(1.1);
+      } else {
+        border: 1px solid var(--third-text-color);
+      }
 
       &.rss {
+        padding: 0;
+
         a {
+          border-radius: $li-border-radius;
+          padding: $li-padding;
           display: flex;
           align-items: center;
           justify-content: center;
           width: 100%;
           height: 100%;
+
+          &:hover {
+            color: var(--background-color);
+            background: var(--primary-color);
+          }
         }
       }
 
+
       &:hover {
-        color: var(--primary-color);
-        border-color: var(--primary-color);
+        color: var(--background-color);
+        background: var(--primary-color);
       }
 
       &:last-child {

@@ -1,5 +1,21 @@
+@require "./common/magic-theme.styl";
+
 .about-container {
+
+  background: var(--background-color);
+
+  magic-container(1.01);
+
   .about-content {
-    margin-bottom: 40px;
+
+    h1, h2, h3, h4, h5, h6 {
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+    }
+
+    margin-bottom: 30px;
   }
 }

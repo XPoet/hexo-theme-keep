@@ -6,6 +6,7 @@
     <div class="page-middle">
 
         <main class="main-content normal-code-theme">
+
             <div class="main-content-left">
                 <% if (is_home()) { %>
                     <%- partial('home-content') %>
@@ -26,16 +27,13 @@
                     <%- partial('about') %>
                 <% } %>
             </div>
-            <div class="main-content-right">
-                <!-- TODO -->
-            </div>
-        </main>
 
-        <% if (is_post() && theme.toc.enable) { %>
-            <div class="sidebar-toc">
-                <%- partial('_partial/sidebar-toc') %>
-            </div>
-        <% } %>
+            <% if (theme.magic.enable && theme.magic.sidebar.enable) { %>
+                <div class="main-content-right">
+                    <%- partial('_partial/sidebar') %>
+                </div>
+            <% } %>
+        </main>
 
         <div class="sidebar-tools">
             <%- partial('_partial/tools') %>

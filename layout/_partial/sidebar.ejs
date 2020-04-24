@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <% if (is_home()) { %>
+        <%- partial('sidebar-category') %>
+    <% } else if (is_archive()) { %>
+        <%- partial('site-info') %>
+    <% } else if (is_post() && theme.toc.enable ) { %>
+        <%- partial('sidebar-toc') %>
+    <% } else if (is_category()) { %>
+        <%- partial('site-info') %>
+    <% } else if (is_tag()) { %>
+        <%- partial('site-info') %>
+    <% } else if (page.title == 'about') { %>
+        <%- partial('site-info') %>
+    <% } %>
+
+</div>

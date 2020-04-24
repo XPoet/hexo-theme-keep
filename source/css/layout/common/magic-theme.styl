@@ -1,0 +1,21 @@
+magic-style(scale) {
+  if (hexo-config('magic.enable') == true) {
+
+    box-shadow: 0 0 3px var(--border-color);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0 8px var(--border-color);
+      transform: scale(scale);
+    }
+  }
+
+}
+
+magic-container(scale) {
+  if (hexo-config('magic.enable') == true) {
+    magic-style(scale);
+    padding: 30px;
+    border-radius: 2px;
+  }
+}

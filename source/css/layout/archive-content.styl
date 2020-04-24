@@ -1,10 +1,15 @@
-@require 'common/variables.styl'
+@require "./common/variables.styl";
+@require "./common/magic-theme.styl";
 
 $archive-year-font-size = 1.8em;
 $article-title-font-size = 1.12em;
 $article-date-font-size = 0.8em;
 
 .archive-container {
+
+  background: var(--background-color);
+
+  magic-container(1.01);
 
   .archive-item {
     margin-bottom: 40px;

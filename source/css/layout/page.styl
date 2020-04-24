@@ -1,4 +1,8 @@
-@require "common/variables.styl"
+@require "common/variables.styl";
+@require "./common/animated.styl";
+
+// 组件间隔
+$component-interspace = 30px;
 
 .page-template {
   padding-top: $header-height;
@@ -10,7 +14,8 @@
     width: 100%;
     height: $header-height;
     z-index: $z-index-5;
-    transition: all 0.5s ease;
+    box-sizing: border-box;
+    transition();
   }
 
 
@@ -18,50 +23,51 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: $component-interspace 0;
 
     .main-content {
       width: $main-content-width;
       height: 100%;
       position: relative;
+      box-sizing: border-box;
+
+      if (hexo-config('magic.enable') && hexo-config('magic.sidebar.enable') == true) {
+
+        padding-right: $sidebar-width + $component-interspace;
+
+        .main-content-right {
+          position: absolute;
+          right: 0;
+          width: $sidebar-width;
+          box-sizing: border-box;
+        }
+
+      }
+
 
       .main-content-left {
         position: relative;
         float: left;
-        padding: 40px 0;
         width: 100%;
+        box-sizing: border-box;
       }
 
-      .main-content-right {
-        position: relative;
-        float: right;
-        width: 0;
-      }
-    }
 
-
-    .sidebar-toc {
-      position: fixed;
-      top: $header-height + 50px;
-      right: 3%;
-      transition: all 0.5s ease;
-      width: 180px;
-      max-height: 500px;
-      overflow-y: auto;
     }
 
     .sidebar-tools {
       position: fixed;
-      top: $header-height + 50px;
-      left: 4%;
-      transition: all 0.5s ease;
+      top: $header-height + $component-interspace;
+      left: ((100% - $main-content-width) / 4);
+      transition();
     }
 
 
     .scroll-to-top {
       display: none;
       position: fixed;
-      right: 4%;
-      bottom: 20px;
+      right: ((100% - $main-content-width) / 4);
+      bottom: $component-interspace;
       border-radius: 2px;
       padding: 2px 6px;
       color: var(--frist-text-color);
@@ -91,11 +97,11 @@
   }
 
   .sidebar-tools {
-    top: $header-shrink-height + 50px !important;
+    top: $header-shrink-height + $component-interspace !important;
   }
 
   .sidebar-toc {
-    top: $header-shrink-height + 50px !important;
+    top: $header-shrink-height + $component-interspace !important;
   }
 }
 
@@ -106,14 +112,15 @@
 
   .sidebar-tools {
     left: 2% !important;
+    transform-origin: right top;
+    transform: scale(0.8);
   }
 
-  .sidebar-toc {
-    right: 2% !important;
-  }
-
-  .scroll-to-top {
-    right: 2% !important;
-  }
+  //.sidebar-toc {
+  //  right: 2% !important;
+  //}
+  //.scroll-to-top {
+  //  right: 2% !important;
+  //}
 
 }

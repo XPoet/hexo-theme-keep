@@ -1,0 +1,15 @@
+@require "../common/variables.styl"
+.sidebar {
+  position: fixed;
+  width: $sidebar-width;
+  background: var(--background-color);
+  box-shadow: 0 0 3px var(--border-color);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+
+  &:hover {
+    box-shadow: 0 0 8px var(--border-color);
+    transform: scale(1.02);
+  }
+
+}

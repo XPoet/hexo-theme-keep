@@ -11,7 +11,7 @@
         <%- js('js/code-copy.js') %>
     <% } %>
 
-    <% if (theme.toc.enable) { %>
+    <% if (theme.toc.enable && theme.magic.enable && theme.magic.sidebar.enable) { %>
         <%- js(['lib/anime.min.js', 'js/toc.js']) %>
     <% } %>
 
