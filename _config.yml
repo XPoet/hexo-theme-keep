@@ -1,7 +1,7 @@
 # theme basic info
 theme_info:
   name: ILS
-  version: 1.0.0
+  version: 1.0
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
@@ -26,20 +26,20 @@ comments:
   # more info please open https://github.com/xCss/Valine
   valine:
     enable: false
-    appid:    # your leancloud application appid
-    appkey:   # your leancloud application appkey
-    notify: false # mail notifier, https://github.com/xCss/Valine/wiki
-    verify: false # Verification code
+    appid:          # your leancloud application appid
+    appkey:         # your leancloud application appkey
+    notify: false   # mail notifier, https://github.com/xCss/Valine/wiki
+    verify: false   # Verification code
     placeholder: your placeholder
   
   # Gitalk
   # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
   gitalk:
     enable: false
-    github_id:     # GitHub repo owner
-    repository:    # Repository name to store issues
-    client_id:     # GitHub Application Client ID
-    client_secret: # GitHub Application Client Secret
+    github_id:       # GitHub repo owner
+    repository:      # Repository name to store issues
+    client_id:       # GitHub Application Client ID
+    client_secret:   # GitHub Application Client Secret
     distraction_free_mode: false # Facebook-like distraction free mode
 
 # Show PV/UV of the website/page with busuanzi.
