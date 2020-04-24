@@ -1,7 +1,7 @@
 # theme basic info
 theme_info:
   name: ILS
-  version: 1.0
+  version: 1.0.2
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
@@ -25,13 +25,12 @@ comments:
   # Valine.
   # more info please open https://github.com/xCss/Valine
   valine:
-    enable: false
-    appid:          # your leancloud application appid
-    appkey:         # your leancloud application appkey
-    notify: false   # mail notifier, https://github.com/xCss/Valine/wiki
-    verify: false   # Verification code
-    placeholder: your placeholder
-  
+    enable: false           # true or false
+    appid:                  # your leancloud application appid
+    appkey:                 # your leancloud application appkey
+    meta:                   # type: Array, default: ['nick','mail','link']
+    placeholder: Please share your thoughts with us in the comments below!  #your placeholder
+
   # Gitalk
   # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
   gitalk:
