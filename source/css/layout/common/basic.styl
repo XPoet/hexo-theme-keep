@@ -57,16 +57,16 @@ button {
   border-radius: 5px;
   padding: 0.5em 1em;
   background: var(--background-color);
-  transition();
-  magic-style(1.1);
+
+  if (hexo-config('magic.enable') == true) {
+    magic-style(1.1);
+  } else {
+    border: 1px solid var(--third-text-color);
+  }
 
   &:hover {
+    transition();
     color: var(--background-color);
     background: var(--primary-color);
   }
-
-  //&:hover {
-  //  color: var(--primary-color);
-  //  border: 1px solid var(--primary-color);
-  //}
 }
