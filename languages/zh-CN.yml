@@ -9,7 +9,7 @@ page: 第 %d 页
 recent_posts: 最新文章
 share: 分享
 powered_by: "由 %s 驱动"
-theme_for: 主题
+theme: 主题
 rss_feed: RSS Feed
 category: 分类
 tag: 标签
@@ -20,3 +20,4 @@ site_uv: 访问人数
 site_pv: 总访问量
 links: 友链
 top: 顶置
+read_more: 阅读全文

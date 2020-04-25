@@ -33,7 +33,7 @@
                     <% if (theme.magic.enable === false) { %>
                         <hr>
                     <% } %>
-                    <a href="<%- url_for(post.path) %>">阅读全文 <i class="fa fa-angle-right"></i></a>
+                    <a href="<%- url_for(post.path) %>"><%- __('read_more') %> <i class="fa fa-angle-right"></i></a>
                 </div>
             </li>
         <% }) %>
