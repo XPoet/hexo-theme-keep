@@ -1,9 +1,12 @@
 <%- js([
     'js/main.js',
     'js/header-shrink.js',
-    'js/toggle-mode.js',
-    'js/scroll-to-top.js'
+    'js/toggle-mode.js'
 ]) %>
+
+<% if (theme.back2top.enable) { %>
+    <%- js('js/scroll-to-top.js') %>
+<% } %>
 
 <% if (is_post()) { %>
 

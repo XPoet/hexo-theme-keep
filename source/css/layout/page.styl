@@ -58,12 +58,16 @@ $component-interspace = 30px;
     .sidebar-tools {
       position: fixed;
       top: $header-height + $component-interspace;
-      left: ((100% - $main-content-width) / 4);
+      if (hexo-config('side-tools.position') == left) {
+        left: ((100% - $main-content-width) / 4);
+      } else {
+        right: ((100% - $main-content-width) / 4);
+      }
       transition();
     }
 
 
-    .scroll-to-top {
+    /*.scroll-to-top {
       display: none;
       position: fixed;
       right: ((100% - $main-content-width) / 4);
@@ -79,6 +83,44 @@ $component-interspace = 30px;
 
         i {
           font-size: 1.2em;
+        }
+      }
+    }
+*/
+
+    .scroll-to-top {
+      display: none;
+      position: fixed;
+
+      if (hexo-config('back2top.position') == left) {
+        left: ((100% - $main-content-width) / 4);
+      } else {
+        right: ((100% - $main-content-width) / 4);
+      }
+      bottom: $component-interspace;
+
+      li {
+        cursor: pointer;
+        padding: 2px;
+        width: 32px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--background-color);
+
+        if (hexo-config('magic.enable') == true) {
+          magic-style(1.1);
+        } else {
+          border: 1px solid var(--third-text-color);
+        }
+
+        &:hover {
+          transition();
+          color: var(--background-color);
+          background: var(--primary-color);
         }
       }
     }
@@ -111,16 +153,28 @@ $component-interspace = 30px;
   }
 
   .sidebar-tools {
-    left: 2% !important;
-    transform-origin: right top;
+    if (hexo-config('side-tools.position') == left) {
+      left: 2% !important;
+      transform-origin: left top;
+    } else {
+      right: 2% !important;
+      transform-origin: right top;
+    }
     transform: scale(0.8);
   }
 
   //.sidebar-toc {
   //  right: 2% !important;
   //}
-  //.scroll-to-top {
-  //  right: 2% !important;
-  //}
+  .scroll-to-top {
+    if (hexo-config('back2top.position') == left) {
+      left: 2% !important;
+      transform-origin: left bottom;
+    } else {
+      right: 2% !important;
+      transform-origin: right bottom;
+    }
+    transform: scale(0.8);
+  }
 
 }

@@ -26,6 +26,13 @@ $li-margin-bottom = 10px;
         border: 1px solid var(--third-text-color);
       }
 
+      &:hover {
+        transition();
+        color: var(--background-color);
+        background: var(--primary-color);
+      }
+
+
       &.rss {
         padding: 0;
 
@@ -46,12 +53,6 @@ $li-margin-bottom = 10px;
         }
       }
 
-
-      &:hover {
-        transition();
-        color: var(--background-color);
-        background: var(--primary-color);
-      }
 
       &:last-child {
         margin-bottom: 0;

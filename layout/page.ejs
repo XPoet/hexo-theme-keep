@@ -39,11 +39,16 @@
             <%- partial('_partial/tools') %>
         </div>
 
-        <div class="scroll-to-top">
-            <span class="scroll-percent"></span>
-            <button><i class="fa fa-caret-up"></i></button>
-        </div>
-
+        <% if (theme.back2top.enable) { %>
+            <div class="scroll-to-top">
+                <ul>
+                    <li>
+                        <!--<i class="fa fa-caret-up"></i>-->
+                        <span class="scroll-percent"></span>
+                    </li>
+                </ul>
+            </div>
+        <% } %>
     </div>
 
     <div class="page-bottom">
