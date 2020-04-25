@@ -92,3 +92,11 @@ magic:
   sidebar:
     enable: false
     position: right
+
+side-tools:
+  enable: true
+  position: right
+
+back2top:
+  enable: true
+  position: right
