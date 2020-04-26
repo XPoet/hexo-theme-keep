@@ -2,16 +2,16 @@
 @require "../common/magic-theme.styl";
 @require "../common/magic-theme.styl";
 
-$li-padding = 10px;
 $li-border-radius = 5px;
-$li-margin-bottom = 10px;
+$li-margin-bottom = 12px;
 
 .tools-container {
 
   .tools-list {
     li {
       cursor: pointer;
-      padding: $li-padding;
+      width: $tool-button-width;
+      height: $tool-button-width;
       border-radius: $li-border-radius;
       font-size: 1.2em;
       display: flex;
@@ -34,11 +34,9 @@ $li-margin-bottom = 10px;
 
 
       &.rss {
-        padding: 0;
 
         a {
           border-radius: $li-border-radius;
-          padding: $li-padding;
           display: flex;
           align-items: center;
           justify-content: center;
