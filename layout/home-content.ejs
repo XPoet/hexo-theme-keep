@@ -20,7 +20,8 @@
                 <div class="home-article-meta-info">
                     <div class="article-date">
                         <span><i class="fa fa-pencil-square-o"></i> <%= date(post.date, 'YYYY-MM-DD') %></span>
-                        <span>
+                        <% if (theme.magic.enable === true) { %>
+                            <span>
                             <i class="fa fa-folder"></i>
                             <ul>
                                 <% post.categories.forEach((category, i) => { %>
@@ -29,6 +30,7 @@
                                 <% }); %>
                             </ul>
                         </span>
+                        <% } %>
                     </div>
                     <% if (theme.magic.enable === false) { %>
                         <hr>

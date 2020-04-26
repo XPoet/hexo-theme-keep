@@ -53,14 +53,23 @@
         justify-content: space-between;
         align-items: center;
         color: var(--third-text-color);
-        font-size: 1em;
 
+
+        if (hexo-config('magic.enable') == true) {
+          font-size: 1em;
+        } else {
+          font-size: 0.9em;
+        }
 
         .article-date {
           letter-spacing: 0.5px;
 
           span {
-            margin-right: 15px;
+            margin-right: 10px;
+
+            &:last-child {
+              margin-right: 0;
+            }
 
             ul, li {
               display: inline;
@@ -92,10 +101,6 @@
   .paginator {
 
     padding-bottom: 40px;
-
-    .page-number {
-      display: none !important;
-    }
 
     a.prev {
       float: left;
