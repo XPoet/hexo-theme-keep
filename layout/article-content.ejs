@@ -1,4 +1,5 @@
 <div class="article-content-container">
+
     <div class="article-title">
         <h3><a class="title-hover-animation"><%= page.title %></a></h3>
     </div>
@@ -32,3 +33,9 @@
         <%- partial('_partial/comments/comment') %>
     </div>
 </div>
+
+<% if ( (theme.magic.enable && !theme.magic.sidebar.enable && theme.toc.enable) || (!theme.magic.enable && theme.toc.enable)) { %>
+    <div class="article-toc-container">
+        <%- partial('_partial/sidebar-toc') %>
+    </div>
+<% } %>

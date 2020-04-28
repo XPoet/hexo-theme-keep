@@ -1,4 +1,5 @@
 const pageTemplateDom = document.querySelector('.page-template');
+const articleTocContainerDom = document.querySelector('.article-toc-container');
 const headerDom = document.querySelector('.header-wrapper');
 const menuBarDom = document.querySelector('.menu-bar');
 const windowMaskDom = document.querySelector('.window-mask');
@@ -13,10 +14,18 @@ window.addEventListener('scroll', function (_e) {
         isHeaderShrink = true;
         headerDom.classList.add('header-wrapper-shrink');
         pageTemplateDom.classList.add('page-top-shrink');
+
+        if (articleTocContainerDom) {
+            articleTocContainerDom.classList.add('article-toc-container-shrink');
+        }
     } else if (isHeaderShrink && scrollTop <= headerHeight) {
         isHeaderShrink = false;
         headerDom.classList.remove('header-wrapper-shrink');
         pageTemplateDom.classList.remove('page-top-shrink');
+
+        if (articleTocContainerDom) {
+            articleTocContainerDom.classList.remove('article-toc-container-shrink');
+        }
     }
 });
 

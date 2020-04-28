@@ -1,17 +1,24 @@
 @require '../common/variables.styl'
+@require '../common/animated.styl'
+@require '../common/magic-theme.styl'
 
 .post-toc-wrap {
   width: 100%;
   height: 100%;
-  font-size: 0.9em;
-  padding: 10px;
+  font-size: 0.88em;
+  box-sizing: border-box;
+  background: var(--background-color);
+
+  if (hexo-config('magic.enable') && hexo-config('magic.sidebar.enable')) {
+    magic-container(1.02, 30px);
+  }
 
   .post-toc {
 
     ol {
       list-style: none;
       margin: 0;
-      padding: 0 2px 5px 10px;
+      padding: 0 2px 12px 10px;
       text-align: left;
 
       &:last-child {
@@ -24,7 +31,7 @@
 
       a {
         transition-property: all;
-        the-transition();
+        //transition();
       }
     }
 

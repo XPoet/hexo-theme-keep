@@ -1,6 +1,13 @@
-<div class="sidebar">
+<div class="sidebar fade-in-down-animation">
     <% if (is_home()) { %>
-        <%- partial('sidebar-category') %>
+        <div class="home-sidebar-container">
+            <div class="home-sidebar-item">
+                <%- partial('site-info') %>
+            </div>
+            <div class="home-sidebar-item">
+                <%- partial('sidebar-category') %>
+            </div>
+        </div>
     <% } else if (is_archive()) { %>
         <%- partial('site-info') %>
     <% } else if (is_post() && theme.toc.enable ) { %>

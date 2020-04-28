@@ -1,15 +1,19 @@
 @require "../common/variables.styl"
+@require "../common/magic-theme.styl"
 .sidebar {
   position: fixed;
   width: $sidebar-width;
-  background: var(--background-color);
-  box-shadow: 0 0 3px var(--border-color);
-  transition: all 0.3s ease;
-  border-radius: 2px;
+  box-sizing: border-box;
 
-  &:hover {
-    box-shadow: 0 0 8px var(--border-color);
-    transform: scale(1.02);
+  .home-sidebar-container {
+
+    .home-sidebar-item {
+      margin-bottom: $component-interspace;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
   }
-
 }

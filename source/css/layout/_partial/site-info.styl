@@ -1,5 +1,12 @@
+@require "../common/magic-theme.styl"
+
+
 .site-info-container {
   width: 100%;
+  box-sizing: border-box;
+  background: var(--background-color);
+
+  magic-container(1.02, 30px);
 
   .justify-center {
     display: flex;
@@ -7,12 +14,8 @@
   }
 
   .avatar-box {
-
-    padding: 20px 0;
-
     .avatar {
       width: 40%;
-      //border-radius: 50%;
       border-radius: 5px;
       padding: 2px;
       border: 1px solid var(--border-color);
@@ -23,14 +26,10 @@
   .author {
     font-size: 1.6em;
     letter-spacing: 1px;
+    margin: 20px 0;
   }
-
 
   .description {
-    padding: 20px;
     text-align center
   }
-
-
-
 }

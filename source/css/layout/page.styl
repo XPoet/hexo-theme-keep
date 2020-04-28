@@ -1,9 +1,6 @@
 @require "common/variables.styl";
 @require "./common/animated.styl";
 
-// 组件间隔
-$component-interspace = 30px;
-
 .page-template {
   padding-top: $header-height;
   position: relative;
@@ -17,7 +14,6 @@ $component-interspace = 30px;
     box-sizing: border-box;
     transition();
   }
-
 
   .page-middle {
     width: 100%;
@@ -66,6 +62,7 @@ $component-interspace = 30px;
       transition();
     }
 
+
     .scroll-to-top {
       display: none;
       position: fixed;
@@ -103,12 +100,16 @@ $component-interspace = 30px;
     }
   }
 
+
   .page-bottom {
     width: 100%;
   }
 }
 
 .page-top-shrink {
+
+  transition();
+
   padding-top: $header-shrink-height;
 
   .page-top {
@@ -119,9 +120,6 @@ $component-interspace = 30px;
     top: $header-shrink-height + $component-interspace !important;
   }
 
-  .sidebar-toc {
-    top: $header-shrink-height + $component-interspace !important;
-  }
 }
 
 @media screen and (max-width: $media-max-width) {
@@ -143,7 +141,6 @@ $component-interspace = 30px;
   //.sidebar-toc {
   //  right: 2% !important;
   //}
-
   .scroll-to-top {
     if (hexo-config('back2top.position') == left) {
       left: 2% !important;
