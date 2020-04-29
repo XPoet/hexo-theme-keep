@@ -5,15 +5,17 @@
 
   position relative
   background: var(--background-color);
-  magic-container(1.02, 30px);
+  magic-container(1.02, 20px);
 
   .category-label {
-    margin-bottom: 10px;
-    padding-left: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    //padding-left: 10px;
     font-size: 16px;
     font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
 
-    &::after {
+    /*&::after {
       content: '';
       position: absolute;
       top: 20px;
@@ -23,8 +25,9 @@
       background: #333;
 
     }
-
+*/
   }
+
 
   .category-list {
 
@@ -57,6 +60,26 @@
         align-items: center;
         justify-content: center;
         color: var(--background-color);
+
+      }
+    }
+  }
+
+  .post-category-list {
+    .post-category-list-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .post-category-list-link {
+
+      }
+
+      .post-category-list-count {
 
       }
     }
