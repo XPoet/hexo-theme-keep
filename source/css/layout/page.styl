@@ -28,23 +28,35 @@
       position: relative;
       box-sizing: border-box;
 
-      if (hexo-config('magic.enable') && hexo-config('magic.sidebar.enable') == true) {
+      if (hexo-config('magic.enable') && hexo-config('magic.sidebar.enable')) {
 
-        padding-right: $sidebar-width + $component-interspace;
+        if (hexo-config('magic.sidebar.position') == left) {
+          padding-left: $sidebar-width + $component-interspace;
+        } else {
+          padding-right: $sidebar-width + $component-interspace;
+        }
 
         .main-content-right {
           position: absolute;
-          right: 0;
+
+          if (hexo-config('magic.sidebar.position') == left) {
+            left: 0;
+          } else {
+            right: 0;
+          }
+
           width: $sidebar-width;
           box-sizing: border-box;
         }
-
       }
-
 
       .main-content-left {
         position: relative;
-        float: left;
+        if (hexo-config('magic.sidebar.position') == left) {
+          float: right;
+        } else {
+          float: left;
+        }
         width: 100%;
         box-sizing: border-box;
       }
