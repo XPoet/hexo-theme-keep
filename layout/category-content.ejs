@@ -1,6 +1,8 @@
-<div class="category-container fade-in-down-animation">
-    <div class="category-name">
-        <i class="fa fa-folder"></i> <%- __('category') %>：<%= page.category %> [<%= page.posts.length %>]
+<div class="fade-in-down-animation">
+    <div class="category-container">
+        <div class="category-name">
+            <i class="fa fa-folder"></i> <%- __('category') %>：<%= page.category %> [<%= page.posts.length %>]
+        </div>
+        <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
     </div>
-    <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
 </div>

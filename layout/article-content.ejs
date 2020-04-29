@@ -1,41 +1,44 @@
-<div class="article-content-container">
+<div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-    <div class="article-title">
-        <h3><a class="title-hover-animation"><%= page.title %></a></h3>
-    </div>
+        <div class="article-title">
+            <h3><a class="title-hover-animation"><%= page.title %></a></h3>
+        </div>
 
-    <div class="meta-info">
-        <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
-    </div>
+        <div class="meta-info">
+            <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
+        </div>
 
-    <div class="article-content markdown-body">
-        <%- page.content %>
-    </div>
+        <div class="article-content markdown-body">
+            <%- page.content %>
+        </div>
 
-    <div class="article-nav">
-        <% if (page.prev) { %>
-            <div class="article-prev">
-                <a class="prev btn" rel="prev"
-                   href="<%= url_for(page.prev.path) %>"><i class="fa fa-chevron-left"></i> <%= page.prev.title %>
-                </a>
-            </div>
-        <% } %>
-        <% if (page.next) { %>
-            <div class="article-next">
-                <a class="next btn" rel="next"
-                   href="<%= url_for(page.next.path) %>"><%= page.next.title %> <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-        <% } %>
-    </div>
+        <div class="article-nav">
+            <% if (page.prev) { %>
+                <div class="article-prev">
+                    <a class="prev btn" rel="prev"
+                       href="<%= url_for(page.prev.path) %>"><i class="fa fa-chevron-left"></i> <%= page.prev.title %>
+                    </a>
+                </div>
+            <% } %>
+            <% if (page.next) { %>
+                <div class="article-next">
+                    <a class="next btn" rel="next"
+                       href="<%= url_for(page.next.path) %>"><%= page.next.title %> <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
+            <% } %>
+        </div>
 
-    <div class="comment-container">
-        <%- partial('_partial/comments/comment') %>
+        <div class="comment-container">
+            <%- partial('_partial/comments/comment') %>
+        </div>
     </div>
 </div>
-
 <% if ( (theme.magic.enable && !theme.magic.sidebar.enable && theme.toc.enable) || (!theme.magic.enable && theme.toc.enable)) { %>
     <div class="article-toc-container fade-in-down-animation">
-        <%- partial('_partial/sidebar-toc') %>
+        <div class="article-toc">
+            <%- partial('_partial/sidebar-toc') %>
+        </div>
     </div>
 <% } %>
