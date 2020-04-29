@@ -3,7 +3,6 @@
 @require "../common/magic-theme.styl";
 
 $li-border-radius = 5px;
-//$li-border-radius = 50%;
 $li-margin-bottom = 12px;
 
 .tools-container {
@@ -24,7 +23,7 @@ $li-margin-bottom = 12px;
       if (hexo-config('magic.enable') == true) {
         magic-style(1.1);
       } else {
-        border: 1px solid var(--third-text-color);
+        border: 1px solid var(--border-color);
       }
 
       &:hover {
