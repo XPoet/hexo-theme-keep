@@ -1,0 +1,49 @@
+@require "../common/variables.styl";
+
+$archive-year-font-size = 1.8em;
+$article-title-font-size = 1.12em;
+$article-date-font-size = 0.8em;
+
+.archive-list-container {
+  .archive-item {
+    margin-bottom: $component-interspace + 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .archive-item-header {
+      .archive-year {
+        font-size: $archive-year-font-size;
+        color: var(--second-text-color);
+        font-weight: 600;
+        margin-right: 20px;
+      }
+
+    }
+
+
+    .article-list {
+
+      .article-item {
+        margin-top: 20px;
+        font-size: $article-title-font-size;
+
+        a.article-title {
+          color: var(--normal-text-color);
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+
+        .article-date {
+          font-size: $article-date-font-size;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+

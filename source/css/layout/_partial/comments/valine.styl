@@ -1,4 +1,6 @@
 @require '../../common/variables.styl'
+@require '../../common/animated.styl'
+
 .valine-container {
 
   #vcomments {
@@ -28,6 +30,7 @@
         }
 
         .vctrl {
+
           .vicon {
 
             fill: var(--normal-text-color);
@@ -41,6 +44,7 @@
       }
 
       button.vsubmit {
+
         background: transparent !important;
         color: var(--normal-text-color) !important;
         border: 1px solid var(--normal-text-color) !important;
@@ -64,6 +68,7 @@
     }
 
     .vcard {
+
       .vhead {
         .vnick {
           color: var(--primary-color);
@@ -71,15 +76,19 @@
 
         .vsys {
           color: var(--normal-text-color);
-          background: var(--border-color) !important;
-          opacity: 0.8;
+          background: var(--fourth-text-color) !important;
         }
       }
+
 
       .vcontent {
         P {
           color: var(--normal-text-color);
         }
+      }
+
+      .vh {
+        border-bottom-color: var(--border-color);
       }
     }
 

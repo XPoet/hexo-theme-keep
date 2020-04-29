@@ -1,10 +1,20 @@
 @require 'common/variables.styl'
+@require 'common/magic-theme.styl'
 
 .tag-container {
+
+  background: var(--background-color);
+
+  if (hexo-config('magic.enable')) {
+    magic-container(1.02, 30px);
+  }
+
   .tag-name {
     color: var(--second-text-color);
     font-size: 1.6em;
     font-weight: 600;
-    margin-bottom: 32px;
+    padding-bottom: 20px;
+    margin-bottom: $component-interspace;
+    border-bottom: 1px solid var(--border-color);
   }
 }

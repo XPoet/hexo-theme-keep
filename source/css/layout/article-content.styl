@@ -61,7 +61,7 @@
 }
 
 
-if ((hexo-config('magic.enable') == true && hexo-config('magic.sidebar.enable') == false && hexo-config('toc.enable') == true) || (hexo-config('magic.enable') == false && hexo-config('toc.enable') == true)) {
+if ((hexo-config('magic.enable') && !hexo-config('magic.sidebar.enable') && hexo-config('toc.enable')) || (!hexo-config('magic.enable') && hexo-config('toc.enable'))) {
   .article-toc-container {
     position: fixed;
     top: $header-height + $component-interspace;
