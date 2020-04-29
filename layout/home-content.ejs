@@ -5,7 +5,10 @@
 
                 <h3 class="home-article-title">
                     <a href="<%- url_for(post.path) %>">
-                        <%= (post.top ? `[${__('top')}] ` : '') + post.title %>
+                        <% if (post.top) { %>
+                            <i class="fa fa-thumb-tack"></i>
+                        <% } %>
+                        <%= post.title %>
                     </a>
                 </h3>
 
