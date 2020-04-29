@@ -5,17 +5,8 @@
 
   background: var(--background-color);
 
-  if (hexo-config('magic.enable') == true) {
-
-    box-shadow: 0 0 3px var(--border-color);
-    padding: 30px;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-
-    &:hover {
-      box-shadow: 0 0 8px var(--border-color);
-      transform: scaleX(1.008) scaleY(1.002);
-    }
+  if (hexo-config('magic.enable')) {
+    magic-container(1.008, 1.002, 30px);
   }
 
 
@@ -33,9 +24,11 @@
 
   }
 
+
   .meta-info {
     margin: 10px 0 30px 0;
   }
+
 
   .article-content {
     text-align: justify;
@@ -76,7 +69,7 @@ if ((hexo-config('magic.enable') && !hexo-config('magic.sidebar.enable') && hexo
     }
 
     if (hexo-config('magic.enable') == true) {
-      magic-container(1.02, 20px);
+      magic-container(1.02, 1.02, 20px);
     } else {
       transition();
       border: 1px solid var(--border-color);

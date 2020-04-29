@@ -1,6 +1,6 @@
 @require "animated.styl"
 
-magic-style(scale) {
+magic-style(scaleX, scaleY) {
   if (hexo-config('magic.enable') == true) {
 
     box-shadow: 0 0 3px var(--border-color);
@@ -9,16 +9,14 @@ magic-style(scale) {
     &:hover {
       transition();
       box-shadow: 0 0 8px var(--border-color);
-      transform: scale(scale);
+      transform: scaleX(scaleX) scaleY(scaleY);
     }
   }
 
 }
 
-magic-container(scale, padding) {
-  if (hexo-config('magic.enable') == true) {
-    magic-style(scale);
-    padding: padding;
-    border-radius: 2px;
-  }
+magic-container(scaleX, scaleY, padding) {
+  magic-style(scaleX, scaleY);
+  padding: padding;
+  border-radius: 2px;
 }
