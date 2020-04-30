@@ -28,13 +28,13 @@ disable-user-select() {
   disable-user-select();
   the-transition();
 
-  if (hexo-config('codeblock.style') == 'flat') {
+  if (hexo-config('code_copy.style') == 'flat') {
     background: white;
     border: 0;
     font-size: 0.8em;
     right: 0;
     top: 0;
-  } else if (hexo-config('codeblock.style') == 'mac') {
+  } else if (hexo-config('code_copy.style') == 'mac') {
     color: white;
     font-size: 1em;
     right: 2px;
@@ -51,7 +51,7 @@ disable-user-select() {
 }
 
 
-if (hexo-config('codeblock.style') == 'mac') {
+if (hexo-config('code_copy.style') == 'mac') {
   .highlight-container {
     background: #21252b;
     border-radius: 5px;

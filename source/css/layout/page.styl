@@ -68,7 +68,7 @@
     .sidebar-tools {
       position: fixed;
       top: $header-height + $component-interspace;
-      if (hexo-config('side-tools.position') == left) {
+      if (hexo-config('side_tools.position') == left) {
         left: ((100% - $main-content-width) / 4);
       } else {
         right: ((100% - $main-content-width) / 4);
@@ -140,7 +140,7 @@
   }
 
   .sidebar-tools {
-    if (hexo-config('side-tools.position') == left) {
+    if (hexo-config('side_tools.position') == left) {
       left: 2% !important;
       transform-origin: left top;
     } else {

@@ -7,15 +7,15 @@
             <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %> | <%- __('theme') %> <a
                     href="https://github.com/XPoet/hexo-theme-ils" target="_blank"><%= theme.theme_info.name %> v<%= theme.theme_info.version %></a>
         </div>
-        <% if (theme.busuanzi_count.enable) { %>
+        <% if (theme.website_count.busuanzi_count.enable) { %>
             <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
-                <% if (theme.busuanzi_count.site_uv) { %>
+                <% if (theme.website_count.busuanzi_count.site_uv) { %>
                     <span id="busuanzi_container_site_uv" style="display: none">
                         <%- __('site_uv') %><span id="busuanzi_value_site_uv"></span>
                     </span>
                 <% } %>
-                <% if (theme.busuanzi_count.site_pv) { %>
+                <% if (theme.website_count.busuanzi_count.site_pv) { %>
                     <span id="busuanzi_container_site_pv" style="display: none">
                         <%- __('site_pv') %><span id="busuanzi_value_site_pv"></span>
                     </span>

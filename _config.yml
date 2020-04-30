@@ -1,9 +1,15 @@
 # theme basic info
 theme_info:
   name: ILS
-  version: 1.0.2
+  version: 1.1.0
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
+
+# favicon
+favicon: images/favicon.png
+
+# avatar
+avatar: images/avatar.png
 
 # navigation menu
 menu:
@@ -17,84 +23,78 @@ menu:
 rss:
   enable: true
 
-# favicon
-favicon: images/favicon.png
-
 # comment plugin
 comments:
-  # Valine.
-  # more info please open https://github.com/xCss/Valine
+  # Valine https://github.com/xCss/Valine
   valine:
-    enable: false           # true or false
-    appid:                  # your leancloud application appid
-    appkey:                 # your leancloud application appkey
-    meta:                   # type: Array, default: ['nick','mail','link']
-    placeholder: Please share your thoughts with us in the comments below!  #your placeholder
+    enable: false
+    appid:                # your leancloud application appid
+    appkey:               # your leancloud application appkey
+    meta:                 # comment input meta, type: Array, values: ['nick','mail','link']
+    placeholder:          # your placeholder
 
-  # Gitalk
-  # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
+  # Gitalk https://github.com/gitalk/gitalk
   gitalk:
     enable: false
-    github_id:       # GitHub repo owner
-    repository:      # Repository name to store issues
-    client_id:       # GitHub Application Client ID
-    client_secret:   # GitHub Application Client Secret
+    github_id:             # GitHub repo owner
+      repository:          # Repository name to store issues
+    client_id:             # GitHub Application Client ID
+    client_secret:         # GitHub Application Client Secret
     distraction_free_mode: false # Facebook-like distraction free mode
 
-# Show PV/UV of the website/page with busuanzi.
-# Get more information on http://ibruce.info/2015/04/04/busuanzi/
-busuanzi_count:
-  # count values only if the other configs are false
-  enable: false
-  # custom uv span for the whole site
-  site_uv: false
-  # custom pv span for the whole site
-  site_pv: false
-  # custom pv span for one page only
-  page_pv: false
+# website count
+website_count:
+  # busuanzi http://ibruce.info/2015/04/04/busuanzi/
+  busuanzi_count:
+    enable: false
+    site_uv: false
+    site_pv: false
+    page_pv: false
 
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
+
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
-  trigger: auto
-  # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  trigger: auto  # values: auto | manual
+
   # Unescape html strings to the readable one.
   unescape: false
+
   # Preload the search data when the page loads.
   preload: false
 
-# Code Block
-codeblock:
-  style: flat  # Available values: default | flat | mac
-  copy_button:
-    enable: true
-
-# Table of Contents in the Sidebar
-toc:
+# Code Copy
+code_copy:
   enable: true
-  # Automatically add list number to toc.
-  number: true
-  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: true
-
-# magic theme style
-magic:
-  enable: true
-  sidebar:
-    enable: true
-    fixed: true
-    position: right
+  style: flat  # values: default | flat | mac
 
 # sidebar tools
-side-tools:
+side_tools:
   enable: true
-  position: right
+  position: right  # values: left | right
 
 # back to top
 back2top:
   enable: true
-  position: right
+  position: right  # values: left | right
+
+# Table of Contents in the Sidebar
+toc:
+  enable: true
+
+  # Automatically add list number to toc.
+  number: true
+
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: true
+
+# magic theme
+magic:
+  enable: true
+  sidebar:
+    enable: false
+    fixed: true
+    position: right  # values: left | right
