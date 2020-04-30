@@ -1,13 +1,18 @@
 # hexo-theme-ils
 
 [![Github Author](https://img.shields.io/badge/author-XPoet-orange.svg)](https://github.com/XPoet)
+[![Hexo Version](https://img.shields.io/badge/hexo->=4.2.0-red.svg)](https://hexo.io)
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-ils.svg)](https://github.com/XPoet/hexo-theme-ils/releases)
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-ils.svg)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
 
-**一款简约大气的 Hexo 主题。**  
-**A simple and atmospheric theme for Hexo.**
+**一款简约轻快的 Hexo 主题。**  
+**A simple and light theme for Hexo.**
 
-**[Online Preview 在线预览](https://xpoet.cn)**
+**Online Preview 在线预览**
+> 如果你在使用该主题，欢迎 PR 将站点链接放置此处。
+- [XPoet Blog](https://xpoet.cn)
+- ...
+***
 
 如你所见，ILS 界面设计十分简洁、清爽，但功能齐全、不失优雅，这正是 ILS 的开发理念。也曾尝试过花里胡哨，发现不仅容易审美疲劳，而且背驰了写博客的初衷，记录生活、展示文字，应该才是搭建博客网站的最终追求，为此 ILS 应运而生。简约大气、不缺美感、突出内容、化繁为简、配置简单、长期维护，如果你也喜欢或认可这些主题特点，一起来折腾吧~
 
@@ -23,27 +28,29 @@
 - [x] 响应式设计，适配多种终端；
 - [x] 日间/夜间模式自由切换；
 - [x] 多种代码高亮方案；
-- [x] 语言国际化，已支持中/英文；
+- [x] 语言国际化，支持中/英文；
 - [x] 内置多款评论插件；
 - [x] 支持全站文章搜索；
 - [x] 支持文章顶置；
 - [x] 代码块一键复制；
 - [x] TOC 目录结构；
 - [x] RSS 订阅；
-- [x] 网站访问统计和文章阅读统计；
+- [x] 网站 UV 和 PV 统计；
+- [x] 文章阅读次数统计；
 - [x] 页面滚动百分比提示；
 - [x] 一键快速回到顶部；
-- [x] 代码精简高效，无 jQuery；
-- [x] 配置项简单，有详细注释；
+- [x] 代码精简高效，去 jQuery 化；
 
 ### Unfinished 未完成
 
-- 文章版权信息
-- 字数统计 & 阅读时长
-- 支持公式
-- 在线更改字体/字号
-- 打赏功能
-- ......
+- [ ] 文章版权信息；
+- [ ] 文章字数统计；
+- [ ] 文章阅读时长；
+- [ ] 文章支持显示公式；
+- [ ] 文章支持显示公式；
+- [ ] 在线更改字体和字号
+- [ ] 打赏功能
+- [ ] ......
 
 ## Get start 快速开始
 
@@ -81,113 +88,130 @@ Modify `theme` setting in `_config.yml` to `ils`.
 
 ```yml
 # theme basic info
-# 该主题的基本信息，无需改动。
+# 主题基本信息，无需改动。
 theme_info:
   name: ILS
-  version: 1.0.0
+  version: 1.1.0
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
+# favicon
+# 网站图标，请在 "/source/images/" 目录，换成自己的即可。
+favicon: images/favicon.png
+
+# avatar
+# 头像图片，请在 "/source/images/" 目录，换成自己的即可。
+avatar: images/avatar.png
+
 # navigation menu
-# 导航菜单，如需增加，请按下面格式填写。
+# 导航菜单，如需新增导航，请按下面格式填写，同时需要添加对应的 Hexo 页面。
+# 新增页面，请参考往下的教程："Add page 添加页面"。
 menu:
   Home: /
   Archives: /archives
-  About: /about
-  Links: /links
-  ...
+  # About: /about
+  # Links: /links
+  # ...
 
 # RSS
-# 若要启用 RSS 订阅功能，需安装 Hexo 插件 hexo-generator-feed。
+# RSS 订阅，如需启用，请先安装 Hexo 插件：hexo-generator-feed。
 rss:
-  enable: false
-
-# favicon
-# 网站 icon 图标，换成自己的图片即可。
-favicon: images/favicon.png
+  enable: true
 
 # comment plugin
-# 评论插件，内置 Valine 和 Gitalk
+# 评论插件，主题内置了 Valine 和 Gitalk，只能使用其中一款，如果 enable 都设为了 true，将使用 Valine。
 comments:
-  # Valine.
-  # more info please open https://github.com/xCss/Valine
-  # 如何使用 Valine, 请前往 https://github.com/xCss/Valine
+  # Valine https://github.com/xCss/Valine
+  # 如何使用 Valine 请参考：https://github.com/xCss/Valine
   valine:
     enable: false
-    appid: # your leancloud application appid
-    appkey: # your leancloud application appkey
-    notify: false # mail notifier, https://github.com/xCss/Valine/wiki
-    verify: false # Verification code
-    placeholder: your placeholder
+    appid:   # leancloud appid
+    appkey:  # leancloud appkey
+    meta: ['nick', 'mail', 'link']
+    placeholder: 😜尽情吐槽吧~
 
-  # Gitalk
-  # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
-  # 如何使用 gitalk, 请前往 https://github.com/gitalk/gitalk
+  # Gitalk https://github.com/gitalk/gitalk
+  # 如何使用 Gitalk 请参考：https://github.com/gitalk/gitalk
   gitalk:
     enable: false
-    github_id:     # GitHub repo owner
-    repository:    # Repository name to store issues
-    client_id:     # GitHub Application Client ID
-    client_secret: # GitHub Application Client Secret
-    distraction_free_mode: false # Facebook-like distraction free mode
+    github_id:      # GitHub repo owner
+    repository:     # Repository name to store issues
+    client_id:      # GitHub Application Client ID
+    client_secret:  # GitHub Application Client Secret
 
-
-# Show PV/UV of the website/page with busuanzi.
-# 不蒜子计数插件
-# Get more information on http://ibruce.info/2015/04/04/busuanzi/
-busuanzi_count:
-  # count values only if the other configs are false
-  enable: false
-
-  # custom uv span for the whole site
-  # 网站访问人数统计
-  site_uv: false
-
-  # custom pv span for the whole site
-  # 网站总访问量统计
-  site_pv: false
-
-  # custom pv span for one page only
-  # 文章页面阅读次数统计
-  page_pv: false
+# website count
+# 网站计数
+website_count:
+  # busuanzi http://ibruce.info/2015/04/04/busuanzi/
+  busuanzi_count:
+    enable: false
+    site_uv: false
+    site_pv: false
+    page_pv: false
 
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
-# 全站文章搜索功能，默认不开启，如需开启，请先在 Hexo 博客目录下安装 hexo-generator-searchdb
-# 详情请参考：https://github.com/theme-next/hexo-generator-searchdb
+# 本地搜索，如需启用，请先安装 Hexo 插件：hexo-generator-searchdb。
 local_search:
-  enable: fales
+  enable: true
+
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
-  trigger: auto
-  # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
-  # Unescape html strings to the readable one.
-  unescape: false
-  # Preload the search data when the page loads.
-  preload: false
+  # 输入关键字后的触发搜索，可选 自动 auto 或 手动 manual。
+  # auto 每输入或删除一个字符后，自动触发搜索。
+  # manual 每输入或删除一个字符后，需要按回车键触发搜索。
+  trigger: auto  # values: auto | manual
 
-# Code Block
-codeblock:
-  style: flat  # Available values: default | flat | mac
-  copy_button:
-    enable: true
+  # Unescape html strings to the readable one.
+  # 转义 HTML 字符串为可读字符串。
+  unescape: false
+
+  # Preload the search data when the page loads.
+  # 在页面加载时预加载搜索数据
+  preload: true
+
+# Code Copy
+# 代码复制，复制风格可选 default | flat | mac。
+code_copy:
+  enable: true
+  style: flat  # values: default | flat | mac
+
+# sidebar tools
+# 侧边栏工具，位置可选 left | right。
+side_tools:
+  enable: true
+  position: right  # values: left | right
+
+# back to top
+# 回到顶部，位置可选 left | right。
+back2top:
+  enable: true
+  position: right  # values: left | right
 
 # Table of Contents in the Sidebar
-# Front-matter variable (unsupport wrap expand_all).
+# 文章目录结构
 toc:
   enable: true
+
   # Automatically add list number to toc.
+  # 给文章目录自动加上序号。
   number: true
-  # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false
-  # Maximum heading depth of generated toc.
-  max_depth: 6
+  # 是否展开所有目录
+  expand_all: true
+
+# magic
+# magic 为 v1.1.0 增加的新特性，如果启用，主题样式将发生较大的改变。 
+magic:
+  enable: true
+  sidebar:
+    enable: false
+    fixed: true
+    position: right  # values: left | right
 ```
 
-### Comment function 评论功能
+### Comment 评论
 
 主题内置了 Valine 和 Gitalk 两款评论插件，你只能使用其他一款，如果两款评论插件的 enable 都设为了 true，将使用 Valine。
 
@@ -241,13 +265,15 @@ top: 999
    layout: about
    ---
 
-   这里写正文内容，支持 Markdown, HTML
+   正文内容，支持 Markdown, HTML
+   ...
+   ...
    ```
 
 ## Feedback 反馈
 
 在使用主题过程中，如果遇到问题，请仔细阅读文档，或者提 `issue`。
 
-## Licence 许可证
+## Licence 许可
 
 [MIT](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE) Copyright (c) 2020 XPoet

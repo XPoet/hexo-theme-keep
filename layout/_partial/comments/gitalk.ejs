@@ -15,7 +15,6 @@
             owner: '<%= theme.comments.gitalk.github_id %>',
             admin: ['<%= theme.comments.gitalk.github_id %>'],
             id: location.pathname,
-            distractionFreeMode: Boolean('<%= theme.comments.gitalk.distraction_free_mode %>'),
             language: '<%= config.language %>'
         })
         gitalk.render('gitalk-container')

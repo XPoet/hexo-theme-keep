@@ -15,7 +15,7 @@ avatar: images/avatar.png
 menu:
   Home: /
   Archives: /archives
-  About: /about
+  # About: /about
   # Links: /links
   # ...
 
@@ -40,7 +40,6 @@ comments:
       repository:          # Repository name to store issues
     client_id:             # GitHub Application Client ID
     client_secret:         # GitHub Application Client Secret
-    distraction_free_mode: false # Facebook-like distraction free mode
 
 # website count
 website_count:
