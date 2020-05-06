@@ -215,21 +215,21 @@ magic:
 
 主题内置了 Valine 和 Gitalk 两款评论插件，你只能使用其他一款，如果两款评论插件的 enable 都设为了 true，将使用 Valine。
 
-#### Valine 用法
+#### Valine
 
 前往 https://github.com/xCss/Valine 查看 Valine 如何使用，获取必要的参数，填写在配置文件里。
 
-#### Gitalk 用法
+#### Gitalk
 
-1. 在自己的 GitHub 账号下创建新的 OAuth App ，传送门：https://github.com/settings/applications/new，Homepage URL 和 Authorization callback URL 均填写自己的域名。
+1. 在自己的 GitHub 账号下创建新的 OAuth App，链接：https://github.com/settings/applications/new ，Homepage URL 和 Authorization callback URL 均填写自己的域名即可。
 2. 在自己的 GitHub 账号下创建新的 repository 并打开 Issues，用于存储评论内容。
-3. 把 自己的 GitHub 用户名称、repository 名称 、OAuth App 的 Client ID 、Client Secret 分别填写在主题配置文件里。
+3. 把自己的 GitHub 用户名称、repository 名称 、OAuth App 的 Client ID 、Client Secret 分别填写在主题配置文件里。
 
-**前往 https://github.com/gitalk/gitalk 查看 Gitalk 用法的更多信息。**
+前往 https://github.com/gitalk/gitalk 查看 Gitalk 更多信息。
 
 ### Post top 文章顶置
 
-实现文章顶置功能，需在 Hexo 博客根目录下安装插件 **hexo-generator-index-pin-top**
+实现文章顶置功能，需在 Hexo 博客根目录下安装插件 **hexo-generator-index-pin-top**。
 
 ```bash
 npm install hexo-generator-index-pin-top
@@ -239,11 +239,11 @@ npm install hexo-generator-index-pin-top
 
 ```markdown
 ---
-title: 千呼万唤始出来，hexo-theme-ils v1.0.0 正式分布
+title: 千呼万唤始出来，Hexo 主题 ILS 正式发布
 date: 2020-04-07 21:55:14
-tags: [hexo]
-categories: [hexo]
-top: 999
+tags: [Hexo]
+categories: [Hexo]
+top: 9999
 ---
 ```
 
@@ -256,23 +256,25 @@ top: 999
    ```bash
    hexo new page about
    ```
-2. 创建成功后，编辑博客目录下 `/source/about/index.md`，添加 `layout: about` 属性。  
-   修改后的文件示例如下：
+2. 创建成功后，打开博客目录下 `/source/about/index.md` 文件，即可填写内容。  
+   如下示例：
 
-   ```bash
-   title: about
-   date: 2020-04-08 16:29:00
-   layout: about
+   ```markdown
    ---
-
-   正文内容，支持 Markdown, HTML
+   title: about
+   date: 2020-03-19 14:59:53
+   comments: true
+   ---
+   ## About me
+   - XPoet「 X诗人 」... 
+   ...
    ...
    ...
    ```
 
 ## Feedback 反馈
 
-在使用主题过程中，如果遇到问题，请仔细阅读文档，或者提 `issue`。
+在使用该主题过程中，如果遇到问题，请仔细阅读使用文档，或者给作者提 `issue`。
 
 ## Licence 许可
 
