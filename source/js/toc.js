@@ -1,8 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const tocElement = document.querySelector('.post-toc-wrap');
-
-    const navItems = tocElement.querySelectorAll('.post-toc li');
+    const articleToc = document.querySelector('.article-toc');
+    const postTocWrap = document.querySelector('.post-toc-wrap');
+    const navItems = postTocWrap.querySelectorAll('.post-toc li');
 
     if (navItems.length > 0) {
 
@@ -38,10 +38,10 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             // Scrolling to center active TOC element if TOC content is taller then viewport.
             window.anime({
-                targets: tocElement,
+                targets: postTocWrap,
                 duration: 200,
                 easing: 'linear',
-                scrollTop: tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top
+                scrollTop: postTocWrap.scrollTop - (postTocWrap.offsetHeight / 2) + target.getBoundingClientRect().top - postTocWrap.getBoundingClientRect().top
             });
         }
 
@@ -86,7 +86,8 @@ window.addEventListener('DOMContentLoaded', () => {
         createIntersectionObserver(document.documentElement.scrollHeight);
 
     } else {
-        tocElement.innerHTML = '';
+        postTocWrap.innerHTML = '';
+        articleToc.style.display = 'none';
     }
 
 
