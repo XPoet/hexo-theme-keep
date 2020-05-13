@@ -25,7 +25,11 @@
 
                 <% } else if (page.title == 'about') { %>
                     <%- partial('about') %>
+
+                <% } else if (page.title == 'links') { %>
+                    <%- partial('links') %>
                 <% } %>
+
             </div>
 
             <% if (theme.magic.enable && theme.magic.sidebar.enable) { %>

@@ -1,0 +1,12 @@
+<div class="fade-in-down-animation">
+    <div class="links-container">
+        <div class="links-content markdown-body">
+            <%- page.content %>
+        </div>
+        <div class="links-comments">
+            <% if (page.comments) { %>
+                <%- partial('_partial/comments/comment') %>
+            <% } %>
+        </div>
+    </div>
+</div>
