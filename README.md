@@ -7,7 +7,7 @@
 
 **一款简约轻快的 Hexo 主题。**  
 **A simple and light theme for Hexo.**
-![Preview Image](./preview/preview.jpg)
+![Preview Image](https://user-images.githubusercontent.com/24516169/82140521-ae324080-9861-11ea-809f-ea73d09e24ad.jpg)
 
 **Online Preview 在线预览**
 > 如果你在使用该主题，欢迎 PR 将站点链接放置此处。
