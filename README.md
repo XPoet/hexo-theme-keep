@@ -14,23 +14,23 @@
 
 <summary>点击展开，查看更多预览图。</summary>
 
-样式一：
+- 样式一：
 
-![Preview Image](https://user-images.githubusercontent.com/24516169/82140654-e8501200-9862-11ea-8013-935897635d17.png)
+  ![Preview Image](https://user-images.githubusercontent.com/24516169/82140654-e8501200-9862-11ea-8013-935897635d17.png)
 
-![Preview Image](https://user-images.githubusercontent.com/24516169/82140673-10d80c00-9863-11ea-9b2e-9fcf575e9aef.png)
+  ![Preview Image](https://user-images.githubusercontent.com/24516169/82140673-10d80c00-9863-11ea-9b2e-9fcf575e9aef.png)
 
-样式二：
+- 样式二：
 
-![Preview Image](https://user-images.githubusercontent.com/24516169/82140717-5d234c00-9863-11ea-85cc-99d15e6960fe.png)
+  ![Preview Image](https://user-images.githubusercontent.com/24516169/82140717-5d234c00-9863-11ea-85cc-99d15e6960fe.png)
 
-![Preview Image](https://user-images.githubusercontent.com/24516169/82140755-9a87d980-9863-11ea-868b-00de092aa64e.png)
+  ![Preview Image](https://user-images.githubusercontent.com/24516169/82140755-9a87d980-9863-11ea-868b-00de092aa64e.png)
 
-样式三：
+- 样式三：
 
-![Preview Image](https://user-images.githubusercontent.com/24516169/82919586-cd8b4500-9fa8-11ea-8d14-4510f5500c09.png)
+  ![Preview Image](https://user-images.githubusercontent.com/24516169/82919586-cd8b4500-9fa8-11ea-8d14-4510f5500c09.png)
 
-![Preview Image](https://user-images.githubusercontent.com/24516169/82919636-dc71f780-9fa8-11ea-8d67-84d57cc217f9.png)
+  ![Preview Image](https://user-images.githubusercontent.com/24516169/82919636-dc71f780-9fa8-11ea-8d67-84d57cc217f9.png)
 
 </details>
 
