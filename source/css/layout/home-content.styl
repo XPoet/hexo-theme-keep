@@ -14,6 +14,11 @@
         magic-container(1.02, 1.02, 30px);
         margin-bottom: $component-interspace;
 
+        +ils-tablet() {
+          magic-container(1.01, 1.01, 20px);
+          margin-bottom: $component-interspace - 10px;
+        }
+
       } else {
         margin-bottom: 70px;
       }
@@ -23,6 +28,15 @@
         font-weight: 600;
         color: var(--second-text-color);
         font-size: 1.5em;
+
+        +ils-tablet() {
+          font-size: 1.3em;
+        }
+
+        +ils-mobile() {
+          font-size: 1.2em;
+        }
+
         margin: 0;
 
         if (hexo-config('magic.enable') == true) {
@@ -47,6 +61,7 @@
         }
         line-height: 2em;
       }
+
 
       .home-article-meta-info {
         display: flex;

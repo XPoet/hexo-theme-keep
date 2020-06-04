@@ -30,6 +30,15 @@
     .logo-title {
       font-size: 2.2em;
       font-weight: bold;
+
+      +ils-tablet() {
+        font-size: 2.0em;
+      }
+
+      +ils-mobile() {
+        font-size: 1.8em;
+      }
+
       letter-spacing: 1px;
       color: var(--first-text-color);
       transition();
@@ -242,7 +251,6 @@
     }
 
     .menu-list {
-
       .menu-item {
         a:hover {
           &::after {
@@ -277,7 +285,14 @@
   }
 
   .header-content {
-    width: $main-content-width * 1.2 !important;
+    width: 80% !important;
+  }
+
+}
+
+@media screen and (max-width: $media-max-width-mobile) {
+  .header-content {
+    width: 90% !important;
   }
 
 }

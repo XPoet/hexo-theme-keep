@@ -15,6 +15,11 @@ $article-date-font-size = 0.8em;
     .archive-item-header {
       .archive-year {
         font-size: $archive-year-font-size;
+
+        +ils-tablet() {
+          font-size: $archive-year-font-size - 0.2em;
+        }
+
         color: var(--second-text-color);
         font-weight: 600;
         margin-right: 20px;

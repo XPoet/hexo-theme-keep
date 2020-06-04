@@ -23,8 +23,16 @@ $icon-size = 1.2em;
   position: fixed;
   top: 10%;
   width: 70%;
-  z-index: $z-index-6;
 
+  +ils-tablet() {
+    width: 80%;
+  }
+
+  +ils-mobile() {
+    width: 90%;
+  }
+
+  z-index: $z-index-6;
 
   .search-icon, .popup-btn-close {
     color: var(--normal-text-color);
@@ -94,9 +102,6 @@ input.search-input {
   p.search-result {
     margin 0
     padding 0
-    // border-bottom: 1px solid var(--border-color);
-    // padding-bottom: 10px;
-    // margin-bottom: 20px;
   }
 
   a.search-result-title {
@@ -120,11 +125,4 @@ input.search-input {
     color: var(--third-text-color);
     margin: auto;
   }
-}
-
-@media screen and (max-width: $media-max-width) {
-  .search-popup {
-    width: 80%;
-  }
-
 }

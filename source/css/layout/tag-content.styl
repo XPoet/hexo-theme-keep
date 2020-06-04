@@ -7,11 +7,24 @@
 
   if (hexo-config('magic.enable')) {
     magic-container(1.02, 1.02, 30px);
+
+    +ils-tablet() {
+      magic-container(1.01, 1.01, 20px);
+    }
   }
 
   .tag-name {
     color: var(--second-text-color);
     font-size: 1.6em;
+
+    +ils-tablet() {
+      font-size: 1.5em;
+    }
+
+    +ils-mobile() {
+      font-size: 1.4em;
+    }
+
     font-weight: 600;
     padding-bottom: 20px;
     margin-bottom: $component-interspace;

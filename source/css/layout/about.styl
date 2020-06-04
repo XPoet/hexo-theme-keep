@@ -6,6 +6,10 @@
 
   magic-container(1.005, 1.01, 30px);
 
+  +ils-tablet() {
+    magic-container(1.001, 1.005, 20px);
+  }
+
   .about-content {
 
     h1, h2, h3, h4, h5, h6 {
@@ -17,5 +21,9 @@
     }
 
     margin-bottom: 30px;
+
+    +ils-tablet() {
+      margin-bottom: 20px;
+    }
   }
 }

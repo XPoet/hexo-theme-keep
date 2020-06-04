@@ -15,6 +15,15 @@
     h3 {
       font-weight: 600;
       font-size: 1.8em;
+
+      +ils-tablet() {
+        font-size: 1.5em;
+      }
+
+      +ils-mobile() {
+        font-size: 1.2em;
+      }
+
       margin: 0;
     }
 
@@ -24,11 +33,9 @@
 
   }
 
-
   .meta-info {
     margin: 10px 0 30px 0;
   }
-
 
   .article-content {
     text-align: justify;
@@ -58,6 +65,10 @@ if ((hexo-config('magic.enable') && !hexo-config('magic.sidebar.enable') && hexo
   .article-toc-container {
     position: fixed;
     top: $header-height + $component-interspace;
+
+    +ils-tablet() {
+      display: none;
+    }
 
     if (hexo-config('side_tools.position') == left) {
       right: 30px;
