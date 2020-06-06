@@ -93,6 +93,7 @@ toc:
 # magic theme
 magic:
   enable: true
+  transform: true
   sidebar:
     enable: false
     fixed: true
