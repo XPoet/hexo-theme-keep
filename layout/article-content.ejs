@@ -16,15 +16,21 @@
         <div class="article-nav">
             <% if (page.prev) { %>
                 <div class="article-prev">
-                    <a class="prev btn" rel="prev"
-                       href="<%= url_for(page.prev.path) %>"><i class="fa fa-chevron-left"></i> <%= page.prev.title %>
+                    <a class="prev btn"
+                       rel="prev"
+                       href="<%= url_for(page.prev.path) %>"
+                    >
+                        <i class="fa fa-chevron-left"></i> <span class="post-nav-title-item"><%= page.prev.title %></span><span class="post-nav-item"><%= __('prev_posts') %></span>
                     </a>
                 </div>
             <% } %>
             <% if (page.next) { %>
                 <div class="article-next">
-                    <a class="next btn" rel="next"
-                       href="<%= url_for(page.next.path) %>"><%= page.next.title %> <i class="fa fa-chevron-right"></i>
+                    <a class="next btn"
+                       rel="next"
+                       href="<%= url_for(page.next.path) %>"
+                    >
+                        <span class="post-nav-title-item"><%= page.next.title %></span><span class="post-nav-item"><%= __('next_posts') %></span> <i class="fa fa-chevron-right"></i>
                     </a>
                 </div>
             <% } %>

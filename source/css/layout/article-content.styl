@@ -45,15 +45,31 @@
 
 
   .article-nav {
-    height 40px
-    margin 40px 0
+    height: 40px;
+    margin: 40px 0;
 
     .article-prev {
-      float left
+      float: left;
     }
 
     .article-next {
-      float right
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +ils-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+    .post-nav-title-item {
+
+      +ils-tablet() {
+        display: none;
+      }
     }
 
   }
