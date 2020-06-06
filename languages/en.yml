@@ -4,6 +4,8 @@ tags: Tags
 tagcloud: Tag Cloud
 prev: Prev
 next: Next
+prev_posts: Prev posts
+next_posts: Next posts
 comment: Comments
 page: Page %d
 recent_posts: Recent Posts

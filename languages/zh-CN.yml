@@ -4,6 +4,8 @@ tags: 标签
 tagcloud: 标签云
 prev: 上一页
 next: 下一页
+prev_posts: 上一篇
+next_posts: 下一篇
 comment: 留言
 page: 第 %d 页
 recent_posts: 最新文章
