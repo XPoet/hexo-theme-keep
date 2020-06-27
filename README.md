@@ -86,7 +86,7 @@
 
 - 使用 Git SSH
   ```bash
-  git clone --depath=1 git@github.com:XPoet/hexo-theme-ils.git themes/ils
+  git clone --depth=1 git@github.com:XPoet/hexo-theme-ils.git themes/ils
   ```
 - 下载主题 release 版本  
   请优先下载 [最新 release 版本](https://github.com/XPoet/hexo-theme-ils/releases)，master 分支无法保证稳定。  
