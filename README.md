@@ -116,7 +116,7 @@ Modify `theme` setting in `_config.yml` to `ils`.
 # 主题基本信息，无需改动。
 theme_info:
   name: ILS
-  version: 1.1.1
+  version: 1.1.2
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
