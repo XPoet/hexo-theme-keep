@@ -227,13 +227,15 @@ toc:
   expand_all: true
 
 # magic
-# magic 为 v1.1.0 增加的新特性，如果启用，主题样式将发生较大的改变。 
+# magic 为 v1.1.0 增加的新特性，如果启用，主题样式将发生较大的改变。
+# 具体的界面样式风格如何改变，等你来探索。 
 magic:
-  enable: true
+  enable: true  # 是否开启 magic 风格
+  transform: true  # 是否开启鼠标移入出现放大和边框加阴影的渐变效果
   sidebar:
-    enable: false
-    fixed: true
-    position: right  # values: left | right
+    enable: false # 是否显示侧边栏
+    fixed: true  # 侧边栏是否固定
+    position: right  # 侧边栏位置 values: left | right
 ```
 
 ### Comment 评论
