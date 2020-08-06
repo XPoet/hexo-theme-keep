@@ -6,13 +6,17 @@ magic-style(scaleX, scaleY) {
     box-shadow: 0 0 2px var(--border-color);
     transition();
 
-    if (hexo-config('magic.transform')) {
-      &:hover {
-        transition();
-        box-shadow: 0 0 6px var(--border-color);
+    &:hover {
+
+      transition();
+
+      if (hexo-config('magic.scale')) {
         transform: scaleX(scaleX) scaleY(scaleY);
       }
 
+      if (hexo-config('magic.shadow')) {
+        box-shadow: 0 0 8px var(--border-color);
+      }
     }
 
   }
