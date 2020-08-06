@@ -1,9 +1,10 @@
 # hexo-theme-ils
 
 [![Github Author](https://img.shields.io/badge/author-XPoet-orange.svg)](https://github.com/XPoet)
-[![Hexo Version](https://img.shields.io/badge/hexo->=4.2.0-red.svg)](https://hexo.io)
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-ils.svg)](https://github.com/XPoet/hexo-theme-ils/releases)
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-ils.svg)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
+[![Hexo Version](https://img.shields.io/badge/hexo-%3E=4.2.0-blue.svg?&logo=hexo&longCache=true)](https://hexo.io)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=10.9.0-green.svg?logo=Node.js&longCache=true)](https://hexo.io)
 
 **一款简约轻快的 Hexo 主题。**  
 **A simple and light theme for Hexo.**
@@ -226,12 +227,12 @@ toc:
   # 是否展开所有目录
   expand_all: true
 
-# magic
-# magic 为 v1.1.0 增加的新特性，如果启用，主题样式将发生较大的改变。
-# 具体的界面样式风格如何改变，等你来探索。 
+# magic 
+# magic 为 v1.1.0 增加的新特性，启用后，主题样式将以简约的卡片形式显示。
 magic:
   enable: true  # 是否开启 magic 风格
-  transform: true  # 是否开启鼠标移入出现放大和边框加阴影的渐变效果
+  scale: false  # 是否开启缩放效果
+  shadow: true  # 是否开启阴影效果
   sidebar:
     enable: false # 是否显示侧边栏
     fixed: true  # 侧边栏是否固定
@@ -273,6 +274,36 @@ categories: [Hexo]
 top: 9999
 ---
 ```
+
+### Local search 本地搜索
+
+1. 启用本地搜索功能，需在 Hexo 博客根目录下安装插件 **hexo-generator-searchdb**。
+
+   ```bash
+   npm install hexo-generator-searchdb
+   ```
+
+2. 在 Hexo 配置文件 `_config.yml` 增加如下配置。
+
+   ```yml
+   # Search
+   ## https://github.com/theme-next/hexo-generator-searchdb
+   search:
+     path: search.json
+     field: post
+     content: true
+     format: striptags
+   ```
+
+3. 修改主题配置文件 `_config.yml`。
+
+   ```yml
+   local_search:
+     enable: true
+     trigger: auto  # values: auto | manual
+     unescape: false
+     preload: true
+   ```
 
 ### Add page 添加页面
 
