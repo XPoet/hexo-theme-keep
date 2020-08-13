@@ -31,4 +31,14 @@
             <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
         </span>
     <% } %>
+    <% if(theme.post_wordcount.wordcount){ %>
+        <span class="post-count article-wc article-meta-item">
+        <i class="fa fa-book"></i> <span ><%= wordcount(page.content) %> <%- __('wordcount') %></span>  
+        </span>
+    <% } %>
+    <% if(theme.post_wordcount.min2read){ %>
+        <span class="post-count article-mr article-meta-item">
+        <i class="fa fa-clock-o"></i> <span ><%= min2read(page.content) %> <%- __('min2read') %></span>  
+        </span>
+    <% } %>
 </div>

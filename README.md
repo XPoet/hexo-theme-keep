@@ -67,12 +67,12 @@
 - [x] 页面滚动百分比提示。
 - [x] 一键快速回到顶部。
 - [x] 无 jQuery，代码精简。
+- [x] 文章字数统计
+- [x] 文章阅读时长
 
 ### Unfinished 未完成
 
 - [ ] 文章版权信息
-- [ ] 文章字数统计
-- [ ] 文章阅读时长
 - [ ] 文章支持显示公式
 - [ ] 在线更改字体和字号
 - [ ] 打赏功能
@@ -237,6 +237,14 @@ magic:
     enable: false # 是否显示侧边栏
     fixed: true  # 侧边栏是否固定
     position: right  # 侧边栏位置 values: left | right
+
+# 文章字数统计、阅读时长
+# 需要安装 https://github.com/willin/hexo-wordcount
+# npm i --save hexo-wordcount
+post_wordcount:
+  wordcount: true  # 字数统计
+  min2read: true   # 阅读时长
+
 ```
 
 ### Comment 评论
