@@ -99,3 +99,9 @@ magic:
     enable: false
     fixed: true
     position: right  # values: left | right
+
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  wordcount: true  # word count, one article
+  min2read: true   # time to read, one article
