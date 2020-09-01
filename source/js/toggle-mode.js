@@ -1,11 +1,11 @@
 /**
  * 日间/夜间 模式切换
  */
+const localStorageKey = 'MAGIC'
 const modeToggleBtn = document.querySelector('.mode-toggle');
 const iconDom = modeToggleBtn.querySelector('i');
-// const articleContent = document.querySelector('.article-content');
 const articleContent = document.querySelector('.main-content');
-const modeConfig = JSON.parse(localStorage.getItem('ils_x'));
+const modeConfig = JSON.parse(localStorage.getItem(localStorageKey));
 if (modeConfig) {
 
     if (modeConfig.prefersColorScheme === 'dark') {
@@ -47,7 +47,7 @@ const setItemUtil = (modeClass, prefersColorScheme) => {
         iconDom.className = 'fa fa-lightbulb-o';
         articleContent.classList.add('night-code-theme');
     }
-    localStorage.setItem('ils_x', JSON.stringify(
+    localStorage.setItem(localStorageKey, JSON.stringify(
         {
             prefersColorScheme: prefersColorScheme,
             isDark: isDark
