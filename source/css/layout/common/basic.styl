@@ -17,9 +17,25 @@ html, body {
   line-height: $default-font-line-height;
 }
 
+
 ::selection {
   background: var(--selection-color);
   color: #fff;
+}
+
+* {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background: rgba(0, 0, 0, 0.28)
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 }
 
 ul,
