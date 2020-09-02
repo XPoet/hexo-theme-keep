@@ -31,6 +31,9 @@
 
                 <% } else if (page.title == 'links') { %>
                     <%- partial('links') %>
+                    
+                <% } else if (page.title == 'tags') { %>
+                    <%- partial('_partial/tagcloud') %>
                 <% } %>
 
             </div>
