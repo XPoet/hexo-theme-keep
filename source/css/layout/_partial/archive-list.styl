@@ -1,6 +1,7 @@
 @require "../common/variables.styl";
 
 $archive-year-font-size = 1.8em;
+$archive-year-count-font-size = 1.4em;
 $article-title-font-size = 1.12em;
 $article-date-font-size = 0.8em;
 
@@ -22,7 +23,19 @@ $article-date-font-size = 0.8em;
 
         color: var(--second-text-color);
         font-weight: 600;
-        margin-right: 20px;
+        margin-right: 6px;
+      }
+
+
+      .archive-year-post-count {
+        font-size: $archive-year-count-font-size;
+
+        +ils-tablet() {
+          font-size: $archive-year-count-font-size - 0.2em;
+        }
+
+        color: var(--second-text-color);
+        font-weight: 500;
       }
 
     }
