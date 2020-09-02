@@ -104,5 +104,4 @@ magic:
   shadow: true
   sidebar:
     enable: false
-    fixed: true
     position: right  # values: left | right
