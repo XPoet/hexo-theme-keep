@@ -2,6 +2,12 @@
     <div class="tag-container">
         <div class="tag-name"><i class="fa fa-tag"></i> <%- __('tag') %>：<%= page.tag %> [<%= page.posts.length %>]
         </div>
-        <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
+        <div class="tag--post-list">
+            <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
+        </div>
+    </div>
+
+    <div class="tag-paginator">
+        <%- partial('_partial/paginator', {pageObject: page}) %>
     </div>
 </div>

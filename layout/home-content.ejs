@@ -44,17 +44,7 @@
         <% }) %>
     </ul>
 
-    <div class="paginator">
-        <% if (page.prev)  { %>
-            <a class="prev btn"
-               href="<%- url_for(page.prev == 1 ? '' : '/page/' + page.prev) %>"
-            ><%- __('prev') %></a>
-        <% } %>
-
-        <% if (page.next)  { %>
-            <a class="next btn"
-               href="<%- url_for('/page/' + page.next) %>"
-            ><%- __('next') %></a>
-        <% } %>
+    <div class="home-paginator">
+        <%- partial('_partial/paginator', {pageObject: page}) %>
     </div>
 </div>

@@ -3,6 +3,11 @@
         <div class="category-name">
             <i class="fa fa-folder"></i> <%- __('category') %>：<%= page.category %> [<%= page.posts.length %>]
         </div>
-        <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
+        <div class="category-post-list">
+            <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
+        </div>
+    </div>
+    <div class="category-paginator">
+        <%- partial('_partial/paginator', {pageObject: page}) %>
     </div>
 </div>
