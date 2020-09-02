@@ -28,7 +28,7 @@
                             <i class="fa fa-folder"></i>
                             <ul>
                                 <% post.categories.forEach((category, i) => { %>
-                                    <li><%= i === 0 ? '' : '| ' %><a
+                                    <li><%= i === 0 ? '' : '> ' %><a
                                                 href="<%- url_for(category.path) %>"><%= category.name %></a></li>
                                 <% }); %>
                             </ul>
