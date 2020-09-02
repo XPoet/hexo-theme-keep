@@ -23,6 +23,9 @@
                 <% } else if (is_tag()) { %>
                     <%- partial('tag-content') %>
 
+                <% } else if (page.title == 'category') { %>
+                    <%- partial('category-list') %>
+
                 <% } else if (page.title == 'about') { %>
                     <%- partial('about') %>
 
