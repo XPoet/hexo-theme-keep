@@ -15,6 +15,7 @@ avatar: images/avatar.png
 menu:
   Home: /
   Archives: /archives
+  # Category: /category
   # About: /about
   # Links: /links
   # ...
@@ -65,6 +66,12 @@ local_search:
   # Preload the search data when the page loads.
   preload: false
 
+# Post word count
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  wordcount: false  # word count, one article
+  min2read: false   # time to read, one article
+
 # Code Copy
 code_copy:
   enable: true
@@ -99,9 +106,3 @@ magic:
     enable: false
     fixed: true
     position: right  # values: left | right
-
-# Post wordcount display settings
-# Dependencies: https://github.com/willin/hexo-wordcount
-post_wordcount:
-  wordcount: true  # word count, one article
-  min2read: true   # time to read, one article
