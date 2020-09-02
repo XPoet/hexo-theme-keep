@@ -333,10 +333,11 @@ top: 9999
 
 ### Add page 添加页面
 
-**Hexo 初始化没有 about、links、tag、category 等页面，需要自己手动创建。**  
-例如创建「关于」页面：
+**Hexo 初始并没有 category、about、links、tag 等页面，需要自己手动创建。**
 
-1. 在 Hexo 博客目录下执行命令，即可生成 `about` 文件夹。 
+以创建「关于」页面为例：
+
+1. 在 Hexo 博客目录下执行命令，即可生成 `about` 文件夹。
    ```bash
    hexo new page about
    ```
@@ -359,6 +360,19 @@ top: 9999
      ...
      ...
    ```
+3. 在主题配置文件启用 `about` 导航菜单。
+   ```yml
+   # navigation menu
+   menu:
+     Home: /
+     Archives: /archives
+     # Category: /category
+     # Links: /links
+     About: /about
+     # ...
+   ```
+
+其他页面的生成方式跟「关于」页面类似，此处不再赘述。
 
 ## Feedback 反馈
 
