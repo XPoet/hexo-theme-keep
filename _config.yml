@@ -16,7 +16,7 @@ menu:
   Home: /
   Archives: /archives
   # Category: /category
-  Tags: /tags/
+  # Tags: /tags/
   # Links: /links
   # About: /about
   # ...
@@ -106,3 +106,9 @@ magic:
   sidebar:
     enable: false
     position: right  # values: left | right
+
+# Home page article block display settings
+home_article:
+  tag: true # show tags in article block
+  tag_limit: 5 # max number of tags shown in article block
+  category: true # show category in article block
