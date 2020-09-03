@@ -2,6 +2,8 @@
 @require "../common/magic-theme.styl";
 @require "../common/animated.styl";
 
+$header-progress-height = 2.8px;
+
 .header-wrapper {
   width: 100%;
   height: 100%;
@@ -10,18 +12,21 @@
   align-items: center;
   justify-content: center;
   background: var(--background-color);
+  padding-top: $header-progress-height;
 
   if (hexo-config('magic.enable') == true) {
     magic-style(1.02, 1.02);
   }
 
   .header-progress {
+    display: none;
     position: absolute;
-    width: 100%;
-    height: 3px;
+    width: 0;
+    height: $header-progress-height;
     top: 0;
     left: 0;
-    background: $primary-color;
+    background: var(--primary-color);
+    transition: all 0.1s ease;
   }
 
 
