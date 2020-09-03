@@ -131,7 +131,7 @@ theme: ils
 # 主题基本信息，无需改动。
 theme_info:
   name: ILS
-  version: 1.2.0
+  version: 1.2.1
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
@@ -222,6 +222,13 @@ post_wordcount:
   wordcount: true # 字数统计
   min2read: true # 阅读时长
 
+# Home page article block display settings
+# 首页文章底部的显示设置，可配置显示分类和标签
+home_article:
+  category: true # show category in article block
+  tag: true # show tags in article block
+  tag_limit: 5 # max number of tags shown in article block
+
 # Code Copy
 # 代码复制，复制风格可选 default | flat | mac。
 code_copy:
@@ -261,7 +268,6 @@ magic:
   shadow: true # 是否开启阴影效果
   sidebar:
     enable: false # 是否显示侧边栏
-    fixed: true # 侧边栏是否固定
     position: right # 侧边栏位置 values: left | right
 ```
 
