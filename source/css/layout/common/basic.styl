@@ -2,6 +2,29 @@
 @require 'animated.styl'
 @require 'magic-theme.styl'
 
+
+// ============================
+// scrollbar
+// ============================
+* {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+
+// ============================
+// html, body
+// ============================
 html, body {
   margin: 0;
   padding: 0;
@@ -11,49 +34,60 @@ html, body {
   } else {
     background: var(--background-color);
   }
-  font-size: $default-font-size;
+
   font-family: $default-font-family;
   font-weight: $default-font-weight;
+  font-size: $default-font-size;
   line-height: $default-font-line-height;
+
+  +ils-tablet() {
+    font-size: 0.99em;
+    line-height: $default-font-line-height - 2px;
+  }
+
+  +ils-mobile() {
+    font-size: 0.98em;
+    line-height: $default-font-line-height - 4px;
+  }
+
 }
 
 
+
+// ============================
+// selection
+// ============================
 ::selection {
   background: var(--selection-color);
   color: #fff;
 }
 
-* {
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
 
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2)
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-}
-
-ul,
-li,
-ol {
+// ============================
+// ul, ol, li
+// ============================
+ul, ol, li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
+// ============================
+// a
+// ============================
 a {
   text-decoration: none;
   color: var(--normal-text-color);
+
+  &:hover, &:active {
+    color: var(--primary-color);
+  }
+
 }
 
-a:hover, a:active {
-  color: var(--primary-color);
-}
-
+// ============================
+// button
+// ============================
 button {
   padding: 0;
   margin: 0;

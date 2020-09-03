@@ -6,20 +6,20 @@
 // layout
 // ===================================
 if (hexo-config('magic.enable')) {
-  $header-height = 80px;        // 头部默认高度
+  $header-height = 80px;        // magic 风格：头部默认高度
 } else {
-  $header-height = 100px;       // 头部默认高度
+  $header-height = 100px;       // normal 风格：头部默认高度
 }
 
 if (hexo-config('magic.enable') && hexo-config('magic.sidebar.enable')) {
-  $main-content-width = 80%;    // 中间内容区域宽度
-  $sidebar-width = 280px;       // 侧边栏宽度
+  $main-content-width = 80%;    // magic.sidebar（双栏） 中间内容区域宽度
+  $sidebar-width = 280px;       // magic.sidebar（双栏） 侧边栏宽度
 } else {
-  $main-content-width = 62%;    // 中间内容区域宽度
+  $main-content-width = 62%;    // （单栏）中间内容区域宽度
 }
 
 $header-shrink-height = 60px;    // 头部收缩高度
-$tool-button-width = 36px;       // 方形工具按钮宽度
+$tool-button-width = 36px;       // tools 方形工具按钮宽度
 $component-interspace = 30px;    // 组件/模块的间隔值（px）
 
 // ===================================
@@ -80,16 +80,19 @@ $dark-selection-color = $selection-color;
 // ===================================
 // font
 // ===================================
-//$default-font-family = 'PingHei', 'PingFang SC', 'Microsoft YaHei';
-//$default-font-family = 'PingFang SC', 'Hiragino Sans GB', 'STHeiti Light';
-//$default-font-family = 'Microsoft YaHei', 'SimHei', 'WenQuanYi Micro Hei', sans-serif;
-//$default-font-family = "Exo 2", "Trebuchet MS", "Helvetica", "Arial";
+// 'PingHei', 'PingFang SC', 'Microsoft YaHei';
+// 'PingFang SC', 'Hiragino Sans GB', 'STHeiti Light';
+// 'Microsoft YaHei', 'SimHei', 'WenQuanYi Micro Hei', sans-serif;
+// "Exo 2", "Trebuchet MS", "Helvetica", "Arial";
 $default-font-family = Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-$default-font-size = 15px;
+$default-font-size = 16px;
 $default-font-line-height = 20px;
 $default-font-weight = 400;
 
 
+// ===================================
+//  light/dark color
+// ===================================
 :root {
   --background-color: $background-color;
   --magic-background-color: $magic-background-color;

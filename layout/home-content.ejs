@@ -25,7 +25,7 @@
                         <span><i class="fa fa-pencil-square-o"></i> <%= date(post.date, 'YYYY-MM-DD') %></span>
                         <% if (theme.magic.enable === true) { %>
                             <% if (theme.home_article.category === true) { %>
-                            <span>
+                                <span>
                             <i class="fa fa-folder"></i>
                             <ul>
                                 <% post.categories.forEach((category, i) => { %>
@@ -36,13 +36,14 @@
                             </span>
                             <% } %>
                             <% if (theme.home_article.tag === true) { %>
-                            <span>
+                                <span>
                             <i class="fa fa-tags"></i>
                             <ul>
-                                <% post.tags.forEach((tag, i) => { 
-                                    if (theme.home_article.tag_limit===0 | i+1<= theme.home_article.tag_limit) {%>
-                                        <li><%= i === 0 ? '' : '| ' %><a
-                                                    href="<%- url_for(tag.path) %>"><%= tag.name %></a></li>
+                                <% post.tags.forEach((tag, i) => {
+                                if (theme.home_article.tag_limit === 0 | i + 1 <= theme.home_article.tag_limit) { %>
+                                    <li>
+                                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+                                    </li>
                                 <% }}); %>
                             </ul>
                             </span>

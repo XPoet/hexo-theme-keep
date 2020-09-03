@@ -1,7 +1,7 @@
 @require "../common/variables.styl";
 
 $archive-year-font-size = 1.8em;
-$archive-year-count-font-size = 1.4em;
+$archive-year-count-font-size = 1.2em;
 $article-title-font-size = 1.12em;
 $article-date-font-size = 0.8em;
 
@@ -31,7 +31,7 @@ $article-date-font-size = 0.8em;
         font-size: $archive-year-count-font-size;
 
         +ils-tablet() {
-          font-size: $archive-year-count-font-size - 0.2em;
+          font-size: $archive-year-count-font-size - 0.1em;
         }
 
         color: var(--second-text-color);
@@ -44,8 +44,15 @@ $article-date-font-size = 0.8em;
     .article-list {
 
       .article-item {
-        margin-top: 20px;
-        font-size: $article-title-font-size;
+        margin-top: 18px;
+
+        +ils-tablet() {
+          margin-top: 16px;
+        }
+
+        +ils-mobile() {
+          margin-top: 14px;
+        }
 
         a.article-title {
           color: var(--normal-text-color);
