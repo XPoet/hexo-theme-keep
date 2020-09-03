@@ -333,7 +333,7 @@ top: 9999
 
 ### Add page 添加页面
 
-**Hexo 初始并没有 category、about、links、tag 等页面，需要自己手动创建。**
+**Hexo 初始并没有 categories、about、links、tags 等页面，需要自己手动创建。**
 
 以创建「关于」页面为例：
 
