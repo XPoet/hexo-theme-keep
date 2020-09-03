@@ -15,8 +15,8 @@ avatar: images/avatar.png
 menu:
   Home: /
   Archives: /archives
-  # Category: /category
-  # Tags: /tags/
+  # Categories: /categories
+  # Tags: /tags
   # Links: /links
   # About: /about
   # ...
@@ -73,6 +73,12 @@ post_wordcount:
   wordcount: false  # word count, one article
   min2read: false   # time to read, one article
 
+# Home page article block display settings
+home_article:
+  category: true # show category in article block
+  tag: true # show tags in article block
+  tag_limit: 5 # max number of tags shown in article block
+
 # Code Copy
 code_copy:
   enable: true
@@ -106,9 +112,3 @@ magic:
   sidebar:
     enable: false
     position: right  # values: left | right
-
-# Home page article block display settings
-home_article:
-  tag: true # show tags in article block
-  tag_limit: 5 # max number of tags shown in article block
-  category: true # show category in article block
