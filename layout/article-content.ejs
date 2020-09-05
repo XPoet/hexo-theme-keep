@@ -41,10 +41,3 @@
         </div>
     </div>
 </div>
-<% if ( (theme.magic.enable && !theme.magic.sidebar.enable && theme.toc.enable) || (!theme.magic.enable && theme.toc.enable)) { %>
-    <div class="article-toc-container fade-in-down-animation">
-        <div class="article-toc">
-            <%- partial('_partial/sidebar-toc') %>
-        </div>
-    </div>
-<% } %>

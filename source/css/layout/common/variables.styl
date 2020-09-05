@@ -11,12 +11,9 @@ if (hexo-config('magic.enable')) {
   $header-height = 100px;       // normal 风格：头部默认高度
 }
 
-if (hexo-config('magic.enable') && hexo-config('magic.sidebar.enable')) {
-  $main-content-width = 80%;    // magic.sidebar（双栏） 中间内容区域宽度
-  $sidebar-width = 280px;       // magic.sidebar（双栏） 侧边栏宽度
-} else {
-  $main-content-width = 62%;    // （单栏）中间内容区域宽度
-}
+$main-content-width = 62%;          // 中间内容区域宽度（PC）
+$main-content-width-tablet = 80%;   // 中间内容区域宽度（平板）
+$main-content-width-mobile = 88%;   // 中间内容区域宽度（手机）
 
 $header-shrink-height = 60px;    // 头部收缩高度
 $tool-button-width = 36px;       // tools 方形工具按钮宽度
@@ -46,6 +43,8 @@ $z-index-3 = 1003;
 $z-index-4 = 1004;
 $z-index-5 = 1005;
 $z-index-6 = 1006;
+$z-index-7 = 1007;
+$z-index-8 = 1008;
 
 
 // ===================================

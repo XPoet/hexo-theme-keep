@@ -2,7 +2,12 @@
     <div class="fade-in-down-animation">
         <div class="tagcloud-container">
             <div class="tagcloud-content">
-                <%- tagcloud({min_font: 16, max_font: 28}) %>
+                <%- tagcloud({
+                    min_font: 0.98,
+                    max_font: 1.50,
+                    unit: 'em',
+                    amount: 100
+                }) %>
             </div>
         </div>
     </div>

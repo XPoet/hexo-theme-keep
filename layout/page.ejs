@@ -1,73 +1,87 @@
-<div class="page-template">
-    <div class="page-top">
-        <%- partial('_partial/header') %>
-    </div>
+<div class="page-container">
 
-    <div class="page-middle ">
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
 
-        <main class="main-content normal-code-theme">
+    <main class="page-main">
 
-            <div class="main-content-left">
-                <% if (is_home()) { %>
-                    <%- partial('home-content') %>
+        <div class="page-main-content">
 
-                <% } else if (is_archive()) { %>
-                    <%- partial('archive-content') %>
+            <div class="page-main-content-top">
+                <%- partial('_partial/header') %>
+            </div>
 
-                <% } else if (is_post()) { %>
-                    <%- partial('article-content') %>
+            <div class="page-main-content-middle">
 
-                <% } else if (is_category()) { %>
-                    <%- partial('category-content') %>
+                <main class="main-content normal-code-theme">
 
-                <% } else if (is_tag()) { %>
-                    <%- partial('tag-content') %>
+                    <% if (is_home()) { %>
+                        <%- partial('home-content') %>
 
-                <% } else if (page.title === 'category' || page.title === 'categories') { %>
-                    <%- partial('category-list') %>
+                    <% } else if (is_archive()) { %>
+                        <%- partial('archive-content') %>
 
-                <% } else if (page.title === 'tag' || page.title === 'tags') { %>
-                    <%- partial('_partial/tagcloud') %>
+                    <% } else if (is_post()) { %>
+                        <%- partial('article-content') %>
 
-                <% } else if (page.title === 'about') { %>
-                    <%- partial('about') %>
+                    <% } else if (is_category()) { %>
+                        <%- partial('category-content') %>
 
-                <% } else if (page.title === 'link' || page.title === 'links') { %>
-                    <%- partial('links') %>
+                    <% } else if (is_tag()) { %>
+                        <%- partial('tag-content') %>
 
-                <% } %>
+                    <% } else if (page.title === 'category' || page.title === 'categories') { %>
+                        <%- partial('category-list') %>
+
+                    <% } else if (page.title === 'tag' || page.title === 'tags') { %>
+                        <%- partial('_partial/tagcloud') %>
+
+                    <% } else if (page.title === 'about') { %>
+                        <%- partial('about') %>
+
+                    <% } else if (page.title === 'link' || page.title === 'links') { %>
+                        <%- partial('links') %>
+
+                    <% } %>
+
+                </main>
 
             </div>
 
-            <% if (theme.magic.enable && theme.magic.sidebar.enable) { %>
-                <div class="main-content-right">
-                    <%- partial('_partial/sidebar') %>
-                </div>
-            <% } %>
-
-        </main>
-
-        <div class="sidebar-tools">
-            <%- partial('_partial/tools') %>
+            <div class="page-main-content-bottom">
+                <%- partial('_partial/footer') %>
+            </div>
         </div>
+    </main>
 
-        <% if (theme.back2top.enable) { %>
-            <div class="scroll-to-top">
-                <ul>
-                    <li>
+    <div class="sidebar-tools">
+        <%- partial('_partial/tools') %>
+    </div>
+
+    <% if (theme.back2top.enable) { %>
+        <div class="scroll-to-top">
+            <ul>
+                <li>
                         <span class="scroll-percent">
                             <i class="fa fa-caret-up"></i>
                         </span>
-                    </li>
-                </ul>
-            </div>
-        <% } %>
-    </div>
+                </li>
+            </ul>
+        </div>
+    <% } %>
 
-    <div class="page-bottom">
-        <%- partial('_partial/footer') %>
-    </div>
+    <!-- page aside -->
+    <aside class="page-aside">
+        <% if (is_post()) { %>
+            <%- partial('_partial/toc') %>
+        <% } %>
+    </aside>
+
 </div>
+
+
+
 <% if (theme.local_search.enable) { %>
     <%- partial('_partial/local-search') %>
 <% } %>

@@ -40,7 +40,7 @@
   .article-content {
     text-align: justify;
     padding-bottom: 30px;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--border-color);
   }
 
 
@@ -77,7 +77,7 @@
 }
 
 
-if ((hexo-config('magic.enable') && !hexo-config('magic.sidebar.enable') && hexo-config('toc.enable')) || (!hexo-config('magic.enable') && hexo-config('toc.enable'))) {
+if ((hexo-config('magic.enable') && hexo-config('toc.enable')) || (!hexo-config('magic.enable') && hexo-config('toc.enable'))) {
   .article-toc-container {
     position: fixed;
     top: $header-height + $component-interspace;

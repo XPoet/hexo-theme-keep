@@ -1,4 +1,4 @@
-const pageTemplateDom = document.querySelector('.page-template');
+const pageTemplateDom = document.querySelector('.page-main-content');
 const articleTocContainerDom = document.querySelector('.article-toc-container');
 const headerDom = document.querySelector('.header-wrapper');
 const menuBarDom = document.querySelector('.menu-bar');
@@ -13,7 +13,7 @@ window.addEventListener('scroll', function (_e) {
     if (!isHeaderShrink && scrollTop > headerHeight) {
         isHeaderShrink = true;
         headerDom.classList.add('header-wrapper-shrink');
-        pageTemplateDom.classList.add('page-top-shrink');
+        pageTemplateDom.classList.add('page-main-content-top-shrink');
 
         if (articleTocContainerDom) {
             articleTocContainerDom.classList.add('article-toc-container-shrink');
@@ -21,7 +21,7 @@ window.addEventListener('scroll', function (_e) {
     } else if (isHeaderShrink && scrollTop <= headerHeight) {
         isHeaderShrink = false;
         headerDom.classList.remove('header-wrapper-shrink');
-        pageTemplateDom.classList.remove('page-top-shrink');
+        pageTemplateDom.classList.remove('page-main-content-top-shrink');
 
         if (articleTocContainerDom) {
             articleTocContainerDom.classList.remove('article-toc-container-shrink');

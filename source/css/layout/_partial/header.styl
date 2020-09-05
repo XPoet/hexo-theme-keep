@@ -18,18 +18,6 @@ $header-progress-height = 2.8px;
     magic-style(1.02, 1.02);
   }
 
-  .header-progress {
-    display: none;
-    position: absolute;
-    width: 0;
-    height: $header-progress-height;
-    top: 0;
-    left: 0;
-    background: var(--primary-color);
-    transition: all 0.1s ease;
-  }
-
-
   .header-content {
     width: $main-content-width;
     height: 100%;
@@ -37,11 +25,11 @@ $header-progress-height = 2.8px;
     transition();
 
     +ils-tablet() {
-      width: 90%;
+      width: $main-content-width-tablet !important;
     }
 
     +ils-mobile() {
-      width: 95%;
+      width: $main-content-width-mobile !important;
     }
 
     display: flex;

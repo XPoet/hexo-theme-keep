@@ -9,7 +9,7 @@
 
       background: var(--background-color);
 
-      if (hexo-config('magic.enable') == true) {
+      if (hexo-config('magic.enable')) {
 
         magic-container(1.02, 1.02, 30px);
         margin-bottom: $component-interspace;
@@ -40,7 +40,7 @@
 
         margin: 0;
 
-        if (hexo-config('magic.enable') == true) {
+        if (hexo-config('magic.enable')) {
           padding-bottom: 20px;
           border-bottom: 1px solid var(--border-color);
         } else {
