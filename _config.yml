@@ -109,6 +109,3 @@ magic:
   enable: true
   scale: false
   shadow: true
-  sidebar:
-    enable: false
-    position: right  # values: left | right
