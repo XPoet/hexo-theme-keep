@@ -33,7 +33,7 @@
             scrollToTopDom.style.display = 'none';
             headerProgressDom.style.display = 'none';
         } else {
-            scrollToTopDom.style.display = 'block';
+            scrollToTopDom.style.display = 'flex';
             // scrollPercentDom.innerHTML = parseInt(percent) < 10 ? `0${percent}` : percent;
 
             headerProgressDom.style.display = 'block';

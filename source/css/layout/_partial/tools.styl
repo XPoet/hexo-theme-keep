@@ -20,6 +20,10 @@ $li-margin-bottom = 12px;
       margin-bottom: $li-margin-bottom;
       background: var(--background-color);
 
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       if (hexo-config('magic.enable') == true) {
         magic-style(1.1, 1.1);
       } else {
@@ -31,7 +35,6 @@ $li-margin-bottom = 12px;
         color: var(--background-color);
         background: var(--primary-color);
       }
-
 
       &.rss {
 
@@ -52,8 +55,8 @@ $li-margin-bottom = 12px;
       }
 
 
-      &:last-child {
-        margin-bottom: 0;
+      &.scroll-to-top {
+        display: none;
       }
 
     }
