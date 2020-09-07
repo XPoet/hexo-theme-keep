@@ -131,7 +131,7 @@ theme: ils
 # 主题基本信息，无需改动。
 theme_info:
   name: ILS
-  version: 1.2.1
+  version: 2.0.0
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
@@ -266,9 +266,6 @@ magic:
   enable: true # 是否开启 magic 风格
   scale: false # 是否开启缩放效果
   shadow: true # 是否开启阴影效果
-  sidebar:
-    enable: false # 是否显示侧边栏
-    position: right # 侧边栏位置 values: left | right
 ```
 
 ### Comment 评论
