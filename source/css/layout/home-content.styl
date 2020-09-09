@@ -41,8 +41,8 @@
         margin: 0;
 
         if (hexo-config('magic.enable')) {
-          padding-bottom: 20px;
-          border-bottom: 1px solid var(--border-color);
+          //TODO: ....
+
         } else {
           a {
             color: var(--second-text-color);
@@ -51,25 +51,24 @@
 
       }
 
+
       .home-article-content {
 
         text-align: justify;
 
         if (hexo-config('magic.enable') == true) {
-          margin: 30px 0 45px 0;
+          margin: 20px 0;
         } else {
           margin: 30px 0;
         }
         line-height: 2em;
       }
 
-
       .home-article-meta-info {
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: var(--third-text-color);
-
 
         if (hexo-config('magic.enable') == true) {
           font-size: 1em;
