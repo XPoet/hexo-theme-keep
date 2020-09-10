@@ -131,7 +131,7 @@ theme: ils
 # 主题基本信息，无需改动。
 theme_info:
   name: ILS
-  version: 2.0.0
+  version: 2.0.1
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
