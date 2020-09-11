@@ -12,8 +12,8 @@ theme_info:
 # Theme style settings
 # ------------------------------------------------------------
 style:
-  # Theme color
-  theme_color: "#0066CC"
+  # Theme primary color
+  primary_color: "#0066CC"
 
   # favicon
   favicon: images/favicon.png
