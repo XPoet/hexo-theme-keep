@@ -1,8 +1,7 @@
 {
   "name": "hexo-theme-ils",
-  "version": "0.0.1",
+  "version": "2.0.1",
   "description": "A simple and beautiful theme for Hexo.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +9,12 @@
     "type": "git",
     "url": "git+ssh://git@github.com/XPoet/hexo-theme-ils.git"
   },
+  "keywords": [
+    "hexo",
+    "theme",
+    "simple-theme",
+    "beautiful-theme"
+  ],
   "author": "XPoet",
   "license": "MIT",
   "bugs": {
