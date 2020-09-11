@@ -31,12 +31,12 @@
             <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
         </span>
     <% } %>
-    <% if(theme.post_wordcount.wordcount && is_post()){ %>
+    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.wordcount){ %>
         <span class="article-wordcount article-meta-item">
         <i class="fa fa-book"></i> <span><%= wordcount(page.content) %> <%- __('wordcount') %></span>
         </span>
     <% } %>
-    <% if(theme.post_wordcount.min2read && is_post()){ %>
+    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.min2read){ %>
         <span class="article-min2read article-meta-item">
         <i class="fa fa-clock-o"></i> <span><%= min2read(page.content) %> <%- __('min2read') %></span>
         </span>

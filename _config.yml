@@ -1,17 +1,30 @@
-# theme basic info
+# ------------------------------------------------------------
+# Theme basic info (please don't change)
+# ------------------------------------------------------------
 theme_info:
   name: ILS
   version: 2.0.1
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
-# favicon
-favicon: images/favicon.png
 
-# avatar
-avatar: images/avatar.png
+# ------------------------------------------------------------
+# Theme style settings
+# ------------------------------------------------------------
+style:
+  # Theme color
+  theme_color: "#0066CC"
 
-# navigation menu
+  # favicon
+  favicon: images/favicon.png
+
+  # avatar
+  avatar: images/avatar.png
+
+
+# ------------------------------------------------------------
+# Navigation menu
+# ------------------------------------------------------------
 menu:
   Home: /
   Archives: /archives
@@ -21,13 +34,22 @@ menu:
   # About: /about
   # ...
 
-# RSS
-rss:
-  enable: true
 
-# comment plugin
+# ------------------------------------------------------------
+# RSS
+# Dependencies: hexo-generator-feed
+# See: https://github.com/hexojs/hexo-generator-feed
+# ------------------------------------------------------------
+rss:
+  enable: false
+
+
+# ------------------------------------------------------------
+# Comment plugin
+# ------------------------------------------------------------
 comments:
-  # Valine https://github.com/xCss/Valine
+  # Valine
+  # See: https://github.com/xCss/Valine
   valine:
     enable: false
     appid:                # your leancloud application appid
@@ -35,25 +57,34 @@ comments:
     meta:                 # comment input meta, type: Array, values: ['nick','mail','link']
     placeholder:          # your placeholder
 
-  # Gitalk https://github.com/gitalk/gitalk
+  # Gitalk
+  # See: https://github.com/gitalk/gitalk
   gitalk:
     enable: false
     github_id:             # GitHub repo owner
-      repository:          # Repository name to store issues
+    repository:            # Repository name to store issues
     client_id:             # GitHub Application Client ID
     client_secret:         # GitHub Application Client Secret
 
-# website count
+
+# ------------------------------------------------------------
+# Website count
+# ------------------------------------------------------------
 website_count:
-  # busuanzi http://ibruce.info/2015/04/04/busuanzi/
+  # busuanzi
+  # See: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi_count:
     enable: false
     site_uv: false
     site_pv: false
     page_pv: false
 
+
+# ------------------------------------------------------------
 # Local Search
-# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+# Dependencies: hexo-generator-searchdb
+# See: https://github.com/theme-next/hexo-generator-searchdb
+# ------------------------------------------------------------
 local_search:
   enable: true
 
@@ -67,36 +98,57 @@ local_search:
   # Preload the search data when the page loads.
   preload: false
 
+
+# ------------------------------------------------------------
 # Post word count
-# Dependencies: https://github.com/willin/hexo-wordcount
+# Dependencies: hexo-wordcount
+# See: https://github.com/willin/hexo-wordcount
+# ------------------------------------------------------------
 post_wordcount:
+  enable: false
   wordcount: false  # word count, one article
   min2read: false   # time to read, one article
 
-# Home page article block display settings
-home_article:
-  category: true # show category in article block
-  tag: true # show tags in article block
-  tag_limit: 5 # max number of tags shown in article block
 
-# Code Copy
+# ------------------------------------------------------------
+# Home page article block display settings
+# ------------------------------------------------------------
+home_article:
+  category:
+    enable: false     # show category in home page article block
+    limit: 3          # max number of categories shown in home page article block
+  tag:
+    enable: false     # show tags in home page article block
+    limit: 5          # max number of tags shown in home page article block
+
+
+# ------------------------------------------------------------
+# Code copy
+# ------------------------------------------------------------
 code_copy:
   enable: true
-  style: flat  # values: default | flat | mac
+  style: flat        # values: default | flat | mac
 
-# sidebar tools
+
+# ------------------------------------------------------------
+# Sidebar tools
+# ------------------------------------------------------------
 side_tools:
-  enable: true
-  position: right  # values: left | right
+  enable: false
 
-# back to top
+
+# ------------------------------------------------------------
+# Back to top
+# ------------------------------------------------------------
 back2top:
-  enable: true
-  position: right  # values: left | right
+  enable: false
 
+
+# ------------------------------------------------------------
 # Table of Contents in the Sidebar
+# ------------------------------------------------------------
 toc:
-  enable: true
+  enable: false
 
   # Automatically add list number to toc.
   number: true
@@ -104,8 +156,11 @@ toc:
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: true
 
-# magic theme
+
+# ------------------------------------------------------------
+# Magic
+# ------------------------------------------------------------
 magic:
   enable: true
-  scale: false
-  shadow: true
+  scale: false    # scale effect when the mouse hover
+  shadow: false   # shadow effect when the mouse hover

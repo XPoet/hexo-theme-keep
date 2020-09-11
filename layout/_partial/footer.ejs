@@ -3,10 +3,6 @@
         <div class="copyright-info info-item">
             &copy; <%= date(new Date(), 'YYYY') %> <i class="fa fa-heart-o"></i> <a href="/"><%= config.author %></a>
         </div>
-        <div class="theme-info info-item">
-            <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %> | <%- __('theme') %> <a
-                    href="https://github.com/XPoet/hexo-theme-ils" target="_blank"><%= theme.theme_info.name %> v<%= theme.theme_info.version %></a>
-        </div>
         <% if (theme.website_count.busuanzi_count.enable) { %>
             <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
@@ -22,5 +18,9 @@
                 <% } %>
             </div>
         <% } %>
+        <div class="theme-info info-item">
+            <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %> | <%- __('theme') %> <a
+                    href="https://github.com/XPoet/hexo-theme-ils" target="_blank"><%= theme.theme_info.name %> v<%= theme.theme_info.version %></a>
+        </div>
     </div>
 </footer>

@@ -21,8 +21,8 @@
         <% if (title){ %><%= title %> | <% } %><%= config.title %>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <% if (theme.favicon){ %>
-        <%- favicon_tag(theme.favicon) %>
+    <% if (theme.style.favicon){ %>
+        <%- favicon_tag(theme.style.favicon) %>
     <% } %>
     <%- css('css/style') %>
     <%- export_config() %>

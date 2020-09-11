@@ -24,23 +24,26 @@
                     <div class="article-date">
                         <span><i class="fa fa-pencil-square-o"></i> <%= date(post.date, 'YYYY-MM-DD') %></span>
                         <% if (theme.magic.enable === true) { %>
-                            <% if (theme.home_article.category === true) { %>
+                            <% if (theme.home_article.category.enable === true) { %>
                                 <span>
                             <i class="fa fa-folder"></i>
                             <ul>
-                                <% post.categories.forEach((category, i) => { %>
-                                    <li><%= i === 0 ? '' : '> ' %><a
-                                                href="<%- url_for(category.path) %>"><%= category.name %></a></li>
+                                <% post.categories.forEach((category, i) => {
+                                if (theme.home_article.category.limit === 0 || i + 1 <= theme.home_article.category.limit) { %>
+                                    <li>
+                                        <%= i === 0 ? '' : '> ' %><a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                                    </li>
+                                <% } %>
                                 <% }); %>
                             </ul>
                             </span>
                             <% } %>
-                            <% if (theme.home_article.tag === true) { %>
+                            <% if (theme.home_article.tag.enable === true) { %>
                                 <span>
                             <i class="fa fa-tags"></i>
                             <ul>
                                 <% post.tags.forEach((tag, i) => {
-                                if (theme.home_article.tag_limit === 0 | i + 1 <= theme.home_article.tag_limit) { %>
+                                if (theme.home_article.tag.limit === 0 || i + 1 <= theme.home_article.tag.limit) { %>
                                     <li>
                                         <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
                                     </li>
