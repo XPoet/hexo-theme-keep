@@ -274,12 +274,12 @@ $header-progress-height = 2.8px;
       .menu-item {
         a:hover {
           &::after {
-            bottom: -20px;
+            bottom: -($header-shrink-height / 2 - 10);
           }
         }
 
         .active::after {
-          bottom: -20px;
+          bottom: -($header-shrink-height / 2 - 10);
         }
       }
 
