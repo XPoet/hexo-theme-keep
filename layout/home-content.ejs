@@ -24,7 +24,7 @@
                     <div class="article-date">
                         <span><i class="fa fa-pencil-square-o"></i> <%= date(post.date, 'YYYY-MM-DD') %></span>
                         <% if (theme.magic.enable === true) { %>
-                            <% if (theme.home_article.category.enable === true) { %>
+                            <% if (post.categories.length && theme.home_article.category.enable === true) { %>
                                 <span>
                             <i class="fa fa-folder"></i>
                             <ul>
@@ -38,7 +38,7 @@
                             </ul>
                             </span>
                             <% } %>
-                            <% if (theme.home_article.tag.enable === true) { %>
+                            <% if (post.tags.length && theme.home_article.tag.enable === true) { %>
                                 <span>
                             <i class="fa fa-tags"></i>
                             <ul>
