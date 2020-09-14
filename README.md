@@ -77,7 +77,6 @@
 ### Unfinished 未完成
 
 - [ ] 文章版权信息
-- [ ] 文章支持显示公式
 - [ ] 在线更改字体和字号
 - [ ] 打赏功能
 - [ ] ......
@@ -473,6 +472,44 @@ top: 9999
    ```
 
 其他页面的生成方式跟「关于」页面类似，此处不再赘述。
+
+### MathJax 数学公式
+
+如果你要在文章中显示数学公式，可使用插件 `hexo-filter-mathjax`，详情参考：https://github.com/next-theme/hexo-filter-mathjax 、https://www.mathjax.org/ 。
+或按下列步骤完成配置：
+
+1. 在 Hexo 博客根目录下安装插件 **`hexo-filter-mathjax`**。
+
+   ```bash
+   npm install hexo-filter-mathjax
+   ```
+
+2. 在 Hexo 配置文件 `_config.yml` 增加如下配置。
+
+   ```yml
+   mathjax:
+     tags: none # or 'ams' or 'all'
+     single_dollars: true # enable single dollar signs as in-line math delimiters
+     cjk_width: 0.9 # relative CJK char width
+     normal_width: 0.6 # relative normal (monospace) width
+     append_css: true # add CSS to every page
+     every_page: false # if true, every page will be rendered by mathjax regardless the `mathjax` setting in Front-matter of each article
+   ```
+
+3. 在文章页添加 `mathjax: true`，至此，就可以在该页面中写公式了。
+
+   ```yml
+   ---
+   title: MathJax Test
+   date: 2020-09-12 16:02:07
+   tags: MathJax
+   categories: MathJax
+   mathjax: true
+   ---
+   $$
+   i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
+   $$
+   ```   
 
 ## Contribution 贡献
 
