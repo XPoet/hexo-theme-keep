@@ -475,13 +475,13 @@ top: 9999
 
 ### MathJax 数学公式
 
-如果你要在文章中显示数学公式，可使用插件 `hexo-filter-mathjax`，详情参考：https://github.com/next-theme/hexo-filter-mathjax 、https://www.mathjax.org/ 。
-或按下列步骤完成配置：
+如果要在文章中显示数学公式，可以使用插件 **`hexo-filter-mathjax`**，详情参考：https://github.com/next-theme/hexo-filter-mathjax/ 。  
+或按下列步骤完成相关配置：
 
 1. 在 Hexo 博客根目录下安装插件 **`hexo-filter-mathjax`**。
 
    ```bash
-   npm install hexo-filter-mathjax
+   npm install hexo-filter-mathjax --save
    ```
 
 2. 在 Hexo 配置文件 `_config.yml` 增加如下配置。
