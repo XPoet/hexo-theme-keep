@@ -76,6 +76,8 @@
 
 ### Unfinished 未完成
 
+- [ ] 图片懒加载
+- [ ] 大图查看器
 - [ ] 文章版权信息
 - [ ] 在线更改字体和字号
 - [ ] 打赏功能
@@ -83,8 +85,8 @@
 
 ## Get start 快速开始
 
-在开始使用主题之前，强烈建议你先阅读 「Easy Hexo 团队」撰写的 Hexo 教程！
-链接：https://easyhexo.com/
+**在开始使用主题之前，强烈建议你先阅读 「Easy Hexo 团队」撰写的 Hexo 教程！**  
+**链接：https://easyhexo.com/**
 
 ### Install 安装
 
@@ -103,12 +105,9 @@
 ### Enable 启用
 
 Modify `theme` setting in `_config.yml` to `ils`.  
-修改博客目录下的 `_config.yml` 配置文件，将 `theme` 设置为 `ils` 。
+修改 Hexo 根目录下的 `_config.yml` 配置文件，将 `theme` 设置为 `ils` 。
 
 ```yml
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
 theme: ils
 ```
 
@@ -125,27 +124,29 @@ theme: ils
 
 ### Configuration 配置
 
-主题的配置文件的详细说明，强烈建议多看几遍，并且对照着来修改自己的配置文件，边修改边查看页面效果。
+以下是主题配置文件的详细说明，建议多看几遍，并且对照着来修改自己的配置文件，边修改边查看界面效果。
+  
+如遇到无法解决的问题，可以给我提 [Issues](https://github.com/XPoet/hexo-theme-ils/issues) 。
 
 ```yml
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Theme basic info (please don't change)
-# 主题基本信息，请不要改动。
-# ------------------------------------------------------------
+# 主题基本信息（请勿改动）
+# ---------------------------------------------------------------------------------------
 theme_info:
   name: ILS
   version: 2.0.2
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Theme style settings
 # 主题样式设置
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
-  # 主题的主颜色，修改为自己喜欢的颜色即可，支持 rgb、十六进制格式。
+  # 主颜色，修改为自己喜欢的颜色即可，支持 rgb、十六进制格式。
+  # 建议使用 Web 安全色，https://www.bootcss.com/p/websafecolors/
   primary_color: "#0066CC"
 
   # favicon
@@ -156,13 +157,12 @@ style:
   # 头像图片，把 "/source/images/" 目录下的 "avatar.png"，换成自己的图片即可。
   avatar: images/avatar.png
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Navigation menu
 # 导航菜单
-# 如需新增导航页，请按下面格式填写，同时需要创建对应的 Hexo 页面。
+# 如需新增导航页，请按下面格式填写，同时需要创建相对应的 Hexo 页面。
 # 如何新增页面，请参考下面的教程：“Add page 添加页面”。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 menu:
   Home: /
   Archives: /archives
@@ -172,23 +172,21 @@ menu:
   # About: /about
   # ...
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # RSS
 # Dependencies: hexo-generator-feed
 # See: https://github.com/hexojs/hexo-generator-feed
 # RSS 订阅，如需启用，请先安装 Hexo 插件：hexo-generator-feed。
 # 具体步骤，参考下面的教程：“RSS 订阅”。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 rss:
   enable: false
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Comment plugin
 # 评论插件
 # 主题内置了 Valine 和 Gitalk，只能使用其中一款。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 comments:
   # Valine
   # See: https://github.com/xCss/Valine
@@ -196,10 +194,10 @@ comments:
   # 获取必要的参数，在下面填写。
   valine:
     enable: false
-    appid:                # your leancloud application appid
-    appkey:               # your leancloud application appkey
-    meta:                 # comment input meta, type: Array, values: ['nick','mail','link']
-    placeholder:          # your placeholder
+    appid: # your leancloud application appid
+    appkey: # your leancloud application appkey
+    meta: # comment input meta, type: Array, values: ['nick','mail','link']
+    placeholder: # your placeholder
 
   # Gitalk
   # See: https://github.com/gitalk/gitalk
@@ -207,16 +205,15 @@ comments:
   # 获取必要的参数，在下面填写。
   gitalk:
     enable: false
-    github_id:             # GitHub repo owner
-    repository:            # Repository name to store issues
-    client_id:             # GitHub Application Client ID
-    client_secret:         # GitHub Application Client Secret
+    github_id: # GitHub repo owner
+    repository: # Repository name to store issues
+    client_id: # GitHub Application Client ID
+    client_secret: # GitHub Application Client Secret
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Website count
 # 网站计数
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 website_count:
   # busuanzi
   # See: http://ibruce.info/2015/04/04/busuanzi/
@@ -230,14 +227,13 @@ website_count:
     site_pv: false
     page_pv: false
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Local Search
 # Dependencies: hexo-generator-searchdb
 # See: https://github.com/theme-next/hexo-generator-searchdb
 # 本地搜索，如需启用，请先安装 Hexo 插件：hexo-generator-searchdb。
 # 具体步骤，参考下面的教程：“Local search 本地搜索”。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 local_search:
   enable: true
 
@@ -246,7 +242,7 @@ local_search:
   # trigger 搜索触发方式，输入关键字后会触发搜索，可选 auto（自动）或 manual（手动）。
   ### auto 每输入或删除一个字符后，自动触发搜索。
   ### manual 每输入或删除一个字符后，需要按回车键触发搜索。
-  trigger: auto  # values: auto | manual
+  trigger: auto # values: auto | manual
 
   # Unescape html strings to the readable one.
   # # 转义 HTML 字符串为可读字符串。
@@ -256,64 +252,58 @@ local_search:
   # 在页面加载时预加载搜索数据。
   preload: false
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Post word count
 # Dependencies: hexo-wordcount
 # See: https://github.com/willin/hexo-wordcount
 # 文章字数统计 & 阅读时长统计
 # 如需启用，请先安装 Hexo 插件：hexo-wordcount。
 # 在博客根目录下使用 npm 命令安装: npm i hexo-wordcount --save
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 post_wordcount:
   enable: false
-  wordcount: false  # word count, one article
-  min2read: false   # time to read, one article
+  wordcount: false # word count, one article
+  min2read: false # time to read, one article
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Home page article block display settings
 # 首页文章块底部的显示设置，可配置显示分类和标签。
 # limit 显示分类或标签的最大个数。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 home_article:
   category:
-    enable: false     # show category in home page article block
-    limit: 3          # max number of categories shown in home page article block
+    enable: false # show category in home page article block
+    limit: 3 # max number of categories shown in home page article block
   tag:
-    enable: false     # show tags in home page article block
-    limit: 5          # max number of tags shown in home page article block
+    enable: false # show tags in home page article block
+    limit: 5 # max number of tags shown in home page article block
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Code copy
 # 代码复制，代码块的复制风格可选 default | flat | mac。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 code_copy:
   enable: true
-  style: flat        # values: default | flat | mac
+  style: flat # values: default | flat | mac
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Sidebar tools
 # 侧边栏工具（搜索按钮、昼夜模式切换按钮、RSS按钮、TOC显示切换按钮）
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 side_tools:
   enable: false
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Back to top
 # 回到顶部
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 back2top:
   enable: false
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar
 # 文章目录结构
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 toc:
   enable: false
 
@@ -325,16 +315,15 @@ toc:
   # 是否展开所有目录。
   expand_all: true
 
-
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Magic
 # magic 启用后，主题将以简约的卡片形式显示。
 # 可分别配置缩放效果、阴影效果。
-# ------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 magic:
   enable: true
-  scale: false    # scale effect when the mouse hover
-  shadow: false   # shadow effect when the mouse hover
+  scale: false # scale effect when the mouse hover
+  shadow: false # shadow effect when the mouse hover
 ```
 
 ### Comment 评论
@@ -509,7 +498,7 @@ top: 9999
    $$
    i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
    $$
-   ```   
+   ```
 
 ## Contribution 贡献
 

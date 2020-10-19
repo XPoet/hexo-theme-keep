@@ -19,7 +19,7 @@ const pageAsideOpenToggle = () => {
   let isOpen = false;
   const openToggle = (isOpen) => {
 
-    const pageAsideWidth = '248px';
+    const pageAsideWidth = '258px';
     containerDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
     pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
     pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
