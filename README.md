@@ -135,7 +135,7 @@ theme: ils
 # ---------------------------------------------------------------------------------------
 theme_info:
   name: ILS
-  version: 2.0.2
+  version: 2.0.3
   author: XPoet
   repository: https://github.com/XPoet/hexo-theme-ils
 
@@ -420,7 +420,7 @@ top: 9999
 
 ### Add page 添加页面
 
-**Hexo 初始并没有 categories、about、links、tags 等页面，需要自己手动创建。**
+**Hexo 初始并没有 categories（分类）、about（关于）、links（友链）、tags（标签） 等页面，需要自己手动创建。**
 
 以创建「关于」页面为例：
 
