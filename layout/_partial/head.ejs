@@ -15,10 +15,14 @@
         title = __('tag') + ': ' + page.tag;
     } else if (page.title === 'about') {
         title = __('about');
+    } else if (page.title === 'links') {
+        title = __('links');
     }
     %>
     <title>
-        <% if (title){ %><%= title %> | <% } %><%= config.title %>
+        <% if (title){ %><%= title %> |
+        <% } %>
+        <%= config.title %>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <% if (theme.style.favicon){ %>

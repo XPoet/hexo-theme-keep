@@ -86,7 +86,7 @@ website_count:
 # See: https://github.com/theme-next/hexo-generator-searchdb
 # ---------------------------------------------------------------------------------------
 local_search:
-  enable: true
+  enable: false
 
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
@@ -141,7 +141,7 @@ side_tools:
 # Back to top
 # ---------------------------------------------------------------------------------------
 back2top:
-  enable: false
+  enable: true
 
 
 # ---------------------------------------------------------------------------------------

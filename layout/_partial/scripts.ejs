@@ -1,21 +1,24 @@
 <%- js([
-    'js/main.js',
+    'js/utils.js',
     'js/header-shrink.js',
-    'js/toggle-mode.js'
+    'js/dark-light-toggle.js',
+    'js/main.js'
 ]) %>
 
 <% if (theme.back2top.enable) { %>
-    <%- js('js/scroll-to-top.js') %>
+    <%- js('js/back2top.js') %>
 <% } %>
 
 <% if (is_post()) { %>
+
+    <%- js('js/left-side-toggle.js') %>
 
     <% if (theme.code_copy.enable) { %>
         <%- js('js/code-copy.js') %>
     <% } %>
 
     <% if (theme.toc.enable) { %>
-        <%- js(['lib/anime.min.js', 'js/toc.js', 'js/post-toc.js']) %>
+        <%- js(['lib/anime.min.js', 'js/toc.js']) %>
     <% } %>
 <% } %>
 
