@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ...ILS.utils,
 
     back2TopButton_dom: document.querySelector('.scroll-to-top'),
+    back2BottomButton_dom: document.querySelector('.scroll-to-bottom'),
 
     back2top() {
       const scrollTopTimer = setInterval(function () {
@@ -20,6 +21,19 @@ window.addEventListener('DOMContentLoaded', () => {
       }, 30);
     },
 
+    back2Bottom() {
+      let scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+      const scrollBottomTimer = setInterval(function () {
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (!scrollTop) scrollTop = 10;
+        scrollTop = scrollTop + scrollTop / 2;
+        window.scrollTo(0, scrollTop);
+        if (scrollTop >= scrollHeight) {
+          clearInterval(scrollBottomTimer);
+        }
+      }, 50);
+    },
+
     initBack2TopButton() {
       if (ILS.utils.back2TopButton_dom) {
         ILS.utils.back2TopButton_dom.addEventListener('click', () => {
@@ -27,9 +41,18 @@ window.addEventListener('DOMContentLoaded', () => {
         });
       }
     },
+
+    initBack2BottomButton() {
+      if (ILS.utils.back2BottomButton_dom) {
+        ILS.utils.back2BottomButton_dom.addEventListener('click', () => {
+          this.back2Bottom();
+        });
+      }
+    },
   }
 
   ILS.utils.initBack2TopButton();
+  ILS.utils.initBack2BottomButton();
 });
 
 

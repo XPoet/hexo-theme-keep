@@ -1,0 +1,14 @@
+if (hexo-config('comments.valine.enable')) {
+  @require "./valine.styl";
+}
+
+if (hexo-config('comments.gitalk.enable')) {
+  @require "./gitalk.styl";
+}
+
+.comments-container {
+  #comment-anchor {
+    width: 100%;
+    height: 20px;
+  }
+}

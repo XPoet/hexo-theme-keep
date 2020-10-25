@@ -1,6 +1,5 @@
 @require "../common/variables.styl";
 @require "../common/magic-theme.styl";
-@require "../common/magic-theme.styl";
 
 $li-border-radius = 5px;
 $li-margin-bottom = 12px;
@@ -10,9 +9,9 @@ $li-margin-bottom = 12px;
   .tools-list {
     li {
       cursor: pointer;
-      width: $tool-button-width;
-      height: $tool-button-width;
-      border-radius: $li-border-radius;
+      width: $circle-button-width;
+      height: $circle-button-width;
+      border-radius: 50%;
       font-size: 1.2em;
       display: flex;
       align-items: center;
@@ -36,32 +35,6 @@ $li-margin-bottom = 12px;
         background: var(--primary-color);
       }
 
-      &.rss {
-
-        a {
-          border-radius: $li-border-radius;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 100%;
-
-          &:hover {
-            transition();
-            color: var(--background-color);
-            background: var(--primary-color);
-          }
-        }
-      }
-
-
-      &.scroll-to-top {
-        display: none;
-        position: fixed;
-        right: $component-interspace;
-        bottom: $component-interspace;
-      }
-
       &.page-aside-toggle {
         display: none;
 
@@ -69,8 +42,8 @@ $li-margin-bottom = 12px;
           display: none !important;
         }
       }
-
     }
   }
+
 
 }

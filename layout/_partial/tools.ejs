@@ -1,26 +1,23 @@
 <div class="tools-container">
     <ul class="tools-list">
-        <% if (theme.local_search.enable) { %>
+        <% if (theme.local_search.enable && config.search) { %>
             <li class="search popup-trigger">
                 <i class="fa fa-search"></i>
             </li>
-            <%- js('js/local-search.js') %>
         <% } %>
-        <li class="mode-toggle">
-            <i class="fa fa-moon-o"></i>
-        </li>
-        <% if (theme.local_search.enable && config.feed) { %>
-            <li class="rss">
-                <a href="<%= '/' + config.feed.path %>" target="_blank"><i class="fa fa-rss"></i></a>
+
+        <% if (is_post()) { %>
+            <li class="go-comment">
+                <i class="fa fa-comment"></i>
             </li>
         <% } %>
-        <li class="page-aside-toggle">
-            <i class="fa fa-bars"></i>
-        </li>
-        <% if (theme.back2top.enable) { %>
-            <li class="scroll-to-top">
-                <i class="fa fa-caret-up"></i>
+
+        <!-- TOC aside toggle -->
+        <% if (theme.toc.enable && is_post()) { %>
+            <li class="tools-item page-aside-toggle">
+                <i class="fa fa-outdent"></i>
             </li>
         <% } %>
+
     </ul>
 </div>

@@ -14,8 +14,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     initToggleBarButton() {
       if (this.toggleBar) {
+        const toggleBarIcon = this.toggleBar.querySelector('i');
         this.toggleBar.addEventListener('click', () => {
           this.isOpenPageAside = !this.isOpenPageAside;
+          if (this.isOpenPageAside) {
+            toggleBarIcon.classList.add('fa-outdent');
+            toggleBarIcon.classList.remove('fa-indent');
+          } else {
+            toggleBarIcon.classList.add('fa-indent');
+            toggleBarIcon.classList.remove('fa-outdent');
+          }
           this.changePageLayoutWhenOpenToggle(this.isOpenPageAside);
         })
       }

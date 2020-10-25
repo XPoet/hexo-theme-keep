@@ -1,0 +1,32 @@
+<div class="tools2-container">
+
+    <button class="tools-button">
+        <i class="fa fa-plus"></i>
+    </button>
+
+    <ul class="tools-wrapper">
+        <!-- back2top -->
+        <% if (theme.back2top.enable) { %>
+            <li class="tools-item scroll-to-bottom">
+                <i class="fa fa-arrow-down"></i>
+            </li>
+            <li class="tools-item scroll-to-top">
+                <i class="fa fa-arrow-up"></i>
+            </li>
+        <% } %>
+
+        <!-- mode toggle -->
+        <li class="tools-item mode-toggle">
+            <i class="fa fa-moon-o"></i>
+        </li>
+
+        <!-- rss -->
+        <% if (theme.rss.enable && config.feed) { %>
+            <li class="tools-item rss">
+                <a href="<%= '/' + config.feed.path %>" target="_blank"><i class="fa fa-rss"></i></a>
+            </li>
+        <% } %>
+
+
+    </ul>
+</div>

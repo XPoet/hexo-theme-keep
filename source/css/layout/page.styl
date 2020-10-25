@@ -158,6 +158,27 @@ $page-aside-width = 258px;
   }
 
 
+  .sidebar-tools-2 {
+    position: fixed;
+    bottom: $component-interspace;
+    right: $component-interspace;
+    width: $circle-button-width;
+    height: $circle-button-width;
+
+    +ils-tablet() {
+      right: 10px;
+      transform: scale(0.82);
+      transform-origin: right bottom;
+
+    }
+
+    +ils-mobile() {
+      right: 5px;
+      transform: scale(0.72);
+      transform-origin: right bottom;
+    }
+  }
+
   .sidebar-tools-shrink {
     transition();
     top: $header-shrink-height + $component-interspace;

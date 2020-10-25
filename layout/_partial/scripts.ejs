@@ -5,6 +5,10 @@
     'js/main.js'
 ]) %>
 
+<% if (theme.local_search.enable && config.search) { %>
+    <%- js('js/local-search.js') %>
+<% } %>
+
 <% if (theme.back2top.enable) { %>
     <%- js('js/back2top.js') %>
 <% } %>
@@ -13,7 +17,7 @@
 
     <%- js('js/left-side-toggle.js') %>
 
-    <% if (theme.code_copy.enable) { %>
+    <% if (theme.code_copy.enable ) { %>
         <%- js('js/code-copy.js') %>
     <% } %>
 
@@ -21,4 +25,3 @@
         <%- js(['lib/anime.min.js', 'js/toc.js']) %>
     <% } %>
 <% } %>
-

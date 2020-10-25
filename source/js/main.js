@@ -3,6 +3,11 @@ window.addEventListener('DOMContentLoaded', () => {
   ILS.utils.printThemeInfo();
 
   // init scroll
-  ILS.utils.initWindowScroll();
+  ILS.utils.registerWindowScroll();
 
+  // init tools button
+  ILS.utils.registerToolsButtonClick();
+
+  // comment
+  ILS.utils.goComment();
 });
