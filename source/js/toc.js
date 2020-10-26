@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
               scrollTop: offset - 10,
               complete: function () {
                 setTimeout(() => {
-                  if (ILS.utils.headerWrapper_dom.style.opacity !== '0') ILS.utils.headerWrapper_dom.style.opacity = '0'
+                  ILS.utils.headerWrapper_dom.style.display = 'none';
                 }, 100)
               }
             });
