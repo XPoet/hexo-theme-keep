@@ -23,10 +23,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     back2Bottom() {
       let scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+      let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
       const scrollBottomTimer = setInterval(function () {
-        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
         if (!scrollTop) scrollTop = 10;
-        scrollTop = scrollTop + scrollTop / 2;
+        scrollTop = Math.floor(scrollTop + scrollTop / 2);
         window.scrollTo(0, scrollTop);
         if (scrollTop >= scrollHeight) {
           clearInterval(scrollBottomTimer);
@@ -54,5 +54,3 @@ window.addEventListener('DOMContentLoaded', () => {
   ILS.utils.initBack2TopButton();
   ILS.utils.initBack2BottomButton();
 });
-
-
