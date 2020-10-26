@@ -6,14 +6,14 @@
             </li>
         <% } %>
 
-        <% if (is_post()) { %>
+        <% if (is_post() && (theme.comments.valine.enable || theme.comments.gitalk.enable)) { %>
             <li class="go-comment">
                 <i class="fa fa-comment"></i>
             </li>
         <% } %>
 
         <!-- TOC aside toggle -->
-        <% if (theme.toc.enable && is_post()) { %>
+        <% if (is_post() && theme.toc.enable) { %>
             <li class="tools-item page-aside-toggle">
                 <i class="fa fa-outdent"></i>
             </li>
