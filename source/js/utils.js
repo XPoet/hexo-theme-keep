@@ -20,26 +20,25 @@ ILS.utils = {
     const percent = Math.round(scrollTop / (scrollHeight - clientHeight) * 100).toFixed(0);
     const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
 
-    if (ILS.utils.headerProgress_dom) {
-      ILS.utils.headerProgress_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
-      ILS.utils.headerProgress_dom.style.width = `${ProgressPercent}%`;
+    if (this.headerProgress_dom) {
+      this.headerProgress_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
+      this.headerProgress_dom.style.width = `${ProgressPercent}%`;
     }
 
     // hide header handle
-    const opacity = ILS.utils.headerWrapper_dom.style.opacity;
-    if (scrollTop > ILS.utils.prevScrollValue && scrollTop > 500) {
-      if (opacity !== '0') ILS.utils.headerWrapper_dom.style.opacity = '0';
+    if (scrollTop > this.prevScrollValue && scrollTop > 500) {
+      this.headerWrapper_dom.style.display = 'none';
     } else {
-      if (opacity !== '1') ILS.utils.headerWrapper_dom.style.opacity = '1';
+      this.headerWrapper_dom.style.display = 'flex';
     }
-    ILS.utils.prevScrollValue = scrollTop;
+    this.prevScrollValue = scrollTop;
   },
 
   // register window scroll event
   registerWindowScroll() {
-    window.addEventListener('scroll', function (_e) {
+    window.addEventListener('scroll', () => {
       // style handle when scroll
-      ILS.utils.styleHandleWhenScroll();
+      this.styleHandleWhenScroll();
 
       // TOC scroll handle
       if (CONFIG.toc.enable && ILS.utils.hasOwnProperty('findActiveIndexByTOC')) {
@@ -130,6 +129,3 @@ ILS.utils = {
     }
   },
 }
-
-
-
