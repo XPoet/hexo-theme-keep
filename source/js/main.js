@@ -10,4 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // comment
   ILS.utils.goComment();
+
+  // init page height handle
+  ILS.utils.initPageHeightHandle();
 });

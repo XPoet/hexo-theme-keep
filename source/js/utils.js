@@ -21,7 +21,9 @@ ILS.utils = {
     const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
 
     if (ILS.utils.headerProgress_dom) {
-      ILS.utils.headerProgress_dom.style.display = percent === '0' ? 'none' : 'block';
+      // ILS.utils.headerProgress_dom.style.display = percent === '0' ? 'none' : 'block';
+      ILS.utils.headerProgress_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
+
       ILS.utils.headerProgress_dom.style.width = `${ProgressPercent}%`;
     }
 
@@ -110,6 +112,25 @@ ILS.utils = {
 
   },
 
+  // get dom element height
+  getElementHeight(selectors) {
+    const dom = document.querySelector(selectors);
+    return dom ? dom.getBoundingClientRect().height : 0;
+  },
+
+
+  initPageHeightHandle() {
+    const h1 = this.getElementHeight('.header-progress');
+    const h2 = this.getElementHeight('.page-main-content-top');
+    const h3 = this.getElementHeight('.page-main-content-middle');
+    const h4 = this.getElementHeight('.page-main-content-bottom');
+    const allDomHeight = h1 + h2 + h3 + h4;
+    const innerHeight = window.innerHeight;
+    const pb_dom = document.querySelector('.page-main-content-bottom');
+    if (allDomHeight < innerHeight) {
+      pb_dom.style.marginTop = (innerHeight - allDomHeight) + 'px';
+    }
+  },
 }
 
 
