@@ -21,9 +21,7 @@ ILS.utils = {
     const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
 
     if (ILS.utils.headerProgress_dom) {
-      // ILS.utils.headerProgress_dom.style.display = percent === '0' ? 'none' : 'block';
       ILS.utils.headerProgress_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
-
       ILS.utils.headerProgress_dom.style.width = `${ProgressPercent}%`;
     }
 
