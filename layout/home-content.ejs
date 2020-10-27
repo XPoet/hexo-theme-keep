@@ -3,11 +3,13 @@
         <% page.posts.forEach(post => { %>
             <li class="home-article-item">
 
+                <% if (post.top) { %>
+                    <i class="fa fa-thumb-tack top-icon"></i>
+                <% } %>
+
                 <h3 class="home-article-title">
                     <a href="<%- url_for(post.path) %>">
-                        <% if (post.top) { %>
-                            <i class="fa fa-thumb-tack"></i>
-                        <% } %>
+
                         <%= post.title %>
                     </a>
                 </h3>
