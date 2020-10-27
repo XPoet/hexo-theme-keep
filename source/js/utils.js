@@ -9,7 +9,7 @@ ILS.utils = {
   ...ILS.utils,
 
   headerProgress_dom: document.querySelector('.header-progress'),
-  headerWrapper_dom: document.querySelector('.header-wrapper'),
+  pageTop_dom: document.querySelector('.page-main-content-top'),
 
   // Scroll Style Handle
   prevScrollValue: 0,
@@ -27,9 +27,9 @@ ILS.utils = {
 
     // hide header handle
     if (scrollTop > this.prevScrollValue && scrollTop > 500) {
-      this.headerWrapper_dom.style.display = 'none';
+      this.pageTop_dom.style.transform = 'translateY(-100%)';
     } else {
-      this.headerWrapper_dom.style.display = 'flex';
+      this.pageTop_dom.style.transform = 'translateY(0)';
     }
     this.prevScrollValue = scrollTop;
   },

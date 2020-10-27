@@ -26,19 +26,19 @@
             </ul>
         </span>
     <% } %>
-    <% if (theme.website_count.busuanzi_count.enable && theme.website_count.busuanzi_count.page_pv && is_post()) { %>
-        <span class="article-pv article-meta-item">
-            <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
-        </span>
-    <% } %>
     <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.wordcount){ %>
         <span class="article-wordcount article-meta-item">
-        <i class="fa fa-book"></i> <span><%= wordcount(page.content) %> <%- __('wordcount') %></span>
+            <i class="fa fa-file-word-o"></i> <span><%= wordcount(page.content) %> <%- __('wordcount') %></span>
         </span>
     <% } %>
     <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.min2read){ %>
         <span class="article-min2read article-meta-item">
-        <i class="fa fa-clock-o"></i> <span><%= min2read(page.content) %> <%- __('min2read') %></span>
+            <i class="fa fa-clock-o"></i> <span><%= min2read(page.content) %> <%- __('min2read') %></span>
+        </span>
+    <% } %>
+    <% if (is_post() && theme.website_count.busuanzi_count.enable && theme.website_count.busuanzi_count.page_pv) { %>
+        <span class="article-pv article-meta-item">
+            <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
         </span>
     <% } %>
 </div>

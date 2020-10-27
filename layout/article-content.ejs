@@ -2,12 +2,25 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <h3><a class="title-hover-animation"><%= page.title %></a></h3>
+            <span class="title-hover-animation"><%= page.title %></span>
         </div>
 
-        <div class="meta-info">
-            <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
-        </div>
+        <% if (theme.style.avatar && config.author) { %>
+            <div class="article-header">
+                <div class="avatar">
+                    <%- image_tag(theme.style.avatar) %>
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span><%= config.author %></span>
+                        <span class="level">Lv<%- getLevel(site.posts.length) %></span>
+                    </div>
+                    <div class="meta-info">
+                        <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
 
         <div class="article-content markdown-body">
             <%- page.content %>

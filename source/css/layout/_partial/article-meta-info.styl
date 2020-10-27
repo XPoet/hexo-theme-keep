@@ -13,6 +13,7 @@
     }
   }
 
+
   .article-tags, .article-categories {
     display: inline;
 
@@ -27,5 +28,20 @@
         color: var(--primary-color);
       }
     }
+  }
+
+
+  .article-wordcount, .article-tags {
+    +ils-mobile() {
+      display: none;
+    }
+  }
+
+  .article-min2read, .article-categories {
+
+    +ils-tablet() {
+      display: none;
+    }
+
   }
 }

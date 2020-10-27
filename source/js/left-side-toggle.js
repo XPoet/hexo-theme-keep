@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
       const pageAsideWidth = '258px';
       this.containerDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
       this.pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
-      this.pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
       this.leftAsideDom.style.left = isOpen ? '0' : `-${pageAsideWidth}`;
       this.headerContentDom.style.width = isOpen ? '76%' : '62%';
       this.mainContentDom.style.width = isOpen ? '76%' : '62%';

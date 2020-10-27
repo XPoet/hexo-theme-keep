@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
   ILS.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li');
   ILS.utils.articleToc_dom = document.querySelector('.article-toc');
   ILS.utils.postTocWrap_dom = document.querySelector('.post-toc-wrap');
-  ILS.utils.headerWrapper_dom = document.querySelector('.header-wrapper');
 
   if (ILS.utils.navItems.length > 0) {
 
@@ -37,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
               scrollTop: offset - 10,
               complete: function () {
                 setTimeout(() => {
-                  ILS.utils.headerWrapper_dom.style.display = 'none';
+                  ILS.utils.pageTop_dom.style.transform = 'translateY(-100%)';
                 }, 100)
               }
             });
