@@ -6,25 +6,27 @@
 // layout
 // ========================================================================
 if (hexo-config('magic.enable')) {
-  $header-height = 72px; // magic 风格：头部默认高度
+  $header-height = 72px;                // magic 风格：头部默认高度
 } else {
-  $header-height = 100px; // normal 风格：头部默认高度
+  $header-height = 100px;               // normal 风格：头部默认高度
 }
 
-$main-content-width = 62%; // 中间内容区域宽度（PC）
-$main-content-width-tablet = 80%; // 中间内容区域宽度（平板）
-$main-content-width-mobile = 88%; // 中间内容区域宽度（手机）
+$main-content-width = 62%;              // 中间内容区域宽度（PC）
+$main-content-width-tablet = 80%;       // 中间内容区域宽度（平板）
+$main-content-width-mobile = 88%;       // 中间内容区域宽度（手机）
 
-$header-shrink-height = 56px; // 头部收缩高度
-$circle-button-width = 40px; // tools 圆形工具按钮宽度
-$tools-button-width = 32px; // tools 方形工具按钮宽度
-$component-interspace = 40px; // 组件/模块的间隔值（px）
+$header-shrink-height = 56px;           // 头部收缩高度
+$circle-button-width = 40px;            // tools 圆形工具按钮宽度
+$tools-button-width = 32px;             // tools 方形工具按钮宽度
+$component-interspace = 40px;           // 组件/模块的间隔值（PC）
+$component-interspace-tablet = 30px;    // 组件/模块的间隔值（平板）
+$component-interspace-mobile = 20px;   // 组件/模块的间隔值（手机）
 
 // ========================================================================
 // 媒体查询
 // ========================================================================
-$media-max-width = 760px; // 媒体查询最大宽度 (平板)
-$media-max-width-mobile = 480px; // 媒体查询最大宽度（手机）
+$media-max-width = 760px;             // 媒体查询最大宽度 (平板)
+$media-max-width-mobile = 480px;      // 媒体查询最大宽度（手机）
 
 ils-tablet()
   @media (max-width: $media-max-width)

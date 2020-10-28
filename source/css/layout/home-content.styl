@@ -75,7 +75,7 @@
         line-height: 2em;
       }
 
-      .home-article-meta-info {
+      .home-article-meta-info-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -87,7 +87,7 @@
           font-size: 0.9em;
         }
 
-        .article-date {
+        .home-article-meta-info {
           letter-spacing: 0.5px;
 
           span {
@@ -99,6 +99,18 @@
 
             ul, li {
               display: inline;
+            }
+          }
+
+          .home-article-category {
+            +ils-mobile() {
+              display: none;
+            }
+          }
+
+          .home-article-tag {
+            +ils-tablet() {
+              display: none;
             }
           }
         }

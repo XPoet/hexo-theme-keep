@@ -72,6 +72,14 @@ $page-aside-width = 258px;
         justify-content: center;
         padding: $component-interspace 0;
 
+        +ils-tablet() {
+          padding: $component-interspace-tablet 0;
+        }
+
+        +ils-mobile() {
+          padding: $component-interspace-mobile 0;
+        }
+
         .main-content {
           width: $main-content-width;
 
