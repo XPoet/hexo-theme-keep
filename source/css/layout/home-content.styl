@@ -15,6 +15,14 @@
         right: 10px;
         font-size: 1.8em;
         transform: rotate(50deg);
+
+        +ils-tablet() {
+          display: 1.6em;
+        }
+
+        +ils-mobile() {
+          font-size: 1.38em;
+        }
       }
 
 
@@ -59,9 +67,7 @@
             color: var(--second-text-color);
           }
         }
-
       }
-
 
       .home-article-content {
 
