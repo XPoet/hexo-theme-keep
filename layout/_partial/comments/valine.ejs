@@ -19,13 +19,24 @@
             });
 
 
-            // Valine 评论列表增加"作者"标识
+            // Valine 评论列表增加"博主"标识
             const getValineDomTimer = setInterval(() => {
                 const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
                 if (vcards.length > 0) {
+
+                    let author = '<%= theme.base_info.author || config.author %>';
+                    if (author) {
+                        author = author.toLocaleLowerCase();
+                    }
+
+                    let email = '<%= theme.base_info.email %>';
+                    if (email) {
+                        email = email.toLocaleLowerCase();
+                    }
+
                     for (let vcard of vcards) {
                         const vnick = vcard.querySelector('.vhead .vnick');
-                        if (vnick.innerHTML.toLocaleLowerCase() === '<%= config.author %>'.toLocaleLowerCase()) {
+                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
                             vcard.classList.add('author');
                         }
                     }

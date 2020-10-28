@@ -25,19 +25,12 @@ $avatarWidth = 46px;
     }
   }
 
-
   .article-header {
-    margin-top: 16px;
     position: relative;
     padding-left: $avatarWidth;
     width: 100%;
     height: $avatarWidth;
     box-sizing: border-box;
-
-    +ils-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
 
     .avatar {
       position: absolute;
@@ -89,6 +82,15 @@ $avatarWidth = 46px;
 
   }
 
+
+  .article-header,
+  .article-header-meta-info {
+    margin-top: 16px;
+    +ils-tablet() {
+      transform: scale(0.88);
+      transform-origin: left top;
+    }
+  }
 
   .article-content {
     margin-top: 30px;
