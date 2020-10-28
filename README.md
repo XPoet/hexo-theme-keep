@@ -78,6 +78,7 @@
 
 - [ ] 图片懒加载
 - [ ] 大图查看器
+- [ ] 文章点赞功能
 - [ ] 文章版权信息
 - [ ] 在线更改字体和字号
 - [ ] 打赏功能
@@ -130,14 +131,14 @@ theme: ils
 
 ```yml
 # ---------------------------------------------------------------------------------------
-# Theme basic info (please don't change)
-# 主题基本信息（请勿改动）
+#  Your basic info
+#  你的基本信息，请正确填写，将显示在主题中。
 # ---------------------------------------------------------------------------------------
-theme_info:
-  name: ILS
-  version: 2.1.1
+base_info:
+  title: ILS
   author: XPoet
-  repository: https://github.com/XPoet/hexo-theme-ils
+  email: i@xpoet.cn
+  url: https://ils.xpoet.cn/
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
