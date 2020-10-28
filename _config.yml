@@ -1,12 +1,11 @@
 # ---------------------------------------------------------------------------------------
-# Theme basic info (please don't change)
+#  Your basic info
 # ---------------------------------------------------------------------------------------
-theme_info:
-  name: ILS
-  version: 2.1.1
+base_info:
+  title: ILS
   author: XPoet
-  repository: https://github.com/XPoet/hexo-theme-ils
-
+  email: i@xpoet.cn
+  url: https://ils.xpoet.cn/
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings

@@ -1,6 +1,21 @@
 ILS.utils = {
+
+  themeInfo: {
+    author: 'XPoet',
+    name: 'ILS',
+    version: '2.1.2',
+    repository: 'https://github.com/XPoet/hexo-theme-ils'
+  },
+
   printThemeInfo() {
-    console.log(`${CONFIG.themeInfo.name} v${CONFIG.themeInfo.version}`);
+    const themeInfo = `${this.themeInfo.name} v${this.themeInfo.version}`;
+    console.log(themeInfo);
+    const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
+    if (footThemeInfoDom) {
+      footThemeInfoDom.setAttribute('href', this.themeInfo.repository);
+      footThemeInfoDom.innerHTML = themeInfo;
+    }
+
   }
 }
 
