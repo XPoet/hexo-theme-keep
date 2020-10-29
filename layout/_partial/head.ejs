@@ -13,10 +13,8 @@
         title = __('category') + ': ' + page.category;
     } else if (is_tag()) {
         title = __('tag') + ': ' + page.tag;
-    } else if (page.title === 'about') {
-        title = __('about');
-    } else if (page.title === 'links') {
-        title = __('links');
+    } else {
+        title = __(page.title);
     }
     %>
     <title>
