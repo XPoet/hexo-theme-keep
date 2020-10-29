@@ -188,7 +188,7 @@ rss:
 # 评论插件
 # 主题内置了 Valine 和 Gitalk，只能使用其中一款。
 # ---------------------------------------------------------------------------------------
-comments:
+comment:
   # Valine
   # See: https://github.com/xCss/Valine
   # 如何使用 Valine，请参考官方教程：https://github.com/xCss/Valine
@@ -430,7 +430,7 @@ top: 9999
    hexo new page about
    ```
 2. 创建成功后，打开博客目录下 `/source/about/index.md` 文件，即可填写自己的内容。
-   支持 Markdown 和 HTML 格式；`comments: true` 表示该页面开启评论功能。
+   支持 Markdown 和 HTML 格式；`comment: true` 表示该页面开启评论功能。
 
    参考如下示例：
 
@@ -438,7 +438,7 @@ top: 9999
    ---
    title: about
    date: 2020-03-19 14:59:53
-   comments: true
+   comment: true
    ---
 
    ## About me

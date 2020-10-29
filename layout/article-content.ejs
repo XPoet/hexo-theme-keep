@@ -61,9 +61,9 @@
             </div>
         <% } %>
 
-        <% if (theme.comments.valine.enable || theme.comments.gitalk.enable) { %>
+        <% if (theme.comment.valine.enable || theme.comment.gitalk.enable) { %>
             <div class="comment-container">
-                <%- partial('_partial/comments/comment') %>
+                <%- partial('_partial/comment/comment') %>
             </div>
         <% } %>
     </div>

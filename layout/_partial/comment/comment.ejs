@@ -1,10 +1,10 @@
 <div class="comments-container">
     <div id="comment-anchor"></div>
-    <% if (theme.comments.valine.enable && theme.comments.gitalk.enable) { %>
+    <% if (theme.comment.valine.enable && theme.comment.gitalk.enable) { %>
         <%- partial('valine') %>
-    <% } else if (theme.comments.valine.enable) { %>
+    <% } else if (theme.comment.valine.enable) { %>
         <%- partial('valine') %>
-    <% } else if (theme.comments.gitalk.enable) { %>
+    <% } else if (theme.comment.gitalk.enable) { %>
         <%- partial('gitalk') %>
     <% } %>
 </div>
