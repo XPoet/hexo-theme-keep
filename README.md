@@ -39,7 +39,8 @@
 
 > 如果你在使用该主题，欢迎 [PR](https://juejin.im/post/6844903856971710477) 将你的网站链接填写在下方，获得更多展示机会。
 
-- [XPoet Blog](https://xpoet.cn)
+- [XPoet's Blog](https://xpoet.cn)
+- [ILS 官网](https://ils.xpoet.cn)
 - ...
 - ...
 
