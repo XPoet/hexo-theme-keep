@@ -343,15 +343,9 @@ magic:
 
 前往 https://github.com/gitalk/gitalk 查看 Gitalk 更多信息。
 
-### Post top 文章顶置
+### Post sticky 文章顶置
 
-实现文章顶置功能，需在 Hexo 博客根目录下安装插件 **`hexo-generator-index-pin-top`**。
-
-```bash
-npm install hexo-generator-index-pin-top
-```
-
-然后在 `_posts` 文件夹里的需要顶置的文章页添加 `top` 属性，**top** 值越大，顶置文章越靠前，参考如下。
+实现文章顶置功能，需在文章页添加 **`sticky`** 属性，**`sticky`** 值越大，顶置的文章越靠前，参考如下。
 
 ```markdown
 ---
@@ -359,7 +353,7 @@ title: 千呼万唤始出来，Hexo 主题 ILS 正式发布
 date: 2020-04-07 21:55:14
 tags: [Hexo]
 categories: [Hexo]
-top: 9999
+sticky: 9999
 ---
 ```
 
