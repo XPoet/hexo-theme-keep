@@ -1,7 +1,11 @@
 <div class="fade-in-down-animation">
     <div class="empty-page-container">
         <div class="empty-page-content markdown-body">
-            <%- page.content %>
+            <% if (page.content) { %>
+                <%- page.content %>
+            <% } else { %>
+                <h1><%- page.title %></h1>
+            <% } %>
         </div>
         <div class="empty-page-comments">
             <% if (page.comment) { %>

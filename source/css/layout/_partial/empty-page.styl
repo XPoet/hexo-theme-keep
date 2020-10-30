@@ -1,4 +1,5 @@
 @require "../common/magic-theme.styl";
+@require "../common/variables.styl";
 
 .empty-page-container {
 
@@ -20,10 +21,14 @@
 
     }
 
-    margin-bottom: 30px;
+    margin-bottom: $component-interspace;
 
     +ils-tablet() {
-      margin-bottom: 20px;
+      margin-bottom: $component-interspace-tablet;
+    }
+
+    +ils-mobile() {
+      margin-bottom: $component-interspace-mobile;
     }
   }
 }

@@ -69,57 +69,75 @@
 
 
   h1, h2, h3, h4, h5, h6 {
+    color: var(--second-text-color);
   }
 
   h1 {
-    color: var(--second-text-color);
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 600;
-    margin-block-start: 1.4em;
-    margin-block-end: 1.0em;
+    line-height: 1.2em;
+
+    +ils-tablet() {
+      font-size: 1.7em;
+      line-height: 1.1em;
+    }
   }
 
 
   h2 {
-    color: var(--second-text-color);
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: 600;
-    margin-block-start: 1.4em;
-    margin-block-end: 1.0em;
+    line-height: 1.2em;
+
+    +ils-tablet() {
+      font-size: 1.6em;
+      line-height: 1.1em;
+    }
   }
 
   h3 {
-    color: var(--second-text-color);
     font-size: 1.6em;
     font-weight: 550;
-    margin-block-start: 1.2em;
-    margin-block-end: 0.8em;
+    line-height: 1.16em;
+
+    +ils-tablet() {
+      font-size: 1.5em;
+      line-height: 1.06em;
+    }
   }
 
 
   h4 {
-    color: var(--second-text-color);
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: 550;
-    margin-block-start: 1.2em;
-    margin-block-end: 0.8em;
+    line-height: 1.16em;
+
+    +ils-tablet() {
+      font-size: 1.4em;
+      line-height: 1.06em;
+    }
   }
 
   h5 {
-    color: var(--second-text-color);
-    font-size: 1.2em;
+    font-size: 1.28em;
     font-weight: 500;
-    margin-block-start: 1.0em;
-    margin-block-end: 0.6em;
+    line-height: 1.12em;
 
+    +ils-tablet() {
+      font-size: 1.18em;
+      line-height: 1.02em;
+    }
   }
 
   h6 {
-    color: var(--second-text-color);
     font-size: 1.2em;
     font-weight: 500;
-    margin-block-start: 1.0em;
-    margin-block-end: 0.6em;
+    line-height: 1.12em;
+    
+    +ils-tablet() {
+      font-size: 1.1em;
+      line-height: 1.02em;
+    }
   }
 
 
@@ -150,16 +168,16 @@
     td,
     th {
       padding: 6px 13px;
-      border: 1px solid #dfe2e5;
+      border: 1px solid var(--border-color);
     }
 
     tr {
-      //background-color: #fff;
-      border-top: 1px solid #c6cbd1;
+      background-color: var(--background-color);
+      border: 1px solid var(--fourth-text-color);
     }
 
     tr:nth-child(2n) {
-      //background-color: #f6f8fa;
+      background-color: var(--magic-background-color);
     }
 
 
