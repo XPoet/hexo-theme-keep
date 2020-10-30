@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-ils",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A simple and beautiful theme for Hexo.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

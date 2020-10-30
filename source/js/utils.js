@@ -3,7 +3,7 @@ ILS.utils = {
   themeInfo: {
     author: 'XPoet',
     name: 'ILS',
-    version: '2.1.2',
+    version: '2.1.3',
     repository: 'https://github.com/XPoet/hexo-theme-ils'
   },
 
