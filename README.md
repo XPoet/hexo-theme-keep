@@ -330,7 +330,7 @@ magic:
 
 ### Comment 评论
 
-主题内置了 Valine 和 Gitalk 两款评论插件，你只能使用其他一款，如果两款评论插件的 enable 都设为了 true，将使用 Valine。
+主题内置了 Valine 和 Gitalk 两款评论插件，你只能使用其中一款，如果两款评论插件的 enable 都设为了 true，将使用 Valine。
 
 #### Valine
 
