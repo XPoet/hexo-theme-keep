@@ -129,45 +129,5 @@ $avatarWidth = 46px;
     }
 
   }
-
 }
-
-
-if ((hexo-config('magic.enable') && hexo-config('toc.enable')) || (!hexo-config('magic.enable') && hexo-config('toc.enable'))) {
-  .article-toc-container {
-    position: fixed;
-    top: $header-height + $component-interspace;
-
-    +ils-tablet() {
-      display: none;
-    }
-
-    if (hexo-config('side_tools.position') == left) {
-      right: 30px;
-    } else {
-      left: 30px;
-    }
-
-    .article-toc {
-      max-width: 188px;
-      max-height: 600px;
-      overflow-y: auto;
-      background: var(--background-color);
-
-      if (hexo-config('magic.enable') == true) {
-        magic-container(1.02, 1.02, 20px);
-      } else {
-        transition();
-        border: 1px solid var(--border-color);
-        padding: 20px;
-      }
-    }
-
-  }
-
-  .article-toc-container-shrink {
-    top: $header-shrink-height + $component-interspace !important;
-  }
-}
-
 
