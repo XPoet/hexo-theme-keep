@@ -67,12 +67,13 @@ ILS.utils = {
 
   // tools
   registerToolsButtonClick() {
+    if (!CONFIG.side_tools.enable) return;
 
-    let isOpen = false
+    let isOpen = false;
     this.toolsMenuButton_dom = document.querySelector('.tools-button');
     this.toolsWrapperList_dom = document.querySelectorAll('.tools-wrapper li');
 
-    this.toolsMenuButton_dom && this.toolsMenuButton_dom.addEventListener('click', e => {
+    this.toolsMenuButton_dom.addEventListener('click', e => {
       isOpen = !isOpen;
 
       const toolsMenuButtonIcon = this.toolsMenuButton_dom.querySelector('i');

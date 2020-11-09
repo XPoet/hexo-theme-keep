@@ -1,16 +1,19 @@
 <%- js([
     'js/utils.js',
     'js/header-shrink.js',
-    'js/dark-light-toggle.js',
     'js/main.js'
 ]) %>
 
-<% if (theme.local_search.enable && config.search) { %>
-    <%- js('js/local-search.js') %>
+<% if (theme.side_tools.enable) { %>
+    <%- js('js/dark-light-toggle.js') %>
+
+    <% if (theme.back2top.enable) { %>
+        <%- js('js/back2top.js') %>
+    <% } %>
 <% } %>
 
-<% if (theme.back2top.enable) { %>
-    <%- js('js/back2top.js') %>
+<% if (theme.local_search.enable && config.search) { %>
+    <%- js('js/local-search.js') %>
 <% } %>
 
 <% if (is_post()) { %>
