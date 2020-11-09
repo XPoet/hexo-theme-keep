@@ -5,9 +5,6 @@ $gt-color-loader := #999999
 $gt-color-error := #ff3860
 $gt-color-hr :=  #E9E9E9
 $gt-color-input-border := rgba(0,0,0,0.1)
-$gt-color-input-bg := #f6f6f6
-$gt-color-comment-bg := #f9f9f9
-$gt-color-comment-adminbg := #f6f9fe
 $gt-color-comment-txt := #333333
 $gt-color-link-active := #333333
 $gt-color-btn := #ffffff
@@ -375,11 +372,9 @@ $gt-size-avatar-mobi := em(32px)
       flex: 1
       margin-left: em(20px)
       padding: em(12px) em(16px)
-      background-color: $gt-color-comment-bg
+      background-color: var(--magic-background-color)
       overflow: auto
       transition: all ease 0.25s
-      //&:hover
-      //  box-shadow: 0 em(10px) em(60px) 0 darken($gt-color-comment-bg, 2%)
       +mobile()
         margin-left: em(14px)
         padding: em(10px) em(12px)
