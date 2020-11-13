@@ -14,6 +14,10 @@ style:
   # Theme primary color
   primary_color: "#0066CC"
 
+  hover:
+    scale: false   # scale effect when the mouse hover
+    shadow: true   # shadow effect when the mouse hover
+
   # favicon
   favicon: images/favicon.png
 
@@ -154,12 +158,3 @@ toc:
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: true
-
-
-# ---------------------------------------------------------------------------------------
-# Magic
-# ---------------------------------------------------------------------------------------
-magic:
-  enable: true
-  scale: false    # scale effect when the mouse hover
-  shadow: false   # shadow effect when the mouse hover

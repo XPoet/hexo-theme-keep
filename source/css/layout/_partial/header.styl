@@ -13,11 +13,8 @@ $header-progress-height = 2.8px;
   justify-content: center;
   background: var(--background-color);
   padding-top: $header-progress-height;
-  transition();
 
-  if (hexo-config('magic.enable') == true) {
-    magic-style(1.02, 1.02);
-  }
+  hover-style(1.02, 1.02);
 
   .header-content {
     width: $main-content-width;
@@ -256,10 +253,6 @@ $header-progress-height = 2.8px;
 }
 
 .header-wrapper-shrink {
-
-  if (hexo-config('magic.enable') == false) {
-    box-shadow: 0 1px 2px var(--border-color);
-  }
 
   .header-content {
 

@@ -6,8 +6,9 @@
   .home-article-list {
 
     .home-article-item {
-
       position: relative;
+
+      ils-container(1.02, 1.02, 30px);
 
       .top-icon {
         position: absolute;
@@ -26,22 +27,6 @@
       }
 
 
-      background: var(--background-color);
-
-      if (hexo-config('magic.enable')) {
-
-        magic-container(1.02, 1.02, 30px);
-        margin-bottom: $component-interspace;
-
-        +ils-tablet() {
-          magic-container(1.01, 1.01, 20px);
-          margin-bottom: $component-interspace - 10px;
-        }
-
-      } else {
-        margin-bottom: 70px;
-      }
-
       .home-article-title {
         position: relative;
         font-weight: 600;
@@ -53,45 +38,31 @@
           font-size: 1.3em;
         }
 
+
         +ils-mobile() {
           font-size: 1.2em;
         }
 
+
         margin: 0;
 
-        if (hexo-config('magic.enable')) {
-          //TODO: ....
-
-        } else {
-          a {
-            color: var(--second-text-color);
-          }
-        }
       }
+
 
       .home-article-content {
-
         text-align: justify;
-
-        if (hexo-config('magic.enable') == true) {
-          margin: 20px 0;
-        } else {
-          margin: 30px 0;
-        }
+        margin: 20px 0;
         line-height: 2em;
       }
+
 
       .home-article-meta-info-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: var(--third-text-color);
+        font-size: 1em;
 
-        if (hexo-config('magic.enable') == true) {
-          font-size: 1em;
-        } else {
-          font-size: 0.9em;
-        }
 
         .home-article-meta-info {
           letter-spacing: 0.5px;
@@ -120,6 +91,7 @@
             }
           }
         }
+
 
         hr {
           border: none;

@@ -5,11 +5,7 @@ $avatarWidth = 46px;
 
 .article-content-container {
 
-  background: var(--background-color);
-
-  if (hexo-config('magic.enable')) {
-    magic-container(1.008, 1.002, 30px);
-  }
+  ils-container(1.008, 1.002, 30px);
 
   .article-title {
     color: var(--second-text-color);
@@ -24,6 +20,7 @@ $avatarWidth = 46px;
       font-size: 1.2em;
     }
   }
+
 
   .article-header {
     position: relative;
@@ -83,14 +80,14 @@ $avatarWidth = 46px;
   }
 
 
-  .article-header,
-  .article-header-meta-info {
+  .article-header, .article-header-meta-info {
     margin-top: 16px;
     +ils-tablet() {
       transform: scale(0.88);
       transform-origin: left top;
     }
   }
+
 
   .article-content {
     margin-top: 30px;

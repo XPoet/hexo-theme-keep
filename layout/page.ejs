@@ -1,5 +1,9 @@
 <div class="page-container">
 
+    <% if (is_home()) { %>
+        <%- partial('_partial/first-screen.ejs') %>
+    <% } %>
+
     <header class="page-header">
         <div class="header-progress"></div>
     </header>

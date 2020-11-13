@@ -29,29 +29,28 @@ html, body {
   margin: 0;
   padding: 0;
   color: var(--normal-text-color);
-  if (hexo-config('magic.enable') == true) {
-    background: var(--magic-background-color);
-  } else {
-    background: var(--background-color);
-  }
-
+  background: var(--background-color);
   font-family: $default-font-family;
   font-weight: $default-font-weight;
   font-size: $default-font-size;
   line-height: $default-font-line-height;
 
   +ils-tablet() {
-    font-size: 0.99em;
-    line-height: $default-font-line-height - 2px;
+    //font-size: 0.99em;
+    //line-height: $default-font-line-height - 2px;
+    font-size: $default-font-size * 0.95;
+    line-height: $default-font-line-height * 0.95;
+
   }
 
   +ils-mobile() {
-    font-size: 0.98em;
-    line-height: $default-font-line-height - 4px;
+    //font-size: 0.98em;
+    //line-height: $default-font-line-height - 4px;
+    font-size: $default-font-size * 0.9;
+    line-height: $default-font-line-height * 0.9;
   }
 
 }
-
 
 
 // ============================
@@ -106,12 +105,7 @@ button {
   border-radius: 5px;
   padding: 0.5em 1em;
   background: var(--background-color);
-
-  if (hexo-config('magic.enable') == true) {
-    magic-style(1.1, 1.1);
-  } else {
-    border: 1px solid var(--border-color);
-  }
+  hover-style(1.1, 1.1);
 
   &:hover {
     transition();

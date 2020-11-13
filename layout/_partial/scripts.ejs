@@ -12,7 +12,8 @@
     <% } %>
 <% } %>
 
-<% if (theme.local_search.enable && config.search) { %>
+<!-- theme.local_search.enable && config.search -->
+<% if (theme.local_search.enable) { %>
     <%- js('js/local-search.js') %>
 <% } %>
 

@@ -1,43 +1,49 @@
 @require "animated.styl"
 
-magic-style(scaleX, scaleY) {
+$ils-container-margin-bottom = 30px;
+$ils-container-border-radius = 5px;
 
-  if (hexo-config('magic.enable') == true) {
+hover-style(scaleX, scaleY) {
 
-    box-shadow: 0 0 2.8px var(--border-color);
-    transition();
+  transition();
 
-    &:hover {
+  box-shadow: 0 1px 8px var(--shadow-color);
 
-      transition();
+  &:hover {
 
-      if (hexo-config('magic.scale')) {
-        transform: scaleX(scaleX) scaleY(scaleY);
-      }
-
-      if (hexo-config('magic.shadow')) {
-        box-shadow: 0 0 10px var(--border-color);
-      }
+    if (hexo-config('style.hover.scale')) {
+      transform: scaleX(scaleX) scaleY(scaleY);
     }
 
+    if (hexo-config('style.hover.shadow')) {
+      box-shadow: 0 2px 16px var(--shadow-hover-color);
+    }
   }
+
 
 }
 
-magic-container(scaleX, scaleY, padding) {
 
+ils-container(scaleX, scaleY, padding) {
+  background: var(--background-color);
   padding: padding;
-  border-radius: 4px;
-  magic-style(scaleX, scaleY);
+  border-radius: $ils-container-border-radius;
+  margin-bottom: $ils-container-margin-bottom;
+
+  hover-style(scaleX, scaleY);
 
   +ils-tablet() {
-    padding: padding - 2px;
-    border-radius: 3px;
+    padding: padding * 0.8;
+    border-radius: $ils-container-border-radius * 0.8;
+    margin-bottom: $ils-container-margin-bottom * 0.8;
+    hover-style(scaleX * 0.8, scaleY * 0.8);
   }
 
   +ils-mobile() {
-    padding: padding - 4px;
-    border-radius: 2px;
+    padding: padding * 0.6;
+    border-radius: $ils-container-border-radius * 0.6;
+    margin-bottom: $ils-container-margin-bottom * 0.6;
+    hover-style(scaleX * 0.6, scaleY * 0.6);
   }
 
 }

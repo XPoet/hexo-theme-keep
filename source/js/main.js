@@ -13,4 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // init page height handle
   ILS.utils.initPageHeightHandle();
+
+  // init first screen height
+  ILS.utils.initFirstScreenHeight();
 });

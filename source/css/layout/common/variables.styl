@@ -5,28 +5,22 @@
 // ========================================================================
 // layout
 // ========================================================================
-if (hexo-config('magic.enable')) {
-  $header-height = 72px;                // magic 风格：头部默认高度
-} else {
-  $header-height = 100px;               // normal 风格：头部默认高度
-}
-
-$main-content-width = 62%;              // 中间内容区域宽度（PC）
-$main-content-width-tablet = 80%;       // 中间内容区域宽度（平板）
-$main-content-width-mobile = 88%;       // 中间内容区域宽度（手机）
-
-$header-shrink-height = 56px;           // 头部收缩高度
-$circle-button-width = 40px;            // tools 圆形工具按钮宽度
-$tools-button-width = 32px;             // tools 方形工具按钮宽度
-$component-interspace = 40px;           // 组件/模块的间隔值（PC）
-$component-interspace-tablet = 30px;    // 组件/模块的间隔值（平板）
-$component-interspace-mobile = 20px;   // 组件/模块的间隔值（手机）
+$header-height = 72px; // 头部默认高度
+$main-content-width = 62%; // 中间内容区域宽度（PC）
+$main-content-width-tablet = 80%; // 中间内容区域宽度（平板）
+$main-content-width-mobile = 88%; // 中间内容区域宽度（手机）
+$header-shrink-height = 56px; // 头部收缩高度
+$circle-button-width = 40px; // tools 圆形工具按钮宽度
+$tools-button-width = 32px; // tools 方形工具按钮宽度
+$component-interspace = 40px; // 组件/模块的间隔值（PC）
+$component-interspace-tablet = 30px; // 组件/模块的间隔值（平板）
+$component-interspace-mobile = 20px; // 组件/模块的间隔值（手机）
 
 // ========================================================================
 // 媒体查询
 // ========================================================================
-$media-max-width = 760px;             // 媒体查询最大宽度 (平板)
-$media-max-width-mobile = 480px;      // 媒体查询最大宽度（手机）
+$media-max-width = 760px; // 媒体查询最大宽度 (平板)
+$media-max-width-mobile = 480px; // 媒体查询最大宽度（手机）
 
 ils-tablet()
   @media (max-width: $media-max-width)
@@ -54,10 +48,10 @@ $z-index-9 = 1009;
 // ========================================================================
 // color
 // ========================================================================
-// normal mode color
+// primary color
 $primary-color = convert(hexo-config("style.primary_color")) || #0066CC;
-$background-color = #fff; // normal 风格 背景颜色
-$magic-background-color = #fafafa; // magic 风格 背景颜色
+$background-color = #fff; // light background color
+$second-background-color = #f2f2f2; // second light background color
 $normal-text-color = #43404d; // 通用文本颜色（默认字体颜色）
 $first-text-color = darken($normal-text-color, 8%); // 第一文本颜色
 $second-text-color = darken($normal-text-color, 4%); // 第二文本颜色
@@ -65,11 +59,13 @@ $third-text-color = lighten($normal-text-color, 40%); // 第三文本颜色
 $fourth-text-color = #eee; // 第四文本颜色
 $border-color = darken($background-color, 30%); // 边框颜色
 $selection-color = lighten($primary-color, 10%); // 文字选中的颜色
+$shadow-color = rgba(0, 0, 0, 0.1);
+$shadow-hover-color = rgba(0, 0, 0, 0.2);
 
 // dark mode color
 $dark-primary-color = $primary-color;
-$dark-background-color = #38373a;
-$dark-magic-background-color = #2f2e31;
+$dark-background-color = #2f2e31;
+$dark-second-background-color = #262628;
 $dark-normal-text-color = #b9b5c2;
 $dark-first-text-color = lighten($dark-normal-text-color, 30%);
 $dark-second-text-color = lighten($dark-normal-text-color, 20%);
@@ -77,6 +73,8 @@ $dark-third-text-color = darken($dark-normal-text-color, 20%);
 $dark-fourth-text-color = #2f2e31;
 $dark-border-color = lighten($dark-background-color, 20%);
 $dark-selection-color = $selection-color;
+$dark-shadow-color = rgba(200, 200, 200, 0.1);
+$dark-shadow-hover-color = rgba(200, 200, 200, 0.2);
 
 
 // ========================================================================
@@ -85,7 +83,7 @@ $dark-selection-color = $selection-color;
 $default-font-family = Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 //$default-font-family = -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
 $default-font-size = 15.2px;
-$default-font-line-height = 20px;
+$default-font-line-height = 22px;
 $default-font-weight = 400;
 
 
@@ -94,7 +92,7 @@ $default-font-weight = 400;
 // ========================================================================
 :root {
   --background-color: $background-color;
-  --magic-background-color: $magic-background-color;
+  --second-background-color: $second-background-color;
   --primary-color: $primary-color;
   --first-text-color: $first-text-color;
   --second-text-color: $second-text-color;
@@ -103,12 +101,14 @@ $default-font-weight = 400;
   --normal-text-color: $normal-text-color;
   --border-color: $border-color;
   --selection-color: $selection-color;
+  --shadow-color: $shadow-color;
+  --shadow-hover-color: $shadow-hover-color;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: $dark-background-color;
-    --magic-background-color: $dark-magic-background-color;
+    --second-background-color: $dark-second-background-color;
     --primary-color: $dark-primary-color;
     --first-text-color: $dark-first-text-color;
     --second-text-color: $dark-second-text-color;
@@ -117,13 +117,15 @@ $default-font-weight = 400;
     --normal-text-color: $dark-normal-text-color;
     --border-color: $dark-border-color;
     --selection-color: $dark-selection-color;
+    --shadow-color: $dark-shadow-color;
+    --shadow-hover-color: $dark-shadow-hover-color;
   }
 }
 
 
 .dark-mode {
   --background-color: $dark-background-color;
-  --magic-background-color: $dark-magic-background-color;
+  --second-background-color: $dark-second-background-color;
   --primary-color: $dark-primary-color;
   --first-text-color: $dark-first-text-color;
   --second-text-color: $dark-second-text-color;
@@ -132,11 +134,14 @@ $default-font-weight = 400;
   --normal-text-color: $dark-normal-text-color;
   --border-color: $dark-border-color;
   --selection-color: $dark-selection-color;
+  --shadow-color: $dark-shadow-color;
+  --shadow-hover-color: $dark-shadow-hover-color;
 }
+
 
 .light-mode {
   --background-color: $background-color;
-  --magic-background-color: $magic-background-color;
+  --second-background-color: $second-background-color;
   --primary-color: $primary-color;
   --first-text-color: $first-text-color;
   --second-text-color: $second-text-color;
@@ -145,4 +150,6 @@ $default-font-weight = 400;
   --normal-text-color: $normal-text-color;
   --border-color: $border-color;
   --selection-color: $selection-color;
+  --shadow-color: $shadow-color;
+  --shadow-hover-color: $shadow-hover-color;
 }

@@ -131,7 +131,6 @@ ILS.utils = {
     return dom ? dom.getBoundingClientRect().height : 0;
   },
 
-
   initPageHeightHandle() {
     const h1 = this.getElementHeight('.header-progress');
     const h2 = this.getElementHeight('.page-main-content-top');
@@ -143,5 +142,10 @@ ILS.utils = {
     if (allDomHeight < innerHeight) {
       pb_dom.style.marginTop = (innerHeight - allDomHeight) + 'px';
     }
+  },
+
+  initFirstScreenHeight() {
+    const firstScreenDom = document.querySelector('.first-screen-container');
+    firstScreenDom && (firstScreenDom.style.height = window.innerHeight + 'px');
   },
 }
