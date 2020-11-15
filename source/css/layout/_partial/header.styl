@@ -17,8 +17,14 @@ $header-progress-height = 2.8px;
   hover-style(1.02, 1.02);
 
   .header-content {
-    width: $main-content-width;
+    position: relative;
     height: 100%;
+    width: $main-content-width;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: $z-index-5;
 
     transition();
 
@@ -30,13 +36,9 @@ $header-progress-height = 2.8px;
       width: $main-content-width-mobile !important;
     }
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    z-index: $z-index-5;
+    &.first-screen {
+      width: 80%;
+    }
 
     .logo-title {
       font-size: 2.2em;
@@ -54,6 +56,7 @@ $header-progress-height = 2.8px;
       color: var(--first-text-color);
       transition();
     }
+
 
     .menu-list {
 

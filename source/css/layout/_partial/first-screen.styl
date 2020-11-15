@@ -2,14 +2,39 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  text-align: center;
-  padding: 30px;
-  line-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
-  font-weight: bold;
   overflow: hidden;
   background: url("/images/bg.svg") center center / cover no-repeat;
+
+  .content {
+    padding: 30px;
+
+    .description {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 60px;
+    }
+
+    .social-icon-list {
+      position: absolute;
+      bottom: 80px;
+      font-size: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .social-icon-item {
+        float: left;
+        margin-right: 25px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+      }
+
+    }
+  }
 }

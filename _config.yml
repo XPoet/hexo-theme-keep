@@ -26,6 +26,20 @@ style:
 
 
 # ---------------------------------------------------------------------------------------
+# Social contact link
+# ---------------------------------------------------------------------------------------
+social_contact:
+  enable: false
+  links:
+    github:          # your GitHub url
+    wechat:          # your WeChat QR-Code url
+    weibo:           # your WeiBo url
+    twitter:         # your twitter url
+    facebook:        # your facebook url
+    email:           # your email
+
+
+# ---------------------------------------------------------------------------------------
 # Navigation menu
 # ---------------------------------------------------------------------------------------
 menu:

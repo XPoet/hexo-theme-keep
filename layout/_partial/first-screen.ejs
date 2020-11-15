@@ -1,3 +1,28 @@
 <div class="first-screen-container">
-    黄色的森林分出两条路，我选择人迹更少的那一条，从此决定我一生的道路。
+    <div class="content">
+        <div class="description">
+            <%= theme.base_info.description || config.description %>
+        </div>
+        <% if (theme.social_contact.enable) { %>
+            <ul class="social-icon-list">
+                <% for (const key in theme.social_contact.links) { %>
+                    <% if(theme.social_contact.links[key]) { %>
+                        <% if(key === 'email') { %>
+                            <li class="social-icon-item <%= key %>">
+                                <a href="mailto:<%- url_for(theme.social_contact.links[key]) %>">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </li>
+                        <% } else { %>
+                            <li class="social-icon-item <%= key %>">
+                                <a href="<%- url_for(theme.social_contact.links[key]) %>">
+                                    <i class="fa fa-<%= key %>"></i>
+                                </a>
+                            </li>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            </ul>
+        <% } %>
+    </div>
 </div>
