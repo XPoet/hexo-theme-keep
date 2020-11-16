@@ -16,4 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // init first screen height
   ILS.utils.initFirstScreenHeight();
+
+  // big image viewer handle
+  ILS.utils.imageViewer();
 });

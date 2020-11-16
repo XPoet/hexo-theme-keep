@@ -1,6 +1,6 @@
 <div class="page-container">
 
-    <% if (theme.style.first_screen.enable && is_home()) { %>
+    <% if (theme.style.first_screen.enable && is_home() && !page.prev) { %>
         <%- partial('_partial/first-screen.ejs') %>
     <% } %>
 
@@ -59,6 +59,7 @@
         <%- partial('_partial/tools') %>
     </div>
 
+    <!-- side tools -->
     <% if (theme.side_tools.enable) { %>
         <div class="bottom-sidebar-tools">
             <%- partial('_partial/tools2') %>
@@ -71,6 +72,9 @@
             <%- partial('_partial/toc') %>
         <% } %>
     </aside>
+
+    <!-- image viewer -->
+    <%- partial('_partial/image-viewer') %>
 
 </div>
 

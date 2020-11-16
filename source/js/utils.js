@@ -131,6 +131,7 @@ ILS.utils = {
     return dom ? dom.getBoundingClientRect().height : 0;
   },
 
+  // init page height handle
   initPageHeightHandle() {
     const h1 = this.getElementHeight('.header-progress');
     const h2 = this.getElementHeight('.page-main-content-top');
@@ -144,8 +145,36 @@ ILS.utils = {
     }
   },
 
+  // init first screen height
   initFirstScreenHeight() {
     const firstScreenDom = document.querySelector('.first-screen-container');
     firstScreenDom && (firstScreenDom.style.height = window.innerHeight + 'px');
   },
+
+  // big image viewer
+  imageViewer() {
+    let isBigImage = false;
+
+    const showHandle = (dom, isShow) => {
+      document.body.style.overflow = isShow ? 'hidden' : 'auto';
+      dom.style.display = isShow ? 'flex' : 'none';
+    }
+
+    const imageViewerDom = document.querySelector('.image-viewer-container');
+    const targetImg = document.querySelector('.image-viewer-container img');
+    imageViewerDom && imageViewerDom.addEventListener('click', () => {
+      isBigImage = false;
+      showHandle(imageViewerDom, isBigImage);
+    });
+
+    const imgDoms = document.querySelectorAll('.markdown-body img');
+    imgDoms && imgDoms.forEach(img => {
+
+      img.addEventListener('click', () => {
+        isBigImage = true;
+        showHandle(imageViewerDom, isBigImage);
+        targetImg.setAttribute('src', img.getAttribute('src'))
+      });
+    });
+  }
 }
