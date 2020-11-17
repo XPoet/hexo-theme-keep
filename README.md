@@ -73,11 +73,11 @@
 - [x] 文章阅读时长统计。
 - [x] 页面滚动进度条提示。
 - [x] 一键快速回到顶部。
+- [x] 大图查看器。
 
 ### Unfinished 未完成
 
 - [ ] 图片懒加载
-- [ ] 大图查看器
 - [ ] 代码块折叠
 - [ ] 文章点赞功能
 - [ ] 文章版权信息
@@ -87,8 +87,9 @@
 
 ## Get start 快速开始
 
-**在开始使用主题之前，强烈建议你先阅读 「Easy Hexo 团队」撰写的 Hexo 教程！**  
-**链接：https://easyhexo.com/**
+**在开始使用该主题之前，强烈建议你先阅读 [「Easy Hexo 团队」撰写的 Hexo 教程](https://easyhexo.com/) 。**
+
+**如遇无法解决的问题，请给作者提 [Issue](https://github.com/XPoet/hexo-theme-ils/issues) 。**
 
 ### Install 安装
 
@@ -127,7 +128,7 @@ theme: ils
 ### Configuration 配置
 
 以下是主题配置文件的详细说明，建议多看几遍，并且对照着来修改自己的配置文件，边修改边查看界面效果。
-  
+
 如遇到无法解决的问题，可以给我提 [Issues](https://github.com/XPoet/hexo-theme-ils/issues) 。
 
 ```yml
@@ -138,8 +139,8 @@ theme: ils
 base_info:
   title: ILS
   author: XPoet
-  email: i@xpoet.cn
   url: https://ils.xpoet.cn/
+  description: Welcome to use ILS theme
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
@@ -151,13 +152,38 @@ style:
   # 建议使用 Web 安全色，https://www.bootcss.com/p/websafecolors/
   primary_color: "#0066CC"
 
-  # favicon
-  # 网站图标，把 "/source/images/" 目录下的 "favicon.png"，换成自己的图片即可。
-  favicon: images/favicon.png
+  # Image align position, value: left | center
+  # 文章内容页的图片排列位置，可选 left（靠左） 或 center（居中）
+  img_position: center
 
-  # avatar
-  # 头像图片，把 "/source/images/" 目录下的 "avatar.png"，换成自己的图片即可。
-  avatar: images/avatar.png
+  # Left side width
+  # 文章内容页左侧 TOC（目录结构）模块的宽度，按需修改
+  left_side_width: 260px
+
+  # Mouse hover
+  # 鼠标悬浮样式
+  hover:
+    shadow: true # shadow effect when the mouse hover 鼠标悬浮时增加阴影效果
+    scale: false # scale effect when the mouse hover 鼠标悬浮时增加缩放效果
+
+  # First screen
+  # 是否开启首屏
+  first_screen:
+    enable: true
+
+# ---------------------------------------------------------------------------------------
+# Social contact link
+# 社交链接，需开启首屏才能显示社交链接
+# ---------------------------------------------------------------------------------------
+social_contact:
+  enable: false
+  links:
+    github: # your GitHub URL
+    wechat: # your WeChat QR-Code URL
+    weibo: # your WeiBo URL
+    twitter: # your twitter URL
+    facebook: # your facebook URL
+    email: # your email
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -316,16 +342,6 @@ toc:
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   # 是否展开所有目录。
   expand_all: true
-
-# ---------------------------------------------------------------------------------------
-# Magic
-# magic 启用后，主题将以简约的卡片形式显示。
-# 可分别配置缩放效果、阴影效果。
-# ---------------------------------------------------------------------------------------
-magic:
-  enable: true
-  scale: false # scale effect when the mouse hover
-  shadow: false # shadow effect when the mouse hover
 ```
 
 ### Comment 评论
