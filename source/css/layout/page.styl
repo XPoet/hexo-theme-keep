@@ -2,7 +2,8 @@
 @require "./common/animated.styl";
 
 $header-progress-height = 3px;
-$page-aside-width = 258px;
+$temp-width = hexo-config('style.left_side_width');
+$page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
 .page-container {
 

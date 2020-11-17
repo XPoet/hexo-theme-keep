@@ -49,7 +49,8 @@ $z-index-9 = 1009;
 // color
 // ========================================================================
 // primary color
-$primary-color = convert(hexo-config("style.primary_color")) || #0066CC;
+$temp-color = hexo-config('style.primary_color');
+$primary-color = $temp-color ? convert($temp-color) : #0066CC;
 $background-color = #fff; // light background color
 $second-background-color = darken($background-color, 2%); // second light background color
 $normal-text-color = #383838; // 通用文本颜色（默认字体颜色）

@@ -16,7 +16,8 @@ hexo.extend.helper.register('export_config', function () {
     codeblock: theme.codeblock,
     toc: theme.toc,
     back2top: theme.back2top,
-    side_tools: theme.side_tools
+    side_tools: theme.side_tools,
+    style: theme.style
   };
   if (config.search) {
     exportConfig.path = config.search.path;

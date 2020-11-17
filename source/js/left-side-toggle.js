@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     changePageLayoutWhenOpenToggle(isOpen) {
-      const pageAsideWidth = '258px';
+      const pageAsideWidth = CONFIG.style.left_side_width || '260px';
       this.containerDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
       this.pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
       this.leftAsideDom.style.left = isOpen ? '0' : `-${pageAsideWidth}`;

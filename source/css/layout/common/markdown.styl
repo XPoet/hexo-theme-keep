@@ -144,10 +144,17 @@
   img {
     box-sizing: initial;
     padding: 2px;
-    margin: 2px 0;
     max-width: 100%;
     border: 1px solid var(--border-color);
     cursor: pointer;
+    display: block;
+
+    if (hexo-config('style.img_position') == 'center') {
+      margin: 2px auto;
+    } else {
+      margin: 2px 0;
+    }
+
   }
 
   & > table {
