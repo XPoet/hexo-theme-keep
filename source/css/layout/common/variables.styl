@@ -53,7 +53,7 @@ $temp-color = hexo-config('style.primary_color');
 $primary-color = $temp-color ? convert($temp-color):#0066CC;
 $background-color = #fff; // light background color
 $second-background-color = darken($background-color, 2%); // second light background color
-$normal-text-color = #393939; // 通用文本颜色（默认字体颜色）
+$normal-text-color = #3f3f3f; // 通用文本颜色（默认字体颜色）
 $first-text-color = darken($normal-text-color, 10%); // 第一文本颜色
 $second-text-color = darken($normal-text-color, 5%); // 第二文本颜色
 $third-text-color = lighten($normal-text-color, 40%); // 第三文本颜色
@@ -90,59 +90,39 @@ $default-font-weight = 400;
 
 
 // ========================================================================
-//  light/dark color
+//  light/dark mode color
 // ========================================================================
-root-light() {
-  --background-color: $background-color;
-  --second-background-color: $second-background-color;
-  --primary-color: $primary-color;
-  --first-text-color: $first-text-color;
-  --second-text-color: $second-text-color;
-  --third-text-color: $third-text-color;
-  --fourth-text-color: $fourth-text-color;
-  --normal-text-color: $normal-text-color;
-  --border-color: $border-color;
-  --selection-color: $selection-color;
-  --shadow-color: $shadow-color;
-  --shadow-hover-color: $shadow-hover-color;
-  --scroll-bar-color: $scroll-bar-color;
-}
-
-
-root-dark() {
-  --background-color: $dark-background-color;
-  --second-background-color: $dark-second-background-color;
-  --primary-color: $dark-primary-color;
-  --first-text-color: $dark-first-text-color;
-  --second-text-color: $dark-second-text-color;
-  --third-text-color: $dark-third-text-color;
-  --fourth-text-color: $dark-fourth-text-color;
-  --normal-text-color: $dark-normal-text-color;
-  --border-color: $dark-border-color;
-  --selection-color: $dark-selection-color;
-  --shadow-color: $dark-shadow-color;
-  --shadow-hover-color: $dark-shadow-hover-color;
-  --scroll-bar-color: $dark-scroll-bar-color;
+root-color(mode) {
+  --background-color: mode == 'light' ? $background-color : $dark-background-color;
+  --second-background-color: mode == 'light' ? $second-background-color : $dark-second-background-color;
+  --primary-color: mode == 'light' ? $primary-color : $dark-primary-color;
+  --first-text-color: mode == 'light' ? $first-text-color : $dark-first-text-color;
+  --second-text-color: mode == 'light' ? $second-text-color : $dark-second-text-color;
+  --third-text-color: mode == 'light' ? $third-text-color : $dark-third-text-color;
+  --fourth-text-color: mode == 'light' ? $fourth-text-color : $dark-fourth-text-color;
+  --normal-text-color: mode == 'light' ? $normal-text-color : $dark-normal-text-color;
+  --border-color: mode == 'light' ? $border-color : $dark-border-color;
+  --selection-color: mode == 'light' ? $selection-color : $dark-selection-color;
+  --shadow-color: mode == 'light' ? $shadow-color : $dark-shadow-color;
+  --shadow-hover-color: mode == 'light' ? $shadow-hover-color : $dark-shadow-hover-color;
+  --scroll-bar-color: mode == 'light' ? $scroll-bar-color : $dark-scroll-bar-color;
 }
 
 
 :root {
-  root-light();
+  root-color('light');
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
-    root-dark();
+    root-color('dark');
   }
 }
 
-
-.dark-mode {
-  root-dark();
+.light-mode {
+  root-color('light');
 }
 
-
-.light-mode {
-  root-light();
+.dark-mode {
+  root-color('dark');
 }
