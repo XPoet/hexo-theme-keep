@@ -4,25 +4,30 @@
 base_info:
   title: ILS
   author: XPoet
-  email: i@xpoet.cn
   url: https://ils.xpoet.cn/
+  description: Welcome to use ILS theme
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
-  primary_color: "#0066CC"
+  primary_color: '#0066CC'
 
+  # image align position, value: left | center
+  img_position: center
+
+  # left side width
+  left_side_width: 260px
+
+  # Mouse hover
   hover:
-    scale: false   # scale effect when the mouse hover
     shadow: true   # shadow effect when the mouse hover
+    scale: false   # scale effect when the mouse hover
 
-  # favicon
-  favicon: images/favicon.png
-
-  # avatar
-  avatar: images/avatar.png
+  # First screen
+  first_screen:
+    enable: true
 
 
 # ---------------------------------------------------------------------------------------
@@ -31,11 +36,11 @@ style:
 social_contact:
   enable: false
   links:
-    github:          # your GitHub url
-    wechat:          # your WeChat QR-Code url
-    weibo:           # your WeiBo url
-    twitter:         # your twitter url
-    facebook:        # your facebook url
+    github:          # your GitHub URL
+    wechat:          # your WeChat QR-Code URL
+    weibo:           # your WeiBo URL
+    twitter:         # your twitter URL
+    facebook:        # your facebook URL
     email:           # your email
 
 
