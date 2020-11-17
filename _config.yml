@@ -14,10 +14,10 @@ style:
   # Theme primary color
   primary_color: '#0066CC'
 
-  # image align position, value: left | center
+  # Image align position, value: left | center
   img_position: center
 
-  # left side width
+  # Left side width
   left_side_width: 260px
 
   # Mouse hover
