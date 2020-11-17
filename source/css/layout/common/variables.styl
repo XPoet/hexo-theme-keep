@@ -50,10 +50,10 @@ $z-index-9 = 1009;
 // ========================================================================
 // primary color
 $temp-color = hexo-config('style.primary_color');
-$primary-color = $temp-color ? convert($temp-color) : #0066CC;
+$primary-color = $temp-color ? convert($temp-color):#0066CC;
 $background-color = #fff; // light background color
 $second-background-color = darken($background-color, 2%); // second light background color
-$normal-text-color = #383838; // 通用文本颜色（默认字体颜色）
+$normal-text-color = #393939; // 通用文本颜色（默认字体颜色）
 $first-text-color = darken($normal-text-color, 10%); // 第一文本颜色
 $second-text-color = darken($normal-text-color, 5%); // 第二文本颜色
 $third-text-color = lighten($normal-text-color, 40%); // 第三文本颜色
@@ -62,7 +62,7 @@ $border-color = darken($background-color, 30%); // 边框颜色
 $selection-color = lighten($primary-color, 10%); // 文字选中的颜色
 $shadow-color = rgba(0, 0, 0, 0.2);
 $shadow-hover-color = rgba(0, 0, 0, 0.28);
-$scroll-bar-color = #383838;
+$scroll-bar-color = #585858;
 
 // dark mode color
 $dark-primary-color = $primary-color;
@@ -83,8 +83,7 @@ $dark-scroll-bar-color = #686868;
 // ========================================================================
 // font
 // ========================================================================
-$default-font-family = Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-//$default-font-family = -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
+$default-font-family = Optima-Regular, Optima, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
 $default-font-size = 15.2px;
 $default-font-line-height = 22px;
 $default-font-weight = 400;
