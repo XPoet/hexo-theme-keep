@@ -14,7 +14,7 @@ disable-user-select() {
 }
 
 .copy-btn {
-  color: #333;
+  color: var(--default-text-color);
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
@@ -25,28 +25,19 @@ disable-user-select() {
   position: absolute;
   vertical-align: middle;
   white-space: nowrap;
+  font-size: 1.1em;
   disable-user-select();
   the-transition();
 
-  if (hexo-config('code_copy.style') == 'flat') {
-    background: white;
-    border: 0;
-    font-size: 0.8em;
-    right: 0;
-    top: 0;
-  } else if (hexo-config('code_copy.style') == 'mac') {
+  if (hexo-config('code_copy.style') == 'mac') {
     color: white;
-    font-size: 1em;
     right: 2px;
     top: 2px;
   } else {
-    background-color: #eee;
-    background-image: linear-gradient(#fcfcfc, #eee);
-    border: 1px solid #d5d5d5;
-    border-radius: 3px;
-    font-size: 0.8em;
-    right: 6px;
-    top: 6px;
+    background: var(--background-color);
+    border: 0;
+    right: 0;
+    top: 0;
   }
 }
 
