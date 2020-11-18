@@ -37,8 +37,6 @@
 
 **Online Preview 在线预览**
 
-> 如果你在使用该主题，欢迎 [PR](https://juejin.im/post/6844903856971710477) 将你的网站链接填写在下方，获得更多展示机会。
-
 - [XPoet's Blog](https://xpoet.cn)
 - [ILS 官网](https://ils.xpoet.cn)
 - ...
@@ -163,8 +161,8 @@ style:
   # Mouse hover
   # 鼠标悬浮样式
   hover:
-    shadow: true # shadow effect when the mouse hover 鼠标悬浮时增加阴影效果
-    scale: false # scale effect when the mouse hover 鼠标悬浮时增加缩放效果
+    shadow: true  # shadow effect when the mouse hover 鼠标悬浮时增加阴影效果
+    scale: false  # scale effect when the mouse hover 鼠标悬浮时增加缩放效果
 
   # First screen
   # 是否开启首屏
@@ -178,12 +176,12 @@ style:
 social_contact:
   enable: false
   links:
-    github: # your GitHub URL
-    wechat: # your WeChat QR-Code URL
-    weibo: # your WeiBo URL
-    twitter: # your twitter URL
-    facebook: # your facebook URL
-    email: # your email
+    github:       # your GitHub URL
+    wechat:       # your WeChat QR-Code URL
+    weibo:        # your WeiBo URL
+    twitter:      # your twitter URL
+    facebook:     # your facebook URL
+    email:        # your email
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -222,10 +220,10 @@ comment:
   # 获取必要的参数，在下面填写。
   valine:
     enable: false
-    appid: # your leancloud application appid
-    appkey: # your leancloud application appkey
-    meta: # comment input meta, type: Array, values: ['nick','mail','link']
-    placeholder: # your placeholder
+    appid:            # your leancloud application appid
+    appkey:           # your leancloud application appkey
+    meta:             # comment input meta, type: Array, values: ['nick','mail','link']
+    placeholder:      # your placeholder
 
   # Gitalk
   # See: https://github.com/gitalk/gitalk
@@ -233,10 +231,10 @@ comment:
   # 获取必要的参数，在下面填写。
   gitalk:
     enable: false
-    github_id: # GitHub repo owner
-    repository: # Repository name to store issues
-    client_id: # GitHub Application Client ID
-    client_secret: # GitHub Application Client Secret
+    github_id:        # GitHub repo owner
+    repository:       # Repository name to store issues
+    client_id:        # GitHub Application Client ID
+    client_secret:    # GitHub Application Client Secret
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -273,7 +271,7 @@ local_search:
   trigger: auto # values: auto | manual
 
   # Unescape html strings to the readable one.
-  # # 转义 HTML 字符串为可读字符串。
+  # 转义 HTML 字符串为可读字符串。
   unescape: false
 
   # Preload the search data when the page loads.
@@ -290,8 +288,8 @@ local_search:
 # ---------------------------------------------------------------------------------------
 post_wordcount:
   enable: false
-  wordcount: false # word count, one article
-  min2read: false # time to read, one article
+  wordcount: false     # word count, one article
+  min2read: false      # time to read, one article
 
 # ---------------------------------------------------------------------------------------
 # Home page article block display settings
@@ -300,11 +298,11 @@ post_wordcount:
 # ---------------------------------------------------------------------------------------
 home_article:
   category:
-    enable: false # show category in home page article block
-    limit: 3 # max number of categories shown in home page article block
+    enable: false         # show category in home page article block
+    limit: 3              # max number of categories shown in home page article block
   tag:
-    enable: false # show tags in home page article block
-    limit: 5 # max number of tags shown in home page article block
+    enable: false         # show tags in home page article block
+    limit: 5              # max number of tags shown in home page article block
 
 # ---------------------------------------------------------------------------------------
 # Code copy
@@ -399,7 +397,7 @@ sticky: 9999
    ```yml
    local_search:
      enable: true
-     trigger: auto # values: auto | manual
+     trigger: auto
      unescape: false
      preload: true
    ```
@@ -479,7 +477,7 @@ sticky: 9999
 如果要在文章中显示数学公式，可以使用插件 **`hexo-filter-mathjax`**，详情参考：https://github.com/next-theme/hexo-filter-mathjax/ 。  
 或按下列步骤完成相关配置：
 
-1. 在 Hexo 博客根目录下安装插件 **`hexo-filter-mathjax`**。
+1. 在 Hexo 博客根目录下安装插件 **`hexo-filter-mathjax`** 。
 
    ```bash
    npm install hexo-filter-mathjax --save
