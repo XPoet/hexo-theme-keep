@@ -26,3 +26,12 @@ hexo.extend.helper.register('createNewArchivePosts', function (posts) {
 hexo.extend.helper.register('getLevel', function (postCount) {
   return Math.ceil(postCount / 10);
 });
+
+const url = require('url');
+hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
+  if (rootUrl) {
+    return url.parse(rootUrl).href + path;
+  } else {
+    return path;
+  }
+});

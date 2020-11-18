@@ -28,3 +28,10 @@ read_more: Read more
 wordcount: Words
 min2read: Mins
 changelog: Changelog
+copyright:
+  author: Post author
+  title: Post title
+  link: Post link
+  create_time: Create time
+  license_title: Copyright Notice
+  license_content: "All articles in this blog are licensed under %s unless stating additionally."
