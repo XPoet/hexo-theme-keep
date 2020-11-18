@@ -33,7 +33,10 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     initMenuBarButton() {
+      let isShowHeaderDrawer = false;
       this.menuBarDom.addEventListener('click', () => {
+        isShowHeaderDrawer = !isShowHeaderDrawer;
+        document.body.style.overflow = isShowHeaderDrawer ? 'hidden' : 'auto';
         this.headerDom.classList.toggle('header-drawer-show');
       });
     },
