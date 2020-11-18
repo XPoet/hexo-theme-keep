@@ -149,7 +149,7 @@ home_article:
 # ---------------------------------------------------------------------------------------
 code_copy:
   enable: true
-  style: flat        # values: default | flat | mac
+  style: default        # values: default | mac
 
 
 # ---------------------------------------------------------------------------------------
@@ -177,3 +177,10 @@ toc:
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: true
+
+
+# ---------------------------------------------------------------------------------------
+# Footer settings
+# ---------------------------------------------------------------------------------------
+footer:
+  since: 2020
