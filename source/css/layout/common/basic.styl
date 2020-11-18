@@ -13,12 +13,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    //background: rgba(0, 0, 0, 0.32);
     background: var(--scroll-bar-color);
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--scroll-bar-bg-color);
   }
 }
 
@@ -37,16 +36,12 @@ html, body {
   line-height: $default-font-line-height;
 
   +ils-tablet() {
-    //font-size: 0.99em;
-    //line-height: $default-font-line-height - 2px;
-    font-size: $default-font-size * 0.95;
-    line-height: $default-font-line-height * 0.95;
+    font-size: $default-font-size * 0.96;
+    line-height: $default-font-line-height * 0.96;
 
   }
 
   +ils-mobile() {
-    //font-size: 0.98em;
-    //line-height: $default-font-line-height - 4px;
     font-size: $default-font-size * 0.9;
     line-height: $default-font-line-height * 0.9;
   }
