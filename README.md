@@ -35,7 +35,7 @@
 
 </details>
 
-**Online Preview 在线预览**
+**Live Preview 在线预览**
 
 - [XPoet's Blog](https://xpoet.cn)
 - [ILS 官网](https://ils.xpoet.cn)
@@ -306,15 +306,15 @@ home_article:
 
 # ---------------------------------------------------------------------------------------
 # Code copy
-# 代码复制，代码块的复制风格可选 default | flat | mac。
+# 代码复制，代码块的复制风格可选 default | mac
 # ---------------------------------------------------------------------------------------
 code_copy:
   enable: true
-  style: flat # values: default | flat | mac
+  style: flat     # values: default | mac
 
 # ---------------------------------------------------------------------------------------
 # Sidebar tools
-# 侧边栏工具（搜索按钮、昼夜模式切换按钮、RSS按钮、TOC显示切换按钮）
+# 侧边栏工具（昼夜模式切换、RSS、回到顶部、到达底部等小工具按钮）
 # ---------------------------------------------------------------------------------------
 side_tools:
   enable: false
@@ -340,6 +340,14 @@ toc:
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   # 是否展开所有目录。
   expand_all: true
+
+
+# ---------------------------------------------------------------------------------------
+# Footer settings
+# 网站 Footer 设置
+# ---------------------------------------------------------------------------------------
+footer:
+  since: 2020 # 设置建站起始年份  
 ```
 
 ### Comment 评论
