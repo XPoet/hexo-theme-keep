@@ -1,0 +1,35 @@
+<div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa fa-pencil-square-o"></i> <%- moment(post.date, Date.now()).locale(config.language).fromNow() %></span>
+        <% if (post.categories.length && theme.home_article.category.enable === true) { %>
+            <span class="home-article-category"><i class="fa fa-folder"></i>
+                <ul>
+                    <% post.categories.forEach((category, i) => {
+                    if (theme.home_article.category.limit === 0 || i + 1 <= theme.home_article.category.limit) { %>
+                        <li>
+                            <%= i === 0 ? '' : '> ' %>
+                            <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                        </li>
+                    <% } %>
+                    <% }); %>
+                </ul>
+            </span>
+        <% } %>
+        <% if (post.tags.length && theme.home_article.tag.enable === true) { %>
+            <span class="home-article-tag">
+                <i class="fa fa-tags"></i>
+                <ul>
+                    <% post.tags.forEach((tag, i) => {
+                    if (theme.home_article.tag.limit === 0 || i + 1 <= theme.home_article.tag.limit) { %>
+                        <li>
+                            <%= i === 0 ? '' : '| ' %>
+                            <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+                        </li>
+                    <% }}); %>
+                </ul>
+            </span>
+        <% } %>
+    </div>
+
+    <a href="<%- url_for(post.path) %>"><%- __('read_more') %> <i class="fa fa-angle-right"></i></a>
+</div>
