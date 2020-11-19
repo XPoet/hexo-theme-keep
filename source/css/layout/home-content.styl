@@ -6,23 +6,19 @@
   .home-article-list {
 
     .home-article-item {
-      position: relative;
 
-      ils-container(1.02, 1.02, 38px);
+      ils-container(1.02, 1.02, 28px, true);
 
       .top-icon {
         position: absolute;
-        top: 6px;
-        right: 10px;
-        font-size: 1.8em;
-        transform: rotate(50deg);
+        top: 10px;
+        right: 12px;
+        font-size: 1.2em;
+        transform: rotate(45deg);
+        color : var(--third-text-color);
 
         +ils-tablet() {
-          display: 1.6em;
-        }
-
-        +ils-mobile() {
-          font-size: 1.38em;
+          font-size: 1.16em;
         }
       }
 
@@ -42,7 +38,6 @@
         +ils-mobile() {
           font-size: 1.2em;
         }
-
 
         margin: 0;
 

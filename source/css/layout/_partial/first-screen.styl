@@ -2,14 +2,14 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   background: url("/images/bg.svg") center center / cover no-repeat;
 
   .content {
+    position: relative;
     padding: 30px;
+    width: 80%;
+    height : 80%;
 
     .description {
       font-weight: bold;
@@ -19,7 +19,7 @@
 
     .social-icon-list {
       position: absolute;
-      bottom: $component-interspace + 10px;
+      bottom: $component-interspace;
       font-size: 26px;
       left: 50%;
       transform: translateX(-50%);

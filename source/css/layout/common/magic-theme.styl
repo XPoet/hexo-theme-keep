@@ -22,26 +22,41 @@ hover-style(scaleX, scaleY) {
 }
 
 
-ils-container(scaleX, scaleY, padding) {
+ils-container(scaleX, scaleY, padding, isMarginBottom) {
+  position: relative;
   background: var(--background-color);
   padding: padding;
   border-radius: $ils-container-border-radius;
-  margin-bottom: $ils-container-margin-bottom;
+  box-sizing: border-box;
+
+  if (isMarginBottom) {
+    margin-bottom: $ils-container-margin-bottom;
+
+    +ils-tablet() {
+      margin-bottom: $ils-container-margin-bottom * 0.8;
+    }
+
+    +ils-mobile() {
+      margin-bottom: $ils-container-margin-bottom * 0.6;
+    }
+  }
 
   hover-style(scaleX, scaleY);
 
   +ils-tablet() {
     padding: padding * 0.8;
     border-radius: $ils-container-border-radius * 0.8;
-    margin-bottom: $ils-container-margin-bottom * 0.8;
+    //margin-bottom: $ils-container-margin-bottom * 0.8;
     hover-style(scaleX * 0.8, scaleY * 0.8);
   }
 
   +ils-mobile() {
     padding: padding * 0.6;
     border-radius: $ils-container-border-radius * 0.6;
-    margin-bottom: $ils-container-margin-bottom * 0.6;
+    //margin-bottom: $ils-container-margin-bottom * 0.6;
     hover-style(scaleX * 0.6, scaleY * 0.6);
   }
+
+
 
 }

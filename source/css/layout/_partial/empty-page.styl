@@ -3,13 +3,7 @@
 
 .empty-page-container {
 
-  background: var(--background-color);
-
-  ils-container(1.005, 1.01, 30px);
-
-  +ils-tablet() {
-    ils-container(1.001, 1.005, 20px);
-  }
+  ils-container(1.005, 1.01, 30px, true);
 
   .empty-page-content {
 
@@ -19,16 +13,6 @@
         margin-top: 0;
       }
 
-    }
-
-    margin-bottom: $component-interspace;
-
-    +ils-tablet() {
-      margin-bottom: $component-interspace * 0.9;
-    }
-
-    +ils-mobile() {
-      margin-bottom: $component-interspace * 0.8;
     }
   }
 }
