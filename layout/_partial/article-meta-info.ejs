@@ -26,14 +26,25 @@
             </ul>
         </span>
     <% } %>
-    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.wordcount){ %>
+
+    <%
+    let temp_wordcount_count, temp_min2read_count = null;
+    try {
+        temp_wordcount_count = wordcount(page.content);
+        temp_min2read_count = min2read(page.content);
+    } catch (e) {
+        temp_wordcount_count = 0;
+        temp_min2read_count = 0;
+    }
+    %>
+    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.wordcount && temp_wordcount_count){ %>
         <span class="article-wordcount article-meta-item">
-            <i class="fa fa-file-word-o"></i> <span><%= wordcount(page.content) %> <%- __('wordcount') %></span>
+            <i class="fa fa-file-word-o"></i> <span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
         </span>
     <% } %>
-    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.min2read){ %>
+    <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.min2read && temp_min2read_count){ %>
         <span class="article-min2read article-meta-item">
-            <i class="fa fa-clock-o"></i> <span><%= min2read(page.content) %> <%- __('min2read') %></span>
+            <i class="fa fa-clock-o"></i> <span><%= temp_min2read_count %> <%- __('min2read') %></span>
         </span>
     <% } %>
     <% if (is_post() && theme.website_count.busuanzi_count.enable && theme.website_count.busuanzi_count.page_pv) { %>
