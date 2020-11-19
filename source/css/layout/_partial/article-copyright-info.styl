@@ -3,26 +3,34 @@
   width: 100%;
   box-sizing: border-box;
   background: var(--second-background-color);
-  padding: 6px 6px 6px 16px;
-  font-size: 0.98em;
+  //border: 1px solid var(--border-color);
+  //border-left: none;
+  padding: 10px 6px;
+  font-size: 1em;
 
   &::after {
     position: absolute;
     top: 0;
     left: 0;
     content: '';
-    width: 6px;
+    width: 8px;
     height: 100%;
-    background: #dd0c0c;
+    background: var(--copyright-info-color);
   }
 
   ul {
 
+    margin-left: 10px;
+
     li {
-      margin-bottom: 3px;
+      margin-bottom: 5px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
+      .license {
+        font-weight: bold;
+      }
 
       &:last-child {
         margin-bottom: 0;

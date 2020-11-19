@@ -66,11 +66,12 @@ $shadow-hover-color = rgba(0, 0, 0, 0.28);
 $scroll-bar-color = lighten($default-text-color, 20%);
 $scroll-bar-bg-color = darken($background-color, 10%);
 $link-color = darken($default-text-color, 10%);
+$copyright-info-color = #CC0033;
 
 // ====================== dark mode color ======================
 $dark-primary-color = $primary-color;
-$dark-background-color = #2f2f2f;
-$dark-second-background-color = darken($dark-background-color, 3%);
+$dark-background-color = #363636;
+$dark-second-background-color = darken($dark-background-color, 10%);
 $dark-default-text-color = #b9b5c2;
 $dark-first-text-color = lighten($dark-default-text-color, 30%);
 $dark-second-text-color = lighten($dark-default-text-color, 20%);
@@ -83,6 +84,7 @@ $dark-shadow-hover-color = rgba(128, 128, 128, 0.28);
 $dark-scroll-bar-color = darken($dark-default-text-color, 30%);
 $dark-scroll-bar-bg-color = lighten($dark-background-color, 10%);
 $dark-link-color = lighten($dark-default-text-color, 10%);
+$dark-copyright-info-color = darken($copyright-info-color, 20%);
 
 // ========================================================================
 // font
@@ -112,6 +114,7 @@ root-color(mode) {
   --scroll-bar-color: mode == 'light' ? $scroll-bar-color : $dark-scroll-bar-color;
   --scroll-bar-bg-color: mode == 'light' ? $scroll-bar-bg-color : $dark-scroll-bar-bg-color;
   --link-color: mode == 'light' ? $link-color : $dark-link-color;
+  --copyright-info-color: mode == 'light' ? $copyright-info-color : $dark-copyright-info-color;
 }
 
 
