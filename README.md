@@ -1,7 +1,7 @@
 <div align="right">
   Language:
   English
-  <a title="Chinese" href="docs/zh-CN/README.md">中文</a>
+  <a title="Chinese" href="docs/README_zh-CN.md">中文</a>
 </div>
 
 # Keep
@@ -15,7 +15,8 @@
 
 ## :star2: Live Preview
 
-**[XPoet's Blog](https://xpoet.cn/)**
+- **[XPoet's Blog](https://xpoet.cn/)**
+- **[keep official website](https://keep.xpoet.cn/)**
 
 ## :rocket: Installation
 
@@ -41,7 +42,7 @@ theme: keep
 
 ## :wrench: Configuration
 
-Refer to the [Keep theme configuration guide](https://keep.xpoet.cn/2020/10/Keep-主题配置指南/).
+Refer to the [Keep theme configuration guide](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/).
 
 It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
 
