@@ -4,7 +4,7 @@
   <a title="Chinese" href="docs/README_zh-CN.md">中文</a>
 </div>
 
-<a title="Keep website" href="https://xpoet.cn"><img align="left" alt="Keep logo" width="100" height="100" src="https://raw.githubusercontent.com/XPoet/hexo-theme-keep/master/source/images/logo.svg"></a>
+<a title="Keep website" href="https://xpoet.cn"><img align="right" alt="Keep logo" width="100" height="100" src="https://raw.githubusercontent.com/XPoet/hexo-theme-keep/master/source/images/logo.svg"></a>
 
 # Keep
 
