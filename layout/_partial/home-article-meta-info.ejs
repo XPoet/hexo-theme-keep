@@ -1,6 +1,6 @@
 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fa fa-pencil-square-o"></i> <%- moment(post.date, Date.now()).locale(config.language).fromNow() %></span>
+        <span><i class="fa fa-pencil-square-o"></i> <%- moment(post.updated, Date.now()).locale(config.language).fromNow() %></span>
         <% if (post.categories.length && theme.home_article.category.enable === true) { %>
             <span class="home-article-category"><i class="fa fa-folder"></i>
                 <ul>

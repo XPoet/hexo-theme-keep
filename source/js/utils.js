@@ -25,6 +25,7 @@ KEEP.utils = {
 
   headerProgress_dom: document.querySelector('.header-progress'),
   pageTop_dom: document.querySelector('.page-main-content-top'),
+  firstScreen_dom: document.querySelector('.first-screen-container'),
 
   // Scroll Style Handle
   prevScrollValue: 0,
@@ -125,25 +126,26 @@ KEEP.utils = {
 
   },
 
-  // init first screen height
-  initFirstScreenHeight() {
-    const firstScreenDom = document.querySelector('.first-screen-container');
-    firstScreenDom && (firstScreenDom.style.height = window.innerHeight + 'px');
-  },
-
   // get dom element height
   getElementHeight(selectors) {
     const dom = document.querySelector(selectors);
     return dom ? dom.getBoundingClientRect().height : 0;
   },
 
+  // init first screen height
+  initFirstScreenHeight() {
+    this.firstScreen_dom && (this.firstScreen_dom.style.height = window.innerHeight + 'px');
+  },
+
   // init page height handle
   initPageHeightHandle() {
-    const h1 = this.getElementHeight('.header-progress');
-    const h2 = this.getElementHeight('.page-main-content-top');
-    const h3 = this.getElementHeight('.page-main-content-middle');
-    const h4 = this.getElementHeight('.page-main-content-bottom');
-    const allDomHeight = h1 + h2 + h3 + h4;
+    if (this.firstScreen_dom) return;
+
+    const temp_h1 = this.getElementHeight('.header-progress');
+    const temp_h2 = this.getElementHeight('.page-main-content-top');
+    const temp_h3 = this.getElementHeight('.page-main-content-middle');
+    const temp_h4 = this.getElementHeight('.page-main-content-bottom');
+    const allDomHeight = temp_h1 + temp_h2 + temp_h3 + temp_h4;
     const innerHeight = window.innerHeight;
     const pb_dom = document.querySelector('.page-main-content-bottom');
     if (allDomHeight < innerHeight) {
