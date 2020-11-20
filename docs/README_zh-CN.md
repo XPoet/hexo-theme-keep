@@ -4,6 +4,8 @@
   <a title="Chinese" href="README.md">English</a>
 </div>
 
+<a title="Keep website" href="https://xpoet.cn"><img align="right" alt="Keep logo" width="100" height="100" src="https://raw.githubusercontent.com/XPoet/hexo-theme-keep/master/source/images/logo.svg"></a>
+
 # Keep
 
 > «Keep» 是一款简约优雅的 [Hexo](https://hexo.io) 主题。它能让你更专注于写作。
