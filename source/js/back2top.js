@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
-  ILS.utils = {
+  KEEP.utils = {
 
-    ...ILS.utils,
+    ...KEEP.utils,
 
     back2TopButton_dom: document.querySelector('.scroll-to-top'),
     back2BottomButton_dom: document.querySelector('.scroll-to-bottom'),
@@ -35,22 +35,22 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     initBack2TopButton() {
-      if (ILS.utils.back2TopButton_dom) {
-        ILS.utils.back2TopButton_dom.addEventListener('click', () => {
+      if (KEEP.utils.back2TopButton_dom) {
+        KEEP.utils.back2TopButton_dom.addEventListener('click', () => {
           this.back2top();
         });
       }
     },
 
     initBack2BottomButton() {
-      if (ILS.utils.back2BottomButton_dom) {
-        ILS.utils.back2BottomButton_dom.addEventListener('click', () => {
+      if (KEEP.utils.back2BottomButton_dom) {
+        KEEP.utils.back2BottomButton_dom.addEventListener('click', () => {
           this.back2Bottom();
         });
       }
     },
   }
 
-  ILS.utils.initBack2TopButton();
-  ILS.utils.initBack2BottomButton();
+  KEEP.utils.initBack2TopButton();
+  KEEP.utils.initBack2BottomButton();
 });

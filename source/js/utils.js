@@ -1,15 +1,15 @@
-ILS.utils = {
+KEEP.utils = {
 
   themeInfo: {
     author: 'XPoet',
-    name: 'ILS',
-    version: '2.2.0',
-    repository: 'https://github.com/XPoet/hexo-theme-ils'
+    name: 'Keep',
+    version: '3.0.0',
+    repository: 'https://github.com/XPoet/hexo-theme-keep'
   },
 
   printThemeInfo() {
     const themeInfo = `${this.themeInfo.name} v${this.themeInfo.version}`;
-    console.log(themeInfo);
+    console.info(themeInfo + '\n' + this.themeInfo.repository);
     const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
     if (footThemeInfoDom) {
       footThemeInfoDom.setAttribute('href', this.themeInfo.repository);
@@ -19,9 +19,9 @@ ILS.utils = {
   }
 }
 
-ILS.utils = {
+KEEP.utils = {
 
-  ...ILS.utils,
+  ...KEEP.utils,
 
   headerProgress_dom: document.querySelector('.header-progress'),
   pageTop_dom: document.querySelector('.page-main-content-top'),
@@ -56,12 +56,12 @@ ILS.utils = {
       this.styleHandleWhenScroll();
 
       // TOC scroll handle
-      if (CONFIG.toc.enable && ILS.utils.hasOwnProperty('findActiveIndexByTOC')) {
-        ILS.utils.findActiveIndexByTOC();
+      if (CONFIG.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
+        KEEP.utils.findActiveIndexByTOC();
       }
 
       // header shrink
-      ILS.utils.headerShrink.headerShrink();
+      KEEP.utils.headerShrink.headerShrink();
     });
   },
 
@@ -125,6 +125,12 @@ ILS.utils = {
 
   },
 
+  // init first screen height
+  initFirstScreenHeight() {
+    const firstScreenDom = document.querySelector('.first-screen-container');
+    firstScreenDom && (firstScreenDom.style.height = window.innerHeight + 'px');
+  },
+
   // get dom element height
   getElementHeight(selectors) {
     const dom = document.querySelector(selectors);
@@ -143,12 +149,6 @@ ILS.utils = {
     if (allDomHeight < innerHeight) {
       pb_dom.style.marginTop = (innerHeight - allDomHeight) + 'px';
     }
-  },
-
-  // init first screen height
-  initFirstScreenHeight() {
-    const firstScreenDom = document.querySelector('.first-screen-container');
-    firstScreenDom && (firstScreenDom.style.height = window.innerHeight + 'px');
   },
 
   // big image viewer

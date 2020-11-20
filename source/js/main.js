@@ -1,22 +1,22 @@
 window.addEventListener('DOMContentLoaded', () => {
   // print theme info
-  ILS.utils.printThemeInfo();
+  KEEP.utils.printThemeInfo();
 
   // init scroll
-  ILS.utils.registerWindowScroll();
+  KEEP.utils.registerWindowScroll();
 
   // init tools button
-  ILS.utils.registerToolsButtonClick();
+  KEEP.utils.registerToolsButtonClick();
 
   // comment
-  ILS.utils.goComment();
+  KEEP.utils.goComment();
 
   // init page height handle
-  ILS.utils.initPageHeightHandle();
+  KEEP.utils.initPageHeightHandle();
 
   // init first screen height
-  ILS.utils.initFirstScreenHeight();
+  KEEP.utils.initFirstScreenHeight();
 
   // big image viewer handle
-  ILS.utils.imageViewer();
+  KEEP.utils.imageViewer();
 });

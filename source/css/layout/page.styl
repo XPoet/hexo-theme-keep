@@ -12,7 +12,7 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
   position: relative;
   padding-top: $header-progress-height;
 
-  +ils-tablet() {
+  +keep-tablet() {
     padding-left: 0 !important;
   }
 
@@ -37,11 +37,11 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
       padding-top: $header-height;
       position: relative;
 
-      +ils-tablet() {
+      +keep-tablet() {
         padding-top: $header-height - 8px;
       }
 
-      +ils-mobile() {
+      +keep-mobile() {
         padding-top: $header-height - 16px;
       }
 
@@ -52,12 +52,12 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
         width: 100%;
         height: $header-height;
 
-        +ils-tablet() {
+        +keep-tablet() {
           height: $header-height - 8px;
           padding-left: 0 !important;
         }
 
-        +ils-mobile() {
+        +keep-mobile() {
           height: $header-height - 16px;
         }
 
@@ -73,22 +73,22 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
         justify-content: center;
         padding: $component-interspace 0;
 
-        +ils-tablet() {
+        +keep-tablet() {
           padding: $component-interspace * 0.8 0;
         }
 
-        +ils-mobile() {
+        +keep-mobile() {
           padding: $component-interspace * 0.6 0;
         }
 
         .main-content {
           width: $main-content-width;
 
-          +ils-tablet() {
+          +keep-tablet() {
             width: $main-content-width-tablet !important;
           }
 
-          +ils-mobile() {
+          +keep-mobile() {
             width: $main-content-width-mobile !important;
           }
 
@@ -129,9 +129,9 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
     overflow-y: auto;
     border-radius: 0 !important;
 
-    ils-container(1.02, 1.02, 18px, false);
+    keep-container(1.02, 1.02, 18px, false);
 
-    +ils-tablet() {
+    +keep-tablet() {
       left: 0 !important;
       display: none !important;
     }
@@ -146,13 +146,13 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
     right: $component-interspace;
     transition();
 
-    +ils-tablet() {
+    +keep-tablet() {
       right: 10px;
       transform: scale(0.82);
       transform-origin: right top;
     }
 
-    +ils-mobile() {
+    +keep-mobile() {
       right: 5px;
       transform: scale(0.72);
       transform-origin: right top;
@@ -167,14 +167,14 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
     width: $circle-button-width;
     height: $circle-button-width;
 
-    +ils-tablet() {
+    +keep-tablet() {
       right: 10px;
       transform: scale(0.82);
       transform-origin: right bottom;
 
     }
 
-    +ils-mobile() {
+    +keep-mobile() {
       right: 5px;
       transform: scale(0.72);
       transform-origin: right bottom;

@@ -1,30 +1,30 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-  ILS.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li');
-  ILS.utils.articleToc_dom = document.querySelector('.article-toc');
-  ILS.utils.postTocWrap_dom = document.querySelector('.post-toc-wrap');
+  KEEP.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li');
+  KEEP.utils.articleToc_dom = document.querySelector('.article-toc');
+  KEEP.utils.postTocWrap_dom = document.querySelector('.post-toc-wrap');
 
-  if (ILS.utils.navItems.length > 0) {
+  if (KEEP.utils.navItems.length > 0) {
 
-    ILS.utils = {
+    KEEP.utils = {
 
-      ...ILS.utils,
+      ...KEEP.utils,
 
       findActiveIndexByTOC() {
-        if (!Array.isArray(ILS.utils.sections)) return;
-        let index = ILS.utils.sections.findIndex(element => {
+        if (!Array.isArray(KEEP.utils.sections)) return;
+        let index = KEEP.utils.sections.findIndex(element => {
           return element && element.getBoundingClientRect().top - 20 > 0;
         });
         if (index === -1) {
-          index = ILS.utils.sections.length - 1;
+          index = KEEP.utils.sections.length - 1;
         } else if (index > 0) {
           index--;
         }
-        ILS.utils.activateNavByIndex(index);
+        KEEP.utils.activateNavByIndex(index);
       },
 
       registerSidebarTOC() {
-        ILS.utils.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(element => {
+        KEEP.utils.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(element => {
           const target = document.getElementById(decodeURI(element.getAttribute('href')).replace('#', ''));
           element.addEventListener('click', event => {
             event.preventDefault();
@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
               scrollTop: offset - 10,
               complete: function () {
                 setTimeout(() => {
-                  ILS.utils.pageTop_dom.style.transform = 'translateY(-100%)';
+                  KEEP.utils.pageTop_dom.style.transform = 'translateY(-100%)';
                 }, 100)
               }
             });
@@ -69,25 +69,25 @@ window.addEventListener('DOMContentLoaded', () => {
       },
 
       showPageAsideWhenHasTOC() {
-        ILS.utils.leftSideToggle.toggleBar.style.display = 'flex';
-        ILS.utils.leftSideToggle.isOpenPageAside = true;
-        ILS.utils.leftSideToggle.changePageLayoutWhenOpenToggle(ILS.utils.leftSideToggle.isOpenPageAside);
+        KEEP.utils.leftSideToggle.toggleBar.style.display = 'flex';
+        KEEP.utils.leftSideToggle.isOpenPageAside = true;
+        KEEP.utils.leftSideToggle.changePageLayoutWhenOpenToggle(KEEP.utils.leftSideToggle.isOpenPageAside);
       }
     }
 
-    ILS.utils.showPageAsideWhenHasTOC();
-    ILS.utils.registerSidebarTOC();
+    KEEP.utils.showPageAsideWhenHasTOC();
+    KEEP.utils.registerSidebarTOC();
 
 
   } else {
 
-    if (ILS.utils.postTocWrap_dom) {
-      ILS.utils.postTocWrap_dom.innerHTML = '';
-      ILS.utils.postTocWrap_dom.style.display = 'none';
+    if (KEEP.utils.postTocWrap_dom) {
+      KEEP.utils.postTocWrap_dom.innerHTML = '';
+      KEEP.utils.postTocWrap_dom.style.display = 'none';
     }
 
-    if (ILS.utils.articleToc_dom) {
-      ILS.utils.articleToc_dom.style.display = 'none';
+    if (KEEP.utils.articleToc_dom) {
+      KEEP.utils.articleToc_dom.style.display = 'none';
     }
   }
 });

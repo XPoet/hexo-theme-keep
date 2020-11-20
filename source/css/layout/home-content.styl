@@ -8,7 +8,7 @@
     .home-article-item {
       position: relative;
 
-      ils-container(1.02, 1.02, 28px, true);
+      keep-container(1.02, 1.02, 28px, true);
 
       .top-icon {
         position: absolute;
@@ -18,7 +18,7 @@
         transform: rotate(45deg);
         color: var(--third-text-color);
 
-        +ils-tablet() {
+        +keep-tablet() {
           font-size: 1.16em;
         }
       }
@@ -31,12 +31,12 @@
         font-size: 1.5em;
         line-height: 1.5em;
 
-        +ils-tablet() {
+        +keep-tablet() {
           font-size: 1.3em;
         }
 
 
-        +ils-mobile() {
+        +keep-mobile() {
           font-size: 1.2em;
         }
 
@@ -76,13 +76,13 @@
           }
 
           .home-article-category {
-            +ils-mobile() {
+            +keep-mobile() {
               display: none;
             }
           }
 
           .home-article-tag {
-            +ils-tablet() {
+            +keep-tablet() {
               display: none;
             }
           }

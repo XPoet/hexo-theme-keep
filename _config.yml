@@ -2,10 +2,10 @@
 #  Your basic info
 # ---------------------------------------------------------------------------------------
 base_info:
-  title: ILS
-  author: XPoet
-  url: https://ils.xpoet.cn/
-  description: Welcome to use ILS theme
+  title: Keep
+  author: Keep team
+  url: https://keep.xpoet.cn/
+
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
@@ -15,7 +15,7 @@ style:
   primary_color: '#0066CC'
 
   # Image align position, value: left | center
-  img_position: center
+  img_position: left
 
   # Left side width
   left_side_width: 260px
@@ -28,6 +28,7 @@ style:
   # First screen
   first_screen:
     enable: true
+    description: Welcome to use Hexo theme Keep
 
 
 # ---------------------------------------------------------------------------------------

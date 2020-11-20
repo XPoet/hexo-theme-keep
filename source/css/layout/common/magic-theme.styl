@@ -1,7 +1,7 @@
 @require "animated.styl"
 
-$ils-container-margin-bottom = 30px;
-$ils-container-border-radius = 5px;
+$keep-container-margin-bottom = 30px;
+$keep-container-border-radius = 5px;
 
 hover-style(scaleX, scaleY) {
 
@@ -22,37 +22,37 @@ hover-style(scaleX, scaleY) {
 }
 
 
-ils-container(scaleX, scaleY, padding, isMarginBottom) {
+keep-container(scaleX, scaleY, padding, isMarginBottom) {
   background: var(--background-color);
   padding: padding;
-  border-radius: $ils-container-border-radius;
+  border-radius: $keep-container-border-radius;
   box-sizing: border-box;
 
   if (isMarginBottom) {
-    margin-bottom: $ils-container-margin-bottom;
+    margin-bottom: $keep-container-margin-bottom;
 
-    +ils-tablet() {
-      margin-bottom: $ils-container-margin-bottom * 0.8;
+    +keep-tablet() {
+      margin-bottom: $keep-container-margin-bottom * 0.8;
     }
 
-    +ils-mobile() {
-      margin-bottom: $ils-container-margin-bottom * 0.6;
+    +keep-mobile() {
+      margin-bottom: $keep-container-margin-bottom * 0.6;
     }
   }
 
   hover-style(scaleX, scaleY);
 
-  +ils-tablet() {
+  +keep-tablet() {
     padding: padding * 0.8;
-    border-radius: $ils-container-border-radius * 0.8;
-    //margin-bottom: $ils-container-margin-bottom * 0.8;
+    border-radius: $keep-container-border-radius * 0.8;
+    //margin-bottom: $keep-container-margin-bottom * 0.8;
     hover-style(scaleX * 0.8, scaleY * 0.8);
   }
 
-  +ils-mobile() {
+  +keep-mobile() {
     padding: padding * 0.6;
-    border-radius: $ils-container-border-radius * 0.6;
-    //margin-bottom: $ils-container-margin-bottom * 0.6;
+    border-radius: $keep-container-border-radius * 0.6;
+    //margin-bottom: $keep-container-margin-bottom * 0.6;
     hover-style(scaleX * 0.6, scaleY * 0.6);
   }
 

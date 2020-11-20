@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-  ILS.utils.leftSideToggle = {
+  KEEP.utils.leftSideToggle = {
 
     init() {
       this.toggleBar = document.querySelector('.page-aside-toggle');
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     },
   }
 
-  ILS.utils.leftSideToggle.init();
-  ILS.utils.leftSideToggle.initToggleBarButton();
+  KEEP.utils.leftSideToggle.init();
+  KEEP.utils.leftSideToggle.initToggleBarButton();
 
 });

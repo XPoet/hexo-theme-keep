@@ -23,7 +23,7 @@ hexo.extend.helper.register('export_config', function () {
     exportConfig.path = config.search.path;
   }
   return `<script id="hexo-configurations">
-    let ILS = window.ILS || {};
+    let KEEP = window.KEEP || {};
     let CONFIG = ${JSON.stringify(exportConfig)};
   </script>`;
 });

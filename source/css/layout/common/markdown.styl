@@ -103,7 +103,7 @@
     font-weight: 600;
     line-height: 1.2em;
 
-    +ils-tablet() {
+    +keep-tablet() {
       font-size: 1.7em;
       line-height: 1.1em;
     }
@@ -115,7 +115,7 @@
     font-weight: 600;
     line-height: 1.2em;
 
-    +ils-tablet() {
+    +keep-tablet() {
       font-size: 1.6em;
       line-height: 1.1em;
     }
@@ -126,7 +126,7 @@
     font-weight: 550;
     line-height: 1.16em;
 
-    +ils-tablet() {
+    +keep-tablet() {
       font-size: 1.5em;
       line-height: 1.06em;
     }
@@ -138,7 +138,7 @@
     font-weight: 550;
     line-height: 1.16em;
 
-    +ils-tablet() {
+    +keep-tablet() {
       font-size: 1.4em;
       line-height: 1.06em;
     }
@@ -149,7 +149,7 @@
     font-weight: 500;
     line-height: 1.12em;
 
-    +ils-tablet() {
+    +keep-tablet() {
       font-size: 1.18em;
       line-height: 1.02em;
     }
@@ -160,7 +160,7 @@
     font-weight: 500;
     line-height: 1.12em;
 
-    +ils-tablet() {
+    +keep-tablet() {
       font-size: 1.1em;
       line-height: 1.02em;
     }
@@ -168,17 +168,16 @@
 
 
   img {
-    box-sizing: initial;
-    padding: 2px;
+    box-sizing: border-box;
     max-width: 100%;
-    border: 1px solid var(--border-color);
     cursor: pointer;
     display: block;
+    box-shadow: 0 0 2px var(--shadow-color);
 
     if (hexo-config('style.img_position') == 'center') {
-      margin: 2px auto;
+      margin: 10px auto 2px;
     } else {
-      margin: 2px 0;
+      margin: 10px 0 2px;
     }
 
   }

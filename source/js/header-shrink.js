@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  ILS.utils.headerShrink = {
+  KEEP.utils.headerShrink = {
 
     pageTemplateDom: document.querySelector('.page-main-content'),
     sidebarToolsDom: document.querySelector('.sidebar-tools'),
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     },
   }
-  ILS.utils.headerShrink.init();
-  ILS.utils.headerShrink.initMenuBarButton();
-  ILS.utils.headerShrink.initWindowMask();
+  KEEP.utils.headerShrink.init();
+  KEEP.utils.headerShrink.initMenuBarButton();
+  KEEP.utils.headerShrink.initWindowMask();
 });

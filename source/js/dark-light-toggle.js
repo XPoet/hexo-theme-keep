@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  ILS.utils.modeToggle = {
+  KEEP.utils.modeToggle = {
 
     localStorageKey: 'MAGIC',
     modeToggleButton_dom: document.querySelector('.mode-toggle'),
@@ -66,6 +66,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  ILS.utils.modeToggle.initModeStatus();
-  ILS.utils.modeToggle.initModeToggleButton();
+  KEEP.utils.modeToggle.initModeStatus();
+  KEEP.utils.modeToggle.initModeToggleButton();
 });

@@ -20,7 +20,7 @@ $article-date-font-size = 1em;
       .archive-year {
         font-size: $archive-year-font-size;
 
-        +ils-tablet() {
+        +keep-tablet() {
           font-size: $archive-year-font-size - 0.2em;
         }
 
@@ -32,7 +32,7 @@ $article-date-font-size = 1em;
       .archive-year-post-count {
         font-size: $archive-year-count-font-size;
 
-        +ils-tablet() {
+        +keep-tablet() {
           font-size: $archive-year-count-font-size - 0.1em;
         }
 
@@ -47,18 +47,18 @@ $article-date-font-size = 1em;
 
       padding-left: 10px;
 
-      +ils-tablet() {
+      +keep-tablet() {
         padding-left: 0;
       }
 
       .article-item {
         margin-top: 18px;
 
-        +ils-tablet() {
+        +keep-tablet() {
           margin-top: 16px;
         }
 
-        +ils-mobile() {
+        +keep-mobile() {
           margin-top: 14px;
         }
 
