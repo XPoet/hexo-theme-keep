@@ -65,11 +65,10 @@ hexo.extend.helper.register('__js', function (path) {
   return t;
 });
 
-hexo.extend.helper.register('__font', function (path) {
+hexo.extend.helper.register('__css', function (path) {
   const _css = hexo.extend.helper.get('css').bind(hexo);
   if (this.theme.cdn.enable) {
-    // return `<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">`;
-    return `<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/XPoet/hexo-theme-keep@master/source/${path}">`;
+    return `<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`;
   } else {
     return _css(path);
   }
@@ -79,7 +78,7 @@ hexo.extend.helper.register('__font', function (path) {
 hexo.extend.helper.register('__favicon_tag', function (path) {
   const _favicon_tag = hexo.extend.helper.get('favicon_tag').bind(hexo);
   if (this.theme.cdn.enable) {
-    return `<link rel="shortcut icon" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`
+    return `<link rel="icon" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`
   } else {
     return _favicon_tag(path);
   }
