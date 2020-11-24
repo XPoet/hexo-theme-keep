@@ -46,7 +46,9 @@
                            rel="prev"
                            href="<%= url_for(page.prev.path) %>"
                         >
-                            <i class="arrow-icon left flex-center fa fa-chevron-left"></i>
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
                             <span class="title flex-center">
                                 <span class="post-nav-title-item"><%= page.prev.title %></span>
                                 <span class="post-nav-item"><%= __('prev_posts') %></span>
@@ -64,7 +66,9 @@
                                 <span class="post-nav-title-item"><%= page.next.title %></span>
                                 <span class="post-nav-item"><%= __('next_posts') %></span>
                             </span>
-                            <i class="arrow-icon right flex-center fa fa-chevron-right"></i>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
                         </a>
                     </div>
                 <% } %>

@@ -1,5 +1,6 @@
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%
     let title = page.title;
     if (is_archive()) {
@@ -20,11 +21,11 @@
     <title>
         <% if (title){ %><%= title %> |
         <% } %>
-        <%= theme.base_info.title || config.title || 'KEEP' %>
+        <%= theme.base_info.title || config.title || 'Keep' %>
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%- favicon_tag('images/logo.svg') %>
+    <%- __favicon_tag('images/logo.svg') %>
     <%- css('css/style') %>
+    <%- __font('css/font-awesome.min.css') %>
     <%- export_config() %>
 </head>
 

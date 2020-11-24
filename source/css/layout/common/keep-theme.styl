@@ -1,5 +1,3 @@
-@require "animated.styl"
-
 $keep-container-margin-bottom = 30px;
 $keep-container-border-radius = 5px;
 
@@ -45,17 +43,12 @@ keep-container(scaleX, scaleY, padding, isMarginBottom) {
   +keep-tablet() {
     padding: padding * 0.8;
     border-radius: $keep-container-border-radius * 0.8;
-    //margin-bottom: $keep-container-margin-bottom * 0.8;
     hover-style(scaleX * 0.8, scaleY * 0.8);
   }
 
   +keep-mobile() {
     padding: padding * 0.6;
     border-radius: $keep-container-border-radius * 0.6;
-    //margin-bottom: $keep-container-margin-bottom * 0.6;
     hover-style(scaleX * 0.6, scaleY * 0.6);
   }
-
-
-
 }

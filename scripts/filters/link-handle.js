@@ -33,7 +33,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
       if (!link.protocol || link.hostname === siteHost) return match;
 
       return (
-        `<a class="link" ${attrBegin} href="${href}" ${attrEnd}>${html}<i class="fa fa-external-link"></i></a>`
+        `<a class="link" ${attrBegin} href="${href}" ${attrEnd}>${html}<i class="fas fa-external-link-alt"></i></a>`
       )
     })
   },

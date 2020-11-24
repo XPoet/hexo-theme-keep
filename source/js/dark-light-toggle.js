@@ -11,10 +11,10 @@ window.addEventListener('DOMContentLoaded', () => {
       const isDark = document.body.className.indexOf(modeClass) === -1;
 
       if (isDark) {
-        this.iconDom.className = 'fa fa-moon-o';
+        this.iconDom.className = 'fas fa-moon';
         this.articleContent.classList.remove('night-code-theme');
       } else {
-        this.iconDom.className = 'fa fa-lightbulb-o';
+        this.iconDom.className = 'fas fa-sun';
         this.articleContent.classList.add('night-code-theme');
       }
       localStorage.setItem(this.localStorageKey, JSON.stringify(
@@ -32,22 +32,22 @@ window.addEventListener('DOMContentLoaded', () => {
           if (this.modeConfig.isDark) {
             document.body.classList.remove('light-mode');
             this.articleContent.classList.remove('night-code-theme');
-            this.iconDom.className = 'fa fa-lightbulb-o';
+            this.iconDom.className = 'fas fa-sun';
           } else {
             document.body.classList.add('light-mode');
             this.articleContent.classList.add('night-code-theme');
-            this.iconDom.className = 'fa fa-moon-o';
+            this.iconDom.className = 'fas fa-moon';
           }
         } else {
 
           if (this.modeConfig.isDark) {
             document.body.classList.remove('dark-mode');
             this.articleContent.classList.remove('night-code-theme');
-            this.iconDom.className = 'fa fa-moon-o';
+            this.iconDom.className = 'fas fa-moon';
           } else {
             document.body.classList.add('dark-mode');
             this.articleContent.classList.add('night-code-theme');
-            this.iconDom.className = 'fa fa-lightbulb-o';
+            this.iconDom.className = 'fas fa-sun';
           }
 
         }

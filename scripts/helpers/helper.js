@@ -1,3 +1,9 @@
+/* global hexo */
+
+'use strict'
+
+const url = require('url');
+
 hexo.extend.helper.register('isInHomePaging', function (pagePath, route) {
   if (pagePath.length > 5 && route === '/') {
     return pagePath.slice(0, 5) === 'page/';
@@ -27,7 +33,6 @@ hexo.extend.helper.register('getLevel', function (postCount) {
   return Math.ceil(postCount / 10);
 });
 
-const url = require('url');
 hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
   if (rootUrl) {
     return url.parse(rootUrl).href + path;
@@ -35,3 +40,49 @@ hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
     return path;
   }
 });
+
+hexo.extend.helper.register('__js', function (path) {
+
+  const cdnPathHandle = (path_2) => {
+
+    const _js = hexo.extend.helper.get('js').bind(hexo);
+
+    return this.theme.cdn.enable
+        ? `<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path_2}"></script>`
+        : _js(path_2)
+  }
+
+  let t = ``;
+
+  if (Array.isArray(path)) {
+    for (const p of path) {
+      t += cdnPathHandle(p);
+    }
+  } else {
+    t = cdnPathHandle(path);
+  }
+
+  return t;
+});
+
+hexo.extend.helper.register('__font', function (path) {
+  const _css = hexo.extend.helper.get('css').bind(hexo);
+  if (this.theme.cdn.enable) {
+    // return `<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">`;
+    return `<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/XPoet/hexo-theme-keep@master/source/${path}">`;
+  } else {
+    return _css(path);
+  }
+
+});
+
+hexo.extend.helper.register('__favicon_tag', function (path) {
+  const _favicon_tag = hexo.extend.helper.get('favicon_tag').bind(hexo);
+  if (this.theme.cdn.enable) {
+    return `<link rel="shortcut icon" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`
+  } else {
+    return _favicon_tag(path);
+  }
+
+});
+

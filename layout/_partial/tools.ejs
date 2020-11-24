@@ -2,20 +2,20 @@
     <ul class="tools-list">
         <% if (theme.local_search.enable && config.search) { %>
             <li class="search popup-trigger">
-                <i class="fa fa-search"></i>
+                <i class="fas fa-search"></i>
             </li>
         <% } %>
 
         <% if (is_post() && (theme.comment.valine.enable || theme.comment.gitalk.enable)) { %>
             <li class="go-comment">
-                <i class="fa fa-comment"></i>
+                <i class="fas fa-comment"></i>
             </li>
         <% } %>
 
         <!-- TOC aside toggle -->
         <% if (is_post() && theme.toc.enable) { %>
             <li class="tools-item page-aside-toggle">
-                <i class="fa fa-outdent"></i>
+                <i class="fas fa-outdent"></i>
             </li>
         <% } %>
 

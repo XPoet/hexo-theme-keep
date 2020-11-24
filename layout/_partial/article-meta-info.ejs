@@ -1,10 +1,10 @@
 <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fa fa-calendar-o"></i> <%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD') %>
+        <i class="fas fa-calendar"></i> <%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD') %>
     </span>
     <% if (articleObject.categories.length) { %>
         <span class="article-categories article-meta-item">
-            <i class="fa fa-folder"></i>
+            <i class="fas fa-folder"></i>
             <ul>
                 <% articleObject.categories.forEach((category, i) => { %>
                     <li>
@@ -16,7 +16,7 @@
     <% } %>
     <% if (articleObject.tags.length) { %>
         <span class="article-tags article-meta-item">
-            <i class="fa fa-tags"></i>
+            <i class="fas fa-tags"></i>
             <ul>
                 <% articleObject.tags.forEach((tag, i) => { %>
                     <li>
@@ -39,17 +39,17 @@
     %>
     <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.wordcount && temp_wordcount_count){ %>
         <span class="article-wordcount article-meta-item">
-            <i class="fa fa-file-word-o"></i> <span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
+            <i class="fas fa-file-word"></i> <span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
         </span>
     <% } %>
     <% if(is_post() && theme.post_wordcount.enable && theme.post_wordcount.min2read && temp_min2read_count){ %>
         <span class="article-min2read article-meta-item">
-            <i class="fa fa-clock-o"></i> <span><%= temp_min2read_count %> <%- __('min2read') %></span>
+            <i class="fas fa-clock"></i> <span><%= temp_min2read_count %> <%- __('min2read') %></span>
         </span>
     <% } %>
     <% if (is_post() && theme.website_count.busuanzi_count.enable && theme.website_count.busuanzi_count.page_pv) { %>
         <span class="article-pv article-meta-item">
-            <i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
         </span>
     <% } %>
 </div>

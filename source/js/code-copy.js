@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const box = document.createElement('div');
     element.wrap(box);
     box.classList.add('highlight-container');
-    box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard"></i></div>');
+    box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fas fa-copy"></i></div>');
     var button = element.parentNode.querySelector('.copy-btn');
     button.addEventListener('click', event => {
       var target = event.currentTarget;
@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
       ta.setSelectionRange(0, code.length);
       ta.readOnly = false;
       var result = document.execCommand('copy');
-      target.querySelector('i').className = result ? 'fa fa-check' : 'fa fa-times';
+      target.querySelector('i').className = result ? 'fas fa-check' : 'fas fa-times';
       ta.blur(); // For iOS
       target.blur();
       if (selected) {
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     button.addEventListener('mouseleave', event => {
       setTimeout(() => {
-        event.target.querySelector('i').className = 'fa fa-clipboard';
+        event.target.querySelector('i').className = 'fas fa-copy';
       }, 300);
     });
   });

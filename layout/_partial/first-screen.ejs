@@ -10,13 +10,13 @@
                         <% if(key === 'email') { %>
                             <li class="social-icon-item <%= key %>">
                                 <a href="mailto:<%- url_for(theme.social_contact.links[key]) %>">
-                                    <i class="fa fa-envelope"></i>
+                                    <i class="fas fa-envelope"></i>
                                 </a>
                             </li>
                         <% } else { %>
                             <li class="social-icon-item <%= key %>">
                                 <a href="<%- url_for(theme.social_contact.links[key]) %>">
-                                    <i class="fa fa-<%= key %>"></i>
+                                    <i class="fab fa-<%= key %>"></i>
                                 </a>
                             </li>
                         <% } %>
