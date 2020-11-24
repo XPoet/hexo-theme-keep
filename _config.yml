@@ -38,7 +38,7 @@ social_contact:
   enable: false
   links:
     github:          # your GitHub URL
-    wechat:          # your WeChat QR-Code URL
+    weixin:          # your WeChat QR-Code URL
     weibo:           # your WeiBo URL
     twitter:         # your twitter URL
     facebook:        # your facebook URL
