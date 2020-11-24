@@ -10,9 +10,11 @@
 
 > «Keep» is a simple and elegant [Hexo](https://hexo.io) theme. It makes you more focused on writing.
 
+[![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
+[![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/releases)
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-keep)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
-[![License](https://img.shields.io/badge/license-%20MIT-orange?style=flat-square&logo=gnu)](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE.md)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=12.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-keep?style=flat-square&logo=jsdelivr)](https://www.jsdelivr.com/package/npm/hexo-theme-keep)
 
 ## :star2: Live Preview
