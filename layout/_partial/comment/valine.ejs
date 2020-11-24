@@ -29,11 +29,6 @@
                         author = author.toLocaleLowerCase();
                     }
 
-                    let email = '<%= theme.base_info.email %>';
-                    if (email) {
-                        email = email.toLocaleLowerCase();
-                    }
-
                     for (let vcard of vcards) {
                         const vnick = vcard.querySelector('.vhead .vnick');
                         if (vnick.innerHTML.toLocaleLowerCase() === author) {

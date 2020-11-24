@@ -1,4 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
+
+  KEEP.themeInfo = {
+    author: 'XPoet',
+    name: 'Keep',
+    version: KEEP.theme_config.version,
+    repository: 'https://github.com/XPoet/hexo-theme-keep'
+  }
+
   // print theme info
   KEEP.utils.printThemeInfo();
 
@@ -19,4 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // big image viewer handle
   KEEP.utils.imageViewer();
+
+  // set how long age in home article block
+  KEEP.utils.setHowLongAgoInHome();
 });

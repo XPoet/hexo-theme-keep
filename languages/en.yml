@@ -35,3 +35,11 @@ copyright:
   create_time: Create time
   license_title: Copyright Notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
+ago:
+  second: "%s seconds ago"
+  minute: "%s minutes ago"
+  hour: "%s hours ago"
+  day: "%s days age"
+  week: "%s weeks age"
+  month: "%s months age"
+  year: "%s years age"

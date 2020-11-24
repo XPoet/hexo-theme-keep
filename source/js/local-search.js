@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let datas;
   let isXml = true;
   // Search DB path
-  let searchPath = CONFIG.path;
+  let searchPath = KEEP.hexo_config.path;
   if (!searchPath) return false;
   if (searchPath.length === 0) {
     searchPath = 'search.xml';
@@ -171,7 +171,7 @@ window.addEventListener('DOMContentLoaded', () => {
           });
 
           // Select top N slices in content
-          let upperBound = parseInt(CONFIG.localsearch.top_n_per_article ? CONFIG.localsearch.top_n_per_article : 1, 10);
+          let upperBound = parseInt(KEEP.theme_config.local_search.top_n_per_article ? KEEP.theme_config.local_search.top_n_per_article : 1, 10);
           if (upperBound >= 0) {
             slicesOfContent = slicesOfContent.slice(0, upperBound);
           }
@@ -222,7 +222,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchData = () => {
-    fetch(CONFIG.root + searchPath)
+    fetch(KEEP.theme_config.root + searchPath)
       .then(response => response.text())
       .then(res => {
         // Get the contents from search data
@@ -238,7 +238,7 @@ window.addEventListener('DOMContentLoaded', () => {
         datas = datas.filter(data => data.title).map(data => {
           data.title = data.title.trim();
           data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
-          if (CONFIG.localsearch.unescape) {
+          if (KEEP.theme_config.local_search.unescape) {
             data.content = unescapeHtml(data.content);
           }
           data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
@@ -249,11 +249,11 @@ window.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  if (CONFIG.localsearch.preload) {
+  if (KEEP.theme_config.local_search.preload) {
     fetchData();
   }
 
-  if (CONFIG.localsearch.trigger === 'auto') {
+  if (KEEP.theme_config.local_search.trigger === 'auto') {
     if (input) {
       input.addEventListener('input', inputEventFunction);
     }

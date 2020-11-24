@@ -3,27 +3,51 @@
 'use strict';
 
 const url = require('url');
+const fs = require('fs');
+const path = require('path');
+const yaml = require('js-yaml');
 
 /**
  * Export theme config to js
  */
 hexo.extend.helper.register('export_config', function () {
-  let {config, theme} = this;
-  let exportConfig = {
+
+  let { config, theme } = this;
+
+  // ------ export language to js ------
+  const languageDir = path.join(__dirname, '../../languages');
+  let file = fs.readdirSync(languageDir).find(v => v === `${config.language}.yml`);
+  file = languageDir + '/' + (file ? file : 'en.yml');
+  let languageContent = fs.readFileSync(file, 'utf8');
+  try {
+    languageContent = yaml.safeLoad(languageContent);
+  } catch (e) {
+    console.log(e);
+  }
+  // ---------------------------------
+
+
+
+  let hexo_config = {
     hostname: url.parse(config.url).hostname || config.url,
-    root: config.root,
-    localsearch: theme.local_search,
-    codeblock: theme.codeblock,
-    toc: theme.toc,
-    back2top: theme.back2top,
-    side_tools: theme.side_tools,
-    style: theme.style
+    root: config.root
   };
   if (config.search) {
-    exportConfig.path = config.search.path;
+    hexo_config.path = config.search.path;
   }
+
+  let theme_config = {
+    toc: theme.toc,
+    left_side_width: theme.left_side_width,
+    local_search: theme.local_search,
+    side_tools: theme.side_tools,
+    version: theme.version,
+  }
+
   return `<script id="hexo-configurations">
     let KEEP = window.KEEP || {};
-    let CONFIG = ${JSON.stringify(exportConfig)};
+    KEEP.hexo_config = ${JSON.stringify(hexo_config)};
+    KEEP.theme_config = ${JSON.stringify(theme_config)};
+    KEEP.language = ${JSON.stringify(languageContent)};
   </script>`;
 });

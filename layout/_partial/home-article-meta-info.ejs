@@ -1,6 +1,6 @@
 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <%- moment(post.date, Date.now()).locale(config.language).fromNow() %></span>
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="<%= post.date %>"><%= date(post.date, 'YYYY-MM-DD') %></span></span>
         <% if (post.categories.length && theme.home_article.category.enable === true) { %>
             <span class="home-article-category"><i class="fas fa-folder"></i>
                 <ul>

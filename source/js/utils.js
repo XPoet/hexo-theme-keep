@@ -1,31 +1,18 @@
 KEEP.utils = {
 
-  themeInfo: {
-    author: 'XPoet',
-    name: 'Keep',
-    version: '3.0.0',
-    repository: 'https://github.com/XPoet/hexo-theme-keep'
-  },
-
-  printThemeInfo() {
-    const themeInfo = `${this.themeInfo.name} v${this.themeInfo.version}`;
-    console.info(themeInfo + '\n' + this.themeInfo.repository);
-    const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
-    if (footThemeInfoDom) {
-      footThemeInfoDom.setAttribute('href', this.themeInfo.repository);
-      footThemeInfoDom.innerHTML = themeInfo;
-    }
-
-  }
-}
-
-KEEP.utils = {
-
-  ...KEEP.utils,
-
   headerProgress_dom: document.querySelector('.header-progress'),
   pageTop_dom: document.querySelector('.page-main-content-top'),
   firstScreen_dom: document.querySelector('.first-screen-container'),
+
+  printThemeInfo() {
+    const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
+    console.info(themeInfo + '\n' + KEEP.themeInfo.repository);
+    const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
+    if (footThemeInfoDom) {
+      footThemeInfoDom.setAttribute('href', KEEP.themeInfo.repository);
+      footThemeInfoDom.innerHTML = themeInfo;
+    }
+  },
 
   // Scroll Style Handle
   prevScrollValue: 0,
@@ -57,7 +44,7 @@ KEEP.utils = {
       this.styleHandleWhenScroll();
 
       // TOC scroll handle
-      if (CONFIG.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
+      if (KEEP.theme_config.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
         KEEP.utils.findActiveIndexByTOC();
       }
 
@@ -68,7 +55,7 @@ KEEP.utils = {
 
   // tools
   registerToolsButtonClick() {
-    if (!CONFIG.side_tools.enable) return;
+    if (!KEEP.theme_config.side_tools.enable) return;
 
     let isOpen = false;
     this.toolsMenuButton_dom = document.querySelector('.tools-button');
@@ -97,22 +84,6 @@ KEEP.utils = {
 
       });
     });
-  },
-
-  // calculate transform value
-  calculateTransformValue(index) {
-    const x = 3;
-    const y = Math.floor(index / x) + 1;
-    const z = index % x + 1;
-
-    switch (z) {
-      case 1:
-        return `0, -${150 * y}%, 0`;
-      case 2:
-        return `-${150 * y}%, -${150 * y}%, 0`;
-      case 3:
-        return `-${150 * y}%, 0, 0`;
-    }
   },
 
   // go comment
@@ -178,5 +149,54 @@ KEEP.utils = {
         targetImg.setAttribute('src', img.getAttribute('src'))
       });
     });
+  },
+
+
+  setLanguage(p1, p2) {
+    return p2.replace(/%s/g, p1)
+  },
+
+  getHowLongAgo(timestamp) {
+
+    let l = KEEP.language
+
+    timestamp /= 1000;
+
+    const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12)
+    const __M = Math.floor(timestamp / (60 * 60 * 24 * 30))
+    const __W = Math.floor(timestamp / (60 * 60 * 24) / 7)
+    const __d = Math.floor(timestamp / (60 * 60 * 24))
+    const __h = Math.floor(timestamp / (60 * 60) % 24)
+    const __m = Math.floor(timestamp / 60 % 60)
+    const __s = Math.floor(timestamp % 60)
+
+    if (__Y > 0) {
+      return this.setLanguage(__Y, l.ago.year)
+
+    } else if (__M > 0) {
+      return this.setLanguage(__M, l.ago.month)
+
+    } else if (__W > 0) {
+      return this.setLanguage(__W, l.ago.week)
+
+    } else if (__d > 0) {
+      return this.setLanguage(__d, l.ago.day)
+
+    } else if (__h > 0) {
+      return this.setLanguage(__h, l.ago.hour)
+
+    } else if (__m > 0) {
+      return this.setLanguage(__m, l.ago.minute)
+
+    } else if (__s > 0) {
+      return this.setLanguage(__s, l.ago.second)
+    }
+  },
+
+  setHowLongAgoInHome() {
+    const post = document.querySelectorAll('.home-article-meta-info .home-article-date');
+    post && post.forEach(v => {
+      v.innerHTML = this.getHowLongAgo(Date.now() - new Date(v.dataset.date).getTime())
+    })
   }
 }
