@@ -19,6 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // global font adjust
   KEEP.utils.globalFontAdjust();
 
+  KEEP.utils.contentAreaWidthAdjust();
+
   // comment
   KEEP.utils.goComment();
 

@@ -42,6 +42,12 @@ $tools-item-width = 30px;
     transform: translateX(100%);
     transition();
 
+    .tool-expand-width {
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
     &.show {
       opacity: 1;
       transform: translateX(0);

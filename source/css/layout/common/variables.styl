@@ -6,13 +6,16 @@
 // layout
 // ========================================================================
 $header-height = 72px;                          // 头部默认高度
-$main-content-width = 62%;                      // 中间内容区域宽度（PC）
-$main-content-width-tablet = 80%;               // 中间内容区域宽度（平板）
-$main-content-width-mobile = 88%;               // 中间内容区域宽度（手机）
+$main-content-width = 80%;                      // 中间内容区域宽度（PC）
+$main-content-width-tablet = 85%;               // 中间内容区域宽度（平板）
+$main-content-width-mobile = 90%;               // 中间内容区域宽度（手机）
 $header-shrink-height = 56px;                   // 头部收缩高度
 $circle-button-width = 40px;                    // tools 圆形工具按钮宽度
 $tools-button-width = 32px;                     // tools 方形工具按钮宽度
 $component-interspace = 30px;                   // 组件/模块的间隔值（PC）
+$temp-content-max-width = hexo-config('style.content_max_width');
+$content-max-width = $temp-content-max-width ? convert($temp-content-max-width) : 1000px;
+
 
 // ========================================================================
 // 媒体查询

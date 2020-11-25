@@ -7,8 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
       this.pageTopDom = document.querySelector('.page-main-content-top');
       this.containerDom = document.querySelector('.page-container');
       this.leftAsideDom = document.querySelector('.page-aside');
-      this.headerContentDom = document.querySelector('.header-wrapper .header-content');
-      this.mainContentDom = document.querySelector('.page-main-content-middle .main-content');
       this.isOpenPageAside = false;
     },
 
@@ -30,12 +28,10 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     changePageLayoutWhenOpenToggle(isOpen) {
-      const pageAsideWidth = KEEP.theme_config.left_side_width || '260px';
+      const pageAsideWidth = KEEP.theme_config.style.left_side_width || '260px';
       this.containerDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
       this.pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
       this.leftAsideDom.style.left = isOpen ? '0' : `-${pageAsideWidth}`;
-      this.headerContentDom.style.width = isOpen ? '76%' : '62%';
-      this.mainContentDom.style.width = isOpen ? '76%' : '62%';
     },
   }
 

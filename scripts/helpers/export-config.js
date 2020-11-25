@@ -38,7 +38,7 @@ hexo.extend.helper.register('export_config', function () {
 
   let theme_config = {
     toc: theme.toc,
-    left_side_width: theme.left_side_width,
+    style: theme.style,
     local_search: theme.local_search,
     side_tools: theme.side_tools,
     version: theme.version,

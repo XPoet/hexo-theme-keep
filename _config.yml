@@ -20,6 +20,9 @@ style:
   # Left side width
   left_side_width: 260px
 
+  # Content area max width
+  content_max_width: 900px
+
   # Mouse hover
   hover:
     shadow: true   # shadow effect when the mouse hover

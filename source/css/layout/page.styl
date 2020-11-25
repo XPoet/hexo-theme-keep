@@ -1,6 +1,6 @@
 $header-progress-height = 3px;
 $temp-width = hexo-config('style.left_side_width');
-$page-aside-width = $temp-width ? convert($temp-width):260px;
+$page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
 .page-container {
   position: relative;
@@ -65,6 +65,7 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
 
 
       .page-main-content-middle {
+        box-sizing: border-box;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -79,19 +80,20 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
         }
 
         .main-content {
+          position: relative;
+          box-sizing: border-box;
           width: $main-content-width;
+          max-width: $content-max-width;
+          height: 100%;
+          transition();
 
           +keep-tablet() {
-            width: $main-content-width-tablet !important;
+            width: $main-content-width-tablet;
           }
 
           +keep-mobile() {
-            width: $main-content-width-mobile !important;
+            width: $main-content-width-mobile;
           }
-
-          height: 100%;
-          position: relative;
-          box-sizing: border-box;
         }
 
       }

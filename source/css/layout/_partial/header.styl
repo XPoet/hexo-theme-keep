@@ -16,6 +16,7 @@ $header-progress-height = 2.8px;
     position: relative;
     height: 100%;
     width: $main-content-width;
+    max-width: $content-max-width;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,10 +31,6 @@ $header-progress-height = 2.8px;
 
     +keep-mobile() {
       width: $main-content-width-mobile !important;
-    }
-
-    &.first-screen {
-      width: 80%;
     }
 
     .logo-title {
