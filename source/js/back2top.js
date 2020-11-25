@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     ...KEEP.utils,
 
-    back2TopButton_dom: document.querySelector('.scroll-to-top'),
-    back2BottomButton_dom: document.querySelector('.scroll-to-bottom'),
+    back2TopButton_dom: document.querySelector('.tool-scroll-to-top'),
+    back2BottomButton_dom: document.querySelector('.tool-scroll-to-bottom'),
 
     back2top() {
       const scrollTopTimer = setInterval(function () {
@@ -34,23 +34,19 @@ window.addEventListener('DOMContentLoaded', () => {
       }, 50);
     },
 
-    initBack2TopButton() {
-      if (KEEP.utils.back2TopButton_dom) {
-        KEEP.utils.back2TopButton_dom.addEventListener('click', () => {
-          this.back2top();
-        });
-      }
+    initBack2Top() {
+      this.back2TopButton_dom.addEventListener('click', () => {
+        this.back2top();
+      });
     },
 
-    initBack2BottomButton() {
-      if (KEEP.utils.back2BottomButton_dom) {
-        KEEP.utils.back2BottomButton_dom.addEventListener('click', () => {
-          this.back2Bottom();
-        });
-      }
+    initBack2Bottom() {
+      this.back2BottomButton_dom.addEventListener('click', () => {
+        this.back2Bottom();
+      });
     },
   }
 
-  KEEP.utils.initBack2TopButton();
-  KEEP.utils.initBack2BottomButton();
+  KEEP.utils.initBack2Top();
+  KEEP.utils.initBack2Bottom();
 });

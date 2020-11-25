@@ -4,10 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
     pageTemplateDom: document.querySelector('.page-main-content'),
     sidebarToolsDom: document.querySelector('.sidebar-tools'),
     headerDom: document.querySelector('.header-wrapper'),
-    menuBarDom: document.querySelector('.menu-bar'),
-    windowMaskDom: document.querySelector('.window-mask'),
-
     isHeaderShrink: false,
+    isShowHeaderDrawer: false,
 
     init() {
       this.headerHeight = this.headerDom.getBoundingClientRect().height;
@@ -33,16 +31,17 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     initMenuBarButton() {
-      let isShowHeaderDrawer = false;
-      this.menuBarDom.addEventListener('click', () => {
-        isShowHeaderDrawer = !isShowHeaderDrawer;
-        document.body.style.overflow = isShowHeaderDrawer ? 'hidden' : 'auto';
+      document.querySelector('.menu-bar').addEventListener('click', () => {
+        this.isShowHeaderDrawer = !this.isShowHeaderDrawer;
+        document.body.style.overflow = this.isShowHeaderDrawer ? 'hidden' : 'auto';
         this.headerDom.classList.toggle('header-drawer-show');
       });
     },
 
     initWindowMask() {
-      this.windowMaskDom.addEventListener('click', () => {
+      document.querySelector('.window-mask').addEventListener('click', () => {
+        this.isShowHeaderDrawer = !this.isShowHeaderDrawer;
+        document.body.style.overflow = this.isShowHeaderDrawer ? 'hidden' : 'auto';
         this.headerDom.classList.toggle('header-drawer-show');
       });
     },

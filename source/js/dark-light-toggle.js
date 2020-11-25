@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
   KEEP.utils.modeToggle = {
 
-    localStorageKey: 'MAGIC',
-    modeToggleButton_dom: document.querySelector('.mode-toggle'),
-    iconDom: document.querySelector('.mode-toggle i'),
+    localStorageKey: 'KEEP',
+    modeToggleButton_dom: document.querySelector('.tool-dark-light-toggle'),
+    iconDom: document.querySelector('.tool-dark-light-toggle i'),
     articleContent: document.querySelector('.main-content'),
 
     setItemUtil(modeClass, prefersColorScheme) {

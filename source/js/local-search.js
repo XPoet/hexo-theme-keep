@@ -1,12 +1,18 @@
 /* global CONFIG */
 window.addEventListener('DOMContentLoaded', () => {
+
+  // Search DB path
+  let searchPath = KEEP.hexo_config.path;
+  if (!searchPath) {
+    // Search DB path
+    console.warn('`hexo-generator-searchdb` plugin is not installed!');
+    return;
+  }
+
   // Popup Window
   let isfetched = false;
   let datas;
   let isXml = true;
-  // Search DB path
-  let searchPath = KEEP.hexo_config.path;
-  if (!searchPath) return false;
   if (searchPath.length === 0) {
     searchPath = 'search.xml';
   } else if (searchPath.endsWith('json')) {
@@ -222,7 +228,7 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   const fetchData = () => {
-    fetch(KEEP.theme_config.root + searchPath)
+    fetch(KEEP.hexo_config.root + searchPath)
       .then(response => response.text())
       .then(res => {
         // Get the contents from search data

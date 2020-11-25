@@ -3,15 +3,15 @@ $temp-width = hexo-config('style.left_side_width');
 $page-aside-width = $temp-width ? convert($temp-width):260px;
 
 .page-container {
-
-  transition();
-
   position: relative;
   padding-top: $header-progress-height;
+
+  transition();
 
   +keep-tablet() {
     padding-left: 0 !important;
   }
+
 
   .page-header {
     .header-progress {
@@ -157,29 +157,9 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
   }
 
 
-  .bottom-sidebar-tools {
+  .right-bottom-side-tools {
     position: fixed;
     bottom: $component-interspace;
-    right: $component-interspace;
-    width: $circle-button-width;
-    height: $circle-button-width;
-
-    +keep-tablet() {
-      right: 10px;
-      transform: scale(0.82);
-      transform-origin: right bottom;
-
-    }
-
-    +keep-mobile() {
-      right: 5px;
-      transform: scale(0.72);
-      transform-origin: right bottom;
-    }
-  }
-
-  .sidebar-tools-shrink {
-    transition();
-    top: $header-shrink-height + $component-interspace;
+    right: 0;
   }
 }

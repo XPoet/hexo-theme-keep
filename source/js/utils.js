@@ -53,36 +53,33 @@ KEEP.utils = {
     });
   },
 
-  // tools
-  registerToolsButtonClick() {
-    if (!KEEP.theme_config.side_tools.enable) return;
+  // toggle show tools list
+  toggleShowToolsList() {
+    document.querySelector('.tool-toggle-show').addEventListener('click', () => {
+      document.querySelector('.side-tools-list').classList.toggle('show');
+    });
+  },
 
-    let isOpen = false;
-    this.toolsMenuButton_dom = document.querySelector('.tools-button');
-    this.toolsWrapperList_dom = document.querySelectorAll('.tools-wrapper li');
+  // global font adjust
+  defaultFontSize: 0,
+  globalFontAdjust() {
+    const initFontSize = document.defaultView.getComputedStyle(document.body).fontSize;
+    const fs = Number(initFontSize.substring(0, initFontSize.length - 2));
 
-    this.toolsMenuButton_dom.addEventListener('click', e => {
-      isOpen = !isOpen;
+    const setFontSize = (defaultFontSize) => {
+      document.body.style.fontSize = `${fs * (1 + defaultFontSize * 0.06)}px`;
+    }
 
-      const toolsMenuButtonIcon = this.toolsMenuButton_dom.querySelector('i');
-      if (isOpen) {
-        toolsMenuButtonIcon.classList.add('fa-minus');
-        toolsMenuButtonIcon.classList.remove('fa-plus');
-      } else {
-        toolsMenuButtonIcon.classList.add('fa-plus');
-        toolsMenuButtonIcon.classList.remove('fa-minus');
-      }
-      this.toolsWrapperList_dom.forEach((li, index) => {
+    document.querySelector('.tool-font-adjust-plus').addEventListener('click', () => {
+      if (this.defaultFontSize >= 5) return;
+      this.defaultFontSize++;
+      setFontSize(this.defaultFontSize);
+    });
 
-        if (isOpen) {
-          li.style.transform = `translate3d(0, -${138 * (index + 1)}%, 0)`;
-          li.style.opacity = '1';
-        } else {
-          li.style.opacity = '0';
-          li.style.transform = 'translate3d(0, 0, 0)';
-        }
-
-      });
+    document.querySelector('.tool-font-adjust-minus').addEventListener('click', () => {
+      if (this.defaultFontSize <= 0) return;
+      this.defaultFontSize--;
+      setFontSize(this.defaultFontSize);
     });
   },
 

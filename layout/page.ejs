@@ -59,12 +59,9 @@
         <%- partial('_partial/tools') %>
     </div>
 
-    <!-- side tools -->
-    <% if (theme.side_tools.enable) { %>
-        <div class="bottom-sidebar-tools">
-            <%- partial('_partial/tools2') %>
-        </div>
-    <% } %>
+    <div class="right-bottom-side-tools">
+        <%- partial('_partial/side-tools-container') %>
+    </div>
 
     <!-- page aside -->
     <aside class="page-aside">

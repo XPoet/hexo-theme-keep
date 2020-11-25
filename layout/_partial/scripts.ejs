@@ -1,16 +1,10 @@
 <%- __js([
     'js/utils.js',
+    'js/main.js',
     'js/header-shrink.js',
-    'js/main.js'
+    'js/back2top.js',
+    'js/dark-light-toggle.js'
 ]) %>
-
-<% if (theme.side_tools.enable) { %>
-    <%- __js('js/dark-light-toggle.js') %>
-
-    <% if (theme.back2top.enable) { %>
-        <%- __js('js/back2top.js') %>
-    <% } %>
-<% } %>
 
 <% if (theme.local_search.enable) { %>
     <%- __js('js/local-search.js') %>
