@@ -1,10 +1,16 @@
 .markdown-body {
 
   blockquote {
-    border-left: 5px solid var(--third-text-color);
+
+    p {
+      padding: 5px 5px 5px 10px;
+    }
+
+    box-sizing: border-box;
+    border-left: 5px solid var(--default-text-color);
     margin: 20px 0;
-    padding: 0 0 0 10px;
-    color: var(--third-text-color);
+    color: var(--default-text-color);
+    background: var(--second-background-color);
   }
 
   p {
@@ -73,7 +79,8 @@
   ol {
 
     li {
-      list-style: upper-roman;
+      //list-style: upper-roman;
+      list-style: decimal;
 
       ol {
 
