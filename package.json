@@ -1,8 +1,12 @@
 {
   "name": "hexo-theme-keep",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": false,
   "description": "A simple and elegant theme for Hexo.",
+  "scripts": {
+    "release": "git push -u --follow-tags origin master",
+    "publish": "npm publish"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/XPoet/hexo-theme-keep.git"
