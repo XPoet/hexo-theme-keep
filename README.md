@@ -7,8 +7,9 @@
 <a title="Keep website" href="https://xpoet.cn"><img align="right" alt="Keep logo" width="100" height="100" src="https://raw.githubusercontent.com/XPoet/hexo-theme-keep/master/source/images/logo.svg"></a>
 
 # Keep
+> old name `ILS`
 
-> «Keep» is a simple and elegant [Hexo](https://hexo.io) theme. It makes you more focused on writing.
+«Keep» is a simple and elegant [Hexo](https://hexo.io) theme. It makes you more focused on writing.
 
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/releases)
@@ -17,7 +18,7 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E=12.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-keep?style=flat-square&logo=jsdelivr)](https://www.jsdelivr.com/package/npm/hexo-theme-keep)
 
-## :star2: Live Preview
+## :star2: Online Preview
 
 - **[XPoet's Blog](https://xpoet.cn/)**
 - **[keep official website](https://keep.xpoet.cn/)**
@@ -79,17 +80,17 @@ We welcome you to join the development of «Keep». Please see [contributing gui
 This project exists thanks to all the people who contribute.
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
-  <img src="https://opencollective.com/hexo-theme-keep/contributors.svg?width=980">
+  <img src="https://opencollective.com/hexo-theme-keep/contributors.svg?width=880">
 </a>
 
 ## :sparkling_heart: Thanks
 
 «Keep» send special thanks to these great services that sponsor our core infrastructure:
 
-<a href="https://github.com"><img height="40" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"></a>
+<a href="https://github.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/GitHub-LOGO.5sq0168mirg0.png"></a>
 
 > GitHub allows us to host the Git repository and run the test suite.
 
-<a href="https://www.jsdelivr.com"><img height="40" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg"></a>
+<a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
 > Thanks jsDelivr for providing public CDN service.

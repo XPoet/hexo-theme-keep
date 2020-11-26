@@ -1,14 +1,15 @@
 <div align="right">
   语言:
   中文
-  <a title="Chinese" href="README.md">English</a>
+  <a title="Chinese" href="../../README.md">English</a>
 </div>
 
 <a title="Keep website" href="https://xpoet.cn"><img align="right" alt="Keep logo" width="100" height="100" src="https://raw.githubusercontent.com/XPoet/hexo-theme-keep/master/source/images/logo.svg"></a>
 
 # Keep
+> 原名 `ILS`
 
-> «Keep» 是一款简约优雅的 [Hexo](https://hexo.io) 主题。它能让你更专注于写作。
+«Keep» 是一款简约优雅的 [Hexo](https://hexo.io) 主题。它能让你更专注于写作。
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-keep)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
@@ -77,17 +78,17 @@ $ git pull
 这个项目的存在多亏了所有的贡献者。
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
-  <img src="https://opencollective.com/hexo-theme-keep/contributors.svg?width=980">
+  <img src="https://opencollective.com/hexo-theme-keep/contributors.svg?width=880">
 </a>
 
 ## :sparkling_heart: 鸣谢
 
 «Keep» 特别感谢这些支持我们核心基础设施的优质服务：
 
-<a href="https://github.com"><img height="40" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"></a>
+<a href="https://github.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/GitHub-LOGO.5sq0168mirg0.png"></a>
 
 > GitHub 容许我们托管 Git 仓库及运行测试。
 
-<a href="https://www.jsdelivr.com"><img height="40" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg"></a>
+<a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
 > jsDelivr 提供了 CDN 服务。
