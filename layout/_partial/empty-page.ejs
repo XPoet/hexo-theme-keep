@@ -1,5 +1,12 @@
 <div class="fade-in-down-animation">
     <div class="empty-page-container">
+
+        <% if (
+                theme.menu.Links && theme.links && (page.title === 'link' || page.title === 'links')
+        ) { %>
+            <%- partial('_partial/friends-link') %>
+        <% } %>
+
         <div class="empty-page-content markdown-body">
             <% if (page.content) { %>
                 <%- page.content %>
