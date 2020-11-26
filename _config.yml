@@ -80,7 +80,7 @@ comment:
     enable: false
     appid:                # your leancloud application appid
     appkey:               # your leancloud application appkey
-    meta:                 # comment input meta, type: Array, values: ['nick','mail','link']
+    meta:                 # comment input meta, type: Array, values: ['nick', 'mail', 'link']
     placeholder:          # your placeholder
 
   # Gitalk
