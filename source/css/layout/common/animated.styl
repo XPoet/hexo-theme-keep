@@ -2,11 +2,13 @@ transition() {
   transition: all 0.3s ease;
 }
 
+
 the-transition() {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
+
 
 the-transition-ease-in() {
   transition-duration: 0.2s;
@@ -28,6 +30,7 @@ the-transition-ease-out() {
   animation-name: fade-in-down;
 }
 
+
 @keyframes fade-in-down {
   0% {
     opacity: 0;
@@ -37,6 +40,24 @@ the-transition-ease-out() {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes icon-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  10%, 30% {
+    transform: scale(.88);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: scale(1.08);
+  }
+
+  50%, 70% {
+    transform: scale(1.08);
   }
 }
 
@@ -67,3 +88,5 @@ the-transition-ease-out() {
   }
 
 }
+
+

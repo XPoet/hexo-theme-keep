@@ -3,16 +3,16 @@
         <div class="copyright-info info-item">
             &copy;
             <% if (theme.footer.since) { %>
-              <span><%= theme.footer.since %></span> ~
+              <span><%= theme.footer.since %></span> -
             <% } %>
-            <%= date(new Date(), 'YYYY') %> <i class="fas fa-heart"></i> <a href="/"><%= theme.base_info.author || config.author %></a>
+            <%= date(new Date(), 'YYYY') %> <i class="fas fa-heart icon-animate"></i> <a href="/"><%= theme.base_info.author || config.author %></a>
         </div>
         <% if (theme.website_count.busuanzi_count.enable) { %>
             <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 <% if (theme.website_count.busuanzi_count.site_uv) { %>
                     <span id="busuanzi_container_site_uv">
-                        <%- __('site_uv') %> <span id="busuanzi_value_site_uv"></span>
+                        <%- __('site_uv') %> <span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 <% } %>
                 <% if (theme.website_count.busuanzi_count.site_pv) { %>
