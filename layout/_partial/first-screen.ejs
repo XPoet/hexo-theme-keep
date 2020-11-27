@@ -4,17 +4,17 @@
             <%= theme.style.first_screen.description || config.description %>
         </div>
         <% if (theme.social_contact.enable) { %>
-            <ul class="social-icon-list">
+            <ul class="s-icon-list">
                 <% for (const key in theme.social_contact.links) { %>
                     <% if(theme.social_contact.links[key]) { %>
                         <% if(key === 'email') { %>
-                            <li class="social-icon-item <%= key %>">
+                            <li class="s-icon-item <%= key %>">
                                 <a href="mailto:<%- url_for(theme.social_contact.links[key]) %>">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </li>
                         <% } else { %>
-                            <li class="social-icon-item <%= key %>">
+                            <li class="s-icon-item <%= key %>">
                                 <a href="<%- url_for(theme.social_contact.links[key]) %>">
                                     <i class="fab fa-<%= key %>"></i>
                                 </a>
