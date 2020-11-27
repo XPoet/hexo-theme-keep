@@ -72,7 +72,6 @@ hexo.extend.helper.register('__css', function (path) {
   } else {
     return _css(path);
   }
-
 });
 
 hexo.extend.helper.register('__favicon_tag', function (path) {
@@ -82,6 +81,14 @@ hexo.extend.helper.register('__favicon_tag', function (path) {
   } else {
     return _favicon_tag(path);
   }
+});
 
+hexo.extend.helper.register('__image_tag', function (path) {
+  const _image_tag = hexo.extend.helper.get('image_tag').bind(hexo);
+  if (this.theme.cdn.enable) {
+    return `<img src="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`
+  } else {
+    return _image_tag(path);
+  }
 });
 
