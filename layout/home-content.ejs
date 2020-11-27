@@ -17,7 +17,7 @@
                     <% if (post.excerpt) { %>
                         <%- post.excerpt %>
                     <% } else { %>
-                        <%- truncate(strip_html(post.content), {length: 168}) %>
+                        <%- truncate(strip_html(post.content), {length: 128}) %>
                     <% } %>
                 </div>
 

@@ -1,4 +1,3 @@
-$keep-container-margin-bottom = 30px;
 $keep-container-border-radius = 5px;
 
 hover-style(scaleX, scaleY) {
@@ -20,23 +19,24 @@ hover-style(scaleX, scaleY) {
 }
 
 
-keep-container(scaleX, scaleY, padding, isMarginBottom) {
+keep-container(scaleX, scaleY, padding, marginBottomValue) {
   background: var(--background-color);
   padding: padding;
   border-radius: $keep-container-border-radius;
   box-sizing: border-box;
 
-  if (isMarginBottom) {
-    margin-bottom: $keep-container-margin-bottom;
+  if (marginBottomValue != 0) {
+    margin-bottom: marginBottomValue;
 
     +keep-tablet() {
-      margin-bottom: $keep-container-margin-bottom * 0.8;
+      margin-bottom: marginBottomValue * 0.8;
     }
 
     +keep-mobile() {
-      margin-bottom: $keep-container-margin-bottom * 0.6;
+      margin-bottom: marginBottomValue * 0.6;
     }
   }
+
 
   hover-style(scaleX, scaleY);
 
