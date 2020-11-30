@@ -23,7 +23,7 @@
         <% } %>
         <%= theme.base_info.title || config.title || 'Keep' %>
     </title>
-    <%- __favicon_tag('images/logo.svg') %>
+    <%- favicon_tag(theme.style.favicon) %>
     <%- css('css/style') %>
     <%- __css('css/font-awesome.min.css') %>
     <%- export_config() %>

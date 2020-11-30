@@ -14,6 +14,12 @@ style:
   # Theme primary color
   primary_color: '#0066CC'
 
+  # Avatar (You can use local image or image external link)
+  avatar: images/avatar.png
+
+  # Favicon (You can use local image or image external link)
+  favicon: images/logo.svg
+
   # Image align position, value: left | center
   img_position: left
 
