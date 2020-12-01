@@ -73,7 +73,7 @@ $ git pull
 
 ## :art: Contributing
 
-We welcome you to join the development of «Keep». Please see [contributing guide](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/). 🤗
+We welcome you to join the development of «Keep». Please see [contributing guide](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/).
 
 ## :clapper: Contributors
 

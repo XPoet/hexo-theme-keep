@@ -71,7 +71,7 @@ $ git pull
 
 ## :art: 贡献
 
-我们欢迎你加入 «Keep» 的开发，贡献出你的一份力量。请看[开源贡献指南](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/)。
+我们欢迎你加入 «Keep» 的开发，贡献出你的一份力量。请看[Keep 代码贡献指南](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/)。
 
 ## :clapper: 贡献者
 
