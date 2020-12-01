@@ -1,17 +1,19 @@
+$tag-name-font-size = 1.6rem;
+
 .tag-container {
 
   keep-container(1.02, 1.02, 30px, 30px);
 
   .tag-name {
     color: var(--second-text-color);
-    font-size: 1.6em;
+    font-size: $tag-name-font-size;
 
     +keep-tablet() {
-      font-size: 1.5em;
+      font-size: $tag-name-font-size * 0.9;
     }
 
     +keep-mobile() {
-      font-size: 1.4em;
+      font-size: $tag-name-font-size * 0.8;
     }
 
     font-weight: 600;

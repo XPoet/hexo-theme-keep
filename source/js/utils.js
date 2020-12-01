@@ -3,6 +3,7 @@ KEEP.utils = {
   headerProgress_dom: document.querySelector('.header-progress'),
   pageTop_dom: document.querySelector('.page-main-content-top'),
   firstScreen_dom: document.querySelector('.first-screen-container'),
+  html_root_dom: document.querySelector('html'),
 
   printThemeInfo() {
     const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
@@ -67,7 +68,7 @@ KEEP.utils = {
     const fs = Number(initFontSize.substring(0, initFontSize.length - 2));
 
     const setFontSize = (defaultFontSize) => {
-      document.body.style.fontSize = `${fs * (1 + defaultFontSize * 0.06)}px`;
+      this.html_root_dom.style.fontSize = `${fs * (1 + defaultFontSize * 0.05)}px`;
     }
 
     document.querySelector('.tool-font-adjust-plus').addEventListener('click', () => {

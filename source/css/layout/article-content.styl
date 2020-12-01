@@ -1,6 +1,7 @@
 $avatarWidth = 46px;
 $arrow-icon-width = 16px;
 $post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
 .article-content-container {
 
@@ -9,14 +10,14 @@ $post-nav-max-width = 220px;
   .article-title {
     color: var(--second-text-color);
     font-weight: 600;
-    font-size: 1.8em;
+    font-size: $article-title-font-size;
 
     +keep-tablet() {
-      font-size: 1.5em;
+      font-size: $article-title-font-size * 0.9;
     }
 
     +keep-mobile() {
-      font-size: 1.2em;
+      font-size: $article-title-font-size * 0.8;
     }
   }
 
@@ -60,14 +61,14 @@ $post-nav-max-width = 220px;
 
       .author {
         font-weight: 600;
-        font-size: 1.18em;
+        font-size: 1.18rem;
         display: flex;
         align-items: center;
 
         .level {
           margin-left: 10px;
           color: #fff;
-          font-size: 0.7em;
+          font-size: 0.8rem;
           font-weight: 500;
           background: var(--selection-color);
           padding: 0 4px;

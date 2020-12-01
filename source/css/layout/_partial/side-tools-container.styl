@@ -1,4 +1,6 @@
 $tools-item-width = 32px;
+$tools-item-font-size = 1.1rem;
+
 
 .side-tools-container {
   position: relative;
@@ -7,7 +9,7 @@ $tools-item-width = 32px;
   .tools-item {
     width: $tools-item-width;
     height: $tools-item-width;
-    font-size: 1.1em;
+    font-size: $tools-item-font-size;
     margin-bottom: 3px;
     color: var(--second-text-color);
     background: var(--background-color);
@@ -26,14 +28,8 @@ $tools-item-width = 32px;
     +keep-tablet() {
       width: $tools-item-width * 0.9;
       height: $tools-item-width * 0.9;
-      font-size: 1.05em;
+      font-size: $tools-item-font-size * 0.9;
       margin-bottom: 2px;
-    }
-
-    +keep-mobile() {
-      width: $tools-item-width * 0.8;
-      height: $tools-item-width * 0.8;
-      font-size: 1.0em;
     }
   }
 

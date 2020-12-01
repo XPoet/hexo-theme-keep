@@ -25,7 +25,7 @@
     <div class="header-drawer">
         <ul class="drawer-menu-list">
             <% for (let i in theme.menu) { %>
-                <li class="drawer-menu-item">
+                <li class="drawer-menu-item flex-center">
                     <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
                        href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()).toUpperCase() %></a>
                 </li>

@@ -4,25 +4,6 @@
 
 
 // ============================
-// scrollbar
-// ============================
-* {
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--scroll-bar-color);
-  }
-
-  &::-webkit-scrollbar-track {
-    background: var(--scroll-bar-bg-color);
-  }
-}
-
-
-// ============================
 // html, body
 // ============================
 html, body {
@@ -49,6 +30,25 @@ html, body {
 
 
 // ============================
+// scrollbar
+// ============================
+* {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--scroll-bar-color);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+  }
+}
+
+
+// ============================
 // selection
 // ============================
 ::selection {
@@ -66,6 +66,7 @@ ul, ol, li {
   list-style: none;
 }
 
+
 // ============================
 // a
 // ============================
@@ -79,6 +80,7 @@ a {
   }
 
 }
+
 
 // ============================
 // button
@@ -99,7 +101,7 @@ button {
   cursor: pointer;
   white-space: nowrap;
   border-radius: 5px;
-  padding: 0.5em 1em;
+  padding: 8px 16px;
   background: var(--background-color);
   hover-style(1.1, 1.1);
 
@@ -119,6 +121,7 @@ button {
   justify-content: center;
   align-items: center;
 }
+
 
 // ============================
 // clear float

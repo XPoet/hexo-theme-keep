@@ -1,7 +1,7 @@
-$archive-year-font-size = 1.8em;
-$archive-year-count-font-size = 1.2em;
-$article-title-font-size = 1.2em;
-$article-date-font-size = 1em;
+$archive-year-font-size = 1.8rem;
+$archive-year-count-font-size = 1.2rem;
+$article-title-font-size = 1.2rem;
+$article-date-font-size = 1rem;
 
 .archive-list-container {
 
@@ -19,7 +19,7 @@ $article-date-font-size = 1em;
         font-size: $archive-year-font-size;
 
         +keep-tablet() {
-          font-size: $archive-year-font-size - 0.2em;
+          font-size: $archive-year-font-size - 0.2rem;
         }
 
         color: var(--second-text-color);
@@ -27,11 +27,12 @@ $article-date-font-size = 1em;
         margin-right: 6px;
       }
 
+
       .archive-year-post-count {
         font-size: $archive-year-count-font-size;
 
         +keep-tablet() {
-          font-size: $archive-year-count-font-size - 0.1em;
+          font-size: $archive-year-count-font-size * 0.9;
         }
 
         color: var(--second-text-color);
@@ -50,6 +51,7 @@ $article-date-font-size = 1em;
       }
 
       .article-item {
+        font-size: 1rem;
         margin-top: 18px;
 
         +keep-tablet() {
