@@ -1,10 +1,10 @@
 {
   "name": "hexo-theme-keep",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "private": false,
   "description": "A simple and elegant theme for Hexo.",
   "scripts": {
-    "release": "git push -u --follow-tags origin master",
+    "release": "git push -u origin master",
     "publish": "npm publish"
   },
   "repository": {
