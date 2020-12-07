@@ -1,12 +1,15 @@
 $first-screen-font-size = 2rem;
 $first-screen-icon-size = 1.6rem;
 
+$temp-img = hexo-config('style.first_screen.background_img');
+$first-screen-img = $temp-img ? $temp-img : '/images/bg.svg';
+
 .first-screen-container {
   position: relative;
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url("/images/bg.svg") center center / cover no-repeat;
+  background: url($first-screen-img) center center / cover no-repeat;
 
   .content {
     position: relative;

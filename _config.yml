@@ -15,10 +15,10 @@ style:
   primary_color: '#0066CC'
 
   # Avatar (You can use local image or image external link)
-  avatar: images/avatar.png
+  avatar: /images/avatar.png
 
   # Favicon (You can use local image or image external link)
-  favicon: images/logo.svg
+  favicon: /images/logo.svg
 
   # Image align position, value: left | center
   img_position: left
@@ -37,7 +37,8 @@ style:
   # First screen
   first_screen:
     enable: true
-    description: Welcome to use Hexo theme Keep
+    background_img: /images/bg.svg
+    description: Keep writing and Keep loving.
 
 
 # ---------------------------------------------------------------------------------------
