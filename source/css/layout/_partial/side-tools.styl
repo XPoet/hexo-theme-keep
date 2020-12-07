@@ -1,5 +1,6 @@
 $tools-item-width = 32px;
 $tools-item-font-size = 1.1rem;
+$tools-item-border-radius = 1px;
 
 
 .side-tools-container {
@@ -16,7 +17,7 @@ $tools-item-font-size = 1.1rem;
     cursor: pointer;
     box-shadow: 1px 1px 3px var(--shadow-color);
     border-right: none;
-    border-radius: 1px;
+    border-radius: $tools-item-border-radius;
 
     &:hover {
       transition();
@@ -30,6 +31,22 @@ $tools-item-font-size = 1.1rem;
       height: $tools-item-width * 0.9;
       font-size: $tools-item-font-size * 0.9;
       margin-bottom: 2px;
+    }
+
+    &.rss {
+
+      a {
+        border-radius: $tools-item-border-radius;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          transition();
+          color: var(--background-color);
+          background: var(--primary-color);
+          box-shadow: 2px 2px 6px var(--shadow-color);
+        }
+      }
     }
   }
 

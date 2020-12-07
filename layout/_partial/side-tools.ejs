@@ -17,6 +17,13 @@
             <i class="fas fa-moon"></i>
         </li>
 
+        <!-- rss -->
+        <% if (theme.rss.enable && config.feed) { %>
+            <li class="tools-item rss flex-center">
+                <a class="flex-center" href="<%= '/' + config.feed.path %>" target="_blank"><i class="fas fa-rss"></i></a>
+            </li>
+        <% } %>
+
         <li class="tools-item tool-scroll-to-top flex-center">
             <i class="fas fa-arrow-up"></i>
         </li>
