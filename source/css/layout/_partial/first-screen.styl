@@ -1,3 +1,6 @@
+$pc-font-size = 2rem;
+$tablet-font-size = 1.8rem;
+
 .first-screen-container {
   position: relative;
   box-sizing: border-box;
@@ -13,23 +16,31 @@
 
     .description {
       font-weight: bold;
-      font-size: 2rem;
-      line-height: 2rem;
+      font-size: $pc-font-size;
+      line-height: 1.6;
       text-align: center;
+
+      +keep-tablet() {
+        font-size: $tablet-font-size;
+      }
     }
 
     .s-icon-list {
       position: absolute;
       bottom: $component-interspace;
-      font-size: 1.6rem;
+      font-size: $pc-font-size * 0.9;
       left: 50%;
       transform: translateX(-50%);
+
+      +keep-tablet() {
+        font-size: $tablet-font-size * 0.9;
+      }
 
       .s-icon-item {
         float: left;
         margin-right: 25px;
         cursor: pointer;
-        line-height: 2rem;
+        line-height: 1.6;
 
         &:last-child {
           margin-right: 0;
