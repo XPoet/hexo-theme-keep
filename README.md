@@ -4,7 +4,7 @@
   <a title="Chinese" href="docs/README_zh-CN.md">中文</a>
 </div>
 
-<a title="Keep website" href="https://xpoet.cn"><img align="center" alt="Keep logo" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/test/keep-logo-desc-2.72a7pq9ndz80.png"></a>
+<a href="https://xpoet.cn"><img align="center" alt="Keep logo" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-desc-3.7i05cj3ohkg.svg"></a>
 
 # Keep
 > old name `ILS`
