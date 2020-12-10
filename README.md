@@ -45,13 +45,15 @@ After the installation, open Hexo config file and set `theme` variable to `keep`
 theme: keep
 ```
 
-## :wrench: Configuration
+## :wrench: Usage
 
-Refer to the [Keep theme configuration guide](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/).
+See docs: 
+
+- [Keep theme usage guide](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/).
+
+- [Keep theme configuration guide](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/).
 
 It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
-
-However, you can bypass merge conflicts (error message like **«Commit your changes or stash them before you can merge»**) by using the `Commit`, `Stash` or `Reset` commands for local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
 
 ## :dart: Update
 

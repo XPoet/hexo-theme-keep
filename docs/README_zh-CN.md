@@ -45,13 +45,15 @@ $ git clone https://github.com/XPoet/hexo-theme-keep themes/keep
 theme: keep
 ```
 
-## :wrench: 配置
+## :wrench: 使用
 
-参考 [Keep 主题配置指南](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/)。
+查看文档: 
+
+- [Keep 主题使用指南](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/).
+
+- [Keep 主题配置指南](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/).
 
 不推荐直接修改 «Keep» 主题的文件。因为这可能导致错误（例如 git merge 冲突），并且在升级主题时修改的文件可能丢失。
-
-然而你也可以通过提交（`Commit`）、贮藏（`Stash`）或忽视（`Discard`）本地更改以绕过这种更新错误（例如 **«Commit your changes or stash them before you can merge»**）。具体方法请参考[这里](https://stackoverflow.com/a/15745424/5861495)。
 
 ## :dart: 更新
 
