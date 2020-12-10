@@ -4,7 +4,7 @@
             <%= theme.style.first_screen.description || config.description %>
         </div>
         <% if (theme.social_contact.enable) { %>
-            <ul class="s-icon-list">
+            <ul class="s-icon-list flex-center">
                 <% for (const key in theme.social_contact.links) { %>
                     <% if(theme.social_contact.links[key]) { %>
                         <% if(key === 'email') { %>
