@@ -26,6 +26,9 @@
     text-decoration: none;
     overflow-wrap: break-word;
     cursor: pointer;
+    border-bottom: 1px solid var(--third-text-color);
+    box-sizing: border-box;
+    padding-bottom: 2px;
 
     .fas, .far, fab {
       margin-left: 6px;
@@ -36,16 +39,6 @@
       &::after {
         background: var(--primary-color);
       }
-    }
-
-    &::after {
-      position: absolute;
-      content: '';
-      width: 100%;
-      height: 1px;
-      top: 108%;
-      left: 0;
-      background: var(--second-text-color);
     }
   }
 
