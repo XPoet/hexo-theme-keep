@@ -49,9 +49,9 @@ theme: keep
 
 查看文档: 
 
-- [Keep 主题使用指南](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/).
+- [Keep 主题使用指南](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/)
 
-- [Keep 主题配置指南](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/).
+- [Keep 主题配置指南](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/)
 
 不推荐直接修改 «Keep» 主题的文件。因为这可能导致错误（例如 git merge 冲突），并且在升级主题时修改的文件可能丢失。
 

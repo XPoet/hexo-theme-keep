@@ -49,9 +49,9 @@ theme: keep
 
 See docs: 
 
-- [Keep theme usage guide](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/).
+- [Keep theme usage guide](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/)
 
-- [Keep theme configuration guide](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/).
+- [Keep theme configuration guide](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/)
 
 It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
 
