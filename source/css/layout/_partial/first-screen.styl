@@ -13,10 +13,9 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
 
   .content {
     position: relative;
-    padding: 30px;
+    box-sizing: border-box;
     width: 80%;
     height: 80%;
-    box-sizing: border-box;
 
     .description {
       font-weight: bold;
@@ -32,20 +31,18 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
 
     .s-icon-list {
       position: absolute;
-      bottom: $component-interspace;
+      bottom: 0;
       font-size: $first-screen-icon-size;
-      left: 50%;
-      transform: translateX(-50%);
+      text-align: center;
 
       +keep-tablet() {
         font-size: $first-screen-icon-size * 0.9;
       }
 
       .s-icon-item {
-        float: left;
-        margin-right: 25px;
+        margin-right: 20px;
         cursor: pointer;
-        line-height: 1.6;
+        line-height: 2;
 
         &:last-child {
           margin-right: 0;
