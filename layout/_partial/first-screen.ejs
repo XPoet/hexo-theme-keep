@@ -9,13 +9,13 @@
                     <% if(theme.social_contact.links[key]) { %>
                         <% if(key === 'email') { %>
                             <span class="s-icon-item <%= key %>">
-                                <a href="mailto:<%- url_for(theme.social_contact.links[key]) %>">
+                                <a href="mailto:<%- theme.social_contact.links[key] %>">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </span>
                         <% } else { %>
                             <span class="s-icon-item <%= key %>">
-                                <a href="<%- url_for(theme.social_contact.links[key]) %>">
+                                <a target="_blank" href="<%- theme.social_contact.links[key] %>">
                                     <i class="fab fa-<%= key %>"></i>
                                 </a>
                             </span>
