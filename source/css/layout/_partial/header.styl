@@ -34,12 +34,15 @@ $logo-title-font-size = 2.2rem;
     }
 
     .left {
+      display: flex;
+      align-items: center;
 
       .logo-title {
         font-size: $logo-title-font-size;
         font-weight: bold;
         letter-spacing: 1px;
         color: var(--first-text-color);
+        transition();
 
         +keep-tablet() {
           font-size: $logo-title-font-size * 0.9;
@@ -167,7 +170,6 @@ $logo-title-font-size = 2.2rem;
           .menu-bar-middle {
             width: 18px;
             height: 2.6px;
-            //margin: 6px 0;
             position: relative;
             background: var(--default-text-color);
             transition();
@@ -306,25 +308,34 @@ $logo-title-font-size = 2.2rem;
 
   .header-content {
 
-    .logo-title {
-      transform: scale(0.8);
+    .left {
+      transform: scale(0.88);
       transform-origin: left top;
+      transition();
     }
 
-    .menu-list {
-      .menu-item {
-        a:hover {
-          &::after {
-            bottom: -($header-shrink-height / 2 - 12);
-          }
-        }
+    .right {
 
-        .active::after {
-          bottom: -($header-shrink-height / 2 - 12);
+      .pc {
+
+        .menu-list {
+          .menu-item {
+            a:hover {
+              &::after {
+                bottom: -($header-shrink-height / 2 - 12);
+              }
+            }
+
+            .active::after {
+              bottom: -($header-shrink-height / 2 - 12);
+            }
+          }
+
         }
       }
-
     }
+
+
   }
 
 
