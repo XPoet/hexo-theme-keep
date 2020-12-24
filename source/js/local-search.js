@@ -274,7 +274,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle and trigger popup window
-  document.querySelectorAll('.popup-trigger').forEach(element => {
+  document.querySelectorAll('.search-popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
       document.body.style.overflow = 'hidden';
       document.querySelector('.search-pop-overlay').style.display = 'block';

@@ -1,24 +1,39 @@
 <header class="header-wrapper">
 
     <div class="header-content">
-        <a class="logo-title" href="/">
-            <%= theme.base_info.title || config.title || 'KEEP' %>
-        </a>
+        <div class="left">
+            <a class="logo-title" href="/">
+                <%= theme.base_info.title || config.title || 'Keep theme' %>
+            </a>
+        </div>
 
-        <ul class="menu-list">
-            <% for (let i in theme.menu) { %>
-                <li class="menu-item">
-                    <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
-                       href="<%- url_for(theme.menu[i]) %>"
-                    >
-                        <%= __(i.toLowerCase()).toUpperCase() %>
-                    </a>
-                </li>
-            <% } %>
-        </ul>
-
-        <div class="menu-bar">
-            <div class="menu-bar-middle"></div>
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    <% for (let i in theme.menu) { %>
+                        <li class="menu-item">
+                            <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
+                               href="<%- url_for(theme.menu[i]) %>"
+                            >
+                                <%= __(i.toLowerCase()).toUpperCase() %>
+                            </a>
+                        </li>
+                    <% } %>
+                    <% if (theme.local_search.enable === true) { %>
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="mobile">
+                <% if (theme.local_search.enable === true) { %>
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                <% } %>
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
         </div>
     </div>
 

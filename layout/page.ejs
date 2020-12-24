@@ -55,9 +55,11 @@
         </div>
     </main>
 
-    <div class="sidebar-tools">
-        <%- partial('_partial/tools') %>
-    </div>
+    <% if (is_post()) { %>
+        <div class="sidebar-tools">
+            <%- partial('_partial/tools') %>
+        </div>
+    <% } %>
 
     <div class="right-bottom-side-tools">
         <%- partial('_partial/side-tools') %>

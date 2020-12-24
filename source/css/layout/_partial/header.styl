@@ -33,118 +33,167 @@ $logo-title-font-size = 2.2rem;
       width: $main-content-width-mobile;
     }
 
+    .left {
 
-    .logo-title {
-      font-size: $logo-title-font-size;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: var(--first-text-color);
+      .logo-title {
+        font-size: $logo-title-font-size;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: var(--first-text-color);
 
-      +keep-tablet() {
-        font-size: $logo-title-font-size * 0.9;
-      }
-
-      +keep-mobile() {
-        font-size: $logo-title-font-size * 0.8;
-      }
-    }
-
-
-    .menu-list {
-
-      +keep-tablet() {
-        display: none;
-      }
-
-
-      .menu-item {
-        float: left;
-        position: relative;
-        margin-left: 30px;
-        font-size: 1rem;
-
-        &:first-child {
-          margin-left: 0;
+        +keep-tablet() {
+          font-size: $logo-title-font-size * 0.9;
         }
 
-        a {
+        +keep-mobile() {
+          font-size: $logo-title-font-size * 0.8;
+        }
+      }
+
+
+    }
+
+    .right {
+
+      .pc {
+        .menu-list {
+          display: flex;
+          align-items: center;
+
+          +keep-tablet() {
+            display: none;
+          }
+
+
+          .menu-item {
+            float: left;
+            position: relative;
+            margin-left: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            a {
+
+              &:hover {
+
+                color: var(--default-text-color);
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  bottom: -10px;
+                  left: 50%;
+                  width: 100%;
+                  height: 2px;
+                  transform: translateX(-50%);
+                  background: var(--primary-color);
+                }
+              }
+
+            }
+
+
+            .active {
+              color: var(--second-text-color);
+
+              &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                width: 100%;
+                height: 2px;
+                transform: translateX(-50%);
+                background: var(--primary-color)
+              }
+            }
+
+
+            &.search {
+              font-size: 1.5rem;
+              margin-left: 26px;
+
+              &:hover {
+                color: var(--primary-color);
+              }
+            }
+          }
+
+
+        }
+
+      }
+
+      .mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .icon-item {
+          display: none;
+          position: relative;
+          cursor: pointer;
+          font-size: 18px;
+          margin-left: 12px;
+          width: 20px;
+          height: 20px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          +keep-tablet() {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        .search {
 
           &:hover {
+            color: var(--primary-color);
+          }
 
-            color: var(--default-text-color);
+        }
+
+
+        .menu-bar {
+
+          .menu-bar-middle {
+            width: 18px;
+            height: 2.6px;
+            //margin: 6px 0;
+            position: relative;
+            background: var(--default-text-color);
+            transition();
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: -6px;
+              left: 0;
+              width: 100%;
+              height: 2.6px;
+              background: var(--default-text-color);
+              transition();
+            }
 
             &::after {
               content: '';
               position: absolute;
-              bottom: -10px;
-              left: 50%;
+              bottom: -6px;
+              left: 0;
               width: 100%;
-              height: 2px;
-              transform: translateX(-50%);
-              background: var(--primary-color);
+              height: 2.6px;
+              background: var(--default-text-color);
+              transition();
             }
           }
-
-        }
-
-
-        .active {
-          color: var(--second-text-color);
-
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            width: 100%;
-            height: 2px;
-            transform: translateX(-50%);
-            background: var(--primary-color)
-          }
-        }
-      }
-
-    }
-
-
-    .menu-bar {
-      display: none;
-      position: relative;
-      cursor: pointer;
-
-      +keep-tablet() {
-        display: block;
-      }
-
-
-      .menu-bar-middle {
-        width: 18px;
-        height: 2px;
-        margin: 6px 0;
-        position: relative;
-        background: var(--default-text-color);
-        transition();
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: -6px;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background: var(--default-text-color);
-          transition();
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: -6px;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background: var(--default-text-color);
-          transition();
         }
       }
     }
@@ -218,20 +267,26 @@ $logo-title-font-size = 2.2rem;
   opacity: 1 !important;
 
   .header-content {
-    .menu-bar {
-      .menu-bar-middle {
 
-        background: transparent;
+    .right {
+      .mobile {
+        .menu-bar {
+          .menu-bar-middle {
 
-        &::before {
-          transform: translateY(6px) rotate(45deg);
-        }
+            background: transparent;
+
+            &::before {
+              transform: translateY(6px) rotate(45deg);
+            }
 
 
-        &::after {
-          transform: translateY(-6px) rotate(-45deg);
+            &::after {
+              transform: translateY(-6px) rotate(-45deg);
+            }
+          }
         }
       }
+
     }
   }
 
@@ -245,6 +300,7 @@ $logo-title-font-size = 2.2rem;
   }
 
 }
+
 
 .header-wrapper-shrink {
 

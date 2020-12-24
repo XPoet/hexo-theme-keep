@@ -2,7 +2,6 @@ window.addEventListener('DOMContentLoaded', () => {
   KEEP.utils.headerShrink = {
 
     pageTemplateDom: document.querySelector('.page-main-content'),
-    sidebarToolsDom: document.querySelector('.sidebar-tools'),
     headerDom: document.querySelector('.header-wrapper'),
     isHeaderShrink: false,
     isShowHeaderDrawer: false,
@@ -19,13 +18,10 @@ window.addEventListener('DOMContentLoaded', () => {
         this.isHeaderShrink = true;
         this.headerDom.classList.add('header-wrapper-shrink');
         this.pageTemplateDom.classList.add('page-main-content-top-shrink');
-        this.sidebarToolsDom.classList.add('sidebar-tools-shrink');
-
       } else if (this.isHeaderShrink && scrollTop <= this.headerHeight) {
         this.isHeaderShrink = false;
         this.headerDom.classList.remove('header-wrapper-shrink');
         this.pageTemplateDom.classList.remove('page-main-content-top-shrink');
-        this.sidebarToolsDom.classList.remove('sidebar-tools-shrink');
       }
 
     },
