@@ -1,17 +1,15 @@
-
-<header class="page-header">
-        <div class="header-progress"></div>
-        <% if (theme.style.first_screen.enable && is_home() && !page.prev) { %>
-            <%- partial('_partial/first-screen.ejs') %>
-            <% if (theme.aplayer.enable) { %>
-                <%- partial('_partial/aplayer/aplayer.ejs') %>
-            <% } %>
-        <% } %>
-</header>
 <div class="page-container">
 
-   <main class="page-main">
-        
+    <% if (theme.style.first_screen.enable === true && is_home() && !page.prev) { %>
+        <%- partial('_partial/first-screen') %>
+    <% } %>
+
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
+
+    <main class="page-main">
+
         <div class="page-main-content">
 
             <div class="page-main-content-top">
@@ -66,32 +64,26 @@
     <div class="right-bottom-side-tools">
         <%- partial('_partial/side-tools-container') %>
     </div>
-  <!-- page aside -->
-    <aside class="page-aside">
-        <% if (is_post()) { %>
+
+    <% if (is_post() && theme.toc.enable === true) { %>
+        <!-- page aside -->
+        <aside class="page-aside">
             <%- partial('_partial/toc') %>
-        <% } %>
-    </aside>
-  <!-- image viewer -->
+        </aside>
+    <% } %>
+
+    <!-- image viewer -->
     <%- partial('_partial/image-viewer') %>
 
-</div>
+    <% if (theme.music_player.enable === true) { %>
+        <!-- music player -->
+        <%- partial('_partial/music-player/aplayer') %>
+    <% } %>
 
+</div>
 
 <% if (theme.local_search.enable) { %>
     <%- partial('_partial/local-search') %>
 <% } %>
 
-<style>
-  .header-progress {
-      visibility: hidden;
-      position: fixed;
-      width: 0;
-      height: 3px;
-      top: 0;
-      left: 0;
-      background: var(--primary-color);
-      transition: all 0.1s ease;
-      z-index: 1008;
-    }
-</style>
+
