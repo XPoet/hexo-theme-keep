@@ -1,5 +1,7 @@
 $header-progress-height = 2.8px;
 $logo-title-font-size = 2.2rem;
+$pc-search-icon-font-size = 1.5rem;
+$menu-bar-line-height = 2.5px;
 
 .header-wrapper {
   width: 100%;
@@ -23,11 +25,15 @@ $logo-title-font-size = 2.2rem;
     justify-content: space-between;
     align-items: center;
     z-index: $z-index-5;
+    transition();
+
+    &.has-first-screen {
+      max-width: $content-max-width * 1.2;
+    }
 
     +keep-tablet() {
       width: $main-content-width-tablet;
     }
-
 
     +keep-mobile() {
       width: $main-content-width-mobile;
@@ -117,12 +123,8 @@ $logo-title-font-size = 2.2rem;
 
 
             &.search {
-              font-size: 1.5rem;
+              font-size: $pc-search-icon-font-size;
               margin-left: 26px;
-
-              &:hover {
-                color: var(--primary-color);
-              }
             }
           }
 
@@ -156,20 +158,11 @@ $logo-title-font-size = 2.2rem;
           }
         }
 
-        .search {
-
-          &:hover {
-            color: var(--primary-color);
-          }
-
-        }
-
-
         .menu-bar {
 
           .menu-bar-middle {
             width: 18px;
-            height: 2.6px;
+            height: $menu-bar-line-height;
             position: relative;
             background: var(--default-text-color);
             transition();
@@ -180,7 +173,7 @@ $logo-title-font-size = 2.2rem;
               top: -6px;
               left: 0;
               width: 100%;
-              height: 2.6px;
+              height: $menu-bar-line-height;
               background: var(--default-text-color);
               transition();
             }
@@ -191,7 +184,7 @@ $logo-title-font-size = 2.2rem;
               bottom: -6px;
               left: 0;
               width: 100%;
-              height: 2.6px;
+              height: $menu-bar-line-height;
               background: var(--default-text-color);
               transition();
             }
@@ -309,8 +302,8 @@ $logo-title-font-size = 2.2rem;
   .header-content {
 
     .left {
-      transform: scale(0.88);
-      transform-origin: left top;
+      transform: scale(0.86);
+      transform-origin: left;
       transition();
     }
 
@@ -319,7 +312,9 @@ $logo-title-font-size = 2.2rem;
       .pc {
 
         .menu-list {
+
           .menu-item {
+
             a:hover {
               &::after {
                 bottom: -($header-shrink-height / 2 - 12);

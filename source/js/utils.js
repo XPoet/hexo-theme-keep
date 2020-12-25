@@ -86,13 +86,19 @@ KEEP.utils = {
 
   contentAreaWidthAdjust() {
     const toolExpandDom = document.querySelector('.tool-expand-width');
-    const mainContentDom = document.querySelector('.main-content');
     const headerContentDom = document.querySelector('.header-content');
+    const mainContentDom = document.querySelector('.main-content');
     const iconDom = toolExpandDom.querySelector('i');
 
+    const defaultMaxWidth = KEEP.theme_config.style.content_max_width || '1000px';
+    const expandMaxWidth = '90%';
+    let headerMaxWidth = defaultMaxWidth;
+
     let isExpand = false;
-    const expandWidth = '90%';
-    const notExpandWidth = (KEEP.theme_config.style.content_max_width || '1000px');
+
+    if (KEEP.theme_config.style.first_screen.enable === true) {
+      headerMaxWidth = parseInt(defaultMaxWidth) * 1.2 + 'px';
+    }
 
     toolExpandDom.addEventListener('click', () => {
       isExpand = !isExpand;
@@ -100,13 +106,13 @@ KEEP.utils = {
       if (isExpand) {
         iconDom.classList.remove('fa-arrows-alt-h');
         iconDom.classList.add('fa-compress-arrows-alt');
-        mainContentDom.style.maxWidth = expandWidth;
-        headerContentDom.style.maxWidth = expandWidth;
+        headerContentDom.style.maxWidth = expandMaxWidth;
+        mainContentDom.style.maxWidth = expandMaxWidth;
       } else {
         iconDom.classList.remove('fa-compress-arrows-alt');
         iconDom.classList.add('fa-arrows-alt-h');
-        mainContentDom.style.maxWidth = notExpandWidth;
-        headerContentDom.style.maxWidth = notExpandWidth;
+        headerContentDom.style.maxWidth = headerMaxWidth;
+        mainContentDom.style.maxWidth = defaultMaxWidth;
       }
 
     });
