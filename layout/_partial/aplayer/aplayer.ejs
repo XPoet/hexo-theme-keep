@@ -1,0 +1,42 @@
+<link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+	const ap = new APlayer({
+	    container: document.getElementById('aplayer'),
+	    fixed: true,
+	    audio: [{
+			        name: 'Crazy (Acoustic Version)',
+			        artist: 'David Benjamin / Lost Frequencies / Zonderling',
+			        url: 'https://music.163.com/song/media/outer/url?id=535048794.mp3',
+			     },
+			     {
+			        name: 'Valder Fields',
+			        artist: 'Tamas Wells',
+			        url: 'https://music.163.com/song/media/outer/url?id=2001320.mp3',
+			     }
+               ]
+	});
+
+</script>
+<style>
+.aplayer.aplayer-fixed .aplayer-body {
+    position: fixed;
+    bottom: 60px;
+    left: -66px;
+    right: 0;
+    margin: 0;
+    z-index: 99;
+    background: #fff;
+    padding-right: 18px;
+    transition: all .3s ease;
+    max-width: 400px;
+    z-index: 2200;
+}
+.aplayer.aplayer-fixed {
+  z-index: 1099;
+ }
+.aplayer.aplayer-fixed .aplayer-list {
+    display: none; 
+}
+</style>
