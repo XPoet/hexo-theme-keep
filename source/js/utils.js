@@ -5,6 +5,11 @@ KEEP.utils = {
   firstScreen_dom: document.querySelector('.first-screen-container'),
   html_root_dom: document.querySelector('html'),
 
+  innerHeight: window.innerHeight,
+  prevScrollValue: 0,
+  defaultFontSize: 0,
+
+  // print theme base info
   printThemeInfo() {
     const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
     console.info(themeInfo + '\n' + KEEP.themeInfo.repository);
@@ -16,7 +21,6 @@ KEEP.utils = {
   },
 
   // Scroll Style Handle
-  prevScrollValue: 0,
   styleHandleWhenScroll() {
     const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
@@ -30,7 +34,7 @@ KEEP.utils = {
     }
 
     // hide header handle
-    if (scrollTop > this.prevScrollValue && scrollTop > 500) {
+    if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
       this.pageTop_dom.style.transform = 'translateY(-100%)';
     } else {
       this.pageTop_dom.style.transform = 'translateY(0)';
@@ -62,7 +66,6 @@ KEEP.utils = {
   },
 
   // global font adjust
-  defaultFontSize: 0,
   globalFontAdjust() {
     const initFontSize = document.defaultView.getComputedStyle(document.body).fontSize;
     const fs = Number(initFontSize.substring(0, initFontSize.length - 2));
@@ -84,6 +87,7 @@ KEEP.utils = {
     });
   },
 
+  // toggle content area width
   contentAreaWidthAdjust() {
     const toolExpandDom = document.querySelector('.tool-expand-width');
     const headerContentDom = document.querySelector('.header-content');
@@ -137,7 +141,7 @@ KEEP.utils = {
 
   // init first screen height
   initFirstScreenHeight() {
-    this.firstScreen_dom && (this.firstScreen_dom.style.height = window.innerHeight + 'px');
+    this.firstScreen_dom && (this.firstScreen_dom.style.height = this.innerHeight + 'px');
   },
 
   // init page height handle
@@ -183,8 +187,8 @@ KEEP.utils = {
     });
   },
 
-
-  setLanguage(p1, p2) {
+  // set how long ago language
+  setHowLongAgoLanguage(p1, p2) {
     return p2.replace(/%s/g, p1)
   },
 
@@ -203,25 +207,25 @@ KEEP.utils = {
     const __s = Math.floor(timestamp % 60)
 
     if (__Y > 0) {
-      return this.setLanguage(__Y, l.ago.year)
+      return this.setHowLongAgoLanguage(__Y, l.ago.year)
 
     } else if (__M > 0) {
-      return this.setLanguage(__M, l.ago.month)
+      return this.setHowLongAgoLanguage(__M, l.ago.month)
 
     } else if (__W > 0) {
-      return this.setLanguage(__W, l.ago.week)
+      return this.setHowLongAgoLanguage(__W, l.ago.week)
 
     } else if (__d > 0) {
-      return this.setLanguage(__d, l.ago.day)
+      return this.setHowLongAgoLanguage(__d, l.ago.day)
 
     } else if (__h > 0) {
-      return this.setLanguage(__h, l.ago.hour)
+      return this.setHowLongAgoLanguage(__h, l.ago.hour)
 
     } else if (__m > 0) {
-      return this.setLanguage(__m, l.ago.minute)
+      return this.setHowLongAgoLanguage(__m, l.ago.minute)
 
     } else if (__s > 0) {
-      return this.setLanguage(__s, l.ago.second)
+      return this.setHowLongAgoLanguage(__s, l.ago.second)
     }
   },
 
