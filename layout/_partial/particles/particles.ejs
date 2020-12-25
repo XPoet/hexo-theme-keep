@@ -1,0 +1,44 @@
+<script src="/js/particles.min.js"></script>
+<canvas class="background" style="width: 100%; " ></canvas>
+<script> 
+    window.onload = function() {
+        Particles.init({
+          selector: '.background',
+          color: '#75A5B7',
+          maxParticles: 100,
+          connectParticles: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              options: {
+                maxParticles: 80
+              }
+            }, {
+              breakpoint: 375,
+              options: {
+                maxParticles: 50
+              }
+            }
+     ]
+  });
+};
+</script>
+<style>
+ .background{
+    background-color: #fffff;
+    width: 100%; 
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+ }
+ .first-screen-container{
+   z-index:1000;
+   height: 640px;
+ }
+ .right-bottom-side-tools {
+    
+    z-index: 1020;
+  }
+</style>
