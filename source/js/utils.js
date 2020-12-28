@@ -12,7 +12,7 @@ KEEP.utils = {
   // print theme base info
   printThemeInfo() {
     const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
-    console.info(themeInfo + '\n' + KEEP.themeInfo.repository);
+    console.log(`\n %c ${themeInfo} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
     const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
     if (footThemeInfoDom) {
       footThemeInfoDom.setAttribute('href', KEEP.themeInfo.repository);
