@@ -17,23 +17,8 @@ KEEP.initLocalSearch = () => {
   } else if (searchPath.endsWith('json')) {
     isXml = false;
   }
-  const input = document.querySelector('.search-input');
+  const searchInputDom = document.querySelector('.search-input');
   const resultContent = document.getElementById('search-result');
-
-  // Ref: https://github.com/ForbesLindesay/unescape-html
-  const unescapeHtml = html => {
-    return String(html)
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, '\'')
-      .replace(/&#x3A;/g, ':')
-      // Replace all the other &#x; chars
-      .replace(/&#(\d+);/g, (m, p) => {
-        return String.fromCharCode(p);
-      })
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&amp;/g, '&');
-  };
 
   const getIndexByWord = (word, text, caseSensitive) => {
     let wordLen = word.length;
@@ -105,7 +90,7 @@ KEEP.initLocalSearch = () => {
 
   const inputEventFunction = () => {
     if (!isfetched) return;
-    let searchText = input.value.trim().toLowerCase();
+    let searchText = searchInputDom.value.trim().toLowerCase();
     let keywords = searchText.split(/[-\s]+/);
     if (keywords.length > 1) {
       keywords.push(searchText);
@@ -243,9 +228,6 @@ KEEP.initLocalSearch = () => {
         datas = datas.filter(data => data.title).map(data => {
           data.title = data.title.trim();
           data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
-          if (KEEP.theme_config.local_search.unescape) {
-            data.content = unescapeHtml(data.content);
-          }
           data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
           return data;
         });
@@ -259,18 +241,8 @@ KEEP.initLocalSearch = () => {
     fetchData();
   }
 
-  if (KEEP.theme_config.local_search.trigger === 'auto') {
-    if (input) {
-      input.addEventListener('input', inputEventFunction);
-    }
-
-  } else {
-    document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
-    input.addEventListener('keypress', event => {
-      if (event.key === 'Enter') {
-        inputEventFunction();
-      }
-    });
+  if (searchInputDom) {
+    searchInputDom.addEventListener('input', inputEventFunction);
   }
 
   // Handle and trigger popup window
@@ -278,7 +250,7 @@ KEEP.initLocalSearch = () => {
     element.addEventListener('click', () => {
       document.body.style.overflow = 'hidden';
       document.querySelector('.search-pop-overlay').style.display = 'block';
-      input.focus();
+      searchInputDom.focus();
       if (!isfetched) fetchData();
     });
   });
@@ -293,6 +265,11 @@ KEEP.initLocalSearch = () => {
     if (event.target === document.querySelector('.search-pop-overlay')) {
       onPopupClose();
     }
+  });
+  document.querySelector('.search-input-field-pre').addEventListener('click', () => {
+    searchInputDom.value = '';
+    searchInputDom.focus();
+    inputEventFunction();
   });
   document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
