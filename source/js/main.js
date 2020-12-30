@@ -7,32 +7,14 @@ window.addEventListener('DOMContentLoaded', () => {
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
 
-  // print theme info
-  KEEP.utils.printThemeInfo();
+  KEEP.refresh = () => {
+    KEEP.initUtils();
+    KEEP.initHeaderShrink();
+    KEEP.initModeToggle();
+    KEEP.initLocalSearch();
+    KEEP.initBack2Top();
+    KEEP.initCodeCopy();
+  }
 
-  // init scroll
-  KEEP.utils.registerWindowScroll();
-
-  // toggle show tools list
-  KEEP.utils.toggleShowToolsList();
-
-  // global font adjust
-  KEEP.utils.globalFontAdjust();
-
-  KEEP.utils.contentAreaWidthAdjust();
-
-  // comment
-  KEEP.utils.goComment();
-
-  // init page height handle
-  KEEP.utils.initPageHeightHandle();
-
-  // init first screen height
-  KEEP.utils.initFirstScreenHeight();
-
-  // big image viewer handle
-  KEEP.utils.imageViewer();
-
-  // set how long age in home article block
-  KEEP.utils.setHowLongAgoInHome();
+  KEEP.refresh();
 });

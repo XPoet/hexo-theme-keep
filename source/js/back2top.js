@@ -1,4 +1,5 @@
-window.addEventListener('DOMContentLoaded', () => {
+KEEP.initBack2Top = () => {
+
   KEEP.utils = {
 
     ...KEEP.utils,
@@ -49,4 +50,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.utils.initBack2Top();
   KEEP.utils.initBack2Bottom();
-});
+
+}

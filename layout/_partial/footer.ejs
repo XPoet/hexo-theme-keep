@@ -7,8 +7,8 @@
             <% } %>
             <%= date(new Date(), 'YYYY') %> <i class="fas fa-heart icon-animate"></i> <a href="/"><%= theme.base_info.author || config.author %></a>
         </div>
-        <% if (theme.website_count.busuanzi_count.enable) { %>
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <% if (theme.website_count.busuanzi_count.enable === true) { %>
+            <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %> src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 <% if (theme.website_count.busuanzi_count.site_uv) { %>
                     <span id="busuanzi_container_site_uv">

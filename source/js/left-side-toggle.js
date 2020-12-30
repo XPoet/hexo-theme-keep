@@ -1,5 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
-
+function initLeftSideToggle() {
   KEEP.utils.leftSideToggle = {
 
     init() {
@@ -34,8 +33,12 @@ window.addEventListener('DOMContentLoaded', () => {
       this.leftAsideDom.style.left = isOpen ? '0' : `-${pageAsideWidth}`;
     },
   }
-
   KEEP.utils.leftSideToggle.init();
   KEEP.utils.leftSideToggle.initToggleBarButton();
+}
 
-});
+if (KEEP.theme_config.pjax && KEEP.utils) {
+  initLeftSideToggle();
+} else {
+  window.addEventListener('DOMContentLoaded', initLeftSideToggle);
+}

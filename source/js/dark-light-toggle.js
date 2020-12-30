@@ -1,4 +1,5 @@
-window.addEventListener('DOMContentLoaded', () => {
+KEEP.initModeToggle = () => {
+
   KEEP.utils.modeToggle = {
 
     localStorageKey: 'KEEP',
@@ -56,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
     },
 
     initModeToggleButton() {
-     this.modeToggleButton_dom.addEventListener('click', () => {
+      this.modeToggleButton_dom.addEventListener('click', () => {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
           this.setItemUtil('light-mode', 'dark');
         } else {
@@ -68,4 +69,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.utils.modeToggle.initModeStatus();
   KEEP.utils.modeToggle.initModeToggleButton();
-});
+
+};

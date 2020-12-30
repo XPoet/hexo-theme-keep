@@ -10,15 +10,20 @@
     <%- __js('js/local-search.js') %>
 <% } %>
 
-<% if (is_post()) { %>
+<% if (theme.code_copy.enable) { %>
+    <%- __js('js/code-copy.js') %>
+<% } %>
 
-    <%- __js('js/left-side-toggle.js') %>
-
-    <% if (theme.code_copy.enable ) { %>
-        <%- __js('js/code-copy.js') %>
+<div class="post-scripts <%= theme.pjax.enable === true ? 'pjax' : '' %>">
+    <% if (theme.toc.enable && is_post()) { %>
+        <%- __js([
+            'js/left-side-toggle.js',
+            'js/libs/anime.min.js',
+            'js/toc.js'
+        ]) %>
     <% } %>
+</div>
 
-    <% if (theme.toc.enable) { %>
-        <%- __js(['js/libs/anime.min.js', 'js/toc.js']) %>
-    <% } %>
+<% if (theme.pjax.enable === true) { %>
+    <%- partial('pjax/pjax') %>
 <% } %>

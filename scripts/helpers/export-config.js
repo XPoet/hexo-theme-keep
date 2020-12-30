@@ -12,9 +12,9 @@ const yaml = require('js-yaml');
  */
 hexo.extend.helper.register('export_config', function () {
 
-  let { config, theme } = this;
+  let {config, theme} = this;
 
-  // ------ export language to js ------
+  // ------------ export language to js ------------
   const languageDir = path.join(__dirname, '../../languages');
   let file = fs.readdirSync(languageDir).find(v => v === `${config.language}.yml`);
   file = languageDir + '/' + (file ? file : 'en.yml');
@@ -24,14 +24,14 @@ hexo.extend.helper.register('export_config', function () {
   } catch (e) {
     console.log(e);
   }
-  // ---------------------------------
-
+  // -----------------------------------------------
 
 
   let hexo_config = {
     hostname: url.parse(config.url).hostname || config.url,
     root: config.root
   };
+
   if (config.search) {
     hexo_config.path = config.search.path;
   }
@@ -41,6 +41,7 @@ hexo.extend.helper.register('export_config', function () {
     style: theme.style,
     local_search: theme.local_search,
     side_tools: theme.side_tools,
+    pjax: theme.pjax,
     version: theme.version,
   }
 
@@ -48,6 +49,6 @@ hexo.extend.helper.register('export_config', function () {
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = ${JSON.stringify(hexo_config)};
     KEEP.theme_config = ${JSON.stringify(theme_config)};
-    KEEP.language = ${JSON.stringify(languageContent)};
+    KEEP.language_ago = ${JSON.stringify(languageContent['ago'])};
   </script>`;
 });

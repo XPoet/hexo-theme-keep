@@ -1,5 +1,4 @@
-/* global CONFIG */
-window.addEventListener('DOMContentLoaded', () => {
+KEEP.initLocalSearch = () => {
 
   // Search DB path
   let searchPath = KEEP.hexo_config.path;
@@ -251,7 +250,8 @@ window.addEventListener('DOMContentLoaded', () => {
           return data;
         });
         // Remove loading animation
-        document.getElementById('no-result').innerHTML = '<i class="fas fa-search fa-5x"></i>';
+        const noResultDom = document.querySelector('#no-result');
+        noResultDom && (noResultDom.innerHTML = '<i class="fas fa-search fa-5x"></i>');
       });
   };
 
@@ -301,4 +301,5 @@ window.addEventListener('DOMContentLoaded', () => {
       onPopupClose();
     }
   });
-});
+
+}

@@ -1,11 +1,7 @@
-window.addEventListener('DOMContentLoaded', () => {
-
+function initTOC() {
   KEEP.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li');
-  KEEP.utils.articleToc_dom = document.querySelector('.article-toc');
-  KEEP.utils.postTocWrap_dom = document.querySelector('.post-toc-wrap');
 
   if (KEEP.utils.navItems.length > 0) {
-
     KEEP.utils = {
 
       ...KEEP.utils,
@@ -74,21 +70,15 @@ window.addEventListener('DOMContentLoaded', () => {
         KEEP.utils.leftSideToggle.changePageLayoutWhenOpenToggle(KEEP.utils.leftSideToggle.isOpenPageAside);
       }
     }
-
     KEEP.utils.showPageAsideWhenHasTOC();
     KEEP.utils.registerSidebarTOC();
-
-
   } else {
-
-    if (KEEP.utils.postTocWrap_dom) {
-      KEEP.utils.postTocWrap_dom.innerHTML = '';
-      KEEP.utils.postTocWrap_dom.style.display = 'none';
-    }
-
-    if (KEEP.utils.articleToc_dom) {
-      KEEP.utils.articleToc_dom.style.display = 'none';
-    }
+    KEEP.utils.pageContainer_dom.removeChild(document.querySelector('.page-aside'));
   }
-});
+}
 
+if (KEEP.theme_config.pjax && KEEP.utils) {
+  initTOC();
+} else {
+  window.addEventListener('DOMContentLoaded', initTOC);
+}

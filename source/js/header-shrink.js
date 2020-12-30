@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+KEEP.initHeaderShrink = () => {
   KEEP.utils.headerShrink = {
 
     pageTemplateDom: document.querySelector('.page-main-content'),
@@ -45,4 +45,4 @@ window.addEventListener('DOMContentLoaded', () => {
   KEEP.utils.headerShrink.init();
   KEEP.utils.headerShrink.initMenuBarButton();
   KEEP.utils.headerShrink.initWindowMask();
-});
+}
