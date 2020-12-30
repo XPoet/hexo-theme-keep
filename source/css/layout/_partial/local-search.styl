@@ -1,26 +1,37 @@
 $icon-size = 1.2rem;
 
 .search-pop-overlay {
-  display: none;
   position: fixed;
-  left: 0;
-  top: 0;
+  display: flex;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0);
+  visibility: hidden;
   z-index: $z-index-8;
 
+  transition();
+
+  &.active {
+    background: rgba(0, 0, 0, 0.38);
+    visibility: visible;
+
+    .search-popup {
+      transform: scale(1);
+    }
+
+  }
 
   .search-popup {
     background: var(--background-color);
-    border-radius: 2px;
+    border-radius: 5px;
     height: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
-    top: 10%;
     width: 70%;
+    margin: auto;
+    transform: scale(0);
     z-index: $z-index-6;
+    transition();
 
     +keep-tablet() {
       width: 80%;
