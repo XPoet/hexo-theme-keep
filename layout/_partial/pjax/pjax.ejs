@@ -7,9 +7,13 @@
                 '.page-container',
                 '.pjax',
             ],
+            history: true,
             cacheBust: false,
             currentUrlFullReload: false,
-            timeout: 0
+            timeout: 0,
+            scrollTo: false,
+            scrollRestoration: false,
+            debug: false,
         });
 
         window.addEventListener('pjax:complete', () => {
