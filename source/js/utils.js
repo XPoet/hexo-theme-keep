@@ -167,9 +167,13 @@ KEEP.initUtils = () => {
     imageViewer() {
       let isBigImage = false;
 
-      const showHandle = (dom, isShow) => {
+      const showHandle = (maskDom, isShow) => {
         document.body.style.overflow = isShow ? 'hidden' : 'auto';
-        dom.style.display = isShow ? 'flex' : 'none';
+        if (isShow) {
+          maskDom.classList.add('active');
+        } else {
+          maskDom.classList.remove('active');
+        }
       }
 
       const imageViewerDom = document.querySelector('.image-viewer-container');
@@ -186,11 +190,11 @@ KEEP.initUtils = () => {
           img.addEventListener('click', () => {
             isBigImage = true;
             showHandle(imageViewerDom, isBigImage);
-            targetImg.setAttribute('src', img.getAttribute('src'))
+            targetImg.setAttribute('src', img.getAttribute('src'));
           });
         });
       } else {
-        this.pageContainer_dom.removeChild(imageViewerDom)
+        this.pageContainer_dom.removeChild(imageViewerDom);
       }
     },
 
