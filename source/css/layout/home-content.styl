@@ -1,5 +1,4 @@
 
-
 .home-content-container {
 
   .home-article-list {
@@ -45,9 +44,13 @@
 
 
       .home-article-content {
-        text-align: justify;
+        word-wrap: break-word;
         margin: 20px 0;
         line-height: 2rem;
+
+        +keep-mobile() {
+          text-align: justify;
+        }
       }
 
 
