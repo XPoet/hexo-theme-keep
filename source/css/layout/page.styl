@@ -1,6 +1,6 @@
 $header-progress-height = 2.8px;
 $temp-width = hexo-config('style.left_side_width');
-$page-aside-width = $temp-width ? convert($temp-width) : 260px;
+$page-aside-width = $temp-width ? convert($temp-width):260px;
 
 .page-container {
   position: relative;
@@ -50,12 +50,12 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
         height: $header-height;
 
         +keep-tablet() {
-          height: $header-height - 8px;
+          height: $header-height * 0.9;
           padding-left: 0 !important;
         }
 
         +keep-mobile() {
-          height: $header-height - 16px;
+          height: $header-height  * 0.8;
         }
 
         z-index: $z-index-5;
@@ -106,11 +106,27 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
 
     .page-main-content-top-shrink {
-      transition();
       padding-top: $header-shrink-height;
+      transition();
+
+      +keep-tablet() {
+        padding-top: $header-shrink-height * 0.9;
+      }
+
+      +keep-mobile() {
+        padding-top: $header-shrink-height * 0.8;
+      }
 
       .page-main-content-top {
         height: $header-shrink-height;
+
+        +keep-tablet() {
+          height: $header-shrink-height * 0.9;
+        }
+
+        +keep-mobile() {
+          height: $header-shrink-height * 0.8;
+        }
       }
 
     }
@@ -145,13 +161,27 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
     right: $component-interspace;
     transition();
 
+    &.shrink {
+      top: $header-shrink-height + $component-interspace;
+
+      +keep-tablet() {
+        top: $header-shrink-height * 0.9 + $component-interspace;
+      }
+
+      +keep-mobile() {
+        top: $header-shrink-height * 0.8 + $component-interspace;
+      }
+    }
+
     +keep-tablet() {
+      top: $header-height * 0.9 + $component-interspace;
       right: 10px;
       transform: scale(0.82);
       transform-origin: right top;
     }
 
     +keep-mobile() {
+      top: $header-height * 0.8 + $component-interspace;
       right: 5px;
       transform: scale(0.72);
       transform-origin: right top;

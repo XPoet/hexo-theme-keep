@@ -58,9 +58,8 @@ $menu-bar-line-height = 2.5px;
           font-size: $logo-title-font-size * 0.8;
         }
       }
-
-
     }
+
 
     .right {
 
@@ -317,11 +316,13 @@ $menu-bar-line-height = 2.5px;
 
             a:hover {
               &::after {
+                transition();
                 bottom: -($header-shrink-height / 2 - 12);
               }
             }
 
             .active::after {
+              transition();
               bottom: -($header-shrink-height / 2 - 12);
             }
           }
