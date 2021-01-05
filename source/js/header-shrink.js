@@ -20,19 +20,21 @@ KEEP.initHeaderShrink = () => {
 
     },
 
-    initMenuBarButton() {
-      document.querySelector('.menu-bar').addEventListener('click', () => {
-        document.body.classList.toggle('header-drawer-show');
-      });
-    },
+    toggleHeaderDrawerShow() {
+      const domList = [document.querySelector('.window-mask'), document.querySelector('.menu-bar')];
 
-    initWindowMask() {
-      document.querySelector('.window-mask').addEventListener('click', () => {
-        document.body.classList.toggle('header-drawer-show');
+      if (KEEP.theme_config.pjax.enable === true) {
+        domList.push(...document.querySelectorAll('.header-drawer .drawer-menu-list .drawer-menu-item'));
+      }
+
+      domList.forEach(v => {
+        v.addEventListener('click', () => {
+          document.body.classList.toggle('header-drawer-show');
+        });
       });
-    },
+    }
   }
   KEEP.utils.headerShrink.init();
-  KEEP.utils.headerShrink.initMenuBarButton();
-  KEEP.utils.headerShrink.initWindowMask();
+  KEEP.utils.headerShrink.headerShrink();
+  KEEP.utils.headerShrink.toggleHeaderDrawerShow();
 }

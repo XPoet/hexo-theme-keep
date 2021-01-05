@@ -8,16 +8,16 @@
                 '.pjax',
             ],
             history: true,
-            cacheBust: false,
-            currentUrlFullReload: false,
-            timeout: 0,
-            scrollTo: false,
-            scrollRestoration: false,
             debug: false,
+            cacheBust: false,
+            // analytics: false,
+            // currentUrlFullReload: false,
+            // scrollRestoration: false,
+            // scrollTo: true,
+            // timeout: 0,
         });
 
         window.addEventListener('pjax:complete', () => {
-
             KEEP.refresh();
             pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
         });

@@ -37,7 +37,7 @@ function initLeftSideToggle() {
   KEEP.utils.leftSideToggle.initToggleBarButton();
 }
 
-if (KEEP.theme_config.pjax && KEEP.utils) {
+if (KEEP.theme_config.pjax.enable === true  && KEEP.utils) {
   initLeftSideToggle();
 } else {
   window.addEventListener('DOMContentLoaded', initLeftSideToggle);
