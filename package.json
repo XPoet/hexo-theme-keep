@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-keep",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "private": false,
   "description": "A simple and elegant theme for Hexo.",
   "scripts": {
@@ -14,10 +14,11 @@
   "keywords": [
     "hexo",
     "theme",
-    "simple-theme",
-    "elegant-theme",
-    "beautiful-theme",
-    "powerful-theme"
+    "hexo-theme",
+    "simple",
+    "elegant",
+    "beautiful",
+    "powerful"
   ],
   "author": "XPoet",
   "license": "MIT",

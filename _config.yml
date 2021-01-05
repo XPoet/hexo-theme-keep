@@ -15,7 +15,7 @@ style:
   primary_color: '#0066CC'
 
   # Avatar (You can use local image or image external link)
-  avatar: /images/avatar.png
+  avatar: /images/avatar.svg
 
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg
@@ -200,4 +200,4 @@ footer:
 # ---------------------------------------------------------------------------------------
 # Keep version (Please don't modify)
 # ---------------------------------------------------------------------------------------
-version: 3.0.4
+version: 3.1.0
