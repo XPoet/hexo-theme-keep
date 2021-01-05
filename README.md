@@ -6,8 +6,7 @@
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep logo" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-desc.31muhob1mfi0.svg"></a>
 
-# Keep
-> old name `ILS`
+# hexo-theme-keep
 
 «Keep» is a simple and elegant [Hexo](https://hexo.io) theme. It makes you more focused on writing.
 
@@ -96,3 +95,8 @@ This project exists thanks to all the people who contribute.
 <a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
 > Thanks jsDelivr for providing public CDN service.
+
+## :memo: License
+
+[MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020 XPoet
+

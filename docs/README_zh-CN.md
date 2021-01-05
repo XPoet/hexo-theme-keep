@@ -6,8 +6,7 @@
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep logo" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-desc.31muhob1mfi0.svg"></a>
 
-# Keep
-> 原名 `ILS`
+# hexo-theme-keep
 
 «Keep» 是一款简约优雅的 [Hexo](https://hexo.io) 主题。它能让你更专注于写作。
 
@@ -96,3 +95,7 @@ $ git pull
 <a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
 > jsDelivr 提供了 CDN 服务。
+
+## :memo: 许可
+
+[MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020 XPoet
