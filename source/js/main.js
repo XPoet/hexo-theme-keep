@@ -11,9 +11,15 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initUtils();
     KEEP.initHeaderShrink();
     KEEP.initModeToggle();
-    KEEP.initLocalSearch();
     KEEP.initBack2Top();
-    KEEP.initCodeCopy();
+
+    if (KEEP.theme_config.local_search.enable === true) {
+      KEEP.initLocalSearch();
+    }
+
+    if (KEEP.theme_config.code_copy.enable === true) {
+      KEEP.initCodeCopy();
+    }
   }
 
   KEEP.refresh();
