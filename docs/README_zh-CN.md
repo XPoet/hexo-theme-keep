@@ -4,7 +4,7 @@
   <a title="Chinese" href="../README.md">English</a>
 </div>
 
-<a href="https://xpoet.cn"><img align="center" alt="Keep logo" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-desc.31muhob1mfi0.svg"></a>
+<a href="https://xpoet.cn"><img align="center" alt="Keep logo" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.2k2va94dzrk.svg"></a>
 
 # hexo-theme-keep
 
@@ -38,7 +38,7 @@ $ cd hexo-site
 $ git clone https://github.com/XPoet/hexo-theme-keep themes/keep
 ```
 
-安装完成后，在 Hexo 配置文件中将 `theme` 设置为 `next`。
+安装完成后，在 Hexo 配置文件中将 `theme` 设置为 `keep`。
 
 ```yml
 theme: keep
