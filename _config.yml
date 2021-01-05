@@ -31,8 +31,8 @@ style:
 
   # Mouse hover
   hover:
-    shadow: true   # shadow effect when the mouse hover
-    scale: false   # scale effect when the mouse hover
+    shadow: false   # shadow effect when the mouse hover
+    scale: false    # scale effect when the mouse hover
 
   # First screen
   first_screen:
@@ -67,16 +67,81 @@ menu:
   # Tags: /tags
   # Links: /links
   # About: /about
-  # ...
+  # ......
 
 
 # ---------------------------------------------------------------------------------------
-# RSS
-# Dependencies: hexo-generator-feed
-# See: https://github.com/hexojs/hexo-generator-feed
+# Home page article block display settings
 # ---------------------------------------------------------------------------------------
-rss:
+home_article:
+  category:
+    enable: false     # show category in home page article block
+    limit: 3          # max number of categories shown in home page article block
+  tag:
+    enable: false     # show tags in home page article block
+    limit: 5          # max number of tags shown in home page article block
+
+
+# ---------------------------------------------------------------------------------------
+# Code copy
+# ---------------------------------------------------------------------------------------
+code_copy:
   enable: false
+  style: default        # values: default | mac
+
+
+# ---------------------------------------------------------------------------------------
+# Table of Contents in the Sidebar
+# ---------------------------------------------------------------------------------------
+toc:
+  enable: false
+
+  # Automatically add list number to toc.
+  number: true
+
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: true
+
+
+# ---------------------------------------------------------------------------------------
+# Post copyright info
+# ---------------------------------------------------------------------------------------
+copyright_info:
+  enable: true
+
+
+# ---------------------------------------------------------------------------------------
+# Post word count
+# Dependencies: hexo-wordcount
+# See: https://github.com/willin/hexo-wordcount
+# ---------------------------------------------------------------------------------------
+post_wordcount:
+  enable: false
+  wordcount: false  # word count, one article
+  min2read: false   # time to read, one article
+
+
+# ---------------------------------------------------------------------------------------
+# Website count
+# ---------------------------------------------------------------------------------------
+website_count:
+  # busuanzi
+  # See: http://ibruce.info/2015/04/04/busuanzi/
+  busuanzi_count:
+    enable: false
+    site_uv: false
+    site_pv: false
+    page_pv: false
+
+
+# ---------------------------------------------------------------------------------------
+# Local Search
+# Dependencies: hexo-generator-searchdb
+# See: https://github.com/theme-next/hexo-generator-searchdb
+# ---------------------------------------------------------------------------------------
+local_search:
+  enable: false
+  preload: false     # Preload the search data when the page loads
 
 
 # ---------------------------------------------------------------------------------------
@@ -103,86 +168,12 @@ comment:
 
 
 # ---------------------------------------------------------------------------------------
-# Website count
+# RSS
+# Dependencies: hexo-generator-feed
+# See: https://github.com/hexojs/hexo-generator-feed
 # ---------------------------------------------------------------------------------------
-website_count:
-  # busuanzi
-  # See: http://ibruce.info/2015/04/04/busuanzi/
-  busuanzi_count:
-    enable: false
-    site_uv: false
-    site_pv: false
-    page_pv: false
-
-
-# ---------------------------------------------------------------------------------------
-# Local Search
-# Dependencies: hexo-generator-searchdb
-# See: https://github.com/theme-next/hexo-generator-searchdb
-# ---------------------------------------------------------------------------------------
-local_search:
+rss:
   enable: false
-
-  # If auto, trigger search by changing input.
-  # If manual, trigger search by pressing enter key or search button.
-  trigger: auto  # values: auto | manual
-
-  # Unescape html strings to the readable one.
-  unescape: false
-
-  # Preload the search data when the page loads.
-  preload: false
-
-
-# ---------------------------------------------------------------------------------------
-# Post word count
-# Dependencies: hexo-wordcount
-# See: https://github.com/willin/hexo-wordcount
-# ---------------------------------------------------------------------------------------
-post_wordcount:
-  enable: false
-  wordcount: false  # word count, one article
-  min2read: false   # time to read, one article
-
-
-# ---------------------------------------------------------------------------------------
-# Home page article block display settings
-# ---------------------------------------------------------------------------------------
-home_article:
-  category:
-    enable: false     # show category in home page article block
-    limit: 3          # max number of categories shown in home page article block
-  tag:
-    enable: false     # show tags in home page article block
-    limit: 5          # max number of tags shown in home page article block
-
-
-# ---------------------------------------------------------------------------------------
-# Code copy
-# ---------------------------------------------------------------------------------------
-code_copy:
-  enable: true
-  style: default        # values: default | mac
-
-
-# ---------------------------------------------------------------------------------------
-# Table of Contents in the Sidebar
-# ---------------------------------------------------------------------------------------
-toc:
-  enable: false
-
-  # Automatically add list number to toc.
-  number: true
-
-  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: true
-
-
-# ---------------------------------------------------------------------------------------
-# Post copyright info
-# ---------------------------------------------------------------------------------------
-copyright_info:
-  enable: true
 
 
 # ---------------------------------------------------------------------------------------

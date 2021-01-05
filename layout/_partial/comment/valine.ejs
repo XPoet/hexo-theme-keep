@@ -8,14 +8,12 @@
                 src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
         <div id="vcomments"></div>
         <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>>
-
             function loadValine() {
-                const temp_valine_input_meta = '<%= theme.comment.valine.meta %>';
                 new Valine({
                     el: '#vcomments',
                     appId: '<%= theme.comment.valine.appid %>',
                     appKey: '<%= theme.comment.valine.appkey %>',
-                    meta: temp_valine_input_meta ? temp_valine_input_meta.split(',') : ['nick', 'mail', 'link'],
+                    meta: ['nick', 'mail', 'link'],
                     avatar: 'wavatar',
                     enableQQ: true,
                     placeholder: '<%= theme.comment.valine.placeholder %>',
