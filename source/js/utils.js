@@ -38,9 +38,9 @@ KEEP.initUtils = () => {
 
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTop_dom.style.transform = 'translateY(-100%)';
+        this.pageTop_dom.classList.add('hide');
       } else {
-        this.pageTop_dom.style.transform = 'translateY(0)';
+        this.pageTop_dom.classList.remove('hide');
       }
       this.prevScrollValue = scrollTop;
     },

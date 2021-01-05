@@ -33,7 +33,7 @@ function initTOC() {
               scrollTop: offset - 10,
               complete: function () {
                 setTimeout(() => {
-                  KEEP.utils.pageTop_dom.style.transform = 'translateY(-100%)';
+                  KEEP.utils.pageTop_dom.classList.add('hide');
                 }, 100)
               }
             });
