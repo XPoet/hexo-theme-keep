@@ -27,7 +27,7 @@ style:
   left_side_width: 260px
 
   # Content area max width
-  content_max_width: 900px
+  content_max_width: 920px
 
   # Mouse hover
   hover:
@@ -67,6 +67,7 @@ menu:
   # Tags: /tags
   # Links: /links
   # About: /about
+  # Changelog: /changelog
   # ......
 
 
@@ -97,17 +98,17 @@ toc:
   enable: false
 
   # Automatically add list number to toc.
-  number: true
+  number: false
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: true
+  expand_all: false
 
 
 # ---------------------------------------------------------------------------------------
 # Post copyright info
 # ---------------------------------------------------------------------------------------
 copyright_info:
-  enable: true
+  enable: false
 
 
 # ---------------------------------------------------------------------------------------
