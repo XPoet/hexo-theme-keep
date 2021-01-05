@@ -10,14 +10,14 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
   width: 100%;
   overflow: hidden;
   background: url($first-screen-img) center center / cover no-repeat;
-  background-position-y: $header-height - 2px;
+  background-position-y: $header-height - $header-progress-height;
 
   +keep-tablet() {
-    background-position-y: $header-height * 0.9 - 2px;
+    background-position-y: $header-height * 0.9 - $header-progress-height;
   }
 
   +keep-mobile() {
-    background-position-y: $header-height * 0.8 - 2px;
+    background-position-y: $header-height * 0.8 - $header-progress-height;
   }
 
   .content {

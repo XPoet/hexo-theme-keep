@@ -1,4 +1,3 @@
-$header-progress-height = 2.8px;
 $logo-title-font-size = 2.2rem;
 $pc-search-icon-font-size = 1.5rem;
 $menu-bar-line-height = 2.5px;
@@ -12,6 +11,7 @@ $menu-bar-line-height = 2.5px;
   justify-content: center;
   background: var(--background-color);
   padding-top: $header-progress-height;
+  transition();
 
   hover-style(1.02, 1.02);
 
@@ -42,6 +42,13 @@ $menu-bar-line-height = 2.5px;
     .left {
       display: flex;
       align-items: center;
+      transition();
+
+      .header-shrink & {
+        transform: scale(0.85);
+        transform-origin: left;
+        transition();
+      }
 
       .logo-title {
         font-size: $logo-title-font-size;
@@ -64,6 +71,7 @@ $menu-bar-line-height = 2.5px;
     .right {
 
       .pc {
+
         .menu-list {
           display: flex;
           align-items: center;
@@ -84,31 +92,11 @@ $menu-bar-line-height = 2.5px;
               margin-left: 0;
             }
 
-            a {
 
-              &:hover {
-
-                color: var(--default-text-color);
-
-                &::after {
-                  content: '';
-                  position: absolute;
-                  bottom: -10px;
-                  left: 50%;
-                  width: 100%;
-                  height: 2px;
-                  transform: translateX(-50%);
-                  background: var(--primary-color);
-                }
-              }
-
-            }
-
-
-            .active {
-              color: var(--second-text-color);
+            a:hover, .active {
 
               &::after {
+                transition();
                 content: '';
                 position: absolute;
                 bottom: -10px;
@@ -116,10 +104,14 @@ $menu-bar-line-height = 2.5px;
                 width: 100%;
                 height: 2px;
                 transform: translateX(-50%);
-                background: var(--primary-color)
+                background: var(--primary-color);
+
+                .header-shrink & {
+                  transition();
+                  bottom: -($header-shrink-height / 2 - 12);
+                }
               }
             }
-
 
             &.search {
               font-size: $pc-search-icon-font-size;
@@ -131,6 +123,7 @@ $menu-bar-line-height = 2.5px;
         }
 
       }
+
 
       .mobile {
         display: flex;
@@ -166,10 +159,14 @@ $menu-bar-line-height = 2.5px;
             background: var(--default-text-color);
             transition();
 
-            &::before {
+            .header-drawer-show & {
+              transition();
+              background: transparent;
+            }
+
+            &::before, &::after {
               content: '';
               position: absolute;
-              top: -6px;
               left: 0;
               width: 100%;
               height: $menu-bar-line-height;
@@ -177,15 +174,22 @@ $menu-bar-line-height = 2.5px;
               transition();
             }
 
+
+            &::before {
+              top: -6px;
+
+              .header-drawer-show & {
+                transform: translateY(6px) rotate(45deg);
+              }
+            }
+
+
             &::after {
-              content: '';
-              position: absolute;
               bottom: -6px;
-              left: 0;
-              width: 100%;
-              height: $menu-bar-line-height;
-              background: var(--default-text-color);
-              transition();
+
+              .header-drawer-show & {
+                transform: translateY(-6px) rotate(-45deg);
+              }
             }
           }
         }
@@ -204,8 +208,12 @@ $menu-bar-line-height = 2.5px;
     transform-origin: top;
     background: var(--background-color);
     z-index: $z-index-2;
-
     transition();
+
+    .header-drawer-show & {
+      transition();
+      transform: scaleY(1);
+    }
 
     .drawer-menu-list {
       display: flex;
@@ -252,90 +260,16 @@ $menu-bar-line-height = 2.5px;
     visibility: hidden;
     opacity: 0;
     transition();
-  }
 
-}
-
-
-.header-drawer-show {
-  opacity: 1 !important;
-
-  .header-content {
-
-    .right {
-      .mobile {
-        .menu-bar {
-          .menu-bar-middle {
-
-            background: transparent;
-
-            &::before {
-              transform: translateY(6px) rotate(45deg);
-            }
-
-
-            &::after {
-              transform: translateY(-6px) rotate(-45deg);
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-  .header-drawer {
-    transform: scaleY(1);
-  }
-
-  .window-mask {
-    visibility: visible;
-    opacity: 1;
-  }
-
-}
-
-
-.header-wrapper-shrink {
-
-  .header-content {
-
-    .left {
-      transform: scale(0.86);
-      transform-origin: left;
+    .header-drawer-show & {
+      visibility: visible;
+      opacity: 1;
       transition();
     }
-
-    .right {
-
-      .pc {
-
-        .menu-list {
-
-          .menu-item {
-
-            a:hover {
-              &::after {
-                transition();
-                bottom: -($header-shrink-height / 2 - 12);
-              }
-            }
-
-            .active::after {
-              transition();
-              bottom: -($header-shrink-height / 2 - 12);
-            }
-          }
-
-        }
-      }
-    }
-
-
   }
 
+}
 
-  .header-drawer {
-    padding: $header-shrink-height 0 20px 0;
-  }
+.header-drawer-show {
+  overflow: hidden;
 }
