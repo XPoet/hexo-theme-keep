@@ -5,21 +5,27 @@
             selectors: [
                 'head title',
                 '.page-container',
-                '.pjax',
+                '.pjax'
             ],
             history: true,
             debug: false,
             cacheBust: false,
             timeout: 0,
-            // analytics: false,
-            // currentUrlFullReload: false,
-            // scrollRestoration: false,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
             // scrollTo: true,
         });
 
-        window.addEventListener('pjax:complete', () => {
-            KEEP.refresh();
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.loadingProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.loadingProgressBarEnd();
             pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
         });
     });
 </script>

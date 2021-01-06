@@ -4,11 +4,13 @@ KEEP.initUtils = () => {
 
     html_root_dom: document.querySelector('html'),
     pageContainer_dom: document.querySelector('.page-container'),
-    headerProgress_dom: document.querySelector('.header-progress'),
     pageTop_dom: document.querySelector('.page-main-content-top'),
     firstScreen_dom: document.querySelector('.first-screen-container'),
+    scrollProgressBar_dom: document.querySelector('.scroll-progress-bar'),
+    loadingProgressBar_dom: document.querySelector('.loading-progress-bar'),
 
     innerHeight: window.innerHeight,
+    loadingProgressBarTimer: null,
     prevScrollValue: 0,
     defaultFontSize: 0,
 
@@ -31,9 +33,9 @@ KEEP.initUtils = () => {
       const percent = Math.round(scrollTop / (scrollHeight - clientHeight) * 100).toFixed(0);
       const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
 
-      if (this.headerProgress_dom) {
-        this.headerProgress_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
-        this.headerProgress_dom.style.width = `${ProgressPercent}%`;
+      if (this.scrollProgressBar_dom) {
+        this.scrollProgressBar_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
+        this.scrollProgressBar_dom.style.width = `${ProgressPercent}%`;
       }
 
       // hide header handle
@@ -125,7 +127,7 @@ KEEP.initUtils = () => {
       });
     },
 
-    // go comment
+    // go comment anchor
     goComment() {
       this.goComment_dom = document.querySelector('.go-comment');
       if (this.goComment_dom) {
@@ -150,12 +152,10 @@ KEEP.initUtils = () => {
     // init page height handle
     initPageHeightHandle() {
       if (this.firstScreen_dom) return;
-
-      const temp_h1 = this.getElementHeight('.header-progress');
-      const temp_h2 = this.getElementHeight('.page-main-content-top');
-      const temp_h3 = this.getElementHeight('.page-main-content-middle');
-      const temp_h4 = this.getElementHeight('.page-main-content-bottom');
-      const allDomHeight = temp_h1 + temp_h2 + temp_h3 + temp_h4;
+      const temp_h1 = this.getElementHeight('.page-main-content-top');
+      const temp_h2 = this.getElementHeight('.page-main-content-middle');
+      const temp_h3 = this.getElementHeight('.page-main-content-bottom');
+      const allDomHeight = temp_h1 + temp_h2 + temp_h3;
       const innerHeight = window.innerHeight;
       const pb_dom = document.querySelector('.page-main-content-bottom');
       if (allDomHeight < innerHeight) {
@@ -245,6 +245,37 @@ KEEP.initUtils = () => {
       post && post.forEach(v => {
         v.innerHTML = this.getHowLongAgo(Date.now() - new Date(v.dataset.date).getTime())
       })
+    },
+
+    // loading progress bar start
+    loadingProgressBarStart() {
+      this.loadingProgressBarTimer && clearInterval(this.loadingProgressBarTimer);
+      this.loadingProgressBar_dom.style.width = '0';
+      this.scrollProgressBar_dom.classList.add('hide');
+
+      let width = 20;
+      const maxWidth = 95;
+
+      this.loadingProgressBar_dom.classList.add('show');
+      this.loadingProgressBar_dom.style.width = width + '%';
+
+      this.loadingProgressBarTimer = setInterval(() => {
+        width += parseInt((Math.random() * 10).toFixed(2));
+        if (width > maxWidth) width = maxWidth;
+        this.loadingProgressBar_dom.style.width = width + '%';
+      }, 100);
+    },
+
+    // loading progress bar end
+    loadingProgressBarEnd() {
+      this.loadingProgressBarTimer && clearInterval(this.loadingProgressBarTimer);
+      this.loadingProgressBar_dom.style.width = '100%';
+
+      const tempTimeout = setTimeout(() => {
+        this.loadingProgressBar_dom.classList.remove('show');
+        this.scrollProgressBar_dom.classList.remove('hide');
+        clearTimeout(tempTimeout);
+      }, 200);
     }
   }
 

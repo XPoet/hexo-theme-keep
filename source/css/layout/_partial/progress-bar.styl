@@ -1,0 +1,45 @@
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-9;
+
+  .loading-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: var(--loading-progress-bar-color);
+    box-shadow: 0 1px 3px var(--loading-progress-bar-color);
+    visibility: hidden;
+    opacity: 0;
+    z-index: $z-index-8;
+    transition();
+
+    &.show {
+      transition();
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+  .scroll-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: $scroll-progress-bar-height;
+    visibility: hidden;
+    background: var(--primary-color);
+    transition: all 0.1s ease;
+    z-index: $z-index-7;
+
+    &.hide {
+      transition: none;
+      visibility: hidden;
+    }
+  }
+}

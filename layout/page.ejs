@@ -1,59 +1,53 @@
-<div class="page-container">
+<%- partial('_partial/progress-bar') %>
+<main class="page-container">
 
     <% if (theme.style.first_screen.enable === true && is_home() && !page.prev) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 
-    <header class="page-header">
-        <div class="header-progress"></div>
-    </header>
+    <div class="page-main-content">
 
-    <main class="page-main">
-
-        <div class="page-main-content">
-
-            <div class="page-main-content-top">
-                <%- partial('_partial/header') %>
-            </div>
-
-            <div class="page-main-content-middle">
-
-                <main class="main-content normal-code-theme">
-
-                    <% if (is_home()) { %>
-                        <%- partial('home-content') %>
-
-                    <% } else if (is_archive()) { %>
-                        <%- partial('archive-content') %>
-
-                    <% } else if (is_post()) { %>
-                        <%- partial('article-content') %>
-
-                    <% } else if (is_category()) { %>
-                        <%- partial('category-content') %>
-
-                    <% } else if (is_tag()) { %>
-                        <%- partial('tag-content') %>
-
-                    <% } else if (page.title === 'category' || page.title === 'categories') { %>
-                        <%- partial('category-list') %>
-
-                    <% } else if (page.title === 'tag' || page.title === 'tags') { %>
-                        <%- partial('_partial/tagcloud') %>
-
-                    <% } else { %>
-                        <%- partial('_partial/empty-page') %>
-
-                    <% } %>
-                </main>
-
-            </div>
-
-            <div class="page-main-content-bottom">
-                <%- partial('_partial/footer') %>
-            </div>
+        <div class="page-main-content-top">
+            <%- partial('_partial/header') %>
         </div>
-    </main>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content normal-code-theme">
+
+                <% if (is_home()) { %>
+                    <%- partial('home-content') %>
+
+                <% } else if (is_archive()) { %>
+                    <%- partial('archive-content') %>
+
+                <% } else if (is_post()) { %>
+                    <%- partial('article-content') %>
+
+                <% } else if (is_category()) { %>
+                    <%- partial('category-content') %>
+
+                <% } else if (is_tag()) { %>
+                    <%- partial('tag-content') %>
+
+                <% } else if (page.title === 'category' || page.title === 'categories') { %>
+                    <%- partial('category-list') %>
+
+                <% } else if (page.title === 'tag' || page.title === 'tags') { %>
+                    <%- partial('_partial/tagcloud') %>
+
+                <% } else { %>
+                    <%- partial('_partial/empty-page') %>
+
+                <% } %>
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <%- partial('_partial/footer') %>
+        </div>
+    </div>
 
     <% if (is_post()) { %>
         <div class="sidebar-tools">
@@ -66,19 +60,17 @@
     </div>
 
     <% if (is_post() && theme.toc.enable === true) { %>
-        <!-- page aside -->
         <aside class="page-aside">
             <%- partial('_partial/toc') %>
         </aside>
     <% } %>
 
-    <!-- image viewer -->
     <%- partial('_partial/image-viewer') %>
 
-</div>
+    <% if (theme.local_search.enable) { %>
+        <%- partial('_partial/local-search') %>
+    <% } %>
 
-<% if (theme.local_search.enable) { %>
-    <%- partial('_partial/local-search') %>
-<% } %>
+</main>
 
 

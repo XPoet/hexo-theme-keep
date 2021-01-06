@@ -1,135 +1,114 @@
 $temp-width = hexo-config('style.left_side_width');
-$page-aside-width = $temp-width ? convert($temp-width):260px;
+$page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
 .page-container {
   position: relative;
-  padding-top: $header-progress-height;
-
   transition();
 
   +keep-tablet() {
     padding-left: 0 !important;
   }
 
+  .page-main-content {
+    padding-top: $header-height;
+    position: relative;
 
-  .page-header {
-    .header-progress {
-      visibility: hidden;
-      position: fixed;
-      width: 0;
-      height: $header-progress-height;
-      top: 0;
-      left: 0;
-      background: var(--primary-color);
-      transition: all 0.1s ease;
-      z-index: $z-index-7;
-    }
-  }
-
-
-  .page-main {
-
-    .page-main-content {
-      padding-top: $header-height;
-      position: relative;
-
-      .header-shrink & {
-        padding-top: $header-shrink-height;
-        transition();
-
-        +keep-tablet() {
-          padding-top: $header-shrink-height * 0.9;
-        }
-
-        +keep-mobile() {
-          padding-top: $header-shrink-height * 0.8;
-        }
-      }
+    .header-shrink & {
+      padding-top: $header-shrink-height;
+      transition();
 
       +keep-tablet() {
-        padding-top: $header-height * 0.9;
+        padding-top: $header-shrink-height * 0.9;
       }
 
       +keep-mobile() {
-        padding-top: $header-height * 0.8;
+        padding-top: $header-shrink-height * 0.8;
+      }
+    }
+
+    +keep-tablet() {
+      padding-top: $header-height * 0.9;
+    }
+
+    +keep-mobile() {
+      padding-top: $header-height * 0.8;
+    }
+
+    .page-main-content-top {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: $header-height;
+      z-index: $z-index-5;
+      box-sizing: border-box;
+      transition();
+
+      &.hide {
+        transform: translateY(-102%);
       }
 
-      .page-main-content-top {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: $header-height;
-        z-index: $z-index-5;
+      .header-shrink & {
+        height: $header-shrink-height;
+
+        +keep-tablet() {
+          height: $header-shrink-height * 0.9;
+        }
+
+        +keep-mobile() {
+          height: $header-shrink-height * 0.8;
+        }
+      }
+
+
+      +keep-tablet() {
+        height: $header-height * 0.9;
+        padding-left: 0 !important;
+      }
+
+
+      +keep-mobile() {
+        height: $header-height  * 0.8;
+      }
+
+    }
+
+    .page-main-content-middle {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: $component-interspace 0;
+
+      +keep-tablet() {
+        padding: $component-interspace * 0.8 0;
+      }
+
+      +keep-mobile() {
+        padding: $component-interspace * 0.6 0;
+      }
+
+      .main-content {
+        position: relative;
         box-sizing: border-box;
+        width: $main-content-width;
+        max-width: $content-max-width;
+        height: 100%;
         transition();
 
-        &.hide {
-          transform: translateY(-102%);
-        }
-
-        .header-shrink & {
-          height: $header-shrink-height;
-
-          +keep-tablet() {
-            height: $header-shrink-height * 0.9;
-          }
-
-          +keep-mobile() {
-            height: $header-shrink-height * 0.8;
-          }
-        }
-
-
         +keep-tablet() {
-          height: $header-height * 0.9;
-          padding-left: 0 !important;
-        }
-
-
-        +keep-mobile() {
-          height: $header-height  * 0.8;
-        }
-
-      }
-
-      .page-main-content-middle {
-        box-sizing: border-box;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: $component-interspace 0;
-
-        +keep-tablet() {
-          padding: $component-interspace * 0.8 0;
+          width: $main-content-width-tablet;
         }
 
         +keep-mobile() {
-          padding: $component-interspace * 0.6 0;
-        }
-
-        .main-content {
-          position: relative;
-          box-sizing: border-box;
-          width: $main-content-width;
-          max-width: $content-max-width;
-          height: 100%;
-          transition();
-
-          +keep-tablet() {
-            width: $main-content-width-tablet;
-          }
-
-          +keep-mobile() {
-            width: $main-content-width-mobile;
-          }
+          width: $main-content-width-mobile;
         }
       }
+    }
 
 
-      .page-main-content-bottom {
-        width: 100%;
-      }
+    .page-main-content-bottom {
+      width: 100%;
     }
   }
 
