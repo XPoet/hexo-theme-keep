@@ -14,7 +14,7 @@
     <%- __js('js/code-copy.js') %>
 <% } %>
 
-<div class="post-scripts <%= theme.pjax.enable === true ? 'pjax' : '' %>">
+<div class="post-scripts<%= theme.pjax.enable === true ? ' pjax' : '' %>">
     <% if (theme.toc.enable && is_post()) { %>
         <%- __js([
             'js/left-side-toggle.js',

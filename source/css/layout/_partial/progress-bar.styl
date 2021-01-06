@@ -12,7 +12,7 @@
     height: 1px;
     width: 0;
     background: var(--loading-progress-bar-color);
-    box-shadow: 0 1px 3px var(--loading-progress-bar-color);
+    box-shadow: 0 1px 2px var(--loading-progress-bar-color);
     visibility: hidden;
     opacity: 0;
     z-index: $z-index-8;
@@ -22,6 +22,30 @@
       transition();
       opacity: 1;
       visibility: visible;
+    }
+  }
+
+
+  .loading-progress-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $z-index-8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px 0 0;
+    color: var(--default-text-color);
+    visibility: hidden;
+    transition();
+
+    &.show {
+      transition: visibility 0.1s linear;
+      visibility: visible;
+    }
+
+    i {
+      font-size: 1.12rem;
     }
   }
 

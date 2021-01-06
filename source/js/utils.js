@@ -8,6 +8,7 @@ KEEP.initUtils = () => {
     firstScreen_dom: document.querySelector('.first-screen-container'),
     scrollProgressBar_dom: document.querySelector('.scroll-progress-bar'),
     loadingProgressBar_dom: document.querySelector('.loading-progress-bar'),
+    loadingProgressCircle_dom: document.querySelector('.loading-progress-circle'),
 
     innerHeight: window.innerHeight,
     loadingProgressBarTimer: null,
@@ -252,15 +253,16 @@ KEEP.initUtils = () => {
       this.loadingProgressBarTimer && clearInterval(this.loadingProgressBarTimer);
       this.loadingProgressBar_dom.style.width = '0';
       this.scrollProgressBar_dom.classList.add('hide');
+      this.loadingProgressCircle_dom.classList.add('show');
 
-      let width = 20;
-      const maxWidth = 95;
+      let width = 5;
+      const maxWidth = 99;
 
       this.loadingProgressBar_dom.classList.add('show');
       this.loadingProgressBar_dom.style.width = width + '%';
 
       this.loadingProgressBarTimer = setInterval(() => {
-        width += parseInt((Math.random() * 10).toFixed(2));
+        width += 5;
         if (width > maxWidth) width = maxWidth;
         this.loadingProgressBar_dom.style.width = width + '%';
       }, 100);
@@ -273,6 +275,7 @@ KEEP.initUtils = () => {
 
       const tempTimeout = setTimeout(() => {
         this.loadingProgressBar_dom.classList.remove('show');
+        this.loadingProgressCircle_dom.classList.remove('show');
         this.scrollProgressBar_dom.classList.remove('hide');
         clearTimeout(tempTimeout);
       }, 200);

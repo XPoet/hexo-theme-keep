@@ -1,4 +1,11 @@
 <div class="progress-bar-container">
     <span class="scroll-progress-bar"></span>
-    <span class="loading-progress-bar"></span>
+
+    <% if (theme.pjax.enable === true) { %>
+        <span class="loading-progress-bar"></span>
+        <span class="loading-progress-circle">
+        <i class="fas fa-circle-notch fa-spin"></i>
+    </span>
+    <% } %>
 </div>
+
