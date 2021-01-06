@@ -50,13 +50,13 @@
     </div>
 
     <% if (is_post()) { %>
-        <div class="sidebar-tools">
-            <%- partial('_partial/tools') %>
+        <div class="post-tools">
+            <%- partial('_partial/post-tools') %>
         </div>
     <% } %>
 
     <div class="right-bottom-side-tools">
-        <%- partial('_partial/side-tools-container') %>
+        <%- partial('_partial/side-tools') %>
     </div>
 
     <% if (is_post() && theme.toc.enable === true) { %>

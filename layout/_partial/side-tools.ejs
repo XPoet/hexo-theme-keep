@@ -20,7 +20,12 @@
         <!-- rss -->
         <% if (theme.rss.enable && config.feed) { %>
             <li class="tools-item rss flex-center">
-                <a class="flex-center" href="<%= '/' + config.feed.path %>" target="_blank"><i class="fas fa-rss"></i></a>
+                <a class="flex-center"
+                   href="<%= '/' + config.feed.path %>"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
             </li>
         <% } %>
 
@@ -33,10 +38,9 @@
         </li>
     </ul>
 
-    <ul class="tools-ul-1">
+    <ul>
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-
     </ul>
 </div>
