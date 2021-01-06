@@ -8,7 +8,7 @@ KEEP.initUtils = () => {
     firstScreen_dom: document.querySelector('.first-screen-container'),
     scrollProgressBar_dom: document.querySelector('.scroll-progress-bar'),
     loadingProgressBar_dom: document.querySelector('.loading-progress-bar'),
-    loadingProgressCircle_dom: document.querySelector('.loading-progress-circle'),
+    loadingProgressCircle_dom: document.querySelector('.loading-progress-icon'),
 
     innerHeight: window.innerHeight,
     loadingProgressBarTimer: null,
