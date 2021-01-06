@@ -1,3 +1,5 @@
+@import "../variables.styl"
+
 $code-foreground = lighten($default-text-color, 2%)
 $code-background = darken($background-color, 5%)
 $highlight-foreground = lighten($default-text-color, 2%)
@@ -32,37 +34,29 @@ $night-highlight-purple = #b294bb
 $night-highlight-deletion = #008000
 $night-highlight-addition = #800000
 
+code-theme(mode) {
+  --code-foreground: mode == 'light' ? $code-foreground : $night-code-foreground;
+  --code-background: mode == 'light' ? $code-background : $night-code-background;
+  --highlight-background: mode == 'light' ? $highlight-background : $night-highlight-background;
+  --highlight-foreground: mode == 'light' ? $highlight-foreground : $night-highlight-foreground;
+  --highlight-comment: mode == 'light' ? $highlight-comment : $night-highlight-comment;
+  --highlight-red: mode == 'light' ? $highlight-red : $night-highlight-red;
+  --highlight-orange: mode == 'light' ? $highlight-orange : $night-highlight-orange;
+  --highlight-yellow: mode == 'light' ? $highlight-yellow : $night-highlight-yellow;
+  --highlight-green: mode == 'light' ? $highlight-green : $night-highlight-green;
+  --highlight-aqua: mode == 'light' ? $highlight-aqua : $night-highlight-aqua;
+  --highlight-blue: mode == 'light' ? $highlight-blue : $night-highlight-blue;
+  --highlight-purple: mode == 'light' ? $highlight-purple : $night-highlight-purple;
+  --highlight-gutter-color: mode == 'light' ? $highlight-gutter-color : $night-highlight-gutter-color;
+  --highlight-gutter-bg-color: mode == 'light' ? $highlight-gutter-bg-color : $night-highlight-gutter-bg-color;
+}
+
+
 .normal-code-theme {
-  --code-foreground: $code-foreground;
-  --code-background: $code-background;
-  --highlight-background: $highlight-background;
-  --highlight-foreground: $highlight-foreground;
-  --highlight-comment: $highlight-comment;
-  --highlight-red: $highlight-red;
-  --highlight-orange: $highlight-orange;
-  --highlight-yellow: $highlight-yellow;
-  --highlight-green: $highlight-green;
-  --highlight-aqua: $highlight-aqua;
-  --highlight-blue: $highlight-blue;
-  --highlight-purple: $highlight-purple;
-  --highlight-gutter-color: $highlight-gutter-color;
-  --highlight-gutter-bg-color: $highlight-gutter-bg-color;
+  code-theme('light');
 }
 
 
 .night-code-theme {
-  --code-foreground: $night-code-foreground;
-  --code-background: $night-code-background;
-  --highlight-background: $night-highlight-background;
-  --highlight-foreground: $night-highlight-foreground;
-  --highlight-comment: $night-highlight-comment;
-  --highlight-red: $night-highlight-red;
-  --highlight-orange: $night-highlight-orange;
-  --highlight-yellow: $night-highlight-yellow;
-  --highlight-green: $night-highlight-green;
-  --highlight-aqua: $night-highlight-aqua;
-  --highlight-blue: $night-highlight-blue;
-  --highlight-purple: $night-highlight-purple;
-  --highlight-gutter-color: $night-highlight-gutter-color;
-  --highlight-gutter-bg-color: $night-highlight-gutter-bg-color;
+  code-theme('dark');
 }
