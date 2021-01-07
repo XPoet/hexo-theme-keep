@@ -15,17 +15,6 @@ KEEP.initUtils = () => {
     prevScrollValue: 0,
     defaultFontSize: 0,
 
-    // print theme base info
-    printThemeInfo() {
-      const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
-      console.log(`\n %c ${themeInfo} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
-      const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
-      if (footThemeInfoDom) {
-        footThemeInfoDom.setAttribute('href', KEEP.themeInfo.repository);
-        footThemeInfoDom.innerHTML = themeInfo;
-      }
-    },
-
     // Scroll Style Handle
     styleHandleWhenScroll() {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
@@ -281,9 +270,6 @@ KEEP.initUtils = () => {
       }, 200);
     }
   }
-
-  // print theme info
-  KEEP.utils.printThemeInfo();
 
   // init scroll
   KEEP.utils.registerWindowScroll();

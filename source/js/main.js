@@ -7,6 +7,17 @@ window.addEventListener('DOMContentLoaded', () => {
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
 
+  // print theme base info
+  KEEP.printThemeInfo = () => {
+    const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
+    console.log(`\n %c ${themeInfo} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
+    const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
+    if (footThemeInfoDom) {
+      footThemeInfoDom.setAttribute('href', KEEP.themeInfo.repository);
+      footThemeInfoDom.innerHTML = themeInfo;
+    }
+  }
+
   KEEP.refresh = () => {
     KEEP.initUtils();
     KEEP.initHeaderShrink();
@@ -26,5 +37,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  KEEP.printThemeInfo();
   KEEP.refresh();
 });
