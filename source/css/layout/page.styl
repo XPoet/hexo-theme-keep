@@ -78,14 +78,14 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
       width: 100%;
       display: flex;
       justify-content: center;
-      padding: $component-interspace 0;
+      padding: $component-spacing-value 0;
 
       +keep-tablet() {
-        padding: $component-interspace * 0.8 0;
+        padding: $component-spacing-value * 0.8 0;
       }
 
       +keep-mobile() {
-        padding: $component-interspace * 0.6 0;
+        padding: $component-spacing-value * 0.6 0;
       }
 
       .main-content {
@@ -137,25 +137,25 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
   .post-tools {
     position: fixed;
-    top: $header-height + $component-interspace;
-    right: $component-interspace;
+    top: $header-height + $component-spacing-value;
+    right: $component-spacing-value;
     transition();
 
     .header-shrink & {
-      top: $header-shrink-height + $component-interspace;
+      top: $header-shrink-height + $component-spacing-value;
 
       +keep-tablet() {
-        top: $header-shrink-height * 0.9 + $component-interspace;
+        top: $header-shrink-height * 0.9 + $component-spacing-value;
       }
 
       +keep-mobile() {
-        top: $header-shrink-height * 0.8 + $component-interspace;
+        top: $header-shrink-height * 0.8 + $component-spacing-value;
       }
     }
 
 
     +keep-tablet() {
-      top: $header-height * 0.9 + $component-interspace;
+      top: $header-height * 0.9 + $component-spacing-value;
       right: 10px;
       transform: scale(0.82);
       transform-origin: right top;
@@ -163,7 +163,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
 
     +keep-mobile() {
-      top: $header-height * 0.8 + $component-interspace;
+      top: $header-height * 0.8 + $component-spacing-value;
       right: 5px;
       transform: scale(0.72);
     }

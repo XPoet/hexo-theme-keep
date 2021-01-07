@@ -14,6 +14,10 @@
     <%- __js('js/code-copy.js') %>
 <% } %>
 
+<% if (theme.lazyload.enable) { %>
+    <%- __js('js/lazyload.js') %>
+<% } %>
+
 <div class="post-scripts<%= theme.pjax.enable === true ? ' pjax' : '' %>">
     <% if (theme.toc.enable && is_post()) { %>
         <%- __js([

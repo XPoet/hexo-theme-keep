@@ -6,24 +6,25 @@
 // ========================================================================================
 // layout
 // ========================================================================================
-$header-height = 76px;                                               // 头部默认高度
-$header-shrink-height = $header-height * 0.72;                       // 头部收缩高度
-$scroll-progress-bar-height = 2px;                                   // 头部进度条高度
-$main-content-width = 80%;                                           // 中间内容区域宽度（PC）
-$main-content-width-tablet = 85%;                                    // 中间内容区域宽度（平板）
-$main-content-width-mobile = 90%;                                    // 中间内容区域宽度（手机）
-$circle-button-width = 40px;                                         // tools 圆形工具按钮宽度
-$tools-button-width = 32px;                                          // tools 方形工具按钮宽度
-$component-interspace = 30px;                                        // 组件/模块的间隔值（PC）
+$header-height = 76px;                                           // header height
+$header-shrink-height = $header-height * 0.72;                   // header shrink height
+$scroll-progress-bar-height = 2px;                               // scroll progress bar height
+$main-content-width = 80%;                                       // main content width (tablet)
+$main-content-width-tablet = 86%;                                // main content width (PC)
+$main-content-width-mobile = 90%;                                // main content width (mobile)
+$circle-button-width = 38px;                                     // post tool button width
+$component-spacing-value = 30px;                                 // component-spacing-value (PC)
+
+// main content max width
 $temp-content-max-width = hexo-config('style.content_max_width');
 $content-max-width = $temp-content-max-width ? convert($temp-content-max-width) : 1000px;
 
 
 // ========================================================================================
-// 媒体查询
+// media query
 // ========================================================================================
-$media-max-width = 780px;                                       // 媒体查询最大宽度 (平板)
-$media-max-width-mobile = 500px;                                // 媒体查询最大宽度（手机）
+$media-max-width = 780px;                                 // media query max width (tablet)
+$media-max-width-mobile = 500px;                          // media query max width (mobile)
 
 keep-tablet()
   @media (max-width: $media-max-width)
@@ -76,6 +77,7 @@ $link-color = darken($default-text-color, 10%);
 $copyright-info-color = #CC0033;
 $avatar-background-color = #0066CC;
 $loading-progress-bar-color = #990000;
+$lazyload-background-color = rgba(200, 200, 200, 0.5);
 
 
 // ========================================================================================
@@ -99,6 +101,7 @@ $dark-link-color = lighten($dark-default-text-color, 10%);
 $dark-copyright-info-color = darken($copyright-info-color, 20%);
 $dark-avatar-background-color = darken($avatar-background-color, 10%);
 $dark-loading-progress-bar-color = lighten($loading-progress-bar-color, 50%);
+$dark-lazyload-background-color = rgba(50, 50, 50, 0.5);
 
 
 // ========================================================================
@@ -131,7 +134,8 @@ root-color(mode) {
   --link-color: mode == 'light' ? $link-color : $dark-link-color;
   --copyright-info-color: mode == 'light' ? $copyright-info-color : $dark-copyright-info-color;
   --avatar-background-color: mode == 'light' ? $avatar-background-color : $dark-avatar-background-color;
-  --loading-progress-bar-color: mode == 'light' ? $loading-progress-bar-color : $dark-loading-progress-bar-color;
+  --loading-progress-bar-color : mode == 'light' ? $loading-progress-bar-color : $dark-loading-progress-bar-color;
+  --lazyload-background-color : mode == 'light' ? $lazyload-background-color : $dark-lazyload-background-color;
 }
 
 

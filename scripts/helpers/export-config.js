@@ -14,7 +14,7 @@ hexo.extend.helper.register('export_config', function () {
 
   let {config, theme} = this;
 
-  // ------------ export language to js ------------
+  // ------------------------ export language to js ------------------------
   const languageDir = path.join(__dirname, '../../languages');
   let file = fs.readdirSync(languageDir).find(v => v === `${config.language}.yml`);
   file = languageDir + '/' + (file ? file : 'en.yml');
@@ -24,7 +24,7 @@ hexo.extend.helper.register('export_config', function () {
   } catch (e) {
     console.log(e);
   }
-  // -----------------------------------------------
+  // -----------------------------------------------------------------------
 
 
   let hexo_config = {
@@ -43,6 +43,7 @@ hexo.extend.helper.register('export_config', function () {
     code_copy: theme.code_copy,
     side_tools: theme.side_tools,
     pjax: theme.pjax,
+    lazyload: theme.lazyload,
     version: theme.version,
   }
 

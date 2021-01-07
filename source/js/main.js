@@ -20,6 +20,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (KEEP.theme_config.code_copy.enable === true) {
       KEEP.initCodeCopy();
     }
+
+    if (KEEP.theme_config.lazyload.enable === true) {
+      KEEP.initLazyLoad();
+    }
   }
 
   KEEP.refresh();
