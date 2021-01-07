@@ -1,21 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
+    theme: `Keep v${KEEP.theme_config.version}`,
     author: 'XPoet',
-    name: 'Keep',
-    version: KEEP.theme_config.version,
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
 
   // print theme base info
   KEEP.printThemeInfo = () => {
-    const themeInfo = `${KEEP.themeInfo.name} v${KEEP.themeInfo.version}`;
-    console.log(`\n %c ${themeInfo} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
-    const footThemeInfoDom = document.querySelector('.footer .info-container .theme-info a.theme-version');
-    if (footThemeInfoDom) {
-      footThemeInfoDom.setAttribute('href', KEEP.themeInfo.repository);
-      footThemeInfoDom.innerHTML = themeInfo;
-    }
+    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
   }
 
   KEEP.refresh = () => {
