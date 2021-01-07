@@ -34,7 +34,7 @@ KEEP.initLazyLoad = () => {
   lazyload(imgs);
 
   window.onscroll = () => {
-    if (Date.now() - now > 100 && needLoad) {
+    if (Date.now() - now > 50 && needLoad) {
       lazyload(imgs);
     }
   }
