@@ -16,6 +16,11 @@ html, body {
   font-size: $default-font-size;
   line-height: $default-font-line-height;
 
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+  }
+
   +keep-tablet() {
     font-size: $default-font-size * 0.96;
     line-height: $default-font-line-height * 0.96;
@@ -39,7 +44,7 @@ html, body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--scroll-bar-color);
+    background: var(--scrollbar-color);
   }
 
   &::-webkit-scrollbar-track {

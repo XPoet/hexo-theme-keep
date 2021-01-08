@@ -8,7 +8,7 @@
 // ========================================================================================
 $header-height = 76px;                                           // header height
 $header-shrink-height = $header-height * 0.72;                   // header shrink height
-$scroll-progress-bar-height = 2.8px;                               // scroll progress bar height
+$scroll-progress-bar-height = 2px;                               // scroll progress bar height
 $main-content-width = 80%;                                       // main content width (PC)
 $main-content-width-tablet = 86%;                                // main content width (tablet)
 $main-content-width-mobile = 90%;                                // main content width (mobile)
@@ -71,12 +71,12 @@ $border-color = darken($background-color, 30%);
 $selection-color = lighten($primary-color, 10%);
 $shadow-color = rgba(0, 0, 0, 0.2);
 $shadow-hover-color = rgba(0, 0, 0, 0.28);
-$scroll-bar-color = lighten($default-text-color, 20%);
+$scrollbar-color = lighten($default-text-color, 20%);
 $scroll-bar-bg-color = darken($background-color, 10%);
 $link-color = darken($default-text-color, 10%);
 $copyright-info-color = #CC0033;
 $avatar-background-color = #0066CC;
-$loading-progress-bar-color = linear-gradient(45deg, #ef0e18, #ff5f00, #eea40b, #1fe708, #00d6d6, #016bd7, #f300f3);
+$pjax-progress-bar-color = linear-gradient(45deg, #ef0e18, #ff5f00, #eea40b, #1fe708, #00d6d6, #016bd7, #f300f3);
 
 
 // ========================================================================================
@@ -94,12 +94,12 @@ $dark-border-color = lighten($dark-background-color, 20%);
 $dark-selection-color = $selection-color;
 $dark-shadow-color = rgba(128, 128, 128, 0.2);
 $dark-shadow-hover-color = rgba(128, 128, 128, 0.28);
-$dark-scroll-bar-color = darken($dark-background-color, 30%);
+$dark-scrollbar-color = darken($dark-background-color, 30%);
 $dark-scroll-bar-bg-color = lighten($dark-background-color, 10%);
 $dark-link-color = lighten($dark-default-text-color, 10%);
 $dark-copyright-info-color = darken($copyright-info-color, 20%);
 $dark-avatar-background-color = darken($avatar-background-color, 10%);
-$dark-loading-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
+$dark-pjax-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
 
 
 // ========================================================================
@@ -127,12 +127,12 @@ root-color(mode) {
   --selection-color: mode == 'light' ? $selection-color : $dark-selection-color;
   --shadow-color: mode == 'light' ? $shadow-color : $dark-shadow-color;
   --shadow-hover-color: mode == 'light' ? $shadow-hover-color : $dark-shadow-hover-color;
-  --scroll-bar-color: mode == 'light' ? $scroll-bar-color : $dark-scroll-bar-color;
+  --scrollbar-color: mode == 'light' ? $scrollbar-color : $dark-scrollbar-color;
   --scroll-bar-bg-color: mode == 'light' ? $scroll-bar-bg-color : $dark-scroll-bar-bg-color;
   --link-color: mode == 'light' ? $link-color : $dark-link-color;
   --copyright-info-color: mode == 'light' ? $copyright-info-color : $dark-copyright-info-color;
   --avatar-background-color: mode == 'light' ? $avatar-background-color : $dark-avatar-background-color;
-  --loading-progress-bar-color : mode == 'light' ? $loading-progress-bar-color : $dark-loading-progress-bar-color;
+  --pjax-progress-bar-color : mode == 'light' ? $pjax-progress-bar-color : $dark-pjax-progress-bar-color;
 }
 
 
