@@ -25,7 +25,7 @@ KEEP.initLazyLoad = () => {
               img.removeAttribute('loading');
               clearTimeout(loadImageTimeout);
             }
-          }, 1000);
+          }, 500);
         }
       }
     });

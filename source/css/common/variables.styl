@@ -77,7 +77,6 @@ $link-color = darken($default-text-color, 10%);
 $copyright-info-color = #CC0033;
 $avatar-background-color = #0066CC;
 $loading-progress-bar-color = linear-gradient(45deg, #ef0e18, #ff5f00, #eea40b, #1fe708, #00d6d6, #016bd7, #f300f3);
-$lazyload-background-color = rgba(200, 200, 200, 0.5);
 
 
 // ========================================================================================
@@ -101,7 +100,6 @@ $dark-link-color = lighten($dark-default-text-color, 10%);
 $dark-copyright-info-color = darken($copyright-info-color, 20%);
 $dark-avatar-background-color = darken($avatar-background-color, 10%);
 $dark-loading-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
-$dark-lazyload-background-color = rgba(50, 50, 50, 0.5);
 
 
 // ========================================================================
@@ -135,7 +133,6 @@ root-color(mode) {
   --copyright-info-color: mode == 'light' ? $copyright-info-color : $dark-copyright-info-color;
   --avatar-background-color: mode == 'light' ? $avatar-background-color : $dark-avatar-background-color;
   --loading-progress-bar-color : mode == 'light' ? $loading-progress-bar-color : $dark-loading-progress-bar-color;
-  --lazyload-background-color : mode == 'light' ? $lazyload-background-color : $dark-lazyload-background-color;
 }
 
 
