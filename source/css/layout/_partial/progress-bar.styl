@@ -35,21 +35,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 8px 0 0;
+      padding: 7px 6px 0 0;
       color: var(--default-text-color);
       visibility: hidden;
+      font-size: 1.1rem;
       transition();
+
+      +keep-tablet() {
+        padding: 6px 5px 0 0;
+        font-size: 1rem;
+      }
 
       &.show {
         transition: visibility 0.1s linear;
         visibility: visible;
       }
-
-      i {
-        font-size: 1.12rem;
-      }
     }
-
 
   }
 
