@@ -17,15 +17,21 @@
             if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
                 __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
             }
-            Gitalk && new Gitalk({
-                clientID: '<%= theme.comment.gitalk.client_id %>',
-                clientSecret: '<%= theme.comment.gitalk.client_secret %>',
-                repo: '<%= theme.comment.gitalk.repository %>',
-                owner: '<%= theme.comment.gitalk.github_id %>',
-                admin: ['<%= theme.comment.gitalk.github_id %>'],
-                id: __gitalk__pathname,
-                language: '<%= config.language %>'
-            }).render('gitalk-container');
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '<%= theme.comment.gitalk.client_id %>',
+                    clientSecret: '<%= theme.comment.gitalk.client_secret %>',
+                    repo: '<%= theme.comment.gitalk.repository %>',
+                    owner: '<%= theme.comment.gitalk.github_id %>',
+                    admin: ['<%= theme.comment.gitalk.github_id %>'],
+                    id: __gitalk__pathname,
+                    language: '<%= config.language %>'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
         }
 
         if ('<%= theme.pjax.enable %>') {
