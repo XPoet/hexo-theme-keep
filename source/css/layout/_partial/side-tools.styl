@@ -62,10 +62,45 @@ $tools-item-border-radius = 1px;
       }
     }
 
+
     &.show {
       opacity: 1;
       transform: translateX(0);
     }
   }
 
+
+  .exposed-tools-list {
+
+    if (hexo-config('style.scroll.percent.enable') == true) {
+      .tool-scroll-to-top {
+        display: none;
+
+        &:hover {
+          transition();
+
+          .arrow-up {
+            display: flex;
+          }
+
+          .percent {
+            display: none;
+          }
+        }
+
+
+        .arrow-up {
+          display: none;
+        }
+
+
+        .percent {
+          display: flex;
+          font-size: 1rem;
+        }
+
+      }
+
+    }
+  }
 }

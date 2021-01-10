@@ -17,13 +17,12 @@
             // scrollTo: true,
         });
 
-
         document.addEventListener('pjax:send', () => {
-            KEEP.utils.loadingProgressBarStart();
+            KEEP.utils.pjaxProgressBarStart();
         });
 
         document.addEventListener('pjax:complete', () => {
-            KEEP.utils.loadingProgressBarEnd();
+            KEEP.utils.pjaxProgressBarEnd();
             pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
             KEEP.refresh();
         });

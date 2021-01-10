@@ -9,11 +9,15 @@ KEEP.initUtils = () => {
     scrollProgressBar_dom: document.querySelector('.scroll-progress-bar'),
     pjaxProgressBar_dom: document.querySelector('.pjax-progress-bar'),
     pjaxProgressIcon_dom: document.querySelector('.pjax-progress-icon'),
+    back2TopButton_dom: document.querySelector('.tool-scroll-to-top'),
 
     innerHeight: window.innerHeight,
-    loadingProgressBarTimer: null,
+    pjaxProgressBarTimer: null,
     prevScrollValue: 0,
     defaultFontSize: 0,
+
+    isHasScrollProgressBar: KEEP.theme_config.style.scroll.progress_bar.enable === true,
+    isHasScrollPercent: KEEP.theme_config.style.scroll.percent.enable === true,
 
     // Scroll Style Handle
     styleHandleWhenScroll() {
@@ -21,11 +25,21 @@ KEEP.initUtils = () => {
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
       const clientHeight = window.innerHeight || document.documentElement.clientHeight;
       const percent = Math.round(scrollTop / (scrollHeight - clientHeight) * 100).toFixed(0);
-      const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
 
-      if (this.scrollProgressBar_dom) {
+      if (this.isHasScrollProgressBar) {
+        const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
         this.scrollProgressBar_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
         this.scrollProgressBar_dom.style.width = `${ProgressPercent}%`;
+      }
+
+      if (this.isHasScrollPercent) {
+        const percent_dom = this.back2TopButton_dom.querySelector('.percent');
+        if (percent === '0') {
+          this.back2TopButton_dom.style.display = 'none';
+        } else {
+          this.back2TopButton_dom.style.display = 'flex';
+          percent_dom.innerHTML = percent;
+        }
       }
 
       // hide header handle
@@ -41,7 +55,9 @@ KEEP.initUtils = () => {
     registerWindowScroll() {
       window.addEventListener('scroll', () => {
         // style handle when scroll
-        this.styleHandleWhenScroll();
+        if (this.isHasScrollPercent || this.isHasScrollProgressBar) {
+          this.styleHandleWhenScroll();
+        }
 
         // TOC scroll handle
         if (KEEP.theme_config.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
@@ -238,19 +254,22 @@ KEEP.initUtils = () => {
     },
 
     // loading progress bar start
-    loadingProgressBarStart() {
-      this.loadingProgressBarTimer && clearInterval(this.loadingProgressBarTimer);
+    pjaxProgressBarStart() {
+      this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer);
+      if (this.isHasScrollProgressBar) {
+        this.scrollProgressBar_dom.classList.add('hide');
+      }
+
       this.pjaxProgressBar_dom.style.width = '0';
-      this.scrollProgressBar_dom.classList.add('hide');
       this.pjaxProgressIcon_dom.classList.add('show');
 
-      let width = 5;
+      let width = 1;
       const maxWidth = 99;
 
       this.pjaxProgressBar_dom.classList.add('show');
       this.pjaxProgressBar_dom.style.width = width + '%';
 
-      this.loadingProgressBarTimer = setInterval(() => {
+      this.pjaxProgressBarTimer = setInterval(() => {
         width += 5;
         if (width > maxWidth) width = maxWidth;
         this.pjaxProgressBar_dom.style.width = width + '%';
@@ -258,14 +277,17 @@ KEEP.initUtils = () => {
     },
 
     // loading progress bar end
-    loadingProgressBarEnd() {
-      this.loadingProgressBarTimer && clearInterval(this.loadingProgressBarTimer);
+    pjaxProgressBarEnd() {
+      this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer);
       this.pjaxProgressBar_dom.style.width = '100%';
 
       const tempTimeout = setTimeout(() => {
         this.pjaxProgressBar_dom.classList.remove('show');
         this.pjaxProgressIcon_dom.classList.remove('show');
-        this.scrollProgressBar_dom.classList.remove('hide');
+
+        if (this.isHasScrollProgressBar) {
+          this.scrollProgressBar_dom.classList.remove('hide');
+        }
         clearTimeout(tempTimeout);
       }, 200);
     }

@@ -37,8 +37,14 @@ style:
   # First screen
   first_screen:
     enable: false
-    background_img: /images/bg.svg
+    background_img: /images/bg.svg   # You can use local image or image external link
     description: Keep writing and Keep loving.
+
+  scroll:
+    progress_bar:
+      enable: false
+    percent:
+      enable: false
 
 
 # ---------------------------------------------------------------------------------------
