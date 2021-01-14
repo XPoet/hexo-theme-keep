@@ -17,10 +17,9 @@
       visibility: hidden;
       opacity: 0;
       z-index: $z-index-8;
-      transition();
+      transition: all 0.1s ease;
 
       &.show {
-        transition();
         opacity: 1;
         visibility: visible;
       }
@@ -68,9 +67,7 @@
       z-index: $z-index-7;
 
       &.hide {
-        //transition: none;
-        display: none;
-        //visibility: hidden !important;
+        display: none !important;
       }
     }
 

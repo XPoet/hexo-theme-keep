@@ -281,14 +281,19 @@ KEEP.initUtils = () => {
       this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer);
       this.pjaxProgressBar_dom.style.width = '100%';
 
-      const tempTimeout = setTimeout(() => {
+      const temp_1 = setTimeout(() => {
         this.pjaxProgressBar_dom.classList.remove('show');
         this.pjaxProgressIcon_dom.classList.remove('show');
 
         if (this.isHasScrollProgressBar) {
           this.scrollProgressBar_dom.classList.remove('hide');
         }
-        clearTimeout(tempTimeout);
+
+        const temp_2 = setTimeout(() => {
+          this.pjaxProgressBar_dom.style.width = '0';
+          clearTimeout(temp_1), clearTimeout(temp_2);
+        }, 200);
+
       }, 200);
     }
   }
