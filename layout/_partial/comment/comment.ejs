@@ -1,10 +1,16 @@
 <div class="comments-container">
     <div id="comment-anchor"></div>
-    <% if (theme.comment.valine.enable && theme.comment.gitalk.enable) { %>
+    <% if (
+            theme.comment.valine.enable === true
+            && theme.comment.gitalk.enable === true
+            && theme.comment.twikoo.enable === true
+    ) { %>
         <%- partial('valine') %>
-    <% } else if (theme.comment.valine.enable) { %>
+    <% } else if (theme.comment.valine.enable === true) { %>
         <%- partial('valine') %>
-    <% } else if (theme.comment.gitalk.enable) { %>
+    <% } else if (theme.comment.gitalk.enable === true) { %>
         <%- partial('gitalk') %>
+    <% } else if (theme.comment.twikoo.enable === true) { %>
+        <%- partial('twikoo') %>
     <% } %>
 </div>

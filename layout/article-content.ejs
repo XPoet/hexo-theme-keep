@@ -46,7 +46,7 @@
                            rel="prev"
                            href="<%= url_for(page.prev.path) %>"
                         >
-                            <span class="left arrow-icon flex-center" >
+                            <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
@@ -66,7 +66,7 @@
                                 <span class="post-nav-title-item"><%= page.next.title %></span>
                                 <span class="post-nav-item"><%= __('next_posts') %></span>
                             </span>
-                            <span class="right arrow-icon flex-center" >
+                            <span class="right arrow-icon flex-center">
                               <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
@@ -75,7 +75,11 @@
             </div>
         <% } %>
 
-        <% if (theme.comment.valine.enable || theme.comment.gitalk.enable) { %>
+        <% if (
+                theme.comment.valine.enable
+                || theme.comment.gitalk.enable
+                || theme.comment.twikoo.enable
+        ) { %>
             <div class="comment-container">
                 <%- partial('_partial/comment/comment') %>
             </div>

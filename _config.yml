@@ -173,6 +173,13 @@ comment:
     client_id:             # GitHub Application Client ID
     client_secret:         # GitHub Application Client Secret
 
+  # Twikoo
+  # See: https://github.com/imaegoo/twikoo
+  twikoo:
+    enable: false
+    env_id:                # Tencent Cloud environment id
+    region:                # environment region. If select Guangzhou, fill in "ap-guangzhou".
+
 
 # ---------------------------------------------------------------------------------------
 # RSS

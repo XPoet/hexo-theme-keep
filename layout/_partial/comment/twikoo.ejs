@@ -1,0 +1,26 @@
+<% if(theme.comment.twikoo.enable === true && theme.comment.twikoo.env_id) { %>
+    <div class="twikoo-container">
+        <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
+                src="//cdn.jsdelivr.net/npm/twikoo@1.0.0/dist/twikoo.all.min.js"
+        ></script>
+        <div id="twikoo-comment"></div>
+        <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>>
+            function loadTwikoo() {
+                twikoo.init({
+                    el: '#twikoo-comment',
+                    envId: '<%= theme.comment.twikoo.env_id %>',
+                    region: '<%= theme.comment.twikoo.region %>',
+                });
+            }
+
+            if ('<%= theme.pjax.enable %>') {
+                const loadTwikooTimeout = setTimeout(() => {
+                    loadTwikoo();
+                    clearTimeout(loadTwikooTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadTwikoo);
+            }
+        </script>
+    </div>
+<% } %>
