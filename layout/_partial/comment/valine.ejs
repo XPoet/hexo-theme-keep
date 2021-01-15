@@ -20,20 +20,29 @@
                     lang: '<%= config.language %>'.toLowerCase()
                 });
 
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
                 // Add "Author" identify
                 const getValineDomTimer = setInterval(() => {
                     const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
                     if (vcards.length > 0) {
 
                         let author = '<%= theme.base_info.author || config.author %>';
-                        if (author) {
-                            author = author.toLocaleLowerCase();
-                        }
+                        author && (author = author.toLocaleLowerCase());
 
                         for (let vcard of vcards) {
                             const vnick = vcard.querySelector('.vhead .vnick');
                             if (vnick.innerHTML.toLocaleLowerCase() === author) {
-                                vcard.classList.add('author');
+                                vnick.innerHTML = `${author} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
                             }
                         }
                         clearInterval(getValineDomTimer);

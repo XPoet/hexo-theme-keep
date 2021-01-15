@@ -29,7 +29,8 @@ hexo.extend.helper.register('export_config', function () {
 
   let hexo_config = {
     hostname: url.parse(config.url).hostname || config.url,
-    root: config.root
+    root: config.root,
+    language: config.language
   };
 
   if (config.search) {
