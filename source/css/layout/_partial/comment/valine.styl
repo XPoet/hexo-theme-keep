@@ -81,6 +81,7 @@
         }
       }
 
+
       .vhead {
 
         .vnick {
@@ -97,12 +98,21 @@
       .vcontent {
         P {
           color: var(--default-text-color);
+
+          code {
+            color: var(--code-foreground);
+            background: var(--code-background);
+          }
         }
       }
 
 
       .vh {
         border-bottom-color: var(--border-color);
+      }
+
+      .vquote {
+        border-left-color: var(--border-color);
       }
     }
 
