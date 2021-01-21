@@ -1,29 +1,26 @@
 $keep-container-border-radius = 5px;
 
 hover-style(scaleX, scaleY) {
-
-  transition();
-
   box-shadow: 2px 2px 6px var(--shadow-color);
+  transition-t("transform", "0", "0.2", "linear");
 
   &:hover {
-
     if (hexo-config('style.hover.scale')) {
       transform: scaleX(scaleX) scaleY(scaleY);
     }
 
     if (hexo-config('style.hover.shadow')) {
-      box-shadow: 3px 3px 9px var(--shadow-hover-color);
+      box-shadow: 3px 3px 10px var(--shadow-hover-color);
     }
   }
 }
 
 
 keep-container(scaleX, scaleY, padding, marginBottomValue) {
-  background: var(--background-color);
   padding: padding;
   border-radius: $keep-container-border-radius;
   box-sizing: border-box;
+  background: var(--background-color);
 
   if (marginBottomValue != 0) {
     margin-bottom: marginBottomValue;

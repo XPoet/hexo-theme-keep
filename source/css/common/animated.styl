@@ -1,26 +1,36 @@
-transition() {
-  transition: all 0.3s ease;
+transition-g() {
+  transition-property: color, background, box-shadow, border-color;
+  transition-delay: 0s, 0s, 0s, 0s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+  transition-timing-function: ease, ease, ease, ease;
 }
 
+transition-t(property, delay, duration, function) {
+  $temp-property = "color, background, box-shadow, border-color";
+  $temp-delay = "0s, 0s, 0s, 0s";
+  $temp-duration = "0.2s, 0.2s, 0.2s, 0.2s";
+  $temp-function = "ease, ease, ease, ease";
 
-the-transition() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-}
+  for p in convert(property) {
+    $temp-property += ("," + p);
+  }
 
+  for d in convert(delay) {
+    $temp-delay += ("," + d + "s");
+  }
 
-the-transition-ease-in() {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in;
-  transition-delay: 0s;
-}
+  for d in convert(duration) {
+    $temp-duration += ("," + d + "s");
+  }
 
+  for f in convert(function) {
+    $temp-function += ("," + f);
+  }
 
-the-transition-ease-out() {
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  transition-property: convert($temp-property);
+  transition-delay: convert($temp-delay);
+  transition-duration: convert($temp-duration);
+  transition-timing-function: convert($temp-function);
 }
 
 
@@ -64,10 +74,10 @@ the-transition-ease-out() {
 .title-hover-animation {
   display: inline-block;
   position: relative;
-  color: var(--second-text-color);
   border-bottom: none;
   line-height: 1.3;
   vertical-align: top;
+  color: var(--second-text-color);
 
   &::before {
     content: "";
@@ -79,7 +89,7 @@ the-transition-ease-out() {
     background-color: var(--second-text-color);
     visibility: hidden;
     transform: scaleX(0);
-    the-transition();
+    transition-t("visibility transform", "0, 0", "0.2, 0.2", "ease-in-out, ease-in-out");
   }
 
   &:hover::before {

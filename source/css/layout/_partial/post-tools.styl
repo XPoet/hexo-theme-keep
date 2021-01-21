@@ -4,6 +4,7 @@ $li-margin-bottom = 12px;
 .post-tools-container {
 
   .tools-list {
+
     li {
       cursor: pointer;
       width: $post-tool-button-width;
@@ -15,18 +16,27 @@ $li-margin-bottom = 12px;
       justify-content: center;
       margin-bottom: $li-margin-bottom;
       background: var(--background-color);
+      color: var(--default-text-color);
+
+      i {
+        color: var(--default-text-color);
+      }
+
+      &:hover {
+        background: var(--primary-color);
+        color: var(--background-color);
+
+        i {
+          color: var(--background-color);
+        }
+      }
+
+      hover-style(1.1, 1.1);
 
       &:last-child {
         margin-bottom: 0;
       }
 
-      hover-style(1.1, 1.1);
-
-      &:hover {
-        transition();
-        color: var(--background-color);
-        background: var(--primary-color);
-      }
 
       &.page-aside-toggle {
         display: none;
@@ -37,6 +47,5 @@ $li-margin-bottom = 12px;
       }
     }
   }
-
 
 }

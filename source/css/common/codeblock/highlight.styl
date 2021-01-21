@@ -5,10 +5,9 @@ $code-block {
   margin: 20px 0;
   padding: 0;
   font-size 0.96rem;
+  line-height: 1.5rem;
   color: var(--highlight-foreground);
   background: var(--highlight-background);
-  line-height: 1.5rem;
-  transition: all 0.5s ease;
 }
 
 
@@ -19,10 +18,10 @@ pre, code {
 code {
   padding: 5px;
   word-wrap: break-word;
-  color: var(--code-foreground);
-  background: var(--code-background);
   border-radius: 2px;
   font-size: 0.96rem;
+  color: var(--code-foreground);
+  background: var(--code-background);
 }
 
 pre {
@@ -86,14 +85,24 @@ pre {
   }
 
   .code pre {
-    width: 100%
-    padding-left: 10px
-    padding-right: 10px
-    background-color: var(--highlight-background)
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--highlight-background);
   }
 
   .line {
     height: 20px;
+    color: var(--default-text-color);
+
+    .attr {
+      color: var(--default-text-color);
+    }
+
+    .string {
+      color: var(--default-text-color);
+    }
+
   }
 }
 
@@ -168,7 +177,7 @@ pre {
   .special
   .number
   .formula {
-    color: highlight-green;
+    color: var(--highlight-green);
   }
 
   .title

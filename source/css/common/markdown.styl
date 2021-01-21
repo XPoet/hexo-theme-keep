@@ -17,6 +17,7 @@
 
   p {
     line-height: 2rem;
+    color: var(--default-text-color);
   }
 
 
@@ -33,23 +34,30 @@
     .fas, .far, fab {
       margin-left: 6px;
       position: relative;
+      color: var(--third-text-color);
     }
 
+
     &:hover {
+      text-decoration: underline;
+
       &::after {
         background: var(--primary-color);
       }
     }
   }
 
-  a:hover {
-    text-decoration: underline;
+
+  strong {
+    color: var(--default-text-color);
   }
+
 
   ul > li, ol > li {
     margin-left: 16px;
     line-height: 2rem;
   }
+
 
   ul {
 
@@ -93,9 +101,15 @@
   }
 
 
+  li {
+    color: var(--default-text-color);
+  }
+
+
   h1, h2, h3, h4, h5, h6 {
     color: var(--second-text-color);
   }
+
 
   h1 {
     font-size: 1.8rem;
@@ -120,6 +134,7 @@
     }
   }
 
+
   h3 {
     font-size: 1.6rem;
     font-weight: 550;
@@ -143,6 +158,7 @@
     }
   }
 
+
   h5 {
     font-size: 1.28rem;
     font-weight: 500;
@@ -153,6 +169,7 @@
       line-height: 1.02rem;
     }
   }
+
 
   h6 {
     font-size: 1.2rem;
@@ -172,7 +189,6 @@
     cursor: zoom-in;
     display: block;
     box-shadow: 0 0 2px var(--shadow-color);
-    transition();
 
     if (hexo-config('style.article_img_align') == 'center') {
       margin: 10px auto 2px;
@@ -181,6 +197,7 @@
     }
 
   }
+
 
   & > table {
     border-spacing: 0;

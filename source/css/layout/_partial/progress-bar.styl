@@ -17,7 +17,8 @@
       visibility: hidden;
       opacity: 0;
       z-index: $z-index-8;
-      transition: all 0.1s ease;
+      transition-t("width", "0", "0.1", "linear");
+
 
       &.show {
         opacity: 1;
@@ -35,10 +36,9 @@
       align-items: center;
       justify-content: center;
       padding: 7px 6px 0 0;
-      color: var(--default-text-color);
       visibility: hidden;
       font-size: 1.1rem;
-      transition();
+      color: var(--default-text-color);
 
       +keep-tablet() {
         padding: 6px 5px 0 0;
@@ -46,7 +46,6 @@
       }
 
       &.show {
-        transition: visibility 0.1s linear;
         visibility: visible;
       }
     }
@@ -62,9 +61,9 @@
       width: 0;
       height: $scroll-progress-bar-height;
       visibility: hidden;
-      background: var(--primary-color);
-      transition: all 0.1s ease;
       z-index: $z-index-7;
+      background: var(--primary-color);
+      transition-t("width", "0", "0.1", "linear");
 
       &.hide {
         display: none !important;

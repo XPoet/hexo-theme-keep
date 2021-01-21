@@ -12,6 +12,7 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
   background: url($first-screen-img) center center / cover no-repeat;
   background-position-y: $header-height;
 
+
   +keep-tablet() {
     background-position-y: $header-height * 0.9;
   }
@@ -31,6 +32,8 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
       font-size: $first-screen-font-size;
       line-height: 1.8;
       text-align: center;
+      color: var(--default-text-color);
+
 
       +keep-tablet() {
         font-size: $first-screen-font-size * 0.9;
@@ -52,6 +55,10 @@ $first-screen-img = $temp-img ? $temp-img:'/images/bg.svg';
         margin-right: 20px;
         cursor: pointer;
         line-height: 2;
+
+        i {
+          color: var(--second-text-color);
+        }
 
         &:last-child {
           margin-right: 0;

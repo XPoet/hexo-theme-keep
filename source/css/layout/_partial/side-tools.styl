@@ -5,25 +5,31 @@ $tools-item-border-radius = 1px;
 
 .side-tools-container {
   position: relative;
-  transition();
 
   .tools-item {
     width: $tools-item-width;
     height: $tools-item-width;
     font-size: $tools-item-font-size;
     margin-bottom: 3px;
-    color: var(--second-text-color);
-    background: var(--background-color);
     cursor: pointer;
-    box-shadow: 1px 1px 3px var(--shadow-color);
     border-right: none;
     border-radius: $tools-item-border-radius;
+    box-shadow: 1px 1px 3px var(--shadow-color);
+    color: var(--default-text-color);
+    background: var(--background-color);
+
+    i {
+      color: var(--default-text-color);
+    }
 
     &:hover {
-      transition();
       color: var(--background-color);
       background: var(--primary-color);
       box-shadow: 2px 2px 6px var(--shadow-color);
+
+      i {
+        color: var(--background-color);
+      }
     }
 
     +keep-tablet() {
@@ -41,7 +47,6 @@ $tools-item-border-radius = 1px;
         height: 100%;
 
         &:hover {
-          transition();
           color: var(--background-color);
           background: var(--primary-color);
           box-shadow: 2px 2px 6px var(--shadow-color);
@@ -54,7 +59,7 @@ $tools-item-border-radius = 1px;
   .side-tools-list {
     opacity: 0;
     transform: translateX(100%);
-    transition();
+    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear");
 
     .tool-expand-width {
       +keep-tablet() {
@@ -76,8 +81,8 @@ $tools-item-border-radius = 1px;
       .tool-scroll-to-top {
         display: none;
 
+
         &:hover {
-          transition();
 
           .arrow-up {
             display: flex;
@@ -86,6 +91,11 @@ $tools-item-border-radius = 1px;
           .percent {
             display: none;
           }
+        }
+
+
+        .arrow-up, .percent {
+          transition-t("display", "0", "0.2", "linear");
         }
 
 

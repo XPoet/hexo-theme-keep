@@ -10,18 +10,18 @@ $icon-size = 1.2rem;
   background: rgba(0, 0, 0, 0);
   visibility: hidden;
   z-index: $z-index-8;
-
-  transition();
+  transition-t("visibility, background", "0, 0", "0.3, 0.3", "ease, ease");
 
   &.active {
-    background: rgba(0, 0, 0, 0.38);
     visibility: visible;
+    background: rgba(0, 0, 0, 0.35);
 
     .search-popup {
       transform: scale(1);
     }
 
   }
+
 
   .search-popup {
     background: var(--background-color);
@@ -31,7 +31,7 @@ $icon-size = 1.2rem;
     margin: auto;
     transform: scale(0);
     z-index: $z-index-6;
-    transition();
+    transition-t("transform", "0", "0.3", "ease");
 
     +keep-tablet() {
       width: 80%;

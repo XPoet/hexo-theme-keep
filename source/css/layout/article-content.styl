@@ -66,14 +66,18 @@ $article-title-font-size = 1.6rem;
         display: flex;
         align-items: center;
 
+        .name {
+          color: var(--default-text-color);
+        }
+
         .level {
           margin-left: 10px;
-          color: #fff;
           font-size: 0.8rem;
           font-weight: 500;
-          background: var(--selection-color);
           padding: 0 4px;
           border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
         }
       }
     }
@@ -96,6 +100,8 @@ $article-title-font-size = 1.6rem;
     border-bottom: 1px solid var(--border-color);
     word-wrap: break-word;
     text-align: justify;
+    color: var(--default-text-color);
+
   }
 
   .post-copyright-info {

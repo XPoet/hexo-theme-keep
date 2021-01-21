@@ -14,7 +14,6 @@ disable-user-select() {
 }
 
 .copy-btn {
-  color: var(--default-text-color);
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
@@ -26,8 +25,10 @@ disable-user-select() {
   vertical-align: middle;
   white-space: nowrap;
   font-size: 1rem;
+  color: var(--default-text-color);
   disable-user-select();
-  the-transition();
+  transition-t("opacity", "0", "0.2", "ease-in-out");
+
 
   if (hexo-config('code_copy.style') == 'mac') {
     color: white;

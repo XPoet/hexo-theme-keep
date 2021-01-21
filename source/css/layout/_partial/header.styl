@@ -11,7 +11,7 @@ $menu-bar-line-height = 2.5px;
   justify-content: center;
   background: var(--background-color);
   padding-top: $scroll-progress-bar-height;
-  transition();
+
 
   hover-style(1.02, 1.02);
 
@@ -25,7 +25,7 @@ $menu-bar-line-height = 2.5px;
     justify-content: space-between;
     align-items: center;
     z-index: $z-index-5;
-    transition();
+
 
     &.has-first-screen {
       max-width: $content-max-width * 1.2;
@@ -42,20 +42,20 @@ $menu-bar-line-height = 2.5px;
     .left {
       display: flex;
       align-items: center;
-      transition();
+      transition-t("transform", "0", "0.2", "linear");
 
       .header-shrink & {
         transform: scale(0.85);
         transform-origin: left;
-        transition();
+
       }
 
       .logo-title {
         font-size: $logo-title-font-size;
         font-weight: bold;
         letter-spacing: 1px;
+        line-height: 1;
         color: var(--first-text-color);
-        transition();
 
         +keep-tablet() {
           font-size: $logo-title-font-size * 0.9;
@@ -87,6 +87,7 @@ $menu-bar-line-height = 2.5px;
             margin-left: 30px;
             font-size: 1rem;
             cursor: pointer;
+            color: var(--default-text-color);
 
             &:first-child {
               margin-left: 0;
@@ -96,7 +97,6 @@ $menu-bar-line-height = 2.5px;
             a:hover, .active {
 
               &::after {
-                transition();
                 content: '';
                 position: absolute;
                 bottom: -10px;
@@ -105,9 +105,9 @@ $menu-bar-line-height = 2.5px;
                 height: 2px;
                 transform: translateX(-50%);
                 background: var(--primary-color);
+                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear");
 
                 .header-shrink & {
-                  transition();
                   bottom: -($header-shrink-height / 2 - 12);
                 }
               }
@@ -116,6 +116,11 @@ $menu-bar-line-height = 2.5px;
             &.search {
               font-size: $pc-search-icon-font-size;
               margin-left: 26px;
+
+              i {
+                color: var(--default-text-color);
+              }
+
             }
           }
 
@@ -138,6 +143,11 @@ $menu-bar-line-height = 2.5px;
           margin-left: 12px;
           width: 20px;
           height: 20px;
+          color: var(--default-text-color);
+
+          i {
+            color: var(--default-text-color);
+          }
 
           &:first-child {
             margin-left: 0;
@@ -157,12 +167,11 @@ $menu-bar-line-height = 2.5px;
             height: $menu-bar-line-height;
             position: relative;
             background: var(--default-text-color);
-            transition();
 
             .header-drawer-show & {
-              transition();
               background: transparent;
             }
+
 
             &::before, &::after {
               content: '';
@@ -171,7 +180,7 @@ $menu-bar-line-height = 2.5px;
               width: 100%;
               height: $menu-bar-line-height;
               background: var(--default-text-color);
-              transition();
+              transition-t("transform", "0", "0.38", "ease");
             }
 
 
@@ -206,12 +215,11 @@ $menu-bar-line-height = 2.5px;
     left: 0;
     transform: scaleY(0);
     transform-origin: top;
-    background: var(--background-color);
     z-index: $z-index-2;
-    transition();
+    background: var(--background-color);
+    transition-t("transform", "0", "0.38", "ease");
 
     .header-drawer-show & {
-      transition();
       transform: scaleY(1);
     }
 
@@ -230,7 +238,6 @@ $menu-bar-line-height = 2.5px;
           padding: 6px 20px;
           border-radius: 20px;
           color: var(--default-text-color);
-          transition();
 
           &:hover {
             color: var(--second-text-color);
@@ -259,12 +266,11 @@ $menu-bar-line-height = 2.5px;
     z-index: $z-index-1;
     visibility: hidden;
     opacity: 0;
-    transition();
+    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease");
 
     .header-drawer-show & {
       visibility: visible;
       opacity: 1;
-      transition();
     }
   }
 

@@ -2,6 +2,34 @@
 @require 'animated.styl'
 @require 'keep-theme.styl'
 
+// ======================================================================
+// all
+// ======================================================================
+* {
+  // ====================================
+  //  transition
+  // ====================================
+  transition-g();
+
+
+  // ====================================
+  // scrollbar
+  // ====================================
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    transition: all 0.2s ease;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+  }
+}
+
 
 // ======================================================================
 // html, body
@@ -26,30 +54,12 @@ html, body {
     line-height: $default-font-line-height * 0.96;
   }
 
+
   +keep-mobile() {
     font-size: $default-font-size * 0.9;
     line-height: $default-font-line-height * 0.9;
   }
 
-}
-
-
-// ======================================================================
-// scrollbar
-// ======================================================================
-* {
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-color);
-  }
-
-  &::-webkit-scrollbar-track {
-    background: var(--scroll-bar-bg-color);
-  }
 }
 
 
@@ -80,8 +90,8 @@ a {
   color: var(--default-text-color);
 
   &:hover, &:active {
-    color: var(--primary-color);
     text-decoration: none !important;
+    color: var(--primary-color);
   }
 
 }
@@ -96,7 +106,6 @@ img {
     margin: 20px auto !important;
     cursor: not-allowed;
     pointer-events: none;
-    transition();
   }
 }
 
@@ -122,10 +131,10 @@ button {
   border-radius: 5px;
   padding: 8px 16px;
   background: var(--background-color);
-  hover-style(1.1, 1.1);
+
+  hover-style(1.08, 1.08);
 
   &:hover {
-    transition();
     color: var(--background-color);
     background: var(--primary-color);
   }

@@ -25,12 +25,14 @@
       }
     }
 
+
     .nav-item {
       line-height: 1.8;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+
 
     .nav {
       .nav-child {
@@ -49,12 +51,21 @@
         }
       }
 
+
+      .nav-number, .nav-text {
+        color: var(--default-text-color);
+      }
+
       .active > a {
-        color: var(--primary-color);
+        .nav-number, .nav-text {
+          color: var(--primary-color);
+        }
       }
 
       .active-current > a {
-        color: var(--primary-color);
+        .nav-number, .nav-text {
+          color: var(--primary-color);
+        }
       }
     }
   }

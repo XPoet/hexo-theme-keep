@@ -1,13 +1,15 @@
 $temp-width = hexo-config('style.left_side_width');
-$page-aside-width = $temp-width ? convert($temp-width) : 260px;
+$page-aside-width = $temp-width ? convert($temp-width):260px;
 
 .page-container {
   position: relative;
-  transition();
+  transition-t("padding-left", "0", "0.3", "ease-out");
+
 
   +keep-tablet() {
     padding-left: 0 !important;
   }
+
 
   .page-main-content {
     padding-top: $header-height;
@@ -15,7 +17,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
     .header-shrink & {
       padding-top: $header-shrink-height;
-      transition();
+
 
       +keep-tablet() {
         padding-top: $header-shrink-height * 0.9;
@@ -26,13 +28,16 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
       }
     }
 
+
     +keep-tablet() {
       padding-top: $header-height * 0.9;
     }
 
+
     +keep-mobile() {
       padding-top: $header-height * 0.8;
     }
+
 
     .page-main-content-top {
       position: fixed;
@@ -42,7 +47,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
       height: $header-height;
       z-index: $z-index-5;
       box-sizing: border-box;
-      transition();
+      transition-t("padding-left, height", "0, 0", "0.3, 0.2", "ease-out, linear");
 
       &.hide {
         transform: translateY(-102%);
@@ -73,12 +78,14 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
     }
 
+
     .page-main-content-middle {
       box-sizing: border-box;
       width: 100%;
       display: flex;
       justify-content: center;
       padding: $component-spacing-value 0;
+      background: var(--background-color);
 
       +keep-tablet() {
         padding: $component-spacing-value * 0.8 0;
@@ -94,7 +101,6 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
         width: $main-content-width;
         max-width: $content-max-width;
         height: 100%;
-        transition();
 
         +keep-tablet() {
           width: $main-content-width-tablet;
@@ -122,16 +128,19 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
     height: 100%;
     z-index: $z-index-6;
     overflow-y: auto;
-    border-radius: 0 !important;
+    padding: 20px;
+    box-sizing: border-box;
+    background: var(--background-color);
 
-    keep-container(1.02, 1.02, 18px, 0);
+    hover-style(1.02, 1.02);
+
+    transition-t("left, transform", "0, 0", "0.3, 0.2", "ease-out, linear");
 
     +keep-tablet() {
       left: 0 !important;
       display: none !important;
     }
 
-    the-transition-ease-out();
   }
 
 
@@ -139,7 +148,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
     position: fixed;
     top: $header-height + $component-spacing-value;
     right: $component-spacing-value;
-    transition();
+    transition-t("top", "0", "0.2", "ease");
 
     .header-shrink & {
       top: $header-shrink-height + $component-spacing-value;
