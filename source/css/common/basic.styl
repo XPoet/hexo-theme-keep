@@ -89,7 +89,7 @@ a {
   text-decoration: none;
   color: var(--default-text-color);
 
-  i {
+  i, span {
     color: var(--default-text-color);
   }
 
@@ -97,7 +97,7 @@ a {
     text-decoration: none !important;
     color: var(--primary-color);
 
-    i {
+    i, span {
       color: var(--primary-color);
     }
   }
@@ -140,7 +140,7 @@ button {
   padding: 8px 16px;
   background: var(--background-color);
 
-  hover-style(1.08, 1.08);
+  hover-style(true, 1.06, 1.06);
 
   &:hover {
     color: var(--background-color);
