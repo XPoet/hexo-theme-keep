@@ -47,10 +47,10 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
       height: $header-height;
       z-index: $z-index-5;
       box-sizing: border-box;
-      transition-t("transform, padding-left, height", "0, 0", "0.3, 0.2", "ease-out, linear");
+      transition-t("transform, padding-left, height", "0, 0, 0", "0.3, 0.2, 0.2", "ease-out, linear, ease");
 
       &.hide {
-        transform: translateY(-102%);
+        transform: translateY(-105%);
       }
 
       .header-shrink & {
