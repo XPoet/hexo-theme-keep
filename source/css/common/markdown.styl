@@ -16,7 +16,7 @@
 
 
   p {
-    line-height: 2rem;
+    line-height: 2;
     color: var(--default-text-color);
   }
 
@@ -108,17 +108,20 @@
 
   h1, h2, h3, h4, h5, h6 {
     color: var(--second-text-color);
+    line-height: 1.5;
+
+    +keep-tablet() {
+      line-height: 1.25;
+    }
   }
 
 
   h1 {
     font-size: 1.8rem;
     font-weight: 600;
-    line-height: 1.2rem;
 
     +keep-tablet() {
       font-size: 1.7rem;
-      line-height: 1.1rem;
     }
   }
 
@@ -126,11 +129,9 @@
   h2 {
     font-size: 1.7rem;
     font-weight: 600;
-    line-height: 1.2rem;
 
     +keep-tablet() {
       font-size: 1.6rem;
-      line-height: 1.1rem;
     }
   }
 
@@ -138,11 +139,9 @@
   h3 {
     font-size: 1.6rem;
     font-weight: 550;
-    line-height: 1.16rem;
 
     +keep-tablet() {
       font-size: 1.5rem;
-      line-height: 1.06rem;
     }
   }
 
@@ -150,11 +149,9 @@
   h4 {
     font-size: 1.5rem;
     font-weight: 550;
-    line-height: 1.16rem;
 
     +keep-tablet() {
       font-size: 1.4rem;
-      line-height: 1.06rem;
     }
   }
 
@@ -162,11 +159,9 @@
   h5 {
     font-size: 1.28rem;
     font-weight: 500;
-    line-height: 1.12rem;
 
     +keep-tablet() {
       font-size: 1.18rem;
-      line-height: 1.02rem;
     }
   }
 
@@ -174,11 +169,11 @@
   h6 {
     font-size: 1.2rem;
     font-weight: 500;
-    line-height: 1.12rem;
+    line-height: 1.2;
 
     +keep-tablet() {
       font-size: 1.1rem;
-      line-height: 1.02rem;
+      line-height: 1.1;
     }
   }
 
