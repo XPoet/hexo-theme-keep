@@ -36,6 +36,8 @@ KEEP.initUtils = () => {
         const percent_dom = this.back2TopButton_dom.querySelector('.percent');
         if (percent === '0') {
           this.back2TopButton_dom.style.display = 'none';
+        } if (percent !== percent || !isFinite(percent)) {
+          this.back2TopButton_dom.style.display = 'none';
         } else {
           this.back2TopButton_dom.style.display = 'flex';
           percent_dom.innerHTML = percent;
