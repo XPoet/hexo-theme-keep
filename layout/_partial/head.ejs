@@ -27,8 +27,8 @@
         <% } %>
         <%= theme.base_info.title || config.title || 'Keep Theme' %>
     </title>
+    <link rel="stylesheet" href="/css/style.css">
     <%- favicon_tag(theme.style.favicon) %>
-    <%- css('css/style') %>
     <%- __css('css/font-awesome.min.css') %>
     <%- export_config() %>
 </head>
