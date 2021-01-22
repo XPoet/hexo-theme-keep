@@ -35,9 +35,9 @@ KEEP.initUtils = () => {
       if (this.isHasScrollPercent) {
         const percent_dom = this.back2TopButton_dom.querySelector('.percent');
         if (percent === '0') {
-          this.back2TopButton_dom.style.display = 'none';
+          this.back2TopButton_dom.classList.remove('show');
         } else {
-          this.back2TopButton_dom.style.display = 'flex';
+          this.back2TopButton_dom.classList.add('show');
           percent_dom.innerHTML = percent;
         }
       }

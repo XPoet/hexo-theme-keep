@@ -81,21 +81,26 @@ $tools-item-border-radius = 1px;
       .tool-scroll-to-top {
         display: none;
 
+        &.show {
+          display: flex;
+        }
 
         &:hover {
+
+          .percent {
+            display: none;
+          }
 
           .arrow-up {
             display: flex;
           }
 
-          .percent {
-            display: none;
-          }
+
         }
 
 
         .arrow-up, .percent {
-          transition-t("display", "0", "0.2", "linear");
+          transition-t("display", "5", "0.2", "linear");
         }
 
 
