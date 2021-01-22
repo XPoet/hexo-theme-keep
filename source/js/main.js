@@ -1,3 +1,5 @@
+/* global KEEP */
+
 window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
@@ -6,9 +8,37 @@ window.addEventListener('DOMContentLoaded', () => {
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
 
+  KEEP.localStorageKey = 'KEEP-THEME-STATUS';
+
+  KEEP.styleStatus = {
+    isExpandPageWidth: false,
+    prefersColorScheme: 'light',
+    isDark: false,
+    fontSizeLevel: 0
+  }
+
   // print theme base info
   KEEP.printThemeInfo = () => {
     console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
+  }
+
+  // set styleStatus to localStorage
+  KEEP.setStyleStatus = () => {
+    localStorage.setItem(KEEP.localStorageKey, JSON.stringify(KEEP.styleStatus));
+  }
+
+  // get styleStatus from localStorage
+  KEEP.getStyleStatus = () => {
+    let temp = localStorage.getItem(KEEP.localStorageKey);
+    if (temp) {
+      temp = JSON.parse(temp);
+      for (let key in KEEP.styleStatus) {
+        KEEP.styleStatus[key] = temp[key];
+      }
+      return temp;
+    } else {
+      return null;
+    }
   }
 
   KEEP.refresh = () => {

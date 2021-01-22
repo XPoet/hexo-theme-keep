@@ -1,3 +1,5 @@
+/* global KEEP */
+
 KEEP.initUtils = () => {
 
   KEEP.utils = {
@@ -14,7 +16,7 @@ KEEP.initUtils = () => {
     innerHeight: window.innerHeight,
     pjaxProgressBarTimer: null,
     prevScrollValue: 0,
-    defaultFontSize: 0,
+    fontSizeLevel: 0,
 
     isHasScrollProgressBar: KEEP.theme_config.style.scroll.progress_bar.enable === true,
     isHasScrollPercent: KEEP.theme_config.style.scroll.percent.enable === true,
@@ -78,23 +80,35 @@ KEEP.initUtils = () => {
 
     // global font adjust
     globalFontAdjust() {
-      const initFontSize = document.defaultView.getComputedStyle(document.body).fontSize;
-      const fs = Number(initFontSize.substring(0, initFontSize.length - 2));
+      const fontSize = document.defaultView.getComputedStyle(document.body).fontSize;
+      const fs = parseFloat(fontSize);
 
-      const setFontSize = (defaultFontSize) => {
-        this.html_root_dom.style.fontSize = `${fs * (1 + defaultFontSize * 0.05)}px`;
+      const initFontSize = () => {
+        const styleStatus = KEEP.getStyleStatus();
+        if (styleStatus) {
+          this.fontSizeLevel = styleStatus.fontSizeLevel;
+          setFontSize(this.fontSizeLevel);
+        }
       }
 
+      const setFontSize = (fontSizeLevel) => {
+        this.html_root_dom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`;
+        KEEP.styleStatus.fontSizeLevel = fontSizeLevel;
+        KEEP.setStyleStatus();
+      }
+
+      initFontSize();
+
       document.querySelector('.tool-font-adjust-plus').addEventListener('click', () => {
-        if (this.defaultFontSize >= 5) return;
-        this.defaultFontSize++;
-        setFontSize(this.defaultFontSize);
+        if (this.fontSizeLevel === 5) return;
+        this.fontSizeLevel++;
+        setFontSize(this.fontSizeLevel);
       });
 
       document.querySelector('.tool-font-adjust-minus').addEventListener('click', () => {
-        if (this.defaultFontSize <= 0) return;
-        this.defaultFontSize--;
-        setFontSize(this.defaultFontSize);
+        if (this.fontSizeLevel <= 0) return;
+        this.fontSizeLevel--;
+        setFontSize(this.fontSizeLevel);
       });
     },
 
@@ -115,9 +129,9 @@ KEEP.initUtils = () => {
         headerMaxWidth = parseInt(defaultMaxWidth) * 1.2 + 'px';
       }
 
-      toolExpandDom.addEventListener('click', () => {
-        isExpand = !isExpand;
-
+      const setPageWidth = (isExpand) => {
+        KEEP.styleStatus.isExpandPageWidth = isExpand;
+        KEEP.setStyleStatus();
         if (isExpand) {
           iconDom.classList.remove('fa-arrows-alt-h');
           iconDom.classList.add('fa-compress-arrows-alt');
@@ -129,8 +143,24 @@ KEEP.initUtils = () => {
           headerContentDom.style.maxWidth = headerMaxWidth;
           mainContentDom.style.maxWidth = defaultMaxWidth;
         }
+      }
 
+      const initPageWidth = () => {
+        const styleStatus = KEEP.getStyleStatus();
+        if (styleStatus) {
+          isExpand = styleStatus.isExpandPageWidth;
+          setPageWidth(isExpand);
+        }
+      }
+
+      initPageWidth();
+
+      toolExpandDom.addEventListener('click', () => {
+        isExpand = !isExpand;
+        setPageWidth(isExpand)
       });
+
+
     },
 
     // go comment anchor
@@ -215,34 +245,34 @@ KEEP.initUtils = () => {
 
       timestamp /= 1000;
 
-      const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12)
-      const __M = Math.floor(timestamp / (60 * 60 * 24 * 30))
-      const __W = Math.floor(timestamp / (60 * 60 * 24) / 7)
-      const __d = Math.floor(timestamp / (60 * 60 * 24))
-      const __h = Math.floor(timestamp / (60 * 60) % 24)
-      const __m = Math.floor(timestamp / 60 % 60)
-      const __s = Math.floor(timestamp % 60)
+      const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12);
+      const __M = Math.floor(timestamp / (60 * 60 * 24 * 30));
+      const __W = Math.floor(timestamp / (60 * 60 * 24) / 7);
+      const __d = Math.floor(timestamp / (60 * 60 * 24));
+      const __h = Math.floor(timestamp / (60 * 60) % 24);
+      const __m = Math.floor(timestamp / 60 % 60);
+      const __s = Math.floor(timestamp % 60);
 
       if (__Y > 0) {
-        return this.setHowLongAgoLanguage(__Y, l.year)
+        return this.setHowLongAgoLanguage(__Y, l.year);
 
       } else if (__M > 0) {
-        return this.setHowLongAgoLanguage(__M, l.month)
+        return this.setHowLongAgoLanguage(__M, l.month);
 
       } else if (__W > 0) {
-        return this.setHowLongAgoLanguage(__W, l.week)
+        return this.setHowLongAgoLanguage(__W, l.week);
 
       } else if (__d > 0) {
-        return this.setHowLongAgoLanguage(__d, l.day)
+        return this.setHowLongAgoLanguage(__d, l.day);
 
       } else if (__h > 0) {
-        return this.setHowLongAgoLanguage(__h, l.hour)
+        return this.setHowLongAgoLanguage(__h, l.hour);
 
       } else if (__m > 0) {
-        return this.setHowLongAgoLanguage(__m, l.minute)
+        return this.setHowLongAgoLanguage(__m, l.minute);
 
       } else if (__s > 0) {
-        return this.setHowLongAgoLanguage(__s, l.second)
+        return this.setHowLongAgoLanguage(__s, l.second);
       }
     },
 

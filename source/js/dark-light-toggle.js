@@ -1,3 +1,5 @@
+/* global KEEP */
+
 KEEP.initModeToggle = () => {
 
   KEEP.utils.modeToggle = {
@@ -18,19 +20,16 @@ KEEP.initModeToggle = () => {
         this.iconDom.className = 'fas fa-sun';
         this.articleContent.classList.add('night-code-theme');
       }
-      localStorage.setItem(this.localStorageKey, JSON.stringify(
-        {
-          prefersColorScheme: prefersColorScheme,
-          isDark: isDark
-        }
-      ));
+      KEEP.styleStatus.isDark = isDark;
+      KEEP.styleStatus.prefersColorScheme = prefersColorScheme;
+      KEEP.setStyleStatus();
     },
 
     initModeStatus() {
-      this.modeConfig = JSON.parse(localStorage.getItem(this.localStorageKey));
-      if (this.modeConfig) {
-        if (this.modeConfig.prefersColorScheme === 'dark') {
-          if (this.modeConfig.isDark) {
+      const styleStatus = KEEP.getStyleStatus();
+      if (styleStatus) {
+        if (styleStatus.prefersColorScheme === 'dark') {
+          if (styleStatus.isDark) {
             document.body.classList.remove('light-mode');
             this.articleContent.classList.remove('night-code-theme');
             this.iconDom.className = 'fas fa-sun';
@@ -41,7 +40,7 @@ KEEP.initModeToggle = () => {
           }
         } else {
 
-          if (this.modeConfig.isDark) {
+          if (styleStatus.isDark) {
             document.body.classList.remove('dark-mode');
             this.articleContent.classList.remove('night-code-theme');
             this.iconDom.className = 'fas fa-moon';
