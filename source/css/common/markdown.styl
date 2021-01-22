@@ -52,6 +52,7 @@
     color: var(--default-text-color);
   }
 
+
   em {
     color: var(--default-text-color);
   }
@@ -188,6 +189,7 @@
     cursor: zoom-in;
     display: block;
     box-shadow: 0 0 2px var(--shadow-color);
+    transition-t("padding, margin", "0, 0", "0.2, 0.2", "linear, linear");
 
     if (hexo-config('style.article_img_align') == 'center') {
       margin: 10px auto 2px;
