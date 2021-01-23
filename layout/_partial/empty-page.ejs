@@ -10,7 +10,7 @@
         <div class="empty-page-content markdown-body">
             <% if (page.content) { %>
                 <%- page.content %>
-            <% } else { %>
+            <% } else if (page.title !== 'link' && page.title !== 'links') { %>
                 <h1><%- page.title %></h1>
             <% } %>
         </div>
