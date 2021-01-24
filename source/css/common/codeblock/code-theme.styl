@@ -56,6 +56,11 @@ code-theme(mode) {
   code-theme('light');
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    code-theme('light');
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
