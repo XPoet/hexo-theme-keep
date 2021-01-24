@@ -1,58 +1,87 @@
-/* global KEEP */
-
 KEEP.initModeToggle = () => {
 
   KEEP.utils.modeToggle = {
 
+    localStorageKey: 'KEEP',
     modeToggleButton_dom: document.querySelector('.tool-dark-light-toggle'),
     iconDom: document.querySelector('.tool-dark-light-toggle i'),
+    articleContent: document.querySelector('.main-content'),
 
-    setItemUtil(modeClass, prefersColorScheme) {
-      document.body.classList.toggle(modeClass);
-      const isDark = document.body.className.indexOf(modeClass) === -1;
-
+    setItemUtil(modeClass) {
+      const isDark = document.body.className.indexOf('light-mode') === -1;
+      let currentScheme = "";
       if (isDark) {
-        this.iconDom.className = 'fas fa-moon';
+        this.enableLightMode();
+        currentScheme = "light";
       } else {
-        this.iconDom.className = 'fas fa-sun';
+        this.enableDarkMode();
+        currentScheme = "dark";
       }
-      KEEP.styleStatus.isDark = isDark;
-      KEEP.styleStatus.prefersColorScheme = prefersColorScheme;
-      KEEP.setStyleStatus();
+      localStorage.setItem(this.localStorageKey, JSON.stringify(
+        {
+          prefersColorScheme: currentScheme,
+          isDark: !isDark
+        }
+      ));
+    },
+
+    enableLightMode() {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      this.articleContent.classList.remove('night-code-theme');
+      this.iconDom.className = 'fas fa-moon';
+    },
+
+    enableDarkMode() {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      this.articleContent.classList.add('night-code-theme');
+      this.iconDom.className = 'fas fa-sun';
     },
 
     initModeStatus() {
-      const styleStatus = KEEP.getStyleStatus();
-      if (styleStatus) {
-        if (styleStatus.prefersColorScheme === 'dark') {
-          if (styleStatus.isDark) {
-            document.body.classList.remove('light-mode');
-            this.iconDom.className = 'fas fa-sun';
+      this.modeConfig = JSON.parse(localStorage.getItem(this.localStorageKey));
+      if (this.modeConfig) {
+        if (this.modeConfig.prefersColorScheme === 'dark') {
+          if (this.modeConfig.isDark) {
+            this.enableDarkMode();
           } else {
-            document.body.classList.add('light-mode');
-            this.iconDom.className = 'fas fa-moon';
+            this.enableLightMode();
           }
         } else {
-
-          if (styleStatus.isDark) {
-            document.body.classList.remove('dark-mode');
-            this.iconDom.className = 'fas fa-moon';
+          if (this.modeConfig.isDark) {
+            this.enableDarkMode();
           } else {
-            document.body.classList.add('dark-mode');
-            this.iconDom.className = 'fas fa-sun';
+            this.enableLightMode();
           }
-
         }
-
+      } else {
+        // First time visit with no LocalStorage exists.
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          this.enableDarkMode();
+        } else {
+          this.enableLightMode();
+        }
       }
     },
 
     initModeToggleButton() {
       this.modeToggleButton_dom.addEventListener('click', () => {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          this.setItemUtil('light-mode', 'dark');
+          this.setItemUtil('light-mode');
         } else {
-          this.setItemUtil('dark-mode', 'light');
+          this.setItemUtil('dark-mode');
+        }
+      });
+    },
+
+    initModeAutoTrigger() {
+      const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+      darkMode && darkMode.addEventListener('change', e => {
+        if (e.matches) {
+          this.enableDarkMode();
+        } else {
+          this.enableLightMode();
         }
       });
     }
@@ -60,5 +89,6 @@ KEEP.initModeToggle = () => {
 
   KEEP.utils.modeToggle.initModeStatus();
   KEEP.utils.modeToggle.initModeToggleButton();
+  KEEP.utils.modeToggle.initModeAutoTrigger();
 
 };
