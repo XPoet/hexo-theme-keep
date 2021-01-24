@@ -12,9 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.styleStatus = {
     isExpandPageWidth: false,
-    prefersColorScheme: 'light',
     isDark: false,
-    fontSizeLevel: 0
+    fontSizeLevel: 0,
+    isOpenPageAside: true
   }
 
   // print theme base info
