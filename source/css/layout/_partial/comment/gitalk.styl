@@ -4,11 +4,9 @@ $gt-color-sub := #a1a1a1
 $gt-color-loader := #999999
 $gt-color-error := #ff3860
 $gt-color-hr :=  #E9E9E9
-$gt-color-input-border := rgba(0,0,0,0.1)
 $gt-color-comment-txt := #333333
 $gt-color-link-active := #333333
 $gt-color-btn := #ffffff
-$gt-color-popbg := #ffffff
 $gt-size-base := 16px // default font-size
 $gt-size-border-radius := 5px
 $gt-breakpoint-mobile := 479px
@@ -219,6 +217,7 @@ $gt-size-avatar-mobi := em(32px)
 
   .gt-counts
     margin: 0 em(10px) 0 0
+    color: var(--default-text-color)
 
   .gt-user
     float: right
@@ -232,10 +231,13 @@ $gt-size-avatar-mobi := em(32px)
     &-inner
       display: inline-block
       cursor: pointer
+      .gt-user-name
+        color: var(--default-text-color)
+
     .gt-ico
       margin: 0 0 0 em(5px)
       svg
-        fill: inherit
+        fill: var(--default-text-color)
     .is--poping
       .gt-ico
         svg
@@ -247,7 +249,7 @@ $gt-size-avatar-mobi := em(32px)
 
   .gt-copyright
     margin: 0 em(15px) em(8px)
-    border-top: 1px solid $gt-color-hr
+    border-top: 1px solid var(--border-color)
     padding-top: em(8px)
 
   /* popup */
@@ -255,9 +257,9 @@ $gt-size-avatar-mobi := em(32px)
     position: absolute
     right: 0
     top: em(38px)
-    background: $gt-color-popbg
+    background: var(--background-color)
     display: inline-block
-    border: 1px solid $gt-color-hr
+    border: 1px solid var(--border-color)
     padding: em(10px) 0
     font-size: em(14px)
     letter-spacing: .5px
