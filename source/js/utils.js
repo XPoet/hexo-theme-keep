@@ -26,23 +26,23 @@ KEEP.initUtils = () => {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
       const clientHeight = window.innerHeight || document.documentElement.clientHeight;
-      const percent = Math.round(scrollTop / (scrollHeight - clientHeight) * 100).toFixed(0);
+
+      const percent = Math.round(scrollTop / (scrollHeight - clientHeight) * 100);
 
       if (this.isHasScrollProgressBar) {
         const ProgressPercent = (scrollTop / (scrollHeight - clientHeight) * 100).toFixed(3);
-        this.scrollProgressBar_dom.style.visibility = percent === '0' ? 'hidden' : 'visible';
+        this.scrollProgressBar_dom.style.visibility = percent === 0 ? 'hidden' : 'visible';
         this.scrollProgressBar_dom.style.width = `${ProgressPercent}%`;
       }
 
       if (this.isHasScrollPercent) {
         const percent_dom = this.back2TopButton_dom.querySelector('.percent');
-        if (percent === '0') {
+        if (percent === 0 || percent === undefined) {
           this.back2TopButton_dom.classList.remove('show');
-        } if (percent !== percent || !isFinite(percent)) {
-          this.back2TopButton_dom.classList.remove('show');
+
         } else {
           this.back2TopButton_dom.classList.add('show');
-          percent_dom.innerHTML = percent;
+          percent_dom.innerHTML = percent.toFixed(0);
         }
       }
 
