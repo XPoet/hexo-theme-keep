@@ -1,3 +1,4 @@
+/* global KEEP */
 function initTOC() {
   KEEP.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li');
 
@@ -66,9 +67,13 @@ function initTOC() {
       },
 
       showPageAsideWhenHasTOC() {
-        KEEP.utils.leftSideToggle.toggleBar.style.display = 'flex';
-        KEEP.utils.leftSideToggle.isOpenPageAside = true;
-        KEEP.utils.leftSideToggle.changePageLayoutWhenOpenToggle(KEEP.utils.leftSideToggle.isOpenPageAside);
+        const styleStatus = KEEP.getStyleStatus();
+        const key = 'isOpenPageAside';
+        if (styleStatus && styleStatus.hasOwnProperty(key)) {
+          KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(styleStatus[key]);
+        } else {
+          KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(true);
+        }
       }
     }
 
