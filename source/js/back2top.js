@@ -18,7 +18,7 @@ KEEP.initBack2Top = () => {
         if (top === 0) {
           clearInterval(scrollTopTimer);
         }
-      }, 30);
+      }, 50);
     },
 
     back2Bottom() {
