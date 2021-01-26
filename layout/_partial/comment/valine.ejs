@@ -35,14 +35,15 @@
                 const getValineDomTimer = setInterval(() => {
                     const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
                     if (vcards.length > 0) {
-
                         let author = '<%= theme.base_info.author || config.author %>';
-                        author && (author = author.toLocaleLowerCase());
 
-                        for (let vcard of vcards) {
-                            const vnick = vcard.querySelector('.vhead .vnick');
-                            if (vnick.innerHTML.toLocaleLowerCase() === author) {
-                                vnick.innerHTML = `${author} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
                             }
                         }
                         clearInterval(getValineDomTimer);
