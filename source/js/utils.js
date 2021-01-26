@@ -127,7 +127,7 @@ KEEP.initUtils = () => {
 
       let isExpand = false;
 
-      if (KEEP.theme_config.style.first_screen.enable === true) {
+      if (KEEP.theme_config.style.first_screen.enable === true && window.location.pathname === '/') {
         headerMaxWidth = parseInt(defaultMaxWidth) * 1.2 + 'px';
       }
 
