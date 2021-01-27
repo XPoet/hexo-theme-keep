@@ -67,13 +67,26 @@ function initTOC() {
       },
 
       showPageAsideWhenHasTOC() {
-        const styleStatus = KEEP.getStyleStatus();
-        const key = 'isOpenPageAside';
-        if (styleStatus && styleStatus.hasOwnProperty(key)) {
-          KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(styleStatus[key]);
-        } else {
-          KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(true);
+
+        const openHandle = () => {
+          const styleStatus = KEEP.getStyleStatus();
+          const key = 'isOpenPageAside';
+          if (styleStatus && styleStatus.hasOwnProperty(key)) {
+            KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(styleStatus[key]);
+          } else {
+            KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(true);
+          }
         }
+
+        const initOpenKey = 'init_open';
+
+        if (KEEP.theme_config.toc.hasOwnProperty(initOpenKey)) {
+          KEEP.theme_config.toc[initOpenKey] ? openHandle() : KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(false);
+
+        } else {
+          openHandle();
+        }
+
       }
     }
 
