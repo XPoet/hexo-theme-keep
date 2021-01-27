@@ -1,15 +1,56 @@
+$tag-count-height = 36px;
+$tag-count-width = 30px;
+$tag-link-padding = 12px;
+$tag-link-radius = 5px;
+
 .tagcloud-container {
 
-  keep-container(false, 0, 0, 30px, 30px);
+  keep-container(false, 0, 0, 30px, 0);
 
   .tagcloud-content {
+    position: relative;
 
-    text-align: justify;
-    font-size: 1.2rem;
+    a.tag-link {
+      position: relative;
+      height: $tag-count-height;
+      padding: 0 $tag-link-padding + $tag-count-height 0 $tag-link-padding;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 3px var(--shadow-color);
+      border-radius: $tag-link-radius;
+      box-sizing: border-box;
+      margin: 10px;
 
-    a {
-      padding: 8px 6px;
-      display: inline-block;
+
+      &:hover {
+        box-shadow: 0 2px 5px var(--shadow-hover-color);
+
+        .tag-count {
+          color: var(--default-text-color);
+        }
+      }
+
+      .tag-count {
+        position: absolute;
+        width: $tag-count-width;
+        height: 100%;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--second-background-color);
+        border-top-right-radius: $tag-link-radius;
+        border-bottom-right-radius: $tag-link-radius;
+
+        &:hover {
+          color: var(--default-text-color);
+        }
+
+      }
+
+
     }
   }
 }
