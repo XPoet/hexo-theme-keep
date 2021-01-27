@@ -9,24 +9,19 @@
       li.all-category-list-item {
         font-size: 1rem;
         margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         &:last-child {
           margin-bottom: 0;
         }
 
         span.all-category-list-count {
-          float: right;
           color: var(--default-text-color);
-
-
-          &::before {
-            content: '（';
-          }
-
-          &::after {
-            content: '）';
-          }
-
+          background: var(--second-background-color);
+          padding: 2px 8px;
+          border-radius: 2px;
         }
 
 
