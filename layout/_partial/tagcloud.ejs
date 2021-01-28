@@ -2,10 +2,11 @@
     <div class="fade-in-down-animation">
         <div class="tagcloud-container">
             <div class="tagcloud-content">
-                <%- list_tags({
-                    show_count: true,
-                    style: false,
-                    separator: ''
+                <%- tagcloud({
+                    min_font: 1,
+                    max_font: 1.6,
+                    unit: 'rem',
+                    amount: 100
                 }) %>
             </div>
         </div>
