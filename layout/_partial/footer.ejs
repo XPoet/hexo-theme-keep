@@ -25,5 +25,9 @@
         <div class="theme-info info-item">
             <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v<%= theme.version %></a>
         </div>
+        <% if (theme.footer.icp ){ %>
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn"><%= theme.footer.icp %></a></div>
+        <% } %>
+
     </div>
 </footer>
