@@ -29,8 +29,17 @@ hexo.extend.helper.register('createNewArchivePosts', function (posts) {
   return postList;
 });
 
-hexo.extend.helper.register('getLevel', function (postCount) {
-  return Math.ceil(postCount / 10);
+hexo.extend.helper.register('getAuthorLabel', function (postCount, isAuto, labelList) {
+
+  let level = Math.floor(Math.log2(postCount));
+  level = level < 2 ? 1 : level - 1;
+
+  if (isAuto === false && Array.isArray(labelList) && labelList.length > 0) {
+    return level > labelList.length ? labelList[labelList.length - 1] : labelList[level - 1];
+  } else {
+    return `Lv${level}`;
+  }
+
 });
 
 hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {

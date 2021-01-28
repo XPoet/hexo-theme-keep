@@ -91,6 +91,25 @@ home_article:
 
 
 # ---------------------------------------------------------------------------------------
+# Post page Settings
+# ---------------------------------------------------------------------------------------
+post:
+  # Post word count
+  # Dependencies: hexo-wordcount (npm install hexo-wordcount)
+  # See: https://github.com/willin/hexo-wordcount
+  word_count:
+    enable: false
+    wordcount: false  # word count, one article
+    min2read: false   # time to read, one article
+
+  author_label:
+    enable: true
+    auto: true  # if true, show Lv1, Lv2, Lv3... , If false, show custom label
+    # label array item can be one or more
+    custom_label_list: [ "Trainee", "Engineer", "Architect", "CTO", "BOSS" ]
+
+
+# ---------------------------------------------------------------------------------------
 # Code copy
 # ---------------------------------------------------------------------------------------
 code_copy:
@@ -119,17 +138,6 @@ toc:
 # ---------------------------------------------------------------------------------------
 copyright_info:
   enable: false
-
-
-# ---------------------------------------------------------------------------------------
-# Post word count
-# Dependencies: hexo-wordcount
-# See: https://github.com/willin/hexo-wordcount
-# ---------------------------------------------------------------------------------------
-post_wordcount:
-  enable: false
-  wordcount: false  # word count, one article
-  min2read: false   # time to read, one article
 
 
 # ---------------------------------------------------------------------------------------
