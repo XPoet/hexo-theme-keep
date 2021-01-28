@@ -102,6 +102,7 @@ post:
     wordcount: false  # word count, one article
     min2read: false   # time to read, one article
 
+  # Author label
   author_label:
     enable: true
     auto: true  # if true, show Lv1, Lv2, Lv3... , If false, show custom label
@@ -232,4 +233,4 @@ footer:
 # ---------------------------------------------------------------------------------------
 # Keep version (Please don't modify)
 # ---------------------------------------------------------------------------------------
-version: 3.3.2
+version: 3.4.0
