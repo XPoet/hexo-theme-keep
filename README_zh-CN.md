@@ -1,7 +1,7 @@
 <div align="right">
   语言:
   中文
-  <a title="Chinese" href="../README.md">English</a>
+  <a title="Chinese" href="README.md">English</a>
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.svg"></a>
