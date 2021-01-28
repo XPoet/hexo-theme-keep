@@ -1,6 +1,6 @@
 .category-list-container {
 
-  keep-container(false, 0, 0, 30px, 30px);
+  keep-container(false, 0, 0, 30px, 0);
 
   .category-list-content {
 
@@ -9,19 +9,24 @@
       li.all-category-list-item {
         font-size: 1rem;
         margin-bottom: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
         &:last-child {
           margin-bottom: 0;
         }
 
         span.all-category-list-count {
+          float: right;
           color: var(--default-text-color);
-          background: var(--second-background-color);
-          padding: 2px 8px;
-          border-radius: 2px;
+
+
+          &::before {
+            content: '[';
+          }
+
+          &::after {
+            content: ']';
+          }
+
         }
 
 
