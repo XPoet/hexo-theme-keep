@@ -1,4 +1,4 @@
-<% if(theme.comment.twikoo.enable === true && theme.comment.twikoo.env_id) { %>
+<% if(theme.comment.use === 'twikoo' && theme.comment.twikoo.env_id) { %>
     <div class="twikoo-container">
         <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
                 src="//cdn.jsdelivr.net/npm/twikoo@1.0.0/dist/twikoo.all.min.js"

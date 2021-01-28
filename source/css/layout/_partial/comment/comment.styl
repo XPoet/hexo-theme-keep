@@ -1,12 +1,13 @@
-if (hexo-config('comment.valine.enable')) {
-  @require "./valine.styl";
+if (hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
+  if (hexo-config('comment.use') == "valine") {
+    @require "./valine.styl";
 
-} else if (hexo-config('comment.gitalk.enable')) {
-  @require "./gitalk.styl";
+  } else if (hexo-config('comment.use') == "gitalk") {
+    @require "./gitalk.styl";
 
-} else if (hexo-config('comment.twikoo.enable')) {
-  @require "./twikoo.styl";
-
+  } else if (hexo-config('comment.use') == "twikoo") {
+    @require "./twikoo.styl";
+  }
 }
 
 .comments-container {

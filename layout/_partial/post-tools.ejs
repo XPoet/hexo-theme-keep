@@ -8,11 +8,7 @@
         <% } %>
 
         <!-- go comment -->
-        <% if (
-                theme.comment.valine.enable
-                || theme.comment.gitalk.enable
-                || theme.comment.twikoo.enable
-        ) { %>
+        <% if (theme.comment.enable === true && theme.comment.hasOwnProperty(theme.comment.use)) { %>
             <li class="go-comment">
                 <i class="fas fa-comment"></i>
             </li>

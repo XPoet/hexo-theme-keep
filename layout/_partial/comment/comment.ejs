@@ -3,11 +3,17 @@
     <div class="comment-area-title">
         <i class="fas fa-comments">&nbsp;<%- __('comments') %></i>
     </div>
-    <% if (theme.comment.valine.enable === true) { %>
-        <%- partial('valine') %>
-    <% } else if (theme.comment.gitalk.enable === true) { %>
-        <%- partial('gitalk') %>
-    <% } else if (theme.comment.twikoo.enable === true) { %>
-        <%- partial('twikoo') %>
+    <% if (theme.comment.enable === true && theme.comment.hasOwnProperty(theme.comment.use)) { %>
+
+        <% if  (theme.comment.use === 'valine') { %>
+            <%- partial('valine') %>
+
+        <% } else if (theme.comment.use === 'gitalk') { %>
+            <%- partial('gitalk') %>
+
+        <% } else if (theme.comment.use === 'twikoo') { %>
+            <%- partial('twikoo') %>
+
+        <% } %>
     <% } %>
 </div>

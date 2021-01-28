@@ -167,10 +167,12 @@ local_search:
 # Comment plugin
 # ---------------------------------------------------------------------------------------
 comment:
+  enable: false
+  use: valine  # values: valine | gitalk | twikoo
+
   # Valine
   # See: https://github.com/xCss/Valine
   valine:
-    enable: false
     appid:                # your leancloud application appid
     appkey:               # your leancloud application appkey
     placeholder:          # your placeholder
@@ -178,7 +180,6 @@ comment:
   # Gitalk
   # See: https://github.com/gitalk/gitalk
   gitalk:
-    enable: false
     github_id:             # GitHub repo owner
     repository:            # Repository name to store issues
     client_id:             # GitHub Application Client ID
@@ -187,7 +188,6 @@ comment:
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
   twikoo:
-    enable: false
     env_id:                # Tencent Cloud environment id
     region:                # environment region. If select Guangzhou, fill in "ap-guangzhou".
 
