@@ -2,7 +2,7 @@
     <div class="info-container">
         <div class="copyright-info info-item">
             &copy;
-            <% if (theme.footer.since) { %>
+            <% if (theme.footer.hasOwnProperty('since') && theme.footer.since) { %>
               <span><%= theme.footer.since %></span>&nbsp;-&nbsp;
             <% } %>
             <%= date(new Date(), 'YYYY') %>&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/"><%= theme.base_info.author || config.author %></a>
@@ -28,6 +28,5 @@
         <% if (theme.footer.hasOwnProperty('icp') && theme.footer.icp) { %>
             <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn"><%= theme.footer.icp %></a></div>
         <% } %>
-
     </div>
 </footer>
