@@ -20,7 +20,7 @@ hexo.extend.helper.register('export_config', function () {
   file = languageDir + '/' + (file ? file : 'en.yml');
   let languageContent = fs.readFileSync(file, 'utf8');
   try {
-    languageContent = yaml.safeLoad(languageContent);
+    languageContent = yaml.load(languageContent);
   } catch (e) {
     console.log(e);
   }
