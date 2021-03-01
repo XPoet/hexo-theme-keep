@@ -50,9 +50,7 @@ theme: keep
 请查看 «Keep» 官方文档：
 
 - **[Keep 官方文档](https://keep-docs.xpoet.cn/)**
-
 - **[Keep 主题配置指南](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
-
 - **[Keep 主题进阶使用](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
 
 不推荐直接修改 «Keep» 主题的文件。因为这可能导致错误（例如 git merge 冲突），并且在升级主题时修改的文件可能丢失。
