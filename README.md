@@ -20,7 +20,8 @@
 ## :star2: Online Preview
 
 - **[XPoet's Blog](https://xpoet.cn/)**
-- **[keep official website](https://keep.xpoet.cn/)**
+- **[Keep demo website](https://keep.xpoet.cn/)**
+- **[Keep official document](https://keep-docs.xpoet.cn/)**
 
 ## :rocket: Installation
 
@@ -46,11 +47,13 @@ theme: keep
 
 ## :wrench: Usage
 
-See docs: 
+Please see the official documents of «Keep».
 
-- [Keep theme usage guide](https://keep.xpoet.cn/2020/04/Keep-主题使用指南/)
+- **[Keep official document](https://keep-docs.xpoet.cn/)**
 
-- [Keep theme configuration guide](https://keep.xpoet.cn/2020/11/Keep-主题配置指南/)
+- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
+
+- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
 
 It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
 
