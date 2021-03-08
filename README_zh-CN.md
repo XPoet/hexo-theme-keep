@@ -70,7 +70,10 @@ $ npm update hexo-theme-keep
 
 ```sh
 $ cd themes/keep
+$ git add .
+$ git stash
 $ git pull
+$ git stash pop
 ```
 
 ## :art: 贡献
