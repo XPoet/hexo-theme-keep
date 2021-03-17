@@ -70,7 +70,10 @@ Or update to latest master branch:
 
 ```sh
 $ cd themes/keep
+$ git add .
+$ git stash
 $ git pull
+$ git stash pop
 ```
 
 ## :art: Contributing
