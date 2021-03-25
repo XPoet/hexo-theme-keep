@@ -6,7 +6,10 @@
                     <div class="content">
                         <div class="avatar radius">
                             <% if (f.avatar) { %>
-                                <img class="radius" alt="<%= f.name %>" src="<%= f.avatar %>">
+                                <img class="radius"
+                                     src="<%= f.avatar %>"
+                                     onerror="this.style.display='none'"
+                                >
                             <% } else { %>
                                 <i class="fas fa-user-friends"></i>
                             <% } %>
