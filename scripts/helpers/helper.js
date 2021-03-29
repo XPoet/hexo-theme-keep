@@ -51,11 +51,11 @@ hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
 });
 
 hexo.extend.helper.register('__js', function (path) {
-
+  const _js = hexo.extend.helper.get('js').bind(hexo);
   const cdnPathHandle = (path_2) => {
     return this.theme.cdn.enable
       ? `<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path_2}"></script>`
-      : `<script src="/${path_2}"></script>`;
+      : _js(path_2);
   }
 
   let t = ``;
@@ -72,9 +72,10 @@ hexo.extend.helper.register('__js', function (path) {
 });
 
 hexo.extend.helper.register('__css', function (path) {
+  const _css = hexo.extend.helper.get('css').bind(hexo);
   if (this.theme.cdn.enable) {
     return `<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`;
   } else {
-    return `<link rel="stylesheet" href="/${path}">`
+    return _css(path);
   }
 });
