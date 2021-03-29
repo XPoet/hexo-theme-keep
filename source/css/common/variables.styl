@@ -28,11 +28,11 @@ $media-max-width-mobile = 500px;                          // media query max wid
 
 keep-tablet()
   @media (max-width: $media-max-width)
-    {block}
+    { block }
 
 keep-mobile()
   @media (max-width: $media-max-width-mobile)
-    {block}
+    { block }
 
 
 // ========================================================================================
@@ -71,8 +71,8 @@ $border-color = darken($background-color, 30%);
 $selection-color = lighten($primary-color, 10%);
 $shadow-color = rgba(0, 0, 0, 0.2);
 $shadow-hover-color = rgba(0, 0, 0, 0.28);
-$scrollbar-color = rgba(200, 200, 200, 0.6);
-$scroll-bar-bg-color = darken($background-color, 6%);
+$scrollbar-color = lighten($default-text-color, 5%);
+$scroll-bar-bg-color = darken($background-color, 10%);
 $link-color = darken($default-text-color, 10%);
 $copyright-info-color = #CC0033;
 $avatar-background-color = #0066CC;
