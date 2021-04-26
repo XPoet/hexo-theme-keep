@@ -1,7 +1,7 @@
 <%- __js('js/libs/pjax.min.js') %>
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        const pjax = new Pjax({
+        window.pjax = new Pjax({
             selectors: [
                 'head title',
                 '.page-container',
