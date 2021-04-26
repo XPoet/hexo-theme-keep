@@ -23,7 +23,7 @@
 
         document.addEventListener('pjax:complete', () => {
             KEEP.utils.pjaxProgressBarEnd();
-            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
             KEEP.refresh();
         });
     });
