@@ -6,7 +6,7 @@ hexo.extend.filter.register(
     if (!theme.lazyload || !theme.lazyload.enable) return;
     data.content = data.content.replace(
       // Match 'img' tags width the src attribute.
-      /<img([^>]*)src="([^"]*)"([^>]*)>/gim,
+      /<img([^>]*)src="([^"]*)"([^>\/]*)\/?\s*>/gim,
       function (match, attrBegin, src, attrEnd) {
         // Exit if the src doesn't exists.
         if (!src) return match;
