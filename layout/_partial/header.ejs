@@ -2,8 +2,13 @@
 
     <div class="header-content<%- (theme.style.first_screen.enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left">
+            <% if (theme.base_info.hasOwnProperty('logo_img') && theme.base_info.logo_img) { %>
+                <a class="logo-image" href="/">
+                    <%- image_tag(theme.base_info.logo_img) %>
+                </a>
+            <% } %>
             <a class="logo-title" href="/">
-                <%= theme.base_info.title || config.title || 'Keep theme' %>
+                <%= theme.base_info.title || config.title || 'Keep Theme' %>
             </a>
         </div>
 

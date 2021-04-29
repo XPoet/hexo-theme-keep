@@ -5,6 +5,8 @@ base_info:
   title: Keep Theme
   author: Keep Team
   url: https://keep.xpoet.cn/
+  # Logo image (You can use local image, image external link or don’t fill)
+  logo_img:
 
 
 # ---------------------------------------------------------------------------------------
