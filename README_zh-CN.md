@@ -70,6 +70,12 @@ $ npm update hexo-theme-keep
 
 ```sh
 $ cd themes/keep
+$ git pull
+```
+
+_如果你修改了主题源码：_
+
+```sh
 $ git add .
 $ git stash
 $ git pull
