@@ -70,6 +70,12 @@ Or update to latest master branch:
 
 ```sh
 $ cd themes/keep
+$ git pull
+```
+
+_If you modified theme source code:_
+
+```sh
 $ git add .
 $ git stash
 $ git pull
