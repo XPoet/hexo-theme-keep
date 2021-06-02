@@ -3,7 +3,8 @@
         <div class="copyright-info info-item">
             &copy;
             <% if (theme.footer.hasOwnProperty('since') && theme.footer.since) { %>
-              <span><%= theme.footer.since %></span>&nbsp;-&nbsp;
+              <span><%= theme.footer.since %></span>
+              -
             <% } %>
             <%= date(new Date(), 'YYYY') %>&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/"><%= theme.base_info.author || config.author %></a>
         </div>
