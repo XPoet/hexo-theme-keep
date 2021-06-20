@@ -1,16 +1,15 @@
 <div align="right">
-  Language:
-  English
+  語言:
+  繁中
+  <a title="Chinese" href="README.md">English</a>
   <a title="Chinese" href="README_zh-CN.md">简中</a>
-  <a title="Chinese" href="README_zh-TW.md">繁中</a>
-  
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.svg"></a>
 
 # hexo-theme-keep
 
-«Keep» is a simple and elegant [Hexo](https://hexo.io) theme. It makes you more focused on writing.
+«Keep» 是一款簡約優雅的 [Hexo](https://hexo.io) 主題。它能讓你更專注於寫作。
 
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/releases)
@@ -19,63 +18,63 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E=12.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-keep?style=flat-square&logo=jsdelivr)](https://www.jsdelivr.com/package/npm/hexo-theme-keep)
 
-## :star2: Online Preview
+## :star2: 線上預覽
 
 - **[XPoet's Blog](https://xpoet.cn/)**
-- **[Keep demo website](https://keep.xpoet.cn/)**
-- **[Keep official document](https://keep-docs.xpoet.cn/)**
+- **[keep 預覽網頁](https://keep.xpoet.cn/)**
+- **[keep 官方文檔](https://keep-docs.xpoet.cn/)**
 
-## :rocket: Installation
+## :rocket: 安装
 
-If you're using Hexo 5.0 or later, the simplest way to install is through npm:
+如果你在使用 Hexo 5.0 或更高版本，最簡單的安裝方式是透過 npm：
 
 ```sh
 $ cd hexo-site
 $ npm install hexo-theme-keep
 ```
 
-Or you can clone the entire repository:
+你也可以直接 clone 整個原始碼庫：
 
 ```sh
 $ cd hexo-site
 $ git clone https://github.com/XPoet/hexo-theme-keep themes/keep
 ```
 
-After the installation, open Hexo config file and set `theme` variable to `keep`.
+安裝完成後，在 Hexo 配置文件中將 `theme` 設定為 `keep`。
 
 ```yml
 theme: keep
 ```
 
-## :wrench: Usage
+## :wrench: 使用
 
-Please see the official documents of «Keep».
+請查看 «Keep» 官方文檔：
 
-- **[Keep official document](https://keep-docs.xpoet.cn/)**
-- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
-- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
+- **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
+- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
+- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
 
-It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
+不推薦直接修改 «Keep» 主題的文件。因為這可能導致錯誤（例如 git merge 衝突），並且在更新主題時修改的文件可能丟失。
 
-## :dart: Update
+## :dart: 更新
 
-«Keep» releases new versions from time to time. You can update Keep by the following command.
+«Keep» 不定期發布新版本。你可以透過如下命令更新 «Keep»。
 
-Install the latest version throuth npm:
+透過 npm 安裝最新版本：
 
 ```sh
 $ cd hexo-site
 $ npm update hexo-theme-keep
 ```
 
-Or update to latest master branch:
+或者透過 git 更新到最新的 master 分支：
 
 ```sh
 $ cd themes/keep
 $ git pull
 ```
 
-_If you modified theme source code:_
+_如果你修改了主題原始碼：_
 
 ```sh
 $ git add .
@@ -84,31 +83,30 @@ $ git pull
 $ git stash pop
 ```
 
-## :art: Contributing
+## :art: 貢獻
 
-We welcome you to join the development of «Keep». Please see [contributing guide](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/).
+我們歡迎你加入 «Keep» 的開發，貢獻出你的一份力量。請看[Keep 原始碼貢獻指南](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/)。
 
-## :clapper: Contributors
+## :clapper: 貢獻者
 
-This project exists thanks to all the people who contribute.
+這個項目的存在多虧了所有的貢獻者。
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
   <img src="https://opencollective.com/hexo-theme-keep/contributors.svg?width=880">
 </a>
 
-## :sparkling_heart: Thanks
+## :sparkling_heart: 銘謝
 
-«Keep» send special thanks to these great services that sponsor our core infrastructure:
+«Keep» 特别感謝這些支持我們核心基本設施的優質服務：
 
 <a href="https://github.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/GitHub-LOGO.5sq0168mirg0.png"></a>
 
-> GitHub allows us to host the Git repository and run the test suite.
+> GitHub 允許我們存放 Git 原始碼庫及運行測試。
 
 <a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
-> Thanks jsDelivr for providing public CDN service.
+> jsDelivr 提供了 CDN 服務。
 
-## :memo: License
+## :memo: 許可
 
 [MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-2021 XPoet
-
