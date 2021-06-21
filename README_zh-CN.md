@@ -1,7 +1,8 @@
 <div align="right">
   语言:
-  中文
+  简中
   <a title="Chinese" href="README.md">English</a>
+  <a title="Chinese" href="README_zh-TW.md">繁中</a>
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.svg"></a>
@@ -108,4 +109,4 @@ $ git stash pop
 
 ## :memo: 许可
 
-[MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020 XPoet
+[MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-2021 XPoet
