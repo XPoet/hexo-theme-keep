@@ -1,8 +1,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="<%= config.keywords || 'Hexo Theme Keep' %>">
-    <meta name="description" content="<%= config.description || 'Hexo Theme Keep' %>">
+    <meta name="keywords" content="<%= page.keywords || config.keywords || 'Hexo Theme Keep' %>">
+    <meta name="description" content="<%= page.description || config.description || 'Hexo Theme Keep' %>">
     <meta name="author" content="<%= theme.base_info.author || config.author || 'Keep Team' %>">
     <%
     let title = page.title;
