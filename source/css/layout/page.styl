@@ -1,8 +1,12 @@
 $temp-width = hexo-config('style.left_side_width');
-$page-aside-width = $temp-width ? convert($temp-width):260px;
+$page-aside-width = $temp-width ? convert($temp-width) : 260px;
 
 .page-container {
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  background: var(--background-color);
   transition-t("padding-left", "0", "0.3", "ease-out");
 
 
@@ -85,7 +89,6 @@ $page-aside-width = $temp-width ? convert($temp-width):260px;
       display: flex;
       justify-content: center;
       padding: $component-spacing-value 0;
-      background: var(--background-color);
 
       +keep-tablet() {
         padding: $component-spacing-value * 0.8 0;
