@@ -27,18 +27,15 @@
     }
   }
 
-
-  .article-wordcount, .article-tags {
-    +keep-mobile() {
+  .article-min2read, .article-tags {
+    +keep-tablet() {
       display: none;
     }
   }
 
-  .article-min2read, .article-categories {
-
-    +keep-tablet() {
+  .article-wordcount {
+    +keep-mobile() {
       display: none;
     }
-
   }
 }
