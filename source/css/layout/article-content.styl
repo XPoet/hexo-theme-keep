@@ -114,6 +114,12 @@ $article-title-font-size = 1.6rem;
       display: flex;
     }
 
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
     .tag-item {
       margin: 0 0.25rem;
     }
@@ -122,6 +128,10 @@ $article-title-font-size = 1.6rem;
   .post-copyright-info {
     margin-top: $component-spacing-value;
     width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
   }
 
 
