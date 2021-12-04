@@ -1,10 +1,10 @@
 {
   "name": "hexo-theme-keep",
-  "version": "3.4.4",
+  "version": "3.4.5",
   "private": false,
   "description": "A simple and elegant theme for Hexo.",
   "scripts": {
-    "release": "git push --tag && git push -u origin master",
+    "release": "git push --tag && git push -u origin dev",
     "publish": "npm publish"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "powerful"
   ],
   "author": "XPoet",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/XPoet/hexo-theme-keep/issues"
   },
