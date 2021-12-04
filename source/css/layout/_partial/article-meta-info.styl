@@ -10,6 +10,24 @@
     }
   }
 
+  .article-date {
+
+    .mobile {
+      display: none;
+    }
+
+    +keep-tablet() {
+      .pc {
+        display: none;
+      }
+
+      .mobile {
+        display: inline;
+      }
+    }
+
+  }
+
 
   .article-tags, .article-categories {
     display: inline;
@@ -27,18 +45,15 @@
     }
   }
 
-
-  .article-wordcount, .article-tags {
-    +keep-mobile() {
+  .article-tags {
+    +keep-tablet() {
       display: none;
     }
   }
 
-  .article-min2read, .article-categories {
-
-    +keep-tablet() {
+  .article-min2read, .article-wordcount {
+    +keep-mobile() {
       display: none;
     }
-
   }
 }

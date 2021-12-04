@@ -42,5 +42,5 @@ ago:
   hour: "%s 小时前"
   day: "%s 天前"
   week: "%s 周前"
-  month: "%s 月前"
+  month: "%s 个月前"
   year: "%s 年前"

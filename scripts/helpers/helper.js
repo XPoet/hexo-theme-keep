@@ -44,7 +44,11 @@ hexo.extend.helper.register('getAuthorLabel', function (postCount, isAuto, label
 
 hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
   if (rootUrl) {
-    return url.parse(rootUrl).href + path;
+    let { href } = url.parse(rootUrl);
+    if (href.substr(href.length - 1, 1) !== '/') {
+      href = href + '/';
+    }
+    return href + path;
   } else {
     return path;
   }

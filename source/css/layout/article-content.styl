@@ -103,10 +103,37 @@ $article-title-font-size = 1.6rem;
     color: var(--default-text-color);
   }
 
+
+  .post-tags-box {
+    display: none;
+    margin-top: 1.6rem;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    +keep-tablet() {
+      display: flex;
+    }
+
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
+    .tag-item {
+      margin: 0 0.25rem;
+    }
+  }
+
   .post-copyright-info {
     margin-top: $component-spacing-value;
     width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
   }
+
 
   .article-nav {
     height: 40px;

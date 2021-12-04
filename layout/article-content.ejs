@@ -40,6 +40,16 @@
             </div>
         <% } %>
 
+        <% if (page.tags.length) { %>
+            <ul class="post-tags-box">
+                <% page.tags.forEach((tag) => { %>
+                    <li class="tag-item">
+                        <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>&nbsp;
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+
         <% if (page.prev || page.next) { %>
             <div class="article-nav">
                 <% if (page.prev) { %>
