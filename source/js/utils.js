@@ -329,6 +329,25 @@ KEEP.initUtils = () => {
         }, 200);
 
       }, 200);
+    },
+
+    // loading hitokoto
+    initHitokoto() {
+
+      if (KEEP.theme_config.style.first_screen.enable === true && KEEP.theme_config.style.first_screen.hitokoto && window.location.pathname === '/') {
+
+        fetch(KEEP.theme_config.style.first_screen.hitokoto)
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            this.firstScreen_dom.querySelector('.description').innerText = data.hitokoto;
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+      }
+
     }
   }
 
@@ -358,5 +377,8 @@ KEEP.initUtils = () => {
 
   // set how long age in home article block
   KEEP.utils.setHowLongAgoInHome();
+
+  // loading hitokoto
+  KEEP.utils.initHitokoto();
 
 }
