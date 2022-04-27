@@ -40,7 +40,7 @@ style:
     enable: false
     background_img: /images/bg.svg # You can use local image or image external link
     description: Keep writing and Keep loving.
-    hitokoto: # Hitokoto api. https://v1.hitokoto.cn
+    hitokoto: # Hitokoto api. https://v1.hitokoto.cn/?encode=js
 
   # Scroll style settings
   scroll:
