@@ -173,6 +173,7 @@ comment:
   # See: https://github.com/gitalk/gitalk
   gitalk:
     github_id: # GitHub repo owner
+    github_admins: # GitHub Admins (in Array type), optional.
     repository: # Repository name to store issues
     client_id: # GitHub Application Client ID
     client_secret: # GitHub Application Client Secret
