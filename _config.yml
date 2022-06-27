@@ -216,6 +216,8 @@ footer:
   since: 2020 # the starting year of your website, Can be null
   icp: # ICP record number of your website, Can be null
   upyun: # url
+  police: # Police record number of your website，Can be null
+  police_name:  # Police record number of your website，Can be null
 
 # ---------------------------------------------------------------------------------------
 # Keep version (Please don't modify)
