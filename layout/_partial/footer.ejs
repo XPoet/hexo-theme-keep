@@ -34,5 +34,10 @@
                 <img src="/images/upyun.png" alt="upyun" srcset="" height="24" style="position:relative; top:6px">
                 提供CDN加速/云存储服务</a></div>
         <% } %>
+        <% if (theme.footer.hasOwnProperty('police') && theme.footer.police && theme.footer.police_name) { %>
+            <div style="width:300px;margin:0 auto; padding:0px 0;">
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%= theme.footer.police %>" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/images/police.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"><%= theme.footer.police_name %></p></a>
+		 	</div>
+		<% } %>
     </div>
 </footer>
