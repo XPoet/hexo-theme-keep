@@ -48,6 +48,7 @@ style:
     enable: false
     background_img: /images/bg.svg # You can use local image or image external link
     description: Keep writing and Keep loving.
+    hitokoto: # Hitokoto api. https://v1.hitokoto.cn/?encode=js
 
   # Scroll style settings
   scroll:
@@ -225,6 +226,7 @@ footer:
   since: 2020 # the starting year of your website, Can be null
   icp: # ICP record number of your website, Can be null
   upyun: # url
+  code: # Statistical codes of your website, Can be null
 
 # ---------------------------------------------------------------------------------------
 # Keep version (Please don't modify)

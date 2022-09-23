@@ -329,7 +329,7 @@ KEEP.initUtils = () => {
         }, 200);
 
       }, 200);
-    }
+    },
   }
 
   // init scroll

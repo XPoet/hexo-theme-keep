@@ -34,5 +34,10 @@
                 <img src="/images/upyun.png" alt="upyun" srcset="" height="24" style="position:relative; top:6px">
                 提供CDN加速/云存储服务</a></div>
         <% } %>
+        <% if (theme.footer.hasOwnProperty('code') && theme.footer.code) { %>
+            <div class="code-info info-item">
+                <%- theme.footer.code %>
+            </div>
+        <% } %>
     </div>
 </footer>
