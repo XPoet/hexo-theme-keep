@@ -24,7 +24,7 @@
                     clientSecret: '<%= theme.comment.gitalk.client_secret %>',
                     repo: '<%= theme.comment.gitalk.repository %>',
                     owner: '<%= theme.comment.gitalk.github_id %>',
-                    admin: ['<%= theme.comment.gitalk.github_id %>'],
+                    admin: <% if (theme.comment.gitalk.github_admins) { %><%= theme.comment.gitalk.github_admins %><% } else { %>['<%= theme.comment.gitalk.github_id %>']<% } %>,
                     id: __gitalk__pathname,
                     language: '<%= config.language %>'
                 }).render('gitalk-container');
