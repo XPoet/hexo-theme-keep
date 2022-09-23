@@ -2,11 +2,19 @@
 #  Your basic info
 # ---------------------------------------------------------------------------------------
 base_info:
+  # Your website title
   title: Keep Theme
+
+  # Your blog author name
   author: Keep Team
+
+  # Your website url
   url: https://keep.xpoet.cn/
-  # Logo image (You can use local image, image external link or don’t fill)
-  logo_img:
+
+  # Your website logo image
+  # You can use local image, image external link or don’t fill
+  logo: /images/logo.svg
+
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
