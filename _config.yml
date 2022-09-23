@@ -51,7 +51,7 @@ style:
     # First screen background image (You can use local image or image external link)
     background_img: /images/bg.svg
 
-    # First screen background image (You can use local image or image external link)
+    # First screen description
     description: Keep writing and Keep loving.
 
     # If enable hitokoto
@@ -61,8 +61,11 @@ style:
 
   # Page scroll style settings
   scroll:
+    # Show progress bar in top when page scroll
     progress_bar:
       enable: false
+
+    # Show percent when page scroll
     percent:
       enable: false
 
@@ -72,14 +75,14 @@ style:
 social_contact:
   enable: false
   links:
-    github: # your GitHub URL
-    weixin: # your WeChat QR-Code URL
-    qq: # your QQ QR-Code URL
-    weibo: # your WeiBo URL
-    zhihu: # your ZhiHu URL
-    twitter: # your twitter URL
-    facebook: # your facebook URL
-    email: # your email
+    github:          # Your GitHub URL
+    weixin:          # Your WeChat QR-Code URL
+    qq:              # Your QQ QR-Code URL
+    weibo:           # Your WeiBo URL
+    zhihu:           # Your ZhiHu URL
+    twitter:         # Your Twitter URL
+    facebook:        # Your Facebook URL
+    email:           # Your Email
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
