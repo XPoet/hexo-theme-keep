@@ -1,10 +1,22 @@
+<%
+const {
+  description: fs_description,
+  hitokoto: fs_hitokoto
+} = theme.style.first_screen
+const { description: c_description } = config
+%>
 <div class="first-screen-container flex-center fade-in-down-animation">
     <div class="content flex-center">
-        <div class="description hitokoto">
-            <%= theme.style.first_screen.description || config.description %>
-        </div>
-        <% if (theme.style.first_screen.hitokoto) { %>
-            <script data-pjax="" src="<%- theme.style.first_screen.hitokoto %>"></script>
+        <% if (fs_description || c_description || fs_hitokoto.enable) { %>
+            <div class="description hitokoto">
+                <%= fs_description || c_description %>
+            </div>
+        <% } %>
+        <% if (fs_hitokoto.enable) { %>
+            <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
+                    src="https://v1.hitokoto.cn/?encode=js"
+            >
+            </script>
         <% } %>
         <% if (theme.social_contact.enable) { %>
             <div class="s-icon-list">

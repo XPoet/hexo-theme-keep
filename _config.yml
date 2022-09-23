@@ -39,17 +39,27 @@ style:
 
   # Mouse hover
   hover:
-    shadow: false # shadow effect when the mouse hover
-    scale: false # scale effect when the mouse hover
+    # shadow effect when the mouse hover
+    shadow: false
+    # scale effect when the mouse hover
+    scale: false
 
   # First screen
   first_screen:
     enable: false
-    background_img: /images/bg.svg # You can use local image or image external link
-    description: Keep writing and Keep loving.
-    hitokoto: # Hitokoto api. https://v1.hitokoto.cn/?encode=js
 
-  # Scroll style settings
+    # First screen background image (You can use local image or image external link)
+    background_img: /images/bg.svg
+
+    # First screen background image (You can use local image or image external link)
+    description: Keep writing and Keep loving.
+
+    # If enable hitokoto
+    # First screen description is different every time when you enter the site
+    hitokoto:
+      enable: false
+
+  # Page scroll style settings
   scroll:
     progress_bar:
       enable: false
