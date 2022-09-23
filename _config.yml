@@ -15,7 +15,6 @@ base_info:
   # You can use local image, image external link or don’t fill
   logo: /images/logo.svg
 
-
 # ---------------------------------------------------------------------------------------
 # Theme style settings
 # ---------------------------------------------------------------------------------------
@@ -223,10 +222,9 @@ pjax:
 # Footer settings
 # ---------------------------------------------------------------------------------------
 footer:
-  since: 2020 # the starting year of your website, Can be null
-  icp: # ICP record number of your website, Can be null
-  upyun: # url
-  code: # Statistical codes of your website, Can be null
+  since: 2020 # the starting year of your website (Can be null)
+  icp: # ICP record number of your website (Can be null)
+  upyun: # If your site is deployed on upyun, Your can fill the upyun url (Can be null)
 
 # ---------------------------------------------------------------------------------------
 # Keep version (Please don't modify)
