@@ -2,16 +2,16 @@
 #  Your basic info
 # ---------------------------------------------------------------------------------------
 base_info:
-  # Your website title
+  # Your blog website title
   title: Keep Theme
 
-  # Your blog author name
+  # Your blog website author name
   author: Keep Team
 
-  # Your website url
+  # Your blog website url
   url: https://keep.xpoet.cn/
 
-  # Your website logo image
+  # Your blog website logo image
   # You can use local image, image external link or don’t fill
   logo: /images/logo.svg
 
@@ -53,6 +53,10 @@ style:
 
     # First screen description
     description: Keep writing and Keep loving.
+
+    # If you want to customize the first screen font color, you can fill in here (e.g. "#0066CC")
+    # Otherwise use the theme default font color
+    font_color:
 
     # If enable hitokoto
     # First screen description is different every time when you enter the site
