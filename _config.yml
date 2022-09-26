@@ -11,16 +11,16 @@ base_info:
   # Your blog website url
   url: https://keep.xpoet.cn/
 
-  # Your blog website logo image
-  # You can use local image, image external link or don’t fill
-  logo: /images/logo.svg
-
 # ---------------------------------------------------------------------------------------
 # Theme style settings
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
   primary_color: "#0066CC"
+
+  # Your blog website logo image
+  # You can use local image, image external link or don’t fill
+  logo: /images/logo.svg
 
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.svg

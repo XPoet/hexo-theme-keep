@@ -1,19 +1,19 @@
 <header class="header-wrapper">
-
     <%
-      const { title, logo, logo_img } = theme.base_info
-      const { title: configTitle } = config
+      const { title: bi_title, logo_img: bi_logo_img } = theme.base_info
+      const { logo: s_logo } = theme.style
+      const { title: config_title } = config
     %>
 
     <div class="header-content<%- (theme.style.first_screen.enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left">
-            <% if (logo || logo_img) { %>
+            <% if (s_logo || bi_logo_img) { %>
                 <a class="logo-image" href="/">
-                    <%- image_tag(logo || logo_img) %>
+                    <%- image_tag(s_logo || bi_logo_img) %>
                 </a>
             <% } %>
             <a class="logo-title" href="/">
-               <%= title || configTitle || 'Keep Theme' %>
+               <%= bi_title || config_title || 'Keep Theme' %>
             </a>
         </div>
 
