@@ -135,13 +135,13 @@ KEEP.initUtils = () => {
         KEEP.styleStatus.isExpandPageWidth = isExpand;
         KEEP.setStyleStatus();
         if (isExpand) {
-          iconDom.classList.remove('fa-arrows-alt-h');
-          iconDom.classList.add('fa-compress-arrows-alt');
+          iconDom.classList.remove('fa-up-right-and-down-left-from-center');
+          iconDom.classList.add('fa-down-left-and-up-right-to-center');
           headerContentDom.style.maxWidth = expandMaxWidth;
           mainContentDom.style.maxWidth = expandMaxWidth;
         } else {
-          iconDom.classList.remove('fa-compress-arrows-alt');
-          iconDom.classList.add('fa-arrows-alt-h');
+          iconDom.classList.remove('fa-down-left-and-up-right-to-center');
+          iconDom.classList.add('fa-up-right-and-down-left-from-center');
           headerContentDom.style.maxWidth = headerMaxWidth;
           mainContentDom.style.maxWidth = defaultMaxWidth;
         }
