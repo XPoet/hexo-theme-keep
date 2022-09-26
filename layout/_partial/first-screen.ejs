@@ -1,15 +1,17 @@
 <%
-const {
-  description: fs_description,
-  hitokoto: fs_hitokoto
-} = theme.style.first_screen
+const { description: fs_description, hitokoto: fs_hitokoto } = theme.style.first_screen
 const { description: c_description } = config
+let final_description = fs_description || c_description || ''
+final_description = final_description.split('||').map(desc => desc.trim())
+if (final_description.length > 2) { final_description.length = 2 }
 %>
 <div class="first-screen-container flex-center fade-in-down-animation">
     <div class="content flex-center">
-        <% if (fs_description || c_description || fs_hitokoto.enable) { %>
+        <% if (final_description.length || fs_hitokoto.enable) { %>
             <div class="description hitokoto">
-                <%= fs_description || c_description %>
+                <% for (const idx in final_description) { %>
+                    <div><%= final_description[idx] %></div>
+                <% } %>
             </div>
         <% } %>
         <% if (fs_hitokoto.enable) { %>

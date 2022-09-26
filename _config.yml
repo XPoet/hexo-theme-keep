@@ -28,7 +28,7 @@ style:
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg
 
-  # Article image align position, value: left | center (!!!! --- 需调整)
+  # Article image align position, value: left | center
   article_img_align: left
 
   # Left side width
@@ -55,6 +55,7 @@ style:
     background_img: /images/bg.svg
 
     # First screen description
+    # You can use the || to begin a newline, maximum is two lines.
     description: Keep writing and Keep loving.
 
     # If you want to customize the first screen font color, you can fill in here (e.g. "#0066CC")
