@@ -210,12 +210,12 @@
     width: 100%;
     overflow: auto;
 
-    @media screen and (max-width: 768px) {
-        & {
-          table-layout: fixed;
-        }
+    +keep-mobile() {
+      & {
+        table-layout: fixed;
+      }
     }
-    
+
     td,
     th {
       padding: 0;
