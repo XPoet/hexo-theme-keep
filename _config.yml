@@ -28,7 +28,7 @@ style:
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg
 
-  # Article image align position, value: left | center
+  # Article image align position, value: left | center (!!!! --- 需调整)
   article_img_align: left
 
   # Left side width
@@ -47,6 +47,9 @@ style:
   # First screen
   first_screen:
     enable: false
+
+    # Set transparent background for header. values: true | false
+    header_transparent: false
 
     # First screen background image (You can use local image or image external link)
     background_img: /images/bg.svg

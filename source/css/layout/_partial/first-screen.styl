@@ -13,8 +13,10 @@ $first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--
   width: 100%;
   overflow: hidden;
   background: url($first-screen-img) center center / cover no-repeat;
-  background-position-y: $header-height;
 
+  if (!(hexo-config('style.first_screen.header_transparent') == true)) {
+    background-position-y: $header-height;
+  }
 
   +keep-tablet() {
     background-position-y: $header-height * 0.9;

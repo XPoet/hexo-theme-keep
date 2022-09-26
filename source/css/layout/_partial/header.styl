@@ -10,8 +10,13 @@ $logo-image-box-width = 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-color);
   padding-top: $scroll-progress-bar-height;
+
+  if (hexo-config('style.first_screen.enable') == true && hexo-config('style.first_screen.header_transparent') == true) {
+    background: var(--header-transparent-background-color);
+  } else {
+    background: var(--background-color);
+  }
 
   hover-style(false, 0, 0);
 
