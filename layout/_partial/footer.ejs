@@ -55,9 +55,7 @@ const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme
         <% if (f_upyun) { %>
             <div class="ypyun-info info-item">
                 <a target="_blank" rel="nofollow" href="<%= f_upyun %>">
-                    本站由
-                    <img src="/images/upyun.png" height="20">
-                    提供 CDN 加速和云存储服务
+                    <%- __('footer_upyun', '<img src="/images/upyun.png" height="20">') %>
                 </a>
             </div>
         <% } %>
