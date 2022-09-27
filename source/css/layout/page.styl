@@ -19,6 +19,16 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px;
     padding-top: $header-height;
     position: relative;
 
+    &.home {
+      .transparent-1 {
+        background: var(--header-transparent-background-1);
+      }
+
+      .transparent-2 {
+        background: var(--header-transparent-background-2);
+      }
+    }
+
     .header-shrink & {
       padding-top: $header-shrink-height;
 

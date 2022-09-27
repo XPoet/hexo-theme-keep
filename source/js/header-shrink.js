@@ -9,15 +9,21 @@ KEEP.initHeaderShrink = () => {
 
     headerShrink() {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-
+      const headerWrapperDom = document.querySelector('.header-wrapper');
+      const { enable, header_transparent } = KEEP.theme_config.style.first_screen;
       if (!this.isHeaderShrink && scrollTop > this.headerHeight) {
         this.isHeaderShrink = true;
         document.body.classList.add('header-shrink');
+        if (enable === true && header_transparent === true) {
+          headerWrapperDom.classList.add('transparent-2');
+        }
       } else if (this.isHeaderShrink && scrollTop <= this.headerHeight) {
         this.isHeaderShrink = false;
         document.body.classList.remove('header-shrink');
+        if (enable === true && header_transparent === true) {
+          headerWrapperDom.classList.remove('transparent-2');
+        }
       }
-
     },
 
     toggleHeaderDrawerShow() {

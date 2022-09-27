@@ -1,11 +1,12 @@
-<header class="header-wrapper">
-    <%
-      const { title: bi_title, logo_img: bi_logo_img } = theme.base_info
-      const { logo: s_logo } = theme.style
-      const { title: config_title } = config
-    %>
+<%
+const { title: bi_title, logo_img: bi_logo_img } = theme.base_info
+const { logo: s_logo, first_screen: s_first_screen } = theme.style
+const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen
+const { title: config_title } = config
+%>
+<header class="header-wrapper<%= is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
 
-    <div class="header-content<%- (theme.style.first_screen.enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
+    <div class="header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left">
             <% if (s_logo || bi_logo_img) { %>
                 <a class="logo-image" href="/">
