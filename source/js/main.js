@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
-    theme: `Keep v${KEEP.theme_config.version}`,
+    theme: `Keep v3.4.5`,
     author: 'XPoet',
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // print theme base info
   KEEP.printThemeInfo = () => {
-    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
+    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 6px 0;`, `border: 1px dashed #fadfa3; padding: 5px 0;`);
   }
 
   // set styleStatus to localStorage
