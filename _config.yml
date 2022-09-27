@@ -22,14 +22,11 @@ style:
   # You can use local image, image external link or don’t fill
   logo: /images/logo.svg
 
-  # Avatar (You can use local image or image external link)
-  avatar: /images/avatar.svg
-
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg
 
-  # Article image align position, values: left | center
-  article_img_align: left
+  # Avatar (You can use local image or image external link)
+  avatar: /images/avatar.svg
 
   # Left side width
   left_side_width: 260px
@@ -120,6 +117,9 @@ home_article:
 # Post page Settings
 # ---------------------------------------------------------------------------------------
 post:
+  # image align position in the post, Option values: left | center
+  img_align: left
+
   # Post word count
   # Dependencies: hexo-wordcount (npm install hexo-wordcount)
   # See: https://github.com/willin/hexo-wordcount
