@@ -1,19 +1,28 @@
-<% if(theme.comment.use === 'twikoo' && theme.comment.twikoo.env_id) { %>
+<%
+const { enable: pjax_enable } = theme.pjax
+let {
+  env_id: tk_env_id, region: tk_region, version: tk_version
+} = theme.comment.twikoo
+if (!tk_version) { tk_version = '1.6.7' }
+const twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
+%>
+<% if(theme.comment.use === 'twikoo' && tk_env_id) { %>
     <div class="twikoo-container">
-        <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
-                src="//cdn.jsdelivr.net/npm/twikoo@1.0.0/dist/twikoo.all.min.js"
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                src="<%= twikoo_cdn_url %>"
         ></script>
         <div id="twikoo-comment"></div>
-        <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
             function loadTwikoo() {
                 twikoo.init({
                     el: '#twikoo-comment',
-                    envId: '<%= theme.comment.twikoo.env_id %>',
-                    region: '<%= theme.comment.twikoo.region %>',
+                    envId: '<%= tk_env_id %>',
+                    region: '<%= tk_region %>',
+                    lang: '<%= config.language %>' || 'zh-CN'
                 });
             }
 
-            if ('<%= theme.pjax.enable %>') {
+            if ('<%= pjax_enable === true %>') {
                 const loadTwikooTimeout = setTimeout(() => {
                     loadTwikoo();
                     clearTimeout(loadTwikooTimeout);

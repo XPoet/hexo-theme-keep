@@ -3,7 +3,6 @@
 KEEP.initUtils = () => {
 
   KEEP.utils = {
-
     html_root_dom: document.querySelector('html'),
     pageContainer_dom: document.querySelector('.page-container'),
     pageTop_dom: document.querySelector('.page-main-content-top'),
@@ -12,14 +11,23 @@ KEEP.initUtils = () => {
     pjaxProgressBar_dom: document.querySelector('.pjax-progress-bar'),
     pjaxProgressIcon_dom: document.querySelector('.pjax-progress-icon'),
     back2TopButton_dom: document.querySelector('.tool-scroll-to-top'),
+    headerWrapper_dom: document.querySelector('.header-wrapper'),
 
     innerHeight: window.innerHeight,
     pjaxProgressBarTimer: null,
     prevScrollValue: 0,
     fontSizeLevel: 0,
+    isHasScrollProgressBar: false,
+    isHasScrollPercent: false,
+    isHeaderTransparent: false,
 
-    isHasScrollProgressBar: KEEP.theme_config.style.scroll.progress_bar.enable === true,
-    isHasScrollPercent: KEEP.theme_config.style.scroll.percent.enable === true,
+    initData() {
+      const { scroll, first_screen } = KEEP.theme_config.style;
+      this.isHasScrollProgressBar = scroll.progress_bar.enable === true;
+      this.isHasScrollPercent = scroll.percent.enable === true;
+      const { enable, header_transparent } = first_screen;
+      this.isHeaderTransparent = enable === true && header_transparent === true;
+    },
 
     // Scroll Style Handle
     styleHandleWhenScroll() {
@@ -49,8 +57,19 @@ KEEP.initUtils = () => {
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
         this.pageTop_dom.classList.add('hide');
+        if (this.isHeaderTransparent) {
+          this.headerWrapper_dom.classList.remove('transparent-1', 'transparent-2');
+        }
       } else {
         this.pageTop_dom.classList.remove('hide');
+        if (this.isHeaderTransparent) {
+          if (scrollTop <= this.headerWrapper_dom.getBoundingClientRect().height) {
+            this.headerWrapper_dom.classList.remove('transparent-2');
+            this.headerWrapper_dom.classList.add('transparent-1');
+          } else if (scrollTop < this.innerHeight) {
+            this.headerWrapper_dom.classList.add('transparent-2');
+          }
+        }
       }
       this.prevScrollValue = scrollTop;
     },
@@ -135,13 +154,13 @@ KEEP.initUtils = () => {
         KEEP.styleStatus.isExpandPageWidth = isExpand;
         KEEP.setStyleStatus();
         if (isExpand) {
-          iconDom.classList.remove('fa-arrows-alt-h');
-          iconDom.classList.add('fa-compress-arrows-alt');
+          iconDom.classList.remove('fa-up-right-and-down-left-from-center');
+          iconDom.classList.add('fa-down-left-and-up-right-to-center');
           headerContentDom.style.maxWidth = expandMaxWidth;
           mainContentDom.style.maxWidth = expandMaxWidth;
         } else {
-          iconDom.classList.remove('fa-compress-arrows-alt');
-          iconDom.classList.add('fa-arrows-alt-h');
+          iconDom.classList.remove('fa-down-left-and-up-right-to-center');
+          iconDom.classList.add('fa-up-right-and-down-left-from-center');
           headerContentDom.style.maxWidth = headerMaxWidth;
           mainContentDom.style.maxWidth = defaultMaxWidth;
         }
@@ -329,8 +348,11 @@ KEEP.initUtils = () => {
         }, 200);
 
       }, 200);
-    }
+    },
   }
+
+  // init data
+  KEEP.utils.initData();
 
   // init scroll
   KEEP.utils.registerWindowScroll();

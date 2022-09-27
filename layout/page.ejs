@@ -5,7 +5,7 @@
         <%- partial('_partial/first-screen') %>
     <% } %>
 
-    <div class="page-main-content">
+    <div class="page-main-content<%= is_home() ? ' home' : '' %>">
 
         <div class="page-main-content-top">
             <%- partial('_partial/header') %>
@@ -59,7 +59,7 @@
         <%- partial('_partial/side-tools') %>
     </div>
 
-    <% if (is_post() && theme.toc.enable === true) { %>
+    <% if (is_post() && theme.toc.enable === true && page.toc !== false) { %>
         <aside class="page-aside">
             <%- partial('_partial/toc') %>
         </aside>

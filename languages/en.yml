@@ -7,6 +7,7 @@ page: Page %d
 recent_posts: Recent Posts
 share: Share
 powered_by: "Powered by %s"
+footer_upyun: "CDN acceleration and Cloud storage services are provided by %s"
 theme: Theme
 rss_feed: RSS Feed
 category: Category

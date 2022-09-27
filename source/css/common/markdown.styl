@@ -195,7 +195,7 @@
     box-shadow: 0 0 2px var(--shadow-color);
     transition-t("padding, margin", "0, 0", "0.2, 0.2", "linear, linear");
 
-    if (hexo-config('style.article_img_align') == 'center') {
+    if (hexo-config('post.img_align') == 'center' || hexo-config('style.article_img_align') == 'center') {
       margin: 10px auto 2px;
     } else {
       margin: 10px 0 2px;
@@ -209,6 +209,12 @@
     border-collapse: collapse;
     width: 100%;
     overflow: auto;
+
+    +keep-mobile() {
+      & {
+        table-layout: fixed;
+      }
+    }
 
     td,
     th {

@@ -10,8 +10,8 @@ $logo-image-box-width = 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-color);
   padding-top: $scroll-progress-bar-height;
+  background: var(--background-color);
 
   hover-style(false, 0, 0);
 
@@ -50,7 +50,7 @@ $logo-image-box-width = 46px;
       }
 
 
-      if (hexo-config('base_info.logo_img') && hexo-config('base_info.logo_img') != '') {
+      if (hexo-config('base_info.logo_img') || hexo-config('style.logo')) {
         .logo-image {
           width: $logo-image-box-width;
           height: $logo-image-box-width;

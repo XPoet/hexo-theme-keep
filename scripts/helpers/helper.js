@@ -54,12 +54,34 @@ hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
   }
 });
 
+const getSourceCdnUrl = (tyle, themeConfig, path) => {
+  const { version = '3.4.6', cdn = {} } = themeConfig
+  const { provider = 'jsdelivr' } = cdn
+
+  let urlPrefix = ''
+  switch (provider.toLocaleLowerCase()) {
+    case 'jsdelivr':
+      urlPrefix = '//cdn.jsdelivr.net/npm/hexo-theme-keep'
+      if (tyle === 'js') {
+        return `<script src="${urlPrefix}@${version}/source/${path}"></script>`;
+      } else {
+        return `<link rel="stylesheet" href="${urlPrefix}@${version}/source/${path}">`;
+      }
+    case 'unpkg':
+      urlPrefix = '//unpkg.com/hexo-theme-keep'
+      if (tyle === 'js') {
+        return `<script src="${urlPrefix}@${version}/source/${path}"></script>`;
+      } else {
+        return `<link rel="stylesheet" href="${urlPrefix}@${version}/source/${path}">`;
+      }
+  }
+}
+
 hexo.extend.helper.register('__js', function (path) {
+  const { enable } = this.theme.cdn
   const _js = hexo.extend.helper.get('js').bind(hexo);
-  const cdnPathHandle = (path_2) => {
-    return this.theme.cdn.enable
-      ? `<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path_2}"></script>`
-      : _js(path_2);
+  const cdnPathHandle = (pa) => {
+    return enable ? getSourceCdnUrl('js', this.theme, pa) : _js(pa);
   }
 
   let t = ``;
@@ -76,10 +98,7 @@ hexo.extend.helper.register('__js', function (path) {
 });
 
 hexo.extend.helper.register('__css', function (path) {
+  const { enable } = this.theme.cdn
   const _css = hexo.extend.helper.get('css').bind(hexo);
-  if (this.theme.cdn.enable) {
-    return `<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@${this.theme.version}/source/${path}">`;
-  } else {
-    return _css(path);
-  }
+  return enable ? getSourceCdnUrl('css', this.theme, path) : _css(path);
 });

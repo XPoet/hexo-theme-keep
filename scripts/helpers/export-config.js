@@ -1,5 +1,4 @@
 /* global hexo */
-
 'use strict';
 
 const url = require('url');
@@ -12,7 +11,7 @@ const yaml = require('js-yaml');
  */
 hexo.extend.helper.register('export_config', function () {
 
-  let {config, theme} = this;
+  const { config, theme } = this;
 
   // ------------------------ export language to js ------------------------
   const languageDir = path.join(__dirname, '../../languages');
@@ -45,7 +44,7 @@ hexo.extend.helper.register('export_config', function () {
     side_tools: theme.side_tools,
     pjax: theme.pjax,
     lazyload: theme.lazyload,
-    version: theme.version,
+    version: theme.version
   }
 
   return `<script id="hexo-configurations">
