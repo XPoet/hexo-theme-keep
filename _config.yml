@@ -28,7 +28,7 @@ style:
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg
 
-  # Article image align position, value: left | center
+  # Article image align position, values: left | center
   article_img_align: left
 
   # Left side width
@@ -132,7 +132,7 @@ post:
   author_label:
     enable: true
     auto: true # if true, show Lv1, Lv2, Lv3... , If false, show custom label
-    # label array item can be one or more
+    # Label array item can be one or more
     custom_label_list: ["Trainee", "Engineer", "Architect", "CTO", "BOSS"]
 
 # ---------------------------------------------------------------------------------------
@@ -233,6 +233,7 @@ lazyload:
 # ---------------------------------------------------------------------------------------
 cdn:
   enable: false
+  provider: jsdelivr # values: jsdelivr | unpkg
 
 # ---------------------------------------------------------------------------------------
 # PJAX
