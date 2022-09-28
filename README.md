@@ -99,9 +99,9 @@ This project exists thanks to all the people who contribute.
 
 <a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
-> Thanks jsDelivr for providing public CDN service.
+> Thanks jsDelivr and UNPKG for providing public CDN service.
 
 ## :memo: License
 
-[GPL-3.0](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-present XPoet
+[GPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE) Copyright © 2020-present XPoet
 

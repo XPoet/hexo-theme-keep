@@ -99,8 +99,8 @@ $ git pull
 
 <a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
-> jsDelivr 提供了 CDN 服務。
+> jsDelivr 和 UNPKG 提供了 CDN 服務。
 
 ## :memo: 許可
 
-[GPL-3.0](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-present XPoet
+[GPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE) Copyright © 2020-present XPoet
