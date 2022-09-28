@@ -50,15 +50,18 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initModeToggle();
     KEEP.initBack2Top();
 
-    if (KEEP.theme_config.local_search.enable === true) {
+    if (KEEP.theme_config.local_search?.enable === true) {
       KEEP.initLocalSearch();
     }
 
-    if (KEEP.theme_config.code_copy.enable === true) {
-      KEEP.initCodeCopy();
+    if (
+      KEEP.theme_config.code_block_tools?.enable === true
+      || KEEP.theme_config.code_copy?.enable === true
+    ) {
+      KEEP.initCodeBlockTools();
     }
 
-    if (KEEP.theme_config.lazyload.enable === true) {
+    if (KEEP.theme_config.lazyload?.enable === true) {
       KEEP.initLazyLoad();
     }
   }

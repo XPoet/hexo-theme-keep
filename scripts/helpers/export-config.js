@@ -37,13 +37,14 @@ hexo.extend.helper.register('export_config', function () {
   }
 
   let theme_config = {
-    toc: theme.toc,
-    style: theme.style,
-    local_search: theme.local_search,
-    code_copy: theme.code_copy,
-    side_tools: theme.side_tools,
-    pjax: theme.pjax,
-    lazyload: theme.lazyload,
+    toc: theme.toc || {},
+    style: theme.style || {},
+    local_search: theme.local_search || {},
+    code_copy: theme.code_copy || {},
+    code_block_tools: theme.code_block_tools || {},
+    side_tools: theme.side_tools || {},
+    pjax: theme.pjax || {},
+    lazyload: theme.lazyload || {},
     version: theme.version
   }
 

@@ -141,9 +141,10 @@ post:
     custom_label_list: ["Trainee", "Engineer", "Architect"]
 
 # ---------------------------------------------------------------------------------------
-# Code copy
+# Code block tools
+# Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
-code_copy:
+code_block_tools:
   enable: false     # Option values: true | false
   style: default    # Option values: default | mac
 
