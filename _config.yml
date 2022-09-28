@@ -135,10 +135,10 @@ post:
 
     # If true, show Lv1, Lv2, Lv3...
     # If false, show custom_label_list
-    auto: true
+    auto: true # Option values: true | false
 
     # Label array item can be fill one or more
-    custom_label_list: ["Trainee", "Engineer", "Architect", "CTO", "BOSS"]
+    custom_label_list: ["Trainee", "Engineer", "Architect"]
 
 # ---------------------------------------------------------------------------------------
 # Code copy
