@@ -1,9 +1,8 @@
 <div align="right">
   Language:
   English
-  <a title="Chinese" href="README_zh-CN.md">简中</a>
-  <a title="Chinese" href="README_zh-TW.md">繁中</a>
-  
+  <a title="Chinese" href="docs/README_zh-CN.md">简中</a>
+  <a title="Chinese" href="docs/README_zh-TW.md">繁中</a>
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.svg"></a>
@@ -23,13 +22,15 @@
 
 - **[XPoet's Blog](https://xpoet.cn/)**
 - **[Keep demo website](https://keep.xpoet.cn/)**
-- **[Keep official document](https://keep-docs.xpoet.cn/)**
+
+> If you want to put a link to your blog in the online preview list, you can give the author a PR.
 
 ## :rocket: Installation
 
 If you're using Hexo 5.0 or later, the simplest way to install is through npm:
 
 ```sh
+# recommend
 $ cd hexo-site
 $ npm install hexo-theme-keep
 ```
@@ -64,6 +65,7 @@ It is not recommended to directly modify any files in the «Keep» theme. Becaus
 Install the latest version throuth npm:
 
 ```sh
+# recommend
 $ cd hexo-site
 $ npm update hexo-theme-keep
 ```
@@ -73,15 +75,6 @@ Or update to latest master branch:
 ```sh
 $ cd themes/keep
 $ git pull
-```
-
-_If you modified theme source code:_
-
-```sh
-$ git add .
-$ git stash
-$ git pull
-$ git stash pop
 ```
 
 ## :art: Contributing
@@ -110,5 +103,5 @@ This project exists thanks to all the people who contribute.
 
 ## :memo: License
 
-[MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-2021 XPoet
+[GPL-3.0](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-present XPoet
 
