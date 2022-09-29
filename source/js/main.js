@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
-    theme: `Keep v3.4.6`,
+    theme: `Keep v3.4.7`,
     author: 'XPoet',
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }

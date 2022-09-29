@@ -55,7 +55,7 @@ hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
 });
 
 const getSourceCdnUrl = (tyle, themeConfig, path) => {
-  const { version = '3.4.6', cdn = {} } = themeConfig
+  const { version = '3.4.7', cdn = {} } = themeConfig
   const { provider = 'jsdelivr' } = cdn
 
   let urlPrefix = ''
