@@ -1,0 +1,134 @@
+disable-user-select() {
+  -moz-user-select none
+  -ms-user-select none
+  -webkit-user-select none
+  user-select none
+}
+
+.highlight-container {
+  position relative
+  box-sizing border-box
+  margin 1.4rem 0
+
+  .code-tools-box {
+    box-sizing border-box
+    width 100%
+    background var(--fourth-text-color)
+    border-top-left-radius 0.3rem
+    border-top-right-radius 0.3rem
+    display flex
+    justify-content space-between
+    align-items center
+    padding 0.3rem 0.6rem 0.3rem 0.4rem
+
+    &.folded {
+      border-bottom-left-radius 0.3rem
+      border-bottom-right-radius 0.3rem
+    }
+
+    .code-lang {
+      margin-left 0.2rem
+      font-size 0.9rem
+      font-weight 600
+      font-family "Source Code Pro", consolas, Menlo
+      color var(--default-text-color)
+      justify-content flex-start
+    }
+
+    .tool {
+      disable-user-select()
+      cursor pointer
+
+      i {
+        color var(--second-text-color)
+        font-size 0.8rem
+      }
+    }
+
+
+    .fold {
+      font-weight bold
+      padding 0 0.4rem 0 0.2rem
+    }
+
+  }
+
+
+  figure.highlight {
+    margin 0
+
+    &.folded {
+      height 0
+    }
+  }
+
+
+  if (hexo-config('code_block_tools.style') == 'mac' || hexo-config('code_copy.style') == 'mac') {
+    margin 1.4rem 0 1.8rem 0
+    box-shadow 0 0.8rem 2rem 0 rgba(0, 0, 0, .4)
+
+    &:hover {
+      .code-tools-box .copy {
+        opacity 1
+      }
+    }
+
+    .code-tools-box {
+      justify-content flex-end
+      background #21252b
+      padding 0.4rem 0.6rem 0.7rem 0.4rem
+
+      &::before {
+        position absolute
+        content ''
+        width 0.8rem
+        height 0.8rem
+        left 0.8rem
+        background #fc625d
+        border-radius 50%
+        box-shadow 1.4rem 0 #fdbc40, 2.8rem 0 #35cd4b
+      }
+
+      &.folded {
+        border-bottom-left-radius 0
+        border-bottom-right-radius 0
+
+        .copy {
+          display none
+        }
+      }
+
+      .code-lang {
+        order 1
+        color #bbb
+      }
+
+      .fold {
+        order 2
+        padding 0 0.1rem 0 0.6rem
+        i {
+          color #ccc
+        }
+      }
+
+
+      .copy {
+        position absolute
+        bottom 0.3rem
+        right 0.5rem
+        padding 0 0.1rem
+        font-weight bold
+        opacity 0
+        transition-t("opacity", "0", "0.2", "ease-in-out")
+
+        i {
+          font-size 1rem
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -6,20 +6,31 @@
     'js/dark-light-toggle.js'
 ]) %>
 
-<% if (theme.local_search.enable) { %>
+<%
+const {
+    local_search: t_local_search,
+    code_copy: t_code_copy,
+    code_block_tools: t_code_block_tools,
+    lazyload: t_lazyload,
+    toc: t_toc,
+    pjax: t_pjax
+} = theme
+%>
+
+<% if (t_local_search?.enable === true) { %>
     <%- __js('js/local-search.js') %>
 <% } %>
 
-<% if (theme.code_copy.enable) { %>
-    <%- __js('js/code-copy.js') %>
+<% if (t_code_block_tools.enable === true || t_code_copy.enable === true) { %>
+    <%- __js('js/code-block-tools.js') %>
 <% } %>
 
-<% if (theme.lazyload.enable) { %>
+<% if (t_lazyload?.enable === true) { %>
     <%- __js('js/lazyload.js') %>
 <% } %>
 
-<div class="post-scripts<%= theme.pjax.enable === true ? ' pjax' : '' %>">
-    <% if (theme.toc.enable && is_post()) { %>
+<div class="post-scripts<%= theme.pjax?.enable === true ? ' pjax' : '' %>">
+    <% if (t_toc?.enable === true && is_post()) { %>
         <%- __js([
             'js/left-side-toggle.js',
             'js/libs/anime.min.js',
@@ -28,6 +39,6 @@
     <% } %>
 </div>
 
-<% if (theme.pjax.enable === true) { %>
+<% if (t_pjax?.enable === true) { %>
     <%- partial('pjax/pjax') %>
 <% } %>

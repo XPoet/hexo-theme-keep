@@ -1,3 +1,6 @@
+# ====================================================================
+# 中文繁体
+# ====================================================================
 search: 搜尋...
 prev: 上一頁
 next: 下一頁
@@ -30,6 +33,24 @@ read_more: 繼續閱讀...
 wordcount: 字數
 min2read: 分鐘
 changelog: 日誌
+social_contact: 社交
+github: GitHub
+google: 谷歌
+apple: 蘋果
+microsoft: 微軟
+weixin: 微信
+qq: QQ
+alipay: 支付寶
+weibo: 微博
+zhihu: 知乎
+twitter: Twitter
+facebook: Facebook
+email: Email
+code_block:
+  copy: 復製代碼
+  copied: 已復製
+  fold: 折疊代碼塊
+  folded: 已折疊
 copyright:
   author: 文章作者
   title: 文章標題

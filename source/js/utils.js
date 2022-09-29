@@ -264,8 +264,7 @@ KEEP.initUtils = () => {
     },
 
     getHowLongAgo(timestamp) {
-      const l = KEEP.language_ago;
-
+      const lang = KEEP.language_ago;
       const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12);
       const __M = Math.floor(timestamp / (60 * 60 * 24 * 30));
       const __W = Math.floor(timestamp / (60 * 60 * 24) / 7);
@@ -275,25 +274,25 @@ KEEP.initUtils = () => {
       const __s = Math.floor(timestamp % 60);
 
       if (__Y > 0) {
-        return this.setHowLongAgoLanguage(__Y, l.year);
+        return this.setHowLongAgoLanguage(__Y, lang.year);
 
       } else if (__M > 0) {
-        return this.setHowLongAgoLanguage(__M, l.month);
+        return this.setHowLongAgoLanguage(__M, lang.month);
 
       } else if (__W > 0) {
-        return this.setHowLongAgoLanguage(__W, l.week);
+        return this.setHowLongAgoLanguage(__W, lang.week);
 
       } else if (__d > 0) {
-        return this.setHowLongAgoLanguage(__d, l.day);
+        return this.setHowLongAgoLanguage(__d, lang.day);
 
       } else if (__h > 0) {
-        return this.setHowLongAgoLanguage(__h, l.hour);
+        return this.setHowLongAgoLanguage(__h, lang.hour);
 
       } else if (__m > 0) {
-        return this.setHowLongAgoLanguage(__m, l.minute);
+        return this.setHowLongAgoLanguage(__m, lang.minute);
 
       } else if (__s > 0) {
-        return this.setHowLongAgoLanguage(__s, l.second);
+        return this.setHowLongAgoLanguage(__s, lang.second);
       }
     },
 
@@ -349,6 +348,24 @@ KEEP.initUtils = () => {
 
       }, 200);
     },
+
+    // insert tooltip content dom
+    insertTooltipContent() {
+      const init = () => {
+        document.querySelectorAll('.tooltip').forEach(element => {
+          const { content } = element.dataset;
+          if (content) {
+            element.insertAdjacentHTML(
+              'afterbegin',
+              `<span class="tooltip-content">${content}</span>`
+            );
+          }
+        });
+      }
+      setTimeout(() => {
+        init();
+      }, 1000);
+    }
   }
 
   // init data
@@ -381,4 +398,6 @@ KEEP.initUtils = () => {
   // set how long age in home article block
   KEEP.utils.setHowLongAgoInHome();
 
+  // insert tooltip content dom
+  KEEP.utils.insertTooltipContent();
 }

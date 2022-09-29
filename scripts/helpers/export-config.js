@@ -37,13 +37,14 @@ hexo.extend.helper.register('export_config', function () {
   }
 
   let theme_config = {
-    toc: theme.toc,
-    style: theme.style,
-    local_search: theme.local_search,
-    code_copy: theme.code_copy,
-    side_tools: theme.side_tools,
-    pjax: theme.pjax,
-    lazyload: theme.lazyload,
+    toc: theme.toc || {},
+    style: theme.style || {},
+    local_search: theme.local_search || {},
+    code_copy: theme.code_copy || {},
+    code_block_tools: theme.code_block_tools || {},
+    side_tools: theme.side_tools || {},
+    pjax: theme.pjax || {},
+    lazyload: theme.lazyload || {},
     version: theme.version
   }
 
@@ -52,5 +53,6 @@ hexo.extend.helper.register('export_config', function () {
     KEEP.hexo_config = ${JSON.stringify(hexo_config)};
     KEEP.theme_config = ${JSON.stringify(theme_config)};
     KEEP.language_ago = ${JSON.stringify(languageContent['ago'])};
+    KEEP.language_code_block = ${JSON.stringify(languageContent['code_block'])};
   </script>`;
 });

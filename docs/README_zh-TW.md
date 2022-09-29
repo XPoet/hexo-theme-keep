@@ -1,7 +1,7 @@
 <div align="right">
   語言:
   繁中
-  <a title="Chinese" href="README.md">English</a>
+  <a title="English" href="../README.md">English</a>
   <a title="Chinese" href="README_zh-CN.md">简中</a>
 </div>
 
@@ -22,13 +22,15 @@
 
 - **[XPoet's Blog](https://xpoet.cn/)**
 - **[keep 預覽網頁](https://keep.xpoet.cn/)**
-- **[keep 官方文檔](https://keep-docs.xpoet.cn/)**
+
+> 如果你想把自己的博客鏈接放在線上預覽列表裏，可以給作者提 PR 。
 
 ## :rocket: 安装
 
 如果你在使用 Hexo 5.0 或更高版本，最簡單的安裝方式是透過 npm：
 
 ```sh
+# 推薦
 $ cd hexo-site
 $ npm install hexo-theme-keep
 ```
@@ -37,7 +39,7 @@ $ npm install hexo-theme-keep
 
 ```sh
 $ cd hexo-site
-$ git clone https://github.com/XPoet/hexo-theme-keep themes/keep
+$ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 ```
 
 安裝完成後，在 Hexo 配置文件中將 `theme` 設定為 `keep`。
@@ -63,6 +65,7 @@ theme: keep
 透過 npm 安裝最新版本：
 
 ```sh
+# 推薦
 $ cd hexo-site
 $ npm update hexo-theme-keep
 ```
@@ -72,15 +75,6 @@ $ npm update hexo-theme-keep
 ```sh
 $ cd themes/keep
 $ git pull
-```
-
-_如果你修改了主題原始碼：_
-
-```sh
-$ git add .
-$ git stash
-$ git pull
-$ git stash pop
 ```
 
 ## :art: 貢獻
@@ -105,8 +99,8 @@ $ git stash pop
 
 <a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
 
-> jsDelivr 提供了 CDN 服務。
+> jsDelivr 和 UNPKG 提供了 CDN 服務。
 
 ## :memo: 許可
 
-[MIT](https://github.com/XPoet/picx/blob/master/LICENSE) Copyright © 2020-2021 XPoet
+[GPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE) Copyright © 2020-present XPoet

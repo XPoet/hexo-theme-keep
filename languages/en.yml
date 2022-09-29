@@ -1,3 +1,6 @@
+# ====================================================================
+# English
+# ====================================================================
 search: Search...
 prev: Prev
 next: Next
@@ -30,6 +33,24 @@ read_more: Read more
 wordcount: Words
 min2read: Mins
 changelog: Changelog
+social_contact: Social contact
+github: GitHub
+google: Google
+apple: Apple
+microsoft: Microsoft
+weixin: WeChat
+qq: QQ
+alipay: Alipay
+weibo: Weibo
+zhihu: Zhihu
+twitter: Twitter
+facebook: Facebook
+email: Email
+code_block:
+  copy: Copy code
+  copied: Copied
+  fold: Fold code block
+  folded: Folded
 copyright:
   author: Post author
   title: Post title

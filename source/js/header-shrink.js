@@ -1,3 +1,5 @@
+/* global KEEP */
+
 KEEP.initHeaderShrink = () => {
   KEEP.utils.headerShrink = {
     headerDom: document.querySelector('.header-wrapper'),

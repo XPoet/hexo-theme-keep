@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
-    theme: `Keep v3.4.6`,
+    theme: `Keep v3.4.7`,
     author: 'XPoet',
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
@@ -19,7 +19,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // print theme base info
   KEEP.printThemeInfo = () => {
-    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 6px 0;`, `border: 1px dashed #fadfa3; padding: 5px 0;`);
+    console.log(
+      `\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`,
+      `color: #fadfa3; background: #333; padding: 6px 0;`, `padding: 6px 0;`
+    );
   }
 
   // set styleStatus to localStorage
@@ -47,15 +50,18 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initModeToggle();
     KEEP.initBack2Top();
 
-    if (KEEP.theme_config.local_search.enable === true) {
+    if (KEEP.theme_config.local_search?.enable === true) {
       KEEP.initLocalSearch();
     }
 
-    if (KEEP.theme_config.code_copy.enable === true) {
-      KEEP.initCodeCopy();
+    if (
+      KEEP.theme_config.code_block_tools?.enable === true
+      || KEEP.theme_config.code_copy?.enable === true
+    ) {
+      KEEP.initCodeBlockTools();
     }
 
-    if (KEEP.theme_config.lazyload.enable === true) {
+    if (KEEP.theme_config.lazyload?.enable === true) {
       KEEP.initLazyLoad();
     }
   }

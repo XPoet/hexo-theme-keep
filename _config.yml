@@ -135,15 +135,16 @@ post:
 
     # If true, show Lv1, Lv2, Lv3...
     # If false, show custom_label_list
-    auto: true
+    auto: true # Option values: true | false
 
     # Label array item can be fill one or more
-    custom_label_list: ["Trainee", "Engineer", "Architect", "CTO", "BOSS"]
+    custom_label_list: ["Trainee", "Engineer", "Architect"]
 
 # ---------------------------------------------------------------------------------------
-# Code copy
+# Code block tools
+# Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
-code_copy:
+code_block_tools:
   enable: false     # Option values: true | false
   style: default    # Option values: default | mac
 
@@ -258,4 +259,4 @@ footer:
 # Keep version
 # Please don't modify
 # ---------------------------------------------------------------------------------------
-version: 3.4.6
+version: 3.4.7
