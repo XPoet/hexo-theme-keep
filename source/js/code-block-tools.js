@@ -11,8 +11,8 @@ KEEP.initCodeBlockTools = () => {
   const { style: codeBlockStyle } = KEEP.theme_config?.code_block_tools;
   const isMac = (codeBlockStyle || codeCopyStyle || 'default') === 'mac';
   const foldedIconClassName = isMac ? 'fas fa-chevron-left' : 'fas fa-chevron-right';
-
-  const foldDom = `<span class="tool fold"><i class="fas fa-chevron-down"></i></span>`
+  const { copy: copyLang, copied: copiedLang, fold: foldLang, folded: foldedLang } = KEEP.language_code_block;
+  const foldDom = `<span class="tool fold tooltip" data-content="${foldLang}"><i class="fas fa-chevron-down"></i></span>`
 
   document.querySelectorAll('figure.highlight').forEach(element => {
     let codeLang = element.classList.length ? element.classList[1].toUpperCase() : '';
@@ -21,13 +21,14 @@ KEEP.initCodeBlockTools = () => {
     highlightContainer.classList.add('highlight-container');
     element.wrap(highlightContainer);
 
+
     const codeLangDom = `${codeLang ? '<span class="code-lang">' + codeLang + '</span>' : ''}`
 
     highlightContainer.insertAdjacentHTML(
       'afterbegin',
       `<div class="code-tools-box">
         ${isMac ? foldDom + codeLangDom : '<span>' + foldDom + codeLangDom + '</span>'}
-        <span class="tool copy"><i class="fas fa-copy"></i></span>
+        <span class="tool copy tooltip" data-content="${copyLang}"><i class="fas fa-copy"></i></span>
       </div>`
     );
     const codeToolsBox = element.parentNode.querySelector('.code-tools-box');
@@ -50,7 +51,17 @@ KEEP.initCodeBlockTools = () => {
       tta.setSelectionRange(0, code.length);
       tta.readOnly = false;
       const result = document.execCommand('copy');
-      target.querySelector('i').className = result ? 'fas fa-check' : 'fas fa-times';
+
+      const copyIconDom = target.querySelector('i');
+      const copyTooltipDom = codeToolsBox.querySelector('.copy .tooltip-content');
+
+      if (result) {
+        copyIconDom.className = 'fas fa-check';
+        copyTooltipDom && (copyTooltipDom.innerHTML = copiedLang);
+      } else {
+        copyIconDom.className = 'fas fa-times';
+      }
+
       tta.blur();
       target.blur();
       if (selected) {
@@ -63,6 +74,8 @@ KEEP.initCodeBlockTools = () => {
     copyDom.addEventListener('mouseleave', event => {
       setTimeout(() => {
         event.target.querySelector('i').className = 'fas fa-copy';
+        const copyTooltipDom = codeToolsBox.querySelector('.copy .tooltip-content');
+        copyTooltipDom && (copyTooltipDom.innerHTML = copyLang);
       }, 500);
     });
 
@@ -70,15 +83,18 @@ KEEP.initCodeBlockTools = () => {
     targetFoldDom.addEventListener('click', event => {
       const target = event.currentTarget;
       const icon = target.querySelector('i');
-      isFold = !isFold
+      const foldTooltipDom = codeToolsBox.querySelector('.fold .tooltip-content');
+      isFold = !isFold;
       if (isFold) {
-        icon.className = foldedIconClassName
+        icon.className = foldedIconClassName;
         element.classList.add('folded');
         codeToolsBox.classList.add('folded');
+        foldTooltipDom && (foldTooltipDom.innerHTML = foldedLang)
       } else {
         icon.className = 'fas fa-chevron-down';
         element.classList.remove('folded');
         codeToolsBox.classList.remove('folded');
+        foldTooltipDom && (foldTooltipDom.innerHTML = foldLang)
       }
     });
   });

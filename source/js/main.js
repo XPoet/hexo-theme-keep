@@ -49,7 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initHeaderShrink();
     KEEP.initModeToggle();
     KEEP.initBack2Top();
-    KEEP.initTooltip();
 
     if (KEEP.theme_config.local_search?.enable === true) {
       KEEP.initLocalSearch();

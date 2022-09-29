@@ -188,13 +188,13 @@ button {
 
   &:hover {
     .tooltip-content {
-      visibility visible
+      display inline-block
     }
   }
 
   .tooltip-content {
     position absolute
-    top -145%
+    top -140%
     left 50%
     transform translateX(-50%)
     font-size 0.8rem
@@ -202,9 +202,9 @@ button {
     background var(--first-text-color)
     color var(--fourth-text-color)
     border-radius 0.3rem
-    visibility hidden
-    z-index $z-index-1
+    display none
+    z-index $z-index-9
     white-space nowrap
-    transition-t("visibility", "0", "0.2", "ease")
+    transition-t("display", "0", "0.2", "ease")
   }
 }

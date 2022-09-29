@@ -46,6 +46,11 @@ zhihu: Zhihu
 twitter: Twitter
 facebook: Facebook
 email: Email
+code_block:
+  copy: Copy code
+  copied: Copied
+  fold: Fold code block
+  folded: Folded
 copyright:
   author: Post author
   title: Post title

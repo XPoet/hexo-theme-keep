@@ -46,6 +46,11 @@ zhihu: 知乎
 twitter: Twitter
 facebook: Facebook
 email: Email
+code_block:
+  copy: 復製代碼
+  copied: 已復製
+  fold: 折疊代碼塊
+  folded: 已折疊
 copyright:
   author: 文章作者
   title: 文章標題

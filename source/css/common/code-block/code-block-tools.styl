@@ -9,7 +9,6 @@ disable-user-select() {
   position relative
   box-sizing border-box
   margin 1.4rem 0
-  overflow hidden
 
   .code-tools-box {
     box-sizing border-box
@@ -49,7 +48,7 @@ disable-user-select() {
 
     .fold {
       font-weight bold
-      padding 0.1rem 0.4rem 0.1rem 0.2rem
+      padding 0 0.4rem 0 0.2rem
     }
 
   }
@@ -106,7 +105,7 @@ disable-user-select() {
 
       .fold {
         order 2
-        padding 0.1rem 0.1rem 0.1rem 0.6rem
+        padding 0 0.1rem 0 0.6rem
         i {
           color #ccc
         }
@@ -115,9 +114,9 @@ disable-user-select() {
 
       .copy {
         position absolute
-        bottom 0
-        right 0
-        padding 0.4rem 0.5rem
+        bottom 0.3rem
+        right 0.5rem
+        padding 0 0.1rem
         font-weight bold
         opacity 0
         transition-t("opacity", "0", "0.2", "ease-in-out")
