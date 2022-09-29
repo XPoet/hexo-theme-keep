@@ -1,4 +1,5 @@
 /* global hexo */
+
 'use strict';
 
 const url = require('url');
@@ -20,8 +21,8 @@ hexo.extend.helper.register('export_config', function () {
   let languageContent = fs.readFileSync(file, 'utf8');
   try {
     languageContent = yaml.load(languageContent);
-  } catch (e) {
-    console.log(e);
+  } catch (err) {
+    console.log(err);
   }
   // -----------------------------------------------------------------------
 
@@ -45,7 +46,7 @@ hexo.extend.helper.register('export_config', function () {
     side_tools: theme.side_tools || {},
     pjax: theme.pjax || {},
     lazyload: theme.lazyload || {},
-    version: theme.version
+    version: require('../../package.json').version
   }
 
   return `<script id="hexo-configurations">
