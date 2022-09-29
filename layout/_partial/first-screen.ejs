@@ -24,19 +24,19 @@ if (final_description.length > 2) { final_description.length = 2 }
             <div class="s-icon-list">
                 <% for (const key in theme.social_contact.links) { %>
                     <% if(theme.social_contact.links[key]) { %>
-                        <% if(key === 'email') { %>
-                            <span class="s-icon-item <%= key %>">
+                        <div class="tooltip s-icon-item <%= key %>"
+                             data-content="<%= __(key) %>"
+                        >
+                            <% if(key === 'email') { %>
                                 <a href="mailto:<%- theme.social_contact.links[key] %>">
                                     <i class="fas fa-envelope"></i>
                                 </a>
-                            </span>
-                        <% } else { %>
-                            <span class="s-icon-item <%= key %>">
+                            <% } else { %>
                                 <a target="_blank" href="<%- theme.social_contact.links[key] %>">
                                     <i class="fab fa-<%= key %>"></i>
                                 </a>
-                            </span>
-                        <% } %>
+                            <% } %>
+                        </div>
                     <% } %>
                 <% } %>
             </div>

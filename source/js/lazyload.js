@@ -1,3 +1,5 @@
+/* global KEEP */
+
 KEEP.initLazyLoad = () => {
   const imgs = document.querySelectorAll('img');
   let now = Date.now();

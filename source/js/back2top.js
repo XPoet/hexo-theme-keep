@@ -1,3 +1,5 @@
+/* global KEEP */
+
 KEEP.initBack2Top = () => {
 
   KEEP.utils = {
