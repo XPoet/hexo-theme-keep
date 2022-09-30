@@ -1,6 +1,6 @@
-$tools-item-width = 32px
+$tools-item-width = 2.2rem
 $tools-item-font-size = 1.1rem
-$tools-item-border-radius = 1px
+$tools-item-border-radius = 0.1rem
 
 
 .side-tools-container {
@@ -9,13 +9,13 @@ $tools-item-border-radius = 1px
   .tools-item {
     width $tools-item-width
     height $tools-item-width
-    margin-bottom 3px
+    margin-bottom 0.2rem
     color var(--default-text-color)
     font-size $tools-item-font-size
     background var(--background-color)
     border-right none
     border-radius $tools-item-border-radius
-    box-shadow 1px 1px 3px var(--shadow-color)
+    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
     cursor pointer
 
     i {
@@ -25,7 +25,7 @@ $tools-item-border-radius = 1px
     &:hover {
       color var(--background-color)
       background var(--primary-color)
-      box-shadow 2px 2px 6px var(--shadow-color)
+      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
 
       i {
         color var(--background-color)
@@ -35,7 +35,7 @@ $tools-item-border-radius = 1px
     +keep-tablet() {
       width $tools-item-width * 0.9
       height $tools-item-width * 0.9
-      margin-bottom 2px
+      margin-bottom 0.2rem
       font-size $tools-item-font-size * 0.9
     }
 
@@ -49,7 +49,7 @@ $tools-item-border-radius = 1px
         &:hover {
           color var(--background-color)
           background var(--primary-color)
-          box-shadow 2px 2px 6px var(--shadow-color)
+          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
         }
       }
     }

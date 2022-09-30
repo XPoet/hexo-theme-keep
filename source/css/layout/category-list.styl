@@ -1,13 +1,17 @@
 .category-list-container {
 
-  keep-container(false, 0, 0, 30px, 0)
+  keep-container(false, 0, 0, 2rem, 0)
 
   .category-list-content {
 
     .all-category-list {
 
+      & > .all-category-list-item > .all-category-list-link {
+        font-size 1.1rem
+      }
+
       li.all-category-list-item {
-        margin-bottom 15px
+        margin-bottom 1rem
         font-size 1rem
 
         &:last-child {
@@ -30,9 +34,9 @@
 
 
         ul.all-category-list-child {
-          margin-top 15px
+          margin-top 1rem
 
-          margin-left 10px
+          margin-left 0.9rem
 
           li {
 
@@ -40,7 +44,7 @@
               content '- '
             }
 
-            margin-bottom 10px
+            margin-bottom 0.9rem
 
             &:last-child {
               margin-bottom 0

@@ -1,7 +1,7 @@
 @import "code-theme.styl"
 
 $code-block {
-  margin 20px 0
+  margin 1.5rem 0
   padding 0
   overflow auto
   color var(--highlight-foreground)
@@ -17,17 +17,17 @@ code {
 }
 
 code {
-  padding 5px
+  padding 0.4rem
   color var(--code-foreground)
   font-size 0.96rem
   word-wrap break-word
   background var(--code-background)
-  border-radius 2px
+  border-radius 0.2rem
 }
 
 pre {
   @extend $code-block
-  padding 10px
+  padding 0.6rem
 
   code {
     padding 0
@@ -39,11 +39,11 @@ pre {
 
 .highlight {
   @extend $code-block
-  border-radius 1px
+  border-radius 0.1rem
 
   pre {
     margin 0
-    padding 10px 0
+    padding 0.6rem 0
     border none
   }
 
@@ -78,8 +78,8 @@ pre {
   }
 
   .gutter pre {
-    padding-right 10px
-    padding-left 10px
+    padding-right 0.6rem
+    padding-left 0.6rem
     color var(--highlight-gutter-color)
     text-align center
     background-color var(--highlight-gutter-bg-color)
@@ -87,13 +87,13 @@ pre {
 
   .code pre {
     width 100%
-    padding-right 10px
-    padding-left 10px
+    padding-right 0.6rem
+    padding-left 0.6rem
     background-color var(--highlight-background)
   }
 
   .line {
-    height 20px
+    height 1.5rem
     color var(--default-text-color)
 
     .attr {
