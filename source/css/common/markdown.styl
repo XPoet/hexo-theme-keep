@@ -1,86 +1,90 @@
 .markdown-body {
-  font-size: 1rem;
+  font-size 1rem
 
   blockquote {
 
-    p,
-    ul,
+    p
+    ul
     ol {
-      padding: 5px 5px 5px 10px;
+      padding 0.4rem 0.4rem 0.4rem 0.8rem
     }
 
-    box-sizing: border-box;
-    border-left: 5px solid var(--default-text-color);
-    margin: 20px 0;
-    color: var(--default-text-color);
-    background: var(--second-background-color);
+    box-sizing border-box
+    margin 1.4rem 0
+    color var(--default-text-color)
+    background var(--second-background-color)
+    border-left 0.4rem solid var(--default-text-color)
   }
 
 
   p {
-    line-height: 2;
-    color: var(--default-text-color);
+    color var(--default-text-color)
+    line-height 2
   }
 
 
   a {
-    position: relative;
-    outline: 0;
-    text-decoration: none;
-    overflow-wrap: break-word;
-    cursor: pointer;
-    border-bottom: 1px solid var(--third-text-color);
-    box-sizing: border-box;
-    padding-bottom: 2px;
+    position relative
+    box-sizing border-box
+    padding-bottom 0.2rem
+    text-decoration none
+    overflow-wrap break-word
+    border-bottom 0.1rem solid var(--third-text-color)
+    outline 0
+    cursor pointer
 
-    .fas, .far, fab {
-      margin: 0 2px 0 6px;
-      position: relative;
-      color: var(--third-text-color);
-      font-size: 0.88rem;
+    .fas
+    .far
+    .fab {
+      position relative
+      margin 0 0.2rem 0 0.4rem
+      color var(--third-text-color)
+      font-size 0.88rem
     }
 
 
     &:hover {
-      text-decoration: underline;
+      text-decoration underline
 
       &::after {
-        background: var(--primary-color);
+        background var(--primary-color)
       }
     }
   }
 
 
   strong {
-    color: var(--default-text-color);
+    color var(--default-text-color)
   }
 
 
   em {
-    color: var(--default-text-color);
+    color var(--default-text-color)
   }
 
 
-  ul > li,
-  ol > li {
-    margin-left: 16px;
-    line-height: 2rem;
+  ul
+  ol {
+    li {
+      margin-left 1rem
+      line-height 2rem
+    }
   }
 
 
   ul {
 
     li {
-      list-style: disc;
+      list-style disc
 
       ul {
 
         li {
-          list-style: circle;
+          list-style circle
 
           ul {
             li {
-              list-style: square;
+              list-style square
             }
           }
         }
@@ -92,16 +96,16 @@
   ol {
 
     li {
-      list-style: decimal;
+      list-style decimal
 
       ol {
 
         li {
-          list-style: upper-alpha;
+          list-style upper-alpha
 
           ol {
             li {
-              list-style: upper-roman;
+              list-style upper-roman
             }
           }
         }
@@ -111,133 +115,138 @@
 
 
   li {
-    color: var(--default-text-color);
+    color var(--default-text-color)
   }
 
 
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--second-text-color);
-    line-height: 1.5;
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6 {
+    color var(--second-text-color)
+    line-height 1.5
 
     +keep-tablet() {
-      line-height: 1.25;
+      line-height 1.25
     }
   }
 
 
   h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-weight 600
+    font-size 1.8rem
 
     +keep-tablet() {
-      font-size: 1.7rem;
+      font-size 1.7rem
     }
   }
 
 
   h2 {
-    font-size: 1.7rem;
-    font-weight: 600;
+    font-weight 600
+    font-size 1.7rem
 
     +keep-tablet() {
-      font-size: 1.6rem;
+      font-size 1.6rem
     }
   }
 
 
   h3 {
-    font-size: 1.6rem;
-    font-weight: 550;
+    font-weight 550
+    font-size 1.6rem
 
     +keep-tablet() {
-      font-size: 1.5rem;
+      font-size 1.5rem
     }
   }
 
 
   h4 {
-    font-size: 1.5rem;
-    font-weight: 550;
+    font-weight 550
+    font-size 1.5rem
 
     +keep-tablet() {
-      font-size: 1.4rem;
+      font-size 1.4rem
     }
   }
 
 
   h5 {
-    font-size: 1.28rem;
-    font-weight: 500;
+    font-weight 500
+    font-size 1.28rem
 
     +keep-tablet() {
-      font-size: 1.18rem;
+      font-size 1.18rem
     }
   }
 
 
   h6 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight 500
+    font-size 1.2rem
+    line-height 1.2
 
     +keep-tablet() {
-      font-size: 1.1rem;
-      line-height: 1.1;
+      font-size 1.1rem
+      line-height 1.1
     }
   }
 
 
   img {
-    box-sizing: border-box;
-    max-width: 100%;
-    cursor: zoom-in;
-    display: block;
-    box-shadow: 0 0 2px var(--shadow-color);
-    transition-t("padding, margin", "0, 0", "0.2, 0.2", "linear, linear");
+    display block
+    box-sizing border-box
+    max-width 100%
+    box-shadow 0 0 0.2rem var(--shadow-color)
+    cursor zoom-in
+    transition-t("padding, margin", "0, 0", "0.2, 0.2", "linear, linear")
 
     if (hexo-config('post.img_align') == 'center' || hexo-config('style.article_img_align') == 'center') {
-      margin: 10px auto 2px;
-    } else {
-      margin: 10px 0 2px;
+      margin 0.8rem auto 0.2rem
     }
-
+    else {
+      margin 0.8rem 0 0.2rem
+    }
   }
 
 
   & > table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    width: 100%;
-    overflow: auto;
+    width 100%
+    overflow auto
+    border-collapse collapse
+    border-spacing 0
 
     +keep-mobile() {
       & {
-        table-layout: fixed;
+        table-layout fixed
       }
     }
 
-    td,
+    td
     th {
-      padding: 0;
+      padding 0
     }
 
     th {
-      font-weight: 600;
+      font-weight 600
     }
 
-    td,
+    td
     th {
-      padding: 6px 13px;
-      border: 1px solid var(--border-color);
+      padding 0.4rem 1rem
+      border 0.1rem solid var(--border-color)
     }
 
     tr {
-      background-color: var(--background-color);
-      border: 1px solid var(--fourth-text-color);
+      background-color var(--background-color)
+      border 0.1rem solid var(--fourth-text-color)
     }
 
     tr:nth-child(2n) {
-      background-color: var(--second-background-color);
+      background-color var(--second-background-color)
     }
   }
 }

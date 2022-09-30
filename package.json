@@ -4,8 +4,10 @@
   "private": false,
   "description": "A simple and elegant theme for Hexo.",
   "scripts": {
-    "release": "git push --tag && git push -u origin dev",
-    "publish": "npm publish"
+    "npm:publish": "npm publish",
+    "lint:style": "stylelint --fix source/css/**/**/**/*.styl",
+    "git:push": "git push --tag && git push -u origin dev",
+    "git:add": "npm run lint:style && git add ."
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/XPoet/hexo-theme-keep/issues"
   },
-  "homepage": "https://github.com/XPoet/hexo-theme-keep#readme"
+  "homepage": "https://github.com/XPoet/hexo-theme-keep#readme",
+  "devDependencies": {
+    "stylelint": "^14.13.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-stylus": "^0.17.0"
+  }
 }

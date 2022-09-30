@@ -35,20 +35,20 @@ $night-highlight-deletion = #008000
 $night-highlight-addition = #800000
 
 code-theme(mode) {
-  --code-foreground: mode == 'light' ? $code-foreground : $night-code-foreground
-  --code-background: mode == 'light' ? $code-background : $night-code-background
-  --highlight-background: mode == 'light' ? $highlight-background : $night-highlight-background
-  --highlight-foreground: mode == 'light' ? $highlight-foreground : $night-highlight-foreground
-  --highlight-comment: mode == 'light' ? $highlight-comment : $night-highlight-comment
-  --highlight-red: mode == 'light' ? $highlight-red : $night-highlight-red
-  --highlight-orange: mode == 'light' ? $highlight-orange : $night-highlight-orange
-  --highlight-yellow: mode == 'light' ? $highlight-yellow : $night-highlight-yellow
-  --highlight-green: mode == 'light' ? $highlight-green : $night-highlight-green
-  --highlight-aqua: mode == 'light' ? $highlight-aqua : $night-highlight-aqua
-  --highlight-blue: mode == 'light' ? $highlight-blue : $night-highlight-blue
-  --highlight-purple: mode == 'light' ? $highlight-purple : $night-highlight-purple
-  --highlight-gutter-color: mode == 'light' ? $highlight-gutter-color : $night-highlight-gutter-color
-  --highlight-gutter-bg-color: mode == 'light' ? $highlight-gutter-bg-color : $night-highlight-gutter-bg-color
+  --code-foreground mode == 'light' ? $code-foreground : $night-code-foreground
+  --code-background mode == 'light' ? $code-background : $night-code-background
+  --highlight-background mode == 'light' ? $highlight-background : $night-highlight-background
+  --highlight-foreground mode == 'light' ? $highlight-foreground : $night-highlight-foreground
+  --highlight-comment mode == 'light' ? $highlight-comment : $night-highlight-comment
+  --highlight-red mode == 'light' ? $highlight-red : $night-highlight-red
+  --highlight-orange mode == 'light' ? $highlight-orange : $night-highlight-orange
+  --highlight-yellow mode == 'light' ? $highlight-yellow : $night-highlight-yellow
+  --highlight-green mode == 'light' ? $highlight-green : $night-highlight-green
+  --highlight-aqua mode == 'light' ? $highlight-aqua : $night-highlight-aqua
+  --highlight-blue mode == 'light' ? $highlight-blue : $night-highlight-blue
+  --highlight-purple mode == 'light' ? $highlight-purple : $night-highlight-purple
+  --highlight-gutter-color mode == 'light' ? $highlight-gutter-color : $night-highlight-gutter-color
+  --highlight-gutter-bg-color mode == 'light' ? $highlight-gutter-bg-color : $night-highlight-gutter-bg-color
 }
 
 
@@ -56,13 +56,13 @@ code-theme(mode) {
   code-theme('light')
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme light) {
   :root {
     code-theme('light')
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme dark) {
   :root {
     code-theme('dark')
   }

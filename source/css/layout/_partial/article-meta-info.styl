@@ -1,59 +1,61 @@
 .article-meta-info {
-  font-size: 0.8rem;
+  font-size 0.8rem
 
   .article-meta-item {
-    margin-right: 10px;
-    color: var(--third-text-color);
+    margin-right 10px
+    color var(--third-text-color)
 
     &:last-child {
-      margin-right: 0;
+      margin-right 0
     }
   }
 
   .article-date {
 
     .mobile {
-      display: none;
+      display none
     }
 
     +keep-tablet() {
       .pc {
-        display: none;
+        display none
       }
 
       .mobile {
-        display: inline;
+        display inline
       }
     }
-
   }
 
 
-  .article-tags, .article-categories {
-    display: inline;
+  .article-tags
+  .article-categories {
+    display inline
 
-    ul, li {
-      display: inline;
+    ul
+    li {
+      display inline
     }
 
     a {
-      color: var(--third-text-color);
+      color var(--third-text-color)
 
       &:hover {
-        color: var(--primary-color);
+        color var(--primary-color)
       }
     }
   }
 
   .article-tags {
     +keep-tablet() {
-      display: none;
+      display none
     }
   }
 
-  .article-min2read, .article-wordcount {
+  .article-min2read
+  .article-wordcount {
     +keep-mobile() {
-      display: none;
+      display none
     }
   }
 }
