@@ -2,7 +2,6 @@
 
 function initLeftSideToggle() {
   KEEP.utils.leftSideToggle = {
-
     toggleBar: document.querySelector('.page-aside-toggle'),
     pageTopDom: document.querySelector('.page-main-content-top'),
     containerDom: document.querySelector('.page-container'),
@@ -12,33 +11,35 @@ function initLeftSideToggle() {
     isOpenPageAside: false,
 
     initToggleBarButton() {
-      this.toggleBar && this.toggleBar.addEventListener('click', () => {
-        this.isOpenPageAside = !this.isOpenPageAside;
-        KEEP.styleStatus.isOpenPageAside = this.isOpenPageAside;
-        KEEP.setStyleStatus();
-        this.changePageLayoutWhenOpenToggle(this.isOpenPageAside);
-      });
+      this.toggleBar &&
+        this.toggleBar.addEventListener('click', () => {
+          this.isOpenPageAside = !this.isOpenPageAside
+          KEEP.styleStatus.isOpenPageAside = this.isOpenPageAside
+          KEEP.setStyleStatus()
+          this.changePageLayoutWhenOpenToggle(this.isOpenPageAside)
+        })
     },
 
     changePageLayoutWhenOpenToggle(isOpen) {
-      this.toggleBarIcon && (this.toggleBarIcon.className = isOpen ? 'fas fa-outdent' : 'fas fa-indent');
-      const pageAsideWidth = KEEP.theme_config.style.left_side_width || '260px';
-      this.containerDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
-      this.pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0';
-      this.leftAsideDom.style.left = isOpen ? '0' : `-${pageAsideWidth}`;
+      this.toggleBarIcon &&
+        (this.toggleBarIcon.className = isOpen ? 'fas fa-outdent' : 'fas fa-indent')
+      const pageAsideWidth = KEEP.theme_config.style.left_side_width || '260px'
+      this.containerDom.style.paddingLeft = isOpen ? pageAsideWidth : '0'
+      this.pageTopDom.style.paddingLeft = isOpen ? pageAsideWidth : '0'
+      this.leftAsideDom.style.left = isOpen ? '0' : `-${pageAsideWidth}`
     },
 
     pageAsideHandleOfTOC(isOpen) {
-      this.toggleBar.style.display = 'flex';
-      this.isOpenPageAside = isOpen;
-      this.changePageLayoutWhenOpenToggle(isOpen);
+      this.toggleBar.style.display = 'flex'
+      this.isOpenPageAside = isOpen
+      this.changePageLayoutWhenOpenToggle(isOpen)
     }
   }
-  KEEP.utils.leftSideToggle.initToggleBarButton();
+  KEEP.utils.leftSideToggle.initToggleBarButton()
 }
 
 if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {
-  initLeftSideToggle();
+  initLeftSideToggle()
 } else {
-  window.addEventListener('DOMContentLoaded', initLeftSideToggle);
+  window.addEventListener('DOMContentLoaded', initLeftSideToggle)
 }

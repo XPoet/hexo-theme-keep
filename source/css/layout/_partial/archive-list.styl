@@ -1,80 +1,80 @@
-$archive-year-font-size = 1.8rem;
-$archive-year-count-font-size = 1.2rem;
-$article-title-font-size = 1.2rem;
-$article-date-font-size = 1rem;
+$archive-year-font-size = 1.8rem
+$archive-year-count-font-size = 1.2rem
+$article-title-font-size = 1.2rem
+$article-date-font-size = 1rem
 
 .archive-list-container {
 
   .archive-item {
-    margin-bottom: $component-spacing-value;
+    margin-bottom $component-spacing-value
 
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom 0
     }
 
     .archive-item-header {
-      margin-bottom: 10px;
+      margin-bottom 0.8rem
 
       .archive-year {
-        font-size: $archive-year-font-size;
+        margin-right 6px
+        color var(--second-text-color)
+        font-weight 600
+        font-size $archive-year-font-size
 
         +keep-tablet() {
-          font-size: $archive-year-font-size - 0.2rem;
+          font-size $archive-year-font-size - 0.2rem
         }
-
-        color: var(--second-text-color);
-        font-weight: 600;
-        margin-right: 6px;
       }
 
 
       .archive-year-post-count {
-        font-size: $archive-year-count-font-size;
-        font-weight: 500;
-        color: var(--second-text-color);
+        color var(--second-text-color)
+        font-weight 500
+        font-size $archive-year-count-font-size
 
         +keep-tablet() {
-          font-size: $archive-year-count-font-size * 0.9;
+          font-size $archive-year-count-font-size * 0.9
         }
       }
-
     }
 
 
     .article-list {
 
-      padding-left: 10px;
+      padding-left 0.8rem
 
       +keep-tablet() {
-        padding-left: 0;
+        padding-left 0
       }
 
       .article-item {
-        font-size: 1rem;
-        margin-top: 18px;
+        margin-top 1.2rem
+        font-size 1rem
 
         +keep-tablet() {
-          margin-top: 16px;
+          margin-top 1.1rem
         }
 
         +keep-mobile() {
-          margin-top: 14px;
+          margin-top 1rem
         }
 
         &:hover {
-          a.article-title, .article-date {
-            color: var(--primary-color);
+          a.article-title
+          .article-date {
+            color var(--primary-color)
           }
         }
 
 
         a.article-title {
-          color: var(--default-text-color);
+          color var(--default-text-color)
         }
 
         .article-date {
-          font-size: $article-date-font-size;
-          float: right;
+          float right
+          color var(--default-text-color)
+          font-size $article-date-font-size
         }
       }
     }

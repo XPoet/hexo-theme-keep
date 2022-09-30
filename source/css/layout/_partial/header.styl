@@ -1,96 +1,94 @@
-$logo-title-font-size = 2rem;
-$pc-search-icon-font-size = 1.5rem;
-$menu-bar-line-height = 2.5px;
-$logo-image-box-width = 46px;
+$logo-title-font-size = 2rem
+$pc-search-icon-font-size = 1.5rem
+$menu-bar-line-height = 2.5px
+$logo-image-box-width = 46px
 
 .header-wrapper {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: $scroll-progress-bar-height;
-  background: var(--background-color);
+  display flex
+  align-items center
+  justify-content center
+  box-sizing border-box
+  width 100%
+  height 100%
+  padding-top $scroll-progress-bar-height
+  background var(--background-color)
 
-  hover-style(false, 0, 0);
+  hover-style(false, 0, 0)
 
   .header-content {
-    position: relative;
-    height: 100%;
-    width: $main-content-width;
-    max-width: $content-max-width;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: $z-index-5;
+    position relative
+    z-index $z-index-5
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+    width $main-content-width
+    max-width $content-max-width
+    height 100%
 
 
     &.has-first-screen {
-      max-width: $content-max-width * 1.2;
+      max-width $content-max-width * 1.2
     }
 
     +keep-tablet() {
-      width: $main-content-width-tablet;
+      width $main-content-width-tablet
     }
 
     +keep-mobile() {
-      width: $main-content-width-mobile;
+      width $main-content-width-mobile
     }
 
     .left {
-      display: flex;
-      align-items: center;
-      transition-t("transform", "0", "0.2", "linear");
+      display flex
+      align-items center
+      transition-t("transform", "0", "0.2", "linear")
 
       .header-shrink & {
-        transform: scale(0.72);
-        transform-origin: left;
+        transform scale(0.72)
+        transform-origin left
       }
 
 
       if (hexo-config('base_info.logo_img') || hexo-config('style.logo')) {
         .logo-image {
-          width: $logo-image-box-width;
-          height: $logo-image-box-width;
-          margin-right: 8px;
+          width $logo-image-box-width
+          height $logo-image-box-width
+          margin-right 8px
 
 
           +keep-tablet() {
-            width: $logo-image-box-width * 0.9;
-            height: $logo-image-box-width * 0.9;
+            width $logo-image-box-width * 0.9
+            height $logo-image-box-width * 0.9
           }
 
           +keep-mobile() {
-            width: $logo-image-box-width * 0.8;
-            height: $logo-image-box-width * 0.8;
+            width $logo-image-box-width * 0.8
+            height $logo-image-box-width * 0.8
           }
 
           img {
-            border-radius: 6px;
-            width: 100%;
+            width 100%
+            border-radius 6px
           }
         }
-
       }
 
       .logo-title {
-        font-size: $logo-title-font-size;
-        font-weight: bold;
-        letter-spacing: 1px;
-        line-height: 1;
-        color: var(--first-text-color);
+        color var(--first-text-color)
+        font-weight bold
+        font-size $logo-title-font-size
+        line-height 1
+        letter-spacing 1px
 
         +keep-tablet() {
-          font-size: $logo-title-font-size * 0.9;
+          font-size $logo-title-font-size * 0.9
         }
 
         +keep-mobile() {
-          font-size: $logo-title-font-size * 0.8;
+          font-size $logo-title-font-size * 0.8
         }
       }
-
     }
 
 
@@ -99,131 +97,129 @@ $logo-image-box-width = 46px;
       .pc {
 
         .menu-list {
-          display: flex;
-          align-items: center;
+          display flex
+          align-items center
 
           +keep-tablet() {
-            display: none;
+            display none
           }
 
 
           .menu-item {
-            float: left;
-            position: relative;
-            margin-left: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            color: var(--default-text-color);
+            position relative
+            float left
+            margin-left 2rem
+            color var(--default-text-color)
+            font-size 1rem
+            cursor pointer
 
             &:first-child {
-              margin-left: 0;
+              margin-left 0
             }
 
 
-            a:hover, .active {
+            a:hover
+            .active {
 
               &::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                width: 100%;
-                height: 2px;
-                transform: translateX(-50%);
-                background: var(--primary-color);
-                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear");
+                position absolute
+                bottom -10px
+                left 50%
+                width 100%
+                height 2px
+                background var(--primary-color)
+                transform translateX(-50%)
+                content ''
+                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear")
 
                 .header-shrink & {
-                  bottom: -($header-shrink-height / 2 - 12);
+                  bottom -($header-shrink-height / 2 - 12)
                 }
               }
             }
 
             &.search {
-              font-size: $pc-search-icon-font-size;
-              margin-left: 26px;
+              margin-left 26px
+              font-size $pc-search-icon-font-size
 
               i {
-                color: var(--default-text-color);
+                color var(--default-text-color)
               }
-
             }
           }
-
-
         }
-
       }
 
 
       .mobile {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display flex
+        align-items center
+        justify-content space-between
 
         .icon-item {
-          display: none;
-          position: relative;
-          cursor: pointer;
-          font-size: 18px;
-          margin-left: 12px;
-          width: 20px;
-          height: 20px;
-          color: var(--default-text-color);
+          position relative
+          display none
+          width 20px
+          height 20px
+          margin-left 12px
+          color var(--default-text-color)
+          font-size 18px
+          cursor pointer
 
           i {
-            color: var(--default-text-color);
+            color var(--default-text-color)
           }
 
           &:first-child {
-            margin-left: 0;
+            margin-left 0
           }
 
           +keep-tablet() {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display flex
+            align-items center
+            justify-content center
           }
         }
 
         .menu-bar {
 
           .menu-bar-middle {
-            width: 18px;
-            height: $menu-bar-line-height;
-            position: relative;
-            background: var(--default-text-color);
+            position relative
+            width 18px
+            height $menu-bar-line-height
+            background var(--default-text-color)
 
             .header-drawer-show & {
-              background: transparent;
+              background transparent
             }
 
 
-            &::before, &::after {
-              content: '';
-              position: absolute;
-              left: 0;
-              width: 100%;
-              height: $menu-bar-line-height;
-              background: var(--default-text-color);
-              transition-t("transform", "0", "0.38", "ease");
+            &::before
+            &::after {
+              position absolute
+              left 0
+              width 100%
+              height $menu-bar-line-height
+              background var(--default-text-color)
+              content ''
+              transition-t("transform", "0", "0.38", "ease")
             }
 
 
             &::before {
-              top: -6px;
+              top -6px
 
               .header-drawer-show & {
-                transform: translateY(6px) rotate(45deg);
+                transform translateY(6px) rotate(45deg)
               }
             }
 
 
             &::after {
-              bottom: -6px;
+              bottom -6px
 
               .header-drawer-show & {
-                transform: translateY(-6px) rotate(-45deg);
+                transform translateY(-6px) rotate(-45deg)
               }
             }
           }
@@ -234,74 +230,71 @@ $logo-image-box-width = 46px;
 
 
   .header-drawer {
-    width: 100%;
-    padding: $header-height 0 20px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleY(0);
-    transform-origin: top;
-    z-index: $z-index-2;
-    background: var(--background-color);
-    transition-t("transform", "0", "0.38", "ease");
+    position absolute
+    top 0
+    left 0
+    z-index $z-index-2
+    width 100%
+    padding $header-height 0 20px 0
+    background var(--background-color)
+    transform scaleY(0)
+    transform-origin top
+    transition-t("transform", "0", "0.38", "ease")
 
     .header-drawer-show & {
-      transform: scaleY(1);
+      transform scaleY(1)
     }
 
     .drawer-menu-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
+      display flex
+      flex-direction column
+      align-items center
+      justify-content flex-start
 
       .drawer-menu-item {
-        font-size: 1rem;
-        margin: 6px 0;
-        height: 38px;
+        height 38px
+        margin 6px 0
+        font-size 1rem
 
         a {
-          padding: 6px 20px;
-          border-radius: 20px;
-          color: var(--default-text-color);
+          padding 6px 20px
+          color var(--default-text-color)
+          border-radius 20px
 
           &:hover {
-            color: var(--second-text-color);
-            border: 1px solid var(--default-text-color);
+            color var(--second-text-color)
+            border 1px solid var(--default-text-color)
           }
 
 
           &.active {
-            border: 1px solid var(--default-text-color);
-            color: var(--second-text-color);
+            color var(--second-text-color)
+            border 1px solid var(--default-text-color)
           }
         }
-
-
       }
     }
   }
 
 
   .window-mask {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: $z-index-1;
-    visibility: hidden;
-    opacity: 0;
-    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease");
+    position absolute
+    top 0
+    z-index $z-index-1
+    width 100%
+    height 100vh
+    background rgba(0, 0, 0, 0.4)
+    visibility hidden
+    opacity 0
+    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
 
     .header-drawer-show & {
-      visibility: visible;
-      opacity: 1;
+      visibility visible
+      opacity 1
     }
   }
-
 }
 
 .header-drawer-show {
-  overflow: hidden;
+  overflow hidden
 }

@@ -1,39 +1,53 @@
 .article-copyright-info-container {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 6px;
-  font-size: 1rem;
-  background: var(--second-background-color);
+  position relative
+  box-sizing border-box
+  width 100%
+  overflow hidden
+  font-size 1rem
+  background var(--second-background-color)
 
   &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    width: 6px;
-    height: 100%;
-    background: var(--copyright-info-color);
+    position absolute
+    top 0
+    left 0
+    width 0.5rem
+    height 100%
+    background var(--copyright-info-color)
+    content ''
   }
 
 
-  ul {
+  .copyright-info-content {
+    position relative
+    box-sizing border-box
+    padding 0.8rem 0.8rem 0.8rem 1.3rem
+    overflow-x auto
 
-    margin-left: 10px;
+    &::-webkit-scrollbar {
+      width 0.4rem
+      height 0.4rem
+      transition all 0.2s ease
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background var(--third-text-color)
+    }
+
+    &::-webkit-scrollbar-track {
+      background transparent
+    }
 
     li {
-      margin-bottom: 5px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      color: var(--default-text-color);
+      margin-bottom 0.4rem
+      color var(--default-text-color)
+      white-space nowrap
 
       .license {
-        font-weight: bold;
+        font-weight bold
       }
 
       &:last-child {
-        margin-bottom: 0;
+        margin-bottom 0
       }
     }
   }

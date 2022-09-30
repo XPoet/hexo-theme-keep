@@ -34,11 +34,11 @@ $first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--
     padding-top 2rem
 
     .description {
+      color $first-screen-font-color
       font-weight bold
       font-size $first-screen-font-size
       line-height 1.8
       text-align center
-      color $first-screen-font-color
 
       +keep-tablet() {
         font-size $first-screen-font-size * 0.9
@@ -48,10 +48,10 @@ $first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--
 
     .s-icon-list {
       position absolute
-      box-sizing border-box
       bottom 0
-      font-size $first-screen-icon-size
       display flex
+      box-sizing border-box
+      font-size $first-screen-icon-size
 
       +keep-tablet() {
         font-size $first-screen-icon-size * 0.9

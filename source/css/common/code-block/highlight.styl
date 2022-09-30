@@ -1,70 +1,71 @@
-@require "code-theme.styl"
+@import "code-theme.styl"
 
 $code-block {
-  overflow auto
-  margin 20px 0
+  margin 1.5rem 0
   padding 0
+  overflow auto
+  color var(--highlight-foreground)
   font-size 0.96rem
   line-height 1.5rem
-  color var(--highlight-foreground)
   background var(--highlight-background)
 }
 
 
-pre, code {
+pre
+code {
   font-family "Source Code Pro", consolas, Menlo
 }
 
 code {
-  padding 5px
-  word-wrap break-word
-  border-radius 2px
-  font-size 0.96rem
+  padding 0.4rem
   color var(--code-foreground)
+  font-size 0.96rem
+  word-wrap break-word
   background var(--code-background)
+  border-radius 0.2rem
 }
 
 pre {
   @extend $code-block
-  padding 10px
+  padding 0.6rem
 
   code {
     padding 0
     color var(--highlight-foreground)
-    background none
     text-shadow none
+    background none
   }
 }
 
 .highlight {
   @extend $code-block
-  border-radius 1px
+  border-radius 0.1rem
 
   pre {
-    border none
     margin 0
-    padding 10px 0
+    padding 0.6rem 0
+    border none
   }
 
 
   table {
-    margin 0
     width auto
+    margin 0
     border none
     border-spacing unset
   }
 
 
   td {
-    border none
     padding 0
+    border none
   }
 
   figcaption {
-    font-size 1rem
-    color var(--highlight-foreground)
-    line-height 1rem
     margin-bottom 1rem
+    color var(--highlight-foreground)
+    font-size 1rem
+    line-height 1rem
 
     a {
       float right
@@ -77,8 +78,8 @@ pre {
   }
 
   .gutter pre {
-    padding-left 10px
-    padding-right 10px
+    padding-right 0.6rem
+    padding-left 0.6rem
     color var(--highlight-gutter-color)
     text-align center
     background-color var(--highlight-gutter-bg-color)
@@ -86,13 +87,13 @@ pre {
 
   .code pre {
     width 100%
-    padding-left 10px
-    padding-right 10px
+    padding-right 0.6rem
+    padding-left 0.6rem
     background-color var(--highlight-background)
   }
 
   .line {
-    height 20px
+    height 1.5rem
     color var(--default-text-color)
 
     .attr {
@@ -102,7 +103,6 @@ pre {
     .string {
       color var(--default-text-color)
     }
-
   }
 }
 
@@ -200,5 +200,4 @@ pre {
   .javascript .function {
     color var(--highlight-purple)
   }
-
 }

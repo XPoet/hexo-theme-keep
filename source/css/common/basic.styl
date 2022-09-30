@@ -1,6 +1,6 @@
-@require 'variables.styl'
-@require 'animated.styl'
-@require 'keep-theme.styl'
+@import 'variables.styl'
+@import 'animated.styl'
+@import 'keep-theme.styl'
 
 // ======================================================================
 // all
@@ -17,14 +17,14 @@
   // ====================================
 
   &::-webkit-scrollbar {
-    width 6px
-    height 6px
+    width 0.4rem
+    height 0.4rem
     transition all 0.2s ease
   }
 
   &::-webkit-scrollbar-thumb {
     background var(--scrollbar-color)
-    border-radius 1px
+    border-radius 0.1rem
   }
 
   &::-webkit-scrollbar-track {
@@ -36,22 +36,23 @@
 // ======================================================================
 // html, body
 // ======================================================================
-html, body {
+html
+body {
   position relative
   width 100%
   height 100%
   margin 0
   padding 0
   color var(--default-text-color)
-  background var(--background-color)
-  font-family $default-font-family
   font-weight $default-font-weight
   font-size $default-font-size
+  font-family $default-font-family
   line-height $default-font-line-height
+  background var(--background-color)
 
   &::-webkit-scrollbar {
-    width 8px
-    height 8px
+    width 0.4rem
+    height 0.4rem
   }
 
   +keep-tablet() {
@@ -64,7 +65,6 @@ html, body {
     font-size $default-font-size * 0.9
     line-height $default-font-line-height * 0.9
   }
-
 }
 
 
@@ -72,17 +72,19 @@ html, body {
 // selection
 // ======================================================================
 ::selection {
-  background var(--selection-color)
   color #fff
+  background var(--selection-color)
 }
 
 
 // ======================================================================
 // ul, ol, li
 // ======================================================================
-ul, ol, li {
-  padding 0
+ul
+ol
+li {
   margin 0
+  padding 0
   list-style none
 }
 
@@ -91,22 +93,24 @@ ul, ol, li {
 // a
 // ======================================================================
 a {
-  text-decoration none
   color var(--default-text-color)
+  text-decoration none
 
-  i, span {
+  i
+  span {
     color var(--default-text-color)
   }
 
-  &:hover, &:active {
-    text-decoration none !important
+  &:hover
+  &:active {
     color var(--primary-color)
+    text-decoration none !important
 
-    i, span {
+    i
+    span {
       color var(--primary-color)
     }
   }
-
 }
 
 
@@ -115,8 +119,8 @@ a {
 // ======================================================================
 img {
   &[lazyload] {
-    padding 10px
-    margin 20px auto !important
+    margin 1.4rem auto !important
+    padding 0.8rem
     cursor not-allowed
     pointer-events none
   }
@@ -127,23 +131,23 @@ img {
 // button
 // ======================================================================
 button {
-  padding 0
   margin 0
+  padding 0
+  background transparent
   border 0
   outline none
   cursor pointer
-  background transparent
 }
 
 .btn {
-  display inline-block
   position relative
-  text-align center
-  cursor pointer
+  display inline-block
+  padding 0.4rem 1rem
   white-space nowrap
-  border-radius 5px
-  padding 8px 16px
+  text-align center
   background var(--background-color)
+  border-radius 5px
+  cursor pointer
 
   hover-style(true, 1.06, 1.06)
 
@@ -159,8 +163,8 @@ button {
 // ======================================================================
 .flex-center {
   display flex
-  justify-content center
   align-items center
+  justify-content center
 }
 
 
@@ -169,12 +173,12 @@ button {
 // ======================================================================
 .clear {
   &::after {
-    content ''
     display block
     clear both
-    visibility hidden
-    overflow hidden
     height 0
+    overflow hidden
+    visibility hidden
+    content ''
   }
 }
 
@@ -194,17 +198,17 @@ button {
 
   .tooltip-content {
     position absolute
-    top -140%
+    top 0
     left 50%
-    transform translateX(-50%)
-    font-size 0.8rem
-    padding 0.2rem 0.6rem
-    background var(--first-text-color)
-    color var(--fourth-text-color)
-    border-radius 0.3rem
-    display none
     z-index $z-index-9
+    display none
+    padding 0.2rem 0.6rem
+    color var(--fourth-text-color)
+    font-size 0.8rem
     white-space nowrap
+    background var(--first-text-color)
+    border-radius 0.3rem
+    transform translateX(-50%) translateY(-108%)
     transition-t("display", "0", "0.2", "ease")
   }
 }

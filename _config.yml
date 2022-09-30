@@ -1,3 +1,9 @@
+## ======================================================================================
+## Keep v3.4.8
+## Repository: https://github.com/XPoet/hexo-theme-keep
+## Document: https://keep-docs.xpoet.cn
+## ======================================================================================
+
 # ---------------------------------------------------------------------------------------
 #  Your basic info
 # ---------------------------------------------------------------------------------------
@@ -254,9 +260,3 @@ footer:
   since: 2020  # the starting year of your website. Can be null
   icp:         # ICP record number of your website. Can be null
   upyun:       # If your site is deployed on upyun, your can fill the upyun url. Can be null
-
-# ---------------------------------------------------------------------------------------
-# Keep version
-# Please don't modify
-# ---------------------------------------------------------------------------------------
-version: 3.4.7

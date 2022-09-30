@@ -22,21 +22,17 @@ const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme
                     src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 <% if (bsz_site_uv) { %>
-                    <span id="busuanzi_container_site_uv">
-                        <%- __('site_uv') %>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                    </span>
+                    <%- __('site_uv') %>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                 <% } %>
                 <% if (bsz_site_pv) { %>
-                    <span id="busuanzi_container_site_pv">
-                        <%- __('site_pv') %>&nbsp;<span id="busuanzi_value_site_pv"></span>
-                    </span>
+                    <%- __('site_pv') %>&nbsp;<span id="busuanzi_value_site_pv"></span>
                 <% } %>
             </div>
         <% } %>
         <div class="theme-info info-item">
             <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>
             &nbsp;
-            <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.7</a>
+            <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.8</a>
         </div>
         <% if (f_icp) { %>
             <div class="icp-info info-item">

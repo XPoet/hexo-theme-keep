@@ -11,28 +11,28 @@ disable-user-select() {
   margin 1.4rem 0
 
   .code-tools-box {
+    display flex
+    align-items center
+    justify-content space-between
     box-sizing border-box
     width 100%
+    padding 0.3rem 0.4rem
     background var(--fourth-text-color)
     border-top-left-radius 0.3rem
     border-top-right-radius 0.3rem
-    display flex
-    justify-content space-between
-    align-items center
-    padding 0.3rem 0.6rem 0.3rem 0.4rem
 
     &.folded {
-      border-bottom-left-radius 0.3rem
       border-bottom-right-radius 0.3rem
+      border-bottom-left-radius 0.3rem
     }
 
     .code-lang {
-      margin-left 0.2rem
-      font-size 0.9rem
-      font-weight 600
-      font-family "Source Code Pro", consolas, Menlo
-      color var(--default-text-color)
       justify-content flex-start
+      margin-left 0.2rem
+      color var(--default-text-color)
+      font-weight 600
+      font-size 0.9rem
+      font-family "Source Code Pro", consolas, Menlo
     }
 
     .tool {
@@ -47,10 +47,8 @@ disable-user-select() {
 
 
     .fold {
-      font-weight bold
       padding 0 0.4rem 0 0.2rem
     }
-
   }
 
 
@@ -65,7 +63,7 @@ disable-user-select() {
 
   if (hexo-config('code_block_tools.style') == 'mac' || hexo-config('code_copy.style') == 'mac') {
     margin 1.4rem 0 1.8rem 0
-    box-shadow 0 0.8rem 2rem 0 rgba(0, 0, 0, .4)
+    box-shadow 0 0.8rem 2rem 0 rgba(0, 0, 0, 0.4)
 
     &:hover {
       .code-tools-box .copy {
@@ -75,23 +73,23 @@ disable-user-select() {
 
     .code-tools-box {
       justify-content flex-end
-      background #21252b
       padding 0.4rem 0.6rem 0.7rem 0.4rem
+      background #21252b
 
       &::before {
         position absolute
-        content ''
-        width 0.8rem
-        height 0.8rem
         left 0.8rem
+        width 0.76rem
+        height 0.76rem
         background #fc625d
         border-radius 50%
-        box-shadow 1.4rem 0 #fdbc40, 2.8rem 0 #35cd4b
+        box-shadow 1.3rem 0 #fdbc40, 2.6rem 0 #35cd4b
+        content ''
       }
 
       &.folded {
-        border-bottom-left-radius 0
         border-bottom-right-radius 0
+        border-bottom-left-radius 0
 
         .copy {
           display none
@@ -114,8 +112,8 @@ disable-user-select() {
 
       .copy {
         position absolute
-        bottom 0.3rem
         right 0.5rem
+        bottom 0.3rem
         padding 0 0.1rem
         font-weight bold
         opacity 0
@@ -124,11 +122,7 @@ disable-user-select() {
         i {
           font-size 1rem
         }
-
       }
-
     }
-
   }
-
 }

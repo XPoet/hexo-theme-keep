@@ -1,55 +1,55 @@
-$tools-item-width = 32px;
-$tools-item-font-size = 1.1rem;
-$tools-item-border-radius = 1px;
+$tools-item-width = 2.2rem
+$tools-item-font-size = 1.1rem
+$tools-item-border-radius = 0.1rem
 
 
 .side-tools-container {
-  position: relative;
+  position relative
 
   .tools-item {
-    width: $tools-item-width;
-    height: $tools-item-width;
-    font-size: $tools-item-font-size;
-    margin-bottom: 3px;
-    cursor: pointer;
-    border-right: none;
-    border-radius: $tools-item-border-radius;
-    box-shadow: 1px 1px 3px var(--shadow-color);
-    color: var(--default-text-color);
-    background: var(--background-color);
+    width $tools-item-width
+    height $tools-item-width
+    margin-bottom 0.2rem
+    color var(--default-text-color)
+    font-size $tools-item-font-size
+    background var(--background-color)
+    border-right none
+    border-radius $tools-item-border-radius
+    box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
+    cursor pointer
 
     i {
-      color: var(--default-text-color);
+      color var(--default-text-color)
     }
 
     &:hover {
-      color: var(--background-color);
-      background: var(--primary-color);
-      box-shadow: 2px 2px 6px var(--shadow-color);
+      color var(--background-color)
+      background var(--primary-color)
+      box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
 
       i {
-        color: var(--background-color);
+        color var(--background-color)
       }
     }
 
     +keep-tablet() {
-      width: $tools-item-width * 0.9;
-      height: $tools-item-width * 0.9;
-      font-size: $tools-item-font-size * 0.9;
-      margin-bottom: 2px;
+      width $tools-item-width * 0.9
+      height $tools-item-width * 0.9
+      margin-bottom 0.2rem
+      font-size $tools-item-font-size * 0.9
     }
 
     &.rss {
 
       a {
-        border-radius: $tools-item-border-radius;
-        width: 100%;
-        height: 100%;
+        width 100%
+        height 100%
+        border-radius $tools-item-border-radius
 
         &:hover {
-          color: var(--background-color);
-          background: var(--primary-color);
-          box-shadow: 2px 2px 6px var(--shadow-color);
+          color var(--background-color)
+          background var(--primary-color)
+          box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
         }
       }
     }
@@ -57,20 +57,20 @@ $tools-item-border-radius = 1px;
 
 
   .side-tools-list {
-    opacity: 0;
-    transform: translateX(100%);
-    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear");
+    transform translateX(100%)
+    opacity 0
+    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear")
 
     .tool-expand-width {
       +keep-tablet() {
-        display: none;
+        display none
       }
     }
 
 
     &.show {
-      opacity: 1;
-      transform: translateX(0);
+      transform translateX(0)
+      opacity 1
     }
   }
 
@@ -79,35 +79,32 @@ $tools-item-border-radius = 1px;
 
     if (hexo-config('style.scroll.percent.enable') == true) {
       .tool-scroll-to-top {
-        display: none;
+        display none
 
         &.show {
-          display: flex;
+          display flex
         }
 
         &:hover {
 
           .percent {
-            display: none;
+            display none
           }
 
           .arrow-up {
-            display: flex;
+            display flex
           }
-
         }
 
         .arrow-up {
-          display: none;
+          display none
         }
 
         .percent {
-          display: flex;
-          font-size: 1rem;
+          display flex
+          font-size 1rem
         }
-
       }
-
     }
   }
 }
