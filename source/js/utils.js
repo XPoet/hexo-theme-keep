@@ -345,6 +345,7 @@ KEEP.initUtils = () => {
     // insert tooltip content dom
     insertTooltipContent() {
       const init = () => {
+        // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
           const { content } = element.dataset
           if (content) {
@@ -352,6 +353,59 @@ KEEP.initUtils = () => {
               'afterbegin',
               `<span class="tooltip-content">${content}</span>`
             )
+          }
+        })
+
+        // tooltip-img
+
+        const imgsSet = {}
+
+        const toggleShowImg = (dom, nameIdx) => {
+          document.addEventListener('click', () => {
+            if (imgsSet[nameIdx].isShowImg) {
+              dom.classList.remove('show-img')
+              imgsSet[nameIdx].isShowImg = false
+            }
+          })
+        }
+
+        const loadImg = (img, imgLoaded) => {
+          const temp = new Image()
+          const { src } = img.dataset
+          temp.src = src
+          temp.onload = () => {
+            imgLoaded = true
+            img.src = src
+          }
+        }
+
+        document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
+          const { imgUrl, name } = dom.dataset
+          if (imgUrl) {
+            const imgDomClass = `tooltip-img-${name}`
+            const nameIdx = `${name}_${idx}`
+            const imgDom = `<img class="${imgDomClass}" src="./images/loading.svg" data-src="${imgUrl}" alt="${name}">`
+            const imgTooltipBox = `<div class="tooltip-img-box">${imgDom}</div>`
+
+            imgsSet[nameIdx] = {
+              imgLoaded: false,
+              isShowImg: false,
+            }
+
+            dom.insertAdjacentHTML(
+              'afterbegin',
+              imgTooltipBox
+            )
+            dom.addEventListener('click', (e) => {
+              if (!imgsSet[nameIdx].imgLoaded) {
+                loadImg(document.querySelector(`.tooltip-img-box img.${imgDomClass}`), imgsSet[nameIdx].imgLoaded)
+              }
+              imgsSet[nameIdx].isShowImg = !imgsSet[nameIdx].isShowImg
+              dom.classList.toggle('show-img')
+              e.stopPropagation()
+            })
+
+            toggleShowImg(dom, nameIdx)
           }
         })
       }

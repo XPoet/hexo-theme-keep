@@ -196,9 +196,16 @@ button {
     }
   }
 
+  &.show-img {
+    .tooltip-content {
+      display none !important
+    }
+  }
+
   .tooltip-content {
     position absolute
-    top 0
+    box-sizing border-box
+    top -0.4rem
     left 50%
     z-index $z-index-9
     display none
@@ -208,7 +215,45 @@ button {
     white-space nowrap
     background var(--first-text-color)
     border-radius 0.3rem
-    transform translateX(-50%) translateY(-108%)
+    transform translateX(-50%) translateY(-100%)
     transition-t("display", "0", "0.2", "ease")
+    disable-user-select()
   }
 }
+
+
+.tooltip-img {
+  position relative
+  box-sizing border-box
+
+  &.show-img {
+    .tooltip-img-box {
+      display flex
+    }
+  }
+
+  .tooltip-img-box {
+    position absolute
+    box-sizing border-box
+    top -0.4rem
+    left 50%
+    z-index $z-index-8
+    display none
+    justify-content center
+    align-items center
+    padding 0.2rem
+    background var(--fourth-text-color)
+    border-radius 0.3rem
+    transform translateX(-50%) translateY(-100%)
+    transition-t("display", "0", "0.2", "ease")
+    disable-user-select()
+    min-height 6rem
+
+    img {
+      display block
+      max-height 10rem
+    }
+  }
+}
+
+
