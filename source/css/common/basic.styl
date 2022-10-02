@@ -204,11 +204,11 @@ button {
 
   .tooltip-content {
     position absolute
-    box-sizing border-box
     top -0.4rem
     left 50%
     z-index $z-index-9
     display none
+    box-sizing border-box
     padding 0.2rem 0.6rem
     color var(--fourth-text-color)
     font-size 0.8rem
@@ -234,20 +234,20 @@ button {
 
   .tooltip-img-box {
     position absolute
-    box-sizing border-box
     top -0.4rem
     left 50%
     z-index $z-index-8
     display none
-    justify-content center
     align-items center
+    justify-content center
+    box-sizing border-box
+    min-height 6rem
     padding 0.2rem
     background var(--fourth-text-color)
     border-radius 0.3rem
     transform translateX(-50%) translateY(-100%)
     transition-t("display", "0", "0.2", "ease")
     disable-user-select()
-    min-height 6rem
 
     img {
       display block

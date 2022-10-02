@@ -389,16 +389,16 @@ KEEP.initUtils = () => {
 
             imgsSet[nameIdx] = {
               imgLoaded: false,
-              isShowImg: false,
+              isShowImg: false
             }
 
-            dom.insertAdjacentHTML(
-              'afterbegin',
-              imgTooltipBox
-            )
+            dom.insertAdjacentHTML('afterbegin', imgTooltipBox)
             dom.addEventListener('click', (e) => {
               if (!imgsSet[nameIdx].imgLoaded) {
-                loadImg(document.querySelector(`.tooltip-img-box img.${imgDomClass}`), imgsSet[nameIdx].imgLoaded)
+                loadImg(
+                  document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
+                  imgsSet[nameIdx].imgLoaded
+                )
               }
               imgsSet[nameIdx].isShowImg = !imgsSet[nameIdx].isShowImg
               dom.classList.toggle('show-img')
