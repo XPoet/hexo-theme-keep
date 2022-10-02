@@ -100,14 +100,18 @@ menu:
 social_contact:
   enable: false      # Option values: true | false
   links:
-    github:          # Your GitHub URL
-    weixin:          # Your WeChat QR-Code image URL
-    qq:              # Your QQ QR-Code image URL
-    weibo:           # Your WeiBo URL
-    zhihu:           # Your ZhiHu URL
-    twitter:         # Your Twitter URL
-    facebook:        # Your Facebook URL
-    email:           # Your Email
+    # Fill in your social platform links here, e.g. [ github: https://github.com/XPoet ]
+    # If you want to click open the picture, you need to add a prefix "img |",
+    # at the same time change your link to the image link.
+    # e.g. [ weixin: img | https://x.com/images/wechat.png ] or [ weixin: img | ./images/wechat.png ]
+    github:          # GitHub
+    weixin:          # WeChat
+    qq:              # QQ
+    weibo:           # WeiBo
+    zhihu:           # ZhiHu
+    twitter:         # Twitter
+    facebook:        # Facebook
+    email:           # Email
 
 # ---------------------------------------------------------------------------------------
 # Home page article block display settings
