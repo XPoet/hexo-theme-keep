@@ -11,9 +11,12 @@ hexo.extend.filter.register(
       // Match 'img' tags the src attribute.
       /<img([^>]*)src="([^"]*)"([^>\/]*)\/?\s*>/gim,
       function (match, attrBegin, src, attrEnd) {
+        let hasAlt = false
         if (!src) return match
+        ;[attrBegin, attrEnd].forEach(x => { if (x.includes('alt="')) { hasAlt = true } })
         return `<img ${attrBegin}
                      lazyload
+                     ${hasAlt ? '' : 'alt="image"'}
                      data-src="${src}"
                      ${attrEnd}
                 >`
