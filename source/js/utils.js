@@ -374,8 +374,9 @@ KEEP.initUtils = () => {
           const { src } = img.dataset
           temp.src = src
           temp.onload = () => {
-            imgLoaded = true
             img.src = src
+            img.removeAttribute('lazyload')
+            imgLoaded = true
           }
         }
 
@@ -384,7 +385,7 @@ KEEP.initUtils = () => {
           if (imgUrl) {
             const imgDomClass = `tooltip-img-${name}`
             const nameIdx = `${name}_${idx}`
-            const imgDom = `<img class="${imgDomClass}" src="./images/loading.svg" data-src="${imgUrl}" alt="${name}">`
+            const imgDom = `<img class="${imgDomClass}" lazyload data-src="${imgUrl}" alt="${name}">`
             const imgTooltipBox = `<div class="tooltip-img-box">${imgDom}</div>`
 
             imgsSet[nameIdx] = {
