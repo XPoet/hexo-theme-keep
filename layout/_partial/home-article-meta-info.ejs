@@ -1,6 +1,14 @@
+<%
+const target_date = post.date !== post.updated ? post.updated : post.date
+%>
 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="<%= post.date %>"><%= date(post.date, 'YYYY-MM-DD') %></span></span>
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-date="<%= target_date %>">
+                <%= date(target_date, 'YYYY-MM-DD') %>
+            </span>
+        </span>
         <% if (post.categories.length && theme.home_article.category.enable === true) { %>
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
