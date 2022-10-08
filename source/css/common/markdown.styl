@@ -197,12 +197,17 @@
 
 
   img {
+    position relative
     display block
     box-sizing border-box
     max-width 100%
     box-shadow 0 0 0.2rem var(--shadow-color)
     cursor zoom-in
-    transition-t("padding, margin", "0, 0", "0.2, 0.2", "linear, linear")
+    opacity 1
+
+    &.hide {
+      opacity 0
+    }
 
     if (hexo-config('post.img_align') == 'center' || hexo-config('style.article_img_align') == 'center') {
       margin 0.8rem auto 0.2rem

@@ -1,37 +1,32 @@
-.image-viewer-container {
+.zoom-in-image-mask {
   position fixed
   top 0
+  right 0
+  bottom 0
   left 0
   z-index $z-index-8
   display flex
   align-items center
   justify-content center
   box-sizing border-box
-  width 100%
-  height 100%
-  padding 6%
   background rgba(0, 0, 0, 0)
   visibility hidden
-  transition-t("visibility, background", "0, 0", "0.3, 0.3", "ease, ease")
+  transition-t("visibility, background", "0, 0", "0.3, 0.3", "linear, linear")
 
-  &.active {
+  &.show {
     background rgba(0, 0, 0, 0.5)
     visibility visible
 
-    img {
-      padding 0.2rem
-      background var(--background-color)
-      transform scale(1)
+    .zoom-in-image {
       cursor zoom-out
     }
   }
 
-  img {
-    max-width 100%
-    max-height 100%
-    transform scale(0)
-    transition-t("transform", "0", "0.3", "ease")
+  .zoom-in-image {
+    position absolute
+    z-index $z-index-9
+    transform-origin center center
+    will-change transform
+    transition-t("transform", "0", "0.3", "linear")
   }
 }
-
-
