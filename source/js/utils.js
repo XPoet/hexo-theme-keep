@@ -223,7 +223,7 @@ KEEP.initUtils = () => {
 
     // zoom in image
     zoomInImage() {
-      const SIDE_GAP = 30
+      let SIDE_GAP = 40
       let isZoomIn = false
       let selectedImgDom = null
       const imgDomList = document.querySelectorAll('.markdown-body img')
@@ -253,11 +253,23 @@ KEEP.initUtils = () => {
         })
       }
 
+      const setSideGap = () => {
+        const w = document.body.offsetWidth
+        if (w <= 500) {
+          SIDE_GAP = 10
+        } else if (w <= 780) {
+          SIDE_GAP = 20
+        } else {
+          SIDE_GAP = 40
+        }
+      }
+
       if (imgDomList.length) {
         zoomOutHandle()
         imgDomList.forEach((img) => {
           img.addEventListener('click', () => {
             isZoomIn = !isZoomIn
+            setSideGap()
             zoomInImg.setAttribute('src', img.getAttribute('src'))
             selectedImgDom = img
             if (isZoomIn) {
