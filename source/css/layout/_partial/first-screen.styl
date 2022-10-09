@@ -40,6 +40,10 @@ $first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--
       line-height 1.8
       text-align center
 
+      .desc-item {
+        color $first-screen-font-color
+      }
+
       +keep-tablet() {
         font-size $first-screen-font-size * 0.9
       }

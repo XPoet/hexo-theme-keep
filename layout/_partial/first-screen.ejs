@@ -11,7 +11,7 @@ const { enable: sc_enable, links: sc_links } = theme.social_contact
         <% if (final_description.length || fs_hitokoto.enable) { %>
             <div class="description hitokoto">
                 <% for (const idx in final_description) { %>
-                    <div><%= final_description[idx] %></div>
+                    <div class="desc-item"><%= final_description[idx] %></div>
                 <% } %>
             </div>
         <% } %>
