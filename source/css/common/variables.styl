@@ -51,6 +51,7 @@ $z-index-6 = 1006
 $z-index-7 = 1007
 $z-index-8 = 1008
 $z-index-9 = 1009
+$z-index-10 = 1010
 
 
 // ==============================================================================================
@@ -110,10 +111,13 @@ $dark-pjax-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f
 
 
 // ==============================================================================================
-// font
+// font settings
 // ==============================================================================================
-$default-font-family = Optima-Regular, Optima, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial
-$default-font-size = 15.2px
+$preset-font-family = Optima-Regular, Optima, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial
+$custom-font-family = hexo-config('style.font_family')
+$default-font-family = $custom-font-family ? convert($custom-font-family) : $preset-font-family
+$custom-font-size = hexo-config('style.font_size')
+$default-font-size = $custom-font-size ? convert($custom-font-size) : 15.2px
 $default-font-line-height = 22px
 $default-font-weight = 400
 

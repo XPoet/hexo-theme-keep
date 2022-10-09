@@ -221,39 +221,69 @@ KEEP.initUtils = () => {
       }
     },
 
-    // big image viewer
-    imageViewer() {
-      let isBigImage = false
+    // zoom in image
+    zoomInImage() {
+      const SIDE_GAP = 30
+      let isZoomIn = false
+      let selectedImgDom = null
+      const imgDomList = document.querySelectorAll('.markdown-body img')
+      const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
+      const zoomInImg = zoomInImgMask.querySelector('.zoom-in-image')
 
-      const showHandle = (maskDom, isShow) => {
-        document.body.style.overflow = isShow ? 'hidden' : 'auto'
-        if (isShow) {
-          maskDom.classList.add('active')
-        } else {
-          maskDom.classList.remove('active')
+      const zoomOut = () => {
+        if (isZoomIn) {
+          isZoomIn = false
+          zoomInImg && (zoomInImg.style.transform = `scale(1)`)
+          zoomInImgMask && zoomInImgMask.classList.remove('show')
+          const timer = setTimeout(() => {
+            clearTimeout(timer)
+            selectedImgDom && selectedImgDom.classList.remove('hide')
+          }, 300)
         }
       }
 
-      const imageViewerDom = document.querySelector('.image-viewer-container')
-      const targetImg = document.querySelector('.image-viewer-container img')
-      imageViewerDom &&
-        imageViewerDom.addEventListener('click', () => {
-          isBigImage = false
-          showHandle(imageViewerDom, isBigImage)
+      const zoomOutHandle = () => {
+        zoomInImgMask &&
+          zoomInImgMask.addEventListener('click', () => {
+            zoomOut()
+          })
+
+        document.addEventListener('scroll', () => {
+          zoomOut()
         })
+      }
 
-      const imgDoms = document.querySelectorAll('.markdown-body img')
-
-      if (imgDoms.length) {
-        imgDoms.forEach((img) => {
+      if (imgDomList.length) {
+        zoomOutHandle()
+        imgDomList.forEach((img) => {
           img.addEventListener('click', () => {
-            isBigImage = true
-            showHandle(imageViewerDom, isBigImage)
-            targetImg.setAttribute('src', img.getAttribute('src'))
+            isZoomIn = !isZoomIn
+            zoomInImg.setAttribute('src', img.getAttribute('src'))
+            selectedImgDom = img
+            if (isZoomIn) {
+              const imgRect = selectedImgDom.getBoundingClientRect()
+              const imgW = imgRect.width
+              const imgH = imgRect.height
+              const imgL = imgRect.left
+              const imgT = imgRect.top
+              const winW = document.body.offsetWidth - SIDE_GAP * 2
+              const winH = document.body.offsetHeight - SIDE_GAP * 2
+              const scaleX = winW / imgW
+              const scaleY = winH / imgH
+              const scale = (scaleX < scaleY ? scaleX : scaleY) || 1
+              const translateX = winW / 2 - (imgRect.x + imgW / 2) + SIDE_GAP
+              const translateY = winH / 2 - (imgRect.y + imgH / 2) + SIDE_GAP
+
+              selectedImgDom.classList.add('hide')
+              zoomInImgMask.classList.add('show')
+              zoomInImg.style.top = imgT + 'px'
+              zoomInImg.style.left = imgL + 'px'
+              zoomInImg.style.width = imgW + 'px'
+              zoomInImg.style.height = imgH + 'px'
+              zoomInImg.style.transform = `translateX(${translateX}px) translateY(${translateY}px) scale(${scale}) `
+            }
           })
         })
-      } else {
-        this.pageContainer_dom.removeChild(imageViewerDom)
       }
     },
 
@@ -345,6 +375,7 @@ KEEP.initUtils = () => {
     // insert tooltip content dom
     insertTooltipContent() {
       const init = () => {
+        // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
           const { content } = element.dataset
           if (content) {
@@ -352,6 +383,60 @@ KEEP.initUtils = () => {
               'afterbegin',
               `<span class="tooltip-content">${content}</span>`
             )
+          }
+        })
+
+        // tooltip-img
+
+        const imgsSet = {}
+
+        const toggleShowImg = (dom, nameIdx) => {
+          document.addEventListener('click', () => {
+            if (imgsSet[nameIdx].isShowImg) {
+              dom.classList.remove('show-img')
+              imgsSet[nameIdx].isShowImg = false
+            }
+          })
+        }
+
+        const loadImg = (img, imgLoaded) => {
+          const temp = new Image()
+          const { src } = img.dataset
+          temp.src = src
+          temp.onload = () => {
+            img.src = src
+            img.removeAttribute('lazyload')
+            imgLoaded = true
+          }
+        }
+
+        document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
+          const { imgUrl, name } = dom.dataset
+          if (imgUrl) {
+            const imgDomClass = `tooltip-img-${name}`
+            const nameIdx = `${name}_${idx}`
+            const imgDom = `<img class="${imgDomClass}" lazyload data-src="${imgUrl}" alt="${name}">`
+            const imgTooltipBox = `<div class="tooltip-img-box">${imgDom}</div>`
+
+            imgsSet[nameIdx] = {
+              imgLoaded: false,
+              isShowImg: false
+            }
+
+            dom.insertAdjacentHTML('afterbegin', imgTooltipBox)
+            dom.addEventListener('click', (e) => {
+              if (!imgsSet[nameIdx].imgLoaded) {
+                loadImg(
+                  document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
+                  imgsSet[nameIdx].imgLoaded
+                )
+              }
+              imgsSet[nameIdx].isShowImg = !imgsSet[nameIdx].isShowImg
+              dom.classList.toggle('show-img')
+              e.stopPropagation()
+            })
+
+            toggleShowImg(dom, nameIdx)
           }
         })
       }
@@ -386,7 +471,7 @@ KEEP.initUtils = () => {
   KEEP.utils.initFirstScreenHeight()
 
   // big image viewer handle
-  KEEP.utils.imageViewer()
+  KEEP.utils.zoomInImage()
 
   // set how long age in home article block
   KEEP.utils.setHowLongAgoInHome()

@@ -4,13 +4,14 @@ const { description: c_description } = config
 let final_description = fs_description || c_description || ''
 final_description = final_description.split('||').map(desc => desc.trim())
 if (final_description.length > 2) { final_description.length = 2 }
+const { enable: sc_enable, links: sc_links } = theme.social_contact
 %>
 <div class="first-screen-container flex-center fade-in-down-animation">
     <div class="content flex-center">
         <% if (final_description.length || fs_hitokoto.enable) { %>
             <div class="description hitokoto">
                 <% for (const idx in final_description) { %>
-                    <div><%= final_description[idx] %></div>
+                    <div class="desc-item"><%= final_description[idx] %></div>
                 <% } %>
             </div>
         <% } %>
@@ -20,21 +21,36 @@ if (final_description.length > 2) { final_description.length = 2 }
             >
             </script>
         <% } %>
-        <% if (theme.social_contact.enable) { %>
+        <% if (sc_enable) { %>
             <div class="s-icon-list">
-                <% for (const key in theme.social_contact.links) { %>
-                    <% if(theme.social_contact.links[key]) { %>
-                        <div class="tooltip s-icon-item <%= key %>"
+                <% for (const key in sc_links) { %>
+                    <% if(sc_links[key]) { %>
+                        <%
+                            const tmpl = sc_links[key].split('|').map(x => x.trim())
+                            let isImg = false
+                            let link = sc_links[key]
+                            if (tmpl.length > 1) {
+                                link = tmpl[1]
+                                isImg = tmpl[0] === 'img'
+                            }
+                        %>
+                        <div class="tooltip s-icon-item <%= isImg ? 'tooltip-img clear' : ''%>"
                              data-content="<%= __(key) %>"
+                             data-name="<%= key %>"
+                             <%= isImg ? 'data-img-url='+ link +'' : '' %>
                         >
                             <% if(key === 'email') { %>
-                                <a href="mailto:<%- theme.social_contact.links[key] %>">
+                                <a href="mailto:<%- link %>">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             <% } else { %>
-                                <a target="_blank" href="<%- theme.social_contact.links[key] %>">
+                                <% if(isImg) { %>
                                     <i class="fab fa-<%= key %>"></i>
-                                </a>
+                                <% } else { %>
+                                    <a target="_blank" href="<%- link %>">
+                                        <i class="fab fa-<%= key %>"></i>
+                                    </a>
+                                <% } %>
                             <% } %>
                         </div>
                     <% } %>

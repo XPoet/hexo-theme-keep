@@ -1,9 +1,22 @@
+<%
+const ami_is_updated = articleObject.date !== articleObject.updated
+%>
 <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
+        <% if(ami_is_updated) { %>
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        <% } else { %>
+            <i class="fas fa-edit"></i>&nbsp;
+        <% } %>
         <span class="pc"><%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD') %></span>
         <span class="mobile"><%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD') %></span>
     </span>
+    <% if (ami_is_updated) { %>
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc"><%= date(articleObject.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
+    </span>
+    <% } %>
     <% if (articleObject.categories.length) { %>
         <span class="article-categories article-meta-item">
             <i class="fas fa-folder"></i>&nbsp;
@@ -30,13 +43,13 @@
     <% } %>
 
     <%
-    let temp_wordcount_count, temp_min2read_count = null;
+    let temp_wordcount_count, temp_min2read_count = null
     try {
-        temp_wordcount_count = wordcount(page.content);
-        temp_min2read_count = min2read(page.content);
+        temp_wordcount_count = wordcount(page.content)
+        temp_min2read_count = min2read(page.content)
     } catch (e) {
-        temp_wordcount_count = 0;
-        temp_min2read_count = 0;
+        temp_wordcount_count = 0
+        temp_min2read_count = 0
     }
     %>
     <% if(is_post() && theme.hasOwnProperty('post') && theme.post.word_count.enable && theme.post.word_count.wordcount && temp_wordcount_count){ %>

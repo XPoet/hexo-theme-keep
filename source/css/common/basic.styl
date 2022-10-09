@@ -51,8 +51,8 @@ body {
   background var(--background-color)
 
   &::-webkit-scrollbar {
-    width 0.4rem
-    height 0.4rem
+    width 0.6rem
+    height 0.6rem
   }
 
   +keep-tablet() {
@@ -119,10 +119,44 @@ a {
 // ======================================================================
 img {
   &[lazyload] {
-    margin 1.4rem auto !important
-    padding 0.8rem
+    position relative
+    box-sizing border-box
+    width 8rem
+    height 8rem
+    box-shadow none !important
     cursor not-allowed
     pointer-events none
+
+    &::before {
+      position absolute
+      top 0
+      left 0
+      display block
+      width 100%
+      height 100%
+      background var(--background-color)
+      content ''
+      transition-t("background", "0", "0.2", "ease")
+    }
+
+    &::after {
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      display block
+      width 2rem
+      height 2rem
+      margin auto
+      border 2px solid var(--fourth-text-color)
+      border-top-color var(--selection-color)
+      border-left-color var(--selection-color)
+      border-radius 50%
+      animation img-loading-animation 750ms infinite linear
+      content ''
+      transition-t("border", "0", "0.2", "ease")
+    }
   }
 }
 
@@ -196,19 +230,64 @@ button {
     }
   }
 
+  &.show-img {
+    .tooltip-content {
+      display none !important
+    }
+  }
+
   .tooltip-content {
     position absolute
-    top 0
+    top -0.4rem
     left 50%
     z-index $z-index-9
     display none
+    box-sizing border-box
     padding 0.2rem 0.6rem
     color var(--fourth-text-color)
     font-size 0.8rem
     white-space nowrap
     background var(--first-text-color)
     border-radius 0.3rem
-    transform translateX(-50%) translateY(-108%)
+    transform translateX(-50%) translateY(-100%)
     transition-t("display", "0", "0.2", "ease")
+    disable-user-select()
   }
 }
+
+
+.tooltip-img {
+  position relative
+  box-sizing border-box
+
+  &.show-img {
+    .tooltip-img-box {
+      display flex
+    }
+  }
+
+  .tooltip-img-box {
+    position absolute
+    top -0.4rem
+    left 50%
+    z-index $z-index-8
+    display none
+    align-items center
+    justify-content center
+    box-sizing border-box
+    min-height 6rem
+    background var(--fourth-text-color)
+    border 0.2rem solid var(--default-text-color)
+    border-radius 0.3rem
+    transform translateX(-50%) translateY(-100%)
+    transition-t("display", "0", "0.2", "ease")
+    disable-user-select()
+
+    img {
+      display block
+      max-height 10rem
+    }
+  }
+}
+
+

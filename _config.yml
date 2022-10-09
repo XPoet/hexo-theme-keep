@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.4.8
+## Keep v3.4.9
 ## Repository: https://github.com/XPoet/hexo-theme-keep
 ## Document: https://keep-docs.xpoet.cn
 ## ======================================================================================
@@ -33,6 +33,14 @@ style:
 
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.svg
+
+  # Font size, customize font size. (you don't usually have to fill)
+  # e.g. font_size: 18px
+  font_size:
+
+  # Font family, customize font family. (you don't usually have to fill)
+  # e.g. font_family: STKaiti, STSong, STHeiti
+  font_family:
 
   # Left side TOC width (you don't usually have to change it)
   left_side_width: 260px
@@ -100,14 +108,18 @@ menu:
 social_contact:
   enable: false      # Option values: true | false
   links:
-    github:          # Your GitHub URL
-    weixin:          # Your WeChat QR-Code image URL
-    qq:              # Your QQ QR-Code image URL
-    weibo:           # Your WeiBo URL
-    zhihu:           # Your ZhiHu URL
-    twitter:         # Your Twitter URL
-    facebook:        # Your Facebook URL
-    email:           # Your Email
+    # Fill in your social platform links here, e.g. [ github: https://github.com/XPoet ]
+    # If you want to click open the picture, you need to add a prefix "img |",
+    # at the same time change your link to the image link.
+    # e.g. [ weixin: img | https://x.com/images/wechat.png ] or [ weixin: img | ./images/wechat.png ]
+    github:          # GitHub
+    weixin:          # WeChat
+    qq:              # QQ
+    weibo:           # WeiBo
+    zhihu:           # ZhiHu
+    twitter:         # Twitter
+    facebook:        # Facebook
+    email:           # Email
 
 # ---------------------------------------------------------------------------------------
 # Home page article block display settings
