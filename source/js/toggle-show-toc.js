@@ -20,8 +20,10 @@ function initToggleShowToc() {
     handleToggle(isOpen) {
       if (isOpen) {
         this.postPageContainerDom.classList.add('show-toc')
+        document.body.classList.add('has-toc')
       } else {
         this.postPageContainerDom.classList.remove('show-toc')
+        document.body.classList.remove('has-toc')
       }
     },
 

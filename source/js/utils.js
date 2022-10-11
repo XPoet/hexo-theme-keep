@@ -139,7 +139,7 @@ KEEP.initUtils = () => {
       const mainContentDom = document.querySelector('.main-content')
       const iconDom = toolExpandDom.querySelector('i')
 
-      const defaultMaxWidth = '950px'
+      const defaultMaxWidth = '928px'
       const expandMaxWidth = '90%'
       let headerMaxWidth = defaultMaxWidth
 
