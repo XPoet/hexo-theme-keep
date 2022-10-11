@@ -81,7 +81,8 @@ $selection-color = lighten($primary-color, 10%)
 $shadow-color = rgba(0, 0, 0, 0.2)
 $shadow-hover-color = rgba(0, 0, 0, 0.28)
 $scrollbar-color = lighten($default-text-color, 6%)
-$scroll-bar-bg-color = darken($background-color, 10%)
+$scrollbar-bg-color = darken($background-color, 10%)
+$toc-scrollbar-color = alpha($default-text-color, 0.2)
 $link-color = darken($default-text-color, 10%)
 $copyright-info-color = #cc0033
 $avatar-background-color = #0066cc
@@ -106,7 +107,8 @@ $dark-selection-color = $selection-color
 $dark-shadow-color = rgba(128, 128, 128, 0.2)
 $dark-shadow-hover-color = rgba(128, 128, 128, 0.28)
 $dark-scrollbar-color = darken($dark-background-color, 10%)
-$dark-scroll-bar-bg-color = lighten($dark-background-color, 20%)
+$dark-scrollbar-bg-color = lighten($dark-background-color, 20%)
+$dark-toc-scrollbar-color = alpha($dark-default-text-color, 0.2)
 $dark-link-color = lighten($dark-default-text-color, 10%)
 $dark-copyright-info-color = darken($copyright-info-color, 20%)
 $dark-avatar-background-color = darken($avatar-background-color, 10%)
@@ -144,7 +146,8 @@ root-color(mode) {
   --shadow-color mode == 'light' ? $shadow-color : $dark-shadow-color
   --shadow-hover-color mode == 'light' ? $shadow-hover-color : $dark-shadow-hover-color
   --scrollbar-color mode == 'light' ? $scrollbar-color : $dark-scrollbar-color
-  --scroll-bar-bg-color mode == 'light' ? $scroll-bar-bg-color : $dark-scroll-bar-bg-color
+  --scrollbar-bg-color mode == 'light' ? $scrollbar-bg-color : $dark-scrollbar-bg-color
+  --toc-scrollbar-color mode == 'light' ? $toc-scrollbar-color : $dark-toc-scrollbar-color
   --link-color mode == 'light' ? $link-color : $dark-link-color
   --copyright-info-color mode == 'light' ? $copyright-info-color : $dark-copyright-info-color
   --avatar-background-color mode == 'light' ? $avatar-background-color : $dark-avatar-background-color
