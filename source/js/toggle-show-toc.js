@@ -9,12 +9,12 @@ function initToggleShowToc() {
 
     initToggle() {
       this.toggleShowTocBtnDom &&
-      this.toggleShowTocBtnDom.addEventListener('click', () => {
-        this.isShowToc = !this.isShowToc
-        KEEP.styleStatus.isShowToc = this.isShowToc
-        KEEP.setStyleStatus()
-        this.handleToggle(this.isShowToc)
-      })
+        this.toggleShowTocBtnDom.addEventListener('click', () => {
+          this.isShowToc = !this.isShowToc
+          KEEP.styleStatus.isShowToc = this.isShowToc
+          KEEP.setStyleStatus()
+          this.handleToggle(this.isShowToc)
+        })
     },
 
     handleToggle(isOpen) {

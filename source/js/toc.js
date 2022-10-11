@@ -2,8 +2,8 @@
 
 function initTOC() {
   const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
-  const postPageContainerDom = document.querySelectorAll('.post-page-container')
-  const tocContentContainer = document.querySelectorAll('.toc-content-container')
+  const postPageContainerDom = document.querySelector('.post-page-container')
+  const tocContentContainer = document.querySelector('.toc-content-container')
 
   if (tocNavDoms.length > 0) {
     KEEP.utils = {
@@ -101,7 +101,9 @@ function initTOC() {
     KEEP.utils.handleShowWhenHasToc()
     KEEP.utils.registerSidebarTOC()
   } else {
-    tocContentContainer && postPageContainerDom.removeChild(tocContentContainer)
+    if (tocContentContainer && postPageContainerDom) {
+      postPageContainerDom.removeChild(tocContentContainer)
+    }
   }
 }
 
