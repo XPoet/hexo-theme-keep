@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     isExpandPageWidth: false,
     isDark: false,
     fontSizeLevel: 0,
-    isOpenPageAside: true
+    isShowToc: true
   }
 
   // print theme base info

@@ -1,7 +1,19 @@
 .post-toc-wrap {
+  position relative
   box-sizing border-box
   width 100%
+  height 100%
   font-size 0.92rem
+  overflow-y auto
+
+  &::-webkit-scrollbar-thumb {
+    background rgba(100, 100, 100, 0.1)
+    border-radius 0.3rem
+  }
+
+  &::-webkit-scrollbar-track {
+    background transparent
+  }
 
   .post-toc {
 
@@ -36,7 +48,7 @@
 
     .nav {
       .nav-child {
-        display hexo-config('toc.expand_all') ? block : none
+        display hexo-config('toc.expand_all') ? block:none
       }
 
       .active > .nav-child {

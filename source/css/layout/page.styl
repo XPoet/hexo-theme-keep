@@ -1,14 +1,9 @@
-$temp-width = hexo-config('style.left_side_width')
-$page-aside-width = $temp-width ? convert($temp-width) : 260px
-
 .page-container {
   position relative
   box-sizing border-box
   width 100%
   height auto
   background var(--background-color)
-  transition-t("padding-left", "0", "0.3", "ease-out")
-
 
   +keep-tablet() {
     padding-left 0 !important
@@ -16,6 +11,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
 
 
   .page-main-content {
+    box-sizing border-box
     position relative
     padding-top $header-height
 
@@ -61,7 +57,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
       box-sizing border-box
       width 100%
       height $header-height
-      transition-t("transform, padding-left, height", "0, 0, 0", "0.3, 0.2, 0.2", "ease-out, linear, ease")
+      transition-t("transform, height", "0, 0", "0.3, 0.2", "ease-out, ease")
 
       &.hide {
         transform translateY(-105%)
@@ -127,30 +123,6 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
 
     .page-main-content-bottom {
       width 100%
-    }
-  }
-
-
-  .page-aside {
-    position fixed
-    top 0
-    bottom 0
-    left - $page-aside-width
-    z-index $z-index-6
-    box-sizing border-box
-    width $page-aside-width
-    height 100%
-    padding 20px
-    overflow-y auto
-    background var(--background-color)
-
-    hover-style(false, 0, 0)
-
-    transition-t("left, transform", "0, 0", "0.3, 0.2", "ease-out, linear")
-
-    +keep-tablet() {
-      left 0 !important
-      display none !important
     }
   }
 

@@ -26,10 +26,10 @@ transition-t(property, delay, duration, function) {
   for f in convert(function) {
     $temp-function += ("," + f)
   }
+
   transition-delay convert($temp-delay)
   transition-timing-function convert($temp-function)
   transition-duration convert($temp-duration)
-
   transition-property convert($temp-property)
 }
 

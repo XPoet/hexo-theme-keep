@@ -1,9 +1,11 @@
 /* global KEEP */
 
 function initTOC() {
-  KEEP.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li')
+  const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
+  const postPageContainerDom = document.querySelectorAll('.post-page-container')
+  const tocContentContainer = document.querySelectorAll('.toc-content-container')
 
-  if (KEEP.utils.navItems.length > 0) {
+  if (tocNavDoms.length > 0) {
     KEEP.utils = {
       ...KEEP.utils,
 
@@ -73,14 +75,14 @@ function initTOC() {
         })
       },
 
-      showPageAsideWhenHasTOC() {
+      handleShowWhenHasToc() {
         const openHandle = () => {
           const styleStatus = KEEP.getStyleStatus()
-          const key = 'isOpenPageAside'
+          const key = 'isShowToc'
           if (styleStatus && styleStatus.hasOwnProperty(key)) {
-            KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(styleStatus[key])
+            KEEP.utils.toggleShowTocHandler.hasToc(styleStatus[key])
           } else {
-            KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(true)
+            KEEP.utils.toggleShowTocHandler.hasToc(true)
           }
         }
 
@@ -89,18 +91,17 @@ function initTOC() {
         if (KEEP.theme_config.toc.hasOwnProperty(initOpenKey)) {
           KEEP.theme_config.toc[initOpenKey]
             ? openHandle()
-            : KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(false)
+            : KEEP.utils.toggleShowTocHandler.hasToc(false)
         } else {
           openHandle()
         }
       }
     }
 
-    KEEP.utils.showPageAsideWhenHasTOC()
+    KEEP.utils.handleShowWhenHasToc()
     KEEP.utils.registerSidebarTOC()
   } else {
-    const pageAsideDom = document.querySelector('.page-aside')
-    pageAsideDom && KEEP.utils.pageContainer_dom.removeChild(pageAsideDom)
+    tocContentContainer && postPageContainerDom.removeChild(tocContentContainer)
   }
 }
 
