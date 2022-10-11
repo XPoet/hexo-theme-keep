@@ -19,6 +19,7 @@ KEEP.initUtils = () => {
     isHasScrollProgressBar: false,
     isHasScrollPercent: false,
     isHeaderTransparent: false,
+    hasToc: false,
 
     initData() {
       const { scroll, first_screen } = KEEP.theme_config.style
@@ -138,7 +139,7 @@ KEEP.initUtils = () => {
       const mainContentDom = document.querySelector('.main-content')
       const iconDom = toolExpandDom.querySelector('i')
 
-      const defaultMaxWidth = KEEP.theme_config.style.content_max_width || '1000px'
+      const defaultMaxWidth = '950px'
       const expandMaxWidth = '90%'
       let headerMaxWidth = defaultMaxWidth
 
@@ -202,6 +203,18 @@ KEEP.initUtils = () => {
     // init first screen height
     initFirstScreenHeight() {
       this.firstScreen_dom && (this.firstScreen_dom.style.height = this.innerHeight + 'px')
+    },
+
+    // init has TOC
+    initHasToc() {
+      const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
+      if (tocNavDoms.length > 0) {
+        this.hasToc = true
+        document.body.classList.add('has-toc')
+      } else {
+        this.hasToc = false
+        document.body.classList.remove('has-toc')
+      }
     },
 
     // init page height handle
@@ -471,7 +484,7 @@ KEEP.initUtils = () => {
   KEEP.utils.globalFontAdjust()
 
   // adjust content area width
-  KEEP.utils.contentAreaWidthAdjust()
+  // KEEP.utils.contentAreaWidthAdjust()
 
   // go comment
   KEEP.utils.goComment()
@@ -481,6 +494,9 @@ KEEP.initUtils = () => {
 
   // init first screen height
   KEEP.utils.initFirstScreenHeight()
+
+  // check whether TOC exists
+  KEEP.utils.initHasToc()
 
   // big image viewer handle
   KEEP.utils.zoomInImage()

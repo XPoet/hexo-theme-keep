@@ -28,7 +28,11 @@ $logo-image-box-width = 46px
 
 
     &.has-first-screen {
-      max-width $content-max-width * 1.2
+      max-width $has-fs-content-max-width
+    }
+
+    .has-toc & {
+      max-width $has-toc-content-max-width
     }
 
     +keep-tablet() {

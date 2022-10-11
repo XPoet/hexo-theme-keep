@@ -15,7 +15,7 @@
     box-sizing border-box
     padding-top $header-height
 
-    &.home {
+    &.is-home {
       .transparent-1 {
         background var(--header-transparent-background-1)
       }
@@ -109,6 +109,10 @@
         width $main-content-width
         max-width $content-max-width
         height 100%
+
+        .has-toc & {
+          max-width $has-toc-content-max-width
+        }
 
         +keep-tablet() {
           width $main-content-width-tablet

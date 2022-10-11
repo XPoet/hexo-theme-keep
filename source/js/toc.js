@@ -1,11 +1,10 @@
 /* global KEEP */
 
 function initTOC() {
-  const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
   const postPageContainerDom = document.querySelector('.post-page-container')
   const tocContentContainer = document.querySelector('.toc-content-container')
 
-  if (tocNavDoms.length > 0) {
+  if (KEEP.utils.hasToc) {
     KEEP.utils = {
       ...KEEP.utils,
 

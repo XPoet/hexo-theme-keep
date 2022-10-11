@@ -42,12 +42,6 @@ style:
   # e.g. font_family: STKaiti, STSong, STHeiti
   font_family:
 
-  # Left side TOC width (you don't usually have to change it)
-  left_side_width: 260px
-
-  # Content area max width (you don't usually have to change it)
-  content_max_width: 920px
-
   # Mouse hover style settings
   hover:
     # Shadow effect when the mouse hover. Option values: true | false

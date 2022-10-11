@@ -16,8 +16,13 @@ $post-tool-button-width = 38px                                  // post tool but
 $component-spacing-value = 38px                                 // component-spacing-value (PC)
 
 // main content max width
-$temp-content-max-width = hexo-config('style.content_max_width')
-$content-max-width = $temp-content-max-width ? convert($temp-content-max-width) : 1000px
+$content-max-width = 950px
+
+// main content max width of has TOC
+$has-toc-content-max-width = $content-max-width * 1.2
+
+// main content max width of has first screen
+$has-fs-content-max-width = $content-max-width * 1.2
 
 
 // ==============================================================================================
