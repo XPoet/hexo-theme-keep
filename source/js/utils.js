@@ -402,17 +402,30 @@ KEEP.initUtils = () => {
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const { content } = element.dataset
+          const { content, offsetX, offsetY } = element.dataset
+
+          let style = ''
+          let sTop = ''
+          let sLeft = ''
+          if (offsetX) {
+            sTop = `left: ${offsetX};`
+          }
+          if (offsetY) {
+            sLeft = `top: ${offsetY};`
+          }
+          if (offsetX || offsetY) {
+            style = ` style="${sLeft}${sTop}"`
+          }
+
           if (content) {
             element.insertAdjacentHTML(
               'afterbegin',
-              `<span class="tooltip-content">${content}</span>`
+              `<span class="tooltip-content"${style}>${content}</span>`
             )
           }
         })
 
         // tooltip-img
-
         const imgsSet = {}
 
         const toggleShowImg = (dom, nameIdx) => {
