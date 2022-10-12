@@ -61,13 +61,6 @@ $tools-item-border-radius = 0.1rem
     opacity 0
     transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear")
 
-    .tool-expand-width {
-      +keep-tablet() {
-        display none
-      }
-    }
-
-
     &.show {
       transform translateX(0)
       opacity 1

@@ -22,10 +22,10 @@ KEEP.initUtils = () => {
     hasToc: false,
 
     initData() {
-      const {scroll, first_screen} = KEEP.theme_config.style
+      const { scroll, first_screen } = KEEP.theme_config.style
       this.isHasScrollProgressBar = scroll.progress_bar.enable === true
       this.isHasScrollPercent = scroll.percent.enable === true
-      const {enable, header_transparent} = first_screen
+      const { enable, header_transparent } = first_screen
       this.isHeaderTransparent = enable === true && header_transparent === true
     },
 
@@ -132,58 +132,6 @@ KEEP.initUtils = () => {
       })
     },
 
-    // toggle content area width
-    contentAreaWidthAdjust() {
-      const toolExpandDom = document.querySelector('.tool-expand-width')
-      const headerContentDom = document.querySelector('.header-content')
-      const mainContentDom = document.querySelector('.main-content')
-      const iconDom = toolExpandDom.querySelector('i')
-
-      const defaultMaxWidth = '928px'
-      const expandMaxWidth = '90%'
-      let headerMaxWidth = defaultMaxWidth
-
-      let isExpand = false
-
-      if (
-        KEEP.theme_config.style.first_screen.enable === true &&
-        window.location.pathname === '/'
-      ) {
-        headerMaxWidth = parseInt(defaultMaxWidth) * 1.2 + 'px'
-      }
-
-      const setPageWidth = (isExpand) => {
-        KEEP.styleStatus.isExpandPageWidth = isExpand
-        KEEP.setStyleStatus()
-        if (isExpand) {
-          iconDom.classList.remove('fa-up-right-and-down-left-from-center')
-          iconDom.classList.add('fa-down-left-and-up-right-to-center')
-          headerContentDom.style.maxWidth = expandMaxWidth
-          mainContentDom.style.maxWidth = expandMaxWidth
-        } else {
-          iconDom.classList.remove('fa-down-left-and-up-right-to-center')
-          iconDom.classList.add('fa-up-right-and-down-left-from-center')
-          headerContentDom.style.maxWidth = headerMaxWidth
-          mainContentDom.style.maxWidth = defaultMaxWidth
-        }
-      }
-
-      const initPageWidth = () => {
-        const styleStatus = KEEP.getStyleStatus()
-        if (styleStatus) {
-          isExpand = styleStatus.isExpandPageWidth
-          setPageWidth(isExpand)
-        }
-      }
-
-      initPageWidth()
-
-      toolExpandDom.addEventListener('click', () => {
-        isExpand = !isExpand
-        setPageWidth(isExpand)
-      })
-    },
-
     // go comment anchor
     goComment() {
       this.goComment_dom = document.querySelector('.go-comment')
@@ -198,11 +146,6 @@ KEEP.initUtils = () => {
     getElementHeight(selectors) {
       const dom = document.querySelector(selectors)
       return dom ? dom.getBoundingClientRect().height : 0
-    },
-
-    // init first screen height
-    initFirstScreenHeight() {
-      this.firstScreen_dom && (this.firstScreen_dom.style.height = this.innerHeight + 'px')
     },
 
     // init has TOC
@@ -258,9 +201,9 @@ KEEP.initUtils = () => {
 
       const zoomOutHandle = () => {
         zoomInImgMask &&
-        zoomInImgMask.addEventListener('click', () => {
-          zoomOut()
-        })
+          zoomInImgMask.addEventListener('click', () => {
+            zoomOut()
+          })
 
         document.addEventListener('scroll', () => {
           if (isZoomIn && Math.abs(curWinScrollY - window.scrollY) >= 50) {
@@ -351,11 +294,11 @@ KEEP.initUtils = () => {
     setHowLongAgoInHome() {
       const post = document.querySelectorAll('.home-article-meta-info .home-article-date')
       post &&
-      post.forEach((v) => {
-        const nowDate = Date.now()
-        const postDate = new Date(v.dataset.date.split(' GMT')[0]).getTime()
-        v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
-      })
+        post.forEach((v) => {
+          const nowDate = Date.now()
+          const postDate = new Date(v.dataset.date.split(' GMT')[0]).getTime()
+          v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
+        })
     },
 
     // loading progress bar start
@@ -406,7 +349,7 @@ KEEP.initUtils = () => {
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const {content, offsetX, offsetY} = element.dataset
+          const { content, offsetX, offsetY } = element.dataset
 
           let style = ''
           let sTop = ''
@@ -443,7 +386,7 @@ KEEP.initUtils = () => {
 
         const loadImg = (img, imgLoaded) => {
           const temp = new Image()
-          const {src} = img.dataset
+          const { src } = img.dataset
           temp.src = src
           temp.onload = () => {
             img.src = src
@@ -453,7 +396,7 @@ KEEP.initUtils = () => {
         }
 
         document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
-          const {imgUrl, name} = dom.dataset
+          const { imgUrl, name } = dom.dataset
           if (imgUrl) {
             const imgDomClass = `tooltip-img-${name}`
             const nameIdx = `${name}_${idx}`
@@ -500,17 +443,11 @@ KEEP.initUtils = () => {
   // global font adjust
   KEEP.utils.globalFontAdjust()
 
-  // adjust content area width
-  // KEEP.utils.contentAreaWidthAdjust()
-
   // go comment
   KEEP.utils.goComment()
 
   // init page height handle
   KEEP.utils.initPageHeightHandle()
-
-  // init first screen height
-  KEEP.utils.initFirstScreenHeight()
 
   // check whether TOC exists
   KEEP.utils.initHasToc()
