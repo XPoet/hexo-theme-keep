@@ -216,7 +216,7 @@ KEEP.initUtils = () => {
         const w = document.body.offsetWidth
         if (w <= 500) {
           SIDE_GAP = 10
-        } else if (w <= 780) {
+        } else if (w <= 800) {
           SIDE_GAP = 20
         } else {
           SIDE_GAP = 40

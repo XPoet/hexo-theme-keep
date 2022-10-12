@@ -32,7 +32,7 @@ const {
 <div class="post-scripts<%= theme.pjax?.enable === true ? ' pjax' : '' %>">
     <% if (t_toc?.enable === true && is_post()) { %>
         <%- __js([
-            'js/toggle-show-toc.js',
+            'js/post-helper.js',
             'js/toc.js',
             'js/libs/anime.min.js'
         ]) %>

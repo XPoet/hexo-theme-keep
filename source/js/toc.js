@@ -82,18 +82,16 @@ function initTOC() {
           const styleStatus = KEEP.getStyleStatus()
           const key = 'isShowToc'
           if (styleStatus && styleStatus.hasOwnProperty(key)) {
-            KEEP.utils.toggleShowTocHandler.hasToc(styleStatus[key])
+            KEEP.utils.postHelper.hasToc(styleStatus[key])
           } else {
-            KEEP.utils.toggleShowTocHandler.hasToc(true)
+            KEEP.utils.postHelper.hasToc(true)
           }
         }
 
         const initOpenKey = 'init_open'
 
         if (KEEP.theme_config.toc.hasOwnProperty(initOpenKey)) {
-          KEEP.theme_config.toc[initOpenKey]
-            ? openHandle()
-            : KEEP.utils.toggleShowTocHandler.hasToc(false)
+          KEEP.theme_config.toc[initOpenKey] ? openHandle() : KEEP.utils.postHelper.hasToc(false)
         } else {
           openHandle()
         }

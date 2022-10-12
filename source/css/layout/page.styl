@@ -135,8 +135,9 @@
   .post-tools {
     position fixed
     top $header-height + $component-spacing-value
-    right $component-spacing-value
-    transition-t("top", "0", "0.2", "ease")
+    left 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+    opacity 0
+    transition-t("top, transform, opacity", "0, 0, 0.2", "0.2, 0.2, 0.2", "ease, ease, ease")
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value
@@ -144,25 +145,17 @@
       +keep-tablet() {
         top $header-shrink-height * 0.9 + $component-spacing-value
       }
-
-      +keep-mobile() {
-        top $header-shrink-height * 0.8 + $component-spacing-value
-      }
     }
 
 
     +keep-tablet() {
       top $header-height * 0.9 + $component-spacing-value
-      right 10px
       transform scale(0.82)
-      transform-origin right top
     }
 
 
     +keep-mobile() {
-      top $header-height * 0.8 + $component-spacing-value
-      right 5px
-      transform scale(0.72)
+      display none
     }
   }
 
