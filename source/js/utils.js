@@ -22,10 +22,10 @@ KEEP.initUtils = () => {
     hasToc: false,
 
     initData() {
-      const { scroll, first_screen } = KEEP.theme_config.style
+      const {scroll, first_screen} = KEEP.theme_config.style
       this.isHasScrollProgressBar = scroll.progress_bar.enable === true
       this.isHasScrollPercent = scroll.percent.enable === true
-      const { enable, header_transparent } = first_screen
+      const {enable, header_transparent} = first_screen
       this.isHeaderTransparent = enable === true && header_transparent === true
     },
 
@@ -238,6 +238,7 @@ KEEP.initUtils = () => {
     zoomInImage() {
       let SIDE_GAP = 40
       let isZoomIn = false
+      let curWinScrollY = 0
       let selectedImgDom = null
       const imgDomList = document.querySelectorAll('.markdown-body img')
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
@@ -246,10 +247,10 @@ KEEP.initUtils = () => {
       const zoomOut = () => {
         if (isZoomIn) {
           isZoomIn = false
+          curWinScrollY = 0
           zoomInImg && (zoomInImg.style.transform = `scale(1)`)
           zoomInImgMask && zoomInImgMask.classList.remove('show')
-          const timer = setTimeout(() => {
-            clearTimeout(timer)
+          setTimeout(() => {
             selectedImgDom && selectedImgDom.classList.remove('hide')
           }, 300)
         }
@@ -257,12 +258,14 @@ KEEP.initUtils = () => {
 
       const zoomOutHandle = () => {
         zoomInImgMask &&
-          zoomInImgMask.addEventListener('click', () => {
-            zoomOut()
-          })
+        zoomInImgMask.addEventListener('click', () => {
+          zoomOut()
+        })
 
         document.addEventListener('scroll', () => {
-          zoomOut()
+          if (isZoomIn && Math.abs(curWinScrollY - window.scrollY) >= 50) {
+            zoomOut()
+          }
         })
       }
 
@@ -281,6 +284,7 @@ KEEP.initUtils = () => {
         zoomOutHandle()
         imgDomList.forEach((img) => {
           img.addEventListener('click', () => {
+            curWinScrollY = window.scrollY
             isZoomIn = !isZoomIn
             setSideGap()
             zoomInImg.setAttribute('src', img.getAttribute('src'))
@@ -347,11 +351,11 @@ KEEP.initUtils = () => {
     setHowLongAgoInHome() {
       const post = document.querySelectorAll('.home-article-meta-info .home-article-date')
       post &&
-        post.forEach((v) => {
-          const nowDate = Date.now()
-          const postDate = new Date(v.dataset.date.split(' GMT')[0]).getTime()
-          v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
-        })
+      post.forEach((v) => {
+        const nowDate = Date.now()
+        const postDate = new Date(v.dataset.date.split(' GMT')[0]).getTime()
+        v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
+      })
     },
 
     // loading progress bar start
@@ -402,7 +406,7 @@ KEEP.initUtils = () => {
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const { content, offsetX, offsetY } = element.dataset
+          const {content, offsetX, offsetY} = element.dataset
 
           let style = ''
           let sTop = ''
@@ -439,7 +443,7 @@ KEEP.initUtils = () => {
 
         const loadImg = (img, imgLoaded) => {
           const temp = new Image()
-          const { src } = img.dataset
+          const {src} = img.dataset
           temp.src = src
           temp.onload = () => {
             img.src = src
@@ -449,7 +453,7 @@ KEEP.initUtils = () => {
         }
 
         document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
-          const { imgUrl, name } = dom.dataset
+          const {imgUrl, name} = dom.dataset
           if (imgUrl) {
             const imgDomClass = `tooltip-img-${name}`
             const nameIdx = `${name}_${idx}`
