@@ -13,12 +13,12 @@ function initToggleShowToc() {
 
     initToggleToc() {
       this.toggleShowTocBtnDom &&
-        this.toggleShowTocBtnDom.addEventListener('click', () => {
-          this.isShowToc = !this.isShowToc
-          KEEP.styleStatus.isShowToc = this.isShowToc
-          KEEP.setStyleStatus()
-          this.handleToggleToc(this.isShowToc)
-        })
+      this.toggleShowTocBtnDom.addEventListener('click', () => {
+        this.isShowToc = !this.isShowToc
+        KEEP.styleStatus.isShowToc = this.isShowToc
+        KEEP.setStyleStatus()
+        this.handleToggleToc(this.isShowToc)
+      })
     },
 
     handleToggleToc(isOpen) {
@@ -62,10 +62,24 @@ function initToggleShowToc() {
 
     // go comment anchor
     goToComments() {
-      if (this.goToCommentsDom) {
-        const commentsAnchor = document.querySelector('#comments-anchor')
-        this.goToCommentsDom.addEventListener('click', () => {
-          commentsAnchor && commentsAnchor.scrollIntoView()
+      const commentsAnchor = document.querySelector('#comments-anchor')
+      if (this.goToCommentsDom && commentsAnchor) {
+        this.goToCommentsDom.addEventListener('click', (event) => {
+          event.preventDefault()
+          let winScrollY = window.scrollY
+          winScrollY = winScrollY === 0 ? -20 : winScrollY
+          const offset = commentsAnchor.getBoundingClientRect().top + winScrollY
+          window.anime({
+            targets: document.scrollingElement,
+            duration: 200,
+            easing: 'linear',
+            scrollTop: offset,
+            complete: () => {
+              setTimeout(() => {
+                KEEP.utils.pageTop_dom.classList.add('hide')
+              }, 150)
+            }
+          })
         })
       }
     },
@@ -73,7 +87,7 @@ function initToggleShowToc() {
     // watch comments count
     watchPostCommentsCount() {
       const commentsCountDom = this.postToolsDom.querySelector('.post-comments-count')
-      const config = { attributes: true, childList: true }
+      const config = {attributes: true, childList: true}
       const callback = function (mutationsList) {
         mutationsList.forEach((item) => {
           if (item.type === 'childList') {
