@@ -6,7 +6,9 @@ function initToggleShowToc() {
     toggleShowTocBtnDom: document.querySelector('.toggle-show-toc'),
     toggleShowTocIcon: document.querySelector('.toggle-show-toc i'),
     mainContentDom: document.querySelector('.main-content'),
-    postToolsDom: document.querySelector('.page-container .post-tools'),
+    postToolsDom: document.querySelector('.post-tools'),
+    goToCommentsDom: document.querySelector('.post-tools .go-to-comments'),
+
     isShowToc: false,
 
     initToggleToc() {
@@ -56,10 +58,45 @@ function initToggleShowToc() {
       window.addEventListener('resize', () => {
         this.setPostToolsLeft()
       })
+    },
+
+    // go comment anchor
+    goToComments() {
+      if (this.goToCommentsDom) {
+        const commentsAnchor = document.querySelector('#comments-anchor')
+        this.goToCommentsDom.addEventListener('click', () => {
+          commentsAnchor && commentsAnchor.scrollIntoView()
+        })
+      }
+    },
+
+    // watch comments count
+    watchPostCommentsCount() {
+      const commentsCountDom = this.postToolsDom.querySelector('.post-comments-count')
+      const config = { attributes: true, childList: true }
+      const callback = function (mutationsList) {
+        mutationsList.forEach((item) => {
+          if (item.type === 'childList') {
+            const count = Number(item.target.innerHTML)
+            if (count > 0) {
+              commentsCountDom.style.display = 'flex'
+              if (count > 99) {
+                commentsCountDom.innerHTML = '99+'
+                observer.disconnect()
+              }
+            }
+          }
+        })
+      }
+
+      const observer = new MutationObserver(callback)
+      observer.observe(commentsCountDom, config)
     }
   }
   KEEP.utils.postHelper.initToggleToc()
   KEEP.utils.postHelper.initSetPostToolsLeft()
+  KEEP.utils.postHelper.goToComments()
+  KEEP.utils.postHelper.watchPostCommentsCount()
 }
 
 if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {

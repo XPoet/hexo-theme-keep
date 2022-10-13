@@ -53,7 +53,7 @@
                 }, 2000);
             }
 
-            if ('<%= theme.pjax.enable %>') {
+            if ('<%= theme.pjax.enable %>' === 'true') {
                 const loadValineTimeout = setTimeout(() => {
                     loadValine();
                     clearTimeout(loadValineTimeout);

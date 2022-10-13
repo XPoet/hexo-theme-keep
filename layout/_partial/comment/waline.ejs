@@ -1,0 +1,45 @@
+<%
+const {enable: pjax_enable} = theme.pjax
+let {
+    server_url: waline_env_server_url,
+    version: waline_version,
+    reaction: waline_reaction,
+} = theme.comment.waline
+if (!waline_version) {
+    waline_version = '2'
+}
+const waline_cdn_url = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.js`
+%>
+<% if(theme.comment.use === 'waline' && waline_env_server_url) { %>
+    <div class="waline-comment-container">
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                src="<%= waline_cdn_url %>"
+        ></script>
+        <link rel="stylesheet"
+              href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"
+        />
+        <link rel="stylesheet"
+              href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline-meta.css"
+        />
+        <div id="waline-comment"></div>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
+          function loadWaline() {
+            Waline.init({
+              el: '#waline-comment',
+              serverURL: '<%= waline_env_server_url %>',
+              lang: '<%= config.language %>' || 'zh-CN',
+              comment: '.post-comments-count',
+              reaction: '<%= waline_reaction %>' === 'true'
+            })
+          }
+
+          if ('<%= pjax_enable %>' === 'true') {
+            setTimeout(() => {
+              loadWaline()
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadWaline)
+          }
+        </script>
+    </div>
+<% } %>

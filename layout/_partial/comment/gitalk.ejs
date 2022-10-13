@@ -37,7 +37,7 @@
         }
       }
 
-      if ('<%= theme.pjax.enable %>') {
+      if ('<%= theme.pjax.enable %>' === 'true') {
         const loadGitalkTimeout = setTimeout(() => {
           loadGitalk();
           clearTimeout(loadGitalkTimeout);

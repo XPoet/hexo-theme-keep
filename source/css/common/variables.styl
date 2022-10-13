@@ -64,6 +64,7 @@ $z-index-10 = 1010
 // ==============================================================================================
 $temp-color = hexo-config('style.primary_color')
 $primary-color = $temp-color ? convert($temp-color) : #0066cc
+$primary-color-1 = lighten($primary-color, 10%)
 
 
 // ==============================================================================================
@@ -95,6 +96,7 @@ $pjax-progress-bar-color = linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19
 // theme dark mode color set
 // ==============================================================================================
 $dark-primary-color = $primary-color
+$dark-primary-color-1 =  darken($primary-color, 10%)
 $dark-background-color = #383940
 $dark-second-background-color = darken($dark-background-color, 10%)
 $dark-default-text-color = #bebec6
@@ -133,9 +135,10 @@ $default-font-weight = 400
 //  light/dark mode color
 // ==============================================================================================
 root-color(mode) {
+  --primary-color mode == 'light' ? $primary-color : $dark-primary-color
+  --primary-color-1 mode == 'light' ? $primary-color-1 : $dark-primary-color-1
   --background-color mode == 'light' ? $background-color : $dark-background-color
   --second-background-color mode == 'light' ? $second-background-color : $dark-second-background-color
-  --primary-color mode == 'light' ? $primary-color : $dark-primary-color
   --first-text-color mode == 'light' ? $first-text-color : $dark-first-text-color
   --second-text-color mode == 'light' ? $second-text-color : $dark-second-text-color
   --third-text-color mode == 'light' ? $third-text-color : $dark-third-text-color

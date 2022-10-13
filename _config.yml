@@ -211,6 +211,7 @@ comment:
 
   # Valine
   # See: https://github.com/xCss/Valine
+  #      https://valine.js.org
   valine:
     appid:           # Your leancloud application appid
     appkey:          # Your leancloud application appkey
@@ -218,6 +219,7 @@ comment:
 
   # Gitalk
   # See: https://github.com/gitalk/gitalk
+  #      https://gitalk.github.io
   gitalk:
     github_id:        # GitHub repo owner
     github_admins:    # GitHub Admins (in Array type), optional.
@@ -227,10 +229,19 @@ comment:
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
+  #      https://twikoo.js.org
   twikoo:
     env_id:         # Tencent Cloud environment id
     region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou".
-    version: 1.6.7  # Twikoo version, default use v1.6.7, you can custom fill
+    version: 1.6.7  # Twikoo version, default use v1.6.7
+
+  # Waline
+  # See: https://github.com/walinejs/waline
+  #      https://waline.js.org/guide/get-started.html
+  waline:
+    server_url:     # Server URL
+    reaction:       # Article reactions
+    version: 2      # Waline version, default use v2
 
 # ---------------------------------------------------------------------------------------
 # RSS

@@ -132,16 +132,6 @@ KEEP.initUtils = () => {
       })
     },
 
-    // go comment anchor
-    goComment() {
-      this.goComment_dom = document.querySelector('.go-comment')
-      if (this.goComment_dom) {
-        this.goComment_dom.addEventListener('click', () => {
-          document.querySelector('#comment-anchor').scrollIntoView()
-        })
-      }
-    },
-
     // get dom element height
     getElementHeight(selectors) {
       const dom = document.querySelector(selectors)
@@ -442,9 +432,6 @@ KEEP.initUtils = () => {
 
   // global font adjust
   KEEP.utils.globalFontAdjust()
-
-  // go comment
-  KEEP.utils.goComment()
 
   // init page height handle
   KEEP.utils.initPageHeightHandle()
