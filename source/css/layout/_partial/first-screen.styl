@@ -5,7 +5,7 @@ $temp-img = hexo-config('style.first_screen.background_img')
 $first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
 
 $temp-font-color = hexo-config('style.first_screen.font_color')
-$first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--default-text-color)
+$first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--text-color-3)
 
 .first-screen-container {
   position relative
@@ -67,7 +67,7 @@ $first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--
         cursor pointer
 
         i {
-          color var(--default-text-color)
+          color var(--text-color-3)
         }
       }
     }

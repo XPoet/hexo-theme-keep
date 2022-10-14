@@ -28,7 +28,7 @@ $search-header-height = 3rem
     width 70%
     height 80%
     margin auto
-    background var(--background-color)
+    background var(--background-color-1)
     border-radius 0.4rem
     transform scale(0)
     transition-t("transform", "0", "0.3", "ease")
@@ -46,13 +46,13 @@ $search-header-height = 3rem
       align-items center
       height $search-header-height
       padding 0 1rem
-      background var(--fourth-text-color)
+      background var(--text-color-6)
       border-top-left-radius 0.2rem
       border-top-right-radius 0.2rem
 
       .search-input-field-pre {
         margin-right 0.2rem
-        color var(--default-text-color)
+        color var(--text-color-3)
         cursor pointer
       }
 
@@ -62,7 +62,7 @@ $search-header-height = 3rem
 
         .search-input {
           width 100%
-          color var(--default-text-color)
+          color var(--text-color-3)
           font-size 1.2rem
           background transparent
           border 0
@@ -73,7 +73,7 @@ $search-header-height = 3rem
           }
 
           &::-webkit-input-placeholder {
-            color var(--third-text-color)
+            color var(--text-color-4)
             font-size 1rem
           }
         }
@@ -81,12 +81,12 @@ $search-header-height = 3rem
 
 
       .close-popup-btn {
-        color var(--default-text-color)
+        color var(--text-color-3)
         font-size $icon-size
         cursor pointer
 
         &:hover {
-          color var(--first-text-color)
+          color var(--text-color-1)
         }
       }
     }
@@ -130,7 +130,7 @@ $search-header-height = 3rem
               left 0
               width 0.4rem
               height 0.4rem
-              background var(--default-text-color)
+              background var(--text-color-3)
               border-radius 50%
               transform translateY(-50%)
               content ''
@@ -147,7 +147,7 @@ $search-header-height = 3rem
 
           a {
             &:hover {
-              color var(--default-text-color)
+              color var(--text-color-3)
             }
           }
 
@@ -162,7 +162,7 @@ $search-header-height = 3rem
 
       #no-result {
         margin auto
-        color var(--third-text-color)
+        color var(--text-color-4)
       }
     }
   }

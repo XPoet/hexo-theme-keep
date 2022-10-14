@@ -201,9 +201,9 @@ $gt-size-avatar-mobi := em(32px)
       }
       &-preview {
         color $gt-color-main
-        background-color var(--background-color)
+        background-color var(--background-color-1)
         &:hover {
-          background-color var(--second-background-color)
+          background-color var(--background-color-2)
         }
       }
       &-public {
@@ -262,7 +262,7 @@ $gt-size-avatar-mobi := em(32px)
 
   .gt-counts {
     margin 0 em(10px) 0 0
-    color var(--default-text-color)
+    color var(--text-color-3)
   }
 
   .gt-user {
@@ -279,14 +279,14 @@ $gt-size-avatar-mobi := em(32px)
       display inline-block
       cursor pointer
       .gt-user-name {
-        color var(--default-text-color)
+        color var(--text-color-3)
       }
     }
 
     .gt-ico {
       margin 0 0 0 em(5px)
       svg {
-        fill var(--default-text-color)
+        fill var(--text-color-3)
       }
     }
     .is--poping {
@@ -318,7 +318,7 @@ $gt-size-avatar-mobi := em(32px)
     padding em(10px) 0
     font-size em(14px)
     letter-spacing 0.5px
-    background var(--background-color)
+    background var(--background-color-1)
     border 1px solid var(--border-color)
     .gt-action {
       position relative
@@ -358,22 +358,22 @@ $gt-size-avatar-mobi := em(32px)
       min-height em(82px)
       max-height em(240px)
       padding em(12px)
-      color var(--default-text-color)
+      color var(--text-color-3)
       font-size em(14px)
       word-wrap break-word
-      background-color var(--fourth-text-color)
+      background-color var(--text-color-6)
       border 1px solid var(--border-color)
       border-radius $gt-size-border-radius
       outline none
       transition all 0.25s ease
       resize vertical
       &:hover {
-        background-color var(--background-color)
+        background-color var(--background-color-1)
       }
     }
     &-preview {
       padding em(12px)
-      background-color var(--background-color)
+      background-color var(--background-color-1)
       border 1px solid var(--border-color)
       border-radius $gt-size-border-radius
     }
@@ -455,7 +455,7 @@ $gt-size-avatar-mobi := em(32px)
       margin-left em(20px)
       padding em(12px) em(16px)
       overflow auto
-      background-color var(--second-background-color)
+      background-color var(--background-color-2)
       transition all ease 0.25s
       +mobile() {
         margin-left em(14px)
@@ -513,7 +513,7 @@ $gt-size-avatar-mobi := em(32px)
     }
     &-body {
       // color: $gt-color-comment-txt !important
-      color var(--second-text-color) !important
+      color var(--text-color-2) !important
       .email-hidden-toggle a {
         display inline-block
         height 12px
@@ -546,7 +546,7 @@ $gt-size-avatar-mobi := em(32px)
     }
     &-admin {
       .gt-comment-content {
-        background-color var(--fourth-text-color)
+        background-color var(--text-color-6)
       }
     }
   }
