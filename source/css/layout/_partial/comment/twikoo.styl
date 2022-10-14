@@ -22,21 +22,23 @@
     }
 
 
+
     .actions {
 
       .tk-row-actions-start {
-        .tk-action-icon {
+
+        .tk-submit-action-icon {
 
           svg {
-            fill var(--text-color-3)
+            path {
+              fill var(--text-color-3)
+              transition-t("fill", "0", "0.2", "ease")
+            }
           }
 
-          &.OwO {
-
-            .OwO-body {
-              color var(--text-color-3)
-              background-color var(--background-color-1)
-            }
+          .OwO-body {
+            color var(--text-color-3)
+            background-color var(--background-color-1)
           }
         }
       }
@@ -54,6 +56,7 @@
       color var(--text-color-3)
     }
 
+
     .tk-comments-container {
       .tk-comments-count {
         span {
@@ -67,9 +70,15 @@
       margin-bottom 1.4rem
 
       .tk-meta {
+
         .tk-nick {
           color var(--text-color-3)
         }
+
+        strong {
+          color var(--text-color-3)
+        }
+
 
         .tk-tag {
 
@@ -85,7 +94,7 @@
 
         .tk-time {
           time {
-            color var(--text-color-3)
+            color var(--text-color-4)
           }
         }
       }
@@ -93,6 +102,14 @@
 
       .tk-content {
         color var(--text-color-3)
+
+        span {
+          color var(--text-color-3)
+        }
+
+        p {
+          color var(--text-color-3)
+        }
       }
 
       .tk-expand {

@@ -13,12 +13,12 @@ function initToggleShowToc() {
 
     initToggleToc() {
       this.toggleShowTocBtnDom &&
-      this.toggleShowTocBtnDom.addEventListener('click', () => {
-        this.isShowToc = !this.isShowToc
-        KEEP.styleStatus.isShowToc = this.isShowToc
-        KEEP.setStyleStatus()
-        this.handleToggleToc(this.isShowToc)
-      })
+        this.toggleShowTocBtnDom.addEventListener('click', () => {
+          this.isShowToc = !this.isShowToc
+          KEEP.styleStatus.isShowToc = this.isShowToc
+          KEEP.setStyleStatus()
+          this.handleToggleToc(this.isShowToc)
+        })
     },
 
     handleToggleToc(isOpen) {
@@ -87,7 +87,7 @@ function initToggleShowToc() {
     // watch comments count
     watchPostCommentsCount() {
       const commentsCountDom = this.postToolsDom.querySelector('.post-comments-count')
-      const config = {attributes: true, childList: true}
+      const config = { attributes: true, childList: true }
       const callback = function (mutationsList) {
         mutationsList.forEach((item) => {
           if (item.type === 'childList') {
