@@ -71,7 +71,7 @@ function initToggleShowToc() {
           const offset = commentsAnchor.getBoundingClientRect().top + winScrollY
           window.anime({
             targets: document.scrollingElement,
-            duration: 200,
+            duration: 300,
             easing: 'linear',
             scrollTop: offset,
             complete: () => {
