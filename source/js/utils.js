@@ -173,7 +173,7 @@ KEEP.initUtils = () => {
       let isZoomIn = false
       let curWinScrollY = 0
       let selectedImgDom = null
-      const imgDomList = document.querySelectorAll('.markdown-body img')
+      const imgDomList = document.querySelectorAll('.keep-markdown-body img')
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
       const zoomInImg = zoomInImgMask.querySelector('.zoom-in-image')
 
