@@ -8,7 +8,7 @@ KEEP.initCodeBlockTools = () => {
   }
 
   const { style: codeCopyStyle } = KEEP.theme_config?.code_copy
-  const { style: codeBlockStyle } = KEEP.theme_config?.code_block_tools
+  const { style: codeBlockStyle } = KEEP.theme_config?.code_block
   const isMac = (codeBlockStyle || codeCopyStyle || 'default') === 'mac'
   const foldedIconClassName = isMac ? 'fas fa-chevron-left' : 'fas fa-chevron-right'
   const {

@@ -10,7 +10,7 @@
 const {
     local_search: t_local_search,
     code_copy: t_code_copy,
-    code_block_tools: t_code_block_tools,
+    code_block: t_code_block,
     lazyload: t_lazyload,
     toc: t_toc,
     pjax: t_pjax
@@ -21,8 +21,8 @@ const {
     <%- __js('js/local-search.js') %>
 <% } %>
 
-<% if (t_code_block_tools?.enable === true || t_code_copy?.enable === true) { %>
-    <%- __js('js/code-block-tools.js') %>
+<% if (t_code_block?.enable === true || t_code_copy?.enable === true) { %>
+    <%- __js('js/code-block.js') %>
 <% } %>
 
 <% if (t_lazyload?.enable === true) { %>
