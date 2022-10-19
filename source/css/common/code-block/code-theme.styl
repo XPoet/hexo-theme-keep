@@ -8,7 +8,6 @@ $dark-code-background = darken($dark-background-color-1, 10%)
 
 
 if (hexo-config('code_block.highlight_theme') == 'obsidian') {
-
   $toolbar-foreground = #b5b5b5
   $toolbar-background = #3a3f40
   $highlight-foreground = #e8e2bb
@@ -42,9 +41,8 @@ if (hexo-config('code_block.highlight_theme') == 'obsidian') {
   $dark-highlight-purple = darken($highlight-purple, 2%)
   $dark-highlight-deletion = darken($highlight-deletion, 2%)
   $dark-highlight-addition = darken($highlight-addition, 2%)
-
-} else {
-
+}
+else {
   $toolbar-foreground = $text-color-3
   $toolbar-background = $background-color-3
   $highlight-foreground = lighten($text-color-3, 2%)
