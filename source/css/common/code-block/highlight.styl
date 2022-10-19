@@ -8,7 +8,7 @@ $code-block {
   font-size 0.96rem
   line-height 1.5rem
   background var(--highlight-background)
-  -webkit-text-size-adjust none
+  not-text-size-adjust()
 }
 
 
@@ -40,7 +40,8 @@ pre {
 
 .highlight {
   @extend $code-block
-  border-radius 0.1rem
+  border-bottom-left-radius 0.1rem
+  border-bottom-right-radius 0.1rem
 
   pre {
     margin 0
@@ -95,24 +96,28 @@ pre {
 
   .line {
     height 1.5rem
-    color var(--text-color-3)
+    color var(--highlight-foreground)
 
     .attr {
-      color var(--text-color-3)
+      color var(--highlight-foreground)
     }
 
     .string {
-      color var(--text-color-3)
+      color var(--highlight-foreground)
     }
   }
 }
 
 
 .gutter {
-  -webkit-user-select none
-  -moz-user-select none
-  -ms-user-select none
-  user-select none
+  disable-user-select()
+  color var(--highlight-gutter-color)
+  background var(--highlight-gutter-bg-color)
+
+  .line {
+    color var(--highlight-gutter-color)
+  }
+
 }
 
 .gist table {
@@ -123,7 +128,6 @@ pre {
   }
 }
 
-// For diff highlight
 pre .deletion {
   background var(--highlight-deletion)
 }
@@ -155,6 +159,10 @@ pre {
   .css .class
   .css .pseudo {
     color var(--highlight-red)
+  }
+
+  .property {
+    color var(--highlight-blue)
   }
 
   .number
