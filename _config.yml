@@ -159,6 +159,7 @@ post:
 code_block:
   enable: false     # Option values: true | false
   style: default    # Option values: default | mac
+  highlight_theme: default  # Option values: default | obsidian
 
 # ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar

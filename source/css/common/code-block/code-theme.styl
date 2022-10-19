@@ -1,40 +1,89 @@
 @import "../variables.styl"
 
+// A single line block of code
 $code-foreground = lighten($text-color-3, 2%)
 $code-background = darken($background-color-1, 5%)
-$highlight-foreground = lighten($text-color-3, 2%)
-$highlight-background = darken($background-color-1, 2%)
-$highlight-gutter-color = lighten($text-color-3, 5%)
-$highlight-gutter-bg-color = darken($background-color-1, 5%)
-$highlight-comment = #8e908c
-$highlight-red = #c82829
-$highlight-orange = #f5871f
-$highlight-yellow = #eab700
-$highlight-green = #718c00
-$highlight-aqua = #3e999f
-$highlight-blue = #4271ae
-$highlight-purple = #8959a8
-$highlight-deletion = #fdd
-$highlight-addition = #dfd
-
 $dark-code-foreground = lighten($dark-text-color-3, 2%)
 $dark-code-background = darken($dark-background-color-1, 10%)
-$dark-highlight-foreground = lighten($dark-text-color-3, 2%)
-$dark-highlight-background = darken($dark-background-color-1, 8%)
-$dark-highlight-gutter-color = lighten($dark-text-color-3, 5%)
-$dark-highlight-gutter-bg-color = darken($dark-background-color-1, 10%)
-$dark-highlight-comment = #969896
-$dark-highlight-red = #cc6666
-$dark-highlight-orange = #de935f
-$dark-highlight-yellow = #f0c674
-$dark-highlight-green = #b5bd68
-$dark-highlight-aqua = #8abeb7
-$dark-highlight-blue = #81a2be
-$dark-highlight-purple = #b294bb
-$dark-highlight-deletion = #008000
-$dark-highlight-addition = #800000
+
+
+if (hexo-config('code_block.highlight_theme') == 'obsidian') {
+
+  $toolbar-foreground = #b5b5b5
+  $toolbar-background = #3a3f40
+  $highlight-foreground = #e8e2bb
+  $highlight-background = #273036
+  $highlight-gutter-color = #7a979a
+  $highlight-gutter-bg-color = #273130
+  $highlight-comment = #76888e
+  $highlight-red = #ee5758
+  $highlight-orange = #ec7600
+  $highlight-yellow = #ffcd22
+  $highlight-green = #93c763
+  $highlight-aqua = #458383
+  $highlight-blue = #6e95bd
+  $highlight-purple = #b18bb7
+  $highlight-deletion = #ff9999
+  $highlight-addition = #ccff99
+
+  $dark-toolbar-foreground = darken($toolbar-foreground, 2%)
+  $dark-toolbar-background = darken($toolbar-background, 2%)
+  $dark-highlight-foreground = darken($highlight-foreground, 10%)
+  $dark-highlight-background = darken($highlight-background, 2%)
+  $dark-highlight-gutter-color = lighten($highlight-gutter-color, 1%)
+  $dark-highlight-gutter-bg-color = darken($highlight-gutter-bg-color, 2%)
+  $dark-highlight-comment = $highlight-comment
+  $dark-highlight-red = darken($highlight-red, 2%)
+  $dark-highlight-orange = darken($highlight-orange, 2%)
+  $dark-highlight-yellow = darken($highlight-yellow, 2%)
+  $dark-highlight-green = darken($highlight-green, 2%)
+  $dark-highlight-aqua = darken($highlight-aqua, 2%)
+  $dark-highlight-blue = darken($highlight-blue, 2%)
+  $dark-highlight-purple = darken($highlight-purple, 2%)
+  $dark-highlight-deletion = darken($highlight-deletion, 2%)
+  $dark-highlight-addition = darken($highlight-addition, 2%)
+
+} else {
+
+  $toolbar-foreground = $text-color-3
+  $toolbar-background = $background-color-3
+  $highlight-foreground = lighten($text-color-3, 2%)
+  $highlight-background = darken($background-color-1, 2%)
+  $highlight-gutter-color = lighten($text-color-3, 5%)
+  $highlight-gutter-bg-color = darken($background-color-1, 5%)
+  $highlight-comment = #8e908c
+  $highlight-red = #c82829
+  $highlight-orange = #f5871f
+  $highlight-yellow = #eab700
+  $highlight-green = #718c00
+  $highlight-aqua = #3e999f
+  $highlight-blue = #4271ae
+  $highlight-purple = #8959a8
+  $highlight-deletion = #fdd
+  $highlight-addition = #dfd
+
+  $dark-toolbar-foreground = $dark-text-color-3
+  $dark-toolbar-background = $dark-background-color-3
+  $dark-highlight-foreground = lighten($dark-text-color-3, 2%)
+  $dark-highlight-background = darken($dark-background-color-1, 8%)
+  $dark-highlight-gutter-color = lighten($dark-text-color-3, 5%)
+  $dark-highlight-gutter-bg-color = darken($dark-background-color-1, 10%)
+  $dark-highlight-comment = #969896
+  $dark-highlight-red = #cc6666
+  $dark-highlight-orange = #de935f
+  $dark-highlight-yellow = #f0c674
+  $dark-highlight-green = #b5bd68
+  $dark-highlight-aqua = #8abeb7
+  $dark-highlight-blue = #81a2be
+  $dark-highlight-purple = #b294bb
+  $dark-highlight-deletion = #008000
+  $dark-highlight-addition = #800000
+}
+
 
 code-theme(mode) {
+  --toolbar-foreground mode == 'light' ? $toolbar-foreground : $dark-toolbar-foreground
+  --toolbar-background mode == 'light' ? $toolbar-background : $dark-toolbar-background
   --code-foreground mode == 'light' ? $code-foreground : $dark-code-foreground
   --code-background mode == 'light' ? $code-background : $dark-code-background
   --highlight-background mode == 'light' ? $highlight-background : $dark-highlight-background
