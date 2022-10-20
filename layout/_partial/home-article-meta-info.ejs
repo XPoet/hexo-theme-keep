@@ -39,5 +39,5 @@ const target_date = post.date !== post.updated ? post.updated : post.date
         <% } %>
     </div>
 
-    <a href="<%- url_for(post.path) %>"><%- __('read_more') %>&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a class="read-more" href="<%- url_for(post.path) %>"><%- __('read_more') %>&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
