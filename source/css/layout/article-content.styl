@@ -102,8 +102,8 @@ $toc-container-width = 16rem
         box-sizing border-box
         width 100%
         height 100%
-        margin-left 10px
-        padding 2px 0
+        margin-left 0.8rem
+        padding 0.2rem 0
 
         .author {
           display flex
@@ -116,13 +116,13 @@ $toc-container-width = 16rem
           }
 
           .author-label {
-            margin-left 10px
-            padding 0 5px
+            margin-left 0.8rem
+            padding 0 0.4rem
             color #fff
             font-weight 500
             font-size 0.8rem
             background var(--selection-color)
-            border-radius 5px
+            border-radius 0.4rem
           }
         }
       }
@@ -131,7 +131,7 @@ $toc-container-width = 16rem
 
     .article-header
     .article-header-meta-info {
-      margin-top 16px
+      margin-top 1rem
       +keep-tablet() {
         transform scale(0.9)
         transform-origin left top
@@ -141,10 +141,13 @@ $toc-container-width = 16rem
 
     .article-content {
       margin-top $component-spacing-value
-      padding-bottom 10px
+      padding-bottom 2rem
       color var(--text-color-3)
       word-wrap break-word
-      border-bottom 1px solid var(--border-color)
+
+      if (hexo-config('copyright_info.enable') == true) {
+        border-bottom 0.1rem dashed var(--border-color)
+      }
     }
 
 
@@ -181,7 +184,7 @@ $toc-container-width = 16rem
 
 
     .article-nav {
-      height 40px
+      height 2.8rem
       margin-top $component-spacing-value
 
       .article-prev
@@ -190,7 +193,7 @@ $toc-container-width = 16rem
         max-width $post-nav-max-width
         height 100%
 
-        keep-container(true, 1.03, 1.03, 10px, 0)
+        keep-container(true, 1.03, 1.03, 0.8rem, 0)
 
         a {
           position relative
