@@ -1,19 +1,25 @@
+<%
+const {
+    enable: t_comment_enable,
+    use: t_comment_use
+} = theme?.comment
+%>
 <div class="comments-container">
     <div id="comments-anchor"></div>
     <div class="comment-area-title">
         <i class="fas fa-comments"></i>&nbsp;<%- __('comments') %>
     </div>
-    <% if (theme.comment.enable === true && theme.comment.hasOwnProperty(theme.comment.use)) { %>
-        <% if  (theme.comment.use === 'valine') { %>
+    <% if (t_comment_enable === true && t_comment_use) { %>
+        <% if  (t_comment_use === 'valine') { %>
             <%- partial('valine') %>
 
-        <% } else if (theme.comment.use === 'gitalk') { %>
+        <% } else if (t_comment_use === 'gitalk') { %>
             <%- partial('gitalk') %>
 
-        <% } else if (theme.comment.use === 'twikoo') { %>
+        <% } else if (t_comment_use === 'twikoo') { %>
             <%- partial('twikoo') %>
 
-        <% } else if (theme.comment.use === 'waline') { %>
+        <% } else if (t_comment_use === 'waline') { %>
             <%- partial('waline') %>
 
         <% } %>

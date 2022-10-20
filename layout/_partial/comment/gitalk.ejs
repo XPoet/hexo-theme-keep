@@ -1,4 +1,5 @@
 <%
+const { enable: pjax_enable } = theme?.pjax
 const {
     client_id,
     client_secret,
@@ -23,19 +24,12 @@ if (t_cdn_enable === true) {
     }
 }
 %>
-
-<% if(
-        theme.comment.use === 'gitalk'
-        && client_id
-        && client_secret
-        && github_id
-        && repository
-) { %>
+<% if(client_id && client_secret && github_id && repository) { %>
     <div class="gitalk-comment-container">
         <div id="gitalk-container"></div>
         <link rel="stylesheet" href="<%= cdn_css %>">
-        <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %> src="<%= cdn_js %>"></script>
-        <script <%= theme.pjax.enable === true ? 'data-pjax' : '' %>>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %> src="<%= cdn_js %>"></script>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
           function loadGitalk() {
             let __gitalk__pathname = decodeURI(location.pathname);
             const __gitalk__pathnameLength = __gitalk__pathname.length;
@@ -45,7 +39,6 @@ if (t_cdn_enable === true) {
             }
 
             try {
-
               Gitalk && new Gitalk({
                 clientID: '<%= client_id %>',
                 clientSecret: '<%= client_secret %>',
@@ -55,13 +48,12 @@ if (t_cdn_enable === true) {
                 id: __gitalk__pathname,
                 language: '<%= config.language %>'
               }).render('gitalk-container');
-
             } catch (e) {
               window.Gitalk = null;
             }
           }
 
-          if ('<%= theme.pjax.enable %>' === 'true') {
+          if ('<%= pjax_enable %>' === 'true') {
             const loadGitalkTimeout = setTimeout(() => {
               loadGitalk();
               clearTimeout(loadGitalkTimeout);

@@ -19,7 +19,6 @@ if (t_cdn_enable === true) {
     }
 }
 %>
-
 <% if(appid && appkey) { %>
     <div class="valine-container">
         <script <%= pjax_enable === true ? 'data-pjax' : '' %> src="<%= cdn_url %>"></script>

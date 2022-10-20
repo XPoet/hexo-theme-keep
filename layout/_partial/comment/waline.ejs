@@ -3,7 +3,7 @@ const { enable: pjax_enable } = theme?.pjax
 let {
     server_url: waline_env_server_url,
     version: waline_version,
-    reaction: waline_reaction,
+    reaction: waline_reaction
 } = theme.comment?.waline
 if (!waline_version) { waline_version = '2' }
 let cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`

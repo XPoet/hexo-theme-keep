@@ -5,9 +5,7 @@ let {
     region: tk_region,
     version: tk_version
 } = theme.comment?.twikoo
-if (!tk_version) {
-    tk_version = '1.6.7'
-}
+if (!tk_version) { tk_version = '1.6.7' }
 const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
 let twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
 if (t_cdn_enable === true) {
@@ -22,11 +20,9 @@ if (t_cdn_enable === true) {
     }
 }
 %>
-<% if(theme.comment.use === 'twikoo' && tk_env_id) { %>
+<% if(tk_env_id) { %>
     <div class="twikoo-container">
-        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
-                src="<%= twikoo_cdn_url %>"
-        ></script>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %> src="<%= twikoo_cdn_url %>"></script>
         <div id="twikoo-comment"></div>
         <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
           function loadTwikoo() {
