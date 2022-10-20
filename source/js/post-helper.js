@@ -29,6 +29,10 @@ function initToggleShowToc() {
         this.postPageContainerDom.classList.remove('show-toc')
         document.body.classList.remove('has-toc')
       }
+
+      setTimeout(() => {
+        this.setPostToolsLeft()
+      }, 120)
     },
 
     hasToc(isOpen) {
@@ -37,17 +41,18 @@ function initToggleShowToc() {
       this.handleToggleToc(isOpen)
     },
 
-    setPostToolsLeft() {
-      const winWidth = window.innerWidth
-      const mcWidth = this.mainContentDom.getBoundingClientRect().width.toFixed(0)
+    setPostToolsLeft(mcw) {
+      const mainContainerWidth = mcw
+        ? mcw
+        : this.mainContentDom.getBoundingClientRect().width.toFixed(0)
       let offsetX = 5
 
-      if (winWidth <= 800) {
+      if (window.innerWidth <= 800) {
         offsetX = 3
       }
 
       this.postToolsDom.style.opacity = `1`
-      this.postToolsDom.style.left = `calc((100vw - ${mcWidth}px) / 2 - ${offsetX}rem)`
+      this.postToolsDom.style.left = `calc((100vw - ${mainContainerWidth}px) / 2 - ${offsetX}rem)`
     },
 
     initSetPostToolsLeft() {

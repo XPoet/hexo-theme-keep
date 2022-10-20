@@ -137,7 +137,7 @@
     top $header-height + $component-spacing-value
     left 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     opacity 0
-    transition-t("top, transform, opacity", "0, 0, 0.2", "0.2, 0.2, 0.2", "ease, ease, ease")
+    transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value
