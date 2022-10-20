@@ -55,7 +55,8 @@ hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
 
 const getSourceCdnUrl = (tyle, themeConfig, path) => {
   const version = require('../../package.json').version
-  const { provider = 'jsdelivr' } = themeConfig?.cdn
+  const cdn = themeConfig?.cdn || {}
+  const { provider = 'jsdelivr' } = cdn
 
   let urlPrefix = ''
   switch (provider.toLocaleLowerCase()) {

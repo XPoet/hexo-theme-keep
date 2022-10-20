@@ -1,12 +1,26 @@
 <%
-const {enable: pjax_enable} = theme.pjax
+const { enable: pjax_enable } = theme?.pjax
 let {
-    env_id: tk_env_id, region: tk_region, version: tk_version
-} = theme.comment.twikoo
+    env_id: tk_env_id,
+    region: tk_region,
+    version: tk_version
+} = theme.comment?.twikoo
 if (!tk_version) {
     tk_version = '1.6.7'
 }
-const twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
+let twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
+if (t_cdn_enable === true) {
+    switch (t_cdn_provider) {
+        case 'jsdelivr':
+            twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
+            break
+
+        case 'unpkg':
+            twikoo_cdn_url = `//unpkg.com/twikoo@${tk_version}/dist/twikoo.all.min.js`
+            break
+    }
+}
 %>
 <% if(theme.comment.use === 'twikoo' && tk_env_id) { %>
     <div class="twikoo-container">
