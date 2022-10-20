@@ -7,9 +7,11 @@ KEEP.initCodeBlockTools = () => {
     wrapper.appendChild(this)
   }
 
-  const { style: codeCopyStyle } = KEEP.theme_config?.code_copy
-  const { style: codeBlockStyle } = KEEP.theme_config?.code_block
-  const isMac = (codeBlockStyle || codeCopyStyle || 'default') === 'mac'
+  const {style: codeCopyStyle} = KEEP.theme_config?.code_copy || {}
+  const {style: codeBlockStyle} = KEEP.theme_config?.code_block || {}
+  const {style: codeBlockToolsStyle} = KEEP.theme_config?.code_block?.tools || {}
+
+  const isMac = (codeCopyStyle || codeBlockStyle || codeBlockToolsStyle || 'default') === 'mac'
   const foldedIconClassName = isMac ? 'fas fa-chevron-left' : 'fas fa-chevron-right'
   const {
     copy: copyLang,
@@ -26,6 +28,9 @@ KEEP.initCodeBlockTools = () => {
     }
     const highlightContainer = document.createElement('div')
     highlightContainer.classList.add('highlight-container')
+    if (isMac) {
+      highlightContainer.classList.add('mac')
+    }
     element.wrap(highlightContainer)
 
     const codeLangDom = `${codeLang ? '<span class="code-lang">' + codeLang + '</span>' : ''}`

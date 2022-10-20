@@ -157,8 +157,9 @@ post:
 # Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
 code_block:
-  enable: false     # Option values: true | false
-  style: default    # Option values: default | mac
+  tools:  # Include "code copy", "code block collapse" and "code language"
+    enable: false # Option values: true | false
+    style: default # Option values: default | mac
   highlight_theme: default  # Option values: default | obsidian
 
 # ---------------------------------------------------------------------------------------
