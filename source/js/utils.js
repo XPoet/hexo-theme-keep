@@ -77,9 +77,7 @@ KEEP.initUtils = () => {
     registerWindowScroll() {
       window.addEventListener('scroll', () => {
         // style handle when scroll
-        if (this.isHasScrollPercent || this.isHasScrollProgressBar) {
-          this.styleHandleWhenScroll()
-        }
+        this.styleHandleWhenScroll()
 
         // TOC scroll handle
         if (KEEP.theme_config.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
