@@ -92,7 +92,9 @@ function initToggleShowToc() {
     // watch comments count
     watchPostCommentsCount() {
       const commentsCountDom = this.postToolsDom.querySelector('.post-comments-count')
+      if (!commentsCountDom) return
       const config = { attributes: true, childList: true }
+
       const callback = function (mutationsList) {
         mutationsList.forEach((item) => {
           if (item.type === 'childList') {
