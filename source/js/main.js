@@ -56,7 +56,11 @@ window.addEventListener('DOMContentLoaded', () => {
       KEEP.initLocalSearch()
     }
 
-    if (code_block?.tools?.enable === true || code_block?.enable === true || code_copy?.enable === true) {
+    if (
+      code_block?.tools?.enable === true ||
+      code_block?.enable === true ||
+      code_copy?.enable === true
+    ) {
       KEEP.initCodeBlockTools()
     }
 
