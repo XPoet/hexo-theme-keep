@@ -15,7 +15,7 @@ base_info:
   author: Keep Team
 
   # Your blog website url
-  url: https://keep.xpoet.cn/
+  url: https://xpoet.cn/
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
@@ -53,8 +53,8 @@ style:
   first_screen:
     enable: false  # Option values: true | false
 
-    # Set transparent background for header. Option values: true | false
-    header_transparent: false
+    # Set transparent background for header.
+    header_transparent: false  # Option values: true | false
 
     # First screen background image (You can use local image or image external link)
     background_img: /images/bg.svg
@@ -69,17 +69,17 @@ style:
 
     # If enable hitokoto, first screen description is different every time when you enter the site
     hitokoto:
-      enable: false # Option values: true | false
+      enable: false  # Option values: true | false
 
   # Page scroll style settings
   scroll:
     # Show progress bar in top when page scroll
     progress_bar:
-      enable: false # Option values: true | false
+      enable: false  # Option values: true | false
 
     # Show percent when page scroll
     percent:
-      enable: false # Option values: true | false
+      enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -119,19 +119,21 @@ social_contact:
 # Home page article block display settings
 # ---------------------------------------------------------------------------------------
 home_article:
+  # Show category in home page article block.
   category:
-    enable: false  # Show category in home page article block. Option values: true | false
+    enable: false  # Option values: true | false
     limit: 3       # Max number of categories shown in home page article block
+  # Show tags in home page article block.
   tag:
-    enable: false  # Show tags in home page article block. Option values: true | false
+    enable: false  # Option values: true | false
     limit: 5       # Max number of tags shown in home page article block
 
 # ---------------------------------------------------------------------------------------
 # Post page Settings
 # ---------------------------------------------------------------------------------------
 post:
-  # Image align position in the post, Option values: left | center
-  img_align: left
+  # Image align position in the post
+  img_align: left  # Option values: left | center
 
   # Post word count
   # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
@@ -143,11 +145,11 @@ post:
 
   # Author label in the post
   author_label:
-    enable: true # Option values: true | false
+    enable: true  # Option values: true | false
 
     # If true, show Lv1, Lv2, Lv3...
     # If false, show custom_label_list
-    auto: true # Option values: true | false
+    auto: true    # Option values: true | false
 
     # Label array item can be fill one or more
     custom_label_list: ["Trainee", "Engineer", "Architect"]
@@ -182,7 +184,7 @@ toc:
 # Post copyright info
 # ---------------------------------------------------------------------------------------
 copyright_info:
-  enable: false       # Option values: true | false
+  enable: false      # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -210,7 +212,7 @@ local_search:
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
-  use: valine     # Option values: valine | gitalk | twikoo
+  use: valine     # Option values: valine | gitalk | twikoo | waline
 
   # Valine
   # See: https://github.com/xCss/Valine
@@ -252,13 +254,13 @@ comment:
 # See: https://github.com/hexojs/hexo-generator-feed
 # ---------------------------------------------------------------------------------------
 rss:
-  enable: false # Option values: true | false
+  enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Lazyload image
 # ---------------------------------------------------------------------------------------
 lazyload:
-  enable: false # Option values: true | false
+  enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # CDN
