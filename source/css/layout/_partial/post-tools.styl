@@ -2,32 +2,34 @@ $li-border-radius = 0.4rem
 $li-margin-bottom = 0.8rem
 
 .post-tools-container {
+  position relative
+  box-sizing border-box
+  padding-top 2rem
 
   .tools-list {
 
     li {
-      display flex
-      align-items center
-      justify-content center
+      position relative
+      box-sizing border-box
       width $post-tool-button-width
       height $post-tool-button-width
       margin-bottom $li-margin-bottom
-      color var(--default-text-color)
+      color var(--text-color-3)
       font-size 1.2rem
-      background var(--background-color)
+      background var(--background-color-1)
       border-radius 50%
       cursor pointer
 
       i {
-        color var(--default-text-color)
+        color var(--text-color-3)
       }
 
       &:hover {
-        color var(--background-color)
+        color var(--background-color-1)
         background var(--primary-color)
 
         i {
-          color var(--background-color)
+          color var(--background-color-1)
         }
       }
 
@@ -39,11 +41,35 @@ $li-margin-bottom = 0.8rem
 
       hover-style(true, 1.06, 1.06)
 
-      &.page-aside-toggle {
+      &.toggle-show-toc {
         display none
 
         +keep-tablet() {
           display none !important
+        }
+      }
+
+
+      &.go-to-comments {
+        .post-comments-count {
+          position absolute
+          top 0
+          right -1rem
+          display none
+          align-items center
+          justify-content center
+          box-sizing border-box
+          min-width 1.1rem
+          height 1.1rem
+          padding 0 0.2rem
+          color var(--badge-color)
+          font-size 12px
+          background var(--badge-background-color)
+          border-radius 0.4rem
+
+          +keep-tablet() {
+            display none !important
+          }
         }
       }
     }

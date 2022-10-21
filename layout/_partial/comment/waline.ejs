@@ -1,0 +1,55 @@
+<%
+const { enable: pjax_enable } = theme?.pjax
+let {
+    server_url: waline_env_server_url,
+    version: waline_version,
+    reaction: waline_reaction
+} = theme.comment?.waline
+if (!waline_version) { waline_version = '2' }
+let cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`
+let cdn_css_meta = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline-meta.css`
+let cdn_js = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.js`
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
+if (t_cdn_enable === true) {
+    switch (t_cdn_provider) {
+        case 'jsdelivr':
+            cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`
+            cdn_css_meta = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline-meta.css`
+            cdn_js = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.js`
+            break
+
+        case 'unpkg':
+            cdn_css = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.css`
+            cdn_css_meta = `//unpkg.com/@waline/client@v${waline_version}/dist/waline-meta.css`
+            cdn_js = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.js`
+            break
+    }
+}
+%>
+<% if(waline_env_server_url) { %>
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="<%= cdn_css %>"/>
+        <link rel="stylesheet" href="<%= cdn_css_meta %>"/>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %> src="<%= cdn_js %>"></script>
+        <div id="waline-comment"></div>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
+          function loadWaline() {
+            Waline.init({
+              el: '#waline-comment',
+              serverURL: '<%= waline_env_server_url %>',
+              lang: '<%= config.language %>' || 'zh-CN',
+              comment: '.post-comments-count',
+              reaction: '<%= waline_reaction %>' === 'true'
+            })
+          }
+
+          if ('<%= pjax_enable %>' === 'true') {
+            setTimeout(() => {
+              loadWaline()
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadWaline)
+          }
+        </script>
+    </div>
+<% } %>

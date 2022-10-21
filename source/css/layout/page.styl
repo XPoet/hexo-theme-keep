@@ -1,14 +1,9 @@
-$temp-width = hexo-config('style.left_side_width')
-$page-aside-width = $temp-width ? convert($temp-width) : 260px
-
 .page-container {
   position relative
   box-sizing border-box
   width 100%
   height auto
-  background var(--background-color)
-  transition-t("padding-left", "0", "0.3", "ease-out")
-
+  background var(--background-color-1)
 
   +keep-tablet() {
     padding-left 0 !important
@@ -17,9 +12,10 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
 
   .page-main-content {
     position relative
+    box-sizing border-box
     padding-top $header-height
 
-    &.home {
+    &.is-home {
       .transparent-1 {
         background var(--header-transparent-background-1)
       }
@@ -61,7 +57,7 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
       box-sizing border-box
       width 100%
       height $header-height
-      transition-t("transform, padding-left, height", "0, 0, 0", "0.3, 0.2, 0.2", "ease-out, linear, ease")
+      transition-t("transform, height", "0, 0", "0.3, 0.2", "ease-out, ease")
 
       &.hide {
         transform translateY(-105%)
@@ -113,6 +109,11 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
         width $main-content-width
         max-width $content-max-width
         height 100%
+        transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
+
+        .has-toc & {
+          max-width $has-toc-content-max-width
+        }
 
         +keep-tablet() {
           width $main-content-width-tablet
@@ -131,35 +132,12 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
   }
 
 
-  .page-aside {
-    position fixed
-    top 0
-    bottom 0
-    left - $page-aside-width
-    z-index $z-index-6
-    box-sizing border-box
-    width $page-aside-width
-    height 100%
-    padding 20px
-    overflow-y auto
-    background var(--background-color)
-
-    hover-style(false, 0, 0)
-
-    transition-t("left, transform", "0, 0", "0.3, 0.2", "ease-out, linear")
-
-    +keep-tablet() {
-      left 0 !important
-      display none !important
-    }
-  }
-
-
   .post-tools {
     position fixed
     top $header-height + $component-spacing-value
-    right $component-spacing-value
-    transition-t("top", "0", "0.2", "ease")
+    left 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+    opacity 0
+    transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value
@@ -167,25 +145,17 @@ $page-aside-width = $temp-width ? convert($temp-width) : 260px
       +keep-tablet() {
         top $header-shrink-height * 0.9 + $component-spacing-value
       }
-
-      +keep-mobile() {
-        top $header-shrink-height * 0.8 + $component-spacing-value
-      }
     }
 
 
     +keep-tablet() {
       top $header-height * 0.9 + $component-spacing-value
-      right 10px
       transform scale(0.82)
-      transform-origin right top
     }
 
 
     +keep-mobile() {
-      top $header-height * 0.8 + $component-spacing-value
-      right 5px
-      transform scale(0.72)
+      display none
     }
   }
 

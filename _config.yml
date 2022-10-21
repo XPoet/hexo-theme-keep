@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.4.9
+## Keep v3.5.0
 ## Repository: https://github.com/XPoet/hexo-theme-keep
 ## Document: https://keep-docs.xpoet.cn
 ## ======================================================================================
@@ -41,12 +41,6 @@ style:
   # Font family, customize font family. (you don't usually have to fill)
   # e.g. font_family: STKaiti, STSong, STHeiti
   font_family:
-
-  # Left side TOC width (you don't usually have to change it)
-  left_side_width: 260px
-
-  # Content area max width (you don't usually have to change it)
-  content_max_width: 920px
 
   # Mouse hover style settings
   hover:
@@ -159,12 +153,14 @@ post:
     custom_label_list: ["Trainee", "Engineer", "Architect"]
 
 # ---------------------------------------------------------------------------------------
-# Code block tools
+# Code block
 # Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
-code_block_tools:
-  enable: false     # Option values: true | false
-  style: default    # Option values: default | mac
+code_block:
+  tools:  # Include "code copy", "code block collapse" and "code language"
+    enable: false # Option values: true | false
+    style: default # Option values: default | mac
+  highlight_theme: default  # Option values: default | obsidian
 
 # ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar
@@ -217,6 +213,7 @@ comment:
 
   # Valine
   # See: https://github.com/xCss/Valine
+  #      https://valine.js.org
   valine:
     appid:           # Your leancloud application appid
     appkey:          # Your leancloud application appkey
@@ -224,6 +221,7 @@ comment:
 
   # Gitalk
   # See: https://github.com/gitalk/gitalk
+  #      https://gitalk.github.io
   gitalk:
     github_id:        # GitHub repo owner
     github_admins:    # GitHub Admins (in Array type), optional.
@@ -233,10 +231,19 @@ comment:
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
+  #      https://twikoo.js.org
   twikoo:
     env_id:         # Tencent Cloud environment id
     region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou".
-    version: 1.6.7  # Twikoo version, default use v1.6.7, you can custom fill
+    version: 1.6.7  # Twikoo version, default use v1.6.7
+
+  # Waline
+  # See: https://github.com/walinejs/waline
+  #      https://waline.js.org/guide/get-started.html
+  waline:
+    server_url:     # Server URL
+    reaction:       # Article reactions
+    version: 2      # Waline version, default use v2
 
 # ---------------------------------------------------------------------------------------
 # RSS

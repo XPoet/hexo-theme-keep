@@ -5,11 +5,11 @@
     .tk-meta-input {
       .el-input {
         .el-input-group__prepend {
-          color var(--default-text-color)
+          color var(--text-color-3)
         }
 
         input {
-          color var(--default-text-color)
+          color var(--text-color-3)
         }
       }
     }
@@ -17,47 +17,50 @@
 
     .tk-input {
       textarea {
-        color var(--default-text-color)
+        color var(--text-color-3)
       }
     }
+
 
 
     .actions {
 
       .tk-row-actions-start {
-        .tk-action-icon {
+
+        .tk-submit-action-icon {
 
           svg {
-            fill var(--default-text-color)
+            path {
+              fill var(--text-color-3)
+              transition-t("fill", "0", "0.2", "ease")
+            }
           }
 
-          &.OwO {
-
-            .OwO-body {
-              color var(--default-text-color)
-              background-color var(--background-color)
-            }
+          .OwO-body {
+            color var(--text-color-3)
+            background-color var(--background-color-1)
           }
         }
       }
 
       .tk-preview {
         span {
-          color var(--default-text-color)
-          background var(--second-background-color)
+          color var(--text-color-3)
+          background var(--background-color-2)
         }
       }
     }
 
 
     .tk-preview-container {
-      color var(--default-text-color)
+      color var(--text-color-3)
     }
+
 
     .tk-comments-container {
       .tk-comments-count {
         span {
-          color var(--default-text-color)
+          color var(--text-color-3)
         }
       }
     }
@@ -67,9 +70,15 @@
       margin-bottom 1.4rem
 
       .tk-meta {
+
         .tk-nick {
-          color var(--default-text-color)
+          color var(--text-color-3)
         }
+
+        strong {
+          color var(--text-color-3)
+        }
+
 
         .tk-tag {
 
@@ -85,18 +94,26 @@
 
         .tk-time {
           time {
-            color var(--default-text-color)
+            color var(--text-color-4)
           }
         }
       }
 
 
       .tk-content {
-        color var(--default-text-color)
+        color var(--text-color-3)
+
+        span {
+          color var(--text-color-3)
+        }
+
+        p {
+          color var(--text-color-3)
+        }
       }
 
       .tk-expand {
-        color var(--third-text-color)
+        color var(--text-color-4)
       }
     }
   }

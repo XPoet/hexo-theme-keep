@@ -1,9 +1,10 @@
 /* global KEEP */
 
 function initTOC() {
-  KEEP.utils.navItems = document.querySelectorAll('.post-toc-wrap .post-toc li')
+  const postPageContainerDom = document.querySelector('.post-page-container')
+  const tocContentContainer = document.querySelector('.toc-content-container')
 
-  if (KEEP.utils.navItems.length > 0) {
+  if (KEEP.utils.hasToc) {
     KEEP.utils = {
       ...KEEP.utils,
 
@@ -28,16 +29,19 @@ function initTOC() {
             )
             element.addEventListener('click', (event) => {
               event.preventDefault()
-              const offset = target.getBoundingClientRect().top + window.scrollY
+              let winScrollY = window.scrollY
+              winScrollY = winScrollY === 0 ? -20 : winScrollY
+              const offset = target.getBoundingClientRect().top + winScrollY
               window.anime({
                 targets: document.scrollingElement,
                 duration: 500,
                 easing: 'linear',
                 scrollTop: offset - 10,
-                complete: function () {
+                complete: () => {
+                  history.pushState(null, document.title, element.href)
                   setTimeout(() => {
                     KEEP.utils.pageTop_dom.classList.add('hide')
-                  }, 100)
+                  }, 150)
                 }
               })
             })
@@ -59,7 +63,7 @@ function initTOC() {
           if (parent.matches('li')) parent.classList.add('active')
           parent = parent.parentNode
         }
-        // Scrolling to center active TOC element if TOC content is taller then viewport.
+        // Scrolling to center active TOC element if TOC content is taller than viewport.
         const tocElement = document.querySelector('.post-toc-wrap')
         window.anime({
           targets: tocElement,
@@ -73,34 +77,33 @@ function initTOC() {
         })
       },
 
-      showPageAsideWhenHasTOC() {
+      handleShowWhenHasToc() {
         const openHandle = () => {
           const styleStatus = KEEP.getStyleStatus()
-          const key = 'isOpenPageAside'
+          const key = 'isShowToc'
           if (styleStatus && styleStatus.hasOwnProperty(key)) {
-            KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(styleStatus[key])
+            KEEP.utils.postHelper.hasToc(styleStatus[key])
           } else {
-            KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(true)
+            KEEP.utils.postHelper.hasToc(true)
           }
         }
 
         const initOpenKey = 'init_open'
 
         if (KEEP.theme_config.toc.hasOwnProperty(initOpenKey)) {
-          KEEP.theme_config.toc[initOpenKey]
-            ? openHandle()
-            : KEEP.utils.leftSideToggle.pageAsideHandleOfTOC(false)
+          KEEP.theme_config.toc[initOpenKey] ? openHandle() : KEEP.utils.postHelper.hasToc(false)
         } else {
           openHandle()
         }
       }
     }
 
-    KEEP.utils.showPageAsideWhenHasTOC()
+    KEEP.utils.handleShowWhenHasToc()
     KEEP.utils.registerSidebarTOC()
   } else {
-    const pageAsideDom = document.querySelector('.page-aside')
-    pageAsideDom && KEEP.utils.pageContainer_dom.removeChild(pageAsideDom)
+    if (tocContentContainer && postPageContainerDom) {
+      postPageContainerDom.removeChild(tocContentContainer)
+    }
   }
 }
 

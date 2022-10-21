@@ -7,9 +7,11 @@ KEEP.initCodeBlockTools = () => {
     wrapper.appendChild(this)
   }
 
-  const { style: codeCopyStyle } = KEEP.theme_config?.code_copy
-  const { style: codeBlockStyle } = KEEP.theme_config?.code_block_tools
-  const isMac = (codeBlockStyle || codeCopyStyle || 'default') === 'mac'
+  const { style: codeCopyStyle } = KEEP.theme_config?.code_copy || {}
+  const { style: codeBlockStyle } = KEEP.theme_config?.code_block || {}
+  const { style: codeBlockToolsStyle } = KEEP.theme_config?.code_block?.tools || {}
+
+  const isMac = (codeCopyStyle || codeBlockStyle || codeBlockToolsStyle || 'default') === 'mac'
   const foldedIconClassName = isMac ? 'fas fa-chevron-left' : 'fas fa-chevron-right'
   const {
     copy: copyLang,
@@ -17,7 +19,7 @@ KEEP.initCodeBlockTools = () => {
     fold: foldLang,
     folded: foldedLang
   } = KEEP.language_code_block
-  const foldDom = `<span class="tool fold tooltip" data-content="${foldLang}"><i class="fas fa-chevron-down"></i></span>`
+  const foldDom = `<span class="tool fold tooltip" data-content="${foldLang}" data-offset-y="-2px"><i class="fas fa-chevron-down"></i></span>`
 
   document.querySelectorAll('figure.highlight').forEach((element) => {
     let codeLang = element.classList.length ? element.classList[1].toUpperCase() : ''
@@ -26,6 +28,9 @@ KEEP.initCodeBlockTools = () => {
     }
     const highlightContainer = document.createElement('div')
     highlightContainer.classList.add('highlight-container')
+    if (isMac) {
+      highlightContainer.classList.add('mac')
+    }
     element.wrap(highlightContainer)
 
     const codeLangDom = `${codeLang ? '<span class="code-lang">' + codeLang + '</span>' : ''}`
@@ -34,7 +39,7 @@ KEEP.initCodeBlockTools = () => {
       'afterbegin',
       `<div class="code-tools-box">
         ${isMac ? foldDom + codeLangDom : '<span>' + foldDom + codeLangDom + '</span>'}
-        <span class="tool copy tooltip" data-content="${copyLang}"><i class="fas fa-copy"></i></span>
+        <span class="tool copy tooltip" data-content="${copyLang}" data-offset-y="-2px"><i class="fas fa-copy"></i></span>
       </div>`
     )
     const codeToolsBox = element.parentNode.querySelector('.code-tools-box')

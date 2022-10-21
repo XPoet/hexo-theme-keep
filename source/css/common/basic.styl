@@ -28,7 +28,7 @@
   }
 
   &::-webkit-scrollbar-track {
-    background var(--scroll-bar-bg-color)
+    background var(--scrollbar-background-color)
   }
 }
 
@@ -43,16 +43,31 @@ body {
   height 100%
   margin 0
   padding 0
-  color var(--default-text-color)
+  color var(--text-color-3)
   font-weight $default-font-weight
   font-size $default-font-size
   font-family $default-font-family
   line-height $default-font-line-height
-  background var(--background-color)
+  letter-spacing 0.2px
+  background var(--background-color-1)
 
   &::-webkit-scrollbar {
     width 0.6rem
     height 0.6rem
+  }
+
+  +keep-tablet() {
+    &::-webkit-scrollbar {
+      width 0.5rem
+      height 0.5rem
+    }
+  }
+
+  +keep-mobile() {
+    &::-webkit-scrollbar {
+      width 0.4rem
+      height 0.4rem
+    }
   }
 
   +keep-tablet() {
@@ -93,12 +108,12 @@ li {
 // a
 // ======================================================================
 a {
-  color var(--default-text-color)
+  color var(--text-color-3)
   text-decoration none
 
   i
   span {
-    color var(--default-text-color)
+    color var(--text-color-3)
   }
 
   &:hover
@@ -134,7 +149,7 @@ img {
       display block
       width 100%
       height 100%
-      background var(--background-color)
+      background var(--background-color-1)
       content ''
       transition-t("background", "0", "0.2", "ease")
     }
@@ -149,7 +164,7 @@ img {
       width 2rem
       height 2rem
       margin auto
-      border 2px solid var(--fourth-text-color)
+      border 2px solid var(--text-color-6)
       border-top-color var(--selection-color)
       border-left-color var(--selection-color)
       border-radius 50%
@@ -179,14 +194,14 @@ button {
   padding 0.4rem 1rem
   white-space nowrap
   text-align center
-  background var(--background-color)
+  background var(--background-color-1)
   border-radius 5px
   cursor pointer
 
   hover-style(true, 1.06, 1.06)
 
   &:hover {
-    color var(--background-color)
+    color var(--background-color-1)
     background var(--primary-color)
   }
 }
@@ -244,10 +259,10 @@ button {
     display none
     box-sizing border-box
     padding 0.2rem 0.6rem
-    color var(--fourth-text-color)
+    color var(--text-color-6)
     font-size 0.8rem
     white-space nowrap
-    background var(--first-text-color)
+    background var(--text-color-1)
     border-radius 0.3rem
     transform translateX(-50%) translateY(-100%)
     transition-t("display", "0", "0.2", "ease")
@@ -276,8 +291,8 @@ button {
     justify-content center
     box-sizing border-box
     min-height 6rem
-    background var(--fourth-text-color)
-    border 0.2rem solid var(--default-text-color)
+    background var(--text-color-6)
+    border 0.2rem solid var(--text-color-3)
     border-radius 0.3rem
     transform translateX(-50%) translateY(-100%)
     transition-t("display", "0", "0.2", "ease")

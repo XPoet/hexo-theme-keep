@@ -1,4 +1,4 @@
-$keep-container-border-radius = 5px
+$keep-container-border-radius = 0.4rem
 
 hover-style(isTransform, scaleX, scaleY) {
   box-shadow 2px 2px 5px var(--shadow-color)
@@ -22,7 +22,7 @@ hover-style(isTransform, scaleX, scaleY) {
 keep-container(isTransform, scaleX, scaleY, padding, marginBottomValue) {
   box-sizing border-box
   padding padding
-  background var(--background-color)
+  background var(--content-background-color)
   border-radius $keep-container-border-radius
 
   if (marginBottomValue != 0) {
@@ -58,3 +58,12 @@ disable-user-select() {
   -webkit-user-select none
   user-select none
 }
+
+
+not-text-size-adjust() {
+  -ms-text-size-adjust none
+  -moz-text-size-adjust none
+  -webkit-text-size-adjust none
+}
+
+

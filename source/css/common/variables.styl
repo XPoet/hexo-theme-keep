@@ -14,16 +14,19 @@ $main-content-width-tablet = 86%                                // main content 
 $main-content-width-mobile = 90%                                // main content width (mobile)
 $post-tool-button-width = 38px                                  // post tool button width
 $component-spacing-value = 38px                                 // component-spacing-value (PC)
+$content-max-width = 928px                                      // main content max width
 
-// main content max width
-$temp-content-max-width = hexo-config('style.content_max_width')
-$content-max-width = $temp-content-max-width ? convert($temp-content-max-width) : 1000px
+// main content max width of has TOC
+$has-toc-content-max-width = $content-max-width * 1.2
+
+// main content max width of has first screen
+$has-fs-content-max-width = $content-max-width * 1.2
 
 
 // ==============================================================================================
 // media query
 // ==============================================================================================
-$media-max-width = 780px                                 // media query max width (tablet)
+$media-max-width = 800px                                 // media query max width (tablet)
 $media-max-width-mobile = 500px                          // media query max width (mobile)
 
 keep-tablet() {
@@ -60,53 +63,89 @@ $z-index-10 = 1010
 $temp-color = hexo-config('style.primary_color')
 $primary-color = $temp-color ? convert($temp-color) : #0066cc
 
+// light
+$primary-color-light-1 = lighten($primary-color, 10%)
+$primary-color-light-2 = lighten($primary-color, 20%)
+
+// dark
+$primary-color-dark-1 = darken($primary-color, 10%)
+$primary-color-dark-2 = darken($primary-color, 20%)
+
 
 // ==============================================================================================
 // theme light mode color set
 // ==============================================================================================
-$background-color = #fff
-$second-background-color = darken($background-color, 3%)
-$default-text-color = #50505c
-$first-text-color = darken($default-text-color, 10%)
-$second-text-color = darken($default-text-color, 5%)
-$third-text-color = lighten($default-text-color, 30%)
-$fourth-text-color = lighten($default-text-color, 90%)
-$border-color = darken($background-color, 30%)
+$background-color-1 = #fff
+$background-color-2= darken($background-color-1, 3%)
+$background-color-3= darken($background-color-1, 6%)
+$content-background-color = #fff
+
+$text-color-3 = #50505c
+$text-color-1 = darken($text-color-3, 10%)
+$text-color-2 = darken($text-color-3, 5%)
+$text-color-4 = lighten($text-color-3, 30%)
+$text-color-5 = lighten($text-color-3, 60%)
+$text-color-6 = lighten($text-color-3, 90%)
+
+$toc-text-color = lighten($text-color-3, 20%)
+
+$badge-color = darken($background-color-1, 6%)
+$badge-background-color = lighten($text-color-3, 40%)
+
+$border-color = darken($background-color-1, 30%)
 $selection-color = lighten($primary-color, 10%)
+
 $shadow-color = rgba(0, 0, 0, 0.2)
-$shadow-hover-color = rgba(0, 0, 0, 0.28)
-$scrollbar-color = lighten($default-text-color, 6%)
-$scroll-bar-bg-color = darken($background-color, 10%)
-$link-color = darken($default-text-color, 10%)
+$shadow-hover-color = rgba(0, 0, 0, 0.3)
+
+$scrollbar-color = lighten($text-color-3, 10%)
+$scrollbar-background-color = darken($background-color-1, 10%)
+$toc-scrollbar-color = alpha($text-color-3, 0.1)
+
 $copyright-info-color = #cc0033
-$avatar-background-color = #0066cc
-$header-transparent-background-1 = alpha($background-color, 0.28)
-$header-transparent-background-2 = alpha($background-color, 0.58)
+$avatar-background-color = $primary-color-dark-1
+$header-transparent-background-1 = alpha($background-color-1, 0.28)
+$header-transparent-background-2 = alpha($background-color-1, 0.58)
+
 $pjax-progress-bar-color = linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3)
 
 
 // ==============================================================================================
 // theme dark mode color set
 // ==============================================================================================
-$dark-primary-color = $primary-color
-$dark-background-color = #383940
-$dark-second-background-color = darken($dark-background-color, 10%)
-$dark-default-text-color = #bebec6
-$dark-first-text-color = lighten($dark-default-text-color, 30%)
-$dark-second-text-color = lighten($dark-default-text-color, 20%)
-$dark-third-text-color = darken($dark-default-text-color, 20%)
-$dark-fourth-text-color = darken($dark-default-text-color, 75%)
-$dark-border-color = lighten($dark-background-color, 20%)
-$dark-selection-color = $selection-color
+$dark-background-color-1 = #383940
+$dark-background-color-2= lighten($dark-background-color-1, 3%)
+$dark-background-color-3= lighten($dark-background-color-1, 6%)
+$dark-content-background-color = darken($dark-background-color-1, 2%)
+
+$dark-text-color-3 = #bebec6
+$dark-text-color-1 = lighten($dark-text-color-3, 10%)
+$dark-text-color-2 = lighten($dark-text-color-3, 5%)
+$dark-text-color-4 = darken($dark-text-color-3, 20%)
+$dark-text-color-5 = darken($dark-text-color-3, 50%)
+$dark-text-color-6 = darken($dark-text-color-3, 70%)
+
+$dark-toc-text-color = darken($dark-text-color-3, 15%)
+
+$dark-badge-color = lighten($dark-background-color-1, 10%)
+$dark-badge-background-color = lighten($dark-text-color-3, 40%)
+
+$dark-border-color = lighten($dark-background-color-1, 30%)
+$dark-selection-color = darken($selection-color, 20%)
+
 $dark-shadow-color = rgba(128, 128, 128, 0.2)
 $dark-shadow-hover-color = rgba(128, 128, 128, 0.28)
-$dark-scrollbar-color = darken($dark-background-color, 10%)
-$dark-scroll-bar-bg-color = lighten($dark-background-color, 20%)
-$dark-link-color = lighten($dark-default-text-color, 10%)
+
+$dark-scrollbar-color = darken($dark-background-color-1, 10%)
+$dark-scrollbar-background-color = lighten($dark-background-color-1, 20%)
+$dark-toc-scrollbar-color = alpha($dark-text-color-3, 0.1)
+
 $dark-copyright-info-color = darken($copyright-info-color, 20%)
-$dark-avatar-background-color = darken($avatar-background-color, 10%)
-$dark-header-transparent-background-1 = alpha($dark-background-color, 0.28)
-$dark-header-transparent-background-2 = alpha($dark-background-color, 0.58)
+$dark-avatar-background-color = darken($avatar-background-color, 20%)
+
+$dark-header-transparent-background-1 = alpha($dark-background-color-1, 0.28)
+$dark-header-transparent-background-2 = alpha($dark-background-color-1, 0.58)
+
 $dark-pjax-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee)
 
 
@@ -126,25 +165,57 @@ $default-font-weight = 400
 //  light/dark mode color
 // ==============================================================================================
 root-color(mode) {
-  --background-color mode == 'light' ? $background-color : $dark-background-color
-  --second-background-color mode == 'light' ? $second-background-color : $dark-second-background-color
-  --primary-color mode == 'light' ? $primary-color : $dark-primary-color
-  --first-text-color mode == 'light' ? $first-text-color : $dark-first-text-color
-  --second-text-color mode == 'light' ? $second-text-color : $dark-second-text-color
-  --third-text-color mode == 'light' ? $third-text-color : $dark-third-text-color
-  --fourth-text-color mode == 'light' ? $fourth-text-color : $dark-fourth-text-color
-  --default-text-color mode == 'light' ? $default-text-color : $dark-default-text-color
+  // primary color
+  --primary-color $primary-color
+  --primary-color-light-1 $primary-color-light-1
+  --primary-color-light-2 $primary-color-light-2
+  --primary-color-dark-1 $primary-color-dark-1
+  --primary-color-dark-2 $primary-color-dark-2
+
+  // background color
+  --background-color-1 mode == 'light' ? $background-color-1 : $dark-background-color-1
+  --background-color-2 mode == 'light' ? $background-color-2 : $dark-background-color-2
+  --background-color-3 mode == 'light' ? $background-color-3 : $dark-background-color-3
+
+  // content background color
+  --content-background-color mode == 'light' ? $content-background-color : $dark-content-background-color
+
+  // text color
+  --text-color-1 mode == 'light' ? $text-color-1 : $dark-text-color-1
+  --text-color-2 mode == 'light' ? $text-color-2 : $dark-text-color-2
+  --text-color-3 mode == 'light' ? $text-color-3 : $dark-text-color-3
+  --text-color-4 mode == 'light' ? $text-color-4 : $dark-text-color-4
+  --text-color-5 mode == 'light' ? $text-color-5 : $dark-text-color-5
+  --text-color-6 mode == 'light' ? $text-color-6 : $dark-text-color-6
+
+  // toc text color
+  --toc-text-color mode == 'light' ? $toc-text-color : $dark-toc-text-color
+
+  // badge color
+  --badge-color mode == 'light' ? $badge-color : $dark-badge-color
+  --badge-background-color mode == 'light' ? $badge-background-color : $dark-badge-background-color
+
+  // border color
   --border-color mode == 'light' ? $border-color : $dark-border-color
+
+  // selection color
   --selection-color mode == 'light' ? $selection-color : $dark-selection-color
+
+  // shadow color
   --shadow-color mode == 'light' ? $shadow-color : $dark-shadow-color
   --shadow-hover-color mode == 'light' ? $shadow-hover-color : $dark-shadow-hover-color
+
+  // scrollbar color
   --scrollbar-color mode == 'light' ? $scrollbar-color : $dark-scrollbar-color
-  --scroll-bar-bg-color mode == 'light' ? $scroll-bar-bg-color : $dark-scroll-bar-bg-color
-  --link-color mode == 'light' ? $link-color : $dark-link-color
+  --scrollbar-background-color mode == 'light' ? $scrollbar-background-color : $dark-scrollbar-background-color
+  --toc-scrollbar-color mode == 'light' ? $toc-scrollbar-color : $dark-toc-scrollbar-color
+
   --copyright-info-color mode == 'light' ? $copyright-info-color : $dark-copyright-info-color
   --avatar-background-color mode == 'light' ? $avatar-background-color : $dark-avatar-background-color
+
   --header-transparent-background-1 mode == 'light' ? $header-transparent-background-1 : $dark-header-transparent-background-1
   --header-transparent-background-2 mode == 'light' ? $header-transparent-background-2 : $dark-header-transparent-background-2
+
   --pjax-progress-bar-color  mode == 'light' ? $pjax-progress-bar-color : $dark-pjax-progress-bar-color
 }
 

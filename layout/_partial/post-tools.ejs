@@ -2,15 +2,16 @@
     <ul class="tools-list">
         <!-- TOC aside toggle -->
         <% if (theme.toc.enable) { %>
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
             </li>
         <% } %>
 
         <!-- go comment -->
         <% if (theme.comment.enable === true && theme.comment.hasOwnProperty(theme.comment.use)) { %>
-            <li class="go-comment">
+            <li class="tools-item flex-center go-to-comments">
                 <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
             </li>
         <% } %>
     </ul>

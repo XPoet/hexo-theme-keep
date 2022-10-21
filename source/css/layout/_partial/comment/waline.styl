@@ -1,0 +1,62 @@
+.waline-comment-container {
+  #waline-comment {
+    --waline-theme-color var(--primary-color)
+    --waline-active-color var(--primary-color-light-1)
+    --waline-color var(--text-color-3)
+    --waline-bgcolor var(--background-color-1)
+    --waline-border-color var(--border-color)
+    --waline-disable-bgcolor var(--background-color-2)
+    --waline-disable-color var(--text-color-3)
+    --waline-code-bgcolor rgba(40, 44, 52, 0.9)
+    --waline-info-bgcolor var(--background-color-3)
+    --waline-info-color var(--text-color-3)
+    --waline-border 1px solid var(--waline-border-color)
+
+    input
+    textarea {
+      position relative
+      box-sizing border-box
+      padding 0.6rem 1rem
+      color var(--text-color-3)
+      background transparent
+      border-radius 0.4rem
+      outline none
+
+      &:hover {
+        background var(--background-color-2)
+      }
+    }
+
+
+    .wl-header {
+      box-sizing border-box
+      padding 0
+    }
+
+
+    button {
+      transition-t("color, background", "0, 0", "0.2, 0.2", "ease, ease")
+    }
+
+    .wl-logout-btn {
+      svg {
+        width 1rem
+        height 1rem
+        path {
+          color var(--background-color-3)
+        }
+      }
+    }
+
+    .wl-panel {
+      border-radius 0.4rem
+    }
+
+    .wl-count
+    .wl-num
+    .wl-preview h4
+    .wl-like span {
+      color var(--text-color-4)
+    }
+  }
+}

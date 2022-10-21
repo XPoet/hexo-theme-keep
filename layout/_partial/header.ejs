@@ -4,7 +4,7 @@ const { logo: s_logo, first_screen: s_first_screen } = theme.style
 const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen
 const { title: config_title } = config
 %>
-<header class="header-wrapper<%= is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
+<header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
 
     <div class="header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left">

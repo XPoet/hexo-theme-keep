@@ -19,6 +19,7 @@ KEEP.initUtils = () => {
     isHasScrollProgressBar: false,
     isHasScrollPercent: false,
     isHeaderTransparent: false,
+    hasToc: false,
 
     initData() {
       const { scroll, first_screen } = KEEP.theme_config.style
@@ -76,9 +77,7 @@ KEEP.initUtils = () => {
     registerWindowScroll() {
       window.addEventListener('scroll', () => {
         // style handle when scroll
-        if (this.isHasScrollPercent || this.isHasScrollProgressBar) {
-          this.styleHandleWhenScroll()
-        }
+        this.styleHandleWhenScroll()
 
         // TOC scroll handle
         if (KEEP.theme_config.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
@@ -131,77 +130,22 @@ KEEP.initUtils = () => {
       })
     },
 
-    // toggle content area width
-    contentAreaWidthAdjust() {
-      const toolExpandDom = document.querySelector('.tool-expand-width')
-      const headerContentDom = document.querySelector('.header-content')
-      const mainContentDom = document.querySelector('.main-content')
-      const iconDom = toolExpandDom.querySelector('i')
-
-      const defaultMaxWidth = KEEP.theme_config.style.content_max_width || '1000px'
-      const expandMaxWidth = '90%'
-      let headerMaxWidth = defaultMaxWidth
-
-      let isExpand = false
-
-      if (
-        KEEP.theme_config.style.first_screen.enable === true &&
-        window.location.pathname === '/'
-      ) {
-        headerMaxWidth = parseInt(defaultMaxWidth) * 1.2 + 'px'
-      }
-
-      const setPageWidth = (isExpand) => {
-        KEEP.styleStatus.isExpandPageWidth = isExpand
-        KEEP.setStyleStatus()
-        if (isExpand) {
-          iconDom.classList.remove('fa-up-right-and-down-left-from-center')
-          iconDom.classList.add('fa-down-left-and-up-right-to-center')
-          headerContentDom.style.maxWidth = expandMaxWidth
-          mainContentDom.style.maxWidth = expandMaxWidth
-        } else {
-          iconDom.classList.remove('fa-down-left-and-up-right-to-center')
-          iconDom.classList.add('fa-up-right-and-down-left-from-center')
-          headerContentDom.style.maxWidth = headerMaxWidth
-          mainContentDom.style.maxWidth = defaultMaxWidth
-        }
-      }
-
-      const initPageWidth = () => {
-        const styleStatus = KEEP.getStyleStatus()
-        if (styleStatus) {
-          isExpand = styleStatus.isExpandPageWidth
-          setPageWidth(isExpand)
-        }
-      }
-
-      initPageWidth()
-
-      toolExpandDom.addEventListener('click', () => {
-        isExpand = !isExpand
-        setPageWidth(isExpand)
-      })
-    },
-
-    // go comment anchor
-    goComment() {
-      this.goComment_dom = document.querySelector('.go-comment')
-      if (this.goComment_dom) {
-        this.goComment_dom.addEventListener('click', () => {
-          document.querySelector('#comment-anchor').scrollIntoView()
-        })
-      }
-    },
-
     // get dom element height
     getElementHeight(selectors) {
       const dom = document.querySelector(selectors)
       return dom ? dom.getBoundingClientRect().height : 0
     },
 
-    // init first screen height
-    initFirstScreenHeight() {
-      this.firstScreen_dom && (this.firstScreen_dom.style.height = this.innerHeight + 'px')
+    // init has TOC
+    initHasToc() {
+      const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
+      if (tocNavDoms.length > 0) {
+        this.hasToc = true
+        document.body.classList.add('has-toc')
+      } else {
+        this.hasToc = false
+        document.body.classList.remove('has-toc')
+      }
     },
 
     // init page height handle
@@ -223,20 +167,21 @@ KEEP.initUtils = () => {
 
     // zoom in image
     zoomInImage() {
-      const SIDE_GAP = 30
+      let SIDE_GAP = 40
       let isZoomIn = false
+      let curWinScrollY = 0
       let selectedImgDom = null
-      const imgDomList = document.querySelectorAll('.markdown-body img')
+      const imgDomList = document.querySelectorAll('.keep-markdown-body img')
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
       const zoomInImg = zoomInImgMask.querySelector('.zoom-in-image')
 
       const zoomOut = () => {
         if (isZoomIn) {
           isZoomIn = false
+          curWinScrollY = 0
           zoomInImg && (zoomInImg.style.transform = `scale(1)`)
           zoomInImgMask && zoomInImgMask.classList.remove('show')
-          const timer = setTimeout(() => {
-            clearTimeout(timer)
+          setTimeout(() => {
             selectedImgDom && selectedImgDom.classList.remove('hide')
           }, 300)
         }
@@ -249,15 +194,30 @@ KEEP.initUtils = () => {
           })
 
         document.addEventListener('scroll', () => {
-          zoomOut()
+          if (isZoomIn && Math.abs(curWinScrollY - window.scrollY) >= 50) {
+            zoomOut()
+          }
         })
+      }
+
+      const setSideGap = () => {
+        const w = document.body.offsetWidth
+        if (w <= 500) {
+          SIDE_GAP = 10
+        } else if (w <= 800) {
+          SIDE_GAP = 20
+        } else {
+          SIDE_GAP = 40
+        }
       }
 
       if (imgDomList.length) {
         zoomOutHandle()
         imgDomList.forEach((img) => {
           img.addEventListener('click', () => {
+            curWinScrollY = window.scrollY
             isZoomIn = !isZoomIn
+            setSideGap()
             zoomInImg.setAttribute('src', img.getAttribute('src'))
             selectedImgDom = img
             if (isZoomIn) {
@@ -377,17 +337,30 @@ KEEP.initUtils = () => {
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const { content } = element.dataset
+          const { content, offsetX, offsetY } = element.dataset
+
+          let style = ''
+          let sTop = ''
+          let sLeft = ''
+          if (offsetX) {
+            sTop = `left: ${offsetX};`
+          }
+          if (offsetY) {
+            sLeft = `top: ${offsetY};`
+          }
+          if (offsetX || offsetY) {
+            style = ` style="${sLeft}${sTop}"`
+          }
+
           if (content) {
             element.insertAdjacentHTML(
               'afterbegin',
-              `<span class="tooltip-content">${content}</span>`
+              `<span class="tooltip-content"${style}>${content}</span>`
             )
           }
         })
 
         // tooltip-img
-
         const imgsSet = {}
 
         const toggleShowImg = (dom, nameIdx) => {
@@ -458,17 +431,11 @@ KEEP.initUtils = () => {
   // global font adjust
   KEEP.utils.globalFontAdjust()
 
-  // adjust content area width
-  KEEP.utils.contentAreaWidthAdjust()
-
-  // go comment
-  KEEP.utils.goComment()
-
   // init page height handle
   KEEP.utils.initPageHeightHandle()
 
-  // init first screen height
-  KEEP.utils.initFirstScreenHeight()
+  // check whether TOC exists
+  KEEP.utils.initHasToc()
 
   // big image viewer handle
   KEEP.utils.zoomInImage()

@@ -11,7 +11,7 @@ $logo-image-box-width = 46px
   width 100%
   height 100%
   padding-top $scroll-progress-bar-height
-  background var(--background-color)
+  background var(--background-color-1)
 
   hover-style(false, 0, 0)
 
@@ -25,10 +25,15 @@ $logo-image-box-width = 46px
     width $main-content-width
     max-width $content-max-width
     height 100%
+    transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
 
 
     &.has-first-screen {
-      max-width $content-max-width * 1.2
+      max-width $has-fs-content-max-width
+    }
+
+    .has-toc & {
+      max-width $has-toc-content-max-width
     }
 
     +keep-tablet() {
@@ -75,7 +80,7 @@ $logo-image-box-width = 46px
       }
 
       .logo-title {
-        color var(--first-text-color)
+        color var(--text-color-1)
         font-weight bold
         font-size $logo-title-font-size
         line-height 1
@@ -109,7 +114,7 @@ $logo-image-box-width = 46px
             position relative
             float left
             margin-left 2rem
-            color var(--default-text-color)
+            color var(--text-color-3)
             font-size 1rem
             cursor pointer
 
@@ -143,7 +148,7 @@ $logo-image-box-width = 46px
               font-size $pc-search-icon-font-size
 
               i {
-                color var(--default-text-color)
+                color var(--text-color-3)
               }
             }
           }
@@ -162,12 +167,12 @@ $logo-image-box-width = 46px
           width 20px
           height 20px
           margin-left 12px
-          color var(--default-text-color)
+          color var(--text-color-3)
           font-size 18px
           cursor pointer
 
           i {
-            color var(--default-text-color)
+            color var(--text-color-3)
           }
 
           &:first-child {
@@ -187,7 +192,7 @@ $logo-image-box-width = 46px
             position relative
             width 18px
             height $menu-bar-line-height
-            background var(--default-text-color)
+            background var(--text-color-3)
 
             .header-drawer-show & {
               background transparent
@@ -200,7 +205,7 @@ $logo-image-box-width = 46px
               left 0
               width 100%
               height $menu-bar-line-height
-              background var(--default-text-color)
+              background var(--text-color-3)
               content ''
               transition-t("transform", "0", "0.38", "ease")
             }
@@ -236,7 +241,7 @@ $logo-image-box-width = 46px
     z-index $z-index-2
     width 100%
     padding $header-height 0 20px 0
-    background var(--background-color)
+    background var(--background-color-1)
     transform scaleY(0)
     transform-origin top
     transition-t("transform", "0", "0.38", "ease")
@@ -258,18 +263,18 @@ $logo-image-box-width = 46px
 
         a {
           padding 6px 20px
-          color var(--default-text-color)
+          color var(--text-color-3)
           border-radius 20px
 
           &:hover {
-            color var(--second-text-color)
-            border 1px solid var(--default-text-color)
+            color var(--text-color-2)
+            border 1px solid var(--text-color-3)
           }
 
 
           &.active {
-            color var(--second-text-color)
-            border 1px solid var(--default-text-color)
+            color var(--text-color-2)
+            border 1px solid var(--text-color-3)
           }
         }
       }
