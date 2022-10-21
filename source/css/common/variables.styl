@@ -87,6 +87,8 @@ $text-color-4 = lighten($text-color-3, 30%)
 $text-color-5 = lighten($text-color-3, 60%)
 $text-color-6 = lighten($text-color-3, 90%)
 
+$toc-text-color = lighten($text-color-3, 20%)
+
 $badge-color = darken($background-color-1, 6%)
 $badge-background-color = lighten($text-color-3, 40%)
 
@@ -122,6 +124,8 @@ $dark-text-color-2 = lighten($dark-text-color-3, 5%)
 $dark-text-color-4 = darken($dark-text-color-3, 20%)
 $dark-text-color-5 = darken($dark-text-color-3, 50%)
 $dark-text-color-6 = darken($dark-text-color-3, 70%)
+
+$dark-toc-text-color = darken($dark-text-color-3, 15%)
 
 $dark-badge-color = lighten($dark-background-color-1, 10%)
 $dark-badge-background-color = lighten($dark-text-color-3, 40%)
@@ -183,6 +187,9 @@ root-color(mode) {
   --text-color-4 mode == 'light' ? $text-color-4 : $dark-text-color-4
   --text-color-5 mode == 'light' ? $text-color-5 : $dark-text-color-5
   --text-color-6 mode == 'light' ? $text-color-6 : $dark-text-color-6
+
+  // toc text color
+  --toc-text-color mode == 'light' ? $toc-text-color : $dark-toc-text-color
 
   // badge color
   --badge-color mode == 'light' ? $badge-color : $dark-badge-color
