@@ -86,7 +86,7 @@ We welcome you to join the development of «Keep». Please see [contributing gui
 This project exists thanks to all the people who contribute.
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
-  <img src="https://opencollective.com/hexo-theme-keep/contributors.svg?width=880">
+  <img src="https://contrib.rocks/image?repo=XPoet/hexo-theme-keep" />
 </a>
 
 ## :sparkling_heart: Thanks
