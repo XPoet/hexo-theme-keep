@@ -44,14 +44,14 @@ style:
 
   # Mouse hover style settings
   hover:
-    # Shadow effect when the mouse hover. Option values: true | false
-    shadow: false
-    # Scale effect when the mouse hover. Option values: true | false
-    scale: false
+    # Shadow effect when the mouse hover.
+    shadow: false  # Option values: true | false
+    # Scale effect when the mouse hovers.
+    scale: false   # Option values: true | false
 
   # First screen style settings
   first_screen:
-    enable: false # Option values: true | false
+    enable: false  # Option values: true | false
 
     # Set transparent background for header. Option values: true | false
     header_transparent: false
@@ -157,31 +157,32 @@ post:
 # Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
 code_block:
-  tools:  # Include "code copy", "code block collapse" and "code language"
-    enable: false # Option values: true | false
-    style: default # Option values: default | mac
-  highlight_theme: default  # Option values: default | obsidian
+  # Toolbar include: "code copy", "code block collapse" and "code language"
+  tools:
+    enable: false            # Option values: true | false
+    style: default           # Option values: default | mac
+  highlight_theme: default   # Option values: default | obsidian
 
 # ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar
 # ---------------------------------------------------------------------------------------
 toc:
-  enable: false # Option values: true | false
+  enable: false      # Option values: true | false
 
   # Automatically add list number to toc.
-  number: false # Option values: true | false
+  number: false      # Option values: true | false
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false # Option values: true | false
+  expand_all: false  # Option values: true | false
 
   # If true, open TOC every time when you enter the article page
-  init_open: false # Option values: true | false
+  init_open: false   # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Post copyright info
 # ---------------------------------------------------------------------------------------
 copyright_info:
-  enable: false # Option values: true | false
+  enable: false       # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -190,10 +191,10 @@ website_count:
   # busuanzi
   # See: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi_count:
-    enable: false   # Option values: true | false
-    site_uv: false  # Option values: true | false
-    site_pv: false  # Option values: true | false
-    page_pv: false  # Option values: true | false
+    enable: false     # Option values: true | false
+    site_uv: false    # Option values: true | false
+    site_pv: false    # Option values: true | false
+    page_pv: false    # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Local Search
@@ -201,8 +202,8 @@ website_count:
 # See: https://github.com/theme-next/hexo-generator-searchdb
 # ---------------------------------------------------------------------------------------
 local_search:
-  enable: false # Option values: true | false
-  preload: false # Preload the search data when the page loads. Option values: true | false
+  enable: false   # Option values: true | false
+  preload: false  # Preload the search data when the page loads. Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Comment plugin
