@@ -245,7 +245,7 @@ comment:
   #      https://waline.js.org/guide/get-started.html
   waline:
     server_url:     # Server URL
-    reaction:       # Article reactions
+    reaction: false # Article reactions, Option values: true | false
     version: 2      # Waline version, default use v2
 
 # ---------------------------------------------------------------------------------------
