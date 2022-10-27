@@ -8,14 +8,14 @@ const { enable: sc_enable, links: sc_links } = theme.social_contact
 %>
 <div class="first-screen-container flex-center fade-in-down-animation">
     <div class="content flex-center">
-        <% if (final_description.length || fs_hitokoto.enable) { %>
+        <% if (final_description.length || fs_hitokoto === true) { %>
             <div class="description hitokoto">
                 <% for (const idx in final_description) { %>
                     <div class="desc-item"><%= final_description[idx] %></div>
                 <% } %>
             </div>
         <% } %>
-        <% if (fs_hitokoto.enable) { %>
+        <% if (fs_hitokoto === true) { %>
             <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
                     src="https://v1.hitokoto.cn/?encode=js"
             >

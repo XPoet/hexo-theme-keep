@@ -22,7 +22,7 @@ base_info:
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
-  primary_color: "#0066CC"
+  primary_color: "#0066cc"
 
   # Your blog website logo image
   # You can use local image, image external link or don’t fill
@@ -68,8 +68,7 @@ style:
     font_color:
 
     # If enable hitokoto, first screen description is different every time when you enter the site
-    hitokoto:
-      enable: false  # Option values: true | false
+    hitokoto: false  # Option values: true | false
 
   # Page scroll style settings
   scroll:
@@ -89,8 +88,8 @@ style:
 menu:
   Home: /
   Archives: /archives
-  # Categories: /categories
   # Tags: /tags
+  # Categories: /categories
   # Links: /links
   # About: /about
   # Changelog: /changelog
