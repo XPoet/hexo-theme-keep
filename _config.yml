@@ -73,12 +73,10 @@ style:
   # Page scroll style settings
   scroll:
     # Show progress bar in top when page scroll
-    progress_bar:
-      enable: false  # Option values: true | false
+    progress_bar: false # Option values: true | false
 
     # Show percent when page scroll
-    percent:
-      enable: false  # Option values: true | false
+    percent: false      # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu

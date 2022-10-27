@@ -23,8 +23,8 @@ KEEP.initUtils = () => {
 
     initData() {
       const { scroll, first_screen } = KEEP.theme_config.style
-      this.isHasScrollProgressBar = scroll.progress_bar.enable === true
-      this.isHasScrollPercent = scroll.percent.enable === true
+      this.isHasScrollProgressBar = scroll.progress_bar === true
+      this.isHasScrollPercent = scroll.percent === true
       const { enable, header_transparent } = first_screen
       this.isHeaderTransparent = enable === true && header_transparent === true
     },
