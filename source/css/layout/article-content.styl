@@ -145,7 +145,7 @@ $toc-container-width = 15rem
       color var(--text-color-3)
       word-wrap break-word
 
-      if (hexo-config('copyright_info.enable') == true) {
+      if (hexo-config('post.copyright_info') == true || hexo-config('copyright_info.enable') == true) {
         border-bottom 0.1rem dashed var(--border-color)
       }
     }
@@ -278,4 +278,3 @@ $toc-container-width = 15rem
     }
   }
 }
-

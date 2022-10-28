@@ -129,17 +129,6 @@ home_article:
 # Post page Settings
 # ---------------------------------------------------------------------------------------
 post:
-  # Image align position in the post
-  img_align: left  # Option values: left | center
-
-  # Post word count
-  # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
-  # See: https://github.com/willin/hexo-wordcount
-  word_count:
-    enable: false       # Option values: true | false
-    wordcount: false    # Word count, one article. Option values: true | false
-    min2read: false     # Time to read, one article. Option values: true | false
-
   # Author label in the post
   author_label:
     enable: true  # Option values: true | false
@@ -150,6 +139,20 @@ post:
 
     # Label array item can be fill one or more
     custom_label_list: ["Trainee", "Engineer", "Architect"]
+
+  # Post word count
+  # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
+  # See: https://github.com/willin/hexo-wordcount
+  word_count:
+    enable: false       # Option values: true | false
+    wordcount: false    # Word count, one article. Option values: true | false
+    min2read: false     # Time to read, one article. Option values: true | false
+
+  # Image align position in the post
+  img_align: left  # Option values: left | center
+
+  # Post copyright info
+  copyright_info: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Code block
@@ -176,12 +179,6 @@ toc:
 
   # If true, open TOC every time when you enter the article page
   init_open: false   # Option values: true | false
-
-# ---------------------------------------------------------------------------------------
-# Post copyright info
-# ---------------------------------------------------------------------------------------
-copyright_info:
-  enable: false      # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Website count
