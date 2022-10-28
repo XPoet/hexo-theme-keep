@@ -53,8 +53,8 @@ theme: keep
 Please see the official documents of «Keep».
 
 - **[Keep official document](https://keep-docs.xpoet.cn/)**
-- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
-- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
+- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/tutorial/configuration-guide/base_info.html)**
+- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
 
