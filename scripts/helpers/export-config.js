@@ -44,6 +44,7 @@ hexo.extend.helper.register('export_config', function () {
     side_tools: theme.side_tools || {},
     pjax: theme.pjax || {},
     lazyload: theme.lazyload || {},
+    comment: theme.comment || {},
     version: require('../../package.json').version
   }
 

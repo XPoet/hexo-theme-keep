@@ -114,10 +114,14 @@ function initToggleShowToc() {
       observer.observe(commentsCountDom, config)
     }
   }
-  KEEP.utils.postHelper.initToggleToc()
   KEEP.utils.postHelper.initSetPostToolsLeft()
-  KEEP.utils.postHelper.goToComments()
-  KEEP.utils.postHelper.watchPostCommentsCount()
+  if (KEEP.theme_config.toc.enable === true) {
+    KEEP.utils.postHelper.initToggleToc()
+  }
+  if (KEEP.theme_config.comment.enable === true) {
+    KEEP.utils.postHelper.goToComments()
+    KEEP.utils.postHelper.watchPostCommentsCount()
+  }
 }
 
 if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {
