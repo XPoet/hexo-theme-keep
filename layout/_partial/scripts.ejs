@@ -13,7 +13,8 @@ const {
     code_block: t_code_block,
     lazyload: t_lazyload,
     toc: t_toc,
-    pjax: t_pjax
+    pjax: t_pjax,
+    comment: t_comment
 } = theme
 %>
 
@@ -31,10 +32,10 @@ const {
 
 <div class="post-scripts<%= theme.pjax?.enable === true ? ' pjax' : '' %>">
     <% if (is_post()) { %>
-        <%- __js([
-            'js/post-helper.js',
-            'js/libs/anime.min.js'
-        ]) %>
+        <%- __js('js/post-helper.js') %>
+        <% if (t_toc?.enable === true || t_comment?.enable === true) { %>
+            <%- __js('js/libs/anime.min.js') %>
+        <% } %>
         <% if (t_toc?.enable === true) { %>
             <%- __js('js/toc.js') %>
         <% } %>
