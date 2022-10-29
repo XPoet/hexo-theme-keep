@@ -1,7 +1,8 @@
 ## ======================================================================================
 ## Keep v3.5.1
-## Repository: https://github.com/XPoet/hexo-theme-keep
+## Preview: https://xpoet.cn
 ## Document: https://keep-docs.xpoet.cn
+## Repository: https://github.com/XPoet/hexo-theme-keep
 ## ======================================================================================
 
 # ---------------------------------------------------------------------------------------
@@ -13,9 +14,6 @@ base_info:
 
   # Your blog website author name
   author: Keep Team
-
-  # Your blog website url
-  url: https://xpoet.cn/
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings

@@ -45,6 +45,7 @@ hexo.extend.helper.register('export_config', function () {
     pjax: theme.pjax || {},
     lazyload: theme.lazyload || {},
     comment: theme.comment || {},
+    post: theme.post || {},
     version: require('../../package.json').version
   }
 
