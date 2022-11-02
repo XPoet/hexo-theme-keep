@@ -91,8 +91,19 @@ KEEP.initUtils = () => {
 
     // toggle show tools list
     toggleShowToolsList() {
-      document.querySelector('.tool-toggle-show').addEventListener('click', () => {
-        document.querySelector('.side-tools-list').classList.toggle('show')
+      const sideToolsListDom = document.querySelector('.side-tools-list')
+      const toggleShowToolsDom = document.querySelector('.tool-toggle-show')
+      toggleShowToolsDom.addEventListener('click', (e) => {
+        sideToolsListDom.classList.toggle('show')
+        e.stopPropagation()
+      })
+      sideToolsListDom.querySelectorAll('.tools-item').forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.stopPropagation()
+        })
+      })
+      document.addEventListener('click', () => {
+        sideToolsListDom.classList.contains('show') && sideToolsListDom.classList.remove('show')
       })
     },
 
