@@ -35,7 +35,7 @@
                 <%- page.content %>
             </div>
 
-            <% if (theme.copyright_info.enable) { %>
+            <% if (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) { %>
                 <div class="post-copyright-info">
                     <%- partial('_partial/article-copyright-info') %>
                 </div>

@@ -3,6 +3,7 @@ const { title: bi_title, logo_img: bi_logo_img } = theme.base_info
 const { logo: s_logo, first_screen: s_first_screen } = theme.style
 const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen
 const { title: config_title } = config
+const { enable: local_search_enable } = theme.local_search
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
 
@@ -21,7 +22,7 @@ const { title: config_title } = config
         <div class="right">
             <div class="pc">
                 <ul class="menu-list">
-                    <% for (let i in theme.menu) { %>
+                    <% for (const i in theme.menu) { %>
                         <li class="menu-item">
                             <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
                                href="<%- url_for(theme.menu[i]) %>"
@@ -30,7 +31,7 @@ const { title: config_title } = config
                             </a>
                         </li>
                     <% } %>
-                    <% if (theme.local_search.enable === true) { %>
+                    <% if (local_search_enable === true) { %>
                         <li class="menu-item search search-popup-trigger">
                             <i class="fas fa-search"></i>
                         </li>
@@ -38,7 +39,7 @@ const { title: config_title } = config
                 </ul>
             </div>
             <div class="mobile">
-                <% if (theme.local_search.enable === true) { %>
+                <% if (local_search_enable === true) { %>
                     <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
                 <% } %>
                 <div class="icon-item menu-bar">

@@ -15,7 +15,7 @@
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/releases)
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-keep)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
-[![Node.js Version](https://img.shields.io/badge/node-%3E=12.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=14.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-keep?style=flat-square&logo=jsdelivr)](https://www.jsdelivr.com/package/npm/hexo-theme-keep)
 
 ## :star2: Online Preview
@@ -53,8 +53,8 @@ theme: keep
 Please see the official documents of «Keep».
 
 - **[Keep official document](https://keep-docs.xpoet.cn/)**
-- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
-- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
+- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/tutorial/configuration-guide/base_info.html)**
+- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 It is not recommended to directly modify any files in the «Keep» theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
 

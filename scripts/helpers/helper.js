@@ -2,8 +2,6 @@
 
 'use strict'
 
-const url = require('url')
-
 hexo.extend.helper.register('isInHomePaging', function (pagePath, route) {
   if (pagePath.length > 5 && route === '/') {
     return pagePath.slice(0, 5) === 'page/'
@@ -38,18 +36,6 @@ hexo.extend.helper.register('getAuthorLabel', function (postCount, isAuto, label
     return level > labelList.length ? labelList[labelList.length - 1] : labelList[level - 1]
   } else {
     return `Lv${level}`
-  }
-})
-
-hexo.extend.helper.register('getPostUrl', function (rootUrl, path) {
-  if (rootUrl) {
-    let { href } = url.parse(rootUrl)
-    if (href.substr(href.length - 1, 1) !== '/') {
-      href = href + '/'
-    }
-    return href + path
-  } else {
-    return path
   }
 })
 

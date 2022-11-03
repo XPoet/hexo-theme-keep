@@ -1,7 +1,8 @@
 ## ======================================================================================
-## Keep v3.5.1
-## Repository: https://github.com/XPoet/hexo-theme-keep
+## Keep v3.5.2
+## Preview: https://xpoet.cn
 ## Document: https://keep-docs.xpoet.cn
+## Repository: https://github.com/XPoet/hexo-theme-keep
 ## ======================================================================================
 
 # ---------------------------------------------------------------------------------------
@@ -14,15 +15,12 @@ base_info:
   # Your blog website author name
   author: Keep Team
 
-  # Your blog website url
-  url: https://xpoet.cn/
-
 # ---------------------------------------------------------------------------------------
 # Theme style settings
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
-  primary_color: "#0066CC"
+  primary_color: "#0066cc"
 
   # Your blog website logo image
   # You can use local image, image external link or don’t fill
@@ -68,18 +66,15 @@ style:
     font_color:
 
     # If enable hitokoto, first screen description is different every time when you enter the site
-    hitokoto:
-      enable: false  # Option values: true | false
+    hitokoto: false  # Option values: true | false
 
   # Page scroll style settings
   scroll:
     # Show progress bar in top when page scroll
-    progress_bar:
-      enable: false  # Option values: true | false
+    progress_bar: false # Option values: true | false
 
     # Show percent when page scroll
-    percent:
-      enable: false  # Option values: true | false
+    percent: false      # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -89,8 +84,8 @@ style:
 menu:
   Home: /
   Archives: /archives
-  # Categories: /categories
   # Tags: /tags
+  # Categories: /categories
   # Links: /links
   # About: /about
   # Changelog: /changelog
@@ -132,17 +127,6 @@ home_article:
 # Post page Settings
 # ---------------------------------------------------------------------------------------
 post:
-  # Image align position in the post
-  img_align: left  # Option values: left | center
-
-  # Post word count
-  # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
-  # See: https://github.com/willin/hexo-wordcount
-  word_count:
-    enable: false       # Option values: true | false
-    wordcount: false    # Word count, one article. Option values: true | false
-    min2read: false     # Time to read, one article. Option values: true | false
-
   # Author label in the post
   author_label:
     enable: true  # Option values: true | false
@@ -154,9 +138,22 @@ post:
     # Label array item can be fill one or more
     custom_label_list: ["Trainee", "Engineer", "Architect"]
 
+  # Post word count
+  # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
+  # See: https://github.com/willin/hexo-wordcount
+  word_count:
+    enable: false       # Option values: true | false
+    wordcount: false    # Word count, one article. Option values: true | false
+    min2read: false     # Time to read, one article. Option values: true | false
+
+  # Image align position in the post
+  img_align: left  # Option values: left | center
+
+  # Post copyright info
+  copyright_info: false  # Option values: true | false
+
 # ---------------------------------------------------------------------------------------
 # Code block
-# Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
 code_block:
   # Toolbar include: "code copy", "code block collapse" and "code language"
@@ -179,12 +176,6 @@ toc:
 
   # If true, open TOC every time when you enter the article page
   init_open: false   # Option values: true | false
-
-# ---------------------------------------------------------------------------------------
-# Post copyright info
-# ---------------------------------------------------------------------------------------
-copyright_info:
-  enable: false      # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -245,7 +236,7 @@ comment:
   #      https://waline.js.org/guide/get-started.html
   waline:
     server_url:     # Server URL
-    reaction:       # Article reactions
+    reaction: false # Article reactions, Option values: true | false
     version: 2      # Waline version, default use v2
 
 # ---------------------------------------------------------------------------------------

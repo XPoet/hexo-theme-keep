@@ -112,15 +112,29 @@ function initToggleShowToc() {
 
       const observer = new MutationObserver(callback)
       observer.observe(commentsCountDom, config)
+    },
+
+    initSetPostLink() {
+      const postLinkContentDom = document.querySelector(
+        '.copyright-info-content .post-link .content'
+      )
+      postLinkContentDom && (postLinkContentDom.innerHTML = decodeURI(window.location.href))
     }
   }
-  KEEP.utils.postHelper.initToggleToc()
   KEEP.utils.postHelper.initSetPostToolsLeft()
-  KEEP.utils.postHelper.goToComments()
-  KEEP.utils.postHelper.watchPostCommentsCount()
+  if (KEEP.theme_config.toc?.enable === true) {
+    KEEP.utils.postHelper.initToggleToc()
+  }
+  if (KEEP.theme_config.comment?.enable === true) {
+    KEEP.utils.postHelper.goToComments()
+    KEEP.utils.postHelper.watchPostCommentsCount()
+  }
+  if (KEEP.theme_config.post?.copyright_info === true) {
+    KEEP.utils.postHelper.initSetPostLink()
+  }
 }
 
-if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {
+if (KEEP.theme_config.pjax?.enable === true && KEEP.utils) {
   initToggleShowToc()
 } else {
   window.addEventListener('DOMContentLoaded', initToggleShowToc)

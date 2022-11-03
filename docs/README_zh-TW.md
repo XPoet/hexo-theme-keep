@@ -15,7 +15,7 @@
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep.svg?style=flat-square)](https://github.com/XPoet/hexo-theme-ils/releases)
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-keep)
 [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
-[![Node.js Version](https://img.shields.io/badge/node-%3E=12.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=14.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-keep?style=flat-square&logo=jsdelivr)](https://www.jsdelivr.com/package/npm/hexo-theme-keep)
 
 ## :star2: 線上預覽
@@ -53,8 +53,8 @@ theme: keep
 請查看 «Keep» 官方文檔：
 
 - **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
-- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/usage-tutorial/configuration-guide.html)**
-- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/usage-tutorial/advanced.html)**
+- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/tutorial/configuration-guide/base_info.html)**
+- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 不推薦直接修改 «Keep» 主題的文件。因為這可能導致錯誤（例如 git merge 衝突），並且在更新主題時修改的文件可能丟失。
 
