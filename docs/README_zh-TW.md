@@ -67,7 +67,7 @@ theme: keep
 ```sh
 # 推薦
 $ cd hexo-site
-$ npm update hexo-theme-keep
+$ npm install hexo-theme-keep@latest
 ```
 
 或者透過 git 更新到最新的 master 分支：
