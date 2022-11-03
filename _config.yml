@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.5.1
+## Keep v3.5.2
 ## Preview: https://xpoet.cn
 ## Document: https://keep-docs.xpoet.cn
 ## Repository: https://github.com/XPoet/hexo-theme-keep
@@ -154,7 +154,6 @@ post:
 
 # ---------------------------------------------------------------------------------------
 # Code block
-# Support code copy and code block collapse
 # ---------------------------------------------------------------------------------------
 code_block:
   # Toolbar include: "code copy", "code block collapse" and "code language"
