@@ -56,7 +56,7 @@ copyright:
   title: Post title
   link: Post link
   create_time: Create time
-  license_title: Copyright Notice
+  license_title: Copyright notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
 ago:
   second: "%s seconds ago"
