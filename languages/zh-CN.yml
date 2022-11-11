@@ -10,7 +10,6 @@ page: 第 %d 页
 recent_posts: 最新文章
 share: 分享
 powered_by: "由 %s 驱动"
-footer_upyun: "本站由 %s 提供 CDN 加速和云存储服务"
 theme: 主题
 rss_feed: RSS Feed
 category: 分类
@@ -66,3 +65,12 @@ ago:
   week: "%s 周前"
   month: "%s 个月前"
   year: "%s 年前"
+footer_deploy: "本站由 %s 提供部署服务"
+deploy_provider:
+  github: GitHub Pages
+  vercel: Vercel
+  netlify: Netlify
+  gitee: Gitee Pages
+  aliyun: 阿里云
+  tencent_cloud: 腾讯云
+  upyun: 又拍云

@@ -1,5 +1,9 @@
 <%
-const { since: f_since, icp: f_icp, upyun: f_upyun } = theme.footer
+const {
+  since: f_since,
+  icp: f_icp,
+  site_deploy: f_site_deploy
+} = theme.footer
 const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
@@ -41,11 +45,18 @@ const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme
                 </a>
             </div>
         <% } %>
-        <% if (f_upyun) { %>
-            <div class="ypyun-info info-item">
-                <a target="_blank" rel="nofollow" href="<%= f_upyun %>">
-                    <%- __('footer_upyun', '<img src="/images/upyun.png" height="20">') %>
-                </a>
+        <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+            <div class="deploy-info info-item">
+                <% if (f_site_deploy?.url) { %>
+                    <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                <% } %>
+                    <%- __(
+                            'footer_deploy',
+                            '<span class="tooltip" data-content="' + __('deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
+                    ) %>
+                <% if (f_site_deploy?.url) { %>
+                    </a>
+                <% } %>
             </div>
         <% } %>
     </div>
