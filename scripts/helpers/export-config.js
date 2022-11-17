@@ -10,7 +10,7 @@ const yaml = require('js-yaml')
 /**
  * Export theme config to js
  */
-hexo.extend.helper.register('export_config', function () {
+hexo.extend.helper.register('exportConfig', function () {
   const { config, theme } = this
 
   // ------------------------ export language to js ------------------------
