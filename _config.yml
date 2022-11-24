@@ -222,6 +222,7 @@ comment:
   valine:
     appid:           # Your leancloud application appid
     appkey:          # Your leancloud application appkey
+    server_urls:     # Your Server URL
     placeholder:     # Input box placeholder
 
   # Gitalk
