@@ -50,6 +50,12 @@ code_block:
   copied: Copied
   fold: Fold code block
   folded: Folded
+copy_copyright:
+  copy: Copy copyright info
+  copied: Copied
+  title: Original article title
+  author: Original article author
+  link: Original article link
 copyright:
   author: Post author
   title: Post title

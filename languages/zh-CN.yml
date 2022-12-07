@@ -50,6 +50,12 @@ code_block:
   copied: 已复制
   fold: 折叠代码块
   folded: 已折叠
+copy_copyright:
+  copy: 复制版权信息
+  copied: 已复制
+  title: 原文标题
+  author: 原文作者
+  link: 原文链接
 copyright:
   title: 本文标题
   author: 本文作者
