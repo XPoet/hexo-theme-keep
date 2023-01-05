@@ -242,7 +242,7 @@ comment:
   twikoo:
     env_id:         # Tencent Cloud environment id
     region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou"
-    version: 1.6.7  # Twikoo version, default use v1.6.7
+    version: 1.6.8  # Twikoo version, default use v1.6.8
 
   # Waline
   # See: https://github.com/walinejs/waline
