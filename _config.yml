@@ -234,6 +234,7 @@ comment:
     repository:       # Repository name to store issues
     client_id:        # GitHub Application Client ID
     client_secret:    # GitHub Application Client Secret
+    proxy:            # GitHub oauth request reverse proxy for CORS
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
