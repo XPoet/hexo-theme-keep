@@ -1,12 +1,13 @@
 ## ======================================================================================
-## Keep v3.5.2
+## Keep v3.6.0
 ## Preview: https://xpoet.cn
-## Document: https://keep-docs.xpoet.cn
+## Documents: https://keep-docs.xpoet.cn
 ## Repository: https://github.com/XPoet/hexo-theme-keep
 ## ======================================================================================
 
 # ---------------------------------------------------------------------------------------
-#  Your basic info
+# Your basic info
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/base_info.html
 # ---------------------------------------------------------------------------------------
 base_info:
   # Your blog website title
@@ -17,13 +18,14 @@ base_info:
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/style.html
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
   primary_color: "#0066cc"
 
   # Your blog website logo image
-  # You can use local image, image external link or don’t fill
+  # You can use local image, image external link or don't fill
   logo: /images/logo.svg
 
   # Favicon (You can use local image or image external link)
@@ -42,16 +44,16 @@ style:
 
   # Mouse hover style settings
   hover:
-    # Shadow effect when the mouse hover.
+    # Shadow effect when the mouse hover
     shadow: false  # Option values: true | false
-    # Scale effect when the mouse hovers.
+    # Scale effect when the mouse hovers
     scale: false   # Option values: true | false
 
   # First screen style settings
   first_screen:
     enable: false  # Option values: true | false
 
-    # Set transparent background for header.
+    # Set transparent background for header
     header_transparent: false  # Option values: true | false
 
     # First screen background image (You can use local image or image external link)
@@ -78,6 +80,7 @@ style:
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/menu.html
 # ---------------------------------------------------------------------------------------
 # If you want to enable Categories and Tags, you need to create categories and tags pages
 # e.g. `hexo new page categories` or `hexo new page tags`
@@ -93,6 +96,7 @@ menu:
 
 # ---------------------------------------------------------------------------------------
 # Social contact link
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/social_contact.html
 # ---------------------------------------------------------------------------------------
 social_contact:
   enable: false      # Option values: true | false
@@ -112,26 +116,28 @@ social_contact:
 
 # ---------------------------------------------------------------------------------------
 # Home page article block display settings
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/home_article.html
 # ---------------------------------------------------------------------------------------
 home_article:
-  # Show category in home page article block.
+  # Show category in home page article block
   category:
     enable: false  # Option values: true | false
     limit: 3       # Max number of categories shown in home page article block
-  # Show tags in home page article block.
+  # Show tags in home page article block
   tag:
     enable: false  # Option values: true | false
     limit: 5       # Max number of tags shown in home page article block
 
 # ---------------------------------------------------------------------------------------
 # Post page Settings
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/post.html
 # ---------------------------------------------------------------------------------------
 post:
   # Author label in the post
   author_label:
     enable: true  # Option values: true | false
 
-    # If true, show Lv1, Lv2, Lv3...
+    # If true, show Lv1, Lv2, Lv3 ...
     # If false, show custom_label_list
     auto: true    # Option values: true | false
 
@@ -154,6 +160,7 @@ post:
 
 # ---------------------------------------------------------------------------------------
 # Code block
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/code_block.html
 # ---------------------------------------------------------------------------------------
 code_block:
   # Toolbar include: "code copy", "code block collapse" and "code language"
@@ -164,11 +171,12 @@ code_block:
 
 # ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/toc.html
 # ---------------------------------------------------------------------------------------
 toc:
   enable: false      # Option values: true | false
 
-  # Automatically add list number to toc.
+  # Automatically add list number to toc
   number: false      # Option values: true | false
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
@@ -179,6 +187,7 @@ toc:
 
 # ---------------------------------------------------------------------------------------
 # Website count
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/website_count.html
 # ---------------------------------------------------------------------------------------
 website_count:
   # busuanzi
@@ -191,6 +200,7 @@ website_count:
 
 # ---------------------------------------------------------------------------------------
 # Local Search
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/local_search.html
 # Dependencies: hexo-generator-searchdb (`npm install hexo-generator-searchdb`)
 # See: https://github.com/theme-next/hexo-generator-searchdb
 # ---------------------------------------------------------------------------------------
@@ -200,6 +210,7 @@ local_search:
 
 # ---------------------------------------------------------------------------------------
 # Comment plugin
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/comment.html
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
@@ -211,6 +222,7 @@ comment:
   valine:
     appid:           # Your leancloud application appid
     appkey:          # Your leancloud application appkey
+    server_urls:     # Your Server URL
     placeholder:     # Input box placeholder
 
   # Gitalk
@@ -218,18 +230,19 @@ comment:
   #      https://gitalk.github.io
   gitalk:
     github_id:        # GitHub repo owner
-    github_admins:    # GitHub Admins (in Array type), optional.
+    github_admins:    # GitHub Admins (in Array type), optional
     repository:       # Repository name to store issues
     client_id:        # GitHub Application Client ID
     client_secret:    # GitHub Application Client Secret
+    proxy:            # GitHub oauth request reverse proxy for CORS
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
   #      https://twikoo.js.org
   twikoo:
     env_id:         # Tencent Cloud environment id
-    region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou".
-    version: 1.6.7  # Twikoo version, default use v1.6.7
+    region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou"
+    version: 1.6.8  # Twikoo version, default use v1.6.8
 
   # Waline
   # See: https://github.com/walinejs/waline
@@ -241,7 +254,8 @@ comment:
 
 # ---------------------------------------------------------------------------------------
 # RSS
-# Dependencies: hexo-generator-feed
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/rss.html
+# Dependencies: hexo-generator-feed (`npm install hexo-generator-feed`)
 # See: https://github.com/hexojs/hexo-generator-feed
 # ---------------------------------------------------------------------------------------
 rss:
@@ -249,12 +263,14 @@ rss:
 
 # ---------------------------------------------------------------------------------------
 # Lazyload image
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/lazyload.html
 # ---------------------------------------------------------------------------------------
 lazyload:
   enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # CDN
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/cdn.html
 # ---------------------------------------------------------------------------------------
 cdn:
   enable: false       # Option values: true | false
@@ -262,14 +278,19 @@ cdn:
 
 # ---------------------------------------------------------------------------------------
 # PJAX
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/pjax.html
 # ---------------------------------------------------------------------------------------
 pjax:
   enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Footer settings
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
-  since: 2020  # the starting year of your website. Can be null
-  icp:         # ICP record number of your website. Can be null
-  upyun:       # If your site is deployed on upyun, your can fill the upyun url. Can be null
+  since: 2020  # The starting year of your website, Can be null
+  icp:         # ICP record number of your website, Can be null
+  site_deploy:
+    enable: false       # Option values: true | false
+    provider: github    # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
+    url:                # Your deployment provider url, Can be null

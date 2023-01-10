@@ -17,14 +17,14 @@ $first-screen-font-color = $temp-font-color ? convert($temp-font-color) : var(--
 
   if (!(hexo-config('style.first_screen.header_transparent') == true)) {
     background-position-y $header-height
-  }
 
-  +keep-tablet() {
-    background-position-y $header-height * 0.9
-  }
+    +keep-tablet() {
+      background-position-y $header-height * 0.9
+    }
 
-  +keep-mobile() {
-    background-position-y $header-height * 0.8
+    +keep-mobile() {
+      background-position-y $header-height * 0.8
+    }
   }
 
   .content {

@@ -10,7 +10,7 @@ const yaml = require('js-yaml')
 /**
  * Export theme config to js
  */
-hexo.extend.helper.register('export_config', function () {
+hexo.extend.helper.register('exportConfig', function () {
   const { config, theme } = this
 
   // ------------------------ export language to js ------------------------
@@ -50,10 +50,11 @@ hexo.extend.helper.register('export_config', function () {
   }
 
   return `<script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = ${JSON.stringify(hexo_config)};
-    KEEP.theme_config = ${JSON.stringify(theme_config)};
-    KEEP.language_ago = ${JSON.stringify(languageContent['ago'])};
-    KEEP.language_code_block = ${JSON.stringify(languageContent['code_block'])};
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = ${JSON.stringify(hexo_config)}
+    KEEP.theme_config = ${JSON.stringify(theme_config)}
+    KEEP.language_ago = ${JSON.stringify(languageContent['ago'])}
+    KEEP.language_code_block = ${JSON.stringify(languageContent['code_block'])}
+    KEEP.language_copy_copyright = ${JSON.stringify(languageContent['copy_copyright'])}
   </script>`
 })

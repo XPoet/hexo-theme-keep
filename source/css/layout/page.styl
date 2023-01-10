@@ -5,11 +5,6 @@
   height auto
   background var(--background-color-1)
 
-  +keep-tablet() {
-    padding-left 0 !important
-  }
-
-
   .page-main-content {
     position relative
     box-sizing border-box
@@ -18,12 +13,17 @@
     &.is-home {
       .transparent-1 {
         background var(--header-transparent-background-1)
+        -webkit-backdrop-filter blur(4px)
+        backdrop-filter blur(4px)
       }
 
       .transparent-2 {
         background var(--header-transparent-background-2)
+        -webkit-backdrop-filter blur(5px)
+        backdrop-filter blur(5px)
       }
     }
+
 
     .header-shrink & {
       padding-top $header-shrink-height
@@ -78,7 +78,6 @@
 
       +keep-tablet() {
         height $header-height * 0.9
-        padding-left 0 !important
       }
 
 

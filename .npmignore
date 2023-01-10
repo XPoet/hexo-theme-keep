@@ -1,6 +1,8 @@
+.DS_Store
+Thumbs.db
 node_modules
-/.github/FUNDING.yml
 package-lock.json
 yarn.lock
+.github/*
 .vscode/*
 .idea/*

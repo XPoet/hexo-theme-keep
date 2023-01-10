@@ -10,7 +10,6 @@ page: Page %d
 recent_posts: Recent Posts
 share: Share
 powered_by: "Powered by %s"
-footer_upyun: "CDN acceleration and Cloud storage services are provided by %s"
 theme: Theme
 rss_feed: RSS Feed
 category: Category
@@ -51,13 +50,20 @@ code_block:
   copied: Copied
   fold: Fold code block
   folded: Folded
+copy_copyright:
+  copy: Copy copyright info
+  copied: Copied
+  title: Original article title
+  author: Original article author
+  link: Original article link
 copyright:
   author: Post author
   title: Post title
   link: Post link
   create_time: Create time
-  license_title: Copyright Notice
+  license_title: Copyright notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
+article-aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
 ago:
   second: "%s seconds ago"
   minute: "%s minutes ago"
@@ -66,3 +72,12 @@ ago:
   week: "%s weeks ago"
   month: "%s months ago"
   year: "%s years ago"
+footer_deploy: "This site is provided with deployment services by %s"
+deploy_provider:
+  github: GitHub Pages
+  vercel: Vercel
+  netlify: Netlify
+  gitee: Gitee Pages
+  aliyun: Alibaba Cloud
+  tencent_cloud: Tencent Cloud
+  upyun: UPYUN

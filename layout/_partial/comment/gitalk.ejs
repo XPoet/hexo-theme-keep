@@ -5,7 +5,8 @@ const {
     client_secret,
     repository,
     github_id,
-    github_admins
+    github_admins,
+    proxy
 } = theme.comment?.gitalk
 let cdn_css = '//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css'
 let cdn_js = '//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js'
@@ -46,6 +47,7 @@ if (t_cdn_enable === true) {
                 owner: '<%= github_id %>',
                 admin: '<%= github_admins || [github_id] %>',
                 id: __gitalk__pathname,
+                proxy: '<%= proxy %>',
                 language: '<%= config.language %>'
               }).render('gitalk-container');
             } catch (e) {

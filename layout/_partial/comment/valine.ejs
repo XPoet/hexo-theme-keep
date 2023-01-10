@@ -3,6 +3,7 @@ const { enable: pjax_enable } = theme?.pjax
 const {
     appid,
     appkey,
+    server_urls,
     placeholder
 } = theme.comment?.valine
 let cdn_url = '//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
@@ -25,7 +26,8 @@ if (t_cdn_enable === true) {
         <div id="vcomments"></div>
         <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
           function loadValine() {
-            new Valine({
+
+            const config = {
               el: '#vcomments',
               appId: '<%= appid %>',
               appKey: '<%= appkey %>',
@@ -34,48 +36,54 @@ if (t_cdn_enable === true) {
               enableQQ: true,
               placeholder: '<%= placeholder %>',
               lang: '<%= config.language %>'.toLowerCase()
-            });
+            }
+
+            if ('<%= server_urls %>') {
+              config.serverURLs = '<%= server_urls %>'
+            }
+
+            new Valine(config)
 
             function getAuthor(language) {
               switch (language) {
                 case 'en':
-                  return 'Author';
+                  return 'Author'
                 case 'zh-CN':
-                  return '博主';
+                  return '博主'
                 default:
-                  return 'Master';
+                  return 'Master'
               }
             }
 
             // Add "Author" identify
             const getValineDomTimer = setInterval(() => {
-              const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
               if (vcards.length > 0) {
-                let author = '<%= theme.base_info.author || config.author %>';
+                let author = '<%= theme.base_info.author || config.author %>'
 
                 if (author) {
                   for (let vcard of vcards) {
-                    const vnick_dom = vcard.querySelector('.vhead .vnick');
-                    const vnick = vnick_dom.innerHTML;
+                    const vnick_dom = vcard.querySelector('.vhead .vnick')
+                    const vnick = vnick_dom.innerHTML
                     if (vnick === author) {
                       vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
                     }
                   }
                 }
-                clearInterval(getValineDomTimer);
+                clearInterval(getValineDomTimer)
               } else {
-                clearInterval(getValineDomTimer);
+                clearInterval(getValineDomTimer)
               }
-            }, 2000);
+            }, 2000)
           }
 
           if ('<%= pjax_enable %>' === 'true') {
             const loadValineTimeout = setTimeout(() => {
-              loadValine();
-              clearTimeout(loadValineTimeout);
-            }, 1000);
+              loadValine()
+              clearTimeout(loadValineTimeout)
+            }, 1000)
           } else {
-            window.addEventListener('DOMContentLoaded', loadValine);
+            window.addEventListener('DOMContentLoaded', loadValine)
           }
         </script>
     </div>

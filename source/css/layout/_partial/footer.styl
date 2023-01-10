@@ -2,7 +2,6 @@
   color var(--text-color-4)
   font-size 1rem
 
-
   a {
     color var(--text-color-4)
 
@@ -12,24 +11,33 @@
   }
 
   .info-container {
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
     padding-bottom 1rem
-    text-align center
-  }
 
-  .info-item {
-    margin 0.3rem 0
-    color var(--text-color-4)
+    .info-item {
+      margin 0.2rem 0
+      color var(--text-color-4)
 
-    &.ypyun-info a {
-      display flex
-      align-items center
-      justify-content center
+      &.deploy-info {
+        display flex
 
-      img {
-        margin 0 0.3rem
+        a
+        .tooltip {
+          display flex
+          align-items center
+        }
+
+        img {
+          height 1.2rem
+          margin 0 0.4rem
+        }
       }
     }
   }
+
 
   .icon-animate {
     animation icon-animate 1.2s ease-in-out infinite

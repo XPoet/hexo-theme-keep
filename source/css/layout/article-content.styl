@@ -145,6 +145,28 @@ $toc-container-width = 15rem
       color var(--text-color-3)
       word-wrap break-word
 
+      .article-aging-tips {
+        position relative
+        display none
+        box-sizing border-box
+        margin-bottom 1.8rem
+        padding 1rem
+        color var(--article-aging-tips-color)
+        line-height 1.6
+        background var(--article-aging-tips-background-color)
+        border 0.1rem solid var(--article-aging-tips-border-color)
+        border-radius 0.4rem
+
+        i {
+          margin-right 0.4rem
+          color var(--article-aging-tips-color)
+        }
+
+        .days {
+          color var(--article-aging-tips-color)
+        }
+      }
+
       if (hexo-config('post.copyright_info') == true || hexo-config('copyright_info.enable') == true) {
         border-bottom 0.1rem dashed var(--border-color)
       }

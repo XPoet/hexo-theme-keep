@@ -103,11 +103,17 @@ $scrollbar-background-color = darken($background-color-1, 10%)
 $toc-scrollbar-color = alpha($text-color-3, 0.1)
 
 $copyright-info-color = #cc0033
+
 $avatar-background-color = $primary-color-dark-1
+
 $header-transparent-background-1 = alpha($background-color-1, 0.28)
-$header-transparent-background-2 = alpha($background-color-1, 0.58)
+$header-transparent-background-2 = alpha($background-color-1, 0.4)
 
 $pjax-progress-bar-color = linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3)
+
+$article-aging-tips-color = #b78d0f
+$article-aging-tips-background-color = alpha($article-aging-tips-color, 0.1)
+$article-aging-tips-border-color = alpha($article-aging-tips-color, 0.6)
 
 
 // ==============================================================================================
@@ -141,12 +147,17 @@ $dark-scrollbar-background-color = lighten($dark-background-color-1, 20%)
 $dark-toc-scrollbar-color = alpha($dark-text-color-3, 0.1)
 
 $dark-copyright-info-color = darken($copyright-info-color, 20%)
+
 $dark-avatar-background-color = darken($avatar-background-color, 20%)
 
 $dark-header-transparent-background-1 = alpha($dark-background-color-1, 0.28)
-$dark-header-transparent-background-2 = alpha($dark-background-color-1, 0.58)
+$dark-header-transparent-background-2 = alpha($dark-background-color-1, 0.4)
 
 $dark-pjax-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee)
+
+$dark-article-aging-tips-color = #ecc34d
+$dark-article-aging-tips-background-color = alpha($dark-article-aging-tips-color, 0.1)
+$dark-article-aging-tips-border-color = alpha($dark-article-aging-tips-color, 0.6)
 
 
 // ==============================================================================================
@@ -210,13 +221,23 @@ root-color(mode) {
   --scrollbar-background-color mode == 'light' ? $scrollbar-background-color : $dark-scrollbar-background-color
   --toc-scrollbar-color mode == 'light' ? $toc-scrollbar-color : $dark-toc-scrollbar-color
 
+  // copyright info left side color
   --copyright-info-color mode == 'light' ? $copyright-info-color : $dark-copyright-info-color
+
+  // avatar background color
   --avatar-background-color mode == 'light' ? $avatar-background-color : $dark-avatar-background-color
 
+  // header transparent background color
   --header-transparent-background-1 mode == 'light' ? $header-transparent-background-1 : $dark-header-transparent-background-1
   --header-transparent-background-2 mode == 'light' ? $header-transparent-background-2 : $dark-header-transparent-background-2
 
-  --pjax-progress-bar-color  mode == 'light' ? $pjax-progress-bar-color : $dark-pjax-progress-bar-color
+  // pjax progress bar color
+  --pjax-progress-bar-color mode == 'light' ? $pjax-progress-bar-color : $dark-pjax-progress-bar-color
+
+  // article aging tips primary color
+  --article-aging-tips-color mode == 'light' ? $article-aging-tips-color : $dark-article-aging-tips-color
+  --article-aging-tips-background-color mode == 'light' ? $article-aging-tips-background-color : $dark-article-aging-tips-background-color
+  --article-aging-tips-border-color mode == 'light' ? $article-aging-tips-border-color : $dark-article-aging-tips-border-color
 }
 
 

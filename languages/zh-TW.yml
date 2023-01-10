@@ -10,7 +10,6 @@ page: 第 %d 頁
 recent_posts: 之前的文章
 share: 分享
 powered_by: "%s 框架"
-footer_upyun: "本站由 %s 提供 CDN 加速和雲存儲服務"
 theme: 主題
 rss_feed: RSS 訂閱
 category: 分類
@@ -51,6 +50,12 @@ code_block:
   copied: 已復製
   fold: 折疊代碼塊
   folded: 已折疊
+copy_copyright:
+  copy: 復製版權信息
+  copied: 已復製
+  title: 原文標題
+  author: 原文作者
+  link: 原文鏈接
 copyright:
   author: 文章作者
   title: 文章標題
@@ -58,6 +63,7 @@ copyright:
   create_time: 撰寫時間
   license_title: 版權宣告
   license_content: "這個網站所有文章均使用 %s 授權"
+article-aging: "本文距離上次更新已過去 %s 天，部分內容可能已經過時，請註意甄別。"
 ago:
   second: "%s 秒前"
   minute: "%s 分鐘前"
@@ -66,3 +72,12 @@ ago:
   week: "%s 周前"
   month: "%s 個月前"
   year: "%s 年前"
+footer_deploy: "本站由 %s 提供部署服務"
+deploy_provider:
+  github: GitHub Pages
+  vercel: Vercel
+  netlify: Netlify
+  gitee: Gitee Pages
+  aliyun: 阿裏雲
+  tencent_cloud: 騰訊雲
+  upyun: 又拍雲

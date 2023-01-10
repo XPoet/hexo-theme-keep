@@ -67,10 +67,10 @@ Install the latest version throuth npm:
 ```sh
 # recommend
 $ cd hexo-site
-$ npm update hexo-theme-keep
+$ npm install hexo-theme-keep@latest
 ```
 
-Or update to latest master branch:
+Or update to the latest master branch:
 
 ```sh
 $ cd themes/keep
