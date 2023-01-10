@@ -4,11 +4,10 @@
   "private": false,
   "description": "A simple and elegant theme for Hexo.",
   "scripts": {
-    "npm:publish": "npm publish",
     "format": "prettier --write ./source/js/*.js ./scripts",
     "lint:style": "stylelint --fix ./source/css",
     "git:push": "git push --tag && git push -u origin dev",
-    "git:add": "npm run lint:style && git add ."
+    "git:add": "npm run format && npm run lint:style && git add ."
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,7 @@
     "powerful"
   ],
   "author": "XPoet",
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/XPoet/hexo-theme-keep/issues"
   },
