@@ -63,6 +63,7 @@ copyright:
   create_time: 创建时间
   license_title: 版权声明
   license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
+article-aging: "本文距离上次更新已过去 %s 天，部分内容可能已经过时，请注意甄别。"
 ago:
   second: "%s 秒前"
   minute: "%s 分钟前"

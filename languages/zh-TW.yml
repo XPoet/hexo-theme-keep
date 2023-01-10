@@ -63,6 +63,7 @@ copyright:
   create_time: 撰寫時間
   license_title: 版權宣告
   license_content: "這個網站所有文章均使用 %s 授權"
+article-aging: "本文距離上次更新已過去 %s 天，部分內容可能已經過時，請註意甄別。"
 ago:
   second: "%s 秒前"
   minute: "%s 分鐘前"

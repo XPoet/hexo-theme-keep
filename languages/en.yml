@@ -63,6 +63,7 @@ copyright:
   create_time: Create time
   license_title: Copyright notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
+article-aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
 ago:
   second: "%s seconds ago"
   minute: "%s minutes ago"

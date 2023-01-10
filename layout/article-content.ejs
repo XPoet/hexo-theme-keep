@@ -32,6 +32,12 @@
             <% } %>
 
             <div class="article-content keep-markdown-body">
+                <% if (page?.aging === true) { %>
+                    <div class="article-aging-tips" data-update-date="<%= page.updated %>" data-aging-days="<%= page?.agingDays %>">
+                        <i class="fa-solid fa-circle-exclamation"></i><%- __('article-aging', '<span class="days">0</span>') %>
+                    </div>
+                <% } %>
+
                 <%- page.content %>
             </div>
 

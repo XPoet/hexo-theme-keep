@@ -114,6 +114,7 @@ function initToggleShowToc() {
       observer.observe(commentsCountDom, config)
     },
 
+    // set post link
     initSetPostLink() {
       const postLinkContentDom = document.querySelector(
         '.copyright-info-content .post-link .content'
@@ -121,6 +122,7 @@ function initToggleShowToc() {
       postLinkContentDom && (postLinkContentDom.innerHTML = decodeURI(window.location.href))
     },
 
+    // copy copyright info
     copyCopyrightInfo() {
       const cicDom = document.querySelector('.copyright-info-content')
       const copyDom = document.querySelector('.copy-copyright-info')
@@ -157,9 +159,29 @@ function initToggleShowToc() {
           setCopyDomContent('fa-check', 'fa-copy', ccLang.copy, false)
         }, 500)
       })
+    },
+
+    // set article aging tips
+    setArticleAgingDays() {
+      const agingTipsDom = document.querySelector('.article-content .article-aging-tips')
+      if (agingTipsDom) {
+        const daysDom = agingTipsDom.querySelector('.days')
+        const nowTimestamp = Date.now()
+        const tmpTimeLength = 24 * 60 * 60 * 1000
+        const agingDaysTimestamp = (agingTipsDom.dataset?.agingDays || 30) * tmpTimeLength
+        const postUpdateTimestamp = new Date(agingTipsDom.dataset.updateDate).getTime()
+        const timeDifference = nowTimestamp - postUpdateTimestamp
+        const timeDifferenceDays = (timeDifference / tmpTimeLength).toFixed(0)
+        if (timeDifference >= agingDaysTimestamp) {
+          daysDom.innerHTML = timeDifferenceDays
+          agingTipsDom.style.display = 'block'
+        }
+      }
     }
   }
   KEEP.utils.postHelper.initSetPostToolsLeft()
+  KEEP.utils.postHelper.setArticleAgingDays()
+
   if (KEEP.theme_config.toc?.enable === true) {
     KEEP.utils.postHelper.initToggleToc()
   }
