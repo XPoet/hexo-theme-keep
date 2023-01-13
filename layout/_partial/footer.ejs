@@ -2,7 +2,8 @@
 const {
   since: f_since,
   icp: f_icp,
-  site_deploy: f_site_deploy
+  site_deploy: f_site_deploy,
+  shields: f_shields
 } = theme.footer
 const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
@@ -56,6 +57,17 @@ const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme
                     ) %>
                 <% if (f_site_deploy?.url) { %>
                     </a>
+                <% } %>
+            </div>
+        <% } %>
+        <% if (f_shields?.enable === true) { %>
+            <div class="shields-info info-item">
+                <% for (var i in f_shields?.data){ %>
+                    <% if (f_shields?.data[i].img_url) { %>
+                        <a href="<%= f_shields?.data[i].link_url%>" target="_blank">
+                            <img src="<%= f_shields?.data[i].img_url%>" height="20px">
+                        </a>
+                    <% } %>
                 <% } %>
             </div>
         <% } %>
