@@ -295,7 +295,7 @@ KEEP.initUtils = () => {
       post &&
         post.forEach((v) => {
           const nowDate = Date.now()
-          const postDate = new Date(v.dataset.date.split(' GMT')[0]).getTime()
+          const postDate = new Date(v.dataset.updated.split(' GMT')[0]).getTime()
           v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
         })
     },

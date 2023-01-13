@@ -33,7 +33,7 @@
 
             <div class="article-content keep-markdown-body">
                 <% if (page?.aging === true) { %>
-                    <div class="article-aging-tips" data-update-date="<%= page.updated %>" data-aging-days="<%= page?.agingDays %>">
+                    <div class="article-aging-tips" data-update-date="<%= page.updated %>" data-aging-days="<%= page?.aging_days %>">
                         <i class="fa-solid fa-circle-exclamation"></i><%- __('article-aging', '<span class="days">0</span>') %>
                     </div>
                 <% } %>
@@ -41,7 +41,9 @@
                 <%- page.content %>
             </div>
 
-            <% if (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) { %>
+            <% if (
+              (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
+            ) { %>
                 <div class="post-copyright-info">
                     <%- partial('_partial/article-copyright-info') %>
                 </div>

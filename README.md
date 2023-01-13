@@ -1,8 +1,8 @@
 <div align="right">
   Language:
-  English
-  <a title="Chinese" href="docs/README_zh-CN.md">简中</a>
-  <a title="Chinese" href="docs/README_zh-TW.md">繁中</a>
+  English | 
+  <a title="Chinese" href="docs/README_zh-CN.md">简体中文</a> | 
+  <a title="Chinese" href="docs/README_zh-TW.md">繁體中文</a>
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.svg"></a>
@@ -103,5 +103,7 @@ This project exists thanks to all the people who contribute.
 
 ## :memo: License
 
-[GPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE) Copyright © 2020-present XPoet
+[AGPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)  
+
+Copyright © 2020-present XPoet
 
