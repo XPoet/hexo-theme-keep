@@ -252,6 +252,19 @@ comment:
     reaction: false # Article reactions, Option values: true | false
     version: 2      # Waline version, default use v2
 
+  # Giscus
+  # See: https://giscus.app, in which you can finish your settings
+  giscus:
+    repo:                     # Open https://giscus.app/ to finish it and below.
+    repo_id: 
+    category: 
+    category_id: 
+    position: top             # Comments input position, Options values: top | bottom
+    lang: zh-CN               # Language, Options see: https://github.com/giscus/giscus/tree/main/locales
+    reactions_enabled: true   # Reactions
+    light_theme: light        # Light theme, Options: light | light_high_contrast | light_protanopia | light_tritanopia
+    dark_theme: dark         # Dark theme, Options: dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark
+
 # ---------------------------------------------------------------------------------------
 # RSS
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/rss.html

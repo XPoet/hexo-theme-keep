@@ -22,6 +22,9 @@ const {
         <% } else if (t_comment_use === 'waline') { %>
             <%- partial('waline') %>
 
+        <% } else if (t_comment_use === 'giscus') { %>
+            <%- partial('giscus') %>
+
         <% } %>
     <% } %>
 </div>
