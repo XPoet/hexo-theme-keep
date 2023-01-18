@@ -261,7 +261,10 @@ comment:
     category_id: 
     position: top             # Comments input position, Options values: top | bottom
     lang: zh-CN               # Language, Options see: https://github.com/giscus/giscus/tree/main/locales
-    reactions_enabled: true
+    reactions_enabled: true   # Reactions
+    light_theme: light        # Light theme, Options: light | light_high_contrast | light_protanopia | light_tritanopia
+    dark_theme: dark         # Dark theme, Options: dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark
+
 # ---------------------------------------------------------------------------------------
 # RSS
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/rss.html
