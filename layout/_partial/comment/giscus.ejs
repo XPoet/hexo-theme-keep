@@ -1,0 +1,65 @@
+<%
+const { enable: pjax_enable } = theme?.pjax
+const {
+    repo,
+    repo_id,
+    category,
+    category_id,
+    position,
+    lang,
+		reactions_enabled
+} = theme.comment?.giscus
+let cdn_js = 'https://giscus.app/client.js'
+%>
+<% if(repo && repo_id && category && category_id) { %>
+<div class="giscus" id="giscus"></div>
+<script <%= pjax_enable === true ? 'data-pjax' : '' %>>
+function loadGiscus() {
+var s=document.createElement('script');
+s.setAttribute("src", "<%= cdn_js %>")
+s.setAttribute("data-repo", "<%= repo %>")
+s.setAttribute("data-repo-id", "<%= repo_id %>")
+s.setAttribute("data-category", "<%= category %>")
+s.setAttribute("data-category-id", "<%= category_id %>")
+s.setAttribute("data-mapping", "pathname")
+s.setAttribute("data-strict", "0")
+s.setAttribute("data-reactions-enabled", "<%= reactions_enabled %>")
+s.setAttribute("data-emit-metadata", "0")
+s.setAttribute("data-input-position", "<%= position %>")
+s.setAttribute("data-lang", "<%= lang %>")
+s.setAttribute("crossorigin", "anonymous")
+s.setAttribute("async", "")
+s.setAttribute("data-theme", document.body.getAttribute("class").includes("light-mode") ? "light" : "dark")
+document.body.appendChild(s)
+const toggle = document.querySelector('.tool-dark-light-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', changeGiscusTheme);
+  }
+}
+
+function changeGiscusTheme () {
+  const theme = document.body.getAttribute("class").includes("light-mode") ? "light" : "dark"
+
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+
+  sendMessage({
+    setConfig: {
+      theme: theme
+    }
+  });
+}
+
+          if ('<%= pjax_enable %>' === 'true') {
+            const loadGiscusTimeout = setTimeout(() => {
+              loadGiscus();
+              clearTimeout(loadGiscusTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+          }
+</script>
+<% } %>
