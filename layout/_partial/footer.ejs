@@ -7,6 +7,7 @@ const {
 const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
+const { umami_enable: umami_enable, umami_src : umami_src, umami_data_id : umami_data_id } = theme.analytics.umami
 %>
 <footer class="footer">
     <div class="info-container">
@@ -58,6 +59,11 @@ const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme
                     </a>
                 <% } %>
             </div>
+        <% } %>
+
+        <% if ( umami_enable === true) { %>
+            <script async defer data-website-id="<%= umami_data_id %>" src="<%= umami_src %>">
+            </script>
         <% } %>
     </div>
 </footer>

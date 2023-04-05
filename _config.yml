@@ -197,7 +197,11 @@ website_count:
     site_uv: false    # Option values: true | false
     site_pv: false    # Option values: true | false
     page_pv: false    # Option values: true | false
-
+analytics:
+  umami:
+    umami_enable : false
+    umami_src: "http://*******/umami.js"
+    umami_data_id: "*******"
 # ---------------------------------------------------------------------------------------
 # Local Search
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/local_search.html
