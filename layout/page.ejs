@@ -16,27 +16,35 @@
             <div class="main-content">
 
                 <% if (is_home()) { %>
+
                     <%- partial('home-content') %>
 
                 <% } else if (is_archive()) { %>
+
                     <%- partial('archive-content') %>
 
                 <% } else if (is_post()) { %>
+
                     <%- partial('article-content') %>
 
                 <% } else if (is_category()) { %>
+
                     <%- partial('category-content') %>
 
                 <% } else if (is_tag()) { %>
+
                     <%- partial('tag-content') %>
 
-                <% } else if (page.title === 'category' || page.title === 'categories') { %>
+                <% } else if (page.title.toLowerCase() === 'category' || page.title.toLowerCase() === 'categories') { %>
+
                     <%- partial('category-list') %>
 
-                <% } else if (page.title === 'tag' || page.title === 'tags') { %>
+                <% } else if (page.title.toLowerCase() === 'tag' || page.title.toLowerCase() === 'tags') { %>
+
                     <%- partial('_partial/tagcloud') %>
 
                 <% } else { %>
+
                     <%- partial('_partial/page-template') %>
 
                 <% } %>
