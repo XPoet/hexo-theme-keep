@@ -10,6 +10,19 @@ const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme
 %>
 <footer class="footer">
     <div class="info-container">
+        <%
+            let temp_total_word;
+            try {
+                temp_total_word = totalcount(site);
+            } catch (e) {
+                temp_total_word = 0;
+            }
+           if (theme.footer.word_count && temp_total_word != 0) { %>
+            <div class="site-total-word-count">
+                Total Words:  <%= totalcount(site) %> |
+                Total posts:  <%= site.posts.length %>
+            </div>
+        <% } %>
         <div class="copyright-info info-item">
             &copy;
             <% if (f_since) { %>

@@ -288,6 +288,7 @@ pjax:
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
+  word_count: false
   since: 2020  # The starting year of your website, Can be null
   icp:         # ICP record number of your website, Can be null
   site_deploy:
