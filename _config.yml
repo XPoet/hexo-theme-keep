@@ -17,7 +17,7 @@ base_info:
   author: Keep Team
 
   # Your blog root path relative to your website
-  # The path is used by title and logo.
+  # The path is used by several links such as title and logo.
   blog_root: /blog
 
 # ---------------------------------------------------------------------------------------
