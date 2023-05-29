@@ -8,9 +8,11 @@
 
             <% if (theme.base_info.author || config.author) { %>
                 <div class="article-header">
+                  <% if (theme.hasOwnProperty('post') && theme.post.author_avatar.enable === true) { %>
                     <div class="avatar">
                         <%- image_tag(theme.style.avatar) %>
                     </div>
+                  <% } %>
                     <div class="info">
                         <div class="author">
                             <span class="name"><%= theme.base_info.author || config.author %></span>
