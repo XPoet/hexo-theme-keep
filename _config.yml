@@ -18,7 +18,7 @@ base_info:
 
   # Your blog root path relative to your website
   # The path is used by several links such as title and logo.
-  blog_root: /blog/
+  blog_root: /
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
