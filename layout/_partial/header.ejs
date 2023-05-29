@@ -10,11 +10,11 @@ const { enable: local_search_enable } = theme.local_search
     <div class="header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left">
             <% if (s_logo || bi_logo_img) { %>
-                <a class="logo-image" href="/">
+                <a class="logo-image" href=""<%- theme.base_info.blog_root %>>
                     <%- image_tag(s_logo || bi_logo_img) %>
                 </a>
             <% } %>
-            <a class="logo-title" href="/">
+            <a class="logo-title" href="<%- theme.base_info.blog_root %>">
                <%= bi_title || config_title || 'Keep Theme' %>
             </a>
         </div>
