@@ -16,6 +16,10 @@ base_info:
   # Your blog website author name
   author: Keep Team
 
+  # Your blog root path relative to your website
+  # The path is used by several links such as title and logo.
+  blog_root: /blog/
+
 # ---------------------------------------------------------------------------------------
 # Theme style settings
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/style.html
