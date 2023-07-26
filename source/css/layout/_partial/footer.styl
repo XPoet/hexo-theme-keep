@@ -1,6 +1,7 @@
-$shields-style-height = 1.4rem
+$shields-style-height = 22px
 
 .footer {
+  padding 1rem 0
   color var(--text-color-4)
   font-size 1rem
 
@@ -12,16 +13,30 @@ $shields-style-height = 1.4rem
     }
   }
 
-  .info-container {
+  .website-info-box {
     display flex
     flex-direction column
     align-items center
     justify-content center
-    padding-bottom 1rem
 
     &.shields {
       img {
         height $shields-style-height !important
+      }
+
+      a {
+        position: relative;
+        text-decoration: none;
+        display inline-flex
+        box-sizing border-box
+      }
+
+      .shields-item {
+        margin 0 2px
+
+        &.no-pointer {
+          pointer-events none
+        }
       }
     }
 
@@ -34,7 +49,6 @@ $shields-style-height = 1.4rem
 
         &.shields {
           justify-content flex-start
-
 
           .count-box {
             height $shields-style-height

@@ -439,9 +439,9 @@ KEEP.initUtils = () => {
         script.onload = () => {
            setTimeout(() => {
              if (
-               document.querySelector('#busuanzi_value_site_uv').innerText ||
-               document.querySelector('#busuanzi_value_site_pv').innerText ||
-               document.querySelector('#busuanzi_value_page_pv').innerText
+               document.querySelector('#busuanzi_value_site_uv')?.innerText ||
+               document.querySelector('#busuanzi_value_site_pv')?.innerText ||
+               document.querySelector('#busuanzi_value_page_pv')?.innerText
              ) {
                websiteCountBoxDom.style.display = 'flex'
              }

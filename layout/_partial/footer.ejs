@@ -10,43 +10,39 @@ const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
 const shields_style = 'flat-square'
-const shields_color_list = ['blue', 'blue', 'blue', 'dodgerblue', 'dodgerblue', 'dodgerblue']
+const shields_color_list = ['dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue']
 const web_master = bi_author || hexo_author
 %>
-<footer class="footer">
-    <div class="info-container <%= f_style %>">
+<footer class="footer border-box">
+    <div class="website-info-box <%= f_style %>">
         <% if (f_style === 'shields') { %>
             <div class="info-item">
                 <% const since_date = f_since ? f_since + '_--_' + date(new Date(), 'YYYY') : date(new Date(), 'YYYY') %>
-                <img src="https://img.shields.io/badge/Since-<%= since_date %>-<%= shields_color_list[0] %>?style=<%= shields_style %>">
+                <a class="shields-item">
+                    <img src="https://img.shields.io/badge/Since-<%= since_date %>-<%= shields_color_list[0] %>?style=<%= shields_style %>">
+                </a>
                 <% if (web_master) { %>
-                    <a href="/" target="_blank">
+                    <a class="shields-item" href="/" target="_blank">
                         <img src="https://img.shields.io/badge/WebMaster-<%= web_master %>-<%= shields_color_list[1] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
                 <% if (f_icp) { %>
-                    <a target="_blank" rel="nofollow"
+                    <a class="shields-item" target="_blank" rel="nofollow"
                        href="https://beian.miit.gov.cn"
                     >
                         <img src="https://img.shields.io/badge/ICP-<%= f_icp %>-<%= shields_color_list[2] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
-            </div>
-            <div class="info-item">
-                <a href="https://hexo.io" target="_blank">
+                <a class="shields-item" href="https://hexo.io" target="_blank">
                     <img src="https://img.shields.io/badge/Powered_by-Hexo-<%= shields_color_list[3] %>?style=<%= shields_style %>">
                 </a>
-                <a href="https://github.com/XPoet/hexo-theme-keep" target="_blank">
+                <a class="shields-item" href="https://github.com/XPoet/hexo-theme-keep" target="_blank">
                     <img src="https://img.shields.io/badge/Theme-Keep%20v3.6.1-<%= shields_color_list[4] %>?style=<%= shields_style %>">
                 </a>
                 <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
-                    <% if (f_site_deploy?.url) { %>
-                        <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
-                    <% } %>
-                    <img src="https://img.shields.io/badge/Deploy_by-<%= __('deploy_provider.' + f_site_deploy?.provider) %>-<%= shields_color_list[5] %>?style=<%= shields_style %>">
-                    <% if (f_site_deploy?.url) { %>
-                        </a>
-                    <% } %>
+                    <a class="shields-item<%= f_site_deploy?.url ? '' : ' no-pointer'%>" target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                        <img src="https://img.shields.io/badge/Deploy_by-<%= __('deploy_provider.' + f_site_deploy?.provider) %>-<%= shields_color_list[5] %>?style=<%= shields_style %>">
+                    </a>
                 <% } %>
             </div>
         <% } else { %>
