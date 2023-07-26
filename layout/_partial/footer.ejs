@@ -94,9 +94,6 @@ const web_master = bi_author || hexo_author
             <% } %>
         <% } %>
         <% if (bsz_enable === true) { %>
-            <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
-                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
-            ></script>
             <div class="website-count info-item <%= f_style %>">
                 <% if (bsz_site_uv) { %>
                     <span class="count-box border-box uv <%= bsz_site_pv ? 'has-pv' : '' %>">

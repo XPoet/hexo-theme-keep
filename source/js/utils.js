@@ -427,6 +427,27 @@ KEEP.initUtils = () => {
       setTimeout(() => {
         init()
       }, 1000)
+    },
+
+    siteCountInitialize() {
+      if (KEEP.theme_config?.website_count?.busuanzi_count.enable === true) {
+        const script = document.createElement('script')
+        script.async = true
+        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+        document.body.appendChild(script)
+        const websiteCountBoxDom = document.querySelector('.footer .website-count')
+        script.onload = () => {
+           setTimeout(() => {
+             if (
+               document.querySelector('#busuanzi_value_site_uv').innerText ||
+               document.querySelector('#busuanzi_value_site_pv').innerText ||
+               document.querySelector('#busuanzi_value_page_pv').innerText
+             ) {
+               websiteCountBoxDom.style.display = 'flex'
+             }
+          }, 1000)
+        }
+      }
     }
   }
 
@@ -456,4 +477,7 @@ KEEP.initUtils = () => {
 
   // insert tooltip content dom
   KEEP.utils.insertTooltipContent()
+
+  // busuanzi initialize
+  KEEP.utils.siteCountInitialize()
 }
