@@ -1,3 +1,5 @@
+$shields-style-height = 22px
+
 .footer {
   color var(--text-color-4)
   font-size 1rem
@@ -17,23 +19,84 @@
     justify-content center
     padding-bottom 1rem
 
+    &.shields {
+      img {
+        height $shields-style-height !important
+      }
+    }
+
     .info-item {
       margin 0.2rem 0
       color var(--text-color-4)
 
+      &.website-count {
+
+        &.shields {
+          display flex
+          justify-content flex-start
+
+
+          .count-box {
+            height $shields-style-height
+            font-size 12.6px
+            display flex
+            justify-content flex-start
+            color #f2f2f2
+
+
+            .count-item {
+              height 100%
+              display flex
+              align-items center
+              padding 0 7px
+            }
+
+
+            .item-type {
+              margin-right 0
+              background: #555555
+            }
+
+            .item-value {
+
+              &.uv {
+                background: coral
+              }
+
+              &.pv {
+                background: orange
+              }
+            }
+
+          }
+        }
+
+        .uv {
+          &.has-pv {
+            margin-right 8px
+          }
+        }
+
+        .item-type {
+          margin-right 4px
+        }
+      }
+
       &.deploy-info {
+
         display flex
 
-        a
-        .tooltip {
-          display flex
-          align-items center
-        }
+        a.tooltip {
+            display flex
+            align-items center
+          }
 
-        img {
-          height 1.2rem
-          margin 0 0.4rem
-        }
+          img {
+            height 1.2rem
+            margin 0 0.4rem
+          }
+
+
       }
     }
   }

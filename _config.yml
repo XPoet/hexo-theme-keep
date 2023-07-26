@@ -288,18 +288,10 @@ pjax:
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
-  since: 2020  # The starting year of your website, Can be null
-  icp:         # ICP record number of your website, Can be null
+  style: default  # Option values: default | shields
+  since: 2020     # The starting year of your website, Can be null
+  icp:            # ICP record number of your website, Can be null
   site_deploy:
     enable: false       # Option values: true | false
     provider: github    # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
     url:                # Your deployment provider url, Can be null
-  shields:
-    enable: false       # Option values: true | false
-    data:               
-      example1:
-        link_url: https://github.com/XPoet/hexo-theme-keep             # link_url for click, Can be null
-        img_url: https://img.shields.io/badge/hexo-keep%20v3.6.1-blue  # img_url  for show
-      example2:         # Add more
-        link_url:       # link_url for click, Can be null
-        img_url:        # img_url  for show

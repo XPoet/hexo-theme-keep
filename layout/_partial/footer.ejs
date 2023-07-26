@@ -1,73 +1,114 @@
 <%
 const {
-  since: f_since,
-  icp: f_icp,
-  site_deploy: f_site_deploy,
-  shields: f_shields
+    since: f_since,
+    icp: f_icp,
+    site_deploy: f_site_deploy,
+    shields: f_shields,
+    style: f_style
 } = theme.footer
 const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
+const shields_style = 'flat-square'
+const shields_color_list = ['blue', 'blue', 'blue', 'dodgerblue', 'dodgerblue', 'dodgerblue']
+const web_master = bi_author || hexo_author
 %>
 <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            <% if (f_since) { %>
-                <span><%= f_since %></span> -
-            <% } %>
-            <%= date(new Date(), 'YYYY') %>
-            <% if (bi_author || hexo_author) { %>
-                &nbsp;<i class="fas fa-heart icon-animate"></i>
-                &nbsp;<a href="/"><%= bi_author || hexo_author %></a>
-            <% } %>
-        </div>
-        <% if (bsz_enable === true) { %>
-            <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
-                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
-                <% if (bsz_site_uv) { %>
-                    <%- __('site_uv') %>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+    <div class="info-container <%= f_style %>">
+        <% if (f_style === 'shields') { %>
+            <div class="info-item">
+                <% const since_date = f_since ? f_since + '_--_' + date(new Date(), 'YYYY') : date(new Date(), 'YYYY') %>
+                <img src="https://img.shields.io/badge/Since-<%= since_date %>-<%= shields_color_list[0] %>?style=<%= shields_style %>">
+                <% if (web_master) { %>
+                    <a href="/" target="_blank">
+                        <img src="https://img.shields.io/badge/WebMaster-<%= web_master %>-<%= shields_color_list[1] %>?style=<%= shields_style %>">
+                    </a>
                 <% } %>
-                <% if (bsz_site_pv) { %>
-                    <%- __('site_pv') %>&nbsp;<span id="busuanzi_value_site_pv"></span>
-                <% } %>
-            </div>
-        <% } %>
-        <div class="theme-info info-item">
-            <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
-        </div>
-        <% if (f_icp) { %>
-            <div class="icp-info info-item">
-                <a target="_blank" rel="nofollow"
-                   href="https://beian.miit.gov.cn"
-                >
-                    <%= f_icp %>
-                </a>
-            </div>
-        <% } %>
-        <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
-            <div class="deploy-info info-item">
-                <% if (f_site_deploy?.url) { %>
-                    <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
-                <% } %>
-                    <%- __(
-                            'footer_deploy',
-                            '<span class="tooltip" data-content="' + __('deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
-                    ) %>
-                <% if (f_site_deploy?.url) { %>
+                <% if (f_icp) { %>
+                    <a target="_blank" rel="nofollow"
+                       href="https://beian.miit.gov.cn"
+                    >
+                        <img src="https://img.shields.io/badge/ICP-<%= f_icp %>-<%= shields_color_list[2] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
             </div>
-        <% } %>
-        <% if (f_shields?.enable === true) { %>
-            <div class="shields-info info-item">
-                <% for (var i in f_shields?.data){ %>
-                    <% if (f_shields?.data[i].img_url) { %>
-                        <a href="<%= f_shields?.data[i].link_url%>" target="_blank">
-                            <img src="<%= f_shields?.data[i].img_url%>" height="20px">
+            <div class="info-item">
+                <a href="https://hexo.io" target="_blank">
+                    <img src="https://img.shields.io/badge/Powered_by-Hexo-<%= shields_color_list[3] %>?style=<%= shields_style %>">
+                </a>
+                <a href="https://github.com/XPoet/hexo-theme-keep" target="_blank">
+                    <img src="https://img.shields.io/badge/Theme-Keep%20v3.6.1-<%= shields_color_list[4] %>?style=<%= shields_style %>">
+                </a>
+                <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+                    <% if (f_site_deploy?.url) { %>
+                        <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                    <% } %>
+                    <img src="https://img.shields.io/badge/Deploy_by-<%= __('deploy_provider.' + f_site_deploy?.provider) %>-<%= shields_color_list[5] %>?style=<%= shields_style %>">
+                    <% if (f_site_deploy?.url) { %>
                         </a>
                     <% } %>
+                <% } %>
+            </div>
+        <% } else { %>
+            <div class="copyright-info info-item">
+                &copy;
+                <% if (f_since) { %>
+                    <span><%= f_since %></span> -
+                <% } %>
+                <%= date(new Date(), 'YYYY') %>
+                <% if (web_master) { %>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>
+                    &nbsp;<a href="/"><%= web_master %></a>
+                <% } %>
+            </div>
+
+            <div class="theme-info info-item">
+                <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>
+                &nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep
+                    v3.6.1</a>
+            </div>
+
+            <% if (f_icp) { %>
+                <div class="icp-info info-item">
+                    <a target="_blank" rel="nofollow"
+                       href="https://beian.miit.gov.cn"
+                    >
+                        <%= f_icp %>
+                    </a>
+                </div>
+            <% } %>
+
+            <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+                <div class="deploy-info info-item <%= f_style %>">
+                    <% if (f_site_deploy?.url) { %>
+                    <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                        <% } %>
+                        <%- __(
+                                'footer_deploy',
+                                '<span class="tooltip" data-content="' + __('deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
+                        ) %>
+                        <% if (f_site_deploy?.url) { %>
+                    </a>
+                    <% } %>
+                </div>
+            <% } %>
+        <% } %>
+        <% if (bsz_enable === true) { %>
+            <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+            ></script>
+            <div class="website-count info-item <%= f_style %>">
+                <% if (bsz_site_uv) { %>
+                    <span class="count-box border-box uv <%= bsz_site_pv ? 'has-pv' : '' %>">
+                        <span class="item-type count-item border-box"><%- __('site_uv') %></span><span
+                                class="item-value count-item border-box uv" id="busuanzi_value_site_uv"></span>
+                    </span>
+                <% } %>
+                <% if (bsz_site_pv) { %>
+                    <span class="count-box border-box pv">
+                        <span class="item-type count-item border-box"><%- __('site_pv') %></span>
+                        <span class="item-value count-item border-box pv" id="busuanzi_value_site_pv"></span>
+                    </span>
                 <% } %>
             </div>
         <% } %>
