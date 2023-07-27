@@ -7,13 +7,13 @@
             </div>
 
             <% if (theme.base_info.author || config.author) { %>
-                <div class="article-header">
-                  <% if (theme.hasOwnProperty('post') && theme.post.author_avatar.enable === true) { %>
-                    <div class="avatar">
-                        <%- image_tag(theme.style.avatar) %>
-                    </div>
-                  <% } %>
-                    <div class="info">
+                <div class="article-header border-box">
+                    <% if (theme.hasOwnProperty('post') && theme.post?.author_avatar.enable === true) { %>
+                        <div class="avatar-box border-box">
+                            <%- image_tag(theme.style.avatar) %>
+                        </div>
+                    <% } %>
+                    <div class="info-box">
                         <div class="author">
                             <span class="name"><%= theme.base_info.author || config.author %></span>
                             <% if (theme.hasOwnProperty('post') && theme.post.author_label.enable === true) { %>
@@ -21,21 +21,24 @@
                             <% } %>
                         </div>
                         <div class="meta-info">
-                            <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
+                            <%- partial('_partial/article-meta-info', { articleObject: page, index: true }) %>
                         </div>
                     </div>
                 </div>
             <% } else { %>
                 <div class="article-header-meta-info">
                     <div class="meta-info">
-                        <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
+                        <%- partial('_partial/article-meta-info', { articleObject: page, index: true }) %>
                     </div>
                 </div>
             <% } %>
 
             <div class="article-content keep-markdown-body">
                 <% if (page?.aging === true) { %>
-                    <div class="article-aging-tips" data-update-date="<%= page.updated %>" data-aging-days="<%= page?.aging_days %>">
+                    <div class="article-aging-tips"
+                         data-update-date="<%= page.updated %>"
+                         data-aging-days="<%= page?.aging_days %>"
+                    >
                         <i class="fa-solid fa-circle-exclamation"></i><%- __('article-aging', '<span class="days">0</span>') %>
                     </div>
                 <% } %>
@@ -44,7 +47,7 @@
             </div>
 
             <% if (
-              (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
+                    (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
             ) { %>
                 <div class="post-copyright-info">
                     <%- partial('_partial/article-copyright-info') %>

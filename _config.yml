@@ -135,7 +135,8 @@ home_article:
 post:
   # Author avatar in the post
   author_avatar:
-    enable: true # Option values: true | false
+    enable: true  # Option values: true | false
+
   # Author label in the post
   author_label:
     enable: true  # Option values: true | false
