@@ -9,7 +9,6 @@ next_posts: Next posts
 page: Page %d
 recent_posts: Recent Posts
 share: Share
-powered_by: "Powered by %s"
 theme: Theme
 rss_feed: RSS Feed
 category: Category
@@ -23,8 +22,6 @@ home: Home
 archive: Archive
 archives: Archives
 about: About
-site_uv: Visitor Count
-site_pv: Totalview
 links: Links
 link: Link
 top: TOP
@@ -72,14 +69,17 @@ ago:
   week: "%s weeks ago"
   month: "%s months ago"
   year: "%s years ago"
-footer_deploy: "This site is provided with deployment services by %s"
-deploy_provider:
-  github: GitHub Pages
-  vercel: Vercel
-  netlify: Netlify
-  gitee: Gitee Pages
-  aliyun: Alibaba Cloud
-  tencent_cloud: Tencent Cloud
-  upyun: UPYUN
 footer:
+  powered_by: "Powered by %s"
+  site_uv: Visitor count
+  site_pv: Totalview
+  footer_deploy: "This site is provided with deployment services by %s"
+  deploy_provider:
+    github: GitHub Pages
+    vercel: Vercel
+    netlify: Netlify
+    gitee: Gitee Pages
+    aliyun: Alibaba Cloud
+    tencent_cloud: Tencent Cloud
+    upyun: UPYUN
   total_words: Total words
