@@ -1,4 +1,5 @@
-$avatarWidth = 3rem
+$avatarWidth = (hexo-config('post.author_avatar.enable') == true) ? 3rem : 0
+$headerHeight = 3rem
 $arrow-icon-width = 1rem
 $post-nav-max-width = 14rem
 $article-title-font-size = 1.6rem
@@ -72,7 +73,7 @@ $toc-container-width = 15rem
       position relative
       box-sizing border-box
       width 100%
-      height $avatarWidth
+      height $headerHeight
       padding-left $avatarWidth
 
       .avatar {
@@ -102,7 +103,9 @@ $toc-container-width = 15rem
         box-sizing border-box
         width 100%
         height 100%
-        margin-left 0.8rem
+        if (hexo-config('post.author_avatar.enable') == true) {
+          margin-left 0.8rem
+        }
         padding 0.2rem 0
 
         .author {
