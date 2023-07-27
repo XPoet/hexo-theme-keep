@@ -214,7 +214,7 @@ local_search:
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
-  use: valine     # Option values: valine | gitalk | twikoo | waline
+  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus
 
   # Valine
   # See: https://github.com/xCss/Valine
@@ -253,17 +253,15 @@ comment:
     version: 2      # Waline version, default use v2
 
   # Giscus
-  # See: https://giscus.app, in which you can finish your settings
+  # See: https://github.com/giscus/giscus
+  #      https://giscus.app
+  # Please generate your configuration items in https://giscus.app
   giscus:
-    repo:                     # Open https://giscus.app/ to finish it and below.
-    repo_id: 
-    category: 
-    category_id: 
-    position: top             # Comments input position, Options values: top | bottom
-    lang: zh-CN               # Language, Options see: https://github.com/giscus/giscus/tree/main/locales
-    reactions_enabled: true   # Reactions
-    light_theme: light        # Light theme, Options: light | light_high_contrast | light_protanopia | light_tritanopia
-    dark_theme: dark         # Dark theme, Options: dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark
+    repo:
+    repo_id:
+    category: Announcements    # Recommend use Announcements
+    category_id:
+    reactions_enabled: false   # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # RSS

@@ -442,8 +442,10 @@ KEEP.initUtils = () => {
                document.querySelector('#busuanzi_value_site_pv')?.innerText ||
                document.querySelector('#busuanzi_value_page_pv')?.innerText
              ) {
-               document.querySelector('.footer .website-count').style.display = 'flex'
-               document.querySelector('.article-meta-info .article-pv').style.display = 'inline-block'
+               const tmpDom1 = document.querySelector('.footer .website-count')
+               const tmpDom2 = document.querySelector('.article-meta-info .article-pv')
+               tmpDom1 && (tmpDom1.style.display = 'flex')
+               tmpDom2 && (tmpDom2.style.display = 'inline-block')
              }
           }, 1000)
         }
