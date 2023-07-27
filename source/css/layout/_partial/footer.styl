@@ -11,6 +11,10 @@ $shields-style-height = 22px
     &:hover {
       color var(--primary-color)
     }
+
+    &.no-pointer {
+      pointer-events none
+    }
   }
 
   .website-info-box {
@@ -34,10 +38,6 @@ $shields-style-height = 22px
       .shields-item {
         margin 0 2px
         user-select none
-
-        &.no-pointer {
-          pointer-events none
-        }
       }
     }
 

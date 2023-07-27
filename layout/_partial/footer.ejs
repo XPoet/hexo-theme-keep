@@ -26,11 +26,12 @@ const web_master = bi_author || hexo_author
                         <img src="https://img.shields.io/badge/WebMaster-<%= web_master %>-<%= shields_color_list[1] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
-                <% if (f_icp) { %>
-                    <a class="shields-item" target="_blank" rel="nofollow"
-                       href="https://beian.miit.gov.cn"
+                <% if (f_icp?.enable === true && f_icp?.record_code) { %>
+                    <a class="shields-item<%= f_icp?.url ? '' : ' no-pointer' %>"
+                       target="_blank"
+                       href="<%= f_icp?.url %>"
                     >
-                        <img src="https://img.shields.io/badge/ICP-<%= f_icp %>-<%= shields_color_list[2] %>?style=<%= shields_style %>">
+                        <img src="https://img.shields.io/badge/ICP-<%= f_icp?.record_code %>-<%= shields_color_list[2] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
                 <a class="shields-item" href="https://hexo.io" target="_blank">
@@ -78,12 +79,13 @@ const web_master = bi_author || hexo_author
                     v3.6.1</a>
             </div>
 
-            <% if (f_icp) { %>
+            <% if (f_icp?.enable && f_icp?.record_code) { %>
                 <div class="icp-info info-item">
-                    <a target="_blank" rel="nofollow"
-                       href="https://beian.miit.gov.cn"
+                    <a class="<%= f_icp?.url ? '' : ' no-pointer' %>"
+                       target="_blank"
+                       href="<%= f_icp?.url %>"
                     >
-                        <%= f_icp %>
+                        <%= f_icp?.record_code %>
                     </a>
                 </div>
             <% } %>
