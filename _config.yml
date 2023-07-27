@@ -303,28 +303,28 @@ pjax:
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
-  style: default  # Option values: default | shields
-  since: 2020  # The starting year of your website, Can be null
-  word_count: false
+  style: default        # Option values: default | shields
+  since: 2020           # The starting year of your website, Can be null
+  word_count: false     # Option values: true | false
 
   icp:
-    enable: true                    # Option values: true | false
-    record_code:                    # ICP record code of your website
-    url: https://beian.miit.gov.cn  # Your ICP link url, Can be null
+    enable: false                    # Option values: true | false
+    record_code:                     # ICP record code of your website
+    url: https://beian.miit.gov.cn   # Your ICP link url, Can be null
 
   site_deploy:
-    enable: false       # Option values: true | false
-    provider: github    # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
-    url:                # Your deployment provider url, Can be null
+    enable: false        # Option values: true | false
+    provider: github     # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
+    url:                 # Your deployment provider url, Can be null
 
   # When the footer style is shields, you can customize the shields configuration
   # See: https://shields.io
   custom_shields:
-    enable: true        # Option values: true | false
+    enable: false        # Option values: true | false
     data:
       shields_1:
-        link_url:   # Your link url, Can be null
-        img_url:    # Shields image url
+        link_url:        # Your link url, Can be null
+        img_url:         # Shields image url
       # For example
       shields_2:
         link_url: https://github.com/XPoet/hexo-theme-keep

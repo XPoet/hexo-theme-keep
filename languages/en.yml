@@ -81,3 +81,5 @@ deploy_provider:
   aliyun: Alibaba Cloud
   tencent_cloud: Tencent Cloud
   upyun: UPYUN
+footer:
+  total_words: Total words

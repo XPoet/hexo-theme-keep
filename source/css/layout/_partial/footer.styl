@@ -29,10 +29,10 @@ $shields-style-height = 22px
       }
 
       a {
-        position: relative;
-        text-decoration: none;
+        position relative
         display inline-flex
         box-sizing border-box
+        text-decoration none
       }
 
       .shields-item {
@@ -46,55 +46,89 @@ $shields-style-height = 22px
       margin 0.2rem 0
       color var(--text-color-4)
 
-      &.website-count {
-        display none
+      &.shields {
+        justify-content flex-start
 
-        &.shields {
+        .count-box {
+          display flex
           justify-content flex-start
+          height $shields-style-height
+          margin-right 8px
+          color #f2f2f2
+          font-size 12.6px
 
-          .count-box {
-            height $shields-style-height
-            font-size 12.6px
+
+          .item-type
+          .item-value {
             display flex
-            justify-content flex-start
-            color #f2f2f2
+            align-items center
+            height 100%
+            padding 0 6px
+          }
 
 
-            .count-item {
-              height 100%
-              display flex
-              align-items center
-              padding 0 6px
+          .item-type {
+            margin-right 0
+            background #555555
+          }
+
+          .item-value {
+
+            &.uv {
+              background coral
             }
 
-
-            .item-type {
-              margin-right 0
-              background: #555555
+            &.pv {
+              background orange
             }
 
-            .item-value {
-
-              &.uv {
-                background: coral
-              }
-
-              &.pv {
-                background: orange
-              }
+            &.word {
+              background indianred
             }
-
           }
         }
+      }
 
-        .uv {
-          &.has-pv {
-            margin-right 8px
+
+      &.default {
+        .count-box {
+          margin-right 15px
+
+          &::before {
+            position absolute
+            top 50%
+            left -10px
+            box-sizing border-box
+            transform translateY(-55%)
+            content '|'
+          }
+
+          &:first-child {
+            &::before {
+              display none
+            }
+          }
+
+          .item-type {
+            margin-right 4px
           }
         }
+      }
 
-        .item-type {
-          margin-right 4px
+
+      &.count-item {
+        display flex
+
+        .count-box {
+
+          &:last-child {
+            margin-right 0
+          }
+
+          &.uv
+          &.pv {
+            display none
+          }
         }
       }
 
@@ -113,8 +147,6 @@ $shields-style-height = 22px
           height 1.08rem
           margin 0 0.4rem
         }
-
-
       }
     }
   }

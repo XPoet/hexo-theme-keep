@@ -81,3 +81,5 @@ deploy_provider:
   aliyun: 阿裏雲
   tencent_cloud: 騰訊雲
   upyun: 又拍雲
+footer:
+  total_words: 全站總字數
