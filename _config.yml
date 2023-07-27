@@ -304,7 +304,8 @@ pjax:
 # ---------------------------------------------------------------------------------------
 footer:
   style: default  # Option values: default | shields
-  since: 2020     # The starting year of your website, Can be null
+  since: 2020  # The starting year of your website, Can be null
+  word_count: false
 
   icp:
     enable: true                    # Option values: true | false
