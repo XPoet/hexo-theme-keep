@@ -33,12 +33,14 @@ $shields-style-height = 22px
 
       .shields-item {
         margin 0 2px
+        user-select none
 
         &.no-pointer {
           pointer-events none
         }
       }
     }
+
 
     .info-item {
       margin 0.2rem 0
@@ -96,19 +98,21 @@ $shields-style-height = 22px
         }
       }
 
+
       &.deploy-info {
 
         display flex
 
-        a.tooltip {
-            display flex
-            align-items center
-          }
+        a
+        .tooltip {
+          display flex
+          align-items center
+        }
 
-          img {
-            height 1.2rem
-            margin 0 0.4rem
-          }
+        img {
+          height 1.08rem
+          margin 0 0.4rem
+        }
 
 
       }

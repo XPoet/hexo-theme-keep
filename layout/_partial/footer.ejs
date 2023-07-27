@@ -3,7 +3,7 @@ const {
     since: f_since,
     icp: f_icp,
     site_deploy: f_site_deploy,
-    shields: f_shields,
+    custom_shields: f_custom_shields,
     style: f_style
 } = theme.footer
 const { author: bi_author } = theme.base_info
@@ -40,11 +40,25 @@ const web_master = bi_author || hexo_author
                     <img src="https://img.shields.io/badge/Theme-Keep%20v3.6.1-<%= shields_color_list[4] %>?style=<%= shields_style %>">
                 </a>
                 <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
-                    <a class="shields-item<%= f_site_deploy?.url ? '' : ' no-pointer'%>" target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                    <a class="shields-item<%= f_site_deploy?.url ? '' : ' no-pointer' %>" target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
                         <img src="https://img.shields.io/badge/Deploy_by-<%= __('deploy_provider.' + f_site_deploy?.provider) %>-<%= shields_color_list[5] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
             </div>
+            <% if (f_custom_shields?.enable === true) { %>
+                <div class="info-item">
+                    <% for (const i in f_custom_shields?.data) { %>
+                        <% if (f_custom_shields?.data[i].img_url) { %>
+                            <a class="shields-item<%= f_custom_shields?.data[i].link_url ? '' : ' no-pointer' %>"
+                               href="<%= f_custom_shields?.data[i].link_url %>"
+                               target="_blank"
+                            >
+                                <img src="<%= f_custom_shields?.data[i].img_url %>">
+                            </a>
+                        <% } %>
+                    <% } %>
+                </div>
+            <% } %>
         <% } else { %>
             <div class="copyright-info info-item">
                 &copy;
