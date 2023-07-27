@@ -435,7 +435,6 @@ KEEP.initUtils = () => {
         script.async = true
         script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
         document.body.appendChild(script)
-        const websiteCountBoxDom = document.querySelector('.footer .website-count')
         script.onload = () => {
            setTimeout(() => {
              if (
@@ -443,7 +442,8 @@ KEEP.initUtils = () => {
                document.querySelector('#busuanzi_value_site_pv')?.innerText ||
                document.querySelector('#busuanzi_value_page_pv')?.innerText
              ) {
-               websiteCountBoxDom.style.display = 'flex'
+               document.querySelector('.footer .website-count').style.display = 'flex'
+               document.querySelector('.article-meta-info .article-pv').style.display = 'inline-block'
              }
           }, 1000)
         }
