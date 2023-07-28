@@ -5,6 +5,15 @@
         ><%- __('prev') %></a>
     <% } %>
 
+    <div class="page-numbers">
+        <input class="page-number-input" 
+         value='<%- page.current %>' min="1" max="<%- page.total %>" 
+         base_url='<%- theme.base_info.blog_root %>'
+         onchange="PageChanged(event)"> 
+         / 
+         <%- page.total %>
+    </div>
+
     <% if (pageObject.next)  { %>
         <a class="next btn"
            href="<%- url_for(pageObject.next_link) %>"
