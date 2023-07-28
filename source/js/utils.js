@@ -429,6 +429,7 @@ KEEP.initUtils = () => {
       }, 1000)
     },
 
+    // busuanzi initialize handle
     siteCountInitialize() {
       if (KEEP.theme_config?.website_count?.busuanzi_count.enable === true) {
         const script = document.createElement('script')
@@ -452,6 +453,29 @@ KEEP.initUtils = () => {
           }, 1000)
         }
       }
+    },
+
+    // page number jump handle
+    pageNumberJump() {
+      const inputDom = document.querySelector('.paginator .page-number-input')
+      inputDom &&
+        inputDom.addEventListener('change', (e) => {
+          const min = 1
+          const max = Number(e.target.max)
+          let current = Number(e.target.value)
+
+          if (current <= 0) {
+            inputDom.value = min
+            current = min
+          }
+
+          if (current > max) {
+            inputDom.value = max
+            current = max
+          }
+
+          window.location.href = window.location.origin + (current > 1 ? '/page/' + current : '')
+        })
     }
   }
 
@@ -484,4 +508,6 @@ KEEP.initUtils = () => {
 
   // busuanzi initialize
   KEEP.utils.siteCountInitialize()
+
+  KEEP.utils.pageNumberJump()
 }

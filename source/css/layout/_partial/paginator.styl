@@ -1,35 +1,55 @@
 .paginator {
-  margin-top 2rem
-  font-size 1rem
+  display flex
+  justify-content space-between
+  margin-top 2.6rem
 
-  a.prev {
-    float left
+  a.jump-btn {
+    visibility hidden
+
+    &.show {
+      visibility visible
+    }
   }
 
-  a.next {
-    float right
+
+  .base-color-size {
+    color var(--text-color-3)
+    font-size 1rem
+  }
+
+  .page-number-box {
+
+    .page-number-input {
+      width 2.8rem
+      height 82%
+      margin 0
+      padding 0
+      font-weight 400 !important
+      line-height 82%
+      text-align center
+      background none
+      border 0.1rem solid var(--border-color)
+      border-radius 0.3rem
+      outline none
+      -webkit-appearance none
+
+      &::-webkit-outer-spin-button
+      &::-webkit-inner-spin-button {
+        -webkit-appearance none !important
+      }
+
+      &:hover
+      &:focus {
+        border-color var(--primary-color)
+      }
+    }
+
+
+    .delimiter {
+      margin 0 0.6rem
+    }
   }
 }
 
-.page-numbers {
-  display: inline-flex
-  position: absolute;
-  padding: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1rem;
-  text-align: center;
-}
 
-.page-number-input {
-    max-width: 20px;
-    max-height: 20px;
-    text-align: center;
-    font-weight: bolder;
-    color: var(--primary-color);
-
-    border: none;
-    box-shadow: 2px 2px 5px var(--shadow-color) inset;
-    border-radius: 2px;
-}
 
