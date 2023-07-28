@@ -6,109 +6,142 @@
 
     .home-article-item {
       position relative
+      overflow hidden
 
-      keep-container(true, 1.015, 1.015, 28px, 38px)
+      keep-container(true, 1.015, 1.015, 0, 38px)
 
-      .top-icon {
-        position absolute
-        top 10px
-        right 12px
-        color var(--text-color-4)
-        font-size 1.2rem
-        transform rotate(45deg)
-
+      .home-article-item-top {
+        width 100%
+        height 8rem
+        overflow hidden
+        background-color var(--background-color-2)
 
         +keep-tablet() {
-          font-size 1.16rem
+          height 7rem
         }
-      }
-
-
-      .home-article-title {
-        position relative
-        margin 0
-        color var(--text-color-2)
-        font-weight 600
-        font-size 1.4rem
-        line-height 1.5
-
-
-        +keep-tablet() {
-          font-size 1.3rem
-        }
-
 
         +keep-mobile() {
-          font-size 1.2rem
-        }
-      }
-
-
-      .home-article-content {
-        margin 20px 0
-        color var(--text-color-3)
-        text-align justify
-        word-wrap break-word
-      }
-
-
-      .home-article-meta-info-container {
-        display flex
-        align-items center
-        justify-content space-between
-        color var(--text-color-4)
-        font-size 0.92rem
-
-        .home-article-meta-info {
-          letter-spacing 0.5px
-
-          span {
-            margin-right 10px
-
-            &:last-child {
-              margin-right 0
-            }
-
-            ul
-            li {
-              display inline
-            }
-          }
-
-          .home-article-category {
-            +keep-mobile() {
-              display none
-            }
-          }
-
-          .home-article-tag {
-            +keep-tablet() {
-              display none
-            }
-          }
+          height 6rem
         }
 
-
-        .read-more {
-          display flex
-          align-items center
-        }
-
-
-        hr {
-          flex 1
-          height 1px
-          margin 0 10px
-          background var(--border-color)
-          border none
-        }
-
-
-        a {
-          color var(--text-color-4)
+        .cover-img {
+          width 100%
+          height 100%
+          object-fit cover
+          transform-origin center center
+          transition-t("transform", "0.2", "1", "linear")
 
           &:hover {
-            color var(--primary-color)
+            transform scale(1.04)
+          }
+        }
+      }
+
+
+      .home-article-item-bottom {
+        padding 2rem
+
+        .sticky-icon {
+          position absolute
+          top 0.8rem
+          right 1rem
+          color var(--text-color-4)
+          font-size 1.2rem
+          transform rotate(45deg)
+
+
+          +keep-tablet() {
+            font-size 1.16rem
+          }
+        }
+
+
+        .home-article-title {
+          position relative
+          margin 0
+          color var(--text-color-2)
+          font-weight 600
+          font-size 1.4rem
+          line-height 1.5
+
+
+          +keep-tablet() {
+            font-size 1.3rem
+          }
+
+
+          +keep-mobile() {
+            font-size 1.2rem
+          }
+        }
+
+
+        .home-article-content {
+          margin 20px 0
+          color var(--text-color-3)
+          text-align justify
+          word-wrap break-word
+        }
+
+
+        .home-article-meta-info-container {
+          display flex
+          align-items center
+          justify-content space-between
+          color var(--text-color-4)
+          font-size 0.92rem
+
+          .home-article-meta-info {
+            letter-spacing 0.5px
+
+            span {
+              margin-right 10px
+
+              &:last-child {
+                margin-right 0
+              }
+
+              ul
+              li {
+                display inline
+              }
+            }
+
+            .home-article-category {
+              +keep-mobile() {
+                display none
+              }
+            }
+
+            .home-article-tag {
+              +keep-tablet() {
+                display none
+              }
+            }
+          }
+
+
+          .read-more {
+            display flex
+            align-items center
+          }
+
+
+          hr {
+            flex 1
+            height 1px
+            margin 0 10px
+            background var(--border-color)
+            border none
+          }
+
+
+          a {
+            color var(--text-color-4)
+
+            &:hover {
+              color var(--primary-color)
+            }
           }
         }
       }
