@@ -23,10 +23,14 @@ $shields-style-height = 22px
     align-items center
     justify-content center
 
+
     &.shields {
+      padding 0 1rem
+
       img {
         height $shields-style-height !important
       }
+
 
       a {
         position relative
@@ -35,25 +39,41 @@ $shields-style-height = 22px
         text-decoration none
       }
 
-      .shields-item {
-        margin 0 2px
+
+      .shields-item
+      .count-box {
+        margin 0.2rem
         user-select none
+      }
+    }
+
+    +keep-mobile() {
+      &.shields {
+        .shields-item
+        .count-box {
+          margin 0.12rem -0.3rem
+          transform scale(0.9)
+          transform-origin center center
+        }
       }
     }
 
 
     .info-item {
-      margin 0.2rem 0
+      position relative
+      display flex
+      flex-wrap wrap
+      align-items center
+      justify-content center
+      box-sizing border-box
       color var(--text-color-4)
 
-      &.shields {
-        justify-content flex-start
 
+      &.shields {
         .count-box {
           display flex
           justify-content flex-start
           height $shields-style-height
-          margin-right 8px
           color #f2f2f2
           font-size 12.6px
 
@@ -89,8 +109,9 @@ $shields-style-height = 22px
         }
       }
 
-
       &.default {
+        margin 0.2rem 0
+
         .count-box {
           margin-right 15px
 
@@ -120,11 +141,6 @@ $shields-style-height = 22px
         display flex
 
         .count-box {
-
-          &:last-child {
-            margin-right 0
-          }
-
           &.uv
           &.pv {
             display none

@@ -14,7 +14,7 @@ const shields_color_list = ['dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblu
 const web_master = bi_author || hexo_author
 %>
 <footer class="footer border-box">
-    <div class="website-info-box <%= f_style %>">
+    <div class="border-box website-info-box <%= f_style %>">
         <% if (f_style === 'shields') { %>
             <div class="info-item">
                 <% const since_date = f_since ? f_since + '_--_' + date(new Date(), 'YYYY') : date(new Date(), 'YYYY') %>
@@ -65,24 +65,19 @@ const web_master = bi_author || hexo_author
                 </div>
             <% } %>
         <% } else { %>
-            <div class="copyright-info info-item">
-                &copy;
-                <% if (f_since) { %>
-                    <span><%= f_since %></span> -
-                <% } %>
-                <%= date(new Date(), 'YYYY') %>
+            <div class="copyright-info info-item <%= f_style %>">
+                &copy;&nbsp;<% if (f_since) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= date(new Date(), 'YYYY') %>
                 <% if (web_master) { %>
-                    &nbsp;<i class="fas fa-heart icon-animate"></i>
-                    &nbsp;<a href="/"><%= web_master %></a>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/"><%= web_master %></a>
                 <% } %>
             </div>
 
-            <div class="theme-info info-item">
+            <div class="theme-info info-item <%= f_style %>">
                 <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
             </div>
 
             <% if (f_icp?.enable && f_icp?.record_code) { %>
-                <div class="icp-info info-item">
+                <div class="icp-info info-item <%= f_style %>">
                     <a class="<%= f_icp?.url ? '' : ' no-pointer' %>"
                        target="_blank"
                        href="<%= f_icp?.url %>"
