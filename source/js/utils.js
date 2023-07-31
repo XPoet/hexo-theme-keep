@@ -573,7 +573,9 @@ KEEP.initUtils = () => {
   // busuanzi initialize
   KEEP.utils.siteCountInitialize()
 
+  // page number jump handle
   KEEP.utils.pageNumberJump()
 
+  // reset categories page
   KEEP.utils.resetCategoriesPage()
 }
