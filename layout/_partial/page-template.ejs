@@ -1,5 +1,5 @@
 <%
-const { type: p_type, title: p_title, content: p_content, comment: p_comment } = page
+const { type: p_type, title: p_title, content: p_content } = page
 const { menu: t_menu, links: t_links } = theme
 %>
 <div class="fade-in-down-animation">
@@ -21,7 +21,7 @@ const { menu: t_menu, links: t_links } = theme
                 <h1><%- p_title %></h1>
             <% } %>
         </div>
-        <% if (p_comment === true) { %>
+        <% if (page?.comment === true) { %>
             <div class="page-template-comments">
                 <%- partial('_partial/comment/comment') %>
             </div>

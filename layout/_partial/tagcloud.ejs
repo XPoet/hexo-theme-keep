@@ -9,6 +9,11 @@
                     amount: 100
                 }) %>
             </div>
+            <div class="tagcloud-comments">
+                <% if (page?.comment === true) { %>
+                    <%- partial('_partial/comment/comment') %>
+                <% } %>
+            </div>
         </div>
     </div>
 <% } %>

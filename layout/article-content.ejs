@@ -101,7 +101,7 @@
                 </div>
             <% } %>
 
-            <% if (theme.comment.enable === true && theme.comment.hasOwnProperty(theme.comment.use)) { %>
+            <% if (page?.comment !== false) { %>
                 <div class="comment-container">
                     <%- partial('_partial/comment/comment') %>
                 </div>

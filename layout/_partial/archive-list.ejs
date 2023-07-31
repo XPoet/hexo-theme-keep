@@ -1,6 +1,6 @@
-<% const postList = createNewArchivePosts(posts_new) %>
+<% const archive_post_list = createNewArchivePosts(archive_posts) %>
 <div class="archive-list-container">
-    <% postList.forEach(postYear => { %>
+    <% archive_post_list.forEach(postYear => { %>
         <section class="archive-item">
             <div class="archive-item-header">
                 <span class="archive-year"><%= postYear.year %></span>
