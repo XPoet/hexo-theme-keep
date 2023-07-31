@@ -3,14 +3,17 @@
        href="<%- url_for(pageObject.prev_link) %>"
     ><%- __('prev') %></a>
 
-    <div class="page-number-box border-box flex-center">
-        <input class="page-number-input border-box base-color-size"
-               type="number"
-               value="<%- page.current %>"
-               min="1"
-               max="<%- page.total %>"
-        ><span class="delimiter base-color-size">/</span><span class="base-color-size"><%- page.total %></span>
-    </div>
+    <% if (page.total > 1) { %>
+        <div class="page-number-box border-box flex-center">
+            <input class="page-number-input border-box base-color-size"
+                   type="number"
+                   value="<%- page.current %>"
+                   min="1"
+                   max="<%- page.total %>"
+            ><span class="delimiter base-color-size">/</span><span class="base-color-size"><%- page.total %></span>
+        </div>
+    <% } %>
+
 
     <a class="btn jump-btn<%= pageObject.next ? ' show' : '' %>"
        href="<%- url_for(pageObject.next_link) %>"

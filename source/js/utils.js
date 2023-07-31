@@ -474,7 +474,13 @@ KEEP.initUtils = () => {
             current = max
           }
 
-          window.location.href = window.location.origin + (current > 1 ? '/page/' + current : '')
+          const tempHref = window.location.href.replace(/\/$/, '').split('/page/')[0]
+
+          if (current === 1) {
+            window.location.href = tempHref
+          } else {
+            window.location.href = tempHref + '/page/' + current
+          }
         })
     },
 
