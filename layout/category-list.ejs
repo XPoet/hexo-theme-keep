@@ -5,8 +5,9 @@
                 class: 'all-category'
             }) %>
         </div>
+
         <div class="category-comments">
-            <% if (page.comment) { %>
+            <% if (page?.comment === true || page?.comments === true) { %>
                 <%- partial('_partial/comment/comment') %>
             <% } %>
         </div>
