@@ -40,6 +40,9 @@ const {
             <%- __js('js/toc.js') %>
         <% } %>
     <% } %>
+    <% if (isCategoriesPage(page.path) === true) { %>
+        <%- __js('js/category-page.js') %>
+    <% } %>
     <% if (isLinksPage(page.path) === true) { %>
         <%- __js('js/links-page.js') %>
     <% } %>

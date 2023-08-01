@@ -100,3 +100,7 @@ hexo.extend.helper.register('isCssFile', function (path) {
 hexo.extend.helper.register('isLinksPage', function (pagePath) {
   return pagePath === 'links/index.html'
 })
+
+hexo.extend.helper.register('isCategoriesPage', function (pagePath) {
+  return pagePath === 'categories/index.html'
+})
