@@ -2,20 +2,19 @@
 const {
     since: f_since,
     icp: f_icp,
-    site_deploy: f_site_deploy,
-    custom_shields: f_custom_shields,
-    style: f_style
+    site_deploy: f_site_deploy
 } = theme.footer
 const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
+const footer_style_type = theme.footer?.shields_style?.enable === true ? 'shields' : 'default'
 const shields_style = 'flat-square'
 const shields_color_list = ['dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue']
 const web_master = bi_author || hexo_author
 %>
 <footer class="footer border-box">
-    <div class="border-box website-info-box <%= f_style %>">
-        <% if (f_style === 'shields') { %>
+    <div class="border-box website-info-box <%= footer_style_type %>">
+        <% if (footer_style_type === 'shields') { %>
             <div class="info-item">
                 <% const since_date = f_since ? f_since + '_--_' + date(new Date(), 'YYYY') : date(new Date(), 'YYYY') %>
                 <a class="shields-item">
@@ -50,34 +49,34 @@ const web_master = bi_author || hexo_author
                     </a>
                 <% } %>
             </div>
-            <% if (f_custom_shields?.enable === true) { %>
+            <% if (theme.footer?.shields_style?.enable === true) { %>
                 <div class="info-item">
-                    <% for (const i in f_custom_shields?.data) { %>
-                        <% if (f_custom_shields?.data[i].img_url) { %>
-                            <a class="shields-item<%= f_custom_shields?.data[i].link_url ? '' : ' no-pointer' %>"
-                               href="<%= f_custom_shields?.data[i].link_url %>"
+                    <% theme.footer?.shields_style?.custom?.forEach((item) => { %>
+                        <% if (item.img_url) { %>
+                            <a class="shields-item<%= item.link_url ? '' : ' no-pointer' %>"
+                               href="<%= item.link_url %>"
                                target="_blank"
                             >
-                                <img src="<%= f_custom_shields?.data[i].img_url %>">
+                                <img src="<%= item.img_url %>">
                             </a>
                         <% } %>
-                    <% } %>
+                    <% }) %>
                 </div>
             <% } %>
         <% } else { %>
-            <div class="copyright-info info-item <%= f_style %>">
+            <div class="copyright-info info-item <%= footer_style_type %>">
                 &copy;&nbsp;<% if (f_since) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= date(new Date(), 'YYYY') %>
                 <% if (web_master) { %>
                     &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/"><%= web_master %></a>
                 <% } %>
             </div>
 
-            <div class="theme-info info-item <%= f_style %>">
+            <div class="theme-info info-item <%= footer_style_type %>">
                 <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
             </div>
 
             <% if (f_icp?.enable && f_icp?.record_code) { %>
-                <div class="icp-info info-item <%= f_style %>">
+                <div class="icp-info info-item <%= footer_style_type %>">
                     <a class="<%= f_icp?.url ? '' : ' no-pointer' %>"
                        target="_blank"
                        href="<%= f_icp?.url %>"
@@ -88,7 +87,7 @@ const web_master = bi_author || hexo_author
             <% } %>
 
             <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
-                <div class="deploy-info info-item <%= f_style %>">
+                <div class="deploy-info info-item <%= footer_style_type %>">
                     <% if (f_site_deploy?.url) { %>
                     <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
                         <% } %>
@@ -103,7 +102,7 @@ const web_master = bi_author || hexo_author
             <% } %>
         <% } %>
 
-        <div class="count-item info-item <%= f_style %>">
+        <div class="count-item info-item <%= footer_style_type %>">
             <%
             let f_temp_total_word;
             try {
