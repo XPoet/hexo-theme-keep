@@ -1,18 +1,22 @@
 <ul class="friends-link-list border-box">
     <% for (const f of theme?.links) { %>
-        <li class="friends-link-item border-box">
-            <a class="a-wrap border-box" href="<%= f.link %>">
-                <div class="avatar border-box flex-center">
-                    <i class="icon fas fa-eye-slash"></i>
-                    <img src="<%= f.avatar %>"
-                         onerror="this.style.display='none'"
-                    >
-                </div>
-                <div class="details border-box text-ellipsis">
-                    <div class="name border-box text-ellipsis"><%= f.name %></div>
-                    <div class="desc border-box text-ellipsis"><%= f.description %></div>
-                </div>
-            </a>
-        </li>
+        <% if (f?.title) { %>
+           <li class="link-type-title text-ellipsis"><i class="fa-solid fa-bars-staggered"></i>&nbsp;<%= f?.title %></li>
+        <% } else { %>
+            <li class="friends-link-item border-box">
+                <a class="a-wrap border-box" href="<%= f?.link %>">
+                    <div class="avatar border-box flex-center">
+                        <i class="icon fas fa-eye-slash"></i>
+                        <img src="<%= f?.avatar %>"
+                             onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="details border-box text-ellipsis">
+                        <div class="name border-box text-ellipsis"><%= f?.name %></div>
+                        <div class="desc border-box text-ellipsis"><%= f?.description %></div>
+                    </div>
+                </a>
+            </li>
+        <% } %>
     <% } %>
 </ul>
