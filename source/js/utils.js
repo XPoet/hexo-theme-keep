@@ -291,7 +291,7 @@ KEEP.initUtils = () => {
     },
 
     setHowLongAgoInHome() {
-      const post = document.querySelectorAll('.home-article-meta-info .home-article-date')
+      const post = document.querySelectorAll('.article-meta-info .home-article-history')
       post &&
         post.forEach((v) => {
           const nowDate = Date.now()

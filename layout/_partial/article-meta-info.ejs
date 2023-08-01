@@ -1,70 +1,87 @@
-<%
-const ami_is_updated = articleObject.date !== articleObject.updated
-%>
-<div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <% if(ami_is_updated) { %>
-            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
-        <% } else { %>
-            <i class="fas fa-edit"></i>&nbsp;
+<div class="article-meta-info-container border-box <%= page_type %>">
+    <div class="article-meta-info border-box">
+        <% if (page_type === 'home') { %>
+            <span class="meta-info-item border-box">
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD') %></span>
+            </span>
         <% } %>
-        <span class="pc"><%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD') %></span>
-        <span class="mobile"><%= date(articleObject.date, is_post() ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD') %></span>
-    </span>
-    <% if (ami_is_updated) { %>
-        <span class="article-update-date article-meta-item">
-        <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc"><%= date(articleObject.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
-    </span>
-    <% } %>
-    <% if (articleObject.categories.length) { %>
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                <% articleObject.categories.forEach((category, i) => { %>
-                    <li>
-                        <%= i === 0 ? '' : '> ' %><a href="<%- url_for(category.path) %>"><%= category.name %></a>&nbsp;
-                    </li>
-                <% }); %>
-            </ul>
-        </span>
-    <% } %>
-    <% if (articleObject.tags.length) { %>
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                <% articleObject.tags.forEach((tag, i) => { %>
-                    <li>
-                        <%= i === 0 ? '' : '| ' %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a>&nbsp;
-                    </li>
-                <% }); %>
-            </ul>
-        </span>
-    <% } %>
 
-    <%
-    let temp_wordcount_count, temp_min2read_count = null
-    try {
-        temp_wordcount_count = wordcount(page.content)
-        temp_min2read_count = min2read(page.content)
-    } catch (e) {
-        temp_wordcount_count = 0
-        temp_min2read_count = 0
-    }
-    %>
-    <% if(is_post() && theme.hasOwnProperty('post') && theme.post.word_count.enable && theme.post.word_count.wordcount && temp_wordcount_count){ %>
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
-        </span>
-    <% } %>
-    <% if(is_post() && theme.hasOwnProperty('post') && theme.post.word_count.enable && theme.post.word_count.min2read && temp_min2read_count){ %>
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span><%= temp_min2read_count %> <%- __('min2read') %></span>
-        </span>
-    <% } %>
-    <% if (is_post() && theme.website_count.busuanzi_count.enable && theme.website_count.busuanzi_count.page_pv) { %>
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
+
+        <% if (page_type === 'post') { %>
+            <% if (theme.post?.datetime.create !== false) { %>
+                <span class="meta-info-item article-date">
+                    <i class="icon fa-regular fa-calendar-plus"></i>&nbsp;
+                    <span class="pc"><%= date(post.date, theme.post?.datetime?.format || 'YYYY-MM-DD HH:mm:ss') %></span>
+                    <span class="mobile"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></span>
+                </span>
+            <% } %>
+
+            <% if (theme.post?.datetime.update !== false) { %>
+                <span class="meta-info-item article-update-date">
+                    <i class="icon fas fa-file-pen"></i>&nbsp;
+                    <span class="pc"><%= date(post.updated, theme.post?.datetime?.format || 'YYYY-MM-DD HH:mm:ss') %></span>
+                </span>
+            <% } %>
+        <% } %>
+
+        <% if ((post.categories.length && theme.home_article.category.enable === true) || page_type === 'post') { %>
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul>
+                    <% post.categories.forEach((category, i) => {
+                        if (theme.home_article.category.limit === 0 || i + 1 <= theme.home_article.category.limit || page_type === 'post') { %>
+                            <li class="category-item">
+                                <% if (i !== 0) { %>
+                                    <span class="category-separator"><i class="icon fas fa-angle-right"></i></span>
+                                <% } %>
+                                <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </span>
+        <% } %>
+
+        <% if ((post.tags.length && theme.home_article.tag.enable === true) || page_type === 'post') { %>
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul>
+                    <% post.tags.forEach((tag, i) => {
+                        if (theme.home_article.tag.limit === 0 || i + 1 <= theme.home_article.tag.limit || page_type === 'post') { %>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </span>
+        <% } %>
+
+        <%
+            let temp_wordcount_count, temp_min2read_count = null
+            try {
+                temp_wordcount_count = wordcount(page.content)
+                temp_min2read_count = min2read(page.content)
+            } catch (e) {
+                temp_wordcount_count = 0
+                temp_min2read_count = 0
+            }
+        %>
+        <% if(page_type === 'post' && theme?.post?.word_count.wordcount === true && temp_wordcount_count){ %>
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
+            </span>
+        <% } %>
+        <% if(page_type === 'post' && theme?.post?.word_count.min2read === true && temp_min2read_count){ %>
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span><%= temp_min2read_count %> <%- __('min2read') %></span>
+            </span>
+        <% } %>
+        <% if (page_type === 'post' && theme?.website_count?.busuanzi_count.enable === true && theme?.website_count?.busuanzi_count.page_pv === true) { %>
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        <% } %>
+    </div>
+
+    <% if (page_type === 'home') { %>
+        <a class="home-read-more" href="<%- url_for(post.path) %>"><%- __('read_more') %>&nbsp;<i class="icon fas fa-angles-right"></i></a>
     <% } %>
 </div>

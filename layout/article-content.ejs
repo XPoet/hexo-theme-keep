@@ -21,14 +21,14 @@
                             <% } %>
                         </div>
                         <div class="meta-info">
-                            <%- partial('_partial/article-meta-info', { articleObject: page, index: true }) %>
+                            <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                         </div>
                     </div>
                 </div>
             <% } else { %>
                 <div class="article-header-meta-info">
                     <div class="meta-info">
-                        <%- partial('_partial/article-meta-info', { articleObject: page, index: true }) %>
+                        <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                     </div>
                 </div>
             <% } %>

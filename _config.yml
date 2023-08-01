@@ -152,12 +152,17 @@ post:
   # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
   # See: https://github.com/willin/hexo-wordcount
   word_count:
-    enable: false       # Option values: true | false
-    wordcount: false    # Word count, one article. Option values: true | false
-    min2read: false     # Time to read, one article. Option values: true | false
+    wordcount: false     # Word count, one article. Option values: true | false
+    min2read: false      # Time to read, one article. Option values: true | false
+
+  # Post datetime
+  datetime:
+    create: true         # Article create time. Option values: true | false
+    update: true         # Article update time. Option values: true | false
+    format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
 
   # Image align position in the post
-  img_align: left  # Option values: left | center
+  img_align: left        # Option values: left | center
 
   # Post copyright info
   copyright_info: false  # Option values: true | false

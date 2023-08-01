@@ -24,17 +24,17 @@
                         <% if (post.excerpt) { %>
                             <%- post.excerpt %>
                         <% } else { %>
-                            <%- truncate(strip_html(post.content), {length: 128}) %>
+                            <%- truncate(strip_html(post.content), { length: 128 }) %>
                         <% } %>
                     </div>
 
-                    <%- partial('_partial/home-article-meta-info', {post: post}) %>
+                    <%- partial('_partial/article-meta-info', { post: post, page_type: 'home' }) %>
                 </div>
             </li>
         <% }) %>
     </ul>
 
     <div class="home-paginator">
-        <%- partial('_partial/paginator', {pageObject: page}) %>
+        <%- partial('_partial/paginator', { pageObject: page }) %>
     </div>
 </div>
