@@ -134,12 +134,11 @@ home_article:
 # ---------------------------------------------------------------------------------------
 post:
   # Author avatar in the post
-  author_avatar:
-    enable: true  # Option values: true | false
+  author_avatar: true  # Option values: true | false
 
   # Author label in the post
   author_label:
-    enable: true  # Option values: true | false
+    enable: true       # Option values: true | false
 
     # If true, show Lv1, Lv2, Lv3 ...
     # If false, show custom_label_list
@@ -330,8 +329,13 @@ footer:
       shields_1:
         link_url:        # Your link url, Can be null
         img_url:         # Shields image url
-      # For example
-      shields_2:
-        link_url: https://github.com/XPoet/hexo-theme-keep
-        img_url: https://img.shields.io/badge/Hexo-Keep%20v3.6.1-blue?style=flat-square&logo=hexo
+
+      # e.g.
+      # shields_1:
+      #   link_url: https://github.com/XPoet/hexo-theme-keep
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.6.1-blue?style=flat-square&logo=hexo
+      # shields_2:
+      #   link_url: https://github.com/XPoet/hexo-theme-keep
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.6.1-blue?style=flat-square&logo=hexo
+
       # Can add more ...

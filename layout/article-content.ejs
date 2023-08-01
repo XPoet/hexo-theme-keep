@@ -8,7 +8,7 @@
 
             <% if (theme.base_info.author || config.author) { %>
                 <div class="article-header border-box">
-                    <% if (theme.hasOwnProperty('post') && theme.post?.author_avatar.enable === true) { %>
+                    <% if (theme.hasOwnProperty('post') && theme.post?.author_avatar === true) { %>
                         <div class="avatar-box border-box">
                             <%- image_tag(theme.style.avatar) %>
                         </div>
