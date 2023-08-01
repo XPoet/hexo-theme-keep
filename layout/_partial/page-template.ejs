@@ -3,26 +3,26 @@ const { type: p_type, title: p_title, content: p_content } = page
 const { menu: t_menu, links: t_links } = theme
 %>
 <div class="fade-in-down-animation">
-    <div class="page-template-container">
+    <div class="page-template-container border-box">
         <%
-          const isLoadFriendsLink = (
+          const is_render_friends_link = (
                   t_menu?.Links
                   && t_links
                   && (p_type === 'links' || p_type === 'link' || p_title === 'links' || p_title === 'link')
           )
         %>
-        <% if (isLoadFriendsLink) { %>
+        <% if (is_render_friends_link) { %>
             <%- partial('_partial/friends-link') %>
         <% } %>
-        <div class="page-template-content keep-markdown-body">
-            <% if (isLoadFriendsLink || p_content) { %>
+        <div class="page-template-content border-box keep-markdown-body">
+            <% if (is_render_friends_link || p_content) { %>
                 <%- p_content %>
             <% } else { %>
                 <h1><%- p_title %></h1>
             <% } %>
         </div>
         <% if (page?.comment === true) { %>
-            <div class="page-template-comments">
+            <div class="page-template-comments border-box">
                 <%- partial('_partial/comment/comment') %>
             </div>
         <% } %>
