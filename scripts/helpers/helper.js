@@ -88,3 +88,11 @@ hexo.extend.helper.register('__css', function (path) {
   const _css = hexo.extend.helper.get('css').bind(hexo)
   return enable ? getSourceCdnUrl('css', this.theme, path) : _css(path)
 })
+
+hexo.extend.helper.register('isJsFile', function (path) {
+  return /\.js$/i.test(path)
+})
+
+hexo.extend.helper.register('isCssFile', function (path) {
+  return /\.css$/i.test(path)
+})

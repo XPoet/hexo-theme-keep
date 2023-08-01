@@ -68,15 +68,15 @@ style:
     font_color:
 
     # If enable hitokoto, first screen description is different every time when you enter the site
-    hitokoto: false  # Option values: true | false
+    hitokoto: false      # Option values: true | false
 
   # Page scroll style settings
   scroll:
     # Show progress bar in top when page scroll
-    progress_bar: false # Option values: true | false
+    progress_bar: false  # Option values: true | false
 
     # Show percent when page scroll
-    percent: false      # Option values: true | false
+    percent: false       # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -334,5 +334,23 @@ footer:
       #
       # - link_url: https://github.com/XPoet/hexo-theme-keep
       #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.6.2-red?style=flat-square&logo=hexo
+      #
+      # - ...
 
-      # Can add more ...
+# ---------------------------------------------------------------------------------------
+# Inject custom CSS and JavaScript files
+# ---------------------------------------------------------------------------------------
+inject:
+  enable: false  # Option values: true | false
+  css:
+    -
+    # e.g.
+    # - /css/test-1.css
+    # - /css/test-2.css
+    # - ...
+  js:
+    -
+    # e.g.
+    # - /js/test-1.js
+    # - /js/test-2.js
+    # - ...
