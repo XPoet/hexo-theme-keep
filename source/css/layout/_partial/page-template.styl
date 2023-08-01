@@ -1,5 +1,5 @@
-$friend-link-item-height = 5rem
-$friend-link-item-height-tablet = 4rem
+$friend-link-item-height = 5.2rem
+$friend-link-item-height-tablet = 4.2rem
 $friend-link-item-border-radius = 0.6rem
 
 .page-template-container {
@@ -32,17 +32,14 @@ $friend-link-item-border-radius = 0.6rem
       .link-type-title {
         grid-column span 2
         margin-top 0.5rem
-        font-size 1.2rem
-      }
+        font-size 1.3rem
+        color var(--text-color-3)
 
-      +keep-mobile() {
-        grid-gap 1rem !important
-        grid-template-columns repeat(1, 1fr) !important
-
-        .link-type-title {
-          grid-column span 1 !important
+        i.fa-solid {
+          color var(--text-color-3)
         }
       }
+
 
       +keep-tablet() {
         grid-gap 1.1rem
@@ -81,6 +78,15 @@ $friend-link-item-border-radius = 0.6rem
       }
 
 
+      +keep-mobile() {
+        grid-gap 1rem !important
+        grid-template-columns repeat(1, 1fr) !important
+
+        .link-type-title {
+          grid-column span 1 !important
+        }
+      }
+
 
       .friends-link-item {
         width 100%
@@ -95,7 +101,7 @@ $friend-link-item-border-radius = 0.6rem
 
           .avatar {
             img {
-              transform scale(1.1)
+              transform scale(1.12)
             }
           }
         }
@@ -122,6 +128,7 @@ $friend-link-item-border-radius = 0.6rem
               height 100%
               object-fit cover
               transform-origin center center
+              background-color var(--background-color-2)
               transition-t("transform", "0.1", "0.8", "linear")
             }
 
@@ -139,7 +146,7 @@ $friend-link-item-border-radius = 0.6rem
             justify-content space-between
             width 100%
             height 100%
-            padding 0.7rem 1rem
+            padding 0.8rem 1rem
 
             .name {
               width 100%

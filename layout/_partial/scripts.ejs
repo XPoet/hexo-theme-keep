@@ -40,6 +40,9 @@ const {
             <%- __js('js/toc.js') %>
         <% } %>
     <% } %>
+    <% if (isLinksPage(page.path) === true) { %>
+        <%- __js('js/links-page.js') %>
+    <% } %>
 </div>
 
 <% if (t_pjax?.enable === true) { %>
