@@ -4,7 +4,9 @@
             <li class="home-article-item">
 
                 <% if (post?.cover) { %>
-                    <div class="home-article-item-top border-box">
+                    <div class="home-article-item-top border-box"
+                         style="height: <%= post?.cover_height ? post?.cover_height + 'px' : '8rem' %>"
+                    >
                         <img class="cover-img" src="<%= post.cover %>" alt="<%= post.title %>">
                     </div>
                 <% } %>
