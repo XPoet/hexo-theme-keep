@@ -191,7 +191,10 @@ toc:
   expand_all: false  # Option values: true | false
 
   # If true, auto open TOC every time when you enter the article page
-  init_open: true   # Option values: true | false
+  init_open: true    # Option values: true | false
+
+  # TOC layout on article page
+  layout: right      # Option values: left | right
 
 # ---------------------------------------------------------------------------------------
 # Website count

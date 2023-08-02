@@ -13,7 +13,7 @@ function linksPageHandle() {
   }
 
   friendsLinkBoxDom.style.gridTemplateColumns = `repeat(${columns}, 1fr)`
-  linkTypeDoms.forEach(ltd => {
+  linkTypeDoms.forEach((ltd) => {
     ltd.style.gridColumn = `span ${columns}`
   })
 }

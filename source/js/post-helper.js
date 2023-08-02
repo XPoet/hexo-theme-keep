@@ -51,8 +51,11 @@ function initToggleShowToc() {
         offsetX = 3
       }
 
+      const layout = KEEP.theme_config.toc?.layout === 'left' ? 'right' : 'left'
       this.postToolsDom.style.opacity = `1`
-      this.postToolsDom.style.left = `calc((100vw - ${mainContainerWidth}px) / 2 - ${offsetX}rem)`
+      this.postToolsDom.style[
+        layout
+      ] = `calc((100vw - ${mainContainerWidth}px) / 2 - ${offsetX}rem)`
     },
 
     initSetPostToolsLeft() {

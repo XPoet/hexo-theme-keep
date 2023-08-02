@@ -6,10 +6,8 @@ $toc-container-width = 15rem
 
 
 .post-page-container {
-  position relative
   display flex
   justify-content space-between
-  box-sizing border-box
   width 100%
   height 100%
 
@@ -37,10 +35,11 @@ $toc-container-width = 15rem
 
 
   .article-content-container {
-    position relative
-    box-sizing border-box
+    order 0
     width 100%
     height 100%
+
+
     keep-container(false, 0, 0, 2rem, 2rem)
 
     +keep-mobile() {
@@ -279,11 +278,14 @@ $toc-container-width = 15rem
     position sticky
     top $header-height + $component-spacing-value
     display none
+    flex-shrink 0
+    order hexo-config('toc.layout') == 'left' ? -1 : 1
     box-sizing border-box
     width $toc-container-width
     max-height 'calc(100vh - %s)' % ($header-height + $component-spacing-value)
     padding 2rem 0 2rem 1.4rem
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
+
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value

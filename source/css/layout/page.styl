@@ -1,6 +1,6 @@
+$post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+
 .page-container {
-  position relative
-  box-sizing border-box
   width 100%
   height auto
   background var(--background-color-1)
@@ -134,10 +134,16 @@
   .post-tools {
     position fixed
     top $header-height + $component-spacing-value
-    left 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
+
+    if (hexo-config('toc.layout') == 'left') {
+      right $post-tools-offset
+    }
+    else {
+      left $post-tools-offset
+    }
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value

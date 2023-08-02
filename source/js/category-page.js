@@ -10,8 +10,8 @@ function resetCategoriesPage() {
       let domTemplate = `
             <div class="self-category-info">
               <div class="left">${
-        childCategoryInfo ? '<i class="icon fa-solid fa-chevron-right"></i> ' : ''
-      }${categoryNameDom.outerHTML}</div>
+                childCategoryInfo ? '<i class="icon fa-solid fa-chevron-right"></i> ' : ''
+              }${categoryNameDom.outerHTML}</div>
               <div class="right">${categoryCountDom.outerHTML}</div>
             </div>
           `
@@ -33,22 +33,22 @@ function resetCategoriesPage() {
       const childDom = dom.querySelector('.all-category-list-child')
 
       iconDom &&
-      iconDom.addEventListener('click', () => {
-        isExpand = !isExpand
-        if (childDom) {
-          if (isExpand) {
-            childDom.style.height = 'auto'
-            childDom.style.visibility = 'visible'
-            iconDom.classList.add('fa-chevron-down')
-            iconDom.classList.remove('fa-chevron-right')
-          } else {
-            childDom.style.height = '0'
-            childDom.style.visibility = 'hidden'
-            iconDom.classList.add('fa-chevron-right')
-            iconDom.classList.remove('fa-chevron-down')
+        iconDom.addEventListener('click', () => {
+          isExpand = !isExpand
+          if (childDom) {
+            if (isExpand) {
+              childDom.style.height = 'auto'
+              childDom.style.visibility = 'visible'
+              iconDom.classList.add('fa-chevron-down')
+              iconDom.classList.remove('fa-chevron-right')
+            } else {
+              childDom.style.height = '0'
+              childDom.style.visibility = 'hidden'
+              iconDom.classList.add('fa-chevron-right')
+              iconDom.classList.remove('fa-chevron-down')
+            }
           }
-        }
-      })
+        })
     })
   }
 
