@@ -1,7 +1,7 @@
-$logo-title-font-size = 2rem
+$site-name-font-size = 2rem
 $pc-search-icon-font-size = 1.5rem
 $menu-bar-line-height = 2.5px
-$logo-image-box-width = 46px
+$logo-image-box-width = 2.8rem
 
 .header-wrapper {
   display flex
@@ -79,19 +79,19 @@ $logo-image-box-width = 46px
         }
       }
 
-      .logo-title {
+      .site-name {
         color var(--text-color-1)
         font-weight bold
-        font-size $logo-title-font-size
+        font-size $site-name-font-size
         line-height 1
         letter-spacing 1px
 
         +keep-tablet() {
-          font-size $logo-title-font-size * 0.9
+          font-size $site-name-font-size * 0.9
         }
 
         +keep-mobile() {
-          font-size $logo-title-font-size * 0.8
+          font-size $site-name-font-size * 0.8
         }
       }
     }

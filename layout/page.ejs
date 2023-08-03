@@ -1,10 +1,12 @@
 <%- partial('_partial/progress-bar') %>
 <main class="page-container border-box">
 
-    <% if (theme.style.first_screen?.enable === true && is_home() && !page.prev) { %>
+    <!-- home first screen  -->
+    <% if (is_home() && theme.style.first_screen?.enable === true && !page.prev) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 
+    <!-- page content -->
     <div class="page-main-content border-box<%= is_home() ? ' is-home' : '' %>">
         <div class="page-main-content-top">
             <%- partial('_partial/header') %>
@@ -44,7 +46,7 @@
 
                 <% } else { %>
 
-                    <%- partial('_partial/page-template') %>
+                    <%- partial('page-template') %>
 
                 <% } %>
             </div>
@@ -56,22 +58,27 @@
         </div>
     </div>
 
+    <!-- post tools -->
     <% if (is_post()) { %>
         <div class="post-tools">
             <%- partial('_partial/post-tools') %>
         </div>
     <% } %>
 
-    <div class="right-bottom-side-tools">
+    <!-- side tools -->
+    <div class="side-tools">
         <%- partial('_partial/side-tools') %>
     </div>
 
-    <%- partial('_partial/image-viewer') %>
+    <!-- image mask -->
+    <%- partial('_partial/image-mask') %>
 
+    <!-- local search -->
     <% if (theme.local_search?.enable) { %>
         <%- partial('_partial/local-search') %>
     <% } %>
 
+    <!-- tablet toc -->
     <% if (is_post() && page.toc !== false && theme.toc.enable === true) { %>
         <div class="tablet-toc-wrap">
             <div class="tablet-toc">
