@@ -6,8 +6,7 @@
   "scripts": {
     "format": "prettier --write ./source/js/*.js ./scripts",
     "lint:style": "stylelint --fix ./source/css",
-    "git:push": "git push --tag && git push -u origin dev",
-    "git:add": "npm run format && npm run lint:style && git add ."
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -28,10 +27,16 @@
     "url": "https://github.com/XPoet/hexo-theme-keep/issues"
   },
   "homepage": "https://github.com/XPoet/hexo-theme-keep#readme",
+  "lint-staged": {
+    "*.{styl}": "stylelint --fix",
+    "*.{js}": "prettier --write"
+  },
   "devDependencies": {
+    "lint-staged": "^13.2.3",
     "prettier": "^2.7.1",
     "stylelint": "^14.13.0",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-stylus": "^0.17.0"
+    "stylelint-stylus": "^0.17.0",
+    "husky": "^8.0.0"
   }
 }
