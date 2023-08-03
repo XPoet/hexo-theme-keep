@@ -43,7 +43,7 @@ $toc-container-width = 15rem
     keep-container(false, 0, 0, 2rem, 2rem)
 
     +keep-mobile() {
-      padding 1.2rem 0.2rem
+      padding 1.2rem 0.6rem
       box-shadow none
 
       &:hover {
@@ -137,7 +137,12 @@ $toc-container-width = 15rem
       margin-top $component-spacing-value
       padding-bottom 2rem
       color var(--text-color-3)
+      text-align justify
       word-wrap break-word
+
+      +keep-tablet() {
+        margin-top $component-spacing-value * 0.9
+      }
 
       .article-aging-tips {
         position relative
@@ -161,6 +166,7 @@ $toc-container-width = 15rem
         }
       }
 
+
       if (hexo-config('post.copyright_info') == true || hexo-config('copyright_info.enable') == true) {
         border-bottom 0.1rem dashed var(--border-color)
       }
@@ -180,11 +186,25 @@ $toc-container-width = 15rem
       +keep-mobile() {
         margin-top 1.2rem
         font-size 1rem
+
+        .tag-item {
+          margin 0 0.2rem
+
+          .icon {
+            margin-right 0.1rem
+            font-size 0.8rem
+          }
+        }
       }
 
 
       .tag-item {
         margin 0 0.25rem
+
+        .icon {
+          margin-right 0.2rem
+          font-size 0.92rem
+        }
       }
     }
 

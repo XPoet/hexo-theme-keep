@@ -6,8 +6,6 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
   background var(--background-color-1)
 
   .page-main-content {
-    position relative
-    box-sizing border-box
     padding-top $header-height
 
     &.is-home {
@@ -90,7 +88,6 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     .page-main-content-middle {
       display flex
       justify-content center
-      box-sizing border-box
       width 100%
       padding $component-spacing-value 0
 
@@ -103,8 +100,6 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
       }
 
       .main-content {
-        position relative
-        box-sizing border-box
         width $main-content-width
         max-width $content-max-width
         height 100%
@@ -147,21 +142,11 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value
-
-      +keep-tablet() {
-        top $header-shrink-height * 0.9 + $component-spacing-value
-      }
     }
 
 
     +keep-tablet() {
-      top $header-height * 0.9 + $component-spacing-value
-      transform scale(0.82)
-    }
-
-
-    +keep-mobile() {
-      display none
+      display none !important
     }
   }
 
@@ -170,5 +155,37 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     position fixed
     right 0
     bottom 5%
+  }
+
+
+  .tablet-toc-wrap {
+    position fixed
+    top 0
+    right 0
+    z-index $z-index-10
+    box-sizing border-box
+    width 100%
+    height 100%
+    background rgba(0, 0, 0, 0)
+    visibility hidden
+    transition-t("visibility", "0", "0.2", "ease")
+
+
+    .tablet-toc {
+      position absolute
+      top 0
+      left 0
+      box-sizing border-box
+      width 22rem
+      height 100%
+      padding 1.2rem 1rem
+      background var(--background-color-1)
+      transform translateX(-100%)
+      transition-t("transform", "0", "0.4", "ease")
+
+      +keep-mobile() {
+        width 70%
+      }
+    }
   }
 }

@@ -2,15 +2,15 @@
 
 KEEP.initUtils = () => {
   KEEP.utils = {
-    html_root_dom: document.querySelector('html'),
-    pageContainer_dom: document.querySelector('.page-container'),
-    pageTop_dom: document.querySelector('.page-main-content-top'),
-    firstScreen_dom: document.querySelector('.first-screen-container'),
-    scrollProgressBar_dom: document.querySelector('.scroll-progress-bar'),
-    pjaxProgressBar_dom: document.querySelector('.pjax-progress-bar'),
-    pjaxProgressIcon_dom: document.querySelector('.pjax-progress-icon'),
-    back2TopButton_dom: document.querySelector('.tool-scroll-to-top'),
-    headerWrapper_dom: document.querySelector('.header-wrapper'),
+    rootHtmlDom: document.querySelector('html'),
+    pageContainerDom: document.querySelector('.page-container'),
+    pageTopDom: document.querySelector('.page-main-content-top'),
+    firstScreenDom: document.querySelector('.first-screen-container'),
+    scrollProgressBarDom: document.querySelector('.scroll-progress-bar'),
+    pjaxProgressBarDom: document.querySelector('.pjax-progress-bar'),
+    pjaxProgressIcon: document.querySelector('.pjax-progress-icon'),
+    back2TopBtn: document.querySelector('.tool-scroll-to-top'),
+    headerWrapperDom: document.querySelector('.header-wrapper'),
 
     innerHeight: window.innerHeight,
     pjaxProgressBarTimer: null,
@@ -39,34 +39,34 @@ KEEP.initUtils = () => {
 
       if (this.isHasScrollProgressBar) {
         const ProgressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
-        this.scrollProgressBar_dom.style.visibility = percent === 0 ? 'hidden' : 'visible'
-        this.scrollProgressBar_dom.style.width = `${ProgressPercent}%`
+        this.scrollProgressBarDom.style.visibility = percent === 0 ? 'hidden' : 'visible'
+        this.scrollProgressBarDom.style.width = `${ProgressPercent}%`
       }
 
       if (this.isHasScrollPercent) {
-        const percent_dom = this.back2TopButton_dom.querySelector('.percent')
+        const percentDom = this.back2TopBtn.querySelector('.percent')
         if (percent === 0 || percent === undefined) {
-          this.back2TopButton_dom.classList.remove('show')
+          this.back2TopBtn.classList.remove('show')
         } else {
-          this.back2TopButton_dom.classList.add('show')
-          percent_dom.innerHTML = percent.toFixed(0)
+          this.back2TopBtn.classList.add('show')
+          percentDom.innerHTML = percent.toFixed(0)
         }
       }
 
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTop_dom.classList.add('hide')
+        this.pageTopDom.classList.add('hide')
         if (this.isHeaderTransparent) {
-          this.headerWrapper_dom.classList.remove('transparent-1', 'transparent-2')
+          this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
         }
       } else {
-        this.pageTop_dom.classList.remove('hide')
+        this.pageTopDom.classList.remove('hide')
         if (this.isHeaderTransparent) {
-          if (scrollTop <= this.headerWrapper_dom.getBoundingClientRect().height) {
-            this.headerWrapper_dom.classList.remove('transparent-2')
-            this.headerWrapper_dom.classList.add('transparent-1')
+          if (scrollTop <= this.headerWrapperDom.getBoundingClientRect().height) {
+            this.headerWrapperDom.classList.remove('transparent-2')
+            this.headerWrapperDom.classList.add('transparent-1')
           } else if (scrollTop < this.innerHeight) {
-            this.headerWrapper_dom.classList.add('transparent-2')
+            this.headerWrapperDom.classList.add('transparent-2')
           }
         }
       }
@@ -121,7 +121,7 @@ KEEP.initUtils = () => {
       }
 
       const setFontSize = (fontSizeLevel) => {
-        this.html_root_dom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
+        this.rootHtmlDom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
         KEEP.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
@@ -161,7 +161,7 @@ KEEP.initUtils = () => {
 
     // init page height handle
     initPageHeightHandle() {
-      if (this.firstScreen_dom) return
+      if (this.firstScreenDom) return
       const temp_h1 = this.getElementHeight('.page-main-content-top')
       const temp_h2 = this.getElementHeight('.page-main-content-middle')
       const temp_h3 = this.getElementHeight('.page-main-content-bottom')
@@ -304,40 +304,40 @@ KEEP.initUtils = () => {
     pjaxProgressBarStart() {
       this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer)
       if (this.isHasScrollProgressBar) {
-        this.scrollProgressBar_dom.classList.add('hide')
+        this.scrollProgressBarDom.classList.add('hide')
       }
 
-      this.pjaxProgressBar_dom.style.width = '0'
-      this.pjaxProgressIcon_dom.classList.add('show')
+      this.pjaxProgressBarDom.style.width = '0'
+      this.pjaxProgressIcon.classList.add('show')
 
       let width = 1
       const maxWidth = 99
 
-      this.pjaxProgressBar_dom.classList.add('show')
-      this.pjaxProgressBar_dom.style.width = width + '%'
+      this.pjaxProgressBarDom.classList.add('show')
+      this.pjaxProgressBarDom.style.width = width + '%'
 
       this.pjaxProgressBarTimer = setInterval(() => {
         width += 5
         if (width > maxWidth) width = maxWidth
-        this.pjaxProgressBar_dom.style.width = width + '%'
+        this.pjaxProgressBarDom.style.width = width + '%'
       }, 100)
     },
 
     // loading progress bar end
     pjaxProgressBarEnd() {
       this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer)
-      this.pjaxProgressBar_dom.style.width = '100%'
+      this.pjaxProgressBarDom.style.width = '100%'
 
       const temp_1 = setTimeout(() => {
-        this.pjaxProgressBar_dom.classList.remove('show')
-        this.pjaxProgressIcon_dom.classList.remove('show')
+        this.pjaxProgressBarDom.classList.remove('show')
+        this.pjaxProgressIcon.classList.remove('show')
 
         if (this.isHasScrollProgressBar) {
-          this.scrollProgressBar_dom.classList.remove('hide')
+          this.scrollProgressBarDom.classList.remove('hide')
         }
 
         const temp_2 = setTimeout(() => {
-          this.pjaxProgressBar_dom.style.width = '0'
+          this.pjaxProgressBarDom.style.width = '0'
           clearTimeout(temp_1), clearTimeout(temp_2)
         }, 200)
       }, 200)

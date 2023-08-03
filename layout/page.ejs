@@ -5,15 +5,14 @@
         <%- partial('_partial/first-screen') %>
     <% } %>
 
-    <div class="page-main-content<%= is_home() ? ' is-home' : '' %>">
-
+    <div class="page-main-content border-box<%= is_home() ? ' is-home' : '' %>">
         <div class="page-main-content-top">
             <%- partial('_partial/header') %>
         </div>
 
-        <div class="page-main-content-middle">
+        <div class="page-main-content-middle border-box">
 
-            <div class="main-content">
+            <div class="main-content border-box">
 
                 <% if (is_home()) { %>
 
@@ -52,7 +51,7 @@
 
         </div>
 
-        <div class="page-main-content-bottom">
+        <div class="page-main-content-bottom border-box">
             <%- partial('_partial/footer') %>
         </div>
     </div>
@@ -73,6 +72,13 @@
         <%- partial('_partial/local-search') %>
     <% } %>
 
+    <% if (is_post() && page.toc !== false && theme.toc.enable === true) { %>
+        <div class="tablet-toc-wrap">
+            <div class="tablet-toc">
+                <%- partial('_partial/toc') %>
+            </div>
+        </div>
+    <% } %>
 </main>
 
 

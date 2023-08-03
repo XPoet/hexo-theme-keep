@@ -40,7 +40,7 @@ function initTOC() {
                 complete: () => {
                   history.pushState(null, document.title, element.href)
                   setTimeout(() => {
-                    KEEP.utils.pageTop_dom.classList.add('hide')
+                    KEEP.utils.pageTopDom.classList.add('hide')
                   }, 150)
                 }
               })
