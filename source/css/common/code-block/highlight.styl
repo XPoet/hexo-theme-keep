@@ -1,6 +1,6 @@
 @import "code-theme.styl"
 
-$code-block {
+.code-block {
   margin 1.5rem 0
   padding 0
   overflow auto
@@ -17,6 +17,7 @@ code {
   font-family "Source Code Pro", consolas, Menlo
 }
 
+
 code {
   padding 0.4rem
   color var(--code-foreground)
@@ -26,8 +27,9 @@ code {
   border-radius 0.2rem
 }
 
+
 pre {
-  @extend $code-block
+  @extend .code-block
   padding 0.6rem
 
   code {
@@ -38,8 +40,10 @@ pre {
   }
 }
 
+
 .highlight {
-  @extend $code-block
+  @extend .code-block
+
   border-bottom-right-radius 0.1rem
   border-bottom-left-radius 0.1rem
 
@@ -63,6 +67,7 @@ pre {
     border none
   }
 
+
   figcaption {
     margin-bottom 1rem
     color var(--highlight-foreground)
@@ -79,6 +84,7 @@ pre {
     }
   }
 
+
   .gutter pre {
     padding-right 0.6rem
     padding-left 0.6rem
@@ -87,12 +93,14 @@ pre {
     background-color var(--highlight-gutter-bg-color)
   }
 
+
   .code pre {
     width 100%
     padding-right 0.6rem
     padding-left 0.6rem
     background-color var(--highlight-background)
   }
+
 
   .line {
     height 1.5rem
@@ -123,6 +131,7 @@ pre {
   }
 }
 
+
 .gist table {
   width auto
 
@@ -131,20 +140,23 @@ pre {
   }
 }
 
+
 pre .deletion {
   background var(--highlight-deletion)
 }
+
 
 pre .addition {
   background var(--highlight-addition)
 }
 
+
 pre .meta {
   color var(--highlight-purple)
 }
 
-pre {
 
+pre {
   .comment {
     color var(--highlight-comment)
   }
