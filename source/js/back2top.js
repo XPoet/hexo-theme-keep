@@ -4,7 +4,7 @@ KEEP.initBack2Top = () => {
   KEEP.utils = {
     ...KEEP.utils,
 
-    back2BottomButton_dom: document.querySelector('.tool-scroll-to-bottom'),
+    back2BottomBtn: document.querySelector('.tool-scroll-to-bottom'),
 
     back2top() {
       const scrollTopTimer = setInterval(function () {
@@ -35,13 +35,13 @@ KEEP.initBack2Top = () => {
     },
 
     initBack2Top() {
-      this.back2TopButton_dom.addEventListener('click', () => {
+      this.back2TopBtn.addEventListener('click', () => {
         this.back2top()
       })
     },
 
     initBack2Bottom() {
-      this.back2BottomButton_dom.addEventListener('click', () => {
+      this.back2BottomBtn.addEventListener('click', () => {
         this.back2Bottom()
       })
     }

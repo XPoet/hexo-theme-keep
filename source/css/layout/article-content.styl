@@ -6,16 +6,14 @@ $toc-container-width = 15rem
 
 
 .post-page-container {
-  position relative
   display flex
   justify-content space-between
-  box-sizing border-box
   width 100%
   height 100%
 
 
   &.show-toc {
-    .toc-content-container {
+    .pc-post-toc {
       display block
     }
 
@@ -26,7 +24,7 @@ $toc-container-width = 15rem
 
 
   +keep-tablet() {
-    .toc-content-container {
+    .pc-post-toc {
       display none !important
     }
 
@@ -37,14 +35,15 @@ $toc-container-width = 15rem
 
 
   .article-content-container {
-    position relative
-    box-sizing border-box
+    order 0
     width 100%
     height 100%
+
+
     keep-container(false, 0, 0, 2rem, 2rem)
 
     +keep-mobile() {
-      padding 1.2rem 0.2rem
+      padding 1.2rem 0.6rem
       box-shadow none
 
       &:hover {
@@ -69,19 +68,15 @@ $toc-container-width = 15rem
 
 
     .article-header {
-      position relative
-      box-sizing border-box
+      display flex
+      justify-content flex-start
       width 100%
-      height $avatarWidth
-      padding-left $avatarWidth
 
-      .avatar {
-        position absolute
-        top 0
-        left 0
-        box-sizing border-box
+      .avatar-box {
+        flex-shrink 0
         width $avatarWidth
         height $avatarWidth
+        margin-right 0.8rem
         padding 0.1rem
         border 1px solid var(--border-color)
         border-radius 50%
@@ -95,14 +90,13 @@ $toc-container-width = 15rem
       }
 
 
-      .info {
+      .info-box {
         display flex
         flex-direction column
         justify-content space-between
         box-sizing border-box
         width 100%
         height 100%
-        margin-left 0.8rem
         padding 0.2rem 0
 
         .author {
@@ -143,7 +137,12 @@ $toc-container-width = 15rem
       margin-top $component-spacing-value
       padding-bottom 2rem
       color var(--text-color-3)
+      text-align justify
       word-wrap break-word
+
+      +keep-tablet() {
+        margin-top $component-spacing-value * 0.9
+      }
 
       .article-aging-tips {
         position relative
@@ -167,6 +166,7 @@ $toc-container-width = 15rem
         }
       }
 
+
       if (hexo-config('post.copyright_info') == true || hexo-config('copyright_info.enable') == true) {
         border-bottom 0.1rem dashed var(--border-color)
       }
@@ -186,11 +186,25 @@ $toc-container-width = 15rem
       +keep-mobile() {
         margin-top 1.2rem
         font-size 1rem
+
+        .tag-item {
+          margin 0 0.2rem
+
+          .icon {
+            margin-right 0.1rem
+            font-size 0.8rem
+          }
+        }
       }
 
 
       .tag-item {
         margin 0 0.25rem
+
+        .icon {
+          margin-right 0.2rem
+          font-size 0.92rem
+        }
       }
     }
 
@@ -272,10 +286,6 @@ $toc-container-width = 15rem
 
 
       .post-nav-title-item {
-        overflow hidden
-        white-space nowrap
-        text-overflow ellipsis
-
         +keep-tablet() {
           display none
         }
@@ -284,15 +294,18 @@ $toc-container-width = 15rem
   }
 
 
-  .toc-content-container {
+  .pc-post-toc {
     position sticky
     top $header-height + $component-spacing-value
     display none
+    flex-shrink 0
+    order hexo-config('toc.layout') == 'left' ? -1 : 1
     box-sizing border-box
     width $toc-container-width
     max-height 'calc(100vh - %s)' % ($header-height + $component-spacing-value)
     padding 2rem 0 2rem 1.4rem
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
+
 
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value

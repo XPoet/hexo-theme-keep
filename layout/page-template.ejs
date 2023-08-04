@@ -1,0 +1,28 @@
+<%
+const { type: p_type, title: p_title, content: p_content } = page
+const { menu: t_menu, links: t_links } = theme
+const is_render_friends_link = (
+        t_menu?.Links
+        && t_links
+        && (p_title.toLowerCase() === 'links' || p_title.toLowerCase() === 'link')
+)
+%>
+<div class="fade-in-down-animation">
+    <div class="page-template-container border-box">
+        <% if (is_render_friends_link) { %>
+            <%- partial('_partial/friends-link') %>
+        <% } %>
+        <div class="page-template-content border-box keep-markdown-body">
+            <% if (is_render_friends_link || p_content) { %>
+                <%- p_content %>
+            <% } else { %>
+                <h1><%= p_title %></h1>
+            <% } %>
+        </div>
+        <% if (page?.comment === true) { %>
+            <div class="page-template-comments border-box">
+                <%- partial('_partial/comment/comment') %>
+            </div>
+        <% } %>
+    </div>
+</div>

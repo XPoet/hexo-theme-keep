@@ -9,7 +9,6 @@ next_posts: 下一篇
 page: 第 %d 页
 recent_posts: 最新文章
 share: 分享
-powered_by: "由 %s 驱动"
 theme: 主题
 rss_feed: RSS Feed
 category: 分类
@@ -23,8 +22,6 @@ home: 首页
 archive: 归档
 archives: 归档
 about: 关于
-site_uv: 访问人数
-site_pv: 总访问量
 links: 友链
 link: 友链
 top: 顶置
@@ -72,12 +69,17 @@ ago:
   week: "%s 周前"
   month: "%s 个月前"
   year: "%s 年前"
-footer_deploy: "本站由 %s 提供部署服务"
-deploy_provider:
-  github: GitHub Pages
-  vercel: Vercel
-  netlify: Netlify
-  gitee: Gitee Pages
-  aliyun: 阿里云
-  tencent_cloud: 腾讯云
-  upyun: 又拍云
+footer:
+  powered_by: "由&nbsp;%s&nbsp;驱动"
+  site_uv: 访问人数
+  site_pv: 总访问量
+  deploy: "本站由 %s 提供部署服务"
+  deploy_provider:
+    github: GitHub Pages
+    vercel: Vercel
+    netlify: Netlify
+    gitee: Gitee Pages
+    aliyun: 阿里云
+    tencent_cloud: 腾讯云
+    upyun: 又拍云
+  total_words: 全站总字数

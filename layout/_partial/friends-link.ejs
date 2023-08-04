@@ -1,27 +1,22 @@
-<div class="friends-link-container">
-    <ul class="friends-link-list">
-        <% for (const f of theme.links) { %>
-            <li class="friends-link-item">
-                <a href="<%= f.link %>">
-                    <div class="content">
-                        <div class="avatar radius">
-                            <% if (f.avatar) { %>
-                                <img class="radius"
-                                     src="<%= f.avatar %>"
-                                     onerror="this.style.display='none'"
-                                >
-                            <% } else { %>
-                                <i class="fas fa-user-friends"></i>
-                            <% } %>
-                        </div>
-                        <div class="info">
-                            <div class="name ellipsis"><%= f.name %></div>
-                            <div class="description ellipsis"><%= f.description %></div>
-                        </div>
+<ul class="friends-link-list border-box">
+    <% for (const f of theme?.links) { %>
+        <% if (f?.title) { %>
+           <li class="link-type-title text-ellipsis"><i class="fa-solid fa-users"></i>&nbsp;<%= f?.title %></li>
+        <% } else { %>
+            <li class="friends-link-item border-box">
+                <a class="a-wrap border-box" href="<%= f?.link %>">
+                    <div class="avatar border-box flex-center">
+                        <i class="icon fas fa-eye-slash"></i>
+                        <img src="<%= f?.avatar %>"
+                             onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="details border-box text-ellipsis">
+                        <div class="name border-box text-ellipsis"><%= f?.name %></div>
+                        <div class="desc border-box text-ellipsis"><%= f?.description %></div>
                     </div>
                 </a>
             </li>
         <% } %>
-    </ul>
-    <div class="clear"></div>
-</div>
+    <% } %>
+</ul>

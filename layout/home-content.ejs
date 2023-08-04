@@ -1,32 +1,42 @@
 <div class="home-content-container fade-in-down-animation">
-    <ul class="home-article-list">
+    <ul class="home-article-list border-box">
         <% page.posts.forEach(post => { %>
             <li class="home-article-item">
 
-                <% if (post.sticky) { %>
-                    <i class="fas fa-thumbtack top-icon"></i>
+                <% if (post?.cover) { %>
+                    <div class="home-article-item-top border-box"
+                         style="height: <%= post?.cover_height ? post?.cover_height + 'px' : '8rem' %>"
+                    >
+                        <img class="cover-img" src="<%= post.cover %>" alt="<%= post.title %>">
+                    </div>
                 <% } %>
 
-                <h3 class="home-article-title">
-                    <a href="<%- url_for(post.path) %>">
-                        <%= post.title %>
-                    </a>
-                </h3>
-
-                <div class="home-article-content keep-markdown-body">
-                    <% if (post.excerpt) { %>
-                        <%- post.excerpt %>
-                    <% } else { %>
-                        <%- truncate(strip_html(post.content), {length: 128}) %>
+                <div class="home-article-item-bottom border-box">
+                    <% if (post.sticky) { %>
+                        <i class="fas fa-thumbtack sticky-icon"></i>
                     <% } %>
-                </div>
 
-                <%- partial('_partial/home-article-meta-info', {post: post}) %>
+                    <h3 class="home-article-title">
+                        <a href="<%- url_for(post.path) %>">
+                            <%= post.title %>
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content keep-markdown-body">
+                        <% if (post.excerpt) { %>
+                            <%- post.excerpt %>
+                        <% } else { %>
+                            <%- truncate(strip_html(post.content), { length: 128 }) %>
+                        <% } %>
+                    </div>
+
+                    <%- partial('_partial/article-meta-info', { post: post, page_type: 'home' }) %>
+                </div>
             </li>
         <% }) %>
     </ul>
 
     <div class="home-paginator">
-        <%- partial('_partial/paginator', {pageObject: page}) %>
+        <%- partial('_partial/paginator', { pageObject: page }) %>
     </div>
 </div>

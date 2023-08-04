@@ -1,63 +1,135 @@
 <%
 const {
-  since: f_since,
-  icp: f_icp,
-  site_deploy: f_site_deploy
+    since: f_since,
+    icp: f_icp,
+    site_deploy: f_site_deploy
 } = theme.footer
 const { author: bi_author } = theme.base_info
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
+const footer_style_type = theme.footer?.shields_style?.enable === true ? 'shields' : 'default'
+const shields_style = 'flat-square'
+const shields_color_list = ['dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue']
+const web_master = bi_author || hexo_author
 %>
-<footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            <% if (f_since) { %>
-                <span><%= f_since %></span> -
-            <% } %>
-            <%= date(new Date(), 'YYYY') %>
-            <% if (bi_author || hexo_author) { %>
-                &nbsp;<i class="fas fa-heart icon-animate"></i>
-                &nbsp;<a href="/"><%= bi_author || hexo_author %></a>
-            <% } %>
-        </div>
-        <% if (bsz_enable === true) { %>
-            <script async <%= theme.pjax.enable === true ? 'data-pjax' : '' %>
-                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
-                <% if (bsz_site_uv) { %>
-                    <%- __('site_uv') %>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                <% } %>
-                <% if (bsz_site_pv) { %>
-                    <%- __('site_pv') %>&nbsp;<span id="busuanzi_value_site_pv"></span>
-                <% } %>
-            </div>
-        <% } %>
-        <div class="theme-info info-item">
-            <%- __('powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
-        </div>
-        <% if (f_icp) { %>
-            <div class="icp-info info-item">
-                <a target="_blank" rel="nofollow"
-                   href="https://beian.miit.gov.cn"
-                >
-                    <%= f_icp %>
+<footer class="footer border-box">
+    <div class="border-box website-info-box <%= footer_style_type %>">
+        <% if (footer_style_type === 'shields') { %>
+            <div class="info-item">
+                <% const since_date = f_since ? f_since + '_--_' + date(new Date(), 'YYYY') : date(new Date(), 'YYYY') %>
+                <a class="shields-item">
+                    <img src="https://img.shields.io/badge/Since-<%= since_date %>-<%= shields_color_list[0] %>?style=<%= shields_style %>">
                 </a>
-            </div>
-        <% } %>
-        <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
-            <div class="deploy-info info-item">
-                <% if (f_site_deploy?.url) { %>
-                    <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                <% if (web_master) { %>
+                    <a class="shields-item" href="/">
+                        <img src="https://img.shields.io/badge/WebMaster-<%= web_master %>-<%= shields_color_list[1] %>?style=<%= shields_style %>">
+                    </a>
                 <% } %>
-                    <%- __(
-                            'footer_deploy',
-                            '<span class="tooltip" data-content="' + __('deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
-                    ) %>
-                <% if (f_site_deploy?.url) { %>
+                <% if (f_icp?.enable === true && f_icp?.record_code) { %>
+                    <a class="shields-item<%= f_icp?.url ? '' : ' no-pointer' %>"
+                       target="_blank"
+                       href="<%= f_icp?.url %>"
+                    >
+                        <img src="https://img.shields.io/badge/ICP-<%= f_icp?.record_code %>-<%= shields_color_list[2] %>?style=<%= shields_style %>">
+                    </a>
+                <% } %>
+                <a class="shields-item" href="https://hexo.io" target="_blank">
+                    <img src="https://img.shields.io/badge/Powered_by-Hexo-<%= shields_color_list[3] %>?style=<%= shields_style %>">
+                </a>
+                <a class="shields-item" href="https://github.com/XPoet/hexo-theme-keep" target="_blank">
+                    <img src="https://img.shields.io/badge/Theme-Keep%20v3.7.0-<%= shields_color_list[4] %>?style=<%= shields_style %>">
+                </a>
+                <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+                    <a class="shields-item<%= f_site_deploy?.url ? '' : ' no-pointer' %>"
+                       target="_blank"
+                       rel="nofollow"
+                       href="<%= f_site_deploy?.url %>"
+                    >
+                        <img src="https://img.shields.io/badge/Deploy_in-<%= __('footer.deploy_provider.' + f_site_deploy?.provider) %>-<%= shields_color_list[5] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>
             </div>
+            <% if (theme.footer?.shields_style?.enable === true) { %>
+                <div class="info-item">
+                    <% theme.footer?.shields_style?.custom?.forEach((item) => { %>
+                        <% if (item.img_url) { %>
+                            <a class="shields-item<%= item.link_url ? '' : ' no-pointer' %>"
+                               href="<%= item.link_url %>"
+                               target="_blank"
+                            >
+                                <img src="<%= item.img_url %>">
+                            </a>
+                        <% } %>
+                    <% }) %>
+                </div>
+            <% } %>
+        <% } else { %>
+            <div class="copyright-info info-item <%= footer_style_type %>">
+                &copy;&nbsp;<% if (f_since) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= date(new Date(), 'YYYY') %>
+                <% if (web_master) { %>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/"><%= web_master %></a>
+                <% } %>
+            </div>
+
+            <div class="theme-info info-item <%= footer_style_type %>">
+                <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme') %>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.7.0</a>
+            </div>
+
+            <% if (f_icp?.enable && f_icp?.record_code) { %>
+                <div class="icp-info info-item <%= footer_style_type %>">
+                    <a class="<%= f_icp?.url ? '' : ' no-pointer' %>"
+                       target="_blank"
+                       href="<%= f_icp?.url %>"
+                    >
+                        <%= f_icp?.record_code %>
+                    </a>
+                </div>
+            <% } %>
+
+            <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+                <div class="deploy-info info-item <%= footer_style_type %>">
+                    <% if (f_site_deploy?.url) { %>
+                    <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                        <% } %>
+                        <%- __(
+                                'footer.deploy',
+                                '<span class="tooltip" data-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
+                        ) %>
+                        <% if (f_site_deploy?.url) { %>
+                    </a>
+                    <% } %>
+                </div>
+            <% } %>
         <% } %>
+
+        <div class="count-item info-item <%= footer_style_type %>">
+            <%
+            let f_temp_total_word;
+            try {
+                f_temp_total_word = totalcount(site);
+            } catch (e) {
+                f_temp_total_word = 0;
+            }
+            if (theme.footer?.word_count === true && f_temp_total_word !== 0) { %>
+                <span class="count-box border-box word">
+                    <span class="item-type border-box"><%- __('footer.total_words') %></span>
+                    <span class="item-value border-box word"><%= totalcount(site) %></span>
+                </span>
+            <% } %>
+
+            <% if (bsz_enable === true && bsz_site_uv === true) { %>
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box"><%- __('footer.site_uv') %></span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            <% } %>
+
+            <% if (bsz_enable === true && bsz_site_pv === true) { %>
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box"><%- __('footer.site_pv') %></span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            <% } %>
+        </div>
     </div>
 </footer>

@@ -2,15 +2,13 @@
 
 KEEP.initUtils = () => {
   KEEP.utils = {
-    html_root_dom: document.querySelector('html'),
-    pageContainer_dom: document.querySelector('.page-container'),
-    pageTop_dom: document.querySelector('.page-main-content-top'),
-    firstScreen_dom: document.querySelector('.first-screen-container'),
-    scrollProgressBar_dom: document.querySelector('.scroll-progress-bar'),
-    pjaxProgressBar_dom: document.querySelector('.pjax-progress-bar'),
-    pjaxProgressIcon_dom: document.querySelector('.pjax-progress-icon'),
-    back2TopButton_dom: document.querySelector('.tool-scroll-to-top'),
-    headerWrapper_dom: document.querySelector('.header-wrapper'),
+    rootHtmlDom: document.querySelector('html'),
+    pageTopDom: document.querySelector('.page-main-content-top'),
+    scrollProgressBarDom: document.querySelector('.scroll-progress-bar'),
+    pjaxProgressBarDom: document.querySelector('.pjax-progress-bar'),
+    pjaxProgressIcon: document.querySelector('.pjax-progress-icon'),
+    back2TopBtn: document.querySelector('.tool-scroll-to-top'),
+    headerWrapperDom: document.querySelector('.header-wrapper'),
 
     innerHeight: window.innerHeight,
     pjaxProgressBarTimer: null,
@@ -39,34 +37,34 @@ KEEP.initUtils = () => {
 
       if (this.isHasScrollProgressBar) {
         const ProgressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
-        this.scrollProgressBar_dom.style.visibility = percent === 0 ? 'hidden' : 'visible'
-        this.scrollProgressBar_dom.style.width = `${ProgressPercent}%`
+        this.scrollProgressBarDom.style.visibility = percent === 0 ? 'hidden' : 'visible'
+        this.scrollProgressBarDom.style.width = `${ProgressPercent}%`
       }
 
       if (this.isHasScrollPercent) {
-        const percent_dom = this.back2TopButton_dom.querySelector('.percent')
+        const percentDom = this.back2TopBtn.querySelector('.percent')
         if (percent === 0 || percent === undefined) {
-          this.back2TopButton_dom.classList.remove('show')
+          this.back2TopBtn.classList.remove('show')
         } else {
-          this.back2TopButton_dom.classList.add('show')
-          percent_dom.innerHTML = percent.toFixed(0)
+          this.back2TopBtn.classList.add('show')
+          percentDom.innerHTML = percent.toFixed(0)
         }
       }
 
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTop_dom.classList.add('hide')
+        this.pageTopDom.classList.add('hide')
         if (this.isHeaderTransparent) {
-          this.headerWrapper_dom.classList.remove('transparent-1', 'transparent-2')
+          this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
         }
       } else {
-        this.pageTop_dom.classList.remove('hide')
+        this.pageTopDom.classList.remove('hide')
         if (this.isHeaderTransparent) {
-          if (scrollTop <= this.headerWrapper_dom.getBoundingClientRect().height) {
-            this.headerWrapper_dom.classList.remove('transparent-2')
-            this.headerWrapper_dom.classList.add('transparent-1')
+          if (scrollTop <= this.headerWrapperDom.getBoundingClientRect().height) {
+            this.headerWrapperDom.classList.remove('transparent-2')
+            this.headerWrapperDom.classList.add('transparent-1')
           } else if (scrollTop < this.innerHeight) {
-            this.headerWrapper_dom.classList.add('transparent-2')
+            this.headerWrapperDom.classList.add('transparent-2')
           }
         }
       }
@@ -80,8 +78,8 @@ KEEP.initUtils = () => {
         this.styleHandleWhenScroll()
 
         // TOC scroll handle
-        if (KEEP.theme_config.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
-          KEEP.utils.findActiveIndexByTOC()
+        if (KEEP.theme_config.toc.enable === true && KEEP.utils.hasOwnProperty('activeNav')) {
+          KEEP.utils.activeNav()
         }
 
         // header shrink
@@ -121,7 +119,7 @@ KEEP.initUtils = () => {
       }
 
       const setFontSize = (fontSizeLevel) => {
-        this.html_root_dom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
+        this.rootHtmlDom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
         KEEP.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
@@ -141,12 +139,6 @@ KEEP.initUtils = () => {
       })
     },
 
-    // get dom element height
-    getElementHeight(selectors) {
-      const dom = document.querySelector(selectors)
-      return dom ? dom.getBoundingClientRect().height : 0
-    },
-
     // init has TOC
     initHasToc() {
       const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
@@ -156,23 +148,6 @@ KEEP.initUtils = () => {
       } else {
         this.hasToc = false
         document.body.classList.remove('has-toc')
-      }
-    },
-
-    // init page height handle
-    initPageHeightHandle() {
-      if (this.firstScreen_dom) return
-      const temp_h1 = this.getElementHeight('.page-main-content-top')
-      const temp_h2 = this.getElementHeight('.page-main-content-middle')
-      const temp_h3 = this.getElementHeight('.page-main-content-bottom')
-      const allDomHeight = temp_h1 + temp_h2 + temp_h3
-      const innerHeight = window.innerHeight
-      const pb_dom = document.querySelector('.page-main-content-bottom')
-      if (allDomHeight < innerHeight) {
-        const marginTopValue = Math.floor(innerHeight - allDomHeight)
-        if (marginTopValue > 0) {
-          pb_dom.style.marginTop = `${marginTopValue - 2}px`
-        }
       }
     },
 
@@ -291,7 +266,7 @@ KEEP.initUtils = () => {
     },
 
     setHowLongAgoInHome() {
-      const post = document.querySelectorAll('.home-article-meta-info .home-article-date')
+      const post = document.querySelectorAll('.article-meta-info .home-article-history')
       post &&
         post.forEach((v) => {
           const nowDate = Date.now()
@@ -304,40 +279,40 @@ KEEP.initUtils = () => {
     pjaxProgressBarStart() {
       this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer)
       if (this.isHasScrollProgressBar) {
-        this.scrollProgressBar_dom.classList.add('hide')
+        this.scrollProgressBarDom.classList.add('hide')
       }
 
-      this.pjaxProgressBar_dom.style.width = '0'
-      this.pjaxProgressIcon_dom.classList.add('show')
+      this.pjaxProgressBarDom.style.width = '0'
+      this.pjaxProgressIcon.classList.add('show')
 
       let width = 1
       const maxWidth = 99
 
-      this.pjaxProgressBar_dom.classList.add('show')
-      this.pjaxProgressBar_dom.style.width = width + '%'
+      this.pjaxProgressBarDom.classList.add('show')
+      this.pjaxProgressBarDom.style.width = width + '%'
 
       this.pjaxProgressBarTimer = setInterval(() => {
         width += 5
         if (width > maxWidth) width = maxWidth
-        this.pjaxProgressBar_dom.style.width = width + '%'
+        this.pjaxProgressBarDom.style.width = width + '%'
       }, 100)
     },
 
     // loading progress bar end
     pjaxProgressBarEnd() {
       this.pjaxProgressBarTimer && clearInterval(this.pjaxProgressBarTimer)
-      this.pjaxProgressBar_dom.style.width = '100%'
+      this.pjaxProgressBarDom.style.width = '100%'
 
       const temp_1 = setTimeout(() => {
-        this.pjaxProgressBar_dom.classList.remove('show')
-        this.pjaxProgressIcon_dom.classList.remove('show')
+        this.pjaxProgressBarDom.classList.remove('show')
+        this.pjaxProgressIcon.classList.remove('show')
 
         if (this.isHasScrollProgressBar) {
-          this.scrollProgressBar_dom.classList.remove('hide')
+          this.scrollProgressBarDom.classList.remove('hide')
         }
 
         const temp_2 = setTimeout(() => {
-          this.pjaxProgressBar_dom.style.width = '0'
+          this.pjaxProgressBarDom.style.width = '0'
           clearTimeout(temp_1), clearTimeout(temp_2)
         }, 200)
       }, 200)
@@ -427,6 +402,66 @@ KEEP.initUtils = () => {
       setTimeout(() => {
         init()
       }, 1000)
+    },
+
+    // busuanzi initialize handle
+    siteCountInitialize() {
+      if (KEEP.theme_config?.website_count?.busuanzi_count.enable === true) {
+        const script = document.createElement('script')
+        script.async = true
+        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+        document.body.appendChild(script)
+
+        const getText = (selector) => {
+          return document.querySelector(selector)?.innerText
+        }
+
+        script.onload = () => {
+          setTimeout(() => {
+            if (
+              getText('#busuanzi_value_site_uv') ||
+              getText('#busuanzi_value_site_pv') ||
+              getText('#busuanzi_value_page_pv')
+            ) {
+              const tmpDom1 = document.querySelector('.footer .count-item .uv')
+              const tmpDom2 = document.querySelector('.footer .count-item .pv')
+              const tmpDom3 = document.querySelector('.article-meta-info .article-pv')
+              tmpDom1 && (tmpDom1.style.display = 'flex')
+              tmpDom2 && (tmpDom2.style.display = 'flex')
+              tmpDom3 && (tmpDom3.style.display = 'inline-block')
+            }
+          }, 1000)
+        }
+      }
+    },
+
+    // page number jump handle
+    pageNumberJump() {
+      const inputDom = document.querySelector('.paginator .page-number-input')
+      inputDom &&
+        inputDom.addEventListener('change', (e) => {
+          const min = 1
+          const max = Number(e.target.max)
+          let current = Number(e.target.value)
+
+          if (current <= 0) {
+            inputDom.value = min
+            current = min
+          }
+
+          if (current > max) {
+            inputDom.value = max
+            current = max
+          }
+
+          const tempHref = window.location.href.replace(/\/$/, '').split('/page/')[0]
+
+          if (current === 1) {
+            window.location.href = tempHref
+          } else {
+            window.location.href = tempHref + '/page/' + current
+          }
+        })
     }
   }
 
@@ -442,9 +477,6 @@ KEEP.initUtils = () => {
   // global font adjust
   KEEP.utils.globalFontAdjust()
 
-  // init page height handle
-  KEEP.utils.initPageHeightHandle()
-
   // check whether TOC exists
   KEEP.utils.initHasToc()
 
@@ -456,4 +488,10 @@ KEEP.initUtils = () => {
 
   // insert tooltip content dom
   KEEP.utils.insertTooltipContent()
+
+  // busuanzi initialize
+  KEEP.utils.siteCountInitialize()
+
+  // page number jump handle
+  KEEP.utils.pageNumberJump()
 }

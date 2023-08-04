@@ -1,39 +1,45 @@
 <div class="fade-in-down-animation">
-    <div class="post-page-container">
-        <div class="article-content-container">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
 
             <div class="article-title">
                 <span class="title-hover-animation"><%= page.title %></span>
             </div>
 
-            <% if (theme.base_info.author || config.author) { %>
-                <div class="article-header">
-                    <div class="avatar">
-                        <%- image_tag(theme.style.avatar) %>
-                    </div>
-                    <div class="info">
+            <% if (theme.base_info?.author || config?.author) { %>
+                <div class="article-header border-box">
+                    <% if (theme?.post?.author_avatar !== false) { %>
+                        <div class="avatar-box border-box">
+                            <%- image_tag(theme.style.avatar) %>
+                        </div>
+                    <% } %>
+                    <div class="info-box">
                         <div class="author">
-                            <span class="name"><%= theme.base_info.author || config.author %></span>
-                            <% if (theme.hasOwnProperty('post') && theme.post.author_label.enable === true) { %>
+                            <span class="name"><%= theme.base_info?.author || config?.author %></span>
+                            <% if (theme?.post?.author_label?.enable === true) { %>
                                 <span class="author-label"><%- getAuthorLabel(site.posts.length, theme.post.author_label.auto, theme.post.author_label.custom_label_list) %></span>
                             <% } %>
                         </div>
                         <div class="meta-info">
-                            <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
+                            <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                         </div>
                     </div>
                 </div>
             <% } else { %>
                 <div class="article-header-meta-info">
                     <div class="meta-info">
-                        <%- partial('_partial/article-meta-info', {articleObject: page, index: true}) %>
+                        <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                     </div>
                 </div>
             <% } %>
 
             <div class="article-content keep-markdown-body">
                 <% if (page?.aging === true) { %>
-                    <div class="article-aging-tips" data-update-date="<%= page.updated %>" data-aging-days="<%= page?.aging_days %>">
+                    <div class="article-aging-tips"
+                         data-update-date="<%= page.updated %>"
+                         data-aging-days="<%= page?.aging_days %>"
+                    >
                         <i class="fa-solid fa-circle-exclamation"></i><%- __('article-aging', '<span class="days">0</span>') %>
                     </div>
                 <% } %>
@@ -42,7 +48,7 @@
             </div>
 
             <% if (
-              (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
+                    (theme?.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
             ) { %>
                 <div class="post-copyright-info">
                     <%- partial('_partial/article-copyright-info') %>
@@ -53,7 +59,7 @@
                 <ul class="post-tags-box">
                     <% page.tags.forEach((tag) => { %>
                         <li class="tag-item">
-                            <a href="<%- url_for(tag.path) %>">#<%= tag.name %></a>&nbsp;
+                            <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
                         </li>
                     <% }); %>
                 </ul>
@@ -71,7 +77,7 @@
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item"><%= page.prev.title %></span>
+                                <span class="post-nav-title-item text-ellipsis"><%= page.prev.title %></span>
                                 <span class="post-nav-item"><%= __('prev_posts') %></span>
                             </span>
                             </a>
@@ -84,7 +90,7 @@
                                href="<%= url_for(page.next.path) %>"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item"><%= page.next.title %></span>
+                                <span class="post-nav-title-item text-ellipsis"><%= page.next.title %></span>
                                 <span class="post-nav-item"><%= __('next_posts') %></span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -96,15 +102,15 @@
                 </div>
             <% } %>
 
-            <% if (theme.comment.enable === true && theme.comment.hasOwnProperty(theme.comment.use)) { %>
+            <% if (page?.comment !== false) { %>
                 <div class="comment-container">
                     <%- partial('_partial/comment/comment') %>
                 </div>
             <% } %>
         </div>
 
-        <% if (is_post() && theme.toc.enable === true && page.toc !== false) { %>
-            <div class="toc-content-container">
+        <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>
+            <div class="pc-post-toc">
                 <%- partial('_partial/toc') %>
             </div>
         <% } %>

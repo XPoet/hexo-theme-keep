@@ -36,9 +36,22 @@
     </ul>
 
     <ul class="exposed-tools-list">
+        <% if (is_post() && page.toc !== false && theme.toc.enable === true) { %>
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        <% } %>
+
+        <% if (is_post() && page.comment !== false && theme.comment.enable === true && theme.comment?.use) { %>
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        <% } %>
+
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
+
         <% if (theme.style.scroll.percent === true) { %>
             <li class="tools-item tool-scroll-to-top flex-center">
                 <i class="arrow-up fas fa-arrow-up"></i>

@@ -33,6 +33,13 @@
     <%- __css('font/css/regular.min.css') %>
     <%- __css('font/css/solid.min.css') %>
     <%- __css('font/css/brands.min.css') %>
+    <% if (theme?.inject?.enable === true) { %>
+        <% theme?.inject?.css.forEach((css_path) => { %>
+            <% if (css_path && isCssFile(css_path)) { %>
+                <%- css(css_path) %>
+            <% } %>
+        <% }) %>
+    <% } %>
     <%- exportConfig() %>
 </head>
 

@@ -1,70 +1,91 @@
 <%- partial('_partial/progress-bar') %>
-<main class="page-container">
+<main class="page-container border-box">
 
-    <% if (theme.style.first_screen?.enable === true && is_home() && !page.prev) { %>
+    <!-- home first screen  -->
+    <% if (is_home() && theme.style.first_screen?.enable === true && !page.prev) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 
-    <div class="page-main-content<%= is_home() ? ' is-home' : '' %>">
-
+    <!-- page content -->
+    <div class="page-main-content border-box<%= is_home() ? ' is-home' : '' %>">
         <div class="page-main-content-top">
             <%- partial('_partial/header') %>
         </div>
 
-        <div class="page-main-content-middle">
+        <div class="page-main-content-middle border-box">
 
-            <div class="main-content">
+            <div class="main-content border-box">
 
                 <% if (is_home()) { %>
+
                     <%- partial('home-content') %>
 
                 <% } else if (is_archive()) { %>
+
                     <%- partial('archive-content') %>
 
                 <% } else if (is_post()) { %>
+
                     <%- partial('article-content') %>
 
                 <% } else if (is_category()) { %>
+
                     <%- partial('category-content') %>
 
                 <% } else if (is_tag()) { %>
+
                     <%- partial('tag-content') %>
 
-                <% } else if (page.title === 'category' || page.title === 'categories') { %>
+                <% } else if (page.title.toLowerCase() === 'category' || page.title.toLowerCase() === 'categories') { %>
+
                     <%- partial('category-list') %>
 
-                <% } else if (page.title === 'tag' || page.title === 'tags') { %>
+                <% } else if (page.title.toLowerCase() === 'tag' || page.title.toLowerCase() === 'tags') { %>
+
                     <%- partial('_partial/tagcloud') %>
 
                 <% } else { %>
-                    <%- partial('_partial/page-template') %>
+
+                    <%- partial('page-template') %>
 
                 <% } %>
             </div>
 
         </div>
 
-        <div class="page-main-content-bottom">
+        <div class="page-main-content-bottom border-box">
             <%- partial('_partial/footer') %>
         </div>
     </div>
 
+    <!-- post tools -->
     <% if (is_post()) { %>
         <div class="post-tools">
             <%- partial('_partial/post-tools') %>
         </div>
     <% } %>
 
-    <div class="right-bottom-side-tools">
+    <!-- side tools -->
+    <div class="side-tools">
         <%- partial('_partial/side-tools') %>
     </div>
 
-    <%- partial('_partial/image-viewer') %>
+    <!-- image mask -->
+    <%- partial('_partial/image-mask') %>
 
+    <!-- local search -->
     <% if (theme.local_search?.enable) { %>
         <%- partial('_partial/local-search') %>
     <% } %>
 
+    <!-- tablet toc -->
+    <% if (is_post() && page.toc !== false && theme.toc.enable === true) { %>
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <%- partial('_partial/toc') %>
+            </div>
+        </div>
+    <% } %>
 </main>
 
 

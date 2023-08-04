@@ -9,7 +9,6 @@ next_posts: 下一篇
 page: 第 %d 頁
 recent_posts: 之前的文章
 share: 分享
-powered_by: "%s 框架"
 theme: 主題
 rss_feed: RSS 訂閱
 category: 分類
@@ -23,8 +22,6 @@ home: 首頁
 archive: 歸檔
 archives: 歸檔
 about: 關於
-site_uv: 讀者
-site_pv: 閱覽
 links: 友鏈
 link: 友鏈
 top: 頂端
@@ -72,12 +69,17 @@ ago:
   week: "%s 周前"
   month: "%s 個月前"
   year: "%s 年前"
-footer_deploy: "本站由 %s 提供部署服務"
-deploy_provider:
-  github: GitHub Pages
-  vercel: Vercel
-  netlify: Netlify
-  gitee: Gitee Pages
-  aliyun: 阿裏雲
-  tencent_cloud: 騰訊雲
-  upyun: 又拍雲
+footer:
+  powered_by: "%s&nbsp;框架"
+  site_uv: 讀者
+  site_pv: 閱覽
+  deploy: "本站由 %s 提供部署服務"
+  deploy_provider:
+    github: GitHub Pages
+    vercel: Vercel
+    netlify: Netlify
+    gitee: Gitee Pages
+    aliyun: 阿裏雲
+    tencent_cloud: 騰訊雲
+    upyun: 又拍雲
+  total_words: 全站總字數

@@ -2,7 +2,7 @@
 
 KEEP.initModeToggle = () => {
   KEEP.utils.modeToggle = {
-    modeToggleButton_dom: document.querySelector('.tool-dark-light-toggle'),
+    themeModeToggleBtn: document.querySelector('.tool-dark-light-toggle'),
     iconDom: document.querySelector('.tool-dark-light-toggle i'),
 
     enableLightMode() {
@@ -36,7 +36,7 @@ KEEP.initModeToggle = () => {
     },
 
     initModeToggleButton() {
-      this.modeToggleButton_dom.addEventListener('click', () => {
+      this.themeModeToggleBtn.addEventListener('click', () => {
         const isDark = document.body.classList.contains('dark-mode')
         isDark ? this.enableLightMode() : this.enableDarkMode()
       })

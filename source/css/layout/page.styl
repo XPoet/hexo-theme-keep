@@ -1,13 +1,15 @@
+$post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+
 .page-container {
-  position relative
-  box-sizing border-box
   width 100%
   height auto
   background var(--background-color-1)
 
   .page-main-content {
-    position relative
-    box-sizing border-box
+    display flex
+    flex-direction column
+    justify-content space-between
+    min-height 100vh
     padding-top $header-height
 
     &.is-home {
@@ -90,7 +92,6 @@
     .page-main-content-middle {
       display flex
       justify-content center
-      box-sizing border-box
       width 100%
       padding $component-spacing-value 0
 
@@ -103,8 +104,6 @@
       }
 
       .main-content {
-        position relative
-        box-sizing border-box
         width $main-content-width
         max-width $content-max-width
         height 100%
@@ -134,35 +133,64 @@
   .post-tools {
     position fixed
     top $header-height + $component-spacing-value
-    left 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
 
+    if (hexo-config('toc.layout') == 'left') {
+      right $post-tools-offset
+    }
+    else {
+      left $post-tools-offset
+    }
+
     .header-shrink & {
       top $header-shrink-height + $component-spacing-value
-
-      +keep-tablet() {
-        top $header-shrink-height * 0.9 + $component-spacing-value
-      }
     }
 
 
     +keep-tablet() {
-      top $header-height * 0.9 + $component-spacing-value
-      transform scale(0.82)
-    }
-
-
-    +keep-mobile() {
-      display none
+      display none !important
     }
   }
 
 
-  .right-bottom-side-tools {
+  .side-tools {
     position fixed
     right 0
     bottom 5%
+    box-sizing border-box
+  }
+
+
+  .tablet-post-toc-mask {
+    position fixed
+    top 0
+    right 0
+    z-index $z-index-10
+    box-sizing border-box
+    width 100%
+    height 100%
+    background rgba(0, 0, 0, 0)
+    visibility hidden
+    transition-t("visibility", "0", "0.2", "ease")
+
+
+    .tablet-post-toc {
+      position absolute
+      top 0
+      left 0
+      box-sizing border-box
+      width 22rem
+      height 100%
+      padding 1.2rem 1rem
+      background var(--background-color-1)
+      transform translateX(-100%)
+      transition-t("transform", "0", "0.4", "ease")
+
+      +keep-mobile() {
+        width 70%
+      }
+    }
   }
 }

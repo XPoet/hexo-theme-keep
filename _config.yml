@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.6.1
+## Keep v3.7.0
 ## Preview: https://xpoet.cn
 ## Documents: https://keep-docs.xpoet.cn
 ## Repository: https://github.com/XPoet/hexo-theme-keep
@@ -68,15 +68,15 @@ style:
     font_color:
 
     # If enable hitokoto, first screen description is different every time when you enter the site
-    hitokoto: false  # Option values: true | false
+    hitokoto: false      # Option values: true | false
 
   # Page scroll style settings
   scroll:
     # Show progress bar in top when page scroll
-    progress_bar: false # Option values: true | false
+    progress_bar: false  # Option values: true | false
 
     # Show percent when page scroll
-    percent: false      # Option values: true | false
+    percent: false       # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -133,9 +133,12 @@ home_article:
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/post.html
 # ---------------------------------------------------------------------------------------
 post:
+  # Author avatar in the post
+  author_avatar: true  # Option values: true | false
+
   # Author label in the post
   author_label:
-    enable: true  # Option values: true | false
+    enable: true       # Option values: true | false
 
     # If true, show Lv1, Lv2, Lv3 ...
     # If false, show custom_label_list
@@ -148,12 +151,17 @@ post:
   # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
   # See: https://github.com/willin/hexo-wordcount
   word_count:
-    enable: false       # Option values: true | false
-    wordcount: false    # Word count, one article. Option values: true | false
-    min2read: false     # Time to read, one article. Option values: true | false
+    wordcount: false     # Word count, one article. Option values: true | false
+    min2read: false      # Time to read, one article. Option values: true | false
+
+  # Post datetime
+  datetime:
+    create: true         # Article create time. Option values: true | false
+    update: true         # Article update time. Option values: true | false
+    format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
 
   # Image align position in the post
-  img_align: left  # Option values: left | center
+  img_align: left        # Option values: left | center
 
   # Post copyright info
   copyright_info: false  # Option values: true | false
@@ -182,8 +190,11 @@ toc:
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false  # Option values: true | false
 
-  # If true, open TOC every time when you enter the article page
-  init_open: false   # Option values: true | false
+  # If true, auto open TOC every time when you enter the article page
+  init_open: true    # Option values: true | false
+
+  # TOC layout on article page
+  layout: right      # Option values: left | right
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -214,7 +225,7 @@ local_search:
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
-  use: valine     # Option values: valine | gitalk | twikoo | waline
+  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus
 
   # Valine
   # See: https://github.com/xCss/Valine
@@ -252,6 +263,17 @@ comment:
     reaction: false # Article reactions, Option values: true | false
     version: 2      # Waline version, default use v2
 
+  # Giscus
+  # See: https://github.com/giscus/giscus
+  #      https://giscus.app
+  # Please generate your configuration items in https://giscus.app
+  giscus:
+    repo:
+    repo_id:
+    category: Announcements    # Recommend use Announcements
+    category_id:
+    reactions_enabled: false   # Option values: true | false
+
 # ---------------------------------------------------------------------------------------
 # RSS
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/rss.html
@@ -288,9 +310,50 @@ pjax:
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
-  since: 2020  # The starting year of your website, Can be null
-  icp:         # ICP record number of your website, Can be null
+  since: 2020           # The starting year of your website, Can be null
+  word_count: false     # Option values: true | false
+
+  icp:
+    enable: false                    # Option values: true | false
+    record_code:                     # ICP record code of your website
+    url: https://beian.miit.gov.cn   # Your ICP link url, Can be null
+
   site_deploy:
-    enable: false       # Option values: true | false
-    provider: github    # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
-    url:                # Your deployment provider url, Can be null
+    enable: false        # Option values: true | false
+    provider: github     # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
+    url:                 # Your deployment provider url, Can be null
+
+  # When the footer style is shields, you can customize the shields configuration
+  # See: https://shields.io
+  shields_style:
+    enable: false        # Option values: true | false
+    custom:
+      - link_url:        # Your link url, Can be null
+        img_url:         # Shields image url
+
+      # e.g.
+      # - link_url: https://github.com/XPoet/hexo-theme-keep
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.0-blue?style=flat-square&logo=hexo
+      #
+      # - link_url: https://github.com/XPoet/hexo-theme-keep
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.1-red?style=flat-square&logo=hexo
+      #
+      # - ...
+
+# ---------------------------------------------------------------------------------------
+# Inject custom CSS and JavaScript files
+# ---------------------------------------------------------------------------------------
+inject:
+  enable: false  # Option values: true | false
+  css:
+    -
+    # e.g.
+    # - /css/test-1.css
+    # - /css/test-2.css
+    # - ...
+  js:
+    -
+    # e.g.
+    # - /js/test-1.js
+    # - /js/test-2.js
+    # - ...

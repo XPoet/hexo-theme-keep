@@ -32,11 +32,16 @@ $tools-item-border-radius = 0.1rem
       }
     }
 
+
     +keep-tablet() {
       width $tools-item-width * 0.9
       height $tools-item-width * 0.9
-      margin-bottom 0.2rem
       font-size $tools-item-font-size * 0.9
+
+      &.toggle-show-toc-tablet
+      &.go-to-comments-tablet {
+        display flex !important
+      }
     }
 
     &.rss {
@@ -52,6 +57,11 @@ $tools-item-border-radius = 0.1rem
           box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
         }
       }
+    }
+
+    &.toggle-show-toc-tablet
+    &.go-to-comments-tablet {
+      display none
     }
   }
 
