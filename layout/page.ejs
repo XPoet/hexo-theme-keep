@@ -80,8 +80,8 @@
 
     <!-- tablet toc -->
     <% if (is_post() && page.toc !== false && theme.toc.enable === true) { %>
-        <div class="tablet-toc-wrap">
-            <div class="tablet-toc">
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
                 <%- partial('_partial/toc') %>
             </div>
         </div>

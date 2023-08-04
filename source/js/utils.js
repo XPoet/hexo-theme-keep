@@ -80,8 +80,8 @@ KEEP.initUtils = () => {
         this.styleHandleWhenScroll()
 
         // TOC scroll handle
-        if (KEEP.theme_config.toc.enable && KEEP.utils.hasOwnProperty('findActiveIndexByTOC')) {
-          KEEP.utils.findActiveIndexByTOC()
+        if (KEEP.theme_config.toc.enable === true && KEEP.utils.hasOwnProperty('activeNav')) {
+          KEEP.utils.activeNav()
         }
 
         // header shrink

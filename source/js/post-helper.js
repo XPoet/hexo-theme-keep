@@ -22,18 +22,18 @@ function initToggleShowToc() {
 
       this.toggleShowTocTabletBtn &&
         this.toggleShowTocTabletBtn.addEventListener('click', () => {
-          const tabletTocWrap = document.querySelector('.tablet-toc-wrap')
-          const tabletToc = tabletTocWrap.querySelector('.tablet-toc')
+          const tabletTocMask = document.querySelector('.tablet-post-toc-mask')
+          const tabletToc = tabletTocMask.querySelector('.tablet-post-toc')
 
           document.body.style.overflow = `hidden`
-          tabletTocWrap.style.background = `rgba(0, 0, 0, 0.25)`
-          tabletTocWrap.style.visibility = `visible`
+          tabletTocMask.style.background = `rgba(0, 0, 0, 0.25)`
+          tabletTocMask.style.visibility = `visible`
           tabletToc.style.transform = `translateX(0)`
 
-          tabletTocWrap.addEventListener('click', () => {
+          tabletTocMask.addEventListener('click', () => {
             document.body.style.overflow = ''
-            tabletTocWrap.style.background = `rgba(0, 0, 0, 0)`
-            tabletTocWrap.style.visibility = `hidden`
+            tabletTocMask.style.background = `rgba(0, 0, 0, 0)`
+            tabletTocMask.style.visibility = `hidden`
             tabletToc.style.transform = `translateX(-100%)`
           })
         })

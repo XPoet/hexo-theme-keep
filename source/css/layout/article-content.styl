@@ -13,7 +13,7 @@ $toc-container-width = 15rem
 
 
   &.show-toc {
-    .toc-content-container {
+    .pc-post-toc {
       display block
     }
 
@@ -24,7 +24,7 @@ $toc-container-width = 15rem
 
 
   +keep-tablet() {
-    .toc-content-container {
+    .pc-post-toc {
       display none !important
     }
 
@@ -294,7 +294,7 @@ $toc-container-width = 15rem
   }
 
 
-  .toc-content-container {
+  .pc-post-toc {
     position sticky
     top $header-height + $component-spacing-value
     display none
