@@ -70,7 +70,7 @@ ago:
   month: "%s 个月前"
   year: "%s 年前"
 footer:
-  powered_by: "由 %s 驱动"
+  powered_by: "由&nbsp;%s&nbsp;驱动"
   site_uv: 访问人数
   site_pv: 总访问量
   deploy: "本站由 %s 提供部署服务"
