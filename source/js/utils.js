@@ -3,9 +3,7 @@
 KEEP.initUtils = () => {
   KEEP.utils = {
     rootHtmlDom: document.querySelector('html'),
-    pageContainerDom: document.querySelector('.page-container'),
     pageTopDom: document.querySelector('.page-main-content-top'),
-    firstScreenDom: document.querySelector('.first-screen-container'),
     scrollProgressBarDom: document.querySelector('.scroll-progress-bar'),
     pjaxProgressBarDom: document.querySelector('.pjax-progress-bar'),
     pjaxProgressIcon: document.querySelector('.pjax-progress-icon'),
@@ -141,12 +139,6 @@ KEEP.initUtils = () => {
       })
     },
 
-    // get dom element height
-    getElementHeight(selectors) {
-      const dom = document.querySelector(selectors)
-      return dom ? dom.getBoundingClientRect().height : 0
-    },
-
     // init has TOC
     initHasToc() {
       const tocNavDoms = document.querySelectorAll('.post-toc-wrap .post-toc li')
@@ -156,23 +148,6 @@ KEEP.initUtils = () => {
       } else {
         this.hasToc = false
         document.body.classList.remove('has-toc')
-      }
-    },
-
-    // init page height handle
-    initPageHeightHandle() {
-      if (this.firstScreenDom) return
-      const temp_h1 = this.getElementHeight('.page-main-content-top')
-      const temp_h2 = this.getElementHeight('.page-main-content-middle')
-      const temp_h3 = this.getElementHeight('.page-main-content-bottom')
-      const allDomHeight = temp_h1 + temp_h2 + temp_h3
-      const innerHeight = window.innerHeight
-      const pb_dom = document.querySelector('.page-main-content-bottom')
-      if (allDomHeight < innerHeight) {
-        const marginTopValue = Math.floor(innerHeight - allDomHeight)
-        if (marginTopValue > 0) {
-          pb_dom.style.marginTop = `${marginTopValue - 2}px`
-        }
       }
     },
 
@@ -436,12 +411,17 @@ KEEP.initUtils = () => {
         script.async = true
         script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
         document.body.appendChild(script)
+
+        const getText = (selector) => {
+          return document.querySelector(selector)?.innerText
+        }
+
         script.onload = () => {
           setTimeout(() => {
             if (
-              document.querySelector('#busuanzi_value_site_uv')?.innerText ||
-              document.querySelector('#busuanzi_value_site_pv')?.innerText ||
-              document.querySelector('#busuanzi_value_page_pv')?.innerText
+              getText('#busuanzi_value_site_uv') ||
+              getText('#busuanzi_value_site_pv') ||
+              getText('#busuanzi_value_page_pv')
             ) {
               const tmpDom1 = document.querySelector('.footer .count-item .uv')
               const tmpDom2 = document.querySelector('.footer .count-item .pv')
@@ -496,9 +476,6 @@ KEEP.initUtils = () => {
 
   // global font adjust
   KEEP.utils.globalFontAdjust()
-
-  // init page height handle
-  KEEP.utils.initPageHeightHandle()
 
   // check whether TOC exists
   KEEP.utils.initHasToc()

@@ -6,6 +6,10 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
   background var(--background-color-1)
 
   .page-main-content {
+    display flex
+    flex-direction column
+    justify-content space-between
+    min-height 100vh
     padding-top $header-height
 
     &.is-home {
