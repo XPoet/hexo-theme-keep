@@ -7,17 +7,17 @@
                 <span class="title-hover-animation"><%= page.title %></span>
             </div>
 
-            <% if (theme.base_info.author || config.author) { %>
+            <% if (theme.base_info?.author || config?.author) { %>
                 <div class="article-header border-box">
-                    <% if (theme.hasOwnProperty('post') && theme.post?.author_avatar === true) { %>
+                    <% if (theme?.post?.author_avatar !== false) { %>
                         <div class="avatar-box border-box">
                             <%- image_tag(theme.style.avatar) %>
                         </div>
                     <% } %>
                     <div class="info-box">
                         <div class="author">
-                            <span class="name"><%= theme.base_info.author || config.author %></span>
-                            <% if (theme.hasOwnProperty('post') && theme.post.author_label.enable === true) { %>
+                            <span class="name"><%= theme.base_info?.author || config?.author %></span>
+                            <% if (theme?.post?.author_label?.enable === true) { %>
                                 <span class="author-label"><%- getAuthorLabel(site.posts.length, theme.post.author_label.auto, theme.post.author_label.custom_label_list) %></span>
                             <% } %>
                         </div>
@@ -48,7 +48,7 @@
             </div>
 
             <% if (
-                    (theme.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
+                    (theme?.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
             ) { %>
                 <div class="post-copyright-info">
                     <%- partial('_partial/article-copyright-info') %>
@@ -109,7 +109,7 @@
             <% } %>
         </div>
 
-        <% if (is_post() && theme.toc.enable === true && page.toc !== false) { %>
+        <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>
             <div class="pc-post-toc">
                 <%- partial('_partial/toc') %>
             </div>
