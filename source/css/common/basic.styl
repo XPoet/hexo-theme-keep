@@ -44,10 +44,10 @@ body {
   margin 0
   padding 0
   color var(--text-color-3)
-  font-weight $default-font-weight
-  font-size $default-font-size
-  font-family $default-font-family
-  line-height $default-font-line-height
+  font-weight var(--base-font-weight)
+  font-size var(--base-font-size)
+  font-family var(--base-font-family)
+  line-height var(--base-line-height)
   letter-spacing 0.2px
   background var(--background-color-1)
 
@@ -71,14 +71,14 @@ body {
   }
 
   +keep-tablet() {
-    font-size $default-font-size * 0.96
-    line-height $default-font-line-height * 0.96
+    font-size calc(var(--base-font-size) * 0.95) !important
+    line-height calc(var(--base-line-height) * 0.95) !important
   }
 
 
   +keep-mobile() {
-    font-size $default-font-size * 0.9
-    line-height $default-font-line-height * 0.9
+    font-size calc(var(--base-font-size) * 0.9) !important
+    line-height calc(var(--base-line-height) * 0.9) !important
   }
 }
 

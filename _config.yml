@@ -34,14 +34,6 @@ style:
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.svg
 
-  # Font size, customize font size. (you don't usually have to fill)
-  # e.g. font_size: 18px
-  font_size:
-
-  # Font family, customize font family. (you don't usually have to fill)
-  # e.g. font_family: STKaiti, STSong, STHeiti
-  font_family:
-
   # Mouse hover style settings
   hover:
     # Shadow effect when the mouse hover
