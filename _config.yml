@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.7.0
+## Keep v3.7.1
 ## Preview: https://xpoet.cn
 ## Documents: https://keep-docs.xpoet.cn
 ## Repository: https://github.com/XPoet/hexo-theme-keep
@@ -322,7 +322,7 @@ footer:
 
       # e.g.
       # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.0-blue?style=flat-square&logo=hexo
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.1-blue?style=flat-square&logo=hexo
       #
       # - link_url: https://github.com/XPoet/hexo-theme-keep
       #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.1-red?style=flat-square&logo=hexo
