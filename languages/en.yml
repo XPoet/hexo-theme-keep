@@ -73,7 +73,7 @@ footer:
   powered_by: "Powered by %s"
   site_uv: Visitor count
   site_pv: Totalview
-  footer_deploy: "This site is provided with deployment services by %s"
+  deploy: "This site is provided with deployment services by %s"
   deploy_provider:
     github: GitHub Pages
     vercel: Vercel

@@ -33,15 +33,15 @@ KEEP.initUtils = () => {
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
       const clientHeight = window.innerHeight || document.documentElement.clientHeight
 
-      const percent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100)
+      const percent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100) || 0
 
-      if (this.isHasScrollProgressBar) {
-        const ProgressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
+      if (this.isHasScrollProgressBar && this.scrollProgressBarDom) {
+        const progressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
         this.scrollProgressBarDom.style.visibility = percent === 0 ? 'hidden' : 'visible'
-        this.scrollProgressBarDom.style.width = `${ProgressPercent}%`
+        this.scrollProgressBarDom.style.width = `${progressPercent}%`
       }
 
-      if (this.isHasScrollPercent) {
+      if (this.isHasScrollPercent && this.back2TopBtn) {
         const percentDom = this.back2TopBtn.querySelector('.percent')
         if (percent === 0 || percent === undefined) {
           this.back2TopBtn.classList.remove('show')
