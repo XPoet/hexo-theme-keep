@@ -297,20 +297,20 @@ $toc-container-width = 15rem
 
   .pc-post-toc {
     position sticky
-    top $header-height + $component-spacing-value
+    top 'calc(var(--header-height) + %s)' % $component-spacing-value
     display none
     flex-shrink 0
     order hexo-config('toc.layout') == 'left' ? -1 : 1
     box-sizing border-box
     width $toc-container-width
-    max-height 'calc(100vh - %s)' % ($header-height + $component-spacing-value)
+    max-height 'calc(100vh - %s)' % ('calc(var(--header-height) + %s)' % $component-spacing-value)
     padding 2rem 0 2rem 1.4rem
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
 
     .header-shrink & {
-      top $header-shrink-height + $component-spacing-value
-      max-height 'calc(100vh - %s)' % ($header-shrink-height + $component-spacing-value)
+      top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
+      max-height 'calc(100vh - %s)' % ('calc(var(--header-shrink-height) + %s)' % $component-spacing-value)
     }
   }
 }

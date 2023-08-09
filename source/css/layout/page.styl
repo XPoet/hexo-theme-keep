@@ -10,44 +10,42 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     flex-direction column
     justify-content space-between
     min-height 100vh
-    padding-top $header-height
+    padding-top var(--header-height)
 
     &.is-home {
       .transparent-1 {
         background var(--header-transparent-background-1)
-        -webkit-backdrop-filter blur(4px)
         backdrop-filter blur(4px)
       }
 
       .transparent-2 {
         background var(--header-transparent-background-2)
-        -webkit-backdrop-filter blur(5px)
         backdrop-filter blur(5px)
       }
     }
 
 
     .header-shrink & {
-      padding-top $header-shrink-height
+      padding-top var(--header-shrink-height)
 
 
       +keep-tablet() {
-        padding-top $header-shrink-height * 0.9
+        padding-top calc(var(--header-shrink-height) * 0.9)
       }
 
       +keep-mobile() {
-        padding-top $header-shrink-height * 0.8
+        padding-top calc(var(--header-shrink-height) * 0.8)
       }
     }
 
 
     +keep-tablet() {
-      padding-top $header-height * 0.9
+      padding-top calc(var(--header-height) * 0.9)
     }
 
 
     +keep-mobile() {
-      padding-top $header-height * 0.8
+      padding-top calc(var(--header-height) * 0.8)
     }
 
 
@@ -58,7 +56,7 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
       z-index $z-index-5
       box-sizing border-box
       width 100%
-      height $header-height
+      height var(--header-height)
       transition-t("transform, height", "0, 0", "0.3, 0.2", "ease-out, ease")
 
       &.hide {
@@ -66,25 +64,25 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
       }
 
       .header-shrink & {
-        height $header-shrink-height
+        height var(--header-shrink-height)
 
         +keep-tablet() {
-          height $header-shrink-height * 0.9
+          height calc(var(--header-shrink-height) * 0.9)
         }
 
         +keep-mobile() {
-          height $header-shrink-height * 0.8
+          height calc(var(--header-shrink-height) * 0.8)
         }
       }
 
 
       +keep-tablet() {
-        height $header-height * 0.9
+        height calc(var(--header-height) * 0.9)
       }
 
 
       +keep-mobile() {
-        height $header-height  * 0.8
+        height calc(var(--header-height) * 0.8)
       }
     }
 
@@ -132,7 +130,7 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
 
   .post-tools {
     position fixed
-    top $header-height + $component-spacing-value
+    top 'calc(var(--header-height) + %s)' % $component-spacing-value
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
@@ -145,7 +143,7 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     }
 
     .header-shrink & {
-      top $header-shrink-height + $component-spacing-value
+      top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
     }
 
 
