@@ -125,11 +125,47 @@
   h4
   h5
   h6 {
+    position relative
+    box-sizing border-box
+    padding-top 0.4rem
+    overflow hidden
     color var(--text-color-2)
     line-height 1.5
+    white-space nowrap
+    text-overflow ellipsis
 
     +keep-tablet() {
       line-height 1.25
+    }
+
+    &:hover {
+      a.headerlink {
+        visibility visible
+      }
+    }
+
+    a.headerlink {
+      position relative
+      float right
+      box-sizing border-box
+      margin-left 0.32rem
+      padding-top 0.25rem
+      color var(--text-color-4)
+      font-size 1.2rem
+      text-decoration none
+      border none
+      visibility hidden
+
+
+      &:hover {
+        color var(--text-color-3)
+      }
+
+      &::before {
+        font-weight 600
+        font-family 'Font Awesome 6 Free'
+        content '\f0c1'
+      }
     }
   }
 
