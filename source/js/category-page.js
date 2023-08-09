@@ -3,9 +3,9 @@
 function resetCategoriesPage() {
   const resetCategoryDom = (domList) => {
     domList.forEach((dom) => {
-      const categoryNameDom = dom.querySelector('.all-category-list-link')
-      const categoryCountDom = dom.querySelector('.all-category-list-count')
-      const childCategoryInfo = dom.querySelector('.all-category-list-child')
+      const categoryNameDom = dom.querySelector('.site-all-category-list-link')
+      const categoryCountDom = dom.querySelector('.site-all-category-list-count')
+      const childCategoryInfo = dom.querySelector('.site-all-category-list-child')
 
       let domTemplate = `
             <div class="self-category-info">
@@ -17,7 +17,7 @@ function resetCategoriesPage() {
           `
 
       if (childCategoryInfo) {
-        resetCategoryDom(childCategoryInfo.querySelectorAll('.all-category-list-item'))
+        resetCategoryDom(childCategoryInfo.querySelectorAll('.site-all-category-list-item'))
         domTemplate += childCategoryInfo.outerHTML
       }
 
@@ -26,11 +26,11 @@ function resetCategoriesPage() {
   }
 
   const expandHandle = () => {
-    const selfCategoryInfoDom = document.querySelectorAll('.all-category-list-item')
+    const selfCategoryInfoDom = document.querySelectorAll('.site-all-category-list-item')
     selfCategoryInfoDom.forEach((dom) => {
       let isExpand = false
       const iconDom = dom.querySelector('.self-category-info .left .icon')
-      const childDom = dom.querySelector('.all-category-list-child')
+      const childDom = dom.querySelector('.site-all-category-list-child')
 
       iconDom &&
         iconDom.addEventListener('click', () => {
@@ -52,7 +52,9 @@ function resetCategoriesPage() {
     })
   }
 
-  resetCategoryDom(document.querySelectorAll('.all-category-list .all-category-list-item'))
+  resetCategoryDom(
+    document.querySelectorAll('.site-all-category-list .site-all-category-list-item')
+  )
 
   expandHandle()
 }
