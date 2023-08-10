@@ -12,8 +12,11 @@ $logo-image-box-width = 2.8rem
   height 100%
   padding-top $scroll-progress-bar-height
   background var(--background-color-1)
+  box-shadow 2px 2px 5px var(--shadow-color)
 
-  hover-style(false, 0, 0)
+  &:hover {
+    box-shadow 2px 2px 8px var(--shadow-hover-color)
+  }
 
   .header-content {
     position relative

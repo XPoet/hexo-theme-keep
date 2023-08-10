@@ -40,7 +40,7 @@ $toc-container-width = 15rem
     height 100%
 
 
-    keep-container(false, 0, 0, 2rem, 2rem)
+    keep-container(1, 2rem, 2rem)
 
     +keep-mobile() {
       padding 1.2rem 0.6rem
@@ -229,8 +229,9 @@ $toc-container-width = 15rem
         box-sizing border-box
         max-width $post-nav-max-width
         height 100%
+        keep-container(1, 0.8rem, 0)
+        border-radius 0.32rem
 
-        keep-container(true, 1.03, 1.03, 0.8rem, 0)
 
         a {
           position relative
