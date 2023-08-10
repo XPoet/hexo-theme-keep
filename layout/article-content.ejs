@@ -19,14 +19,14 @@
                                 <span class="author-label"><%- getAuthorLabel(site.posts.length, theme.post.author_label.auto, theme.post.author_label.custom_label_list) %></span>
                             <% } %>
                         </div>
-                        <div class="meta-info">
+                        <div class="meta-info border-box">
                             <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                         </div>
                     </div>
                 </div>
             <% } else { %>
                 <div class="article-header-meta-info">
-                    <div class="meta-info">
+                    <div class="meta-info border-box">
                         <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                     </div>
                 </div>
