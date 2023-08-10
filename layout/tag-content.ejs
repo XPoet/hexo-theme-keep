@@ -6,8 +6,7 @@
             <%- partial('_partial/archive-list', { archive_posts: page.posts }) %>
         </div>
     </div>
-
     <div class="tag-paginator">
-        <%- partial('_partial/paginator', {pageObject: page}) %>
+        <%- partial('_partial/paginator', { page_info: page }) %>
     </div>
 </div>
