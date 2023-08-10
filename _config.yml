@@ -48,10 +48,6 @@ style:
     # You can use the "||" to begin a newline, maximum is two lines.
     description: Keep writing and Keep loving.
 
-    # If you want to customize the first screen font color, you can fill in here (e.g. "#0066CC")
-    # Otherwise use the theme default font color
-    font_color:
-
     # If enable hitokoto, first screen description is different every time when you enter the site
     hitokoto: false      # Option values: true | false
 
