@@ -2,14 +2,24 @@
   display flex
   justify-content space-between
   margin-top 2.6rem
+  user-select none
 
-  a.jump-btn {
-    visibility hidden
+  .btn-wrap {
+    cursor not-allowed
 
-    &.show {
-      visibility visible
+    &.allowed {
+      cursor pointer
+
+      a.jump-btn {
+        pointer-events auto
+      }
+    }
+
+    a.jump-btn {
+      pointer-events none
     }
   }
+
 
 
   .base-color-size {

@@ -1,7 +1,10 @@
 <div class="paginator border-box">
-    <a class="btn jump-btn<%= pageObject.prev ? ' show' : '' %>"
-       href="<%- url_for(pageObject.prev_link) %>"
-    ><%- __('prev') %></a>
+    <span class="btn-wrap<%= page_info.prev ? ' allowed' : '' %>">
+        <a class="btn jump-btn"
+           href="<%- url_for(page_info.prev_link) %>"
+        ><%- __('prev') %></a>
+    </span>
+
 
     <% if (page.total > 1) { %>
         <div class="page-number-box border-box flex-center">
@@ -15,7 +18,9 @@
     <% } %>
 
 
-    <a class="btn jump-btn<%= pageObject.next ? ' show' : '' %>"
-       href="<%- url_for(pageObject.next_link) %>"
-    ><%- __('next') %></a>
+    <span class="btn-wrap<%= page_info.next ? ' allowed' : '' %>">
+        <a class="btn jump-btn"
+           href="<%- url_for(page_info.next_link) %>"
+        ><%- __('next') %></a>
+    </span>
 </div>
