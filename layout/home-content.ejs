@@ -12,10 +12,10 @@
                 <% } %>
 
                 <div class="home-article-item-bottom border-box">
+                    <% if (post.sticky) { %>
+                        <i class="fas fa-thumbtack sticky-icon"></i>
+                    <% } %>
                     <h3 class="home-article-title border-box">
-                        <% if (post.sticky) { %>
-                            <i class="fas fa-thumbtack sticky-icon"></i>
-                        <% } %>
                         <a href="<%- url_for(post.path) %>">
                             <%= post.title %>
                         </a>

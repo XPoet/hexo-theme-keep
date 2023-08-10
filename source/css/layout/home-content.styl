@@ -40,10 +40,17 @@
       .home-article-item-bottom {
         padding 2rem
 
+        .sticky-icon {
+          position absolute
+          top 1.2rem
+          right 1.2rem
+          color var(--text-color-4)
+          font-size 1.2rem
+          transform rotate(45deg)
+        }
+
+
         .home-article-title {
-          display flex
-          align-items center
-          justify-content flex-start
           margin 0
           color var(--text-color-2)
           font-weight 600
@@ -58,12 +65,6 @@
 
           +keep-mobile() {
             font-size 1.2rem
-          }
-
-          .sticky-icon {
-            margin-right 0.5rem
-            color var(--text-color-4)
-            font-size 1.3rem
           }
         }
 
