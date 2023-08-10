@@ -133,10 +133,7 @@ post:
     min2read: false      # Time to read, one article. Option values: true | false
 
   # Post datetime
-  datetime:
-    create: true         # Article create time. Option values: true | false
-    update: true         # Article update time. Option values: true | false
-    format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
+  datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
 
   # Image align position in the post
   img_align: left        # Option values: left | center

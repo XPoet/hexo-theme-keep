@@ -51,7 +51,8 @@
     }
 
 
-    .article-date {
+    .article-create-date {
+      display var(--post-create-datetime)
 
       .mobile {
         display none
@@ -63,13 +64,15 @@
         }
 
         .mobile {
-          display inline
+          display inline-block
         }
       }
     }
 
 
     .article-update-date {
+      display var(--post-update-datetime)
+
       +keep-tablet() {
         display none
       }
