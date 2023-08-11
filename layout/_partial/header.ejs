@@ -1,9 +1,8 @@
 <%
-const { title: bi_title, logo_img: bi_logo_img } = theme.base_info
-const { logo: s_logo, first_screen: s_first_screen } = theme.style
-const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen
-const { title: config_title } = config
-const { enable: local_search_enable } = theme.local_search
+const { title: bi_title, logo_img: bi_logo_img } = theme?.base_info || {}
+const { logo: s_logo, first_screen: s_first_screen } = theme?.style || {}
+const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen || {}
+const { enable: local_search_enable } = theme?.local_search || {}
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
 
@@ -15,7 +14,7 @@ const { enable: local_search_enable } = theme.local_search
                 </a>
             <% } %>
             <a class="site-name border-box" href="/">
-               <%= bi_title || config_title || 'Keep Theme' %>
+               <%= bi_title || config?.title || 'Keep Theme' %>
             </a>
         </div>
 

@@ -7,7 +7,7 @@ const colon = config.language === 'en' ? ': ' : '：'
             <span class="type"><%- __('copyright.title') %></span><%= colon %><span class="content"><%= page.title %></span>
         </li>
         <li class="post-author">
-            <span class="type"><%- __('copyright.author') %></span><%= colon %><span class="content"><%= theme.base_info.author || config.author %></span>
+            <span class="type"><%- __('copyright.author') %></span><%= colon %><span class="content"><%= theme?.base_info?.author || config.author %></span>
         </li>
         <li class="post-time">
             <span class="type"><%- __('copyright.create_time') %></span><%= colon %><span class="content"><%= date(page.date, 'YYYY-MM-DD HH:mm:ss') %></span>
