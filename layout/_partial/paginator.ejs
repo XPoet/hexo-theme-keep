@@ -1,12 +1,12 @@
-<div class="paginator border-box">
-    <span class="btn-wrap<%= page_info.prev ? ' allowed' : '' %>">
-        <a class="btn jump-btn"
-           href="<%- url_for(page_info.prev_link) %>"
-        ><%- __('prev') %></a>
-    </span>
+<% if (page.total > 1) { %>
+    <div class="paginator border-box flex-center">
+        <div class="btn-wrap<%= page_info.prev ? ' allowed' : '' %>">
+            <a class="jump-btn"
+               href="<%- url_for(page_info.prev_link) %>"
+            ><i class="fa-solid fa-chevron-left"></i></a>
+        </div>
 
 
-    <% if (page.total > 1) { %>
         <div class="page-number-box border-box flex-center">
             <input class="page-number-input border-box base-color-size"
                    type="number"
@@ -15,12 +15,14 @@
                    max="<%- page.total %>"
             ><span class="delimiter base-color-size">/</span><span class="base-color-size"><%- page.total %></span>
         </div>
-    <% } %>
 
 
-    <span class="btn-wrap<%= page_info.next ? ' allowed' : '' %>">
-        <a class="btn jump-btn"
-           href="<%- url_for(page_info.next_link) %>"
-        ><%- __('next') %></a>
-    </span>
-</div>
+        <div class="btn-wrap<%= page_info.next ? ' allowed' : '' %>">
+            <a class="jump-btn"
+               href="<%- url_for(page_info.next_link) %>"
+            ><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+    </div>
+<% } %>
+
+
