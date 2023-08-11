@@ -28,7 +28,9 @@
         <%= theme?.base_info?.title || config?.title || 'Keep Theme' %>
     </title>
     <%- css('css/style') %>
-    <%- favicon_tag(theme.style.favicon) %>
+    <% if (theme?.style?.favicon) { %>
+        <%- favicon_tag(theme?.style?.favicon) %>
+    <% } %>
     <%- __css('font/css/fontawesome.min.css') %>
     <%- __css('font/css/regular.min.css') %>
     <%- __css('font/css/solid.min.css') %>

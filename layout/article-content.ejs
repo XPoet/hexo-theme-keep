@@ -9,9 +9,11 @@
 
             <% if (theme?.base_info?.author || config?.author) { %>
                 <div class="article-header border-box">
-                    <div class="avatar-box border-box">
-                        <%- image_tag(theme?.style?.avatar) %>
-                    </div>
+                    <% if (theme?.style?.avatar) { %>
+                        <div class="avatar-box border-box">
+                            <%- image_tag(theme?.style?.avatar) %>
+                        </div>
+                    <% } %>
                     <div class="info-box">
                         <div class="author">
                             <span class="name"><%= theme?.base_info?.author || config?.author %></span>

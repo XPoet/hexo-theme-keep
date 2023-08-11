@@ -24,7 +24,7 @@
             </li>
         <% } %>
 
-        <% if (theme.style.scroll.percent !== true) { %>
+        <% if (theme?.style?.scroll?.percent !== true) { %>
             <li class="tools-item tool-scroll-to-top flex-center">
                 <i class="fas fa-arrow-up"></i>
             </li>
@@ -52,7 +52,7 @@
             <i class="fas fa-cog fa-spin"></i>
         </li>
 
-        <% if (theme.style.scroll.percent === true) { %>
+        <% if (theme?.style?.scroll?.percent === true) { %>
             <li class="tools-item tool-scroll-to-top flex-center">
                 <i class="arrow-up fas fa-arrow-up"></i>
                 <span class="percent"></span>

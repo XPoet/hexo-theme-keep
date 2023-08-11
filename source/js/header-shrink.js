@@ -12,7 +12,7 @@ KEEP.initHeaderShrink = () => {
     headerShrink() {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       const headerWrapperDom = document.querySelector('.header-wrapper')
-      const { enable, header_transparent } = KEEP.theme_config.style.first_screen
+      const { enable, header_transparent } = KEEP.theme_config?.style?.first_screen || {}
       const isHeaderTransparent =
         enable === true &&
         header_transparent === true &&
