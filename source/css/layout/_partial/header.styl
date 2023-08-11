@@ -19,7 +19,6 @@ $logo-image-box-width = 2.8rem
   }
 
   .header-content {
-    position relative
     z-index $z-index-5
     display flex
     flex-direction row
@@ -35,21 +34,29 @@ $logo-image-box-width = 2.8rem
       max-width $has-fs-content-max-width
     }
 
+
     .has-toc & {
       max-width $has-toc-content-max-width
     }
+
 
     +keep-tablet() {
       width $main-content-width-tablet
     }
 
+
     +keep-mobile() {
       width $main-content-width-mobile
     }
 
+
     .left {
       display flex
       align-items center
+      justify-content flex-start
+      height 100%
+      font-size 2rem
+
       transition-t("transform", "0", "0.2", "linear")
 
       .header-shrink & {
@@ -60,9 +67,10 @@ $logo-image-box-width = 2.8rem
 
       if (hexo-config('base_info.logo_img') || hexo-config('style.logo')) {
         .logo-image {
+          flex-shrink 0
           width $logo-image-box-width
           height $logo-image-box-width
-          margin-right 8px
+          margin-right 0.5rem
 
 
           +keep-tablet() {
@@ -70,21 +78,24 @@ $logo-image-box-width = 2.8rem
             height $logo-image-box-width * 0.9
           }
 
+
           +keep-mobile() {
             width $logo-image-box-width * 0.8
             height $logo-image-box-width * 0.8
           }
 
+
           img {
             width 100%
-            border-radius 6px
+            border-radius 0.4rem
           }
         }
       }
 
+
       .site-name {
         color var(--text-color-1)
-        font-weight bold
+        font-weight 600
         font-size $site-name-font-size
         line-height 1
         letter-spacing 1px

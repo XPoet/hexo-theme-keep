@@ -7,19 +7,19 @@ const { enable: local_search_enable } = theme.local_search
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
 
-    <div class="header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
-        <div class="left">
+    <div class="border-box header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
+        <div class="left border-box">
             <% if (s_logo || bi_logo_img) { %>
-                <a class="logo-image" href="/">
+                <a class="logo-image border-box" href="/">
                     <%- image_tag(s_logo || bi_logo_img) %>
                 </a>
             <% } %>
-            <a class="site-name" href="/">
+            <a class="site-name border-box" href="/">
                <%= bi_title || config_title || 'Keep Theme' %>
             </a>
         </div>
 
-        <div class="right">
+        <div class="right border-box">
             <div class="pc">
                 <ul class="menu-list">
                     <% for (const i in theme.menu) { %>
