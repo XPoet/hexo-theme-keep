@@ -1,12 +1,12 @@
 <%
-const { enable: pjax_enable } = theme?.pjax
+const { enable: pjax_enable } = theme?.pjax || {}
 const {
     repo: giscus_repo,
     repo_id: giscus_repo_id,
     category: giscus_category,
     category_id: giscus_category_id,
     reactions_enabled: giscus_reactions_enabled,
-} = theme.comment?.giscus
+} = theme?.comment?.giscus || {}
 const giscus_language = config?.language || 'zh-CN'
 %>
 <% if (giscus_repo && giscus_repo_id && giscus_category && giscus_category_id) { %>

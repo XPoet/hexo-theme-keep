@@ -1,5 +1,5 @@
 <%
-const { enable: pjax_enable } = theme?.pjax
+const { enable: pjax_enable } = theme?.pjax || {}
 const {
     client_id,
     client_secret,
@@ -7,10 +7,10 @@ const {
     github_id,
     github_admins,
     proxy
-} = theme.comment?.gitalk
+} = theme?.comment?.gitalk || {}
 let cdn_css = '//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css'
 let cdn_js = '//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js'
-const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
 if (t_cdn_enable === true) {
     switch (t_cdn_provider) {
         case 'jsdelivr':
@@ -48,7 +48,7 @@ if (t_cdn_enable === true) {
                 admin: '<%= github_admins || [github_id] %>',
                 id: __gitalk__pathname,
                 proxy: '<%= proxy %>',
-                language: '<%= config.language %>'
+                language: '<%= config?.language || 'zh-CN' %>'
               }).render('gitalk-container');
             } catch (e) {
               window.Gitalk = null;
@@ -65,4 +65,6 @@ if (t_cdn_enable === true) {
           }
         </script>
     </div>
+<% } else { %>
+    <div>Please fill in Gitalk complete configuration items.</div>
 <% } %>
