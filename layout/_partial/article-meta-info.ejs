@@ -65,12 +65,12 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
                 temp_min2read_count = 0
             }
         %>
-        <% if(page_type === 'post' && theme?.post?.word_count.wordcount === true && temp_wordcount_count){ %>
+        <% if(page_type === 'post' && theme?.post?.word_count?.wordcount === true && temp_wordcount_count){ %>
             <span class="meta-info-item article-wordcount">
                 <i class="icon fas fa-file-word"></i>&nbsp;<span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
             </span>
         <% } %>
-        <% if(page_type === 'post' && theme?.post?.word_count.min2read === true && temp_min2read_count){ %>
+        <% if(page_type === 'post' && theme?.post?.word_count?.min2read === true && temp_min2read_count){ %>
             <span class="meta-info-item article-min2read">
                 <i class="icon fas fa-clock"></i>&nbsp;<span><%= temp_min2read_count %> <%- __('min2read') %></span>
             </span>
