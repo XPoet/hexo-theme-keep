@@ -239,6 +239,8 @@
     display block
     box-sizing border-box
     max-width 100%
+    margin var(--post-img-align)
+    margin-bottom 2rem
     box-shadow 0 0 0.2rem var(--shadow-color)
     cursor zoom-in
     opacity 1
@@ -249,13 +251,6 @@
 
     &[lazyload] {
       margin 0.8rem auto 0.2rem
-    }
-
-    if (hexo-config('post.img_align') == 'center' || hexo-config('style.article_img_align') == 'center') {
-      margin 0.8rem auto 0.2rem
-    }
-    else {
-      margin 0.8rem 0 0.2rem
     }
   }
 

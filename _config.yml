@@ -135,9 +135,6 @@ post:
   # Post datetime
   datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
 
-  # Image align position in the post
-  img_align: left        # Option values: left | center
-
   # Post copyright info
   copyright_info: false  # Option values: true | false
 
