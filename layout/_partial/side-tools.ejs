@@ -13,7 +13,7 @@
         </li>
 
         <!-- rss -->
-        <% if (theme.rss.enable && config.feed) { %>
+        <% if (theme?.rss?.enable === true && config.feed) { %>
             <li class="tools-item rss flex-center">
                 <a class="flex-center"
                    href="<%= '/' + config.feed.path %>"
