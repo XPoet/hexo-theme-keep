@@ -3,6 +3,8 @@ const { title: bi_title, logo_img: bi_logo_img } = theme?.base_info || {}
 const { logo: s_logo, first_screen: s_first_screen } = theme?.style || {}
 const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
+const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
+
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
 
@@ -21,10 +23,10 @@ const { enable: local_search_enable } = theme?.local_search || {}
         <div class="right border-box">
             <div class="pc">
                 <ul class="menu-list">
-                    <% for (const i in theme.menu) { %>
+                    <% for (const i in h_menu_nav_object) { %>
                         <li class="menu-item">
-                            <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
-                               href="<%- url_for(theme.menu[i]) %>"
+                            <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
+                               href="<%- url_for(h_menu_nav_object[i]) %>"
                             >
                                 <%= __(i.toLowerCase()).toUpperCase() %>
                             </a>
@@ -50,10 +52,10 @@ const { enable: local_search_enable } = theme?.local_search || {}
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
-            <% for (let i in theme.menu) { %>
+            <% for (let i in h_menu_nav_object) { %>
                 <li class="drawer-menu-item flex-center">
-                    <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
-                       href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()).toUpperCase() %></a>
+                    <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
+                       href="<%- url_for(h_menu_nav_object[i]) %>"><%= __(i.toLowerCase()).toUpperCase() %></a>
                 </li>
             <% } %>
         </ul>
