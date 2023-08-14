@@ -7,26 +7,28 @@
                 <span class="title-hover-animation"><%= page.title %></span>
             </div>
 
-            <% if (theme.base_info?.author || config?.author) { %>
+            <% if (theme?.base_info?.author || config?.author) { %>
                 <div class="article-header border-box">
-                    <div class="avatar-box border-box">
-                        <%- image_tag(theme?.style?.avatar) %>
-                    </div>
+                    <% if (theme?.style?.avatar) { %>
+                        <div class="avatar-box border-box">
+                            <%- image_tag(theme?.style?.avatar) %>
+                        </div>
+                    <% } %>
                     <div class="info-box">
                         <div class="author">
-                            <span class="name"><%= theme.base_info?.author || config?.author %></span>
+                            <span class="name"><%= theme?.base_info?.author || config?.author %></span>
                             <% if (theme?.post?.author_label?.enable === true) { %>
                                 <span class="author-label"><%- getAuthorLabel(site.posts.length, theme.post.author_label.auto, theme.post.author_label.custom_label_list) %></span>
                             <% } %>
                         </div>
-                        <div class="meta-info">
+                        <div class="meta-info border-box">
                             <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                         </div>
                     </div>
                 </div>
             <% } else { %>
                 <div class="article-header-meta-info">
-                    <div class="meta-info">
+                    <div class="meta-info border-box">
                         <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                     </div>
                 </div>

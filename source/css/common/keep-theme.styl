@@ -1,56 +1,37 @@
-$keep-container-border-radius = 0.4rem
-
-hover-style(isTransform, scaleX, scaleY) {
+keep-container(sValue, pValue, mbValue) {
+  box-sizing border-box
+  margin-bottom mbValue
+  padding pValue
+  background var(--content-background-color)
+  border-radius var(--box-border-radius)
   box-shadow 2px 2px 5px var(--shadow-color)
 
-  if (isTransform) {
+  if (sValue != 1) {
     transition-t("transform", "0", "0.2", "linear")
   }
 
   &:hover {
-    if (hexo-config('style.hover.scale') && isTransform) {
-      transform scaleX(scaleX) scaleY(scaleX)
+    if (sValue != 1) {
+      transform scale(sValue)
     }
-
-    if (hexo-config('style.hover.shadow')) {
-      box-shadow 2px 2px 8px var(--shadow-hover-color)
-    }
+    box-shadow 2px 2px 8px var(--shadow-hover-color)
   }
-}
-
-
-keep-container(isTransform, scaleX, scaleY, padding, marginBottomValue) {
-  box-sizing border-box
-  padding padding
-  background var(--content-background-color)
-  border-radius $keep-container-border-radius
-
-  if (marginBottomValue != 0) {
-    margin-bottom marginBottomValue
-
-    +keep-tablet() {
-      margin-bottom marginBottomValue * 0.8
-    }
-
-    +keep-mobile() {
-      margin-bottom marginBottomValue * 0.6
-    }
-  }
-
-
-  hover-style(isTransform, scaleX, scaleY)
 
   +keep-tablet() {
-    padding padding * 0.8
-    border-radius $keep-container-border-radius * 0.8
+    margin-bottom mbValue * 0.8
+    padding pValue * 0.8
+    border-radius calc(var(--box-border-radius) * 0.8)
   }
 
 
   +keep-mobile() {
-    padding padding * 0.6
-    border-radius $keep-container-border-radius * 0.6
+    margin-bottom mbValue * 0.6
+    padding pValue * 0.6
+    border-radius calc(var(--box-border-radius) * 0.6)
   }
 }
+
+
 
 disable-user-select() {
   -moz-user-select none

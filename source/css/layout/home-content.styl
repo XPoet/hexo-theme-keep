@@ -8,7 +8,7 @@
       position relative
       overflow hidden
 
-      keep-container(true, 1.015, 1.015, 0, 38px)
+      keep-container(var(--home-post-hover-scale), 0, 2.6rem)
 
       .home-article-item-top {
         width 100%
@@ -42,21 +42,15 @@
 
         .sticky-icon {
           position absolute
-          top 0.8rem
-          right 1rem
+          top 1.2rem
+          right 1.2rem
           color var(--text-color-4)
           font-size 1.2rem
           transform rotate(45deg)
-
-
-          +keep-tablet() {
-            font-size 1.16rem
-          }
         }
 
 
         .home-article-title {
-          position relative
           margin 0
           color var(--text-color-2)
           font-weight 600

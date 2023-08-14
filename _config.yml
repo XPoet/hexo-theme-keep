@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.7.1
+## Keep v3.7.2
 ## Preview: https://xpoet.cn
 ## Documents: https://keep-docs.xpoet.cn
 ## Repository: https://github.com/XPoet/hexo-theme-keep
@@ -34,13 +34,6 @@ style:
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.svg
 
-  # Mouse hover style settings
-  hover:
-    # Shadow effect when the mouse hover
-    shadow: false  # Option values: true | false
-    # Scale effect when the mouse hovers
-    scale: false   # Option values: true | false
-
   # First screen style settings
   first_screen:
     enable: false  # Option values: true | false
@@ -54,10 +47,6 @@ style:
     # First screen description
     # You can use the "||" to begin a newline, maximum is two lines.
     description: Keep writing and Keep loving.
-
-    # If you want to customize the first screen font color, you can fill in here (e.g. "#0066CC")
-    # Otherwise use the theme default font color
-    font_color:
 
     # If enable hitokoto, first screen description is different every time when you enter the site
     hitokoto: false      # Option values: true | false
@@ -144,10 +133,7 @@ post:
     min2read: false      # Time to read, one article. Option values: true | false
 
   # Post datetime
-  datetime:
-    create: true         # Article create time. Option values: true | false
-    update: true         # Article update time. Option values: true | false
-    format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
+  datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
 
   # Image align position in the post
   img_align: left        # Option values: left | center
@@ -322,10 +308,10 @@ footer:
 
       # e.g.
       # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.1-blue?style=flat-square&logo=hexo
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.2-blue?style=flat-square&logo=hexo
       #
       # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.1-red?style=flat-square&logo=hexo
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.2-red?style=flat-square&logo=hexo
       #
       # - ...
 

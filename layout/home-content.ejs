@@ -15,8 +15,7 @@
                     <% if (post.sticky) { %>
                         <i class="fas fa-thumbtack sticky-icon"></i>
                     <% } %>
-
-                    <h3 class="home-article-title">
+                    <h3 class="home-article-title border-box">
                         <a href="<%- url_for(post.path) %>">
                             <%= post.title %>
                         </a>
@@ -35,8 +34,5 @@
             </li>
         <% }) %>
     </ul>
-
-    <div class="home-paginator">
-        <%- partial('_partial/paginator', { pageObject: page }) %>
-    </div>
+    <%- partial('_partial/paginator', { page_info: page }) %>
 </div>

@@ -1,9 +1,12 @@
-<div class="paginator border-box">
-    <a class="btn jump-btn<%= pageObject.prev ? ' show' : '' %>"
-       href="<%- url_for(pageObject.prev_link) %>"
-    ><%- __('prev') %></a>
+<% if (page.total > 1) { %>
+    <div class="paginator border-box flex-center">
+        <div class="btn-wrap<%= page_info.prev ? ' allowed' : '' %>">
+            <a class="jump-btn"
+               href="<%- url_for(page_info.prev_link) %>"
+            ><i class="fa-solid fa-chevron-left"></i></a>
+        </div>
 
-    <% if (page.total > 1) { %>
+
         <div class="page-number-box border-box flex-center">
             <input class="page-number-input border-box base-color-size"
                    type="number"
@@ -12,10 +15,14 @@
                    max="<%- page.total %>"
             ><span class="delimiter base-color-size">/</span><span class="base-color-size"><%- page.total %></span>
         </div>
-    <% } %>
 
 
-    <a class="btn jump-btn<%= pageObject.next ? ' show' : '' %>"
-       href="<%- url_for(pageObject.next_link) %>"
-    ><%- __('next') %></a>
-</div>
+        <div class="btn-wrap<%= page_info.next ? ' allowed' : '' %>">
+            <a class="jump-btn"
+               href="<%- url_for(page_info.next_link) %>"
+            ><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+    </div>
+<% } %>
+
+

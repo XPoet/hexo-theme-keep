@@ -1,17 +1,17 @@
 .category-list-container {
 
-  keep-container(false, 0, 0, 2rem, 0)
+  keep-container(1, 2rem, 0)
 
   .category-list-content {
 
-    ul.all-category-list {
+    ul.site-all-category-list {
       user-select none
 
-      & > li.all-category-list-item {
+      & > li.site-all-category-list-item {
         position relative
         box-sizing border-box
         margin-bottom 0.8rem
-        font-size 1.05rem
+        font-size 1rem
 
         &:last-child {
           margin-bottom 0
@@ -36,23 +36,23 @@
               cursor pointer
             }
 
-            .all-category-list-link {
+            .site-all-category-list-link {
             }
           }
 
           .right {
-            .all-category-list-count {
+            .site-all-category-list-count {
               color var(--text-color-3)
             }
           }
         }
 
 
-        .all-category-list-child {
+        .site-all-category-list-child {
           position relative
           box-sizing border-box
           height 0
-          margin-left 1.6rem
+          margin-left 1.5rem
           overflow hidden
           visibility hidden
         }

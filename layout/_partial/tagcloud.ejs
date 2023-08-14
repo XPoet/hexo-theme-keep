@@ -1,6 +1,6 @@
-<% if (site.tags.length){ %>
-    <div class="fade-in-down-animation">
-        <div class="tagcloud-container">
+<div class="fade-in-down-animation">
+    <div class="tagcloud-container">
+        <% if (site.tags.length){ %>
             <div class="tagcloud-content">
                 <%- tagcloud({
                     min_font: 1,
@@ -9,11 +9,13 @@
                     amount: 100
                 }) %>
             </div>
+        <% } else { %>
+            <%- partial('_partial/common/empty-content') %>
+        <% } %>
+        <% if (page?.comment === true) { %>
             <div class="tagcloud-comments">
-                <% if (page?.comment === true) { %>
-                    <%- partial('_partial/comment/comment') %>
-                <% } %>
+                <%- partial('_partial/comment/comment') %>
             </div>
-        </div>
+        <% } %>
     </div>
-<% } %>
+</div>

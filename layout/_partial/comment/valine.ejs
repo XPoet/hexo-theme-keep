@@ -61,7 +61,7 @@ if (t_cdn_enable === true) {
             const getValineDomTimer = setInterval(() => {
               const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
               if (vcards.length > 0) {
-                let author = '<%= theme.base_info.author || config.author %>'
+                let author = '<%= theme?.base_info?.author || config.author %>'
 
                 if (author) {
                   for (let vcard of vcards) {

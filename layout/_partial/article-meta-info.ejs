@@ -8,20 +8,16 @@
 
 
         <% if (page_type === 'post') { %>
-            <% if (theme.post?.datetime?.create !== false) { %>
-                <span class="meta-info-item article-date">
-                    <i class="icon fa-regular fa-calendar-plus"></i>&nbsp;
-                    <span class="pc"><%= date(post.date, theme.post?.datetime?.format || 'YYYY-MM-DD HH:mm:ss') %></span>
-                    <span class="mobile"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></span>
-                </span>
-            <% } %>
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc"><%= date(post.date, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
+                <span class="mobile"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></span>
+            </span>
 
-            <% if (theme.post?.datetime?.update !== false) { %>
-                <span class="meta-info-item article-update-date">
-                    <i class="icon fas fa-file-pen"></i>&nbsp;
-                    <span class="pc"><%= date(post.updated, theme.post?.datetime?.format || 'YYYY-MM-DD HH:mm:ss') %></span>
-                </span>
-            <% } %>
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
+            </span>
         <% } %>
 
         <% if ((post.categories.length && theme.home_article.category.enable === true) || page_type === 'post') { %>

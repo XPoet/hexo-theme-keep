@@ -1,7 +1,7 @@
-$archive-year-font-size = 1.8rem
-$archive-year-count-font-size = 1.2rem
+$archive-year-font-size = 1.6rem
 $article-title-font-size = 1.2rem
 $article-date-font-size = 1rem
+$article-date-width = 3.6rem
 
 .archive-list-container {
 
@@ -22,18 +22,7 @@ $article-date-font-size = 1rem
         font-size $archive-year-font-size
 
         +keep-tablet() {
-          font-size $archive-year-font-size - 0.2rem
-        }
-      }
-
-
-      .archive-year-post-count {
-        color var(--text-color-2)
-        font-weight 500
-        font-size $archive-year-count-font-size
-
-        +keep-tablet() {
-          font-size $archive-year-count-font-size * 0.9
+          font-size $archive-year-font-size * 0.9
         }
       }
     }
@@ -41,14 +30,12 @@ $article-date-font-size = 1rem
 
     .article-list {
 
-      padding-left 0.8rem
-
-      +keep-tablet() {
-        padding-left 0
-      }
-
       .article-item {
-        margin-top 1.2rem
+        display flex
+        align-items center
+        justify-content space-between
+        width 100%
+        margin-top 1.3rem
         font-size 1rem
 
         +keep-tablet() {
@@ -68,13 +55,15 @@ $article-date-font-size = 1rem
 
 
         a.article-title {
+          width 'calc(100% - %s)' % $article-date-width
           color var(--text-color-3)
         }
 
         .article-date {
-          float right
+          width $article-date-width
           color var(--text-color-3)
           font-size $article-date-font-size
+          text-align right
         }
       }
     }

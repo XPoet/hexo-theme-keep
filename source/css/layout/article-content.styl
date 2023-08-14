@@ -1,4 +1,4 @@
-$avatarWidth = 3rem
+$avatar-width = 3.2rem
 $arrow-icon-width = 1rem
 $post-nav-max-width = 14rem
 $article-title-font-size = 1.6rem
@@ -40,7 +40,7 @@ $toc-container-width = 15rem
     height 100%
 
 
-    keep-container(false, 0, 0, 2rem, 2rem)
+    keep-container(1, 2rem, 2rem)
 
     +keep-mobile() {
       padding 1.2rem 0.6rem
@@ -75,8 +75,8 @@ $toc-container-width = 15rem
       .avatar-box {
         display var(--post-author-avatar)
         flex-shrink 0
-        width $avatarWidth
-        height $avatarWidth
+        width $avatar-width
+        height $avatar-width
         margin-right 0.8rem
         padding 0.1rem
         border 1px solid var(--border-color)
@@ -119,6 +119,10 @@ $toc-container-width = 15rem
             background var(--selection-color)
             border-radius 0.4rem
           }
+        }
+
+        .meta-info {
+          margin-top 0.1rem
         }
       }
     }
@@ -229,8 +233,9 @@ $toc-container-width = 15rem
         box-sizing border-box
         max-width $post-nav-max-width
         height 100%
+        keep-container(1, 0.8rem, 0)
+        border-radius 0.32rem
 
-        keep-container(true, 1.03, 1.03, 0.8rem, 0)
 
         a {
           position relative
@@ -297,20 +302,20 @@ $toc-container-width = 15rem
 
   .pc-post-toc {
     position sticky
-    top $header-height + $component-spacing-value
+    top 'calc(var(--header-height) + %s)' % $component-spacing-value
     display none
     flex-shrink 0
     order hexo-config('toc.layout') == 'left' ? -1 : 1
     box-sizing border-box
     width $toc-container-width
-    max-height 'calc(100vh - %s)' % ($header-height + $component-spacing-value)
+    max-height 'calc(100vh - %s)' % ('calc(var(--header-height) + %s)' % $component-spacing-value)
     padding 2rem 0 2rem 1.4rem
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
 
     .header-shrink & {
-      top $header-shrink-height + $component-spacing-value
-      max-height 'calc(100vh - %s)' % ($header-shrink-height + $component-spacing-value)
+      top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
+      max-height 'calc(100vh - %s)' % ('calc(var(--header-shrink-height) + %s)' % $component-spacing-value)
     }
   }
 }

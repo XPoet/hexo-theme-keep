@@ -1,5 +1,5 @@
-$li-border-radius = 0.4rem
 $li-margin-bottom = 0.8rem
+$post-tool-button-width = 2.5rem
 
 .post-tools-container {
   padding-top 2rem
@@ -16,11 +16,17 @@ $li-margin-bottom = 0.8rem
       font-size 1.2rem
       background var(--background-color-1)
       border-radius 50%
+      box-shadow 2px 2px 5px var(--shadow-color)
       cursor pointer
+
+      &:hover {
+        box-shadow 2px 2px 8px var(--shadow-hover-color)
+      }
 
       i {
         color var(--text-color-3)
       }
+
 
       &:hover {
         color var(--background-color-1)
@@ -36,8 +42,6 @@ $li-margin-bottom = 0.8rem
         margin-bottom 0
       }
 
-
-      hover-style(true, 1.06, 1.06)
 
       &.toggle-show-toc {
         display none

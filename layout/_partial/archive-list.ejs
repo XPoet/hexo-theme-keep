@@ -1,18 +1,17 @@
 <% const archive_post_list = createNewArchivePosts(archive_posts) %>
-<div class="archive-list-container">
-    <% archive_post_list.forEach(postYear => { %>
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year"><%= postYear.year %></span>
-                <span class="archive-year-post-count">[<%= postYear.postList.length %>]</span>
+<div class="archive-list-container border-box">
+    <% archive_post_list.forEach(postItem => { %>
+        <section class="archive-item border-box">
+            <div class="archive-item-header border-box">
+                <span class="archive-year"><%= postItem.year %></span>
             </div>
-            <ul class="article-list">
-                <% postYear.postList.forEach(post => { %>
-                    <li class="article-item">
-                        <a class="article-title"
+            <ul class="article-list border-box">
+                <% postItem.postList.forEach(post => { %>
+                    <li class="article-item border-box">
+                        <a class="article-title border-box text-ellipsis"
                            href="<%- url_for(post.path) %>"
                         ><%= post.title %></a>
-                        <span class="article-date"><%= date(post.date, 'MM-DD') %></span>
+                        <span class="article-date border-box"><%= date(post.date, 'MM-DD') %></span>
                     </li>
                 <% }) %>
             </ul>
