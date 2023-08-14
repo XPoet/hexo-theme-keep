@@ -60,7 +60,7 @@
 
     <!-- post tools -->
     <% if (is_post()) { %>
-        <div class="post-tools">
+        <div class="post-tools <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
             <%- partial('_partial/post-tools') %>
         </div>
     <% } %>
@@ -79,7 +79,7 @@
     <% } %>
 
     <!-- tablet toc -->
-    <% if (is_post() && page.toc !== false && theme.toc.enable === true) { %>
+    <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
         <div class="tablet-post-toc-mask">
             <div class="tablet-post-toc">
                 <%- partial('_partial/toc') %>

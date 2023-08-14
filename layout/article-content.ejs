@@ -110,7 +110,7 @@
         </div>
 
         <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>
-            <div class="pc-post-toc">
+            <div class="pc-post-toc <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
                 <%- partial('_partial/toc') %>
             </div>
         <% } %>

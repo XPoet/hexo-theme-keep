@@ -1,14 +1,14 @@
 <div class="post-tools-container border-box">
     <ul class="tools-list border-box">
         <!-- PC TOC show toggle -->
-        <% if (page.toc !== false && theme.toc.enable === true) { %>
+        <% if (page?.toc !== false && theme?.toc?.enable === true) { %>
             <li class="tools-item flex-center toggle-show-toc">
                 <i class="fas fa-list"></i>
             </li>
         <% } %>
 
         <!-- PC go comment -->
-        <% if (page.comment !== false && theme.comment.enable === true && theme.comment?.use) { %>
+        <% if (page?.comment !== false && theme?.comment?.enable === true && theme?.comment?.use) { %>
             <li class="tools-item flex-center go-to-comments">
                 <i class="fas fa-comment"></i>
                 <span class="post-comments-count"></span>

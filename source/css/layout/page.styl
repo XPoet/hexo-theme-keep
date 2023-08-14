@@ -135,11 +135,12 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
 
-    if (hexo-config('toc.layout') == 'left') {
-      right $post-tools-offset
-    }
-    else {
+    &.right-toc {
       left $post-tools-offset
+    }
+
+    &.left-toc {
+      right $post-tools-offset
     }
 
     .header-shrink & {

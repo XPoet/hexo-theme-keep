@@ -305,13 +305,19 @@ $toc-container-width = 15rem
     top 'calc(var(--header-height) + %s)' % $component-spacing-value
     display none
     flex-shrink 0
-    order hexo-config('toc.layout') == 'left' ? -1 : 1
     box-sizing border-box
     width $toc-container-width
     max-height 'calc(100vh - %s)' % ('calc(var(--header-height) + %s)' % $component-spacing-value)
     padding 2rem 0 2rem 1.4rem
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
+    &.right-toc {
+      order 1
+    }
+
+    &.left-toc {
+      order -1
+    }
 
     .header-shrink & {
       top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
