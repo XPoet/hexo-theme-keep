@@ -6,7 +6,7 @@ const {
 } = theme.footer
 const { author: bi_author } = theme?.base_info || {}
 const { author: hexo_author } = config
-const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme.website_count.busuanzi_count
+const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme?.website_count?.busuanzi_count || {}
 const footer_style_type = theme.footer?.shields_style?.enable === true ? 'shields' : 'default'
 const shields_style = 'flat-square'
 const shields_color_list = ['dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue', 'dodgerblue']

@@ -75,7 +75,7 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
                 <i class="icon fas fa-clock"></i>&nbsp;<span><%= temp_min2read_count %> <%- __('min2read') %></span>
             </span>
         <% } %>
-        <% if (page_type === 'post' && theme?.website_count?.busuanzi_count.enable === true && theme?.website_count?.busuanzi_count.page_pv === true) { %>
+        <% if (page_type === 'post' && theme?.website_count?.busuanzi_count?.enable === true && theme?.website_count?.busuanzi_count?.page_pv === true) { %>
             <span class="meta-info-item article-pv">
                 <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
             </span>

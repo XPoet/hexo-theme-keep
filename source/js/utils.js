@@ -412,7 +412,7 @@ KEEP.initUtils = () => {
 
     // busuanzi initialize handle
     siteCountInitialize() {
-      if (KEEP.theme_config?.website_count?.busuanzi_count.enable === true) {
+      if (KEEP.theme_config?.website_count?.busuanzi_count?.enable === true) {
         const script = document.createElement('script')
         script.async = true
         script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
