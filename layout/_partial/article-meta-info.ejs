@@ -1,3 +1,8 @@
+<%
+const home_category_limit_number = theme?.home_article?.category?.limit || 5
+const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
+%>
+
 <div class="article-meta-info-container border-box <%= page_type %>">
     <div class="article-meta-info border-box">
         <% if (page_type === 'home') { %>
@@ -20,11 +25,11 @@
             </span>
         <% } %>
 
-        <% if ((post.categories.length && theme.home_article.category.enable === true) || page_type === 'post') { %>
+        <% if ((post.categories.length && theme?.home_article?.category?.enable === true) || page_type === 'post') { %>
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul>
                     <% post.categories.forEach((category, i) => {
-                        if (theme.home_article.category.limit === 0 || i + 1 <= theme.home_article.category.limit || page_type === 'post') { %>
+                        if (home_category_limit_number === 0 || i + 1 <= home_category_limit_number || page_type === 'post') { %>
                             <li class="category-item">
                                 <% if (i !== 0) { %>
                                     <span class="category-separator"><i class="icon fas fa-angle-right"></i></span>
@@ -37,12 +42,12 @@
             </span>
         <% } %>
 
-        <% if ((post.tags.length && theme.home_article.tag.enable === true) || page_type === 'post') { %>
+        <% if ((post.tags.length && theme?.home_article?.tag?.enable === true) || page_type === 'post') { %>
             <span class="article-tag meta-info-item border-box">
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul>
                     <% post.tags.forEach((tag, i) => {
-                        if (theme.home_article.tag.limit === 0 || i + 1 <= theme.home_article.tag.limit || page_type === 'post') { %>
+                        if (home_tag_limit_number === 0 || i + 1 <= home_tag_limit_number || page_type === 'post') { %>
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></li>
                         <% } %>
                     <% }) %>
