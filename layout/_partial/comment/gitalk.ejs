@@ -11,6 +11,7 @@ const {
 let cdn_css = '//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css'
 let cdn_js = '//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js'
 const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+
 if (t_cdn_enable === true) {
     switch (t_cdn_provider) {
         case 'jsdelivr':
@@ -66,5 +67,5 @@ if (t_cdn_enable === true) {
         </script>
     </div>
 <% } else { %>
-    <div>Please fill in Gitalk complete configuration items.</div>
+    <div class="error-tips">Please fill in Gitalk complete configuration items.</div>
 <% } %>

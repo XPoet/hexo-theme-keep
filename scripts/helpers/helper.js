@@ -42,11 +42,12 @@ hexo.extend.helper.register('getAuthorLabel', function (postCount, authorLabelCo
 
 const getSourceCdnUrl = (tyle, themeConfig, path) => {
   const version = require('../../package.json').version
-  const cdn = themeConfig?.cdn || {}
-  const { provider = 'jsdelivr' } = cdn
-
+  let { provider } = themeConfig?.cdn || {}
+  if (!provider) {
+    provider = 'jsdelivr'
+  }
   let urlPrefix = ''
-  switch (provider.toLocaleLowerCase()) {
+  switch (provider?.toLocaleLowerCase()) {
     case 'jsdelivr':
       urlPrefix = '//cdn.jsdelivr.net/npm/hexo-theme-keep'
       if (tyle === 'js') {
@@ -65,7 +66,7 @@ const getSourceCdnUrl = (tyle, themeConfig, path) => {
 }
 
 hexo.extend.helper.register('__js', function (path) {
-  const { enable } = this.theme.cdn
+  const { enable } = this.theme?.cdn || {}
   const _js = hexo.extend.helper.get('js').bind(hexo)
   const cdnPathHandle = (pa) => {
     return enable ? getSourceCdnUrl('js', this.theme, pa) : _js(pa)
@@ -85,7 +86,7 @@ hexo.extend.helper.register('__js', function (path) {
 })
 
 hexo.extend.helper.register('__css', function (path) {
-  const { enable } = this.theme.cdn
+  const { enable } = this.theme?.cdn || {}
   const _css = hexo.extend.helper.get('css').bind(hexo)
   return enable ? getSourceCdnUrl('css', this.theme, path) : _css(path)
 })

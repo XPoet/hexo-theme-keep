@@ -8,6 +8,7 @@ const {
 } = theme?.comment?.valine || {}
 let cdn_url = '//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
 const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+
 if (t_cdn_enable === true) {
     switch (t_cdn_provider) {
         case 'jsdelivr':
@@ -90,5 +91,5 @@ if (t_cdn_enable === true) {
         </script>
     </div>
 <% } else { %>
-    <div>Please fill in Valine complete configuration items.</div>
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
 <% } %>
