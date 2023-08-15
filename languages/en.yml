@@ -70,7 +70,7 @@ ago:
   month: "%s months ago"
   year: "%s years ago"
 footer:
-  powered_by: "Powered by %s"
+  powered_by: "Powered by&nbsp;%s"
   site_uv: Visitor count
   site_pv: Totalview
   deploy: "This site is provided with deployment services by %s"

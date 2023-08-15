@@ -3,7 +3,7 @@ const {
     since: f_since,
     icp: f_icp,
     site_deploy: f_site_deploy
-} = theme.footer
+} = theme?.footer || {}
 const { author: bi_author } = theme?.base_info || {}
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme?.website_count?.busuanzi_count || {}
@@ -39,7 +39,7 @@ const web_master = bi_author || hexo_author
                 <a class="shields-item" href="https://github.com/XPoet/hexo-theme-keep" target="_blank">
                     <img src="https://img.shields.io/badge/Theme-Keep%20v3.7.2-<%= shields_color_list[4] %>?style=<%= shields_style %>">
                 </a>
-                <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+                <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>
                     <a class="shields-item<%= f_site_deploy?.url ? '' : ' no-pointer' %>"
                        target="_blank"
                        rel="nofollow"
@@ -86,7 +86,7 @@ const web_master = bi_author || hexo_author
                 </div>
             <% } %>
 
-            <% if (f_site_deploy?.enable === true && f_site_deploy?.provider !== '') { %>
+            <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>
                 <div class="deploy-info info-item <%= footer_style_type %>">
                     <% if (f_site_deploy?.url) { %>
                     <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
