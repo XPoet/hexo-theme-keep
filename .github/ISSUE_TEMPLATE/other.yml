@@ -1,0 +1,38 @@
+name: Other | 其他
+description: Not a feature request or bug report
+#title: ""
+labels: 
+  - question
+#assignees: ""
+body:
+  - type: markdown
+    id: overall
+    attributes:
+      value: |
+        Please follow this Issue template to provide relevant information, such as source code repository, website URL and screenshots, which will help us investigate.
+        请按照此 Issue 模版提供相关信息，例如源码仓库、网站链接和屏幕截图，这将有助于我们进行调查。
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Issue Checklist | Issue 检查清单
+      description: |
+        I made sure I checked
+        我确认我已经检查过了
+      options:
+        - label: I am using Keep version 3.7.3 or later.
+          required: true
+        - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn/tutorial/get-start/install-theme.html).
+          required: true
+        - label: I have already searched for current [issues](https://github.com/XPoet/hexo-theme-keep/issues), which does not help me.
+          required: true
+
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Other Information | 其它信息
+      description: |
+        Feedback other questions
+        反馈其它的问题
+    validations:
+      required: true

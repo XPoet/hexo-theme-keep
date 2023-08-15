@@ -1,0 +1,115 @@
+name: Bug Report | Bug 报告
+description: Something isn't working as expected
+#title: ""
+labels: 
+  - bug
+#assignees: ""
+body:
+  - type: markdown
+    id: overall
+    attributes:
+      value: |
+        Please follow this Issue template to provide relevant information, such as source code repository, website URL and screenshots, which will help us investigate.
+        请按照此 Issue 模版提供相关信息，例如源码仓库、网站链接和屏幕截图，这将有助于我们进行调查。
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Issue Checklist | Issue 检查清单
+      description: |
+        I made sure I checked
+        我确认我已经检查过了
+      options:
+        - label: I am using Keep version 3.7.3 or later.
+          required: true
+        - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn/tutorial/get-start/install-theme.html).
+          required: true
+        - label: I have already searched for current [issues](https://github.com/XPoet/hexo-theme-keep/issues), which does not help me.
+          required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior | 预期行为
+      description:  |
+        Please provide a detailed description of what you consider expected behavior.
+        请仔细描述你认为的预期行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior | 实际行为
+      description: |
+        Please provide the following information
+        请提供以下信息
+      value: |
+        - Links to demo site with this issue:
+        - Links to repository or source code of the blog:
+        - Screenshots:
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce the behavior | 重现步骤
+      description: |
+        Please provide a detailed description of the steps to reproduce the issue
+        请仔细描述重现步骤
+      value: |
+        1. First step ...
+        2. Second step ...
+        3. Third step ...
+    validations:
+      required: true
+
+  - type: markdown
+    id: env
+    attributes:
+      value: |
+        ## Environment Information | 环境信息
+
+  - type: textarea
+    id: nodejs-info
+    attributes:
+      label: Node.js and NPM Information | Node.js 和 NPM 信息
+      description: |
+        Paste output from `node -v && npm -v`
+        粘贴 `node -v && npm -v` 输出的信息
+      render: Text
+    validations:
+      required: true
+
+  - type: textarea
+    id: hexo-config
+    attributes:
+      label: Hexo Configuration | Hexo 配置
+      description: | 
+        "Paste configuration from Hexo `_config.yml`
+        粘贴 Hexo `_config.yml` 中的内容
+      render: YAML
+    validations:
+      required: true
+
+  - type: textarea
+    id: keep-config
+    attributes:
+      label: Keep Configuration | Keep 配置
+      description: | 
+        Paste ONLY CHANGED CONFIGURATION from Keep `_config.yml`
+        只粘贴 Keep 主题配置文件 `_config.yml` 中修改过的部分
+      render: YAML
+    validations:
+      required: true
+
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Other Information | 其它信息
+      description: | 
+        e.g. Browser, System
+        例如：浏览器，操作系统
+    validations:
+      required: false
