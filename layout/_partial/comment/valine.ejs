@@ -1,13 +1,14 @@
 <%
-const { enable: pjax_enable } = theme?.pjax
+const { enable: pjax_enable } = theme?.pjax || {}
 const {
     appid,
     appkey,
     server_urls,
     placeholder
-} = theme.comment?.valine
+} = theme?.comment?.valine || {}
 let cdn_url = '//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
-const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+
 if (t_cdn_enable === true) {
     switch (t_cdn_provider) {
         case 'jsdelivr':
@@ -35,7 +36,7 @@ if (t_cdn_enable === true) {
               avatar: 'wavatar',
               enableQQ: true,
               placeholder: '<%= placeholder %>',
-              lang: '<%= config.language %>'.toLowerCase()
+              lang: '<%= config?.language || 'zh-CN' %>'.toLowerCase()
             }
 
             if ('<%= server_urls %>') {
@@ -89,4 +90,6 @@ if (t_cdn_enable === true) {
           }
         </script>
     </div>
+<% } else { %>
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
 <% } %>

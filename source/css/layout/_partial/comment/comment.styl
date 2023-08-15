@@ -1,4 +1,4 @@
-if (hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
+if (hexo-config('comment') && hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
   if (hexo-config('comment.use') == "valine") {
     @import "./valine.styl"
   }
@@ -23,6 +23,7 @@ if (hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
     height 0.8rem
   }
 
+
   .comment-area-title {
     width 100%
     margin 0.8rem 0
@@ -37,5 +38,12 @@ if (hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
       margin 0.4rem 0
       font-size 1.2rem
     }
+  }
+
+
+  .error-tips {
+    margin-top 1rem
+    color var(--text-color-3)
+    font-size 1rem
   }
 }

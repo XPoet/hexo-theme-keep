@@ -1,5 +1,5 @@
 ## ======================================================================================
-## Keep v3.7.2
+## Keep v3.7.3
 ## Preview: https://xpoet.cn
 ## Documents: https://keep-docs.xpoet.cn
 ## Repository: https://github.com/XPoet/hexo-theme-keep
@@ -134,9 +134,6 @@ post:
 
   # Post datetime
   datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
-
-  # Image align position in the post
-  img_align: left        # Option values: left | center
 
   # Post copyright info
   copyright_info: false  # Option values: true | false
@@ -308,27 +305,28 @@ footer:
 
       # e.g.
       # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.2-blue?style=flat-square&logo=hexo
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.3-blue?style=flat-square&logo=hexo
       #
       # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.2-red?style=flat-square&logo=hexo
+      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.3-red?style=flat-square&logo=hexo
       #
       # - ...
 
 # ---------------------------------------------------------------------------------------
 # Inject custom CSS and JavaScript files
+# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/inject.html
 # ---------------------------------------------------------------------------------------
 inject:
   enable: false  # Option values: true | false
   css:
     -
     # e.g.
-    # - /css/test-1.css
-    # - /css/test-2.css
+    # - /css/custom-1.css
+    # - /css/custom-2.css
     # - ...
   js:
     -
     # e.g.
-    # - /js/test-1.js
-    # - /js/test-2.js
+    # - /js/custom-1.js
+    # - /js/custom-2.js
     # - ...

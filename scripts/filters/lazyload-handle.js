@@ -6,9 +6,9 @@ hexo.extend.filter.register(
   'after_post_render',
   function (data) {
     const theme = hexo.theme.config
-    if (!theme.lazyload || !theme.lazyload.enable) return
+    if (!theme?.lazyload || !theme?.lazyload?.enable === true) return
     data.content = data.content.replace(
-      // Match 'img' tags the src attribute.
+      // Match "img" tag the src attribute
       /<img([^>]*)src="([^"]*)"([^>\/]*)\/?\s*>/gim,
       function (match, attrBegin, src, attrEnd) {
         let hasAlt = false

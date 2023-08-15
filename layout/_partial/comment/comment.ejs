@@ -2,7 +2,7 @@
 const {
     enable: theme_comment_enable,
     use: theme_comment_use
-} = theme?.comment
+} = theme?.comment || {}
 %>
 
 <% if (theme_comment_enable === true && theme_comment_use) { %>

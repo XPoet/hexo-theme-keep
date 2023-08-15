@@ -49,7 +49,12 @@
 
     .nav {
       .nav-child {
-        display hexo-config('toc.expand_all') ? block : none
+        if (hexo-config('toc') && hexo-config('toc.expand_all') == true) {
+          display block
+        }
+        else {
+          display none
+        }
       }
 
       .active > .nav-child {

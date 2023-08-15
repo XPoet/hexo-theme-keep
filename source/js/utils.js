@@ -165,7 +165,7 @@ KEEP.initUtils = () => {
       let selectedImgDom = null
       const imgDomList = document.querySelectorAll('.keep-markdown-body img')
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
-      const zoomInImg = zoomInImgMask.querySelector('.zoom-in-image')
+      const zoomInImg = zoomInImgMask?.querySelector('.zoom-in-image')
 
       const zoomOut = () => {
         if (isZoomIn) {
@@ -412,7 +412,7 @@ KEEP.initUtils = () => {
 
     // busuanzi initialize handle
     siteCountInitialize() {
-      if (KEEP.theme_config?.website_count?.busuanzi_count.enable === true) {
+      if (KEEP.theme_config?.website_count?.busuanzi_count?.enable === true) {
         const script = document.createElement('script')
         script.async = true
         script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'

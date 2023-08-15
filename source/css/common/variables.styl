@@ -57,7 +57,13 @@ $z-index-10 = 1010
 // ==============================================================================================
 // theme primary color
 // ==============================================================================================
-$temp-color = hexo-config('style.primary_color')
+
+if (hexo-config('style')) {
+  $temp-color = hexo-config('style.primary_color')
+}
+else {
+  $temp-color = ''
+}
 $primary-color = $temp-color ? convert($temp-color) : #0066cc
 
 // light
@@ -112,6 +118,8 @@ $article-aging-tips-color = #b78d0f
 $article-aging-tips-background-color = alpha($article-aging-tips-color, 0.1)
 $article-aging-tips-border-color = alpha($article-aging-tips-color, 0.6)
 
+$post-h-bottom-border-color = alpha($text-color-3, 0.15)
+
 
 // ==============================================================================================
 // theme dark mode color set
@@ -155,6 +163,8 @@ $dark-pjax-progress-bar-color = linear-gradient(45deg, #ea404a, #ea722f, #e9a71f
 $dark-article-aging-tips-color = #ecc34d
 $dark-article-aging-tips-background-color = alpha($dark-article-aging-tips-color, 0.1)
 $dark-article-aging-tips-border-color = alpha($dark-article-aging-tips-color, 0.6)
+
+$dark-post-h-bottom-border-color = alpha($dark-text-color-3, 0.15)
 
 
 // ==============================================================================================
@@ -223,6 +233,8 @@ root-color(mode) {
   --article-aging-tips-color mode == 'light' ? $article-aging-tips-color : $dark-article-aging-tips-color
   --article-aging-tips-background-color mode == 'light' ? $article-aging-tips-background-color : $dark-article-aging-tips-background-color
   --article-aging-tips-border-color mode == 'light' ? $article-aging-tips-border-color : $dark-article-aging-tips-border-color
+
+  --post-h-bottom-border-color mode == 'light' ? $post-h-bottom-border-color : $dark-post-h-bottom-border-color
 }
 
 

@@ -1,4 +1,4 @@
-$site-name-font-size = 2rem
+$site-name-font-size = 1.88rem
 $pc-search-icon-font-size = 1.5rem
 $menu-bar-line-height = 2.5px
 $logo-image-box-width = 2.8rem
@@ -65,7 +65,7 @@ $logo-image-box-width = 2.8rem
       }
 
 
-      if (hexo-config('base_info.logo_img') || hexo-config('style.logo')) {
+      if (hexo-config('style') && hexo-config('style.logo')) {
         .logo-image {
           flex-shrink 0
           width $logo-image-box-width

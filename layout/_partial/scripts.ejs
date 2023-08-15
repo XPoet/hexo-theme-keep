@@ -30,7 +30,7 @@ const {
     <%- __js('js/lazyload.js') %>
 <% } %>
 
-<div class="post-scripts<%= theme.pjax?.enable === true ? ' pjax' : '' %>">
+<div class="post-scripts<%= theme?.pjax?.enable === true ? ' pjax' : '' %>">
     <% if (is_post()) { %>
         <%- __js('js/post-helper.js') %>
         <% if (t_toc?.enable === true || t_comment?.enable === true) { %>

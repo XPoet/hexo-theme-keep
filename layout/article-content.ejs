@@ -18,7 +18,7 @@
                         <div class="author">
                             <span class="name"><%= theme?.base_info?.author || config?.author %></span>
                             <% if (theme?.post?.author_label?.enable === true) { %>
-                                <span class="author-label"><%- getAuthorLabel(site.posts.length, theme.post.author_label.auto, theme.post.author_label.custom_label_list) %></span>
+                                <span class="author-label"><%- getAuthorLabel(site.posts.length, theme?.post?.author_label) %></span>
                             <% } %>
                         </div>
                         <div class="meta-info border-box">
@@ -103,14 +103,12 @@
             <% } %>
 
             <% if (page?.comment !== false) { %>
-                <div class="comment-container">
-                    <%- partial('_partial/comment/comment') %>
-                </div>
+                <%- partial('_partial/comment/comment') %>
             <% } %>
         </div>
 
         <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>
-            <div class="pc-post-toc">
+            <div class="pc-post-toc <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
                 <%- partial('_partial/toc') %>
             </div>
         <% } %>
