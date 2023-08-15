@@ -65,7 +65,7 @@ $logo-image-box-width = 2.8rem
       }
 
 
-      if (hexo-config('base_info.logo_img') || hexo-config('style.logo')) {
+      if (hexo-config('style') && hexo-config('style.logo')) {
         .logo-image {
           flex-shrink 0
           width $logo-image-box-width

@@ -57,7 +57,13 @@ $z-index-10 = 1010
 // ==============================================================================================
 // theme primary color
 // ==============================================================================================
-$temp-color = hexo-config('style.primary_color')
+
+if (hexo-config('style')) {
+  $temp-color = hexo-config('style.primary_color')
+}
+else {
+  $temp-color = ''
+}
 $primary-color = $temp-color ? convert($temp-color) : #0066cc
 
 // light

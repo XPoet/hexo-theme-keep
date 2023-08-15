@@ -1,4 +1,10 @@
-$temp-img = hexo-config('style.first_screen.background_img')
+if (hexo-config('style') && hexo-config('style.first_screen')) {
+  $temp-img = hexo-config('style.first_screen.background_img')
+}
+else {
+  $temp-img = ''
+}
+
 $first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
 
 .first-screen-container {
@@ -7,7 +13,7 @@ $first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
   overflow hidden
   background url($first-screen-img) center center / cover no-repeat
 
-  if (!(hexo-config('style.first_screen.header_transparent') == true)) {
+  if (hexo-config('style') && hexo-config('style.first_screen') && !(hexo-config('style.first_screen.header_transparent') == true)) {
     background-position-y var(--header-height)
 
     +keep-tablet() {

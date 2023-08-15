@@ -80,7 +80,7 @@ $tools-item-border-radius = 0.2rem
 
   .exposed-tools-list {
 
-    if (hexo-config('style.scroll.percent') == true) {
+    if (hexo-config('style') && hexo-config('style.scroll') && hexo-config('style.scroll.percent') == true) {
       .tool-scroll-to-top {
         display none
 

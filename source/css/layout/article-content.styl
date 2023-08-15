@@ -172,7 +172,7 @@ $toc-container-width = 15rem
       }
 
 
-      if (hexo-config('post.copyright_info') == true || hexo-config('copyright_info.enable') == true) {
+      if (hexo-config('post') && hexo-config('post.copyright_info') == true) {
         border-bottom 0.1rem dashed var(--border-color)
       }
     }

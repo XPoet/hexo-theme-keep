@@ -1,4 +1,4 @@
-if (hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
+if (hexo-config('comment') && hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
   if (hexo-config('comment.use') == "valine") {
     @import "./valine.styl"
   }
