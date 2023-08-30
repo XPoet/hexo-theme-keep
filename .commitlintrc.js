@@ -13,12 +13,10 @@ module.exports = {
         'perf',
         'test',
         'build',
-        'ci',
-        'chore',
         'revert',
-        'WIP',
+        'ci',
         'ui',
-        'release'
+        'chore'
       ]
     ]
   }
