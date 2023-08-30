@@ -32,11 +32,20 @@
     "*.{js}": "prettier --write"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "prettier": "^2.7.1",
     "stylelint": "^14.13.0",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-stylus": "^0.17.0",
-    "husky": "^8.0.0"
+    "stylelint-stylus": "^0.17.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
