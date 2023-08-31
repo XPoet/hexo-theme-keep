@@ -25,6 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
       `color: #fadfa3; background: #333; padding: 6px 0;`,
       `padding: 6px 0;`
     )
+    const versionDom = document.querySelector('.footer .keep-version')
+    versionDom && (versionDom.innerHTML = version)
   }
 
   // set styleStatus to localStorage

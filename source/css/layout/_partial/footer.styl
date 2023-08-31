@@ -48,6 +48,7 @@ $shields-style-height = 22px
       }
     }
 
+
     +keep-mobile() {
       &.shields {
         .shields-item
@@ -110,6 +111,7 @@ $shields-style-height = 22px
         }
       }
 
+
       &.default {
         margin 0.2rem 0
 
@@ -170,6 +172,16 @@ $shields-style-height = 22px
         img {
           height 1.08rem
           margin 0 0.4rem
+        }
+      }
+
+      &.theme-info {
+        .keep-version {
+          color var(--text-color-4)
+
+          &:hover {
+            color var(--primary-color)
+          }
         }
       }
     }
