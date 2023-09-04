@@ -133,6 +133,15 @@ a {
 // img
 // ======================================================================
 img {
+
+  .dark-mode & {
+    filter brightness(0.9)
+
+    &:hover {
+      filter brightness(1)
+    }
+  }
+
   &[lazyload] {
     position relative
     box-sizing border-box
@@ -153,6 +162,7 @@ img {
       content ''
       transition-t("background", "0", "0.2", "ease")
     }
+
 
     &::after {
       position absolute
