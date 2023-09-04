@@ -26,7 +26,7 @@ jobs:
             {"type": "build", "section": "Build System", "hidden": false},
             {"type": "revert", "section": "Reverts", "hidden": false},
             {"type": "ci", "section": "CI", "hidden": false},
-            {"type": "ui", "section": "Improvement UI", "hidden": false}
+            {"type": "ui", "section": "Improvement UI", "hidden": false},
             {"type": "chore", "section": "Chore", "hidden": false}
           ]'
 
