@@ -25,8 +25,14 @@ window.addEventListener('DOMContentLoaded', () => {
       `color: #fadfa3; background: #333; padding: 6px 0;`,
       `padding: 6px 0;`
     )
-    const versionDom = document.querySelector('.footer .keep-version')
-    versionDom && (versionDom.innerHTML = version)
+  }
+
+  // set version number of footer
+  KEEP.setFooterVersion = () => {
+    const vd = document.querySelector('.footer .keep-version')
+    vd && (vd.innerHTML = KEEP.themeInfo.theme)
+    const vd2 = document.querySelector('.footer .shields-keep-version')
+    vd2 && (vd2.src = vd2.src.replace('Keep', KEEP.themeInfo.theme))
   }
 
   // set styleStatus to localStorage
@@ -53,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initHeaderShrink()
     KEEP.initModeToggle()
     KEEP.initBack2Top()
+    KEEP.setFooterVersion()
 
     if (local_search?.enable === true) {
       KEEP.initLocalSearch()
