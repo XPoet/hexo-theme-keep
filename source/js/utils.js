@@ -275,9 +275,9 @@ KEEP.initUtils = () => {
       const post = document.querySelectorAll('.article-meta-info .home-article-history')
       post &&
         post.forEach((v) => {
-          const nowDate = Date.now()
-          const postDate = new Date(v.dataset.updated.split(' GMT')[0]).getTime()
-          v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
+          const nowTimestamp = Date.now()
+          const updatedTimestamp = new Date(v.dataset.updated).getTime()
+          v.innerHTML = this.getHowLongAgo(Math.floor((nowTimestamp - updatedTimestamp) / 1000))
         })
     },
 

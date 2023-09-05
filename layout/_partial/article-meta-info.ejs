@@ -7,7 +7,7 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
     <div class="article-meta-info border-box">
         <% if (page_type === 'home') { %>
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD') %></span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
 
