@@ -3,6 +3,7 @@ $arrow-icon-width = 1rem
 $post-nav-max-width = 14rem
 $article-title-font-size = 1.6rem
 $toc-container-width = 15rem
+$spacer-padding = 2rem
 
 
 .post-page-container {
@@ -38,9 +39,10 @@ $toc-container-width = 15rem
     order 0
     width 100%
     height 100%
+    overflow hidden
 
 
-    keep-container(1, 2rem, 2rem)
+    keep-container(1, 0, 2rem)
 
     +keep-mobile() {
       padding 1.2rem 0.6rem
@@ -51,6 +53,60 @@ $toc-container-width = 15rem
       }
     }
 
+
+    .article-content-top {
+      display flex
+      align-items flex-end
+      width 100%
+      height 12rem
+      padding $spacer-padding * 0.5
+      overflow hidden
+      background-color var(--background-color-2)
+
+
+      +keep-tablet() {
+        height 10rem
+
+        .cover-article-title {
+          font-size $article-title-font-size * 0.9
+        }
+      }
+
+
+      .cover-article-title {
+        position relative
+        z-index $z-index-1
+        box-sizing border-box
+        max-width 100%
+        padding $spacer-padding * 0.5
+        color var(--text-color-2)
+        font-weight 600
+        font-size $article-title-font-size
+        background var(--background-color-1-transparent)
+        border-radius var(--box-border-radius)
+        backdrop-filter blur(2px)
+      }
+
+
+      .post-cover {
+        position absolute
+        top 0
+        left 0
+        box-sizing border-box
+        width 100%
+        height 100%
+        object-fit cover
+      }
+    }
+
+
+    .article-content-bottom {
+      padding $spacer-padding
+
+      &.has-cover {
+        padding-top $spacer-padding * 0.5
+      }
+    }
 
     .article-title {
       color var(--text-color-2)
