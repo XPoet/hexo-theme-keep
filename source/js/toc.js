@@ -2,6 +2,7 @@
 
 function initTOC() {
   const pageContainer = document.querySelector('.page-container')
+  const postPageContainer = document.querySelector('.post-page-container')
   const pcTocContainer = document.querySelector('.pc-post-toc')
   const tabletTocContainer = document.querySelector('.tablet-post-toc')
 
@@ -122,12 +123,14 @@ function initTOC() {
     KEEP.utils.handleShowWhenHasToc()
     KEEP.utils.registerTocNav()
   } else {
-    pcTocContainer && pageContainer.removeChild(pcTocContainer)
-    tabletTocContainer && pageContainer.removeChild(tabletTocContainer)
+    pcTocContainer && postPageContainer.removeChild(pcTocContainer)
+    if (tabletTocContainer) {
+      pageContainer.removeChild(document.querySelector('.tablet-post-toc-mask'))
+    }
   }
 }
 
-if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {
+if (KEEP.theme_config?.pjax?.enable === true && KEEP.utils) {
   initTOC()
 } else {
   window.addEventListener('DOMContentLoaded', initTOC)

@@ -4,7 +4,7 @@ keep-container(sValue, pValue, mbValue) {
   padding pValue
   background var(--content-background-color)
   border-radius var(--box-border-radius)
-  box-shadow 2px 2px 5px var(--shadow-color)
+  box-shadow 0 0 8px var(--shadow-color)
 
   if (sValue != 1) {
     transition-t("transform", "0", "0.2", "linear")
@@ -14,7 +14,7 @@ keep-container(sValue, pValue, mbValue) {
     if (sValue != 1) {
       transform scale(sValue)
     }
-    box-shadow 2px 2px 8px var(--shadow-hover-color)
+    box-shadow 0 0 12px var(--shadow-hover-color)
   }
 
   +keep-tablet() {

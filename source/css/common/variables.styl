@@ -79,8 +79,9 @@ $primary-color-dark-2 = darken($primary-color, 20%)
 // theme light mode color set
 // ==============================================================================================
 $background-color-1 = #fff
-$background-color-2= darken($background-color-1, 3%)
-$background-color-3= darken($background-color-1, 6%)
+$background-color-1-transparent = alpha($background-color-1, 0.6)
+$background-color-2 = darken($background-color-1, 3%)
+$background-color-3 = darken($background-color-1, 6%)
 $content-background-color = #fff
 
 $text-color-3 = #50505c
@@ -98,8 +99,8 @@ $badge-background-color = lighten($text-color-3, 40%)
 $border-color = darken($background-color-1, 30%)
 $selection-color = lighten($primary-color, 10%)
 
-$shadow-color = rgba(0, 0, 0, 0.2)
-$shadow-hover-color = rgba(0, 0, 0, 0.3)
+$shadow-color = rgba(0, 0, 0, 0.16)
+$shadow-hover-color = rgba(0, 0, 0, 0.22)
 
 $scrollbar-color = lighten($text-color-3, 10%)
 $scrollbar-background-color = darken($background-color-1, 10%)
@@ -125,8 +126,9 @@ $post-h-bottom-border-color = alpha($text-color-3, 0.15)
 // theme dark mode color set
 // ==============================================================================================
 $dark-background-color-1 = #22272e
-$dark-background-color-2= lighten($dark-background-color-1, 4%)
-$dark-background-color-3= lighten($dark-background-color-1, 8%)
+$dark-background-color-1-transparent = alpha($dark-background-color-1, 0.6)
+$dark-background-color-2 = lighten($dark-background-color-1, 4%)
+$dark-background-color-3 = lighten($dark-background-color-1, 8%)
 $dark-content-background-color = darken($dark-background-color-1, 2%)
 
 $dark-text-color-3 = #adbac5
@@ -144,8 +146,8 @@ $dark-badge-background-color = lighten($dark-text-color-3, 40%)
 $dark-border-color = lighten($dark-background-color-1, 30%)
 $dark-selection-color = darken($selection-color, 20%)
 
-$dark-shadow-color = rgba(128, 128, 128, 0.2)
-$dark-shadow-hover-color = rgba(128, 128, 128, 0.28)
+$dark-shadow-color = rgba(120, 120, 120, 0.18)
+$dark-shadow-hover-color = rgba(120, 120, 120, 0.24)
 
 $dark-scrollbar-color = darken($dark-background-color-1, 10%)
 $dark-scrollbar-background-color = lighten($dark-background-color-1, 20%)
@@ -180,6 +182,7 @@ root-color(mode) {
 
   // background color
   --background-color-1 mode == 'light' ? $background-color-1 : $dark-background-color-1
+  --background-color-1-transparent mode == 'light' ? $background-color-1-transparent : $dark-background-color-1-transparent
   --background-color-2 mode == 'light' ? $background-color-2 : $dark-background-color-2
   --background-color-3 mode == 'light' ? $background-color-3 : $dark-background-color-3
 
