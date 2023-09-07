@@ -45,11 +45,11 @@ $spacer-padding = 2rem
     keep-container(1, 0, 2rem)
 
     +keep-mobile() {
-      padding 1.2rem 0.6rem
-      box-shadow none
+      padding 0 !important
+      box-shadow none !important
 
       &:hover {
-        box-shadow none
+        box-shadow none !important
       }
     }
 
@@ -58,17 +58,34 @@ $spacer-padding = 2rem
       display flex
       align-items flex-end
       width 100%
-      height 12rem
-      padding $spacer-padding * 0.5
+      height 13.8rem
+      padding-top $spacer-padding
+      padding-right $spacer-padding
       overflow hidden
       background-color var(--background-color-2)
 
 
       +keep-tablet() {
-        height 10rem
+        height 12.8rem
+        padding-top $spacer-padding * 0.8
+        padding-right $spacer-padding  * 0.8
 
         .cover-article-title {
-          font-size $article-title-font-size * 0.9
+          padding $spacer-padding * 0.5 * 0.8 $spacer-padding * 0.8 !important
+          font-size $article-title-font-size * 0.9 !important
+          line-height 1.5 !important
+        }
+      }
+
+      +keep-mobile() {
+        height 11.8rem
+        padding-top $spacer-padding * 0.6
+        padding-right $spacer-padding  * 0.6
+
+        .cover-article-title {
+          padding $spacer-padding * 0.5 * 0.6 $spacer-padding * 0.6 !important
+          font-size $article-title-font-size * 0.8 !important
+          line-height 1.4 !important
         }
       }
 
@@ -78,12 +95,15 @@ $spacer-padding = 2rem
         z-index $z-index-1
         box-sizing border-box
         max-width 100%
-        padding $spacer-padding * 0.5
+        max-height 100%
+        padding $spacer-padding * 0.5 $spacer-padding
+        overflow-y auto
         color var(--text-color-2)
         font-weight 600
-        font-size $article-title-font-size
+        font-size $article-title-font-size * 1.1
+        line-height 1.6
         background var(--background-color-1-transparent)
-        border-radius var(--box-border-radius)
+        border-top-right-radius var(--box-border-radius)
         backdrop-filter blur(2px)
       }
 
@@ -106,250 +126,255 @@ $spacer-padding = 2rem
       &.has-cover {
         padding-top $spacer-padding * 0.5
       }
-    }
-
-    .article-title {
-      color var(--text-color-2)
-      font-weight 600
-      font-size $article-title-font-size
-
-      +keep-tablet() {
-        font-size $article-title-font-size * 0.9
-      }
 
       +keep-mobile() {
-        font-size $article-title-font-size * 0.8
-      }
-    }
-
-
-    .article-header {
-      display flex
-      justify-content flex-start
-      width 100%
-
-      .avatar-box {
-        display var(--post-author-avatar)
-        flex-shrink 0
-        width $avatar-width
-        height $avatar-width
-        margin-right 0.8rem
-        padding 0.1rem
-        border 1px solid var(--border-color)
-        border-radius 50%
-
-        img {
-          width 100%
-          height 100%
-          background var(--avatar-background-color)
-          border-radius 50%
-        }
+        padding $spacer-padding * 0.5 0 !important
       }
 
-
-      .info-box {
-        display flex
-        flex-direction column
-        justify-content space-between
-        box-sizing border-box
-        width 100%
-        height 100%
-        padding 0.2rem 0
-
-        .author {
-          display flex
-          align-items center
-          font-weight 600
-          font-size 1.18rem
-
-          .name {
-            color var(--text-color-3)
-          }
-
-          .author-label {
-            margin-left 0.8rem
-            padding 0 0.4rem
-            color #fff
-            font-weight 500
-            font-size 0.8rem
-            background var(--selection-color)
-            border-radius 0.4rem
-          }
-        }
-
-        .meta-info {
-          margin-top 0.1rem
-        }
-      }
-    }
-
-
-    .article-header
-    .article-header-meta-info {
-      margin-top 1rem
-      +keep-tablet() {
-        transform scale(0.9)
-        transform-origin left top
-      }
-    }
-
-
-    .article-content {
-      margin-top $component-spacing-value
-      padding-bottom 2rem
-      color var(--text-color-3)
-      text-align justify
-      word-wrap break-word
-
-      +keep-tablet() {
-        margin-top $component-spacing-value * 0.9
-      }
-
-      .article-aging-tips {
-        position relative
-        display none
-        box-sizing border-box
-        margin-bottom 1.8rem
-        padding 1rem
-        color var(--article-aging-tips-color)
+      .article-title {
+        color var(--text-color-2)
+        font-weight 600
+        font-size $article-title-font-size
         line-height 1.6
-        background var(--article-aging-tips-background-color)
-        border 0.1rem solid var(--article-aging-tips-border-color)
-        border-radius 0.4rem
 
-        i {
-          margin-right 0.4rem
-          color var(--article-aging-tips-color)
+        +keep-tablet() {
+          font-size $article-title-font-size * 0.9
         }
 
-        .days {
-          color var(--article-aging-tips-color)
+        +keep-mobile() {
+          font-size $article-title-font-size * 0.8
         }
       }
 
 
-      if (hexo-config('post') && hexo-config('post.copyright_info') == true) {
-        border-bottom 0.1rem dashed var(--border-color)
-      }
-    }
-
-
-    .post-tags-box {
-      display none
-      justify-content center
-      margin-top 1.6rem
-      font-size 1.1rem
-
-      +keep-tablet() {
+      .article-header {
         display flex
-      }
+        justify-content flex-start
+        width 100%
 
-      +keep-mobile() {
-        margin-top 1.2rem
-        font-size 1rem
+        .avatar-box {
+          display var(--post-author-avatar)
+          flex-shrink 0
+          width $avatar-width
+          height $avatar-width
+          margin-right 0.8rem
+          padding 0.1rem
+          border 1px solid var(--border-color)
+          border-radius 50%
 
-        .tag-item {
-          margin 0 0.2rem
-
-          .icon {
-            margin-right 0.1rem
-            font-size 0.8rem
+          img {
+            width 100%
+            height 100%
+            background var(--avatar-background-color)
+            border-radius 50%
           }
         }
-      }
 
 
-      .tag-item {
-        margin 0 0.25rem
-
-        .icon {
-          margin-right 0.2rem
-          font-size 0.92rem
-        }
-      }
-    }
-
-
-    .post-copyright-info {
-      width 100%
-      margin-top $component-spacing-value
-
-      +keep-tablet() {
-        margin-top $component-spacing-value * 0.8
-      }
-    }
-
-
-    .article-nav {
-      height 2.8rem
-      margin-top $component-spacing-value
-
-      .article-prev
-      .article-next {
-        box-sizing border-box
-        max-width $post-nav-max-width
-        height 100%
-        keep-container(1, 0.8rem, 0)
-        border-radius 0.32rem
-
-
-        a {
-          position relative
-          display block
+        .info-box {
+          display flex
+          flex-direction column
+          justify-content space-between
           box-sizing border-box
           width 100%
           height 100%
+          padding 0.2rem 0
 
-          &.prev {
-            padding-left $arrow-icon-width
-          }
+          .author {
+            display flex
+            align-items center
+            font-weight 600
+            font-size 1.18rem
 
-          &.next {
-            padding-right $arrow-icon-width
-          }
-
-          .arrow-icon {
-            position absolute
-            top 0
-            width $arrow-icon-width
-            height 100%
-
-            &.left {
-              left 0
+            .name {
+              color var(--text-color-3)
             }
 
-            &.right {
-              right 0
+            .author-label {
+              margin-left 0.8rem
+              padding 0 0.4rem
+              color #fff
+              font-weight 500
+              font-size 0.8rem
+              background var(--selection-color)
+              border-radius 0.4rem
             }
           }
 
-          .title {
+          .meta-info {
+            margin-top 0.1rem
+          }
+        }
+      }
+
+
+      .article-header
+      .article-header-meta-info {
+        margin-top 1rem
+        +keep-tablet() {
+          transform scale(0.9)
+          transform-origin left top
+        }
+      }
+
+
+      .article-content {
+        margin-top $component-spacing-value
+        padding-bottom 2rem
+        color var(--text-color-3)
+        text-align justify
+        word-wrap break-word
+
+        +keep-tablet() {
+          margin-top $component-spacing-value * 0.9
+        }
+
+        .article-aging-tips {
+          position relative
+          display none
+          box-sizing border-box
+          margin-bottom 1.8rem
+          padding 1rem
+          color var(--article-aging-tips-color)
+          line-height 1.6
+          background var(--article-aging-tips-background-color)
+          border 0.1rem solid var(--article-aging-tips-border-color)
+          border-radius 0.4rem
+
+          i {
+            margin-right 0.4rem
+            color var(--article-aging-tips-color)
+          }
+
+          .days {
+            color var(--article-aging-tips-color)
+          }
+        }
+
+
+        if (hexo-config('post') && hexo-config('post.copyright_info') == true) {
+          border-bottom 0.1rem dashed var(--border-color)
+        }
+      }
+
+
+      .post-tags-box {
+        display none
+        justify-content center
+        margin-top 1.6rem
+        font-size 1.1rem
+
+        +keep-tablet() {
+          display flex
+        }
+
+        +keep-mobile() {
+          margin-top 1.2rem
+          font-size 1rem
+
+          .tag-item {
+            margin 0 0.2rem
+
+            .icon {
+              margin-right 0.1rem
+              font-size 0.8rem
+            }
+          }
+        }
+
+
+        .tag-item {
+          margin 0 0.25rem
+
+          .icon {
+            margin-right 0.2rem
+            font-size 0.92rem
+          }
+        }
+      }
+
+
+      .post-copyright-info {
+        width 100%
+        margin-top $component-spacing-value
+
+        +keep-tablet() {
+          margin-top $component-spacing-value * 0.8
+        }
+      }
+
+
+      .article-nav {
+        height 2.8rem
+        margin-top $component-spacing-value
+
+        .article-prev
+        .article-next {
+          box-sizing border-box
+          max-width $post-nav-max-width
+          height 100%
+          keep-container(1, 0.8rem, 0)
+          border-radius 0.32rem
+
+
+          a {
+            position relative
+            display block
+            box-sizing border-box
             width 100%
             height 100%
+
+            &.prev {
+              padding-left $arrow-icon-width
+            }
+
+            &.next {
+              padding-right $arrow-icon-width
+            }
+
+            .arrow-icon {
+              position absolute
+              top 0
+              width $arrow-icon-width
+              height 100%
+
+              &.left {
+                left 0
+              }
+
+              &.right {
+                right 0
+              }
+            }
+
+            .title {
+              width 100%
+              height 100%
+            }
           }
         }
-      }
 
-      .article-prev {
-        float left
-      }
-
-      .article-next {
-        float right
-      }
-
-      .post-nav-item {
-        display none
-
-        +keep-tablet() {
-          display inline-block
+        .article-prev {
+          float left
         }
-      }
 
+        .article-next {
+          float right
+        }
 
-      .post-nav-title-item {
-        +keep-tablet() {
+        .post-nav-item {
           display none
+
+          +keep-tablet() {
+            display inline-block
+          }
+        }
+
+
+        .post-nav-title-item {
+          +keep-tablet() {
+            display none
+          }
         }
       }
     }
