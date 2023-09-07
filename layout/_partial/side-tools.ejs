@@ -1,5 +1,5 @@
-<div class="side-tools-container">
-    <ul class="side-tools-list">
+<div class="side-tools-container border-box <%= is_home() ? 'side-tools-show-handle' : '' %>">
+    <ul class="side-tools-list side-tools-show-handle border-box">
         <li class="tools-item tool-font-adjust-plus flex-center">
             <i class="fas fa-search-plus"></i>
         </li>
@@ -35,7 +35,7 @@
         </li>
     </ul>
 
-    <ul class="exposed-tools-list">
+    <ul class="exposed-tools-list border-box">
         <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
             <li class="tools-item toggle-show-toc-tablet flex-center">
                 <i class="fas fa-list"></i>

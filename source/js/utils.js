@@ -54,6 +54,11 @@ KEEP.initUtils = () => {
         } else {
           this.back2TopBtn.classList.add('show')
           percentDom.innerHTML = percent.toFixed(0)
+          if (percent > 99) {
+            this.back2TopBtn.classList.add('show-arrow-up')
+          } else {
+            this.back2TopBtn.classList.remove('show-arrow-up')
+          }
         }
       }
 
@@ -84,12 +89,15 @@ KEEP.initUtils = () => {
         this.styleHandleWhenScroll()
 
         // TOC scroll handle
-        if (KEEP.theme_config.toc.enable === true && KEEP.utils.hasOwnProperty('activeNav')) {
+        if (KEEP.theme_config?.toc?.enable === true && KEEP.utils.hasOwnProperty('activeNav')) {
           KEEP.utils.activeNav()
         }
 
         // header shrink
         KEEP.utils.headerShrink.headerShrink()
+
+        // side tools bar show handle
+        KEEP.utils.headerShrink.sideToolsBarShowHandle()
       })
     },
 
@@ -275,9 +283,9 @@ KEEP.initUtils = () => {
       const post = document.querySelectorAll('.article-meta-info .home-article-history')
       post &&
         post.forEach((v) => {
-          const nowDate = Date.now()
-          const postDate = new Date(v.dataset.updated.split(' GMT')[0]).getTime()
-          v.innerHTML = this.getHowLongAgo(Math.floor((nowDate - postDate) / 1000))
+          const nowTimestamp = Date.now()
+          const updatedTimestamp = new Date(v.dataset.updated).getTime()
+          v.innerHTML = this.getHowLongAgo(Math.floor((nowTimestamp - updatedTimestamp) / 1000))
         })
     },
 

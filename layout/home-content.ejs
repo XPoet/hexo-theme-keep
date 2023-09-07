@@ -5,15 +5,22 @@
 
                 <% if (post?.cover) { %>
                     <div class="home-article-item-top border-box"
-                         style="height: <%= post?.cover_height ? post?.cover_height + 'px' : '8rem' %>"
+                         style="height: <%= post?.cover_height ? post?.cover_height + 'px' : '9.2rem' %>"
                     >
+                        <% if (post.sticky) { %>
+                            <div class="post-sticky-box cover">
+                                <i class="fas fa-thumbtack"></i>&nbsp;<%- __('top') %>
+                            </div>
+                        <% } %>
                         <img class="cover-img" src="<%= post.cover %>" alt="<%= post.title %>">
                     </div>
                 <% } %>
 
                 <div class="home-article-item-bottom border-box">
-                    <% if (post.sticky) { %>
-                        <i class="fas fa-thumbtack sticky-icon"></i>
+                    <% if (post.sticky && !post?.cover) { %>
+                        <div class="post-sticky-box">
+                            <i class="fas fa-thumbtack"></i>&nbsp;<%- __('top') %>
+                        </div>
                     <% } %>
                     <h3 class="home-article-title border-box">
                         <a href="<%- url_for(post.path) %>">

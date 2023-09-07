@@ -3,108 +3,121 @@
 
         <div class="article-content-container border-box">
 
-            <div class="article-title">
-                <span class="title-hover-animation"><%= page.title %></span>
-            </div>
+            <% if (page?.cover) { %>
+                <div class="article-content-top border-box">
+                    <div class="cover-article-title text-ellipsis">
+                        <%= page.title %>
+                    </div>
+                    <img class="post-cover" src="<%= page.cover %>" alt="<%= page.title %>">
+                </div>
+            <% } %>
 
-            <% if (theme?.base_info?.author || config?.author) { %>
-                <div class="article-header border-box">
-                    <% if (theme?.style?.avatar) { %>
-                        <div class="avatar-box border-box">
-                            <%- image_tag(theme?.style?.avatar) %>
+            <div class="article-content-bottom border-box<%= page?.cover ? ' has-cover' : '' %>">
+                <% if (!page?.cover) { %>
+                    <div class="article-title">
+                        <span class="title-hover-animation"><%= page.title %></span>
+                    </div>
+                <% } %>
+
+                <% if (theme?.base_info?.author || config?.author) { %>
+                    <div class="article-header border-box">
+                        <% if (theme?.style?.avatar) { %>
+                            <div class="avatar-box border-box">
+                                <%- image_tag(theme?.style?.avatar) %>
+                            </div>
+                        <% } %>
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name"><%= theme?.base_info?.author || config?.author %></span>
+                                <% if (theme?.post?.author_label?.enable === true) { %>
+                                    <span class="author-label"><%- getAuthorLabel(site.posts.length, theme?.post?.author_label) %></span>
+                                <% } %>
+                            </div>
+                            <div class="meta-info border-box">
+                                <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
+                            </div>
                         </div>
-                    <% } %>
-                    <div class="info-box">
-                        <div class="author">
-                            <span class="name"><%= theme?.base_info?.author || config?.author %></span>
-                            <% if (theme?.post?.author_label?.enable === true) { %>
-                                <span class="author-label"><%- getAuthorLabel(site.posts.length, theme?.post?.author_label) %></span>
-                            <% } %>
-                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="article-header-meta-info">
                         <div class="meta-info border-box">
                             <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
                         </div>
                     </div>
-                </div>
-            <% } else { %>
-                <div class="article-header-meta-info">
-                    <div class="meta-info border-box">
-                        <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
-                    </div>
-                </div>
-            <% } %>
+                <% } %>
 
-            <div class="article-content keep-markdown-body">
-                <% if (page?.aging === true) { %>
-                    <div class="article-aging-tips"
-                         data-update-date="<%= page.updated %>"
-                         data-aging-days="<%= page?.aging_days %>"
-                    >
-                        <i class="fa-solid fa-circle-exclamation"></i><%- __('article-aging', '<span class="days">0</span>') %>
+                <div class="article-content keep-markdown-body">
+                    <% if (page?.aging === true) { %>
+                        <div class="article-aging-tips"
+                             data-update-date="<%= page.updated %>"
+                             data-aging-days="<%= page?.aging_days %>"
+                        >
+                            <i class="fa-solid fa-circle-exclamation"></i><%- __('article-aging', '<span class="days">0</span>') %>
+                        </div>
+                    <% } %>
+
+                    <%- page.content %>
+                </div>
+
+                <% if (
+                        (theme?.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
+                ) { %>
+                    <div class="post-copyright-info">
+                        <%- partial('_partial/article-copyright-info') %>
                     </div>
                 <% } %>
 
-                <%- page.content %>
-            </div>
+                <% if (page.tags.length) { %>
+                    <ul class="post-tags-box">
+                        <% page.tags.forEach((tag) => { %>
+                            <li class="tag-item">
+                                <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
+                            </li>
+                        <% }); %>
+                    </ul>
+                <% } %>
 
-            <% if (
-                    (theme?.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
-            ) { %>
-                <div class="post-copyright-info">
-                    <%- partial('_partial/article-copyright-info') %>
-                </div>
-            <% } %>
-
-            <% if (page.tags.length) { %>
-                <ul class="post-tags-box">
-                    <% page.tags.forEach((tag) => { %>
-                        <li class="tag-item">
-                            <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
-                        </li>
-                    <% }); %>
-                </ul>
-            <% } %>
-
-            <% if (page.prev || page.next) { %>
-                <div class="article-nav">
-                    <% if (page.prev) { %>
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="<%= url_for(page.prev.path) %>"
-                            >
+                <% if (page.prev || page.next) { %>
+                    <div class="article-nav">
+                        <% if (page.prev) { %>
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="<%= url_for(page.prev.path) %>"
+                                >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
-                                <span class="title flex-center">
+                                    <span class="title flex-center">
                                 <span class="post-nav-title-item text-ellipsis"><%= page.prev.title %></span>
                                 <span class="post-nav-item"><%= __('prev_posts') %></span>
                             </span>
-                            </a>
-                        </div>
-                    <% } %>
-                    <% if (page.next) { %>
-                        <div class="article-next">
-                            <a class="next"
-                               rel="next"
-                               href="<%= url_for(page.next.path) %>"
-                            >
+                                </a>
+                            </div>
+                        <% } %>
+                        <% if (page.next) { %>
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="<%= url_for(page.next.path) %>"
+                                >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item text-ellipsis"><%= page.next.title %></span>
                                 <span class="post-nav-item"><%= __('next_posts') %></span>
                             </span>
-                                <span class="right arrow-icon flex-center">
+                                    <span class="right arrow-icon flex-center">
                               <i class="fas fa-chevron-right"></i>
                             </span>
-                            </a>
-                        </div>
-                    <% } %>
-                </div>
-            <% } %>
+                                </a>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
 
-            <% if (page?.comment !== false) { %>
-                <%- partial('_partial/comment/comment') %>
-            <% } %>
+                <% if (page?.comment !== false) { %>
+                    <%- partial('_partial/comment/comment') %>
+                <% } %>
+            </div>
         </div>
 
         <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>

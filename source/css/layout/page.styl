@@ -157,8 +157,20 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
   .side-tools {
     position fixed
     right 0
-    bottom 5%
+    bottom 1.6rem
     box-sizing border-box
+    padding-right 1rem
+
+    +keep-tablet() {
+      padding-right 0
+    }
+
+    &:hover {
+      .side-tools-container {
+        transform translateX(0)
+        opacity 1
+      }
+    }
   }
 
 

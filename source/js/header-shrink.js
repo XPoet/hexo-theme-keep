@@ -33,10 +33,20 @@ KEEP.initHeaderShrink = () => {
       }
     },
 
+    sideToolsBarShowHandle() {
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const sideToolsDom = document.querySelector('.side-tools .side-tools-container')
+      if (scrollTop > this.headerHeight / 2) {
+        sideToolsDom.classList.add('show')
+      } else {
+        sideToolsDom.classList.remove('show')
+      }
+    },
+
     toggleHeaderDrawerShow() {
       const domList = [document.querySelector('.window-mask'), document.querySelector('.menu-bar')]
 
-      if (KEEP.theme_config.pjax.enable === true) {
+      if (KEEP.theme_config?.pjax?.enable === true) {
         domList.push(
           ...document.querySelectorAll('.header-drawer .drawer-menu-list .drawer-menu-item')
         )
