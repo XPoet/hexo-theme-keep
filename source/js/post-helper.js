@@ -207,18 +207,61 @@ function initToggleShowToc() {
           agingTipsDom.style.display = 'block'
         }
       }
+    },
+
+    formatDatetime(fmt = 'YYYY-MM-DD hh:mm:ss', timestamp = Date.now()) {
+      function padLeftZero(str) {
+        return `00${str}`.substr(str.length)
+      }
+
+      const date = new Date(timestamp)
+
+      if (/(y+)/.test(fmt) || /(Y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, `${date.getFullYear()}`.substr(4 - RegExp.$1.length))
+      }
+
+      const obj = {
+        'M+': date.getMonth() + 1,
+        'D+': date.getDate(),
+        'd+': date.getDate(),
+        'H+': date.getHours(),
+        'h+': date.getHours(),
+        'm+': date.getMinutes(),
+        's+': date.getSeconds()
+      }
+
+      for (const key in obj) {
+        if (new RegExp(`(${key})`).test(fmt)) {
+          const str = `${obj[key]}`
+          fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str))
+        }
+      }
+      return fmt
+    },
+
+    resetPostUpdateDate() {
+      const updateDateDom = document.querySelector(
+        '.article-meta-info-container .article-update-date .pc'
+      )
+      const updated = new Date(updateDateDom.dataset.updated).getTime()
+      const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
+      updateDateDom.innerHTML = this.formatDatetime(format, updated)
     }
   }
+
   KEEP.utils.postHelper.initSetPostToolsLeft()
   KEEP.utils.postHelper.setArticleAgingDays()
+  KEEP.utils.postHelper.resetPostUpdateDate()
 
   if (KEEP.theme_config.toc?.enable === true) {
     KEEP.utils.postHelper.initToggleToc()
   }
+
   if (KEEP.theme_config.comment?.enable === true) {
     KEEP.utils.postHelper.goToComments()
     KEEP.utils.postHelper.watchPostCommentsCount()
   }
+
   if (KEEP.theme_config.post?.copyright_info === true) {
     KEEP.utils.postHelper.initSetPostLink()
     KEEP.utils.postHelper.copyCopyrightInfo()

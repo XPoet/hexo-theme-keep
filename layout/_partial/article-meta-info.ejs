@@ -21,7 +21,7 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
+                <span class="pc" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
 
