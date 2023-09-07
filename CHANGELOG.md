@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.7.5](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.4...v3.7.5) (2023-09-07)
+
+
+### Bug Fixes
+
+* **home:** fixed calculation error in how long ago the post was updated ([7187d4e](https://github.com/XPoet/hexo-theme-keep/commit/7187d4ef6554baa942ef2986c1acba0cddef45f2))
+* optimize side tools bar position setting ([082b637](https://github.com/XPoet/hexo-theme-keep/commit/082b6377187567e35ee2286146b2e9ff3c80887f))
+* **toc:** fixed an error when removeChild ([8c004a4](https://github.com/XPoet/hexo-theme-keep/commit/8c004a4bd8804b960bfa65a967558c6afa77a644))
+
+
+### Improvement UI
+
+* **home:** optimize the top effect of posts ([85e1bdf](https://github.com/XPoet/hexo-theme-keep/commit/85e1bdfb3c6dde0896b6263f3e59c571419b3e98))
+* optimize side tools show logic ([7323de5](https://github.com/XPoet/hexo-theme-keep/commit/7323de574a003b2e04a745e9461058949855c1da))
+* optimize tools display position ([1b15431](https://github.com/XPoet/hexo-theme-keep/commit/1b154318d4ad3a32c78017f728b25eac036441fd))
+* post content page added cover display ([90ef133](https://github.com/XPoet/hexo-theme-keep/commit/90ef1332de23c243bb7e468ee500fcd1c01a9d70))
+* update keep-container box-shadow style ([58adea9](https://github.com/XPoet/hexo-theme-keep/commit/58adea98690de246dd99b9803e4b5447b1b149f6))
+
 ## [3.7.4](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.3...v3.7.4) (2023-09-04)
 
 
