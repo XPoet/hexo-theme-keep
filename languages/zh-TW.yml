@@ -54,10 +54,12 @@ copy_copyright:
   author: 原文作者
   link: 原文鏈接
 copyright:
-  author: 文章作者
-  title: 文章標題
-  link: 永久連結
+  author: 作者
+  title: 標題
+  link: 連結
   create_time: 撰寫時間
+  published: 發布于
+  license: 許可
   license_title: 版權宣告
   license_content: "這個網站所有文章均使用 %s 授權"
 article-aging: "本文距離上次更新已過去 %s 天，部分內容可能已經過時，請註意甄別。"

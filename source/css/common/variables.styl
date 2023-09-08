@@ -106,7 +106,7 @@ $scrollbar-color = lighten($text-color-3, 10%)
 $scrollbar-background-color = darken($background-color-1, 10%)
 $toc-scrollbar-color = alpha($text-color-3, 0.1)
 
-$copyright-info-color = #cc0033
+$copyright-icon-bg-color = alpha($text-color-3, 0.12)
 
 $avatar-background-color = $primary-color-dark-1
 
@@ -153,7 +153,7 @@ $dark-scrollbar-color = darken($dark-background-color-1, 10%)
 $dark-scrollbar-background-color = lighten($dark-background-color-1, 20%)
 $dark-toc-scrollbar-color = alpha($dark-text-color-3, 0.1)
 
-$dark-copyright-info-color = darken($copyright-info-color, 20%)
+$dark-copyright-icon-bg-color = alpha($dark-text-color-3, 0.12)
 
 $dark-avatar-background-color = darken($avatar-background-color, 20%)
 
@@ -219,8 +219,8 @@ root-color(mode) {
   --scrollbar-background-color mode == 'light' ? $scrollbar-background-color : $dark-scrollbar-background-color
   --toc-scrollbar-color mode == 'light' ? $toc-scrollbar-color : $dark-toc-scrollbar-color
 
-  // copyright info left side color
-  --copyright-info-color mode == 'light' ? $copyright-info-color : $dark-copyright-info-color
+  // copyright icon background color
+  --copyright-icon-bg-color mode == 'light' ? $copyright-icon-bg-color : $dark-copyright-icon-bg-color
 
   // avatar background color
   --avatar-background-color mode == 'light' ? $avatar-background-color : $dark-avatar-background-color
