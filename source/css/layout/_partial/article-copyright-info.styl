@@ -1,18 +1,11 @@
 .article-copyright-info-container {
   width 100%
   background var(--background-color-2)
-  border-radius calc(var(--box-border-radius) / 2)
-
-  &:hover {
-    .copy-copyright-info {
-      visibility visible
-    }
-  }
-
+  border-radius calc(var(--box-border-radius) * 0.6)
 
   .copyright-info-content {
     width 100%
-    padding 1.2rem
+    padding 1.3rem
     overflow hidden
     font-size 1rem
 
@@ -61,30 +54,28 @@
         }
       }
     }
+
+    .copyright-bg {
+      position absolute
+      top 50%
+      right 2rem
+      color var(--copyright-icon-bg-color)
+      font-size 14rem
+      transform translateY(-50%)
+    }
   }
 
 
   .copy-copyright-info {
     position absolute
-    top 0.6rem
-    right 0.6rem
+    top 0.5rem
+    right 0.5rem
     box-sizing border-box
     padding 0.3rem
-    visibility hidden
     cursor pointer
-    transition-t("visibility", "0", "0.2", "ease-in-out")
 
     i {
       color var(--text-color-3)
     }
-  }
-
-  .copyright-bg {
-    position absolute
-    top 50%
-    right 2rem
-    color var(--copyright-icon-bg-color)
-    font-size 14rem
-    transform translateY(-50%)
   }
 }

@@ -220,15 +220,17 @@ $spacer-padding = 2rem
 
 
       .article-content {
-        margin-top $component-spacing-value
-        padding-bottom 2rem
+        margin-top $component-spacing-value * 0.8
+        padding-bottom $component-spacing-value * 0.8
         color var(--text-color-3)
         text-align justify
         word-wrap break-word
 
         +keep-tablet() {
-          margin-top $component-spacing-value * 0.9
+          margin-top $component-spacing-value * 0.6
+          padding-bottom $component-spacing-value * 0.6
         }
+
 
         .article-aging-tips {
           position relative
@@ -254,7 +256,7 @@ $spacer-padding = 2rem
 
 
         if (hexo-config('post') && hexo-config('post.copyright_info') == true) {
-          border-bottom 0.1rem dashed var(--border-color)
+          border-bottom 2px dashed var(--border-color)
         }
       }
 
@@ -297,10 +299,10 @@ $spacer-padding = 2rem
 
       .post-copyright-info {
         width 100%
-        margin-top $component-spacing-value
+        margin-top $component-spacing-value * 0.6
 
         +keep-tablet() {
-          margin-top $component-spacing-value * 0.8
+          margin-top $component-spacing-value * 0.3
         }
       }
 
