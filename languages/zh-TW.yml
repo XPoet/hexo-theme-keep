@@ -52,7 +52,7 @@ copy_copyright:
   copied: 已復製
   title: 原文標題
   author: 原文作者
-  link: 原文鏈接
+  link: 原文連結
 copyright:
   author: 作者
   title: 標題
@@ -84,4 +84,4 @@ footer:
     aliyun: 阿裏雲
     tencent_cloud: 騰訊雲
     upyun: 又拍雲
-  total_words: 全站總字數
+  total_words: 總字數

@@ -73,9 +73,9 @@ ago:
   year: "%s years ago"
 footer:
   powered_by: "Powered by&nbsp;%s"
-  site_uv: Visitor count
-  site_pv: Totalview
-  deploy: "This site is provided with deployment services by %s"
+  site_uv: Unique Visitor
+  site_pv: Page View
+  deploy: "This site is deployed on %s"
   deploy_provider:
     github: GitHub Pages
     vercel: Vercel
