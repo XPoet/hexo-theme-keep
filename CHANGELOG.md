@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.7.6](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.5...v3.7.6) (2023-09-08)
+
+
+### 🐞 Bug Fixes
+
+* fixed the error of inconsistent post updated datetime ([d78f98a](https://github.com/XPoet/hexo-theme-keep/commit/d78f98a82f4981e9b2c21fdb2a8c9a2021604387))
+
+
+### 🎯 CI
+
+* auto release description add emoji icon ([ccd31c8](https://github.com/XPoet/hexo-theme-keep/commit/ccd31c843f5067237d9b9633c62363b13a0ff349))
+
+
+### 💄 Improvement UI
+
+* copy copyright info icon change to always display ([dda328a](https://github.com/XPoet/hexo-theme-keep/commit/dda328a8263dbfe4ad0ebed45793198056d6813c))
+* **home:** increase post cover height ([ddf5e56](https://github.com/XPoet/hexo-theme-keep/commit/ddf5e56f1fa3efff879ccdc440fd061ca2ca0ea3))
+* optimize post copyright style ([cb03fd1](https://github.com/XPoet/hexo-theme-keep/commit/cb03fd1f2dd4234317005bb04cc8d516248ed1f7))
+* optimize post title display ([212d638](https://github.com/XPoet/hexo-theme-keep/commit/212d638a499c7363cbacda8f38d930f594aa7d16))
+
+
+### 🚦 Chore
+
+* **i18n:** update languages ([fb33a9e](https://github.com/XPoet/hexo-theme-keep/commit/fb33a9e525812636f4a767b7961071592ca5179c))
+* update configuration file comments ([fce2339](https://github.com/XPoet/hexo-theme-keep/commit/fce2339a510479bd5bf9d2090cb908f26c223200))
+
 ## [3.7.5](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.4...v3.7.5) (2023-09-07)
 
 
