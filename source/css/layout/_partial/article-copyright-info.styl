@@ -1,78 +1,78 @@
 .article-copyright-info-container {
-  position relative
-  box-sizing border-box
   width 100%
-  padding 0.8rem 0.8rem 0.8rem 1.3rem
-  font-size 1rem
   background var(--background-color-2)
-
-  &::after {
-    position absolute
-    top 0
-    left 0
-    width 0.5rem
-    height 100%
-    background var(--copyright-info-color)
-    content ''
-  }
-
-
-  &:hover {
-    .copy-copyright-info {
-      visibility visible
-    }
-  }
-
+  border-radius calc(var(--box-border-radius) * 0.6)
 
   .copyright-info-content {
-    position relative
-    box-sizing border-box
-    overflow-x auto
+    width 100%
+    padding 1.3rem
+    overflow hidden
+    font-size 1rem
 
-    &::-webkit-scrollbar {
-      width 0.3rem
-      height 0.3rem
-      transition all 0.2s ease
-    }
 
-    &::-webkit-scrollbar-thumb {
-      background var(--text-color-4)
-    }
+    .copyright-info-top {
+      width 100%
 
-    &::-webkit-scrollbar-track {
-      background transparent
-    }
-
-    li {
-      margin-bottom 0.4rem
-      color var(--text-color-3)
-      white-space nowrap
-
-      .type
-      .content {
+      .post-title {
+        width 100%
         color var(--text-color-3)
+        font-size 1.1rem
       }
 
-      .license {
-        font-weight bold
+      .post-link {
+        width 100%
+        margin-top 0.2rem
+        color var(--text-color-4)
+      }
+    }
+
+
+    .copyright-info-bottom {
+      display flex
+      justify-content flex-start
+      margin-top 1rem
+
+      .bottom-item {
+        margin-right 1.2rem
+
+        .type {
+          color var(--text-color-4)
+        }
+
+        .content {
+          margin-top 0.2rem
+          color var(--text-color-3)
+        }
       }
 
-      &:last-child {
-        margin-bottom 0
+
+      .post-license {
+        .content {
+          i {
+            font-size 1.1rem
+          }
+        }
       }
+    }
+
+    .copyright-bg {
+      position absolute
+      top 50%
+      right 2rem
+      color var(--copyright-icon-bg-color)
+      font-size 14rem
+      transform translateY(-50%)
     }
   }
 
 
   .copy-copyright-info {
     position absolute
-    top 0.4rem
-    right 0.4rem
+    top 0.5rem
+    right 0.5rem
     box-sizing border-box
     padding 0.3rem
-    visibility hidden
     cursor pointer
-    transition-t("visibility", "0", "0.2", "ease-in-out")
 
     i {
       color var(--text-color-3)

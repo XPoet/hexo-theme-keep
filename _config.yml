@@ -302,14 +302,9 @@ footer:
     custom:
       - link_url:        # Your link url, Can be null
         img_url:         # Shields image url
-
       # e.g.
       # - link_url: https://github.com/XPoet/hexo-theme-keep
       #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.3-blue?style=flat-square&logo=hexo
-      #
-      # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.3-red?style=flat-square&logo=hexo
-      #
       # - ...
 
 # ---------------------------------------------------------------------------------------

@@ -54,10 +54,12 @@ copy_copyright:
   author: Original article author
   link: Original article link
 copyright:
-  author: Post author
-  title: Post title
-  link: Post link
+  author: Author
+  title: Title
+  link: Link
   create_time: Create time
+  published: Published
+  license: License
   license_title: Copyright notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
 article-aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
@@ -71,9 +73,9 @@ ago:
   year: "%s years ago"
 footer:
   powered_by: "Powered by&nbsp;%s"
-  site_uv: Visitor count
-  site_pv: Totalview
-  deploy: "This site is provided with deployment services by %s"
+  site_uv: Unique Visitor
+  site_pv: Page View
+  deploy: "This site is deployed on %s"
   deploy_provider:
     github: GitHub Pages
     vercel: Vercel
