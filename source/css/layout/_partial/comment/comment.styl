@@ -18,24 +18,17 @@ if (hexo-config('comment') && hexo-config('comment.enable') == true && hexo-conf
   width 100%
   margin-top $component-spacing-value
 
-  #comments-anchor {
-    width 100%
-    height 0.8rem
-  }
-
-
   .comment-area-title {
     width 100%
-    margin 0.8rem 0
     color var(--text-color-3)
     font-size 1.38rem
+    line-height 2
 
     i {
       color var(--text-color-3)
     }
 
     +keep-tablet() {
-      margin 0.4rem 0
       font-size 1.2rem
     }
   }

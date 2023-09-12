@@ -6,9 +6,8 @@ const {
 %>
 
 <% if (theme_comment_enable === true && theme_comment_use) { %>
-    <div class="comments-container">
-        <div id="comments-anchor"></div>
-        <div class="comment-area-title">
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
             <i class="fas fa-comments"></i>&nbsp;<%- __('comments') %>
         </div>
         <% if  (theme_comment_use === 'valine') { %>
