@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.7.7](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.6...v3.7.7) (2023-09-12)
+
+
+### 🐞 Bug Fixes
+
+* **copyright-info:** raises the z-index of the content container ([683c581](https://github.com/XPoet/hexo-theme-keep/commit/683c58154041449bdd108da174dfe4eb8ed21cd8))
+
+
+### 💄 Improvement UI
+
+* **archives:** display articles using a timeline style ([dac86a1](https://github.com/XPoet/hexo-theme-keep/commit/dac86a1f5a8cde2b1cf8c561a506b4bfe5b4d004))
+* optimize category content page style ([bb2e0ad](https://github.com/XPoet/hexo-theme-keep/commit/bb2e0adab6008531902962be2dc57a80d9a3cd02))
+* optimize mobile style ([98fcae3](https://github.com/XPoet/hexo-theme-keep/commit/98fcae3ce899ee2dddc592d9faea0aac3d8367a1))
+* optimize tag content page style ([6a4ee2e](https://github.com/XPoet/hexo-theme-keep/commit/6a4ee2e94e25b59b2ec58bacd84b77475bd68533))
+* optimize the post sticky style for mobile ([03400da](https://github.com/XPoet/hexo-theme-keep/commit/03400da57528a6fbd315fde47fcd6dfad70a0377))
+* **post:** optimize TOC style ([fee8375](https://github.com/XPoet/hexo-theme-keep/commit/fee8375f835f76aa44348bee2ddf655d50035cbd))
+
+
+### 🚦 Chore
+
+* adjust the directory structure and naming of CSS files ([ac9c67c](https://github.com/XPoet/hexo-theme-keep/commit/ac9c67cdb87b6a7fed80fa2611951b125153e53b))
+* **post:** optimize comments anchor setting ([8a4a8ce](https://github.com/XPoet/hexo-theme-keep/commit/8a4a8ce13a3e60c65372138ffab2701c48c723f4))
+
 ## [3.7.6](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.5...v3.7.6) (2023-09-08)
 
 
