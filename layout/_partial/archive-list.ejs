@@ -8,10 +8,10 @@
             <ul class="article-list border-box">
                 <% postItem.postList.forEach(post => { %>
                     <li class="article-item border-box">
+                        <span class="article-date border-box"><%= date(post.date, 'MM-DD') %></span>
                         <a class="article-title border-box text-ellipsis"
                            href="<%- url_for(post.path) %>"
                         ><%= post.title %></a>
-                        <span class="article-date border-box"><%= date(post.date, 'MM-DD') %></span>
                     </li>
                 <% }) %>
             </ul>

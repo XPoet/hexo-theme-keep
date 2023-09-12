@@ -9,7 +9,7 @@
                     >
                         <% if (post.sticky) { %>
                             <div class="post-sticky-box cover">
-                                <i class="fas fa-thumbtack"></i>&nbsp;<%- __('top') %>
+                                <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                             </div>
                         <% } %>
                         <img class="cover-img" src="<%= post.cover %>" alt="<%= post.title %>">
@@ -18,8 +18,8 @@
 
                 <div class="home-article-item-bottom border-box">
                     <% if (post.sticky && !post?.cover) { %>
-                        <div class="post-sticky-box">
-                            <i class="fas fa-thumbtack"></i>&nbsp;<%- __('top') %>
+                        <div class="post-sticky-box card">
+                            <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                         </div>
                     <% } %>
                     <h3 class="home-article-title border-box">

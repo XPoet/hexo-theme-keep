@@ -44,7 +44,7 @@ $spacer-padding = 2rem
     keep-container(1, 0, 2rem)
 
     +keep-mobile() {
-      padding 0 !important
+      padding 0 0.2rem !important
       box-shadow none !important
 
       &:hover {
@@ -392,15 +392,16 @@ $spacer-padding = 2rem
     box-sizing border-box
     width $toc-container-width
     max-height 'calc(100vh - %s)' % ('calc(var(--header-height) + %s)' % $component-spacing-value)
-    padding 2rem 0 2rem 1.4rem
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
     &.right-toc {
       order 1
+      padding 2rem 0 2rem 1.8rem
     }
 
     &.left-toc {
       order -1
+      padding 2rem 1.8rem 2rem 0
     }
 
     .header-shrink & {

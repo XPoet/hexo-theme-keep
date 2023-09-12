@@ -12,8 +12,6 @@
 
       .post-sticky-box {
         position absolute
-        top 0.8rem
-        right 0.8rem
         z-index $z-index-1
         display flex
         align-items center
@@ -24,13 +22,28 @@
         letter-spacing 1px
         background var(--background-color-3)
         border-radius 0.3rem
-        transform scale(0.88)
+        transform scale(0.86)
         cursor default
         disable-user-select()
 
         &.cover {
           top 0.6rem
           right 0.6rem
+        }
+
+        &.card {
+          top 0.8rem
+          right 0.8rem
+        }
+
+        +keep-mobile() {
+          padding 0
+          background none
+          transform rotate(45deg)
+
+          .sticky-name {
+            display none
+          }
         }
       }
 

@@ -26,18 +26,6 @@ $has-fs-content-max-width = $content-max-width * 1.2
 $media-max-width = 800px                                 // media query max width (tablet)
 $media-max-width-mobile = 500px                          // media query max width (mobile)
 
-keep-tablet() {
-  @media (max-width $media-max-width) {
-    { block }
-  }
-}
-
-keep-mobile() {
-  @media (max-width $media-max-width-mobile) {
-    { block }
-  }
-}
-
 
 // ==============================================================================================
 // z-index
@@ -76,7 +64,7 @@ $primary-color-dark-2 = darken($primary-color, 20%)
 
 
 // ==============================================================================================
-// theme light mode color set
+// theme light mode color
 // ==============================================================================================
 $background-color-1 = #fff
 $background-color-1-transparent = alpha($background-color-1, 0.6)
@@ -123,7 +111,7 @@ $post-h-bottom-border-color = alpha($text-color-3, 0.15)
 
 
 // ==============================================================================================
-// theme dark mode color set
+// theme dark mode color
 // ==============================================================================================
 $dark-background-color-1 = #22272e
 $dark-background-color-1-transparent = alpha($dark-background-color-1, 0.6)
@@ -167,102 +155,3 @@ $dark-article-aging-tips-background-color = alpha($dark-article-aging-tips-color
 $dark-article-aging-tips-border-color = alpha($dark-article-aging-tips-color, 0.6)
 
 $dark-post-h-bottom-border-color = alpha($dark-text-color-3, 0.15)
-
-
-// ==============================================================================================
-//  light/dark mode color
-// ==============================================================================================
-root-color(mode) {
-  // primary color
-  --primary-color $primary-color
-  --primary-color-light-1 $primary-color-light-1
-  --primary-color-light-2 $primary-color-light-2
-  --primary-color-dark-1 $primary-color-dark-1
-  --primary-color-dark-2 $primary-color-dark-2
-
-  // background color
-  --background-color-1 mode == 'light' ? $background-color-1 : $dark-background-color-1
-  --background-color-1-transparent mode == 'light' ? $background-color-1-transparent : $dark-background-color-1-transparent
-  --background-color-2 mode == 'light' ? $background-color-2 : $dark-background-color-2
-  --background-color-3 mode == 'light' ? $background-color-3 : $dark-background-color-3
-
-  // content background color
-  --content-background-color mode == 'light' ? $content-background-color : $dark-content-background-color
-
-  // text color
-  --text-color-1 mode == 'light' ? $text-color-1 : $dark-text-color-1
-  --text-color-2 mode == 'light' ? $text-color-2 : $dark-text-color-2
-  --text-color-3 mode == 'light' ? $text-color-3 : $dark-text-color-3
-  --text-color-4 mode == 'light' ? $text-color-4 : $dark-text-color-4
-  --text-color-5 mode == 'light' ? $text-color-5 : $dark-text-color-5
-  --text-color-6 mode == 'light' ? $text-color-6 : $dark-text-color-6
-
-  // toc text color
-  --toc-text-color mode == 'light' ? $toc-text-color : $dark-toc-text-color
-
-  // badge color
-  --badge-color mode == 'light' ? $badge-color : $dark-badge-color
-  --badge-background-color mode == 'light' ? $badge-background-color : $dark-badge-background-color
-
-  // border color
-  --border-color mode == 'light' ? $border-color : $dark-border-color
-
-  // selection color
-  --selection-color mode == 'light' ? $selection-color : $dark-selection-color
-
-  // shadow color
-  --shadow-color mode == 'light' ? $shadow-color : $dark-shadow-color
-  --shadow-hover-color mode == 'light' ? $shadow-hover-color : $dark-shadow-hover-color
-
-  // scrollbar color
-  --scrollbar-color mode == 'light' ? $scrollbar-color : $dark-scrollbar-color
-  --scrollbar-background-color mode == 'light' ? $scrollbar-background-color : $dark-scrollbar-background-color
-  --toc-scrollbar-color mode == 'light' ? $toc-scrollbar-color : $dark-toc-scrollbar-color
-
-  // copyright icon background color
-  --copyright-icon-bg-color mode == 'light' ? $copyright-icon-bg-color : $dark-copyright-icon-bg-color
-
-  // avatar background color
-  --avatar-background-color mode == 'light' ? $avatar-background-color : $dark-avatar-background-color
-
-  // header transparent background color
-  --header-transparent-background-1 mode == 'light' ? $header-transparent-background-1 : $dark-header-transparent-background-1
-  --header-transparent-background-2 mode == 'light' ? $header-transparent-background-2 : $dark-header-transparent-background-2
-
-  // pjax progress bar color
-  --pjax-progress-bar-color mode == 'light' ? $pjax-progress-bar-color : $dark-pjax-progress-bar-color
-
-  // article aging tips primary color
-  --article-aging-tips-color mode == 'light' ? $article-aging-tips-color : $dark-article-aging-tips-color
-  --article-aging-tips-background-color mode == 'light' ? $article-aging-tips-background-color : $dark-article-aging-tips-background-color
-  --article-aging-tips-border-color mode == 'light' ? $article-aging-tips-border-color : $dark-article-aging-tips-border-color
-
-  --post-h-bottom-border-color mode == 'light' ? $post-h-bottom-border-color : $dark-post-h-bottom-border-color
-}
-
-
-:root {
-  root-color('light')
-}
-
-@media (prefers-color-scheme light) {
-  :root {
-    root-color('light')
-  }
-}
-
-@media (prefers-color-scheme dark) {
-  :root {
-    root-color('dark')
-  }
-}
-
-
-.light-mode {
-  root-color('light')
-}
-
-
-.dark-mode {
-  root-color('dark')
-}
