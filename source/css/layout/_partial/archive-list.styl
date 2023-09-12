@@ -2,6 +2,8 @@ $archive-year-font-size = 1.6rem
 $article-title-font-size = 1.2rem
 $article-date-font-size = 1rem
 $article-date-width = 3.6rem
+$article-item-padding = 1.2rem
+$timeline-circle-width = 0.6rem
 
 .archive-list-container {
 
@@ -29,41 +31,55 @@ $article-date-width = 3.6rem
 
 
     .article-list {
+      padding-left $article-item-padding
+
 
       .article-item {
         display flex
         align-items center
         justify-content space-between
         width 100%
-        margin-top 1.3rem
+        padding ($article-item-padding * 0.68) 0 ($article-item-padding * 0.68) $article-item-padding
         font-size 1rem
+        border-left 1px dashed var(--border-color)
 
-        +keep-tablet() {
-          margin-top 1.1rem
+        &::before {
+          position absolute
+          top 50%
+          left -($timeline-circle-width * 0.5)
+          z-index $z-index-1
+          box-sizing border-box
+          width $timeline-circle-width
+          height $timeline-circle-width
+          background var(--text-color-5)
+          border-radius 50%
+          transform translateY(-50%)
+          content ''
         }
 
-        +keep-mobile() {
-          margin-top 1rem
-        }
 
         &:hover {
-          a.article-title
-          .article-date {
+          &::before {
+            background var(--text-color-4)
+          }
+
+
+          a.article-title {
             color var(--primary-color)
           }
+        }
+
+        .article-date {
+          width $article-date-width
+          margin-right $article-item-padding
+          color var(--text-color-3)
+          font-size $article-date-font-size
         }
 
 
         a.article-title {
           width 'calc(100% - %s)' % $article-date-width
           color var(--text-color-3)
-        }
-
-        .article-date {
-          width $article-date-width
-          color var(--text-color-3)
-          font-size $article-date-font-size
-          text-align right
         }
       }
     }
