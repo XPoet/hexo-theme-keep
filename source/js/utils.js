@@ -364,8 +364,12 @@ KEEP.initUtils = () => {
         // tooltip-img
         const imgsSet = {}
 
-        const toggleShowImg = (dom, nameIdx) => {
-          document.addEventListener('click', () => {
+        const hideTooltipImg = (dom, nameIdx, trigger = 'click') => {
+          if (trigger === 'mouseover') {
+            trigger = 'mouseout'
+          }
+
+          document.addEventListener(trigger, () => {
             if (imgsSet[nameIdx].isShowImg) {
               dom.classList.remove('show-img')
               imgsSet[nameIdx].isShowImg = false
@@ -393,7 +397,8 @@ KEEP.initUtils = () => {
             tooltipImgOffsetX,
             tooltipImgOffsetY,
             tooltipImgBgColor,
-            tooltipImgTip
+            tooltipImgTip,
+            tooltipImgTrigger = 'click'
           } = dom.dataset
 
           let styleCss = ''
@@ -442,7 +447,8 @@ KEEP.initUtils = () => {
             }
 
             dom.insertAdjacentHTML('afterbegin', imgTooltipBox)
-            dom.addEventListener('click', (e) => {
+
+            dom.addEventListener(tooltipImgTrigger, (e) => {
               if (!imgsSet[nameIdx].imgLoaded) {
                 loadImg(
                   document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
@@ -454,7 +460,7 @@ KEEP.initUtils = () => {
               e.stopPropagation()
             })
 
-            toggleShowImg(dom, nameIdx)
+            hideTooltipImg(dom, nameIdx, tooltipImgTrigger)
           }
         })
       }

@@ -188,6 +188,39 @@ img {
 
 
 // ======================================================================
+// button
+// ======================================================================
+button {
+  position relative
+  box-sizing border-box
+  margin 0
+  padding 0.6rem 1rem
+  color var(--text-color-3)
+  font-size 1rem
+  background var(--background-color-1)
+  border none
+  border-radius 0.3rem
+  box-shadow 0 0 0.4rem var(--shadow-color)
+  cursor pointer
+
+  transition-t("background, color", "0, 0", "0.3, 0.3", "ease, ease")
+
+  &:hover {
+    color var(--background-color-1)
+    background var(--primary-color)
+
+    i {
+      color var(--background-color-1)
+    }
+  }
+
+  i {
+    color var(--text-color-3)
+  }
+}
+
+
+// ======================================================================
 // flex center
 // ======================================================================
 .flex-center {
@@ -270,7 +303,9 @@ img {
   }
 }
 
-
+// ======================================================================
+// tooltip image
+// ======================================================================
 .tooltip-img {
   position relative
   box-sizing border-box
@@ -291,8 +326,9 @@ img {
     justify-content center
     box-sizing border-box
     min-height 6rem
-    background var(--text-color-6)
-    border 0.2rem solid var(--text-color-3)
+    overflow hidden
+    background var(--background-color-3)
+    border 0.2rem solid var(--text-color-4)
     border-radius 0.3rem
     transform translateX(-50%) translateY(-100%)
     transition-t("display", "0", "0.2", "ease")

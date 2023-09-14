@@ -141,6 +141,11 @@ post:
   # Post share
   share: false           # Option values: true | false
 
+  # Reward author
+  reward:
+    enable: false        # Option values: true | false
+    img_link:            # Image link for the payment QR code
+
 # ---------------------------------------------------------------------------------------
 # Code block
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/code_block.html

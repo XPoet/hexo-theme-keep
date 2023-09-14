@@ -80,6 +80,10 @@
                     <% } %>
                 </div>
 
+                <% if (theme?.post?.reward?.enable === true && theme?.post?.reward?.img_link && page?.reward !== false) { %>
+                    <%- partial('_partial/post/reward-author') %>
+                <% } %>
+
                 <% if (page.prev || page.next) { %>
                     <div class="article-nav">
                         <% if (page.prev) { %>
