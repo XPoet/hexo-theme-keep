@@ -138,6 +138,9 @@ post:
   # Post copyright info
   copyright_info: false  # Option values: true | false
 
+  # Post share
+  share: false           # Option values: true | false
+
 # ---------------------------------------------------------------------------------------
 # Code block
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/code_block.html

@@ -85,3 +85,9 @@ footer:
     tencent_cloud: 腾讯云
     upyun: 又拍云
   total_words: 总字数
+post:
+  share:
+    qq: "分享到 QQ"
+    wechat: "分享到微信"
+    weibo: "分享到微博"
+    wechat_scan: "微信扫一扫"

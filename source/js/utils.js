@@ -384,12 +384,54 @@ KEEP.initUtils = () => {
         }
 
         document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
-          const { imgUrl, name } = dom.dataset
+          const {
+            imgUrl,
+            name,
+            tooltipImgPadding,
+            tooltipImgOffsetX,
+            tooltipImgOffsetY,
+            tooltipImgBgColor,
+            tooltipImgTip
+          } = dom.dataset
+
+          let styleCss = ''
+
+          if (tooltipImgPadding) {
+            styleCss += `padding: ${tooltipImgPadding};`
+          }
+
+          if (tooltipImgOffsetX) {
+            styleCss += `left: ${tooltipImgOffsetX};`
+          }
+
+          if (tooltipImgOffsetY) {
+            styleCss += `top: ${tooltipImgOffsetY};`
+          }
+
+          if (tooltipImgBgColor) {
+            styleCss += `background-color: ${tooltipImgBgColor};`
+          }
+
+          if (styleCss) {
+            styleCss = `style="${styleCss}"`
+          }
+
+          let tipDom = ''
+          if (tooltipImgTip) {
+            tipDom = `<div class="tip">${tooltipImgTip}</div>`
+          }
+
           if (imgUrl) {
             const imgDomClass = `tooltip-img-${name}`
             const nameIdx = `${name}_${idx}`
-            const imgDom = `<img class="${imgDomClass}" lazyload data-src="${imgUrl}" alt="${name}">`
-            const imgTooltipBox = `<div class="tooltip-img-box">${imgDom}</div>`
+            const imgDom = `<img class="${imgDomClass}"
+                              lazyload
+                              data-src="${imgUrl}"
+                              alt="${name}"
+                            >`
+            const imgTooltipBox = `<div ${styleCss} class="tooltip-img-box ${
+              tipDom ? 'has-tip' : ''
+            }">${imgDom}${tipDom}</div>`
 
             imgsSet[nameIdx] = {
               imgLoaded: false,

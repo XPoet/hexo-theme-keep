@@ -39,6 +39,9 @@ const {
         <% if (t_toc?.enable === true) { %>
             <%- __js('js/toc.js') %>
         <% } %>
+        <% if (theme?.post?.share === true) { %>
+            <%- __js('js/post/share.js') %>
+        <% } %>
     <% } %>
     <% if (isCategoriesPage(page.path) === true) { %>
         <%- __js('js/category-page.js') %>

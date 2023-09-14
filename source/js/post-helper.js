@@ -1,6 +1,6 @@
 /* global KEEP */
 
-function initToggleShowToc() {
+function initPostHelper() {
   KEEP.utils.postHelper = {
     postPageContainerDom: document.querySelector('.post-page-container'),
     toggleShowTocBtn: document.querySelector('.toggle-show-toc'),
@@ -267,7 +267,7 @@ function initToggleShowToc() {
 }
 
 if (KEEP.theme_config.pjax?.enable === true && KEEP.utils) {
-  initToggleShowToc()
+  initPostHelper()
 } else {
-  window.addEventListener('DOMContentLoaded', initToggleShowToc)
+  window.addEventListener('DOMContentLoaded', initPostHelper)
 }

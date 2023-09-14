@@ -67,6 +67,10 @@
                     </div>
                 <% } %>
 
+                <% if (theme?.post?.share === true && page?.share !== false) { %>
+                        <%- partial('_partial/post/post-share') %>
+                <% } %>
+
                 <% if (page.tags.length) { %>
                     <ul class="post-tags-box">
                         <% page.tags.forEach((tag) => { %>
