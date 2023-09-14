@@ -261,51 +261,45 @@ $spacer-padding = 2rem
       }
 
 
-      .post-tags-box {
-        display none
-        justify-content center
-        margin-top 1.6rem
-        font-size 1.1rem
+      .post-bottom-tags-and-share {
+        display flex
+        align-items center
+        justify-content space-between
+        width 100%
+        margin-top 1rem
 
-        +keep-tablet() {
+        .post-tags-box {
           display flex
-        }
-
-        +keep-mobile() {
-          margin-top 1.2rem
+          flex-wrap wrap
+          align-items center
+          justify-content flex-start
+          width 100%
           font-size 1rem
 
+          +keep-tablet() {
+            font-size 0.9rem
+
+            .tag-item {
+              margin-right 0.4rem
+
+              .icon {
+                font-size 0.82rem
+              }
+            }
+          }
+
+
           .tag-item {
-            margin 0 0.2rem
+            margin-right 0.5rem
+            line-height 2
 
             .icon {
-              margin-right 0.1rem
-              font-size 0.8rem
+              margin-right 0.2rem
+              font-size 0.92rem
             }
           }
         }
-
-
-        .tag-item {
-          margin 0 0.25rem
-
-          .icon {
-            margin-right 0.2rem
-            font-size 0.92rem
-          }
-        }
       }
-
-
-      .post-copyright-info {
-        width 100%
-        margin-top $component-spacing-value * 0.6
-
-        +keep-tablet() {
-          margin-top $component-spacing-value * 0.3
-        }
-      }
-
 
       .article-nav {
         height 2.8rem

@@ -62,24 +62,23 @@
                 <% if (
                         (theme?.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
                 ) { %>
-                    <div class="post-copyright-info">
-                        <%- partial('_partial/article-copyright-info') %>
-                    </div>
+                        <%- partial('_partial/post/post-copyright-info') %>
                 <% } %>
 
-                <% if (theme?.post?.share === true && page?.share !== false) { %>
+                <div class="post-bottom-tags-and-share border-box">
+                    <% if (page.tags.length) { %>
+                        <ul class="post-tags-box border-box">
+                            <% page.tags.forEach((tag) => { %>
+                                <li class="tag-item border-box">
+                                    <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
+                                </li>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+                    <% if (theme?.post?.share === true && page?.share !== false) { %>
                         <%- partial('_partial/post/post-share') %>
-                <% } %>
-
-                <% if (page.tags.length) { %>
-                    <ul class="post-tags-box">
-                        <% page.tags.forEach((tag) => { %>
-                            <li class="tag-item">
-                                <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
-                            </li>
-                        <% }); %>
-                    </ul>
-                <% } %>
+                    <% } %>
+                </div>
 
                 <% if (page.prev || page.next) { %>
                     <div class="article-nav">
