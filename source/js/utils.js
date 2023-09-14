@@ -337,25 +337,26 @@ KEEP.initUtils = () => {
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const { content, offsetX, offsetY } = element.dataset
+          const { tooltipContent, tooltipOffsetX, tooltipOffsetY } = element.dataset
 
-          let style = ''
-          let sTop = ''
-          let sLeft = ''
-          if (offsetX) {
-            sTop = `left: ${offsetX};`
-          }
-          if (offsetY) {
-            sLeft = `top: ${offsetY};`
-          }
-          if (offsetX || offsetY) {
-            style = ` style="${sLeft}${sTop}"`
+          let styleCss = ''
+
+          if (tooltipOffsetX) {
+            styleCss += `left: ${tooltipOffsetX};`
           }
 
-          if (content) {
+          if (tooltipOffsetY) {
+            styleCss += `top: ${tooltipOffsetY};`
+          }
+
+          if (styleCss) {
+            styleCss = `style="${styleCss}"`
+          }
+
+          if (tooltipContent) {
             element.insertAdjacentHTML(
               'afterbegin',
-              `<span class="tooltip-content"${style}>${content}</span>`
+              `<span class="tooltip-content"${styleCss}>${tooltipContent}</span>`
             )
           }
         })
@@ -383,10 +384,11 @@ KEEP.initUtils = () => {
           }
         }
 
+        // tooltip-img
         document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
           const {
-            imgUrl,
-            name,
+            tooltipImgName,
+            tooltipImgUrl,
             tooltipImgPadding,
             tooltipImgOffsetX,
             tooltipImgOffsetY,
@@ -421,13 +423,14 @@ KEEP.initUtils = () => {
             tipDom = `<div class="tip">${tooltipImgTip}</div>`
           }
 
-          if (imgUrl) {
-            const imgDomClass = `tooltip-img-${name}`
-            const nameIdx = `${name}_${idx}`
+          if (tooltipImgUrl) {
+            const imgDomClass = `tooltip-img-${tooltipImgName ? tooltipImgName : Date.now()}`
+            const nameIdx = `${tooltipImgName}-${idx}`
+            const imgAlt = tooltipImgName ? `alt="${tooltipImgName}"` : ''
             const imgDom = `<img class="${imgDomClass}"
                               lazyload
-                              data-src="${imgUrl}"
-                              alt="${name}"
+                              data-src="${tooltipImgUrl}"
+                              ${imgAlt}
                             >`
             const imgTooltipBox = `<div ${styleCss} class="tooltip-img-box ${
               tipDom ? 'has-tip' : ''

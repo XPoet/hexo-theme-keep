@@ -10,7 +10,7 @@ function initPostShare() {
   const wechatShare = shareContainer.querySelector('.wechat')
   wechatShare &&
     wechatShare.setAttribute(
-      'data-img-url',
+      'data-tooltip-img-url',
       `https://api.qrserver.com/v1/create-qr-code?data=${pageUrl}`
     )
 

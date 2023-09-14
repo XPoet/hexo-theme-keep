@@ -42,9 +42,9 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
                                 }
                             %>
                             <div class="tooltip sc-icon-item <%= isImg ? 'tooltip-img clear' : ''%>"
-                                 data-content="<%= __(key) %>"
-                                 data-name="<%= key %>"
-                                    <%= isImg ? 'data-img-url='+ link +'' : '' %>
+                                 data-tooltip-content="<%= __(key) %>"
+                                 data-tooltip-img-name="<%= key %>"
+                                    <%= isImg ? 'data-tooltip-img-url='+ link +'' : '' %>
                             >
                                 <% if(key === 'email') { %>
                                     <a href="mailto:<%- link %>">
