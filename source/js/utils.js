@@ -356,7 +356,7 @@ KEEP.initUtils = () => {
           if (tooltipContent) {
             element.insertAdjacentHTML(
               'afterbegin',
-              `<span class="tooltip-content"${styleCss}>${tooltipContent}</span>`
+              `<span class="tooltip-content" ${styleCss}>${tooltipContent}</span>`
             )
           }
         })
@@ -365,7 +365,7 @@ KEEP.initUtils = () => {
         const imgsSet = {}
 
         const hideTooltipImg = (dom, nameIdx, trigger = 'click') => {
-          if (trigger === 'mouseover') {
+          if (trigger === 'hover') {
             trigger = 'mouseout'
           }
 
@@ -393,34 +393,15 @@ KEEP.initUtils = () => {
           const {
             tooltipImgName,
             tooltipImgUrl,
-            tooltipImgPadding,
-            tooltipImgOffsetX,
-            tooltipImgOffsetY,
-            tooltipImgBgColor,
             tooltipImgTip,
-            tooltipImgTrigger = 'click'
+            tooltipImgTrigger = 'click',
+            tooltipImgStyle
           } = dom.dataset
 
           let styleCss = ''
 
-          if (tooltipImgPadding) {
-            styleCss += `padding: ${tooltipImgPadding};`
-          }
-
-          if (tooltipImgOffsetX) {
-            styleCss += `left: ${tooltipImgOffsetX};`
-          }
-
-          if (tooltipImgOffsetY) {
-            styleCss += `top: ${tooltipImgOffsetY};`
-          }
-
-          if (tooltipImgBgColor) {
-            styleCss += `background-color: ${tooltipImgBgColor};`
-          }
-
-          if (styleCss) {
-            styleCss = `style="${styleCss}"`
+          if (tooltipImgStyle) {
+            styleCss = `style="${tooltipImgStyle}"`
           }
 
           let tipDom = ''
@@ -429,13 +410,12 @@ KEEP.initUtils = () => {
           }
 
           if (tooltipImgUrl) {
-            const imgDomClass = `tooltip-img-${tooltipImgName ? tooltipImgName : Date.now()}`
+            const imgDomClass = `tooltip-img-${idx}-${tooltipImgName ? tooltipImgName : Date.now()}`
             const nameIdx = `${tooltipImgName}-${idx}`
-            const imgAlt = tooltipImgName ? `alt="${tooltipImgName}"` : ''
             const imgDom = `<img class="${imgDomClass}"
                               lazyload
                               data-src="${tooltipImgUrl}"
-                              ${imgAlt}
+                              alt="${imgDomClass}"
                             >`
             const imgTooltipBox = `<div ${styleCss} class="tooltip-img-box ${
               tipDom ? 'has-tip' : ''
@@ -448,7 +428,13 @@ KEEP.initUtils = () => {
 
             dom.insertAdjacentHTML('afterbegin', imgTooltipBox)
 
-            dom.addEventListener(tooltipImgTrigger, (e) => {
+            let eventTrigger = 'click'
+
+            if (tooltipImgTrigger === 'hover') {
+              eventTrigger = 'mouseover'
+            }
+
+            dom.addEventListener(eventTrigger, (e) => {
               if (!imgsSet[nameIdx].imgLoaded) {
                 loadImg(
                   document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
