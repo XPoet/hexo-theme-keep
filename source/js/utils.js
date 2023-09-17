@@ -133,7 +133,11 @@ KEEP.initUtils = () => {
       }
 
       const setFontSize = (fontSizeLevel) => {
-        this.rootHtmlDom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
+        this.rootHtmlDom.style.setProperty(
+          'font-size',
+          `${fs * (1 + fontSizeLevel * 0.05)}px`,
+          'important'
+        )
         KEEP.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
