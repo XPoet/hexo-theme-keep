@@ -513,6 +513,39 @@ KEEP.initUtils = () => {
             window.location.href = tempHref + '/page/' + current
           }
         })
+    },
+
+    // custom tabs tag active handle
+    tabsActiveHandle() {
+      const activeHandle = (navList, paneList, tab) => {
+        navList.forEach((nav) => {
+          if (tab.dataset.href === nav.dataset.href) {
+            nav.classList.add('active')
+          } else {
+            nav.classList.remove('active')
+          }
+        })
+
+        paneList.forEach((pane) => {
+          if (tab.dataset.href === pane.id) {
+            pane.classList.add('active')
+          } else {
+            pane.classList.remove('active')
+          }
+        })
+      }
+
+      const tabsList = document.querySelectorAll('.keep-tabs')
+      tabsList.length &&
+        tabsList.forEach((tabs) => {
+          const tabNavList = tabs.querySelectorAll('.tabs-nav .tab')
+          const tabPaneList = tabs.querySelectorAll('.tabs-content .tab-pane')
+          tabNavList.forEach((tabNav) => {
+            tabNav.addEventListener('click', () => {
+              activeHandle(tabNavList, tabPaneList, tabNav)
+            })
+          })
+        })
     }
   }
 
@@ -545,4 +578,7 @@ KEEP.initUtils = () => {
 
   // page number jump handle
   KEEP.utils.pageNumberJump()
+
+  // tabs active handle
+  KEEP.utils.tabsActiveHandle()
 }
