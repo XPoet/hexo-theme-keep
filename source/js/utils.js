@@ -458,10 +458,17 @@ KEEP.initUtils = () => {
     // busuanzi initialize handle
     siteCountInitialize() {
       if (KEEP.theme_config?.website_count?.busuanzi_count?.enable === true) {
-        const script = document.createElement('script')
-        script.async = true
-        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-        document.body.appendChild(script)
+        const tmpId = 'busuanzi-js'
+        let script = document.body.querySelector(`#${tmpId}`)
+
+        if (!script) {
+          script = document.createElement('script')
+          script.setAttribute('data-pjax', '')
+          script.setAttribute('id', tmpId)
+          script.async = true
+          script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+          document.body.appendChild(script)
+        }
 
         const getText = (selector) => {
           return document.querySelector(selector)?.innerText
