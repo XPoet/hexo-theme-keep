@@ -7,31 +7,38 @@ KEEP.initBack2Top = () => {
     back2BottomBtn: document.querySelector('.tool-scroll-to-bottom'),
 
     back2top() {
-      const scrollTopTimer = setInterval(function () {
-        let top = document.body.scrollTop || document.documentElement.scrollTop
-        let speed = top / 2
-        if (document.body.scrollTop !== 0) {
-          document.body.scrollTop -= speed
-        } else {
-          document.documentElement.scrollTop -= speed
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = function (c) {
+          return setTimeout(c, 17) // (1000/60)
         }
-        if (top === 0) {
-          clearInterval(scrollTopTimer)
+      }
+      let scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      scroll = function () {
+        scrollTop = Math.floor(scrollTop - scrollTop / 8)
+        if (scrollTop > 0) {
+          window.scrollTo(0, scrollTop)
+          requestAnimationFrame(scroll)
         }
-      }, 50)
+      }
+      scroll()
     },
 
     back2Bottom() {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = function (c) {
+          return setTimeout(c, 17) // (1000/60)
+        }
+      }
       let scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
       let scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      const scrollBottomTimer = setInterval(function () {
-        if (!scrollTop) scrollTop = 10
-        scrollTop = Math.floor(scrollTop + scrollTop / 2)
-        window.scrollTo(0, scrollTop)
-        if (scrollTop >= scrollHeight) {
-          clearInterval(scrollBottomTimer)
+      const scroll = function () {
+        scrollTop = Math.max(Math.floor(scrollTop + scrollTop / 8), 8)
+        if (scrollTop < scrollHeight) {
+          window.scrollTo(0, scrollTop)
+          requestAnimationFrame(scroll)
         }
-      }, 50)
+      }
+      scroll()
     },
 
     initBack2Top() {
