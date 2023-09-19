@@ -1,10 +1,9 @@
 /* global KEEP */
 
 KEEP.initBack2Top = () => {
-  KEEP.utils = {
-    ...KEEP.utils,
-
+  KEEP.utils.back2Top = {
     back2BottomBtn: document.querySelector('.tool-scroll-to-bottom'),
+    back2TopBtn: document.querySelector('.tool-scroll-to-top'),
 
     back2top() {
       if (!window.requestAnimationFrame) {
@@ -13,7 +12,7 @@ KEEP.initBack2Top = () => {
         }
       }
       let scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      scroll = function () {
+      const scroll = function () {
         scrollTop = Math.floor(scrollTop - scrollTop / 8)
         if (scrollTop > 0) {
           window.scrollTo(0, scrollTop)
@@ -54,6 +53,6 @@ KEEP.initBack2Top = () => {
     }
   }
 
-  KEEP.utils.initBack2Top()
-  KEEP.utils.initBack2Bottom()
+  KEEP.utils.back2Top.initBack2Top()
+  KEEP.utils.back2Top.initBack2Bottom()
 }
