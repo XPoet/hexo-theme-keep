@@ -66,18 +66,22 @@
                 <% } %>
 
                 <div class="post-bottom-tags-and-share border-box">
-                    <% if (page.tags.length) { %>
-                        <ul class="post-tags-box border-box">
-                            <% page.tags.forEach((tag) => { %>
-                                <li class="tag-item border-box">
-                                    <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
-                                </li>
-                            <% }) %>
-                        </ul>
-                    <% } %>
-                    <% if (theme?.post?.share === true && page?.share !== false) { %>
-                        <%- partial('_partial/post/post-share') %>
-                    <% } %>
+                    <div>
+                        <% if (page.tags.length) { %>
+                            <ul class="post-tags-box border-box">
+                                <% page.tags.forEach((tag) => { %>
+                                    <li class="tag-item border-box">
+                                        <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        <% } %>
+                    </div>
+                    <div>
+                        <% if (theme?.post?.share === true && page?.share !== false) { %>
+                            <%- partial('_partial/post/post-share') %>
+                        <% } %>
+                    </div>
                 </div>
 
                 <% if (theme?.post?.reward?.enable === true && theme?.post?.reward?.img_link && page?.reward !== false) { %>
