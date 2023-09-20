@@ -6,38 +6,20 @@ KEEP.initBack2Top = () => {
     back2TopBtn: document.querySelector('.tool-scroll-to-top'),
 
     back2top() {
-      if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function (c) {
-          return setTimeout(c, 17) // (1000/60)
-        }
-      }
-      let scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      const scroll = function () {
-        scrollTop = Math.floor(scrollTop - scrollTop / 8)
-        if (scrollTop > 0) {
-          window.scrollTo(0, scrollTop)
-          requestAnimationFrame(scroll)
-        }
-      }
-      scroll()
+      window.anime({
+        targets: document.scrollingElement,
+        easing: 'easeOutExpo',
+        scrollTop: 0
+      })
     },
 
     back2Bottom() {
-      if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function (c) {
-          return setTimeout(c, 17) // (1000/60)
-        }
-      }
-      let scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
-      let scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      const scroll = function () {
-        scrollTop = Math.max(Math.floor(scrollTop + scrollTop / 8), 8)
-        if (scrollTop < scrollHeight) {
-          window.scrollTo(0, scrollTop)
-          requestAnimationFrame(scroll)
-        }
-      }
-      scroll()
+      const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
+      window.anime({
+        targets: document.scrollingElement,
+        easing: 'easeInExpo',
+        scrollTop: scrollHeight
+      })
     },
 
     initBack2Top() {

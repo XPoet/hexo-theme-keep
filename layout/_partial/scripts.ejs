@@ -4,7 +4,8 @@
     'js/header-shrink.js',
     'js/back2top.js',
     'js/dark-light-toggle.js',
-    'js/main.js'
+    'js/main.js',
+    'js/libs/anime.min.js'
 ]) %>
 
 <!-- local-search -->
@@ -24,10 +25,7 @@
 
 <div class="<%= theme?.pjax?.enable === true ? 'pjax' : '' %>">
     <% if (is_post()) { %>
-        <% if (theme?.toc?.enable === true || theme?.comment?.enable === true) { %>
-            <%- __js('js/libs/anime.min.js') %>
-        <% } %>
-
+        <!-- post-helper -->
         <%- __js('js/post/post-helper.js') %>
 
         <!-- toc -->
