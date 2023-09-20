@@ -338,6 +338,8 @@ KEEP.initUtils = () => {
 
     // insert tooltip content dom
     insertTooltipContent() {
+      const isLazyLoadImg = KEEP.theme_config?.lazyload?.enable === true
+
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
@@ -416,11 +418,13 @@ KEEP.initUtils = () => {
           if (tooltipImgUrl) {
             const imgDomClass = `tooltip-img-${idx}-${tooltipImgName ? tooltipImgName : Date.now()}`
             const nameIdx = `${tooltipImgName}-${idx}`
+
             const imgDom = `<img class="${imgDomClass}"
-                              lazyload
-                              data-src="${tooltipImgUrl}"
+                              ${isLazyLoadImg ? 'lazyload' : ''}
+                              ${isLazyLoadImg ? 'data-' : ''}src="${tooltipImgUrl}"
                               alt="${imgDomClass}"
                             >`
+
             const imgTooltipBox = `<div ${styleCss} class="tooltip-img-box ${
               tipDom ? 'has-tip' : ''
             }">${imgDom}${tipDom}</div>`
@@ -439,7 +443,7 @@ KEEP.initUtils = () => {
             }
 
             dom.addEventListener(eventTrigger, (e) => {
-              if (!imgsSet[nameIdx].imgLoaded) {
+              if (isLazyLoadImg && !imgsSet[nameIdx].imgLoaded) {
                 loadImg(
                   document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
                   imgsSet[nameIdx].imgLoaded
