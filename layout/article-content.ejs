@@ -3,17 +3,21 @@
 
         <div class="article-content-container border-box">
 
-            <% if (page?.cover) { %>
-                <div class="article-content-top border-box">
+            <% if (page?.post_cover || page?.home_cover) { %>
+                <div class="article-content-top border-box"
+                     style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
+                >
                     <div class="cover-article-title">
                         <%= page.title %>
                     </div>
-                    <img class="post-cover" src="<%= page.cover %>" alt="<%= page.title %>">
+                    <img class="post-cover" src="<%= page.post_cover || page?.home_cover %>"
+                         onerror="this.style.display='none'"
+                    >
                 </div>
             <% } %>
 
-            <div class="article-content-bottom border-box<%= page?.cover ? ' has-cover' : '' %>">
-                <% if (!page?.cover) { %>
+            <div class="article-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
+                <% if (!page?.post_cover && !page?.home_cover) { %>
                     <div class="article-title">
                         <%= page.title %>
                     </div>
