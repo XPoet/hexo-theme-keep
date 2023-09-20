@@ -7,9 +7,7 @@ function initTOC() {
   const tabletTocContainer = document.querySelector('.tablet-post-toc')
 
   if (KEEP.utils.hasToc) {
-    KEEP.utils = {
-      ...KEEP.utils,
-
+    KEEP.utils.tocHelper = {
       pcTocNavSections: [],
 
       tabletTocNavSections: [],
@@ -119,9 +117,8 @@ function initTOC() {
         }
       }
     }
-
-    KEEP.utils.handleShowWhenHasToc()
-    KEEP.utils.registerTocNav()
+    KEEP.utils.tocHelper.handleShowWhenHasToc()
+    KEEP.utils.tocHelper.registerTocNav()
   } else {
     pcTocContainer && postPageContainer.removeChild(pcTocContainer)
     if (tabletTocContainer) {
