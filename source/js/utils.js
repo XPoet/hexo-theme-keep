@@ -561,6 +561,53 @@ KEEP.initUtils = () => {
             })
           })
         })
+    },
+
+    initTypewriter() {
+      const fsc = KEEP.theme_config?.style?.first_screen || {}
+      const isHitokoto = fsc?.hitokoto === true
+
+      if (fsc?.enable !== true) {
+        return
+      }
+
+      if (fsc?.enable === true && !isHitokoto && !fsc?.description) {
+        return
+      }
+
+      const descBox = document.querySelector('.first-screen-content .description')
+      if (descBox) {
+        descBox.style.opacity = '0'
+
+        setTimeout(
+          () => {
+            descBox.style.opacity = '1'
+            const descItemList = descBox.querySelectorAll('.desc-item')
+            descItemList.forEach((descItem) => {
+              const desc = descItem.querySelector('.desc')
+              const cursor = descItem.querySelector('.cursor')
+              const text = desc.innerHTML
+              desc.innerHTML = ''
+              let charIndex = 0
+
+              if (text) {
+                const typewriter = () => {
+                  if (charIndex < text.length) {
+                    desc.textContent += text.charAt(charIndex)
+                    charIndex++
+                    setTimeout(typewriter, 100)
+                  } else {
+                    cursor.style.display = 'none'
+                  }
+                }
+
+                typewriter()
+              }
+            })
+          },
+          isHitokoto ? 400 : 300
+        )
+      }
     }
   }
 
@@ -596,4 +643,7 @@ KEEP.initUtils = () => {
 
   // tabs active handle
   KEEP.utils.tabsActiveHandle()
+
+  // first screen typewriter
+  KEEP.utils.initTypewriter()
 }

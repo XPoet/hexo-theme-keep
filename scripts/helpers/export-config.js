@@ -40,7 +40,6 @@ hexo.extend.helper.register('exportThemeConfig', function () {
     style: theme.style || {},
     local_search: theme.local_search || {},
     code_block: theme.code_block || {},
-    side_tools: theme.side_tools || {},
     pjax: theme.pjax || {},
     lazyload: theme.lazyload || {},
     comment: theme.comment || {},

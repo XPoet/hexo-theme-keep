@@ -1,7 +1,6 @@
 <%
 const { description: fs_description, hitokoto: fs_hitokoto } = theme?.style?.first_screen || {}
-const { description: c_description } = config
-let final_description = fs_description || c_description || ''
+let final_description = fs_description || ''
 final_description = final_description.split('||').map(desc => desc.trim())
 if (final_description.length > 2) { final_description.length = 2 }
 const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
@@ -12,9 +11,15 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
 
         <div class="middle-placeholder border-box">
             <% if (final_description.length || fs_hitokoto === true) { %>
-                <div class="description hitokoto">
-                    <% for (const idx in final_description) { %>
-                        <div class="desc-item"><%= final_description[idx] %></div>
+                <div class="description border-box">
+                    <% if (fs_hitokoto === true) { %>
+                        <div class="desc-item border-box"><span class="desc hitokoto"></span><span class="cursor">｜</span></div>
+                    <% } else { %>
+                        <% for (const idx in final_description) { %>
+                            <% if (final_description[idx]) { %>
+                                <div class="desc-item border-box"><span class="desc"><%= final_description[idx] %></span><span class="cursor">｜</span></div>
+                            <% } %>
+                        <% } %>
                     <% } %>
                 </div>
             <% } %>
@@ -65,6 +70,5 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
                 </div>
             <% } %>
         </div>
-
     </div>
 </div>
