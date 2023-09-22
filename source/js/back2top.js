@@ -23,15 +23,17 @@ KEEP.initBack2Top = () => {
     },
 
     initBack2Top() {
-      this.back2TopBtn.addEventListener('click', () => {
-        this.back2top()
-      })
+      this.back2TopBtn &&
+        this.back2TopBtn.addEventListener('click', () => {
+          this.back2top()
+        })
     },
 
     initBack2Bottom() {
-      this.back2BottomBtn.addEventListener('click', () => {
-        this.back2Bottom()
-      })
+      this.back2BottomBtn &&
+        this.back2BottomBtn.addEventListener('click', () => {
+          this.back2Bottom()
+        })
     }
   }
 
