@@ -41,13 +41,23 @@ KEEP.initUtils = () => {
 
       const percent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100) || 0
 
+      // back to top
+      if (scrollTop > 10) {
+        this.back2TopBtn.classList.add('show')
+      } else {
+        this.back2TopBtn.classList.remove('show')
+      }
+
+      // scroll progress bar
       if (this.isHasScrollProgressBar && this.scrollProgressBarDom) {
         const progressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
         this.scrollProgressBarDom.style.visibility = percent === 0 ? 'hidden' : 'visible'
         this.scrollProgressBarDom.style.width = `${progressPercent}%`
       }
 
+      // scroll percent
       if (this.isHasScrollPercent && this.back2TopBtn) {
+        this.back2TopBtn.classList.add('show-percent')
         const percentDom = this.back2TopBtn.querySelector('.percent')
         if (percent === 0 || percent === undefined) {
           this.back2TopBtn.classList.remove('show')
@@ -55,9 +65,9 @@ KEEP.initUtils = () => {
           this.back2TopBtn.classList.add('show')
           percentDom.innerHTML = percent.toFixed(0)
           if (percent > 99) {
-            this.back2TopBtn.classList.add('show-arrow-up')
+            this.back2TopBtn.classList.add('show-arrow')
           } else {
-            this.back2TopBtn.classList.remove('show-arrow-up')
+            this.back2TopBtn.classList.remove('show-arrow')
           }
         }
       }
@@ -79,6 +89,7 @@ KEEP.initUtils = () => {
           }
         }
       }
+
       this.prevScrollValue = scrollTop
     },
 
