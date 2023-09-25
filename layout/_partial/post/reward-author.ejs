@@ -1,9 +1,10 @@
 <div class="reward-author-container border-box flex-center">
-    <button class="keep-button border-box tooltip-img"
+    <button class="keep-button border-box flex-center reward-btn tooltip tooltip-img"
+            data-tooltip-content="<%= theme?.post?.reward?.text ||  __('post.reward') %>"
             data-tooltip-img-url="<%= theme?.post?.reward?.img_link %>"
-            data-tooltip-img-trigger="hover"
+            data-tooltip-img-trigger="click"
             data-tooltip-img-style="top: -8px;"
     >
-        <i class="fa-solid fa-hand-holding-heart"></i>&nbsp;<%= theme?.post?.reward?.text ||  __('post.reward') %>
+        <i class="fa-solid fa-hand-holding-heart"></i>
     </button>
 </div>
