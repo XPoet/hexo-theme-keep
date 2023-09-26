@@ -232,9 +232,9 @@ comment:
   # See: https://github.com/imaegoo/twikoo
   #      https://twikoo.js.org
   twikoo:
-    env_id:         # Tencent Cloud environment id
-    region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou"
-    version: 1.6.8  # Twikoo version, default use v1.6.8
+    env_id:          # Environment ID
+    region:          # Environment region, Can be null
+    version: 1.6.21  # Twikoo version, default use 1.6.21
 
   # Waline
   # See: https://github.com/walinejs/waline
