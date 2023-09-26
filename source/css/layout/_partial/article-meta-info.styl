@@ -1,5 +1,6 @@
 $home-page-font-size = 0.92rem
 $post-page-font-size = 0.86rem
+$meta-icon-interspace = 0.3rem
 
 
 .article-meta-info-container {
@@ -91,9 +92,16 @@ $post-page-font-size = 0.86rem
 
 
     .article-category {
+      word-spacing -1rem
+
       .category-item {
+
+        &:first-child {
+          margin-left $meta-icon-interspace
+        }
+
         .category-separator {
-          margin 0 0.05rem
+          margin 0 $meta-icon-interspace
 
           i.icon {
             font-size $home-page-font-size * 0.7
@@ -108,15 +116,21 @@ $post-page-font-size = 0.86rem
 
 
     .article-tag {
+      word-spacing -1rem
+
       .tag-item {
-        margin-right 0.1rem
+        margin-right $meta-icon-interspace
+
+        &:first-child {
+          margin-left $meta-icon-interspace
+        }
 
         &:last-child {
           margin-right 0
         }
 
         .tag-separator {
-          margin-right 0.1rem
+          margin-right $meta-icon-interspace * 0.5
 
           i.icon {
             font-size $home-page-font-size * 0.7
