@@ -54,13 +54,23 @@ $first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
         color var(--first-screen-font-color-dark)
 
         .desc-item {
-          color var(--first-screen-font-color-dark)
+          .desc
+          .cursor {
+            color var(--first-screen-font-color-dark)
+          }
         }
       }
 
 
       .desc-item {
-        color var(--first-screen-font-color-light)
+        .desc {
+          color var(--first-screen-font-color-light)
+        }
+
+        .cursor {
+          color var(--first-screen-font-color-light)
+          animation blink-caret 0.8s step-end infinite
+        }
       }
 
 

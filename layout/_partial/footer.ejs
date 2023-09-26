@@ -93,7 +93,7 @@ const web_master = bi_author || hexo_author
                         <% } %>
                         <%- __(
                                 'footer.deploy',
-                                '<span class="tooltip" data-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
+                                '<span class="tooltip" data-tooltip-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
                         ) %>
                         <% if (f_site_deploy?.url) { %>
                     </a>

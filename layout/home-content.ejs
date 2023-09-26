@@ -3,21 +3,23 @@
         <% page.posts.forEach(post => { %>
             <li class="home-article-item">
 
-                <% if (post?.cover) { %>
+                <% if (post?.home_cover) { %>
                     <div class="home-article-item-top border-box"
-                         style="height: <%= post?.cover_height ? post?.cover_height + 'px' : '10rem' %>"
+                         style="height: <%= post?.home_cover_height ? post?.home_cover_height + 'px' : '10rem' %>"
                     >
                         <% if (post.sticky) { %>
                             <div class="post-sticky-box cover">
                                 <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                             </div>
                         <% } %>
-                        <img class="cover-img" src="<%= post.cover %>" alt="<%= post.title %>">
+                        <img class="home-cover" src="<%= post.home_cover %>"
+                             onerror="this.style.display='none'"
+                        >
                     </div>
                 <% } %>
 
                 <div class="home-article-item-bottom border-box">
-                    <% if (post.sticky && !post?.cover) { %>
+                    <% if (post.sticky && !post?.home_cover) { %>
                         <div class="post-sticky-box card">
                             <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                         </div>

@@ -41,13 +41,23 @@ KEEP.initUtils = () => {
 
       const percent = Math.round((scrollTop / (scrollHeight - clientHeight)) * 100) || 0
 
+      // back to top
+      if (scrollTop > 10) {
+        this.back2TopBtn.classList.add('show')
+      } else {
+        this.back2TopBtn.classList.remove('show')
+      }
+
+      // scroll progress bar
       if (this.isHasScrollProgressBar && this.scrollProgressBarDom) {
         const progressPercent = ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(3)
         this.scrollProgressBarDom.style.visibility = percent === 0 ? 'hidden' : 'visible'
         this.scrollProgressBarDom.style.width = `${progressPercent}%`
       }
 
+      // scroll percent
       if (this.isHasScrollPercent && this.back2TopBtn) {
+        this.back2TopBtn.classList.add('show-percent')
         const percentDom = this.back2TopBtn.querySelector('.percent')
         if (percent === 0 || percent === undefined) {
           this.back2TopBtn.classList.remove('show')
@@ -55,9 +65,9 @@ KEEP.initUtils = () => {
           this.back2TopBtn.classList.add('show')
           percentDom.innerHTML = percent.toFixed(0)
           if (percent > 99) {
-            this.back2TopBtn.classList.add('show-arrow-up')
+            this.back2TopBtn.classList.add('show-arrow')
           } else {
-            this.back2TopBtn.classList.remove('show-arrow-up')
+            this.back2TopBtn.classList.remove('show-arrow')
           }
         }
       }
@@ -79,6 +89,7 @@ KEEP.initUtils = () => {
           }
         }
       }
+
       this.prevScrollValue = scrollTop
     },
 
@@ -89,8 +100,8 @@ KEEP.initUtils = () => {
         this.styleHandleWhenScroll()
 
         // TOC scroll handle
-        if (KEEP.theme_config?.toc?.enable === true && KEEP.utils.hasOwnProperty('activeNav')) {
-          KEEP.utils.activeNav()
+        if (KEEP.theme_config?.toc?.enable === true && KEEP.utils?.tocHelper) {
+          KEEP.utils.tocHelper.activeNav()
         }
 
         // header shrink
@@ -133,7 +144,11 @@ KEEP.initUtils = () => {
       }
 
       const setFontSize = (fontSizeLevel) => {
-        this.rootHtmlDom.style.fontSize = `${fs * (1 + fontSizeLevel * 0.05)}px`
+        this.rootHtmlDom.style.setProperty(
+          'font-size',
+          `${fs * (1 + fontSizeLevel * 0.05)}px`,
+          'important'
+        )
         KEEP.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
@@ -334,28 +349,31 @@ KEEP.initUtils = () => {
 
     // insert tooltip content dom
     insertTooltipContent() {
+      const isLazyLoadImg = KEEP.theme_config?.lazyload?.enable === true
+
       const init = () => {
         // tooltip
         document.querySelectorAll('.tooltip').forEach((element) => {
-          const { content, offsetX, offsetY } = element.dataset
+          const { tooltipContent, tooltipOffsetX, tooltipOffsetY } = element.dataset
 
-          let style = ''
-          let sTop = ''
-          let sLeft = ''
-          if (offsetX) {
-            sTop = `left: ${offsetX};`
-          }
-          if (offsetY) {
-            sLeft = `top: ${offsetY};`
-          }
-          if (offsetX || offsetY) {
-            style = ` style="${sLeft}${sTop}"`
+          let styleCss = ''
+
+          if (tooltipOffsetX) {
+            styleCss += `left: ${tooltipOffsetX};`
           }
 
-          if (content) {
+          if (tooltipOffsetY) {
+            styleCss += `top: ${tooltipOffsetY};`
+          }
+
+          if (styleCss) {
+            styleCss = `style="${styleCss}"`
+          }
+
+          if (tooltipContent) {
             element.insertAdjacentHTML(
               'afterbegin',
-              `<span class="tooltip-content"${style}>${content}</span>`
+              `<span class="tooltip-content" ${styleCss}>${tooltipContent}</span>`
             )
           }
         })
@@ -363,8 +381,12 @@ KEEP.initUtils = () => {
         // tooltip-img
         const imgsSet = {}
 
-        const toggleShowImg = (dom, nameIdx) => {
-          document.addEventListener('click', () => {
+        const hideTooltipImg = (dom, nameIdx, trigger = 'click') => {
+          if (trigger === 'hover') {
+            trigger = 'mouseout'
+          }
+
+          document.addEventListener(trigger, () => {
             if (imgsSet[nameIdx].isShowImg) {
               dom.classList.remove('show-img')
               imgsSet[nameIdx].isShowImg = false
@@ -383,13 +405,40 @@ KEEP.initUtils = () => {
           }
         }
 
+        // tooltip-img
         document.querySelectorAll('.tooltip-img').forEach((dom, idx) => {
-          const { imgUrl, name } = dom.dataset
-          if (imgUrl) {
-            const imgDomClass = `tooltip-img-${name}`
-            const nameIdx = `${name}_${idx}`
-            const imgDom = `<img class="${imgDomClass}" lazyload data-src="${imgUrl}" alt="${name}">`
-            const imgTooltipBox = `<div class="tooltip-img-box">${imgDom}</div>`
+          const {
+            tooltipImgName,
+            tooltipImgUrl,
+            tooltipImgTip,
+            tooltipImgTrigger = 'click',
+            tooltipImgStyle
+          } = dom.dataset
+
+          let styleCss = ''
+
+          if (tooltipImgStyle) {
+            styleCss = `style="${tooltipImgStyle}"`
+          }
+
+          let tipDom = ''
+          if (tooltipImgTip) {
+            tipDom = `<div class="tip">${tooltipImgTip}</div>`
+          }
+
+          if (tooltipImgUrl) {
+            const imgDomClass = `tooltip-img-${idx}-${tooltipImgName ? tooltipImgName : Date.now()}`
+            const nameIdx = `${tooltipImgName}-${idx}`
+
+            const imgDom = `<img class="${imgDomClass}"
+                              ${isLazyLoadImg ? 'lazyload' : ''}
+                              ${isLazyLoadImg ? 'data-' : ''}src="${tooltipImgUrl}"
+                              alt="${imgDomClass}"
+                            >`
+
+            const imgTooltipBox = `<div ${styleCss} class="tooltip-img-box ${
+              tipDom ? 'has-tip' : ''
+            }">${imgDom}${tipDom}</div>`
 
             imgsSet[nameIdx] = {
               imgLoaded: false,
@@ -397,8 +446,15 @@ KEEP.initUtils = () => {
             }
 
             dom.insertAdjacentHTML('afterbegin', imgTooltipBox)
-            dom.addEventListener('click', (e) => {
-              if (!imgsSet[nameIdx].imgLoaded) {
+
+            let eventTrigger = 'click'
+
+            if (tooltipImgTrigger === 'hover') {
+              eventTrigger = 'mouseover'
+            }
+
+            dom.addEventListener(eventTrigger, (e) => {
+              if (isLazyLoadImg && !imgsSet[nameIdx].imgLoaded) {
                 loadImg(
                   document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
                   imgsSet[nameIdx].imgLoaded
@@ -409,7 +465,7 @@ KEEP.initUtils = () => {
               e.stopPropagation()
             })
 
-            toggleShowImg(dom, nameIdx)
+            hideTooltipImg(dom, nameIdx, tooltipImgTrigger)
           }
         })
       }
@@ -421,10 +477,17 @@ KEEP.initUtils = () => {
     // busuanzi initialize handle
     siteCountInitialize() {
       if (KEEP.theme_config?.website_count?.busuanzi_count?.enable === true) {
-        const script = document.createElement('script')
-        script.async = true
-        script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-        document.body.appendChild(script)
+        const tmpId = 'busuanzi-js'
+        let script = document.body.querySelector(`#${tmpId}`)
+
+        if (!script) {
+          script = document.createElement('script')
+          script.setAttribute('data-pjax', '')
+          script.setAttribute('id', tmpId)
+          script.async = true
+          script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+          document.body.appendChild(script)
+        }
 
         const getText = (selector) => {
           return document.querySelector(selector)?.innerText
@@ -476,6 +539,86 @@ KEEP.initUtils = () => {
             window.location.href = tempHref + '/page/' + current
           }
         })
+    },
+
+    // custom tabs tag active handle
+    tabsActiveHandle() {
+      const activeHandle = (navList, paneList, tab) => {
+        navList.forEach((nav) => {
+          if (tab.dataset.href === nav.dataset.href) {
+            nav.classList.add('active')
+          } else {
+            nav.classList.remove('active')
+          }
+        })
+
+        paneList.forEach((pane) => {
+          if (tab.dataset.href === pane.id) {
+            pane.classList.add('active')
+          } else {
+            pane.classList.remove('active')
+          }
+        })
+      }
+
+      const tabsList = document.querySelectorAll('.keep-tabs')
+      tabsList.length &&
+        tabsList.forEach((tabs) => {
+          const tabNavList = tabs.querySelectorAll('.tabs-nav .tab')
+          const tabPaneList = tabs.querySelectorAll('.tabs-content .tab-pane')
+          tabNavList.forEach((tabNav) => {
+            tabNav.addEventListener('click', () => {
+              activeHandle(tabNavList, tabPaneList, tabNav)
+            })
+          })
+        })
+    },
+
+    initTypewriter() {
+      const fsc = KEEP.theme_config?.style?.first_screen || {}
+      const isHitokoto = fsc?.hitokoto === true
+
+      if (fsc?.enable !== true) {
+        return
+      }
+
+      if (fsc?.enable === true && !isHitokoto && !fsc?.description) {
+        return
+      }
+
+      const descBox = document.querySelector('.first-screen-content .description')
+      if (descBox) {
+        descBox.style.opacity = '0'
+
+        setTimeout(
+          () => {
+            descBox.style.opacity = '1'
+            const descItemList = descBox.querySelectorAll('.desc-item')
+            descItemList.forEach((descItem) => {
+              const desc = descItem.querySelector('.desc')
+              const cursor = descItem.querySelector('.cursor')
+              const text = desc.innerHTML
+              desc.innerHTML = ''
+              let charIndex = 0
+
+              if (text) {
+                const typewriter = () => {
+                  if (charIndex < text.length) {
+                    desc.textContent += text.charAt(charIndex)
+                    charIndex++
+                    setTimeout(typewriter, 100)
+                  } else {
+                    cursor.style.display = 'none'
+                  }
+                }
+
+                typewriter()
+              }
+            })
+          },
+          isHitokoto ? 400 : 300
+        )
+      }
     }
   }
 
@@ -508,4 +651,10 @@ KEEP.initUtils = () => {
 
   // page number jump handle
   KEEP.utils.pageNumberJump()
+
+  // tabs active handle
+  KEEP.utils.tabsActiveHandle()
+
+  // first screen typewriter
+  KEEP.utils.initTypewriter()
 }

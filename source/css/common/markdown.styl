@@ -2,22 +2,48 @@
   font-size 1rem
 
   blockquote {
-
-    p
-    ul
-    ol {
-      padding 0.4rem 0.4rem 0.4rem 0.8rem
-    }
-
+    position relative
+    display flex
+    flex-direction column
+    justify-content flex-start
     box-sizing border-box
     margin 1.4rem 0
     color var(--text-color-3)
     background var(--background-color-2)
     border-left 0.4rem solid var(--text-color-4)
+    border-top-left-radius 0.2rem
+    border-bottom-left-radius 0.2rem
+
+
+    p
+    ul
+    ol
+    footer {
+      position relative
+      box-sizing border-box
+      padding 0.4rem 0.4rem 0.4rem 0.8rem !important
+    }
+
+    footer {
+      margin-bottom 0.6rem
+      font-style italic
+    }
+
+    cite {
+      position relative
+      box-sizing border-box
+      margin-left 1rem
+      color var(--text-color-4)
+
+      &::before {
+        content '— '
+      }
+    }
   }
 
 
   p {
+    margin 0.6rem 0
     color var(--text-color-3)
     line-height 2
   }

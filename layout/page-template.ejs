@@ -20,9 +20,7 @@ const is_render_friends_link = (
             <% } %>
         </div>
         <% if (page?.comment === true) { %>
-            <div class="page-template-comments border-box">
-                <%- partial('_partial/comment/comment') %>
-            </div>
+            <%- partial('_partial/comment/comment') %>
         <% } %>
     </div>
 </div>

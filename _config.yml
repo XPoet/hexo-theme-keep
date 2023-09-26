@@ -138,6 +138,15 @@ post:
   # Post copyright info
   copyright_info: false  # Option values: true | false
 
+  # Post share
+  share: false           # Option values: true | false
+
+  # Reward author
+  reward:
+    enable: false        # Option values: true | false
+    img_link:            # Image link for the payment QR code
+    text:                # Custom reward text, Can be null
+
 # ---------------------------------------------------------------------------------------
 # Code block
 # Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/code_block.html
@@ -223,9 +232,9 @@ comment:
   # See: https://github.com/imaegoo/twikoo
   #      https://twikoo.js.org
   twikoo:
-    env_id:         # Tencent Cloud environment id
-    region:         # Environment region. If select Guangzhou, fill in "ap-guangzhou"
-    version: 1.6.8  # Twikoo version, default use v1.6.8
+    env_id:          # Environment ID
+    region:          # Environment region, Can be null
+    version: 1.6.21  # Twikoo version, default use 1.6.21
 
   # Waline
   # See: https://github.com/walinejs/waline

@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
   KEEP.localStorageKey = 'KEEP-THEME-STATUS'
 
   KEEP.styleStatus = {
-    isExpandPageWidth: false,
     isDark: false,
     fontSizeLevel: 0,
     isShowToc: true
@@ -26,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
       `padding: 6px 0;`
     )
   }
+  KEEP.printThemeInfo()
 
   // set version number of footer
   KEEP.setFooterVersion = () => {
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  KEEP.refresh = () => {
+  KEEP.initExecute = () => {
     KEEP.initUtils()
     KEEP.initHeaderShrink()
     KEEP.initModeToggle()
@@ -65,11 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
       KEEP.initLocalSearch()
     }
 
-    if (
-      code_block?.tools?.enable === true ||
-      code_block?.enable === true ||
-      code_copy?.enable === true
-    ) {
+    if (code_block?.tools?.enable === true) {
       KEEP.initCodeBlockTools()
     }
 
@@ -77,7 +73,5 @@ window.addEventListener('DOMContentLoaded', () => {
       KEEP.initLazyLoad()
     }
   }
-
-  KEEP.printThemeInfo()
-  KEEP.refresh()
+  KEEP.initExecute()
 })

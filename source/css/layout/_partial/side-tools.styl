@@ -75,42 +75,50 @@ $tools-item-border-radius = 0.2rem
 
 
   .exposed-tools-list {
-    if (hexo-config('style') && hexo-config('style.scroll') && hexo-config('style.scroll.percent') == true) {
-      .tool-scroll-to-top {
-        display none
 
-        &.show {
-          display flex
-        }
+    .tool-scroll-to-top {
+      display none
 
-        &.show-arrow-up {
-          .percent {
-            display none
-          }
+      &.show {
+        display flex
+      }
 
-          .arrow-up {
-            display flex
-          }
-        }
 
-        &:hover {
-          .percent {
-            display none
-          }
-
-          .arrow-up {
-            display flex
-          }
-        }
-
-        .arrow-up {
+      &.show-arrow {
+        .percent {
           display none
         }
 
+        .arrow {
+          display flex
+        }
+      }
+
+
+      &.show-percent {
         .percent {
           display flex
-          font-size 1rem
         }
+
+        .arrow {
+          display none
+        }
+      }
+
+
+      &:hover {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      .percent {
+        font-size 1rem
       }
     }
   }

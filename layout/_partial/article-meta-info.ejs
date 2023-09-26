@@ -25,7 +25,7 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
             </span>
         <% } %>
 
-        <% if ((post.categories.length && theme?.home_article?.category?.enable === true) || page_type === 'post') { %>
+        <% if (post.categories.length && (theme?.home_article?.category?.enable === true || page_type === 'post')) { %>
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul>
                     <% post.categories.forEach((category, i) => {
@@ -42,7 +42,7 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
             </span>
         <% } %>
 
-        <% if ((post.tags.length && theme?.home_article?.tag?.enable === true) || page_type === 'post') { %>
+        <% if (post.tags.length && (theme?.home_article?.tag?.enable === true || page_type === 'post')) { %>
             <span class="article-tag meta-info-item border-box">
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul>

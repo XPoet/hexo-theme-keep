@@ -42,6 +42,34 @@ transition-t(property, delay, duration, function) {
 }
 
 
+.title-hover-animation {
+  position relative
+  display inline-block
+  color var(--text-color-2)
+  line-height 1.3
+  vertical-align top
+  border-bottom none
+
+  &::before {
+    position absolute
+    bottom -4px
+    left 0
+    width 100%
+    height 2px
+    background-color var(--text-color-2)
+    transform scaleX(0)
+    visibility hidden
+    content ""
+    transition-t("visibility transform", "0, 0", "0.2, 0.2", "ease-in-out, ease-in-out")
+  }
+
+  &:hover::before {
+    transform scaleX(1)
+    visibility visible
+  }
+}
+
+
 @keyframes fade-in-down {
   0% {
     transform translateY(-50px)
@@ -84,31 +112,12 @@ transition-t(property, delay, duration, function) {
   }
 }
 
-.title-hover-animation {
-  position relative
-  display inline-block
-  color var(--text-color-2)
-  line-height 1.3
-  vertical-align top
-  border-bottom none
-
-  &::before {
-    position absolute
-    bottom -4px
-    left 0
-    width 100%
-    height 2px
-    background-color var(--text-color-2)
-    transform scaleX(0)
-    visibility hidden
-    content ""
-    transition-t("visibility transform", "0, 0", "0.2, 0.2", "ease-in-out, ease-in-out")
+@keyframes blink-caret {
+  from
+  to {
+    opacity 0
   }
-
-  &:hover::before {
-    transform scaleX(1)
-    visibility visible
+  50% {
+    opacity 1
   }
 }
-
-

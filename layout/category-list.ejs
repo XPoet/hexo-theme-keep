@@ -9,11 +9,8 @@
         <% } else { %>
             <%- partial('_partial/common/empty-content') %>
         <% } %>
-
         <% if (page?.comment === true) { %>
-            <div class="category-comments">
-                <%- partial('_partial/comment/comment') %>
-            </div>
+            <%- partial('_partial/comment/comment') %>
         <% } %>
     </div>
 </div>

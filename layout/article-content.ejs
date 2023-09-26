@@ -3,17 +3,21 @@
 
         <div class="article-content-container border-box">
 
-            <% if (page?.cover) { %>
-                <div class="article-content-top border-box">
+            <% if (page?.post_cover || page?.home_cover) { %>
+                <div class="article-content-top border-box"
+                     style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
+                >
                     <div class="cover-article-title">
                         <%= page.title %>
                     </div>
-                    <img class="post-cover" src="<%= page.cover %>" alt="<%= page.title %>">
+                    <img class="post-cover" src="<%= page.post_cover || page?.home_cover %>"
+                         onerror="this.style.display='none'"
+                    >
                 </div>
             <% } %>
 
-            <div class="article-content-bottom border-box<%= page?.cover ? ' has-cover' : '' %>">
-                <% if (!page?.cover) { %>
+            <div class="article-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
+                <% if (!page?.post_cover && !page?.home_cover) { %>
                     <div class="article-title">
                         <%= page.title %>
                     </div>
@@ -62,19 +66,30 @@
                 <% if (
                         (theme?.post?.copyright_info === true || theme?.copyright_info?.enable === true) && page?.copyright_info !== false
                 ) { %>
-                    <div class="post-copyright-info">
-                        <%- partial('_partial/article-copyright-info') %>
-                    </div>
+                        <%- partial('_partial/post/post-copyright-info') %>
                 <% } %>
 
-                <% if (page.tags.length) { %>
-                    <ul class="post-tags-box">
-                        <% page.tags.forEach((tag) => { %>
-                            <li class="tag-item">
-                                <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
-                            </li>
-                        <% }); %>
-                    </ul>
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        <% if (page.tags.length) { %>
+                            <ul class="post-tags-box border-box">
+                                <% page.tags.forEach((tag) => { %>
+                                    <li class="tag-item border-box">
+                                        <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        <% } %>
+                    </div>
+                    <div>
+                        <% if (theme?.post?.share === true && page?.share !== false) { %>
+                            <%- partial('_partial/post/post-share') %>
+                        <% } %>
+                    </div>
+                </div>
+
+                <% if (theme?.post?.reward?.enable === true && theme?.post?.reward?.img_link && page?.reward !== false) { %>
+                    <%- partial('_partial/post/reward-author') %>
                 <% } %>
 
                 <% if (page.prev || page.next) { %>

@@ -85,3 +85,10 @@ footer:
     tencent_cloud: Tencent Cloud
     upyun: UPYUN
   total_words: Total words
+post:
+  share:
+    qq: "Share to QQ"
+    wechat: "Share to WeChat"
+    weibo: "Share to WeiBo"
+    wechat_scan: "Scan by WeChat"
+  reward: Reward Author
