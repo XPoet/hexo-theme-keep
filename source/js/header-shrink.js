@@ -6,7 +6,7 @@ KEEP.initHeaderShrink = () => {
     isHeaderShrink: false,
 
     init() {
-      this.headerHeight = this.headerDom.getBoundingClientRect().height
+      this.headerHeight = this.headerDom?.getBoundingClientRect()?.height || 70
     },
 
     headerShrink() {
