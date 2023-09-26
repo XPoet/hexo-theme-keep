@@ -1,7 +1,7 @@
 <ul class="friends-link-list border-box">
     <% for (const f of theme?.links) { %>
         <% if (f?.title) { %>
-           <li class="link-type-title text-ellipsis"><i class="fa-solid fa-users"></i>&nbsp;<%= f?.title %></li>
+           <li class="link-type-title text-ellipsis border-box"><%= f.title %></li>
         <% } else { %>
             <li class="friends-link-item border-box">
                 <a class="a-wrap border-box" href="<%= f?.link %>">
