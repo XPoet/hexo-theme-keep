@@ -1,5 +1,75 @@
 # Changelog
 
+## [3.8.0](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.7...v3.8.0) (2023-09-26)
+
+
+### 🌟 Features
+
+* add custom button tag in post ([2363829](https://github.com/XPoet/hexo-theme-keep/commit/2363829c069d1b7fd7fc3278720ffde6bd9dad9a))
+* add custom note tag in post ([ab6c379](https://github.com/XPoet/hexo-theme-keep/commit/ab6c379ceeb1eba8b0852f745484347219bb38ce))
+* add custom tag tabs ([3720483](https://github.com/XPoet/hexo-theme-keep/commit/3720483eadd7bd10412a66c37a72e819319e9ada))
+* add the ability to share post ([5745c71](https://github.com/XPoet/hexo-theme-keep/commit/5745c7162cf670f85395820e6bdac9736f615fe5))
+* allow custom reward text ([a163a78](https://github.com/XPoet/hexo-theme-keep/commit/a163a78d85f183ee50202efce1f693cf5d5be645))
+* first screen description add typewriter effect ([1793583](https://github.com/XPoet/hexo-theme-keep/commit/179358315ae1576d557be855eefb9137f3df668c))
+* **front-matter:** add home_cover and post_cover settings ([10abbe2](https://github.com/XPoet/hexo-theme-keep/commit/10abbe21086c42b85657a2228e3491da9ee218ab))
+* **post:** added reward author configuration ([47b3849](https://github.com/XPoet/hexo-theme-keep/commit/47b3849f40a1d1eddfb2dad378ec15b26b729133))
+
+
+### 🐞 Bug Fixes
+
+* allow mobile website to adjust font size ([c323da5](https://github.com/XPoet/hexo-theme-keep/commit/c323da528f3149547dfbe0e9d5b79b5e3e456286))
+* fixed hexo build error ([3aa47db](https://github.com/XPoet/hexo-theme-keep/commit/3aa47dbcfbaf68ab1dfda8a92d0ec594ff17b9dc))
+* fixed the copy code button was not visible in Mac style ([8235b96](https://github.com/XPoet/hexo-theme-keep/commit/8235b96b24028f621de73b40074c14eab66714c7))
+* **home:** fixed a bug show two stick icon ([105fab5](https://github.com/XPoet/hexo-theme-keep/commit/105fab5e460abe24ac0aa6be6866929d1b5d5b84))
+* optimize article meta info icon ([72157d9](https://github.com/XPoet/hexo-theme-keep/commit/72157d9e6f16c4284dee60b88849846295411459))
+* optimize busuanzi script load ([1bc6a27](https://github.com/XPoet/hexo-theme-keep/commit/1bc6a27a302d237d71c5749b158ce6615aa84ed9))
+* optimize lazyload of tooltip-img component ([e3a1a6e](https://github.com/XPoet/hexo-theme-keep/commit/e3a1a6e2aa9ae61af608c82001952266563391c5))
+* prevent page flicking after click 'back2top' button ([08efbe4](https://github.com/XPoet/hexo-theme-keep/commit/08efbe41bdc718b690d62d745523d050277c2b0a))
+
+
+### 🎨 Styling
+
+* function naming optimization ([ed08e3f](https://github.com/XPoet/hexo-theme-keep/commit/ed08e3f44ab6b30140c38d8b7466ba8c1b571ec7))
+
+
+### 🍭 Code Refactoring
+
+* refactor back2top and back2bottom ([d0eae9f](https://github.com/XPoet/hexo-theme-keep/commit/d0eae9fef38855d7545fd857ef3695f28eb7de99))
+
+
+### 🛠 Performance Improvements
+
+* custom injected JS files adapted to PJAX ([a0f5a9f](https://github.com/XPoet/hexo-theme-keep/commit/a0f5a9f5020b38dab144117e0a7f8d1058564e4e))
+* normalizes the tooltip component ([2e805ec](https://github.com/XPoet/hexo-theme-keep/commit/2e805ec5667880cb73f803956034182e1a9dc249))
+* optimize back2Top display logic ([da77c5c](https://github.com/XPoet/hexo-theme-keep/commit/da77c5c22afee2ae824da11ff20876291be97daa))
+* optimize TOC handle logic ([9403947](https://github.com/XPoet/hexo-theme-keep/commit/94039478562944c9fd24beffa5ce212935278bed))
+* optimize tooltip-img component custom style setting ([455857b](https://github.com/XPoet/hexo-theme-keep/commit/455857b047acfbc76e6ecd9985ed4844f99b3a0c))
+
+
+### 📦 Build System
+
+* fontawesome-free upgrade to v6.4.2 ([d97aa97](https://github.com/XPoet/hexo-theme-keep/commit/d97aa97eb5f33bef6546834ac40864cdcbb8fd15))
+* optimize js files load for PJAX ([88f7bf4](https://github.com/XPoet/hexo-theme-keep/commit/88f7bf4ba4b4769f08c908763fb0ec2aa37c2304))
+* optimize JS for handling copyright info ([6e45812](https://github.com/XPoet/hexo-theme-keep/commit/6e4581230c27a5979ee22572f3b5c52cea726300))
+* optimize JS for post share ([76da72e](https://github.com/XPoet/hexo-theme-keep/commit/76da72e6f8b27ebd8d3c1540b5039d05a406b5a9))
+* update twikoo comments config ([db5e327](https://github.com/XPoet/hexo-theme-keep/commit/db5e327bc69fea5457e33134e376118df7f7a598))
+
+
+### 💄 Improvement UI
+
+* always display back2Top ([79464a6](https://github.com/XPoet/hexo-theme-keep/commit/79464a605a8ce4392a913711a69074deb49a56d7))
+* optimize blockquote tag style ([0428295](https://github.com/XPoet/hexo-theme-keep/commit/04282951e08c924772b0ca27b651a9361ec57879))
+* optimize custom button tag style ([40d0aa1](https://github.com/XPoet/hexo-theme-keep/commit/40d0aa1d1cf8ad6fe28fff5fb8d80d5a180abeeb))
+* optimize friends link page style ([134c99f](https://github.com/XPoet/hexo-theme-keep/commit/134c99fa6d42c69df26c831e3ce950bbff833315))
+* optimize post share layout ([4141cf4](https://github.com/XPoet/hexo-theme-keep/commit/4141cf42c73637e1b06cc127bce1f06396b66e6f))
+* optimize reward author button style ([5c6a041](https://github.com/XPoet/hexo-theme-keep/commit/5c6a041cd9f7a5fc2ac1ea0d7e3f06f96d9965e7))
+* optimize the bottom style of the page ([b05ba63](https://github.com/XPoet/hexo-theme-keep/commit/b05ba638516b31c5f807a2868f002ad5375c789d))
+
+
+### 🚦 Chore
+
+* **master:** release 3.7.7 ([981bcee](https://github.com/XPoet/hexo-theme-keep/commit/981bcee2f8e79a3650e4118bcadbee4ac6861ea5))
+
 ## [3.7.7](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.6...v3.7.7) (2023-09-12)
 
 
