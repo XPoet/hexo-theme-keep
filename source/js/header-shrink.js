@@ -2,16 +2,19 @@
 
 KEEP.initHeaderShrink = () => {
   KEEP.utils.headerShrink = {
-    headerDom: document.querySelector('.header-wrapper'),
+    headerWrapperDom: null,
     isHeaderShrink: false,
+    headerHeight: 70,
 
     init() {
-      this.headerHeight = this.headerDom.getBoundingClientRect().height
+      this.headerWrapperDom = document.querySelector('.header-wrapper')
+      if (this.headerWrapperDom) {
+        this.headerHeight = this.headerWrapperDom.getBoundingClientRect().height
+      }
     },
 
     headerShrink() {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      const headerWrapperDom = document.querySelector('.header-wrapper')
       const { enable, header_transparent } = KEEP.theme_config?.style?.first_screen || {}
       const isHeaderTransparent =
         enable === true &&
@@ -22,13 +25,13 @@ KEEP.initHeaderShrink = () => {
         this.isHeaderShrink = true
         document.body.classList.add('header-shrink')
         if (isHeaderTransparent) {
-          headerWrapperDom.classList.add('transparent-2')
+          this.headerWrapperDom.classList.add('transparent-2')
         }
       } else if (this.isHeaderShrink && scrollTop <= this.headerHeight) {
         this.isHeaderShrink = false
         document.body.classList.remove('header-shrink')
         if (isHeaderTransparent) {
-          headerWrapperDom.classList.remove('transparent-2')
+          this.headerWrapperDom.classList.remove('transparent-2')
         }
       }
     },

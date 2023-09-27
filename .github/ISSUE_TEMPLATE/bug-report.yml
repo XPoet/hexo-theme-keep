@@ -1,7 +1,7 @@
 name: Bug Report | Bug 报告
 description: Something isn't working as expected
 #title: ""
-labels: 
+labels:
   - bug
 #assignees: ""
 body:
@@ -20,7 +20,7 @@ body:
         I made sure I checked
         我确认我已经检查过了
       options:
-        - label: I am using Keep version 3.7.3 or later.
+        - label: I am using Keep version 3.8.1 or later.
           required: true
         - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn/tutorial/get-start/install-theme.html).
           required: true
@@ -86,7 +86,7 @@ body:
     id: hexo-config
     attributes:
       label: Hexo Configuration | Hexo 配置
-      description: | 
+      description: |
         "Paste configuration from Hexo `_config.yml`
         粘贴 Hexo `_config.yml` 中的内容
       render: YAML
@@ -97,7 +97,7 @@ body:
     id: keep-config
     attributes:
       label: Keep Configuration | Keep 配置
-      description: | 
+      description: |
         Paste ONLY CHANGED CONFIGURATION from Keep `_config.yml`
         只粘贴 Keep 主题配置文件 `_config.yml` 中修改过的部分
       render: YAML
@@ -108,7 +108,7 @@ body:
     id: other-info
     attributes:
       label: Other Information | 其它信息
-      description: | 
+      description: |
         e.g. Browser, System
         例如：浏览器，操作系统
     validations:

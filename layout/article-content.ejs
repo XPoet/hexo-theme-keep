@@ -75,7 +75,7 @@
                             <ul class="post-tags-box border-box">
                                 <% page.tags.forEach((tag) => { %>
                                     <li class="tag-item border-box">
-                                        <a href="<%- url_for(tag.path) %>"><i class="icon fas fa-hashtag"></i><%= tag.name %></a>&nbsp;
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
                                     </li>
                                 <% }) %>
                             </ul>
