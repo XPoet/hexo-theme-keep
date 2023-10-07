@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.8.2](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.1...v3.8.2) (2023-10-07)
+
+
+### 🐞 Bug Fixes
+
+* update `CC BY-NC-SA 4.0` jump link ([#257](https://github.com/XPoet/hexo-theme-keep/issues/257)) ([c088a6a](https://github.com/XPoet/hexo-theme-keep/commit/c088a6aab1a57e680f1e891cfc532ddbc0ccb994))
+* **utils:** improve removeWhitespace() ([d556159](https://github.com/XPoet/hexo-theme-keep/commit/d5561597ef632cd589568461c39ac73eb0d002fb))
+
+
+### 🎯 CI
+
+* update GitHub ISSUE_TEMPLATE ([2700943](https://github.com/XPoet/hexo-theme-keep/commit/270094383f4e359294e82f71b88470ea3e9977af))
+
+
+### 💄 Improvement UI
+
+* optimize post meta info bar style ([cb7a27c](https://github.com/XPoet/hexo-theme-keep/commit/cb7a27c058f467ef905612756c8b3c0c7464e562))
+* **post:** optimize TOC anchor jump ([828c1be](https://github.com/XPoet/hexo-theme-keep/commit/828c1beddf2538629d4628e17f74c16595dffbe8))
+
 ## [3.8.1](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.0...v3.8.1) (2023-09-27)
 
 
