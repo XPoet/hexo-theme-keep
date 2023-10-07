@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.8.1](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.0...v3.8.1) (2023-09-27)
+
+
+### 🛠 Performance Improvements
+
+* optimize header shrink handle in the initial state ([2002162](https://github.com/XPoet/hexo-theme-keep/commit/20021629772208c059b182863ad00cef20935883))
+* optimize header shrink handle logic ([e7064e5](https://github.com/XPoet/hexo-theme-keep/commit/e7064e52f076972c9d792d54b0f921c008576bc5))
+
+
+### 🎯 CI
+
+* update GitHub ISSUE_TEMPLATE ([ebe0ba7](https://github.com/XPoet/hexo-theme-keep/commit/ebe0ba7c3a71776a0e0576f6c6d0f65fed1a5e57))
+
+
+### 💄 Improvement UI
+
+* hide first screen description in the initial state ([b51013e](https://github.com/XPoet/hexo-theme-keep/commit/b51013e623bb928471edcae2e04d48a32027a020))
+* optimize reward author button style ([f5820ad](https://github.com/XPoet/hexo-theme-keep/commit/f5820ad67ed3e6e078c7c1d0b67f494210ee6b46))
+* unify the style of post tags ([2986c29](https://github.com/XPoet/hexo-theme-keep/commit/2986c29922828503679dab9c254964c231b954c8))
+
 ## [3.8.0](https://github.com/XPoet/hexo-theme-keep/compare/v3.7.7...v3.8.0) (2023-09-26)
 
 
