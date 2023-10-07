@@ -20,7 +20,7 @@ body:
         I made sure I checked
         我确认我已经检查过了
       options:
-        - label: I am using Keep version 3.8.1 or later.
+        - label: I am using Keep version 3.8.2 or later.
           required: true
         - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn/tutorial/get-start/install-theme.html).
           required: true

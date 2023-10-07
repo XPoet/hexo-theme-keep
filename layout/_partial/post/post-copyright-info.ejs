@@ -1,3 +1,14 @@
+<%
+let  licenseLang = ''
+
+if (config?.language === 'zh-CN') {
+    licenseLang = '.zh-hans'
+}
+
+if (config?.language === 'zh-TW') {
+    licenseLang = '.zh-hant'
+}
+%>
 <div class="article-copyright-info-container border-box">
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
@@ -15,7 +26,7 @@
                 <div class="type">
                     <%- __('copyright.author') %>
                 </div>
-                <div class="content"><%= theme?.base_info?.author || config.author %></div>
+                <div class="content"><%= theme?.base_info?.author || config?.author || 'Anonymous' %></div>
             </div>
 
             <div class="post-time bottom-item">
@@ -31,7 +42,7 @@
                     <%- __('copyright.license') %>
                 </div>
                 <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed<%= licenseLang %>">
                         <i class="fa-brands fa-creative-commons"></i>
                         <i class="fa-brands fa-creative-commons-by"></i>
                         <i class="fa-brands fa-creative-commons-nc"></i>

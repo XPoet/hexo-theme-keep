@@ -19,6 +19,7 @@ KEEP.initUtils = () => {
     isHeaderTransparent: false,
     hasToc: false,
 
+    // initialization data
     initData() {
       const { scroll, first_screen } = KEEP.theme_config?.style || {}
       this.isHasScrollProgressBar = scroll?.progress_bar === true
@@ -33,7 +34,7 @@ KEEP.initUtils = () => {
       }
     },
 
-    // Scroll Style Handle
+    // scroll Style Handle
     styleHandleWhenScroll() {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
@@ -267,6 +268,7 @@ KEEP.initUtils = () => {
       return p2.replace(/%s/g, p1)
     },
 
+    // get how long ago
     getHowLongAgo(timestamp) {
       const lang = KEEP.language_ago
       const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12)
@@ -294,6 +296,7 @@ KEEP.initUtils = () => {
       }
     },
 
+    // set how long age in home article block
     setHowLongAgoInHome() {
       const post = document.querySelectorAll('.article-meta-info .home-article-history')
       post &&
@@ -574,6 +577,7 @@ KEEP.initUtils = () => {
         })
     },
 
+    // first screen typewriter
     initTypewriter() {
       const fsc = KEEP.theme_config?.style?.first_screen || {}
       const isHitokoto = fsc?.hitokoto === true
@@ -619,42 +623,48 @@ KEEP.initUtils = () => {
           isHitokoto ? 400 : 300
         )
       }
+    },
+
+    // remove white space between children
+    removeWhitespace(container) {
+      if (!container) {
+        return
+      }
+
+      const childNodes = container.childNodes
+      const whitespaceNodes = []
+
+      for (let i = 0; i < childNodes.length; i++) {
+        const node = childNodes[i]
+
+        if (node.nodeType === 3 && /^\s*$/.test(node.nodeValue)) {
+          whitespaceNodes.push(node)
+        }
+      }
+
+      for (const whitespaceNode of whitespaceNodes) {
+        container.removeChild(whitespaceNode)
+      }
+    },
+    trimPostMetaInfoBar() {
+      this.removeWhitespace(
+        document.querySelector('.article-meta-info-container .article-category-ul')
+      )
+      this.removeWhitespace(document.querySelector('.article-meta-info-container .article-tag-ul'))
     }
   }
 
-  // init data
   KEEP.utils.initData()
-
-  // init scroll
   KEEP.utils.registerWindowScroll()
-
-  // toggle show tools list
   KEEP.utils.toggleShowToolsList()
-
-  // global font adjust
   KEEP.utils.globalFontAdjust()
-
-  // check whether TOC exists
   KEEP.utils.initHasToc()
-
-  // big image viewer handle
   KEEP.utils.zoomInImage()
-
-  // set how long age in home article block
   KEEP.utils.setHowLongAgoInHome()
-
-  // insert tooltip content dom
   KEEP.utils.insertTooltipContent()
-
-  // busuanzi initialize
   KEEP.utils.siteCountInitialize()
-
-  // page number jump handle
   KEEP.utils.pageNumberJump()
-
-  // tabs active handle
   KEEP.utils.tabsActiveHandle()
-
-  // first screen typewriter
   KEEP.utils.initTypewriter()
+  KEEP.utils.trimPostMetaInfoBar()
 }
