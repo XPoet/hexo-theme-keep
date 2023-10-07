@@ -1,6 +1,6 @@
 $home-page-font-size = 0.92rem
 $post-page-font-size = 0.86rem
-$meta-icon-interspace = 0.3rem
+$meta-icon-interspace = 0.4rem
 
 
 .article-meta-info-container {
@@ -92,22 +92,15 @@ $meta-icon-interspace = 0.3rem
 
 
     .article-category {
-      word-spacing -1rem
+      word-spacing 0
 
       .category-item {
 
-        &:first-child {
-          margin-left $meta-icon-interspace
-        }
-
-        .category-separator {
-          margin 0 $meta-icon-interspace
-
-          i.icon {
-            font-size $home-page-font-size * 0.7
-          }
+        i.icon {
+          font-size $home-page-font-size * 0.7
         }
       }
+
 
       +keep-mobile() {
         display none !important
@@ -116,14 +109,10 @@ $meta-icon-interspace = 0.3rem
 
 
     .article-tag {
-      word-spacing -1rem
+      word-spacing 0
 
       .tag-item {
         margin-right $meta-icon-interspace
-
-        &:first-child {
-          margin-left $meta-icon-interspace
-        }
 
         &:last-child {
           margin-right 0
@@ -137,6 +126,7 @@ $meta-icon-interspace = 0.3rem
           }
         }
       }
+
 
       +keep-tablet() {
         display none !important

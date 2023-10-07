@@ -1,7 +1,7 @@
 /* global KEEP */
 
 window.addEventListener('DOMContentLoaded', () => {
-  const { version, local_search, code_block, code_copy, lazyload } = KEEP.theme_config
+  const { version, local_search, code_block, lazyload } = KEEP.theme_config
 
   KEEP.themeInfo = {
     theme: `Keep v${version}`,

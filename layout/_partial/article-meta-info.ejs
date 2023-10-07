@@ -27,15 +27,10 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
 
         <% if (post.categories.length && (theme?.home_article?.category?.enable === true || page_type === 'post')) { %>
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul>
+                <ul class="article-category-ul">
                     <% post.categories.forEach((category, i) => {
                         if (home_category_limit_number === 0 || i + 1 <= home_category_limit_number || page_type === 'post') { %>
-                            <li class="category-item">
-                                <% if (i !== 0) { %>
-                                    <span class="category-separator"><i class="icon fas fa-angle-right"></i></span>
-                                <% } %>
-                                <a href="<%- url_for(category.path) %>"><%= category.name %></a>
-                            </li>
+                            <li class="category-item"><% if (i !== 0) { %>&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<% } %><a href="<%- url_for(category.path) %>"><%= category.name %></a></li>
                         <% } %>
                     <% }) %>
                 </ul>
@@ -45,7 +40,7 @@ const home_tag_limit_number = theme?.home_article?.tag?.limit || 3
         <% if (post.tags.length && (theme?.home_article?.tag?.enable === true || page_type === 'post')) { %>
             <span class="article-tag meta-info-item border-box">
                 <i class="icon fas fa-tags"></i>&nbsp;
-                <ul>
+                <ul class="article-tag-ul">
                     <% post.tags.forEach((tag, i) => {
                         if (home_tag_limit_number === 0 || i + 1 <= home_tag_limit_number || page_type === 'post') { %>
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></li>
