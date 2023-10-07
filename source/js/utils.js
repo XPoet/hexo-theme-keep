@@ -626,8 +626,12 @@ KEEP.initUtils = () => {
     },
 
     // remove white space between children
-    removeWhitespace(containerElement) {
-      const childNodes = containerElement.childNodes
+    removeWhitespace(container) {
+      if (!container) {
+        return
+      }
+
+      const childNodes = container.childNodes
       const whitespaceNodes = []
 
       for (let i = 0; i < childNodes.length; i++) {
@@ -639,7 +643,7 @@ KEEP.initUtils = () => {
       }
 
       for (const whitespaceNode of whitespaceNodes) {
-        containerElement.removeChild(whitespaceNode)
+        container.removeChild(whitespaceNode)
       }
     },
     trimPostMetaInfoBar() {
