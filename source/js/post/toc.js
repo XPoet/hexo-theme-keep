@@ -45,13 +45,13 @@ function initTOC() {
             element.addEventListener('click', (event) => {
               event.preventDefault()
               let winScrollY = window.scrollY
-              winScrollY = winScrollY === 0 ? -20 : winScrollY
+              winScrollY = winScrollY <= 1 ? -19 : winScrollY
               const offset = target.getBoundingClientRect().top + winScrollY
               window.anime({
                 targets: document.scrollingElement,
                 duration: 500,
                 easing: 'linear',
-                scrollTop: offset - 10,
+                scrollTop: offset,
                 complete: () => {
                   history.pushState(null, document.title, element.href)
                   setTimeout(() => {
