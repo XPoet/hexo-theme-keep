@@ -2,8 +2,8 @@
 
 module.exports = (ctx) =>
   function (args, content) {
-    const keywords = ['default', 'primary', 'info', 'success', 'warning', 'danger']
-    let typeClassName = 'default'
+    const keywords = ['info', 'primary', 'success', 'warning', 'danger']
+    let typeClassName = 'info'
 
     if (args[0] && keywords.includes(args[0])) {
       typeClassName = args[0]
