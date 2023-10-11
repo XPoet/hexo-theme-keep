@@ -13,19 +13,6 @@ $first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
   overflow hidden
   background url($first-screen-img) center center / cover no-repeat
 
-  if (hexo-config('style') && hexo-config('style.first_screen') && !(hexo-config('style.first_screen.header_transparent') == true)) {
-    background-position-y var(--header-height)
-
-    +keep-tablet() {
-      background-position-y calc(var(--header-height) * 0.9)
-    }
-
-    +keep-mobile() {
-      background-position-y calc(var(--header-height) * 0.8)
-    }
-  }
-
-
   .first-screen-content {
     display flex
     flex-direction column

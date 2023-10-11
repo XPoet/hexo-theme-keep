@@ -1,12 +1,11 @@
 <%
 const { title: bi_title, logo_img: bi_logo_img } = theme?.base_info || {}
 const { logo: s_logo, first_screen: s_first_screen } = theme?.style || {}
-const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen || {}
+const { enable: s_fs_enable } = s_first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
 const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
-
 %>
-<header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
+<header class="header-wrapper<%= s_fs_enable === true && is_home() ? ' transparent-1' : '' %>">
 
     <div class="border-box header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left border-box">

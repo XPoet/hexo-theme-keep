@@ -38,9 +38,6 @@ style:
   first_screen:
     enable: false  # Option values: true | false
 
-    # Set transparent background for header
-    header_transparent: false  # Option values: true | false
-
     # First screen background image (You can use local image or image external link)
     background_img: /images/bg.svg
 
