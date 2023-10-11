@@ -15,12 +15,12 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     &.is-home {
       .transparent-1 {
         background var(--header-transparent-background-1)
-        backdrop-filter blur(4px)
+        backdrop-filter blur(var(--header-backdrop-filter-blur))
       }
 
       .transparent-2 {
         background var(--header-transparent-background-2)
-        backdrop-filter blur(5px)
+        backdrop-filter blur(calc(var(--header-backdrop-filter-blur) * 1.25))
       }
     }
 

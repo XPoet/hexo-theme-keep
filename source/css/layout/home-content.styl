@@ -6,7 +6,6 @@
 
     .home-article-item {
       position relative
-      overflow hidden
 
       keep-container(var(--home-post-hover-scale), 0, 2.8rem)
 
@@ -52,6 +51,8 @@
         width 100%
         overflow hidden
         background-color var(--background-color-2)
+        border-top-left-radius var(--box-border-radius)
+        border-top-right-radius var(--box-border-radius)
 
         +keep-tablet() {
           height 7rem

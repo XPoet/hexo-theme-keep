@@ -55,6 +55,11 @@
     <% } %>
 </div>
 
+<!-- mermaid -->
+<% if (config?.mermaid?.enable === true) { %>
+    <%- partial('common/mermaid') %>
+<% } %>
+
 <!-- pjax -->
 <% if (theme?.pjax?.enable === true) { %>
     <%- partial('pjax/pjax') %>

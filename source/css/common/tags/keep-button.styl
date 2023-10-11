@@ -1,7 +1,7 @@
 .keep-button {
   position relative
   box-sizing border-box
-  margin 0.3rem 0.6rem
+  margin auto 0.6rem
   padding 0.6rem 1rem
   color var(--text-color-3)
   font-size 1rem
@@ -28,7 +28,7 @@
 
 
   &.size-small {
-    margin 0.2rem 0.4rem
+    margin auto 0.3rem
     padding 0.5rem 0.8rem
     font-size 0.8rem
     border-radius 0.3rem
@@ -46,46 +46,57 @@
   }
 
 
+  &.color-info {
+    color var(--text-color-3)
+    background-color var(--background-color-1)
+
+    &:hover {
+      color var(--background-color-1)
+      background var(--primary-color)
+    }
+  }
+
+
   &.color-primary {
-    color var(--note-primary-color)
-    background-color var(--note-primary-background-color)
+    color var(--keep-primary-color)
+    background-color var(--keep-primary-background-color)
 
     &:hover {
       color #fff
-      background-color var(--note-primary-color)
+      background-color var(--keep-primary-color)
     }
   }
 
 
   &.color-success {
-    color var(--note-success-color)
-    background-color var(--note-success-background-color)
+    color var(--keep-success-color)
+    background-color var(--keep-success-background-color)
 
     &:hover {
       color #fff
-      background-color var(--note-success-color)
+      background-color var(--keep-success-color)
     }
   }
 
 
   &.color-warning {
-    color var(--note-warning-color)
-    background-color var(--note-warning-background-color)
+    color var(--keep-warning-color)
+    background-color var(--keep-warning-background-color)
 
     &:hover {
       color #fff
-      background-color var(--note-warning-color)
+      background-color var(--keep-warning-color)
     }
   }
 
 
   &.color-danger {
-    color var(--note-danger-color)
-    background-color var(--note-danger-background-color)
+    color var(--keep-danger-color)
+    background-color var(--keep-danger-background-color)
 
     &:hover {
       color #fff
-      background-color var(--note-danger-color)
+      background-color var(--keep-danger-color)
     }
   }
 }

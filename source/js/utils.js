@@ -24,11 +24,8 @@ KEEP.initUtils = () => {
       const { scroll, first_screen } = KEEP.theme_config?.style || {}
       this.isHasScrollProgressBar = scroll?.progress_bar === true
       this.isHasScrollPercent = scroll?.percent === true
-      const { enable, header_transparent } = first_screen || {}
       this.isHeaderTransparent =
-        enable === true &&
-        header_transparent === true &&
-        !window.location.pathname.includes('/page/')
+        first_screen?.enable === true && !window.location.pathname.includes('/page/')
       if (!this.isHeaderTransparent) {
         this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
       }

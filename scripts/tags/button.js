@@ -2,10 +2,10 @@
 
 module.exports = () =>
   function (args, content) {
-    const colorKeywords = ['default', 'primary', 'info', 'success', 'warning', 'danger']
+    const colorKeywords = ['info', 'primary', 'success', 'warning', 'danger']
     const sizeKeywords = ['small', 'default', 'large']
 
-    let colorClass = 'default'
+    let colorClass = 'info'
     if (args[0] && colorKeywords.includes(args[0])) {
       colorClass = args[0]
     }
