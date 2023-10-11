@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.8.3](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.2...v3.8.3) (2023-10-11)
+
+
+### 🐞 Bug Fixes
+
+* fixed abnormal page scrolling ([a4e5684](https://github.com/XPoet/hexo-theme-keep/commit/a4e56842b5b3e85e01f9f7f34ef3f0d7c8727ef3))
+
+
+### 🛠 Performance Improvements
+
+* add `--header-backdrop-filter-blur` css variable ([8291ad0](https://github.com/XPoet/hexo-theme-keep/commit/8291ad049f45f53036f93e44771afedb3e033714))
+* optimize custom tag plugins ([596d255](https://github.com/XPoet/hexo-theme-keep/commit/596d2552e1d26889f42f6f9d5f96e91f51e9e4c6))
+* remove `first_screen.header_transparent` configuration item ([798d0d2](https://github.com/XPoet/hexo-theme-keep/commit/798d0d255a4fa411fbba3001a9a78ceb576cbc08))
+* support mermaid.js ([74e4aec](https://github.com/XPoet/hexo-theme-keep/commit/74e4aec7ae08529f6e82c7df5c0cd46619dd99d0))
+
+
+### 💄 Improvement UI
+
+* optimize home article block style ([f80400d](https://github.com/XPoet/hexo-theme-keep/commit/f80400d1b5e0a52bbc24413de15d2d29e8206d16))
+* **post:** color the bottom tags ([ca88520](https://github.com/XPoet/hexo-theme-keep/commit/ca885208d81237bb77da9ab8b59b7777dfce37c2))
+
+
+### 🚦 Chore
+
+* update sponsor custom link ([0df5de7](https://github.com/XPoet/hexo-theme-keep/commit/0df5de72e35c4d5c4c87f4e7e50868179300e386))
+
 ## [3.8.2](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.1...v3.8.2) (2023-10-07)
 
 
