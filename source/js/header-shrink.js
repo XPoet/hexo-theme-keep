@@ -14,6 +14,14 @@ KEEP.initHeaderShrink = () => {
     },
 
     headerShrink() {
+      const fullPageHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      )
+      if (fullPageHeight < window.innerHeight + 2 * this.headerHeight) {
+        return
+      }
+
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       const { enable, header_transparent } = KEEP.theme_config?.style?.first_screen || {}
       const isHeaderTransparent =
