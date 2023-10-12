@@ -3,10 +3,10 @@ on:
     branches:
       - master
 
-name: release-version
+name: release
 
 jobs:
-  release-version:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
