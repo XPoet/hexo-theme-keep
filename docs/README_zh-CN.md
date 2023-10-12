@@ -10,11 +10,12 @@
 
 **Keep** 是一款简约轻快的 [Hexo](https://hexo.io) 主题。它能让你更专注于写作。
 
-[![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep?style=for-the-badge&logo=github&color=3366CC)](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)
-[![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?style=for-the-badge&logo=npm&color=FF9999)](https://www.npmjs.com/package/hexo-theme-keep)
-[![NPM Downloads](https://img.shields.io/npm/dw/hexo-theme-keep?style=for-the-badge&logo=npm&color=9966CC)](https://www.npmjs.com/package/hexo-theme-keep)
-[![Node.js Version](https://img.shields.io/badge/node-%3E=14.0.0-009999?style=for-the-badge&logo=Node.js)](https://nodejs.org/)
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-99ccff?style=for-the-badge&logo=hexo)](https://hexo.io)
+[![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep?style=flat-square&logo=github&color=3366cc)](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)
+[![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep?style=flat-square&logo=github&color=mediumpurple)](https://github.com/XPoet/hexo-theme-ils/releases)
+[![NPM Version](https://img.shields.io/npm/v/hexo-theme-keep?style=flat-square&logo=npm&color=indianred)](https://www.npmjs.com/package/hexo-theme-keep)
+[![NPM Downloads](https://img.shields.io/npm/dw/hexo-theme-keep?style=flat-square&logo=npm&color=darkorange)](https://www.npmjs.com/package/hexo-theme-keep)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=14.0.0-forestgreen?style=flat-square&logo=Node.js)](https://nodejs.org)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-steelblue?style=flat-square&logo=hexo)](https://hexo.io)
 
 ## :star2: 在线预览
 
