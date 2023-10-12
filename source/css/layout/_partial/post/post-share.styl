@@ -40,6 +40,16 @@ $share-item-width = 1.8rem
         color var(--keep-success-color)
         border-color var(--keep-success-color)
 
+        img {
+          filter brightness(1) !important
+
+          &[lazyload] {
+            &::before {
+              background #fff !important
+            }
+          }
+        }
+
         &:hover {
           color var(--background-color-1)
           background var(--keep-success-color)
