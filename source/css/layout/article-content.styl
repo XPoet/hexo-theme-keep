@@ -221,15 +221,15 @@ $spacer-padding = 2rem
 
 
       .article-content {
-        margin-top $component-spacing-value * 0.8
-        padding-bottom $component-spacing-value * 0.8
+        margin-top calc(var(--components-spacing) * 0.8)
+        padding-bottom calc(var(--components-spacing) * 0.8)
         color var(--text-color-3)
         text-align justify
         word-wrap break-word
 
         +keep-tablet() {
-          margin-top $component-spacing-value * 0.6
-          padding-bottom $component-spacing-value * 0.6
+          margin-top calc(var(--components-spacing) * 0.6)
+          padding-bottom calc(var(--components-spacing) * 0.6)
         }
 
 
@@ -291,7 +291,7 @@ $spacer-padding = 2rem
 
       .article-nav {
         height 2.8rem
-        margin-top $component-spacing-value
+        margin-top var(--components-spacing)
 
         .article-prev
         .article-next {
@@ -368,12 +368,12 @@ $spacer-padding = 2rem
 
   .pc-post-toc {
     position sticky
-    top 'calc(var(--header-height) + %s)' % $component-spacing-value
+    top calc(var(--header-height) + var(--components-spacing))
     display none
     flex-shrink 0
     box-sizing border-box
     width $toc-container-width
-    max-height 'calc(100vh - %s)' % ('calc(var(--header-height) + %s)' % $component-spacing-value)
+    max-height calc(100vh - calc(var(--header-height) + var(--components-spacing)))
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
     &.right-toc {
@@ -387,8 +387,8 @@ $spacer-padding = 2rem
     }
 
     .header-shrink & {
-      top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
-      max-height 'calc(100vh - %s)' % ('calc(var(--header-shrink-height) + %s)' % $component-spacing-value)
+      top calc(var(--header-shrink-height) + var(--components-spacing))
+      max-height calc(100vh - calc(var(--header-shrink-height) + var(--components-spacing)))
     }
   }
 }

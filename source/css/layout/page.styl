@@ -91,14 +91,14 @@ $post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
       display flex
       justify-content center
       width 100%
-      padding $component-spacing-value 0
+      padding var(--components-spacing) 0
 
       +keep-tablet() {
-        padding $component-spacing-value * 0.8 0
+        padding calc(var(--components-spacing) * 0.8) 0
       }
 
       +keep-mobile() {
-        padding $component-spacing-value * 0.6 0
+        padding calc(var(--components-spacing) * 0.6) 0
       }
 
       .main-content {
@@ -132,7 +132,7 @@ $post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
 
   .post-tools {
     position fixed
-    top 'calc(var(--header-height) + %s)' % $component-spacing-value
+    top calc(var(--header-height) + var(--components-spacing))
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
@@ -146,7 +146,7 @@ $post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
     }
 
     .header-shrink & {
-      top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
+      top calc(var(--header-shrink-height) + var(--components-spacing))
     }
 
 
