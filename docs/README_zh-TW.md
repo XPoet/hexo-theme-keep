@@ -5,41 +5,40 @@
   <a title="Chinese" href="README_zh-CN.md">简体中文</a>
 </div>
 
-<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/keep-logo-slogan.svg"></a>
+<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://xpoet.cn/images/keep-slogan.svg"></a>
 
 # hexo-theme-keep
 
-**Keep** 是一款簡約優雅的 [Hexo](https://hexo.io) 主題。它能讓你更專注於寫作。
+**Keep** 是一款簡約輕快的 [Hexo](https://hexo.io) 主題。它能讓你更專注於寫作。
 
-[![Author](https://img.shields.io/badge/author-XPoet-violet.svg?style=flat-square)](https://github.com/XPoet)
-[![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep.svg?style=flat-square&logo=github)](https://github.com/XPoet/hexo-theme-ils/blob/master/LICENSE)
-[![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep.svg?style=flat-square&logo=github)](https://github.com/XPoet/hexo-theme-ils/releases)
-[![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-keep)
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
-[![Node.js Version](https://img.shields.io/badge/node-%3E=14.0-success.svg?style=flat-square&logo=Node.js&longCache=true)](https://hexo.io)
-[![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-keep?style=flat-square&logo=jsdelivr)](https://www.jsdelivr.com/package/npm/hexo-theme-keep)
+[![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep?style=for-the-badge&logo=github&color=3366CC)](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)
+[![NPM version](https://img.shields.io/npm/v/hexo-theme-keep?style=for-the-badge&logo=npm&color=FF9999)](https://www.npmjs.com/package/hexo-theme-keep)
+[![NPM Downloads](https://img.shields.io/npm/dw/hexo-theme-keep?style=for-the-badge&logo=npm&color=9966CC)](https://www.npmjs.com/package/hexo-theme-keep)
+[![Node.js Version](https://img.shields.io/badge/node-%3E=14.0.0-009999?style=for-the-badge&logo=Node.js)](https://nodejs.org/)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.0.0-99ccff?style=for-the-badge&logo=hexo)](https://hexo.io)
 
 ## :star2: 線上預覽
 
 - **[XPoet's Blog](https://xpoet.cn/)**
-- **[keep 預覽網頁](https://keep.xpoet.cn/)**
+- **[keep 預覽](https://keep.xpoet.cn/)**
 
-> 如果你想把自己的博客鏈接放在線上預覽列表裏，可以給作者提 PR 。
+> 如果你想把自己的博客鏈接放在線上預覽列表裏，可以給作者提 PR。
 
 ## :rocket: 安装
 
-如果你在使用 Hexo 5.0 或更高版本，最簡單的安裝方式是透過 npm：
+如果你在使用 Hexo 5.0 或更高版本，最簡單的安裝方式是透過 NPM：
 
 ```sh
 # 推薦
-$ cd hexo-site
+
+$ cd your-hexo
 $ npm install hexo-theme-keep
 ```
 
 你也可以直接 clone 整個原始碼庫：
 
 ```sh
-$ cd hexo-site
+$ cd your-hexo
 $ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 ```
 
@@ -54,7 +53,7 @@ theme: keep
 請查看 **Keep** 官方文檔：
 
 - **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
-- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/tutorial/configuration-guide/base_info.html)**
+- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
 - **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 不推薦直接修改 **Keep** 主題的文件。因為這可能導致錯誤（例如 git merge 衝突），並且在更新主題時修改的文件可能丟失。
@@ -63,11 +62,12 @@ theme: keep
 
 **Keep** 不定期發布新版本。你可以透過如下命令更新 **Keep**。
 
-透過 npm 安裝最新版本：
+透過 NPM 安裝最新版本：
 
 ```sh
 # 推薦
-$ cd hexo-site
+
+$ cd your-hexo
 $ npm install hexo-theme-keep@latest
 ```
 
@@ -80,7 +80,7 @@ $ git pull
 
 ## :art: 貢獻
 
-我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請看[Keep 原始碼貢獻指南](https://keep.xpoet.cn/2020/11/Keep-代码贡献指南/)。
+我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請看[Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
 
 ## :clapper: 貢獻者
 
@@ -94,13 +94,8 @@ $ git pull
 
 **Keep** 特别感謝這些支持我們核心基本設施的優質服務：
 
-<a href="https://github.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/GitHub-LOGO.5sq0168mirg0.png"></a>
-
-> GitHub 允許我們存放 Git 原始碼庫及運行測試。
-
-<a href="https://www.jsdelivr.com"><img height="38" src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/hexo-theme-keep/jsDelivr-LOGO.png"></a>
-
-> jsDelivr 和 UNPKG 提供了 CDN 服務。
+- [GitHub](https://github.com) 允許我們存放 Git 原始碼庫及運行測試。
+- [jsDelivr](https://www.jsdelivr.com) 和 [UNPKG](https://www.unpkg.com) 提供了 CDN 服務。
 
 ## :memo: 許可
 

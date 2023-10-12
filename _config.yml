@@ -7,7 +7,7 @@
 
 # ---------------------------------------------------------------------------------------
 # Your basic info
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/base_info.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html
 # ---------------------------------------------------------------------------------------
 base_info:
   # Your blog website title
@@ -18,7 +18,7 @@ base_info:
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/style.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/style.html
 # ---------------------------------------------------------------------------------------
 style:
   # Theme primary color
@@ -58,7 +58,7 @@ style:
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/menu.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/menu.html
 # ---------------------------------------------------------------------------------------
 # If you want to enable Categories and Tags, you need to create categories and tags pages
 # e.g. `hexo new page categories` or `hexo new page tags`
@@ -74,7 +74,7 @@ menu:
 
 # ---------------------------------------------------------------------------------------
 # Social contact link
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/social_contact.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/social_contact.html
 # ---------------------------------------------------------------------------------------
 social_contact:
   enable: false      # Option values: true | false
@@ -94,7 +94,7 @@ social_contact:
 
 # ---------------------------------------------------------------------------------------
 # Home page article block display settings
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/home_article.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/home_article.html
 # ---------------------------------------------------------------------------------------
 home_article:
   # Show category in home page article block
@@ -108,7 +108,7 @@ home_article:
 
 # ---------------------------------------------------------------------------------------
 # Post page Settings
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/post.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/post.html
 # ---------------------------------------------------------------------------------------
 post:
   # Author label in the post
@@ -146,7 +146,7 @@ post:
 
 # ---------------------------------------------------------------------------------------
 # Code block
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/code_block.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/code_block.html
 # ---------------------------------------------------------------------------------------
 code_block:
   # Toolbar include: "code copy", "code block collapse" and "code language"
@@ -157,7 +157,7 @@ code_block:
 
 # ---------------------------------------------------------------------------------------
 # Table of Contents in the Sidebar
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/toc.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/toc.html
 # ---------------------------------------------------------------------------------------
 toc:
   enable: false      # Option values: true | false
@@ -176,7 +176,7 @@ toc:
 
 # ---------------------------------------------------------------------------------------
 # Website count
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/website_count.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/website_count.html
 # ---------------------------------------------------------------------------------------
 website_count:
   # busuanzi
@@ -189,7 +189,7 @@ website_count:
 
 # ---------------------------------------------------------------------------------------
 # Local Search
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/local_search.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/local_search.html
 # Dependencies: hexo-generator-searchdb (`npm install hexo-generator-searchdb`)
 # See: https://github.com/theme-next/hexo-generator-searchdb
 # ---------------------------------------------------------------------------------------
@@ -199,7 +199,7 @@ local_search:
 
 # ---------------------------------------------------------------------------------------
 # Comment plugin
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/comment.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/comment.html
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
@@ -254,7 +254,7 @@ comment:
 
 # ---------------------------------------------------------------------------------------
 # RSS
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/rss.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/rss.html
 # Dependencies: hexo-generator-feed (`npm install hexo-generator-feed`)
 # See: https://github.com/hexojs/hexo-generator-feed
 # ---------------------------------------------------------------------------------------
@@ -263,14 +263,14 @@ rss:
 
 # ---------------------------------------------------------------------------------------
 # Lazyload image
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/lazyload.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/lazyload.html
 # ---------------------------------------------------------------------------------------
 lazyload:
   enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # CDN
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/cdn.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/cdn.html
 # ---------------------------------------------------------------------------------------
 cdn:
   enable: false       # Option values: true | false
@@ -278,14 +278,14 @@ cdn:
 
 # ---------------------------------------------------------------------------------------
 # PJAX
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/pjax.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/pjax.html
 # ---------------------------------------------------------------------------------------
 pjax:
   enable: false  # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Footer settings
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/footer.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
   since: 2020           # The starting year of your website, Can be null
@@ -315,7 +315,7 @@ footer:
 
 # ---------------------------------------------------------------------------------------
 # Inject custom CSS and JavaScript files
-# Docs: https://keep-docs.xpoet.cn/tutorial/configuration-guide/inject.html
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/inject.html
 # ---------------------------------------------------------------------------------------
 inject:
   enable: false  # Option values: true | false
