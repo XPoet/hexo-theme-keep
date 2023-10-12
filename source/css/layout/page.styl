@@ -1,4 +1,4 @@
-$post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+$post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
 
 .page-container {
   width 100%
@@ -102,21 +102,23 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
       }
 
       .main-content {
-        width $main-content-width
-        max-width $content-max-width
+        width var(--page-content-width)
+        max-width var(--page-content-max-width)
         height 100%
         transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
 
         .has-toc & {
-          max-width $has-toc-content-max-width
+          max-width var(--page-content-max-width-2)
         }
+
 
         +keep-tablet() {
-          width $main-content-width-tablet
+          width var(--page-content-width-tablet)
         }
 
+
         +keep-mobile() {
-          width $main-content-width-mobile
+          width var(--page-content-width-mobile)
         }
       }
     }
