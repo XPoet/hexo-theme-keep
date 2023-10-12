@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.8.4](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.3...v3.8.4) (2023-10-12)
+
+
+### 📖 Docs
+
+* update documents ([c1b9caf](https://github.com/XPoet/hexo-theme-keep/commit/c1b9caffcfae960b0a41514bddbdcd7d46299b52))
+
+
+### 🎯 CI
+
+* update GitHub ISSUE_TEMPLATE ([496ea15](https://github.com/XPoet/hexo-theme-keep/commit/496ea153b692c19cff5ac863e31b7c7b366b369d))
+
+
+### 💄 Improvement UI
+
+* optimize wechat share style ([dd03d61](https://github.com/XPoet/hexo-theme-keep/commit/dd03d615918a6b512882e92d8e08ce34dd443dc6))
+
 ## [3.8.3](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.2...v3.8.3) (2023-10-11)
 
 
