@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.8.5](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.4...v3.8.5) (2023-10-17)
+
+
+### 📖 Docs
+
+* update documents ([040966d](https://github.com/XPoet/hexo-theme-keep/commit/040966d9685ce43121082311a84a4df2e5b00ce6))
+
+
+### 🛠 Performance Improvements
+
+* **comment:** supports waline extension to fill in more properties ([#232](https://github.com/XPoet/hexo-theme-keep/issues/232)) ([626296e](https://github.com/XPoet/hexo-theme-keep/commit/626296e6e0a8fc895277b33bfae58f7a1a9f465b))
+* use CSS variables to control components spacing ([1ed1077](https://github.com/XPoet/hexo-theme-keep/commit/1ed10778f189d4869d6938202af6425a757a8d24))
+* use CSS variables to control the layout of page content ([97fbe6d](https://github.com/XPoet/hexo-theme-keep/commit/97fbe6d498373c4f15aa7a0016b4d88adc987368))
+
+
+### 🎯 CI
+
+* update GitHub Actions configuration ([24969ca](https://github.com/XPoet/hexo-theme-keep/commit/24969ca657c859b6e8247f1ed5d7d314119cf174))
+
+
+### 💄 Improvement UI
+
+* adapt the style of `hexo-blog-encrypt` plugin ([0a30fc4](https://github.com/XPoet/hexo-theme-keep/commit/0a30fc4d85b5f7c5413d9d7b4602b3f7c25d7d13))
+
 ## [3.8.4](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.3...v3.8.4) (2023-10-12)
 
 
