@@ -1,4 +1,4 @@
-$post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+$post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
 
 .page-container {
   width 100%
@@ -91,32 +91,34 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
       display flex
       justify-content center
       width 100%
-      padding $component-spacing-value 0
+      padding var(--components-spacing) 0
 
       +keep-tablet() {
-        padding $component-spacing-value * 0.8 0
+        padding calc(var(--components-spacing) * 0.8) 0
       }
 
       +keep-mobile() {
-        padding $component-spacing-value * 0.6 0
+        padding calc(var(--components-spacing) * 0.6) 0
       }
 
       .main-content {
-        width $main-content-width
-        max-width $content-max-width
+        width var(--page-content-width)
+        max-width var(--page-content-max-width)
         height 100%
         transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
 
         .has-toc & {
-          max-width $has-toc-content-max-width
+          max-width var(--page-content-max-width-2)
         }
+
 
         +keep-tablet() {
-          width $main-content-width-tablet
+          width var(--page-content-width-tablet)
         }
 
+
         +keep-mobile() {
-          width $main-content-width-mobile
+          width var(--page-content-width-mobile)
         }
       }
     }
@@ -130,7 +132,7 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
 
   .post-tools {
     position fixed
-    top 'calc(var(--header-height) + %s)' % $component-spacing-value
+    top calc(var(--header-height) + var(--components-spacing))
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
@@ -144,7 +146,7 @@ $post-tools-offset = 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
     }
 
     .header-shrink & {
-      top 'calc(var(--header-shrink-height) + %s)' % $component-spacing-value
+      top calc(var(--header-shrink-height) + var(--components-spacing))
     }
 
 
