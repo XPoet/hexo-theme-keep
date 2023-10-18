@@ -34,7 +34,8 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
 
         <div class="bottom-placeholder border-box">
             <% if (sc_enable === true) { %>
-                <div class="sc-icon-list">
+                <div class="sc-icon-list border-box">
+                    <!-- fontawesome icons -->
                     <% for (const key in sc_links) { %>
                         <% if(sc_links[key]) { %>
                             <%
@@ -48,8 +49,8 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
                             %>
                             <div class="tooltip sc-icon-item <%= isImg ? 'tooltip-img clear' : ''%>"
                                  data-tooltip-content="<%= __(key) %>"
-                                 data-tooltip-img-name="<%= key %>"
-                                    <%= isImg ? 'data-tooltip-img-url='+ link +'' : '' %>
+                                 <%= isImg ? 'data-tooltip-img-name='+ key +'' : '' %>
+                                 <%= isImg ? 'data-tooltip-img-url='+ link +'' : '' %>
                             >
                                 <% if(key === 'email') { %>
                                     <a href="mailto:<%- link %>">
@@ -64,6 +65,31 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
                                         </a>
                                     <% } %>
                                 <% } %>
+                            </div>
+                        <% } %>
+                    <% } %>
+
+                    <!-- custom svg icons -->
+                    <% for (const icon in theme?.icons) { %>
+                        <% if(theme.icons[icon]) { %>
+                            <%
+                                const custom_tmpl = theme.icons[icon].link.split('|').map(x => x.trim())
+                                let custom_is_img = false
+                                let custom_link = theme.icons[icon].link
+                                const custom_svg = theme.icons[icon].svg
+                                if (custom_tmpl.length > 1) {
+                                    custom_link = custom_tmpl[1]
+                                    custom_is_img = custom_tmpl[0] === 'img'
+                                }
+                            %>
+                            <div class="tooltip border-box sc-icon-item <%= icon %> <%= custom_is_img ? 'tooltip-img clear' : ''%>"
+                                 data-tooltip-content="<%= __(icon) %>"
+                                 <%= custom_is_img ? 'data-tooltip-img-name='+ icon +'' : '' %>
+                                 <%= custom_is_img ? 'data-tooltip-img-url='+ custom_link +'' : '' %>
+                            >
+                                <% if(!custom_is_img) { %><a target="_blank" href="<%- custom_link %>"><% } %>
+                                    <%- custom_svg %>
+                                <% if(!custom_is_img) { %></a><% } %>
                             </div>
                         <% } %>
                     <% } %>
