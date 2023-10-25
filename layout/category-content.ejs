@@ -1,13 +1,11 @@
 <div class="fade-in-down-animation">
-    <div class="category-container">
+    <div class="category-container border-box">
         <div class="category-name">
             <i class="fas fa-folder"></i>&nbsp;<%= page.category %>
         </div>
         <div class="category-post-list">
-            <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
+            <%- partial('_partial/archive-list', { archive_posts: page.posts }) %>
         </div>
     </div>
-    <div class="category-paginator">
-        <%- partial('_partial/paginator', {pageObject: page}) %>
-    </div>
+    <%- partial('_partial/paginator', { page_info: page }) %>
 </div>

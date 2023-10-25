@@ -1,13 +1,10 @@
 <div class="fade-in-down-animation">
-    <div class="tag-container">
-        <div class="tag-name"><i class="fas fa-tag"></i>&nbsp;<%= page.tag %>
+    <div class="tag-container border-box">
+        <div class="tag-name"><i class="fas fa-hashtag"></i>&nbsp;<%= page.tag %>
         </div>
         <div class="tag-post-list">
-            <%- partial('_partial/archive-list', {posts_new: page.posts}) %>
+            <%- partial('_partial/archive-list', { archive_posts: page.posts }) %>
         </div>
     </div>
-
-    <div class="tag-paginator">
-        <%- partial('_partial/paginator', {pageObject: page}) %>
-    </div>
+    <%- partial('_partial/paginator', { page_info: page }) %>
 </div>

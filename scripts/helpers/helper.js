@@ -28,7 +28,8 @@ hexo.extend.helper.register('createNewArchivePosts', function (posts) {
   return postList
 })
 
-hexo.extend.helper.register('getAuthorLabel', function (postCount, isAuto, labelList) {
+hexo.extend.helper.register('getAuthorLabel', function (postCount, authorLabelConfig) {
+  const { auto: isAuto, custom_label_list: labelList } = authorLabelConfig || {}
   let level = Math.floor(Math.log2(postCount))
   level = level < 2 ? 1 : level - 1
 
@@ -41,11 +42,12 @@ hexo.extend.helper.register('getAuthorLabel', function (postCount, isAuto, label
 
 const getSourceCdnUrl = (tyle, themeConfig, path) => {
   const version = require('../../package.json').version
-  const cdn = themeConfig?.cdn || {}
-  const { provider = 'jsdelivr' } = cdn
-
+  let { provider } = themeConfig?.cdn || {}
+  if (!provider) {
+    provider = 'jsdelivr'
+  }
   let urlPrefix = ''
-  switch (provider.toLocaleLowerCase()) {
+  switch (provider?.toLocaleLowerCase()) {
     case 'jsdelivr':
       urlPrefix = '//cdn.jsdelivr.net/npm/hexo-theme-keep'
       if (tyle === 'js') {
@@ -64,7 +66,7 @@ const getSourceCdnUrl = (tyle, themeConfig, path) => {
 }
 
 hexo.extend.helper.register('__js', function (path) {
-  const { enable } = this.theme.cdn
+  const { enable } = this.theme?.cdn || {}
   const _js = hexo.extend.helper.get('js').bind(hexo)
   const cdnPathHandle = (pa) => {
     return enable ? getSourceCdnUrl('js', this.theme, pa) : _js(pa)
@@ -84,7 +86,23 @@ hexo.extend.helper.register('__js', function (path) {
 })
 
 hexo.extend.helper.register('__css', function (path) {
-  const { enable } = this.theme.cdn
+  const { enable } = this.theme?.cdn || {}
   const _css = hexo.extend.helper.get('css').bind(hexo)
   return enable ? getSourceCdnUrl('css', this.theme, path) : _css(path)
+})
+
+hexo.extend.helper.register('isJsFile', function (path) {
+  return /\.js$/i.test(path)
+})
+
+hexo.extend.helper.register('isCssFile', function (path) {
+  return /\.css$/i.test(path)
+})
+
+hexo.extend.helper.register('isLinksPage', function (pagePath) {
+  return pagePath === 'links/index.html'
+})
+
+hexo.extend.helper.register('isCategoriesPage', function (pagePath) {
+  return pagePath === 'categories/index.html'
 })

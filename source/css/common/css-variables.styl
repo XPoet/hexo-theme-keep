@@ -1,0 +1,61 @@
+@import "stylus-variables.styl"
+
+:root {
+  // ==============================================================================================
+  // global font
+  // ==============================================================================================
+  --base-font-size 15.2px
+  --base-line-height 22px
+  --base-font-weight 400
+  --base-font-family Optima-Regular, Optima, PingFang SC, Microsoft YaHei, sans-serif
+
+
+  // ==============================================================================================
+  // page
+  // ==============================================================================================
+  --page-content-width 80%
+  --page-content-width-tablet 88%
+  --page-content-width-mobile 90%
+  --page-content-max-width 928px
+  --page-content-max-width-2 calc(var(--page-content-max-width) * 1.2)
+  --components-spacing 36px
+
+
+  // ==============================================================================================
+  // box style
+  // ==============================================================================================
+  --box-border-radius 8px
+
+
+  // ==============================================================================================
+  // header
+  // ==============================================================================================
+  --header-height 70px
+  --header-shrink-height calc(var(--header-height) * 0.72)
+  --header-backdrop-filter-blur 4px
+  --header-scroll-progress-bar-height 2PX
+
+
+  // ==============================================================================================
+  // first screen
+  // ==============================================================================================
+  --first-screen-font-size 2rem
+  --first-screen-icon-size 1.8rem
+  --first-screen-font-color-light $text-color-3
+  --first-screen-font-color-dark $dark-text-color-3
+
+
+  // ==============================================================================================
+  // home page
+  // ==============================================================================================
+  --home-post-hover-scale 1
+
+
+  // ==============================================================================================
+  // post page
+  // ==============================================================================================
+  --post-author-avatar block      // Option values: none | block
+  --post-create-datetime flex     // Option values: none | flex
+  --post-update-datetime flex     // Option values: none | flex
+  --post-img-align 0 auto 0 0     // Option values: 0 auto 0 0 (left) | 0 auto (center) | 0 0 0 auto (right)
+}

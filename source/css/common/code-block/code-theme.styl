@@ -1,13 +1,14 @@
-@import "../variables.styl"
+@import "../stylus-variables.styl"
 
-// A single line block of code
 $code-foreground = lighten($text-color-3, 2%)
 $code-background = darken($background-color-1, 5%)
 $dark-code-foreground = lighten($dark-text-color-3, 2%)
 $dark-code-background = darken($dark-background-color-1, 10%)
+$mac-toolbar-background-color = #21252b
+$dark-mac-toolbar-background-color = #1f2021
 
 
-if (hexo-config('code_block.highlight_theme') == 'obsidian') {
+if (hexo-config('code_block') && hexo-config('code_block.highlight_theme') == 'obsidian') {
   $toolbar-foreground = #b5b5b5
   $toolbar-background = #3a3f40
   $highlight-foreground = #faf5d6
@@ -96,6 +97,7 @@ code-theme(mode) {
   --highlight-purple mode == 'light' ? $highlight-purple : $dark-highlight-purple
   --highlight-gutter-color mode == 'light' ? $highlight-gutter-color : $dark-highlight-gutter-color
   --highlight-gutter-bg-color mode == 'light' ? $highlight-gutter-bg-color : $dark-highlight-gutter-bg-color
+  --mac-toolbar-background-color mode == 'light' ? $mac-toolbar-background-color : $dark-mac-toolbar-background-color
 }
 
 

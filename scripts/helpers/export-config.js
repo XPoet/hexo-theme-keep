@@ -10,10 +10,10 @@ const yaml = require('js-yaml')
 /**
  * Export theme config to js
  */
-hexo.extend.helper.register('exportConfig', function () {
+hexo.extend.helper.register('exportThemeConfig', function () {
   const { config, theme } = this
 
-  // ------------------------ export language to js ------------------------
+  // -------------------------- export languages --------------------------
   const languageDir = path.join(__dirname, '../../languages')
   let file = fs.readdirSync(languageDir).find((v) => v === `${config.language}.yml`)
   file = languageDir + '/' + (file ? file : 'en.yml')
@@ -39,18 +39,17 @@ hexo.extend.helper.register('exportConfig', function () {
     toc: theme.toc || {},
     style: theme.style || {},
     local_search: theme.local_search || {},
-    code_copy: theme.code_copy || {},
     code_block: theme.code_block || {},
-    side_tools: theme.side_tools || {},
     pjax: theme.pjax || {},
     lazyload: theme.lazyload || {},
     comment: theme.comment || {},
     post: theme.post || {},
+    website_count: theme.website_count || {},
     version: require('../../package.json').version
   }
 
-  return `<script id="hexo-configurations">
-    let KEEP = window.KEEP || {}
+  return `<script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
     KEEP.hexo_config = ${JSON.stringify(hexo_config)}
     KEEP.theme_config = ${JSON.stringify(theme_config)}
     KEEP.language_ago = ${JSON.stringify(languageContent['ago'])}

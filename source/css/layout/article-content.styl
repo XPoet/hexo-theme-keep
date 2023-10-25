@@ -1,21 +1,21 @@
-$avatarWidth = 3rem
+@import "../common/stylus-variables.styl"
+
+$avatar-width = 3.2rem
 $arrow-icon-width = 1rem
 $post-nav-max-width = 14rem
 $article-title-font-size = 1.6rem
 $toc-container-width = 15rem
+$spacer-padding = 2rem
 
 
 .post-page-container {
-  position relative
   display flex
   justify-content space-between
-  box-sizing border-box
   width 100%
   height 100%
 
-
   &.show-toc {
-    .toc-content-container {
+    .pc-post-toc {
       display block
     }
 
@@ -26,7 +26,7 @@ $toc-container-width = 15rem
 
 
   +keep-tablet() {
-    .toc-content-container {
+    .pc-post-toc {
       display none !important
     }
 
@@ -37,266 +37,385 @@ $toc-container-width = 15rem
 
 
   .article-content-container {
-    position relative
-    box-sizing border-box
+    order 0
     width 100%
     height 100%
-    keep-container(false, 0, 0, 2rem, 2rem)
+
+
+    keep-container(1, 0, 2rem)
 
     +keep-mobile() {
-      padding 1.2rem 0.2rem
-      box-shadow none
+      padding 0 0.2rem !important
+      box-shadow none !important
 
       &:hover {
-        box-shadow none
+        box-shadow none !important
       }
     }
 
 
-    .article-title {
-      color var(--text-color-2)
-      font-weight 600
-      font-size $article-title-font-size
+    .article-content-top {
+      display flex
+      align-items flex-end
+      width 100%
+      padding-top $spacer-padding
+      padding-right $spacer-padding
+      overflow hidden
+      background-color var(--background-color-2)
+      border-top-left-radius var(--box-border-radius)
+      border-top-right-radius var(--box-border-radius)
+
 
       +keep-tablet() {
-        font-size $article-title-font-size * 0.9
+        height 12.8rem
+        padding-top $spacer-padding * 0.8
+        padding-right $spacer-padding  * 0.8
+
+        .cover-article-title {
+          padding $spacer-padding * 0.5 * 0.8 $spacer-padding * 0.8 !important
+          font-size $article-title-font-size * 0.9 !important
+          line-height 1.5 !important
+        }
       }
 
       +keep-mobile() {
-        font-size $article-title-font-size * 0.8
+        height 11.8rem
+        padding-top $spacer-padding * 0.6
+        padding-right $spacer-padding  * 0.6
+
+        .cover-article-title {
+          padding $spacer-padding * 0.5 * 0.6 $spacer-padding * 0.6 !important
+          font-size $article-title-font-size * 0.8 !important
+          line-height 1.4 !important
+        }
       }
-    }
 
 
-    .article-header {
-      position relative
-      box-sizing border-box
-      width 100%
-      height $avatarWidth
-      padding-left $avatarWidth
+      .cover-article-title {
+        position relative
+        z-index $z-index-1
+        box-sizing border-box
+        max-width 100%
+        max-height 100%
+        padding $spacer-padding * 0.5 $spacer-padding
+        overflow-y auto
+        color var(--text-color-2)
+        font-weight 600
+        font-size $article-title-font-size * 1.1
+        line-height 1.6
+        background var(--background-color-1-transparent)
+        border-top-right-radius var(--box-border-radius)
+        backdrop-filter blur(2px)
+      }
 
-      .avatar {
+
+      .post-cover {
         position absolute
         top 0
         left 0
         box-sizing border-box
-        width $avatarWidth
-        height $avatarWidth
-        padding 0.1rem
-        border 1px solid var(--border-color)
-        border-radius 50%
-
-        img {
-          width 100%
-          height 100%
-          background var(--avatar-background-color)
-          border-radius 50%
-        }
-      }
-
-
-      .info {
-        display flex
-        flex-direction column
-        justify-content space-between
-        box-sizing border-box
         width 100%
         height 100%
-        margin-left 0.8rem
-        padding 0.2rem 0
-
-        .author {
-          display flex
-          align-items center
-          font-weight 600
-          font-size 1.18rem
-
-          .name {
-            color var(--text-color-3)
-          }
-
-          .author-label {
-            margin-left 0.8rem
-            padding 0 0.4rem
-            color #fff
-            font-weight 500
-            font-size 0.8rem
-            background var(--selection-color)
-            border-radius 0.4rem
-          }
-        }
+        object-fit cover
       }
     }
 
 
-    .article-header
-    .article-header-meta-info {
-      margin-top 1rem
-      +keep-tablet() {
-        transform scale(0.9)
-        transform-origin left top
-      }
-    }
+    .article-content-bottom {
+      padding $spacer-padding
 
-
-    .article-content {
-      margin-top $component-spacing-value
-      padding-bottom 2rem
-      color var(--text-color-3)
-      word-wrap break-word
-
-      .article-aging-tips {
-        position relative
-        display none
-        box-sizing border-box
-        margin-bottom 1.8rem
-        padding 1rem
-        color var(--article-aging-tips-color)
-        line-height 1.6
-        background var(--article-aging-tips-background-color)
-        border 0.1rem solid var(--article-aging-tips-border-color)
-        border-radius 0.4rem
-
-        i {
-          margin-right 0.4rem
-          color var(--article-aging-tips-color)
-        }
-
-        .days {
-          color var(--article-aging-tips-color)
-        }
-      }
-
-      if (hexo-config('post.copyright_info') == true || hexo-config('copyright_info.enable') == true) {
-        border-bottom 0.1rem dashed var(--border-color)
-      }
-    }
-
-
-    .post-tags-box {
-      display none
-      justify-content center
-      margin-top 1.6rem
-      font-size 1.1rem
-
-      +keep-tablet() {
-        display flex
+      &.has-cover {
+        padding-top $spacer-padding * 0.5
       }
 
       +keep-mobile() {
-        margin-top 1.2rem
-        font-size 1rem
+        padding $spacer-padding * 0.5 0 !important
+      }
+
+      .article-title {
+        color var(--text-color-2)
+        font-weight 600
+        font-size $article-title-font-size
+        line-height 1.6
+
+        +keep-tablet() {
+          font-size $article-title-font-size * 0.9
+        }
+
+        +keep-mobile() {
+          font-size $article-title-font-size * 0.8
+        }
       }
 
 
-      .tag-item {
-        margin 0 0.25rem
-      }
-    }
+      .article-header {
+        display flex
+        justify-content flex-start
+        width 100%
+
+        .avatar-box {
+          display var(--post-author-avatar)
+          flex-shrink 0
+          width $avatar-width
+          height $avatar-width
+          margin-right 0.8rem
+          padding 0.1rem
+          border 1px solid var(--border-color)
+          border-radius 50%
+
+          img {
+            width 100%
+            height 100%
+            background var(--avatar-background-color)
+            border-radius 50%
+          }
+        }
 
 
-    .post-copyright-info {
-      width 100%
-      margin-top $component-spacing-value
-
-      +keep-tablet() {
-        margin-top $component-spacing-value * 0.8
-      }
-    }
-
-
-    .article-nav {
-      height 2.8rem
-      margin-top $component-spacing-value
-
-      .article-prev
-      .article-next {
-        box-sizing border-box
-        max-width $post-nav-max-width
-        height 100%
-
-        keep-container(true, 1.03, 1.03, 0.8rem, 0)
-
-        a {
-          position relative
-          display block
+        .info-box {
+          display flex
+          flex-direction column
+          justify-content space-between
           box-sizing border-box
           width 100%
           height 100%
+          padding 0.2rem 0
 
-          &.prev {
-            padding-left $arrow-icon-width
-          }
+          .author {
+            display flex
+            align-items center
+            font-weight 600
+            font-size 1.18rem
 
-          &.next {
-            padding-right $arrow-icon-width
-          }
-
-          .arrow-icon {
-            position absolute
-            top 0
-            width $arrow-icon-width
-            height 100%
-
-            &.left {
-              left 0
+            .name {
+              color var(--text-color-3)
             }
 
-            &.right {
-              right 0
+            .author-label {
+              margin-left 0.8rem
+              padding 0 0.4rem
+              color #fff
+              font-weight 500
+              font-size 0.8rem
+              background var(--selection-color)
+              border-radius 0.4rem
             }
           }
 
-          .title {
+          .meta-info {
+            margin-top 0.1rem
+          }
+        }
+      }
+
+
+      .article-header
+      .article-header-meta-info {
+        margin-top 1rem
+        +keep-tablet() {
+          transform scale(0.9)
+          transform-origin left top
+        }
+      }
+
+
+      .article-content {
+        margin-top calc(var(--components-spacing) * 0.8)
+        padding-bottom calc(var(--components-spacing) * 0.8)
+        color var(--text-color-3)
+        text-align justify
+        word-wrap break-word
+
+        +keep-tablet() {
+          margin-top calc(var(--components-spacing) * 0.6)
+          padding-bottom calc(var(--components-spacing) * 0.6)
+        }
+
+
+        .article-aging-tips {
+          position relative
+          display none
+          box-sizing border-box
+          margin-bottom 1.8rem
+          padding 1rem
+          color var(--keep-warning-color)
+          line-height 1.6
+          background var(--keep-warning-background-color)
+          border 0.1rem solid var(--keep-warning-border-color)
+          border-radius 0.4rem
+
+          i {
+            margin-right 0.4rem
+            color var(--keep-warning-color)
+          }
+
+          .days {
+            color var(--keep-warning-color)
+          }
+        }
+
+
+        if (hexo-config('post') && hexo-config('post.copyright_info') == true) {
+          border-bottom 2px dashed var(--border-color)
+        }
+      }
+
+
+      .post-bottom-tags-and-share {
+        display flex
+        justify-content space-between
+        width 100%
+        margin-top 1rem
+
+        .post-tags-box {
+          display flex
+          flex-wrap wrap
+          align-items center
+          justify-content flex-start
+          width 100%
+          font-size 0.96rem
+
+
+          .tag-item {
+            margin-right 0.4rem
+            line-height 2
+
+            .icon {
+              color var(--text-color-3)
+              font-size 0.88rem
+            }
+          }
+        }
+      }
+
+      .article-nav {
+        height 2.8rem
+        margin-top var(--components-spacing)
+
+        .article-prev
+        .article-next {
+          box-sizing border-box
+          max-width $post-nav-max-width
+          height 100%
+          keep-container(1, 0.8rem, 0)
+          border-radius 0.32rem
+
+
+          a {
+            position relative
+            display block
+            box-sizing border-box
             width 100%
             height 100%
+
+            &.prev {
+              padding-left $arrow-icon-width
+            }
+
+            &.next {
+              padding-right $arrow-icon-width
+            }
+
+            .arrow-icon {
+              position absolute
+              top 0
+              width $arrow-icon-width
+              height 100%
+
+              &.left {
+                left 0
+              }
+
+              &.right {
+                right 0
+              }
+            }
+
+            .title {
+              width 100%
+              height 100%
+            }
           }
         }
-      }
 
-      .article-prev {
-        float left
-      }
-
-      .article-next {
-        float right
-      }
-
-      .post-nav-item {
-        display none
-
-        +keep-tablet() {
-          display inline-block
+        .article-prev {
+          float left
         }
-      }
 
+        .article-next {
+          float right
+        }
 
-      .post-nav-title-item {
-        overflow hidden
-        white-space nowrap
-        text-overflow ellipsis
-
-        +keep-tablet() {
+        .post-nav-item {
           display none
+
+          +keep-tablet() {
+            display inline-block
+          }
+        }
+
+
+        .post-nav-title-item {
+          +keep-tablet() {
+            display none
+          }
         }
       }
     }
   }
 
 
-  .toc-content-container {
+  .pc-post-toc {
     position sticky
-    top $header-height + $component-spacing-value
+    top calc(var(--header-height) + var(--components-spacing))
     display none
+    flex-shrink 0
     box-sizing border-box
     width $toc-container-width
-    max-height 'calc(100vh - %s)' % ($header-height + $component-spacing-value)
-    padding 2rem 0 2rem 1.4rem
+    max-height calc(100vh - calc(var(--header-height) + var(--components-spacing)))
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
+    &.right-toc {
+      order 1
+      padding 2rem 0 2rem 1.8rem
+    }
+
+    &.left-toc {
+      order -1
+      padding 2rem 1.8rem 2rem 0
+    }
+
     .header-shrink & {
-      top $header-shrink-height + $component-spacing-value
-      max-height 'calc(100vh - %s)' % ($header-shrink-height + $component-spacing-value)
+      top calc(var(--header-shrink-height) + var(--components-spacing))
+      max-height calc(100vh - calc(var(--header-shrink-height) + var(--components-spacing)))
+    }
+  }
+
+  .hbe-container {
+
+    .hbe-input-field {
+      color var(--text-color-3) !important
+      background var(--background-color-3) !important
+    }
+
+
+    .hbe-input-label {
+      &::before {
+        display none !important
+      }
+
+      &::after {
+        background var(--text-color-4) !important
+      }
+
+      .hbe-input-label-content {
+        color var(--text-color-4) !important
+      }
+    }
+
+
+    .hbe-button {
+      margin-top 2rem
     }
   }
 }

@@ -1,4 +1,7 @@
+$shields-style-height = 22px
+
 .footer {
+  padding 1rem 0
   color var(--text-color-4)
   font-size 1rem
 
@@ -8,20 +11,156 @@
     &:hover {
       color var(--primary-color)
     }
+
+    &.no-pointer {
+      pointer-events none
+    }
   }
 
-  .info-container {
+
+  .website-info-box {
     display flex
     flex-direction column
     align-items center
     justify-content center
-    padding-bottom 1rem
+
+
+    &.shields {
+      padding 0 1rem
+
+      img {
+        height $shields-style-height !important
+      }
+
+
+      a {
+        position relative
+        display inline-flex
+        box-sizing border-box
+        text-decoration none
+      }
+
+
+      .shields-item
+      .count-box {
+        margin 0.3rem 0.2rem
+        user-select none
+      }
+    }
+
+
+    +keep-mobile() {
+      &.shields {
+        .shields-item
+        .count-box {
+          margin 0.12rem -0.3rem
+          transform scale(0.9)
+          transform-origin center center
+        }
+      }
+    }
+
 
     .info-item {
-      margin 0.2rem 0
+      position relative
+      display flex
+      flex-wrap wrap
+      align-items center
+      justify-content center
+      box-sizing border-box
       color var(--text-color-4)
 
+
+      &.shields {
+        .count-box {
+          display flex
+          justify-content flex-start
+          height $shields-style-height
+          color #f2f2f2
+          font-size 12.6px
+
+
+          .item-type
+          .item-value {
+            display flex
+            align-items center
+            height 100%
+            padding 0 6px
+          }
+
+
+          .item-type {
+            margin-right 0
+            background #555555
+          }
+
+          .item-value {
+
+            &.uv {
+              background coral
+            }
+
+            &.pv {
+              background orange
+            }
+
+            &.word {
+              background indianred
+            }
+          }
+        }
+      }
+
+
+      &.default {
+        margin 0.2rem 0
+
+        .count-box {
+          margin-right 15px
+
+          &::before {
+            position absolute
+            top 50%
+            left -10px
+            box-sizing border-box
+            transform translateY(-55%)
+            content '|'
+          }
+
+
+          &:first-child {
+            &::before {
+              display none
+            }
+          }
+
+
+          &:last-child {
+            margin-right 0
+          }
+
+
+          .item-type {
+            margin-right 4px
+          }
+        }
+      }
+
+
+      &.count-item {
+        display flex
+
+        .count-box {
+          &.uv
+          &.pv {
+            display none
+          }
+        }
+      }
+
+
       &.deploy-info {
+
         display flex
 
         a
@@ -31,7 +170,7 @@
         }
 
         img {
-          height 1.2rem
+          height 1.08rem
           margin 0 0.4rem
         }
       }
@@ -40,6 +179,6 @@
 
 
   .icon-animate {
-    animation icon-animate 1.2s ease-in-out infinite
+    animation heartbeat-animate 1.2s ease-in-out infinite
   }
 }

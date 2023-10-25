@@ -1,15 +1,17 @@
 <%
-const { enable: pjax_enable } = theme?.pjax
+const { enable: pjax_enable } = theme?.pjax || {}
 let {
     server_url: waline_env_server_url,
     version: waline_version,
-    reaction: waline_reaction
-} = theme.comment?.waline
+    reaction: waline_reaction,
+    options: waline_options = {}
+} = theme?.comment?.waline || {}
 if (!waline_version) { waline_version = '2' }
 let cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`
 let cdn_css_meta = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline-meta.css`
 let cdn_js = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.js`
-const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+
 if (t_cdn_enable === true) {
     switch (t_cdn_provider) {
         case 'jsdelivr':
@@ -34,12 +36,15 @@ if (t_cdn_enable === true) {
         <div id="waline-comment"></div>
         <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
           function loadWaline() {
+            const tmpOptions = JSON.parse('<%= JSON.stringify(waline_options) %>'.replace(/&#34;/g, '"'))
+
             Waline.init({
               el: '#waline-comment',
               serverURL: '<%= waline_env_server_url %>',
               lang: '<%= config.language %>' || 'zh-CN',
               comment: '.post-comments-count',
-              reaction: '<%= waline_reaction %>' === 'true'
+              reaction: '<%= waline_reaction %>' === 'true',
+              ...tmpOptions
             })
           }
 
@@ -52,4 +57,6 @@ if (t_cdn_enable === true) {
           }
         </script>
     </div>
+<% } else { %>
+    <div class="error-tips">Please fill in Waline complete configuration items.</div>
 <% } %>

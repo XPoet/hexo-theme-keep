@@ -1,27 +1,28 @@
 <%
 const {
-    enable: t_comment_enable,
-    use: t_comment_use
-} = theme?.comment
+    enable: theme_comment_enable,
+    use: theme_comment_use
+} = theme?.comment || {}
 %>
-<div class="comments-container">
-    <div id="comments-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments"></i>&nbsp;<%- __('comments') %>
-    </div>
-    <% if (t_comment_enable === true && t_comment_use) { %>
-        <% if  (t_comment_use === 'valine') { %>
+
+<% if (theme_comment_enable === true && theme_comment_use) { %>
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;<%- __('comments') %>
+        </div>
+        <% if  (theme_comment_use === 'valine') { %>
             <%- partial('valine') %>
-
-        <% } else if (t_comment_use === 'gitalk') { %>
+        <% } else if (theme_comment_use === 'gitalk') { %>
             <%- partial('gitalk') %>
-
-        <% } else if (t_comment_use === 'twikoo') { %>
+        <% } else if (theme_comment_use === 'twikoo') { %>
             <%- partial('twikoo') %>
-
-        <% } else if (t_comment_use === 'waline') { %>
+        <% } else if (theme_comment_use === 'waline') { %>
             <%- partial('waline') %>
-
+        <% } else if (theme_comment_use === 'giscus') { %>
+            <%- partial('giscus') %>
         <% } %>
-    <% } %>
-</div>
+    </div>
+<% } %>
+
+
+

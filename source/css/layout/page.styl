@@ -1,51 +1,51 @@
+$post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
+
 .page-container {
-  position relative
-  box-sizing border-box
   width 100%
   height auto
   background var(--background-color-1)
 
   .page-main-content {
-    position relative
-    box-sizing border-box
-    padding-top $header-height
+    display flex
+    flex-direction column
+    justify-content space-between
+    min-height 100vh
+    padding-top var(--header-height)
 
     &.is-home {
       .transparent-1 {
         background var(--header-transparent-background-1)
-        -webkit-backdrop-filter blur(4px)
-        backdrop-filter blur(4px)
+        backdrop-filter blur(var(--header-backdrop-filter-blur))
       }
 
       .transparent-2 {
         background var(--header-transparent-background-2)
-        -webkit-backdrop-filter blur(5px)
-        backdrop-filter blur(5px)
+        backdrop-filter blur(calc(var(--header-backdrop-filter-blur) * 1.25))
       }
     }
 
 
     .header-shrink & {
-      padding-top $header-shrink-height
+      padding-top var(--header-shrink-height)
 
 
       +keep-tablet() {
-        padding-top $header-shrink-height * 0.9
+        padding-top calc(var(--header-shrink-height) * 0.9)
       }
 
       +keep-mobile() {
-        padding-top $header-shrink-height * 0.8
+        padding-top calc(var(--header-shrink-height) * 0.8)
       }
     }
 
 
     +keep-tablet() {
-      padding-top $header-height * 0.9
+      padding-top calc(var(--header-height) * 0.9)
     }
 
 
     +keep-mobile() {
-      padding-top $header-height * 0.8
+      padding-top calc(var(--header-height) * 0.8)
     }
 
 
@@ -56,7 +56,7 @@
       z-index $z-index-5
       box-sizing border-box
       width 100%
-      height $header-height
+      height var(--header-height)
       transition-t("transform, height", "0, 0", "0.3, 0.2", "ease-out, ease")
 
       &.hide {
@@ -64,25 +64,25 @@
       }
 
       .header-shrink & {
-        height $header-shrink-height
+        height var(--header-shrink-height)
 
         +keep-tablet() {
-          height $header-shrink-height * 0.9
+          height calc(var(--header-shrink-height) * 0.9)
         }
 
         +keep-mobile() {
-          height $header-shrink-height * 0.8
+          height calc(var(--header-shrink-height) * 0.8)
         }
       }
 
 
       +keep-tablet() {
-        height $header-height * 0.9
+        height calc(var(--header-height) * 0.9)
       }
 
 
       +keep-mobile() {
-        height $header-height  * 0.8
+        height calc(var(--header-height) * 0.8)
       }
     }
 
@@ -90,36 +90,35 @@
     .page-main-content-middle {
       display flex
       justify-content center
-      box-sizing border-box
       width 100%
-      padding $component-spacing-value 0
+      padding var(--components-spacing) 0
 
       +keep-tablet() {
-        padding $component-spacing-value * 0.8 0
+        padding calc(var(--components-spacing) * 0.8) 0
       }
 
       +keep-mobile() {
-        padding $component-spacing-value * 0.6 0
+        padding calc(var(--components-spacing) * 0.6) 0
       }
 
       .main-content {
-        position relative
-        box-sizing border-box
-        width $main-content-width
-        max-width $content-max-width
+        width var(--page-content-width)
+        max-width var(--page-content-max-width)
         height 100%
         transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
 
         .has-toc & {
-          max-width $has-toc-content-max-width
+          max-width var(--page-content-max-width-2)
         }
+
 
         +keep-tablet() {
-          width $main-content-width-tablet
+          width var(--page-content-width-tablet)
         }
 
+
         +keep-mobile() {
-          width $main-content-width-mobile
+          width var(--page-content-width-mobile)
         }
       }
     }
@@ -133,36 +132,78 @@
 
   .post-tools {
     position fixed
-    top $header-height + $component-spacing-value
-    left 'calc((100vw - %s / 2) - 5rem)' % $content-max-width
+    top calc(var(--header-height) + var(--components-spacing))
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")
 
-    .header-shrink & {
-      top $header-shrink-height + $component-spacing-value
+    &.right-toc {
+      left $post-tools-offset
+    }
 
-      +keep-tablet() {
-        top $header-shrink-height * 0.9 + $component-spacing-value
-      }
+    &.left-toc {
+      right $post-tools-offset
+    }
+
+    .header-shrink & {
+      top calc(var(--header-shrink-height) + var(--components-spacing))
     }
 
 
     +keep-tablet() {
-      top $header-height * 0.9 + $component-spacing-value
-      transform scale(0.82)
-    }
-
-
-    +keep-mobile() {
-      display none
+      display none !important
     }
   }
 
 
-  .right-bottom-side-tools {
+  .side-tools {
     position fixed
     right 0
-    bottom 5%
+    bottom 1.6rem
+    box-sizing border-box
+    padding-right 1rem
+
+    +keep-tablet() {
+      padding-right 0
+    }
+
+    &:hover {
+      .side-tools-container {
+        transform translateX(0)
+        opacity 1
+      }
+    }
+  }
+
+
+  .tablet-post-toc-mask {
+    position fixed
+    top 0
+    right 0
+    z-index $z-index-10
+    box-sizing border-box
+    width 100%
+    height 100%
+    background rgba(0, 0, 0, 0)
+    visibility hidden
+    transition-t("visibility", "0", "0.2", "ease")
+
+
+    .tablet-post-toc {
+      position absolute
+      top 0
+      left 0
+      box-sizing border-box
+      width 22rem
+      height 100%
+      padding 1.2rem 1rem
+      background var(--background-color-1)
+      transform translateX(-100%)
+      transition-t("transform", "0", "0.4", "ease")
+
+      +keep-mobile() {
+        width 70%
+      }
+    }
   }
 }

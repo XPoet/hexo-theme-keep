@@ -1,0 +1,87 @@
+.article-copyright-info-container {
+  width 100%
+  margin-top 1rem
+  background var(--background-color-2)
+  border-radius calc(var(--box-border-radius) * 0.6)
+
+  .copyright-info-content {
+    width 100%
+    padding 1.3rem
+    overflow hidden
+    font-size 1rem
+
+
+    .copyright-info-top {
+      width 100%
+
+      .post-title {
+        width 100%
+        color var(--text-color-3)
+        font-size 1.1rem
+      }
+
+      .post-link {
+        width 100%
+        margin-top 0.2rem
+        color var(--text-color-4)
+      }
+    }
+
+
+    .copyright-info-bottom {
+      display flex
+      justify-content flex-start
+      margin-top 1rem
+
+      .bottom-item {
+        z-index $z-index-10
+        margin-right 1.2rem
+
+        .type {
+          color var(--text-color-4)
+        }
+
+        .content {
+          margin-top 0.2rem
+          color var(--text-color-3)
+        }
+      }
+
+
+      .post-license {
+        .content {
+          i {
+            font-size 1.1rem
+          }
+        }
+      }
+    }
+
+    .copyright-bg {
+      position absolute
+      top 50%
+      right 2rem
+      color var(--copyright-icon-bg-color)
+      font-size 14rem
+      transform translateY(-50%)
+
+      +keep-mobile() {
+        font-size 12rem
+      }
+    }
+  }
+
+
+  .copy-copyright-info {
+    position absolute
+    top 0.5rem
+    right 0.5rem
+    box-sizing border-box
+    padding 0.3rem
+    cursor pointer
+
+    i {
+      color var(--text-color-3)
+    }
+  }
+}

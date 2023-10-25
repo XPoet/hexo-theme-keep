@@ -9,7 +9,6 @@ next_posts: Next posts
 page: Page %d
 recent_posts: Recent Posts
 share: Share
-powered_by: "Powered by %s"
 theme: Theme
 rss_feed: RSS Feed
 category: Category
@@ -23,8 +22,6 @@ home: Home
 archive: Archive
 archives: Archives
 about: About
-site_uv: Visitor Count
-site_pv: Totalview
 links: Links
 link: Link
 top: TOP
@@ -57,10 +54,12 @@ copy_copyright:
   author: Original article author
   link: Original article link
 copyright:
-  author: Post author
-  title: Post title
-  link: Post link
+  author: Author
+  title: Title
+  link: Link
   create_time: Create time
+  published: Published
+  license: License
   license_title: Copyright notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
 article-aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
@@ -72,12 +71,24 @@ ago:
   week: "%s weeks ago"
   month: "%s months ago"
   year: "%s years ago"
-footer_deploy: "This site is provided with deployment services by %s"
-deploy_provider:
-  github: GitHub Pages
-  vercel: Vercel
-  netlify: Netlify
-  gitee: Gitee Pages
-  aliyun: Alibaba Cloud
-  tencent_cloud: Tencent Cloud
-  upyun: UPYUN
+footer:
+  powered_by: "Powered by&nbsp;%s"
+  site_uv: Unique Visitor
+  site_pv: Page View
+  deploy: "This site is deployed on %s"
+  deploy_provider:
+    github: GitHub Pages
+    vercel: Vercel
+    netlify: Netlify
+    gitee: Gitee Pages
+    aliyun: Alibaba Cloud
+    tencent_cloud: Tencent Cloud
+    upyun: UPYUN
+  total_words: Total words
+post:
+  share:
+    qq: "Share to QQ"
+    wechat: "Share to WeChat"
+    weibo: "Share to WeiBo"
+    wechat_scan: "Scan by WeChat"
+  reward: Reward Author

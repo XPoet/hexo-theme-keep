@@ -9,7 +9,6 @@ next_posts: 下一篇
 page: 第 %d 頁
 recent_posts: 之前的文章
 share: 分享
-powered_by: "%s 框架"
 theme: 主題
 rss_feed: RSS 訂閱
 category: 分類
@@ -23,8 +22,6 @@ home: 首頁
 archive: 歸檔
 archives: 歸檔
 about: 關於
-site_uv: 讀者
-site_pv: 閱覽
 links: 友鏈
 link: 友鏈
 top: 頂端
@@ -55,12 +52,14 @@ copy_copyright:
   copied: 已復製
   title: 原文標題
   author: 原文作者
-  link: 原文鏈接
+  link: 原文連結
 copyright:
-  author: 文章作者
-  title: 文章標題
-  link: 永久連結
+  author: 作者
+  title: 標題
+  link: 連結
   create_time: 撰寫時間
+  published: 發布于
+  license: 許可
   license_title: 版權宣告
   license_content: "這個網站所有文章均使用 %s 授權"
 article-aging: "本文距離上次更新已過去 %s 天，部分內容可能已經過時，請註意甄別。"
@@ -72,12 +71,24 @@ ago:
   week: "%s 周前"
   month: "%s 個月前"
   year: "%s 年前"
-footer_deploy: "本站由 %s 提供部署服務"
-deploy_provider:
-  github: GitHub Pages
-  vercel: Vercel
-  netlify: Netlify
-  gitee: Gitee Pages
-  aliyun: 阿裏雲
-  tencent_cloud: 騰訊雲
-  upyun: 又拍雲
+footer:
+  powered_by: "%s&nbsp;框架"
+  site_uv: 讀者
+  site_pv: 閱覽
+  deploy: "本站由 %s 提供部署服務"
+  deploy_provider:
+    github: GitHub Pages
+    vercel: Vercel
+    netlify: Netlify
+    gitee: Gitee Pages
+    aliyun: 阿裏雲
+    tencent_cloud: 騰訊雲
+    upyun: 又拍雲
+  total_words: 總字數
+post:
+  share:
+    qq: "分享到 QQ"
+    wechat: "分享到微信"
+    weibo: "分享到微博"
+    wechat_scan: "微信掃壹掃"
+  reward: 給作者打賞

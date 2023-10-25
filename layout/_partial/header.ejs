@@ -1,31 +1,31 @@
 <%
-const { title: bi_title, logo_img: bi_logo_img } = theme.base_info
-const { logo: s_logo, first_screen: s_first_screen } = theme.style
-const { enable: s_fs_enable, header_transparent: s_fs_header_transparent } = s_first_screen
-const { title: config_title } = config
-const { enable: local_search_enable } = theme.local_search
+const { title: bi_title, logo_img: bi_logo_img } = theme?.base_info || {}
+const { logo: s_logo, first_screen: s_first_screen } = theme?.style || {}
+const { enable: s_fs_enable } = s_first_screen || {}
+const { enable: local_search_enable } = theme?.local_search || {}
+const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
 %>
-<header class="header-wrapper<%= s_fs_enable === true && is_home() && s_fs_header_transparent ? ' transparent-1' : '' %>">
+<header class="header-wrapper<%= s_fs_enable === true && is_home() ? ' transparent-1' : '' %>">
 
-    <div class="header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
-        <div class="left">
+    <div class="border-box header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
+        <div class="left border-box">
             <% if (s_logo || bi_logo_img) { %>
-                <a class="logo-image" href=""<%- theme.base_info.blog_root %>>
+                <a class="logo-image border-box" href="<%- theme.base_info.blog_root %>">
                     <%- image_tag(s_logo || bi_logo_img) %>
                 </a>
             <% } %>
-            <a class="logo-title" href="<%- theme.base_info.blog_root %>">
-               <%= bi_title || config_title || 'Keep Theme' %>
+            <a class="site-name border-box" href="<%- theme.base_info.blog_root %>">
+               <%= bi_title || config?.title || 'Keep Theme' %>
             </a>
         </div>
 
-        <div class="right">
+        <div class="right border-box">
             <div class="pc">
                 <ul class="menu-list">
-                    <% for (const i in theme.menu) { %>
+                    <% for (const i in h_menu_nav_object) { %>
                         <li class="menu-item">
-                            <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
-                               href="<%- url_for(theme.menu[i]) %>"
+                            <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
+                               href="<%- url_for(h_menu_nav_object[i]) %>"
                             >
                                 <%= __(i.toLowerCase()).toUpperCase() %>
                             </a>
@@ -51,10 +51,10 @@ const { enable: local_search_enable } = theme.local_search
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
-            <% for (let i in theme.menu) { %>
+            <% for (let i in h_menu_nav_object) { %>
                 <li class="drawer-menu-item flex-center">
-                    <a class="<%- isInHomePaging(page.path, theme.menu[i]) ? 'active' : is_current(theme.menu[i]) ? 'active' : '' %>"
-                       href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()).toUpperCase() %></a>
+                    <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
+                       href="<%- url_for(h_menu_nav_object[i]) %>"><%= __(i.toLowerCase()).toUpperCase() %></a>
                 </li>
             <% } %>
         </ul>

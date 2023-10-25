@@ -1,5 +1,5 @@
-<div class="side-tools-container">
-    <ul class="side-tools-list">
+<div class="side-tools-container border-box <%= is_home() ? 'side-tools-show-handle' : '' %>">
+    <ul class="side-tools-list side-tools-show-handle border-box">
         <li class="tools-item tool-font-adjust-plus flex-center">
             <i class="fas fa-search-plus"></i>
         </li>
@@ -13,7 +13,7 @@
         </li>
 
         <!-- rss -->
-        <% if (theme.rss.enable && config.feed) { %>
+        <% if (theme?.rss?.enable === true && config.feed) { %>
             <li class="tools-item rss flex-center">
                 <a class="flex-center"
                    href="<%= '/' + config.feed.path %>"
@@ -24,26 +24,31 @@
             </li>
         <% } %>
 
-        <% if (theme.style.scroll.percent !== true) { %>
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="fas fa-arrow-up"></i>
-            </li>
-        <% } %>
-
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
         </li>
     </ul>
 
-    <ul class="exposed-tools-list">
+    <ul class="exposed-tools-list border-box">
+        <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        <% } %>
+
+        <% if (is_post() && page?.comment !== false && theme?.comment?.enable === true && theme?.comment?.use) { %>
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        <% } %>
+
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        <% if (theme.style.scroll.percent === true) { %>
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        <% } %>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
     </ul>
 </div>

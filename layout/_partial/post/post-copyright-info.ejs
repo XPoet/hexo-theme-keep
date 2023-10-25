@@ -1,0 +1,60 @@
+<%
+let  licenseLang = ''
+
+if (config?.language === 'zh-CN') {
+    licenseLang = '.zh-hans'
+}
+
+if (config?.language === 'zh-TW') {
+    licenseLang = '.zh-hant'
+}
+%>
+<div class="article-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="post-title border-box text-ellipsis">
+                <%= page.title %>
+            </div>
+
+            <div class="post-link border-box text-ellipsis">
+                <%= page.path %>
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="post-author bottom-item">
+                <div class="type">
+                    <%- __('copyright.author') %>
+                </div>
+                <div class="content"><%= theme?.base_info?.author || config?.author || 'Anonymous' %></div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    <%- __('copyright.published') %>
+                </div>
+                <div class="content"><%= date(page.date, 'YYYY-MM-DD HH:mm') %></div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    <%- __('copyright.license') %>
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed<%= licenseLang %>">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="<%= __('copy_copyright.copy') %>" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>

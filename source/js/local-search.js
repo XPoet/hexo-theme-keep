@@ -255,7 +255,7 @@ KEEP.initLocalSearch = () => {
       })
   }
 
-  if (KEEP.theme_config.local_search.preload) {
+  if (KEEP.theme_config?.local_search?.preload === true) {
     fetchData()
   }
 

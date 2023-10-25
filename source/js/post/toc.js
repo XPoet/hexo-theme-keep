@@ -1,60 +1,80 @@
 /* global KEEP */
 
 function initTOC() {
-  const postPageContainerDom = document.querySelector('.post-page-container')
-  const tocContentContainer = document.querySelector('.toc-content-container')
+  const pageContainer = document.querySelector('.page-container')
+  const postPageContainer = document.querySelector('.post-page-container')
+  const pcTocContainer = document.querySelector('.pc-post-toc')
+  const tabletTocContainer = document.querySelector('.tablet-post-toc')
 
   if (KEEP.utils.hasToc) {
-    KEEP.utils = {
-      ...KEEP.utils,
+    KEEP.utils.tocHelper = {
+      pcTocNavSections: [],
 
-      findActiveIndexByTOC() {
-        if (!Array.isArray(KEEP.utils.sections)) return
-        let index = KEEP.utils.sections.findIndex((element) => {
+      tabletTocNavSections: [],
+
+      // get active index
+      getActiveIndex(navSections) {
+        if (!Array.isArray(navSections)) return
+        let index = navSections.findIndex((element) => {
           return element && element.getBoundingClientRect().top - 20 > 0
         })
         if (index === -1) {
-          index = KEEP.utils.sections.length - 1
+          index = navSections.length - 1
         } else if (index > 0) {
           index--
         }
-        this.activateNavByIndex(index)
+        return index
       },
 
-      registerSidebarTOC() {
-        KEEP.utils.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(
-          (element) => {
+      // active nav
+      activeNav() {
+        // pc
+        this.activateNavByIndex(pcTocContainer, this.getActiveIndex(this.pcTocNavSections))
+
+        // tablet
+        this.activateNavByIndex(tabletTocContainer, this.getActiveIndex(this.tabletTocNavSections))
+      },
+
+      // register TOC Nav
+      registerTocNav() {
+        const register = (tocContainer) => {
+          return [...tocContainer.querySelectorAll('.post-toc li a.nav-link')].map((element) => {
             const target = document.getElementById(
               decodeURI(element.getAttribute('href')).replace('#', '')
             )
             element.addEventListener('click', (event) => {
               event.preventDefault()
               let winScrollY = window.scrollY
-              winScrollY = winScrollY === 0 ? -20 : winScrollY
+              winScrollY = winScrollY <= 1 ? -19 : winScrollY
               const offset = target.getBoundingClientRect().top + winScrollY
               window.anime({
                 targets: document.scrollingElement,
                 duration: 500,
                 easing: 'linear',
-                scrollTop: offset - 10,
+                scrollTop: offset,
                 complete: () => {
                   history.pushState(null, document.title, element.href)
                   setTimeout(() => {
-                    KEEP.utils.pageTop_dom.classList.add('hide')
+                    KEEP.utils.pageTopDom.classList.add('hide')
                   }, 150)
                 }
               })
             })
             return target
-          }
-        )
+          })
+        }
+        // pc
+        this.pcTocNavSections = register(pcTocContainer)
+
+        // tablet
+        this.tabletTocNavSections = register(tabletTocContainer)
       },
 
-      activateNavByIndex(index) {
-        const target = document.querySelectorAll('.post-toc li a.nav-link')[index]
+      activateNavByIndex(tocContainer, index) {
+        const target = tocContainer.querySelectorAll('.post-toc li a.nav-link')[index]
         if (!target || target.classList.contains('active-current')) return
 
-        document.querySelectorAll('.post-toc .active').forEach((element) => {
+        tocContainer.querySelectorAll('.post-toc .active').forEach((element) => {
           element.classList.remove('active', 'active-current')
         })
         target.classList.add('active', 'active-current')
@@ -64,7 +84,7 @@ function initTOC() {
           parent = parent.parentNode
         }
         // Scrolling to center active TOC element if TOC content is taller than viewport.
-        const tocElement = document.querySelector('.post-toc-wrap')
+        const tocElement = tocContainer.querySelector('.post-toc-wrap')
         window.anime({
           targets: tocElement,
           duration: 200,
@@ -97,17 +117,17 @@ function initTOC() {
         }
       }
     }
-
-    KEEP.utils.handleShowWhenHasToc()
-    KEEP.utils.registerSidebarTOC()
+    KEEP.utils.tocHelper.handleShowWhenHasToc()
+    KEEP.utils.tocHelper.registerTocNav()
   } else {
-    if (tocContentContainer && postPageContainerDom) {
-      postPageContainerDom.removeChild(tocContentContainer)
+    pcTocContainer && postPageContainer.removeChild(pcTocContainer)
+    if (tabletTocContainer) {
+      pageContainer.removeChild(document.querySelector('.tablet-post-toc-mask'))
     }
   }
 }
 
-if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {
+if (KEEP.theme_config?.pjax?.enable === true && KEEP.utils) {
   initTOC()
 } else {
   window.addEventListener('DOMContentLoaded', initTOC)

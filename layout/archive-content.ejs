@@ -1,5 +1,8 @@
 <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        <%- partial('_partial/archive-list', {posts_new: site.posts}) %>
+    <div class="archives-container">
+        <div class="archives-timeline border-box">
+            <%- partial('_partial/archive-list', { archive_posts: page.posts }) %>
+        </div>
     </div>
+    <%- partial('_partial/paginator', { page_info: page }) %>
 </div>

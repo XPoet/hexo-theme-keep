@@ -2,22 +2,48 @@
   font-size 1rem
 
   blockquote {
-
-    p
-    ul
-    ol {
-      padding 0.4rem 0.4rem 0.4rem 0.8rem
-    }
-
+    position relative
+    display flex
+    flex-direction column
+    justify-content flex-start
     box-sizing border-box
     margin 1.4rem 0
     color var(--text-color-3)
     background var(--background-color-2)
     border-left 0.4rem solid var(--text-color-4)
+    border-top-left-radius 0.2rem
+    border-bottom-left-radius 0.2rem
+
+
+    p
+    ul
+    ol
+    footer {
+      position relative
+      box-sizing border-box
+      padding 0.4rem 0.4rem 0.4rem 0.8rem !important
+    }
+
+    footer {
+      margin-bottom 0.6rem
+      font-style italic
+    }
+
+    cite {
+      position relative
+      box-sizing border-box
+      margin-left 1rem
+      color var(--text-color-4)
+
+      &::before {
+        content '— '
+      }
+    }
   }
 
 
   p {
+    margin 0.6rem 0
     color var(--text-color-3)
     line-height 2
   }
@@ -125,11 +151,49 @@
   h4
   h5
   h6 {
+    position relative
+    box-sizing border-box
+    padding-top 0.4rem
+    padding-bottom 0.2rem
+    overflow hidden
     color var(--text-color-2)
     line-height 1.5
+    white-space nowrap
+    text-overflow ellipsis
+    border-bottom 1px solid var(--post-h-bottom-border-color)
 
     +keep-tablet() {
       line-height 1.25
+    }
+
+    &:hover {
+      a.headerlink {
+        visibility visible
+      }
+    }
+
+    a.headerlink {
+      position relative
+      float right
+      box-sizing border-box
+      margin-left 0.32rem
+      padding-top 0.25rem
+      color var(--text-color-4)
+      font-size 1.2rem
+      text-decoration none
+      border none
+      visibility hidden
+
+
+      &:hover {
+        color var(--text-color-3)
+      }
+
+      &::before {
+        font-weight 600
+        font-family 'Font Awesome 6 Free'
+        content '\f0c1'
+      }
     }
   }
 
@@ -201,6 +265,8 @@
     display block
     box-sizing border-box
     max-width 100%
+    margin var(--post-img-align)
+    margin-bottom 2rem
     box-shadow 0 0 0.2rem var(--shadow-color)
     cursor zoom-in
     opacity 1
@@ -211,13 +277,6 @@
 
     &[lazyload] {
       margin 0.8rem auto 0.2rem
-    }
-
-    if (hexo-config('post.img_align') == 'center' || hexo-config('style.article_img_align') == 'center') {
-      margin 0.8rem auto 0.2rem
-    }
-    else {
-      margin 0.8rem 0 0.2rem
     }
   }
 
@@ -257,6 +316,12 @@
     tr:nth-child(2n) {
       background-color var(--background-color-2)
     }
+  }
+
+
+  .mermaid {
+    background #f5f5f5 !important
+    border-radius 0.3rem
   }
 }
 

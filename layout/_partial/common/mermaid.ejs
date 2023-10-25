@@ -1,0 +1,27 @@
+<%
+const mermaidVersion = config?.mermaid?.version || '10.5.0'
+let mermaidJs = `//cdn.jsdelivr.net/npm/mermaid@${mermaidVersion}/dist/mermaid.min.js`
+
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+const { enable: pjax_enable } = theme?.pjax || {}
+
+switch (t_cdn_enable === true && t_cdn_provider) {
+    case 'jsdelivr':
+        mermaidJs = `//cdn.jsdelivr.net/npm/mermaid@${mermaidVersion}/dist/mermaid.min.js`
+        break
+
+    case 'unpkg':
+        mermaidJs = `//unpkg.com/mermaid@${mermaidVersion}/dist/mermaid.min.js`
+        break
+}
+%>
+<script src="<%= mermaidJs %>"></script>
+<% if (pjax_enable === true) { %>
+    <script data-pjax>
+      if (window.mermaid) {
+        mermaid.init()
+      }
+    </script>
+<% } %>
+
+

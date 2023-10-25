@@ -1,10 +1,10 @@
-<div class="post-toc-wrap">
-    <div class="post-toc">
+<div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
         <%- toc(
                 page.content,
                 {
                     class: 'nav',
-                    list_number: theme.toc.number || false
+                    list_number: theme?.toc?.number || false
                 }
         ) %>
     </div>

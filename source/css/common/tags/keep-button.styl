@@ -1,0 +1,102 @@
+.keep-button {
+  position relative
+  box-sizing border-box
+  margin auto 0.6rem
+  padding 0.6rem 1rem
+  color var(--text-color-3)
+  font-size 1rem
+  background var(--background-color-1)
+  border none
+  border-radius 0.4rem
+  box-shadow 0.1rem 0.2rem 0.4rem var(--shadow-color)
+  cursor pointer
+
+
+  i {
+    color var(--text-color-3)
+  }
+
+
+  &:hover {
+    color var(--background-color-1)
+    background var(--primary-color)
+
+    i {
+      color var(--background-color-1)
+    }
+  }
+
+
+  &.size-small {
+    margin auto 0.3rem
+    padding 0.5rem 0.8rem
+    font-size 0.8rem
+    border-radius 0.3rem
+    box-shadow 0.1rem 0.1rem 0.3rem var(--shadow-color)
+  }
+
+
+  &.size-large {
+    width 100%
+    margin 0.6rem 0
+    padding 1rem
+    font-size 1.1rem
+    border-radius 0.5rem
+    box-shadow 0.1rem 0.2rem 0.5rem var(--shadow-color)
+  }
+
+
+  &.color-info {
+    color var(--text-color-3)
+    background-color var(--background-color-1)
+
+    &:hover {
+      color var(--background-color-1)
+      background var(--primary-color)
+    }
+  }
+
+
+  &.color-primary {
+    color var(--keep-primary-color)
+    background-color var(--keep-primary-background-color)
+
+    &:hover {
+      color #fff
+      background-color var(--keep-primary-color)
+    }
+  }
+
+
+  &.color-success {
+    color var(--keep-success-color)
+    background-color var(--keep-success-background-color)
+
+    &:hover {
+      color #fff
+      background-color var(--keep-success-color)
+    }
+  }
+
+
+  &.color-warning {
+    color var(--keep-warning-color)
+    background-color var(--keep-warning-background-color)
+
+    &:hover {
+      color #fff
+      background-color var(--keep-warning-color)
+    }
+  }
+
+
+  &.color-danger {
+    color var(--keep-danger-color)
+    background-color var(--keep-danger-background-color)
+
+    &:hover {
+      color #fff
+      background-color var(--keep-danger-color)
+    }
+  }
+}

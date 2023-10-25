@@ -1,0 +1,71 @@
+$share-item-width = 1.8rem
+
+.post-share-container {
+  flex-shrink 0
+
+  .share-list-wrap {
+    display flex
+    justify-content flex-end
+
+    .share-item {
+      width $share-item-width
+      height $share-item-width
+      margin-left 0.5rem
+      padding 0.4rem
+      border-style solid
+      border-width 0.1rem
+      border-radius 50%
+      cursor pointer
+      transition-t("background", "0", "0.3", "ease")
+
+
+      i {
+        color inherit
+        font-size 1rem
+      }
+
+
+      &.qq {
+        color var(--keep-primary-color)
+        border-color var(--keep-primary-color)
+
+        &:hover {
+          color var(--background-color-1)
+          background var(--keep-primary-color)
+        }
+      }
+
+
+      &.wechat {
+        color var(--keep-success-color)
+        border-color var(--keep-success-color)
+
+        img {
+          filter brightness(1) !important
+
+          &[lazyload] {
+            &::before {
+              background #fff !important
+            }
+          }
+        }
+
+        &:hover {
+          color var(--background-color-1)
+          background var(--keep-success-color)
+        }
+      }
+
+
+      &.weibo {
+        color var(--keep-danger-color)
+        border-color var(--keep-danger-color)
+
+        &:hover {
+          color var(--background-color-1)
+          background var(--keep-danger-color)
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,75 @@
 .paginator {
   margin-top 2rem
-  font-size 1rem
+  padding-top 0.2rem
+  user-select none
 
-  a.prev {
-    float left
+  .btn-wrap {
+    cursor not-allowed
+
+    &.allowed {
+      cursor pointer
+
+      a.jump-btn {
+        pointer-events auto
+
+
+        i {
+          color var(--text-color-3)
+        }
+      }
+    }
+
+    a.jump-btn {
+      padding 0.2rem
+      pointer-events none
+
+      i {
+        color var(--text-color-4)
+        font-size 1rem
+      }
+    }
   }
 
-  a.next {
-    float right
+
+
+  .base-color-size {
+    color var(--text-color-3)
+    font-size 1rem
+  }
+
+  .page-number-box {
+    margin 0 1rem
+
+    .page-number-input {
+      width 2.8rem
+      height 1.8rem
+      margin 0
+      padding 0
+      font-weight 400 !important
+      text-align center
+      background none
+      border 0.1rem solid var(--border-color)
+      border-radius 0.3rem
+      outline none
+      -webkit-appearance none
+
+      &::-webkit-outer-spin-button
+      &::-webkit-inner-spin-button {
+        -webkit-appearance none !important
+      }
+
+      &:hover
+      &:focus {
+        border-color var(--primary-color)
+      }
+    }
+
+
+    .delimiter {
+      margin 0 0.6rem
+    }
   }
 }
+
+
+

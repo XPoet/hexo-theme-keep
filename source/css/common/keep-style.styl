@@ -1,0 +1,187 @@
+@import 'stylus-variables.styl'
+
+keep-container(sValue, pValue, mbValue) {
+  box-sizing border-box
+  margin-bottom mbValue
+  padding pValue
+  background var(--content-background-color)
+  border-radius var(--box-border-radius)
+  box-shadow 0 0 8px var(--shadow-color)
+
+  if (sValue != 1) {
+    transition-t("transform", "0", "0.2", "linear")
+  }
+
+  &:hover {
+    if (sValue != 1) {
+      transform scale(sValue)
+    }
+    box-shadow 0 0 12px var(--shadow-hover-color)
+  }
+
+  +keep-tablet() {
+    margin-bottom mbValue * 0.8
+    padding pValue * 0.8
+    border-radius calc(var(--box-border-radius) * 0.8)
+  }
+
+
+  +keep-mobile() {
+    margin-bottom mbValue * 0.6
+    padding pValue * 0.6
+    border-radius calc(var(--box-border-radius) * 0.6)
+  }
+}
+
+
+disable-user-select() {
+  -moz-user-select none
+  -ms-user-select none
+  -webkit-user-select none
+  user-select none
+}
+
+
+not-text-size-adjust() {
+  -ms-text-size-adjust none
+  -moz-text-size-adjust none
+  -webkit-text-size-adjust none
+}
+
+
+keep-tablet() {
+  @media (max-width $media-max-width) {
+    { block }
+  }
+}
+
+
+keep-mobile() {
+  @media (max-width $media-max-width-mobile) {
+    { block }
+  }
+}
+
+
+root-color(mode) {
+  // primary color
+  --primary-color $primary-color
+  --primary-color-light-1 $primary-color-light-1
+  --primary-color-light-2 $primary-color-light-2
+  --primary-color-dark-1 $primary-color-dark-1
+  --primary-color-dark-2 $primary-color-dark-2
+
+  // background color
+  --background-color-1 mode == 'light' ? $background-color-1 : $dark-background-color-1
+  --background-color-1-transparent mode == 'light' ? $background-color-1-transparent : $dark-background-color-1-transparent
+  --background-color-2 mode == 'light' ? $background-color-2 : $dark-background-color-2
+  --background-color-3 mode == 'light' ? $background-color-3 : $dark-background-color-3
+
+  // content background color
+  --content-background-color mode == 'light' ? $content-background-color : $dark-content-background-color
+
+  // text color
+  --text-color-1 mode == 'light' ? $text-color-1 : $dark-text-color-1
+  --text-color-2 mode == 'light' ? $text-color-2 : $dark-text-color-2
+  --text-color-3 mode == 'light' ? $text-color-3 : $dark-text-color-3
+  --text-color-4 mode == 'light' ? $text-color-4 : $dark-text-color-4
+  --text-color-5 mode == 'light' ? $text-color-5 : $dark-text-color-5
+  --text-color-6 mode == 'light' ? $text-color-6 : $dark-text-color-6
+
+  // toc text color
+  --toc-text-color mode == 'light' ? $toc-text-color : $dark-toc-text-color
+
+  // badge color
+  --badge-color mode == 'light' ? $badge-color : $dark-badge-color
+  --badge-background-color mode == 'light' ? $badge-background-color : $dark-badge-background-color
+
+  // border color
+  --border-color mode == 'light' ? $border-color : $dark-border-color
+
+  // selection color
+  --selection-color mode == 'light' ? $selection-color : $dark-selection-color
+
+  // shadow color
+  --shadow-color mode == 'light' ? $shadow-color : $dark-shadow-color
+  --shadow-hover-color mode == 'light' ? $shadow-hover-color : $dark-shadow-hover-color
+
+  // scrollbar color
+  --scrollbar-color mode == 'light' ? $scrollbar-color : $dark-scrollbar-color
+  --scrollbar-background-color mode == 'light' ? $scrollbar-background-color : $dark-scrollbar-background-color
+  --toc-scrollbar-color mode == 'light' ? $toc-scrollbar-color : $dark-toc-scrollbar-color
+
+  // copyright icon background color
+  --copyright-icon-bg-color mode == 'light' ? $copyright-icon-bg-color : $dark-copyright-icon-bg-color
+
+  // avatar background color
+  --avatar-background-color mode == 'light' ? $avatar-background-color : $dark-avatar-background-color
+
+  // header transparent background color
+  --header-transparent-background-1 mode == 'light' ? $header-transparent-background-1 : $dark-header-transparent-background-1
+  --header-transparent-background-2 mode == 'light' ? $header-transparent-background-2 : $dark-header-transparent-background-2
+
+  // pjax progress bar color
+  --pjax-progress-bar-color mode == 'light' ? $pjax-progress-bar-color : $dark-pjax-progress-bar-color
+
+  // h tag bottom border color
+  --post-h-bottom-border-color mode == 'light' ? $post-h-bottom-border-color : $dark-post-h-bottom-border-color
+
+  // article aging tips primary color
+  --article-aging-tips-color mode == 'light' ? $article-aging-tips-color : $dark-article-aging-tips-color
+  --article-aging-tips-background-color mode == 'light' ? $article-aging-tips-background-color : $dark-article-aging-tips-background-color
+  --article-aging-tips-border-color mode == 'light' ? $article-aging-tips-border-color : $dark-article-aging-tips-border-color
+
+  // keep info color
+  --keep-info-color mode == 'light' ? $keep-info-color : $dark-keep-info-color
+  --keep-info-background-color mode == 'light' ? $keep-info-background-color : $dark-keep-info-background-color
+  --keep-info-border-color mode == 'light' ? $keep-info-border-color : $dark-keep-info-border-color
+
+  // keep primary color
+  --keep-primary-color mode == 'light' ? $keep-primary-color : $dark-keep-primary-color
+  --keep-primary-background-color mode == 'light' ? $keep-primary-background-color : $dark-keep-primary-background-color
+  --keep-primary-border-color mode == 'light' ? $keep-primary-border-color : $dark-keep-primary-border-color
+
+  // keep warning color
+  --keep-warning-color mode == 'light' ? $keep-warning-color : $dark-keep-warning-color
+  --keep-warning-background-color mode == 'light' ? $keep-warning-background-color : $dark-keep-warning-background-color
+  --keep-warning-border-color mode == 'light' ? $keep-warning-border-color : $dark-keep-warning-border-color
+
+  // keep success color
+  --keep-success-color mode == 'light' ? $keep-success-color : $dark-keep-success-color
+  --keep-success-background-color mode == 'light' ? $keep-success-background-color : $dark-keep-success-background-color
+  --keep-success-border-color mode == 'light' ? $keep-success-border-color : $dark-keep-success-border-color
+
+  // keep danger color
+  --keep-danger-color mode == 'light' ? $keep-danger-color : $dark-keep-danger-color
+  --keep-danger-background-color mode == 'light' ? $keep-danger-background-color : $dark-keep-danger-background-color
+  --keep-danger-border-color mode == 'light' ? $keep-danger-border-color : $dark-keep-danger-border-color
+}
+
+
+:root {
+  root-color('light')
+}
+
+
+@media (prefers-color-scheme light) {
+  :root {
+    root-color('light')
+  }
+}
+
+
+@media (prefers-color-scheme dark) {
+  :root {
+    root-color('dark')
+  }
+}
+
+
+.light-mode {
+  root-color('light')
+}
+
+
+.dark-mode {
+  root-color('dark')
+}

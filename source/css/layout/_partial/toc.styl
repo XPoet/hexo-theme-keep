@@ -1,6 +1,4 @@
 .post-toc-wrap {
-  position relative
-  box-sizing border-box
   width 100%
   height 100%
   overflow-y auto
@@ -18,69 +16,94 @@
   .post-toc {
 
     ol {
+      position relative
+      box-sizing border-box
       margin 0
-      padding 0 0.1rem 0.8rem 0.6rem
       text-align left
       list-style none
 
-      &:last-child {
-        padding-bottom 0
-      }
-
-      > ol {
-        padding-left 0
-      }
-
       a {
         transition-property all
-        transition()
       }
-    }
-
-
-    .nav-item {
-      margin-bottom 0.2rem
-      overflow hidden
-      line-height 1.8
-      white-space nowrap
-      text-overflow ellipsis
     }
 
 
     .nav {
-      .nav-child {
-        display hexo-config('toc.expand_all') ? block:none
-      }
 
-      .active > .nav-child {
-        display block
-      }
+      .nav-item {
+        position relative
+        box-sizing border-box
+        overflow hidden
+        line-height 2
+        white-space nowrap
+        text-overflow ellipsis
 
-      .active-current > .nav-child {
-        display block
 
-        > .nav-item {
-          display block
+        &.active {
+          > .nav-child {
+            display block
+          }
         }
-      }
 
 
-      .nav-number
-      .nav-text {
-        color var(--toc-text-color)
-      }
+        .nav-link {
+          position relative
+          box-sizing border-box
+          padding-left 0.8rem
 
-      .active > a {
-        .nav-number
-        .nav-text {
-          color var(--primary-color)
+          &:hover {
+            .nav-number
+            .nav-text {
+              color var(--primary-color)
+            }
+          }
+
+          &.active-current {
+            > .nav-child {
+              display block
+
+              > .nav-item {
+                display block
+              }
+            }
+
+
+            &::before {
+              position absolute
+              top 50%
+              left 0
+              width 0.2rem
+              height 1.2rem
+              background var(--primary-color)
+              border-radius 0.2rem
+              transform translateY(-50%)
+              content ''
+            }
+
+            .nav-number
+            .nav-text {
+              color var(--primary-color)
+            }
+          }
+
+
+          .nav-number
+          .nav-text {
+            color var(--toc-text-color)
+          }
         }
-      }
 
-      .active-current > a {
-        .nav-number
-        .nav-text {
-          color var(--primary-color)
+
+        .nav-child {
+          padding-left 1rem
+
+
+          if (hexo-config('toc') && hexo-config('toc.expand_all') == true) {
+            display block
+          }
+          else {
+            display none
+          }
         }
       }
     }

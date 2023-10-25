@@ -1,13 +1,14 @@
 <%
-const { enable: pjax_enable } = theme?.pjax
+const { enable: pjax_enable } = theme?.pjax || {}
 const {
     appid,
     appkey,
     server_urls,
     placeholder
-} = theme.comment?.valine
+} = theme?.comment?.valine || {}
 let cdn_url = '//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
-const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+
 if (t_cdn_enable === true) {
     switch (t_cdn_provider) {
         case 'jsdelivr':
@@ -35,7 +36,7 @@ if (t_cdn_enable === true) {
               avatar: 'wavatar',
               enableQQ: true,
               placeholder: '<%= placeholder %>',
-              lang: '<%= config.language %>'.toLowerCase()
+              lang: '<%= config?.language || 'zh-CN' %>'.toLowerCase()
             }
 
             if ('<%= server_urls %>') {
@@ -50,6 +51,8 @@ if (t_cdn_enable === true) {
                   return 'Author'
                 case 'zh-CN':
                   return '博主'
+                case 'zh-TW':
+                  return '站長'
                 default:
                   return 'Master'
               }
@@ -59,7 +62,7 @@ if (t_cdn_enable === true) {
             const getValineDomTimer = setInterval(() => {
               const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
               if (vcards.length > 0) {
-                let author = '<%= theme.base_info.author || config.author %>'
+                let author = '<%= theme?.base_info?.author || config.author %>'
 
                 if (author) {
                   for (let vcard of vcards) {
@@ -87,4 +90,6 @@ if (t_cdn_enable === true) {
           }
         </script>
     </div>
+<% } else { %>
+    <div class="error-tips">Please fill in Valine complete configuration items.</div>
 <% } %>

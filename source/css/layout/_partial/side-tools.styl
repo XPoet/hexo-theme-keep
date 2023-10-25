@@ -1,15 +1,23 @@
 $tools-item-width = 2.2rem
 $tools-item-font-size = 1.1rem
-$tools-item-border-radius = 0.1rem
+$tools-item-border-radius = 0.2rem
 
+.side-tools-show-handle {
+  transform translateX(100%)
+  opacity 0
+  transition-t("transform, opacity", "0, 0", "0.26, 0.26", "linear, linear")
+
+  &.show {
+    transform translateX(0)
+    opacity 1
+  }
+}
 
 .side-tools-container {
-  position relative
-
   .tools-item {
     width $tools-item-width
     height $tools-item-width
-    margin-bottom 0.2rem
+    margin-bottom 0.25rem
     color var(--text-color-3)
     font-size $tools-item-font-size
     background var(--background-color-1)
@@ -32,11 +40,16 @@ $tools-item-border-radius = 0.1rem
       }
     }
 
+
     +keep-tablet() {
       width $tools-item-width * 0.9
       height $tools-item-width * 0.9
-      margin-bottom 0.2rem
       font-size $tools-item-font-size * 0.9
+
+      &.toggle-show-toc-tablet
+      &.go-to-comments-tablet {
+        display flex !important
+      }
     }
 
     &.rss {
@@ -53,50 +66,59 @@ $tools-item-border-radius = 0.1rem
         }
       }
     }
-  }
 
-
-  .side-tools-list {
-    transform translateX(100%)
-    opacity 0
-    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "linear, linear")
-
-    &.show {
-      transform translateX(0)
-      opacity 1
+    &.toggle-show-toc-tablet
+    &.go-to-comments-tablet {
+      display none
     }
   }
 
 
   .exposed-tools-list {
 
-    if (hexo-config('style.scroll.percent') == true) {
-      .tool-scroll-to-top {
-        display none
+    .tool-scroll-to-top {
+      display none
 
-        &.show {
-          display flex
-        }
+      &.show {
+        display flex
+      }
 
-        &:hover {
 
-          .percent {
-            display none
-          }
-
-          .arrow-up {
-            display flex
-          }
-        }
-
-        .arrow-up {
+      &.show-arrow {
+        .percent {
           display none
         }
 
+        .arrow {
+          display flex
+        }
+      }
+
+
+      &.show-percent {
         .percent {
           display flex
-          font-size 1rem
         }
+
+        .arrow {
+          display none
+        }
+      }
+
+
+      &:hover {
+        .percent {
+          display none
+        }
+
+        .arrow {
+          display flex
+        }
+      }
+
+
+      .percent {
+        font-size 1rem
       }
     }
   }

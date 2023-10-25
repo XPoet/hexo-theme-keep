@@ -4,5 +4,16 @@
 <body>
 <%- body %>
 <%- partial('_partial/scripts') %>
+<% if (theme?.inject?.enable === true) { %>
+    <% theme?.inject?.js?.forEach((js_path) => { %>
+        <% if (js_path && isJsFile(js_path)) { %>
+            <%- js({
+                class: 'custom-inject-js',
+                src: js_path,
+                'data-pjax': true
+            }) %>
+        <% } %>
+    <% }) %>
+<% } %>
 </body>
 </html>

@@ -1,0 +1,76 @@
+$border-height = 2px
+
+.keep-tabs {
+  position relative
+  box-sizing border-box
+  width 100%
+  height auto
+  background var(--background-color)
+  border-radius 0.4rem
+  box-shadow 0.1rem 0.1rem 0.5rem var(--shadow-color)
+
+  .tabs-nav {
+    position relative
+    display flex
+    justify-content flex-start
+    box-sizing border-box
+    list-style none
+
+    &::before {
+      position absolute
+      bottom 0
+      left 0
+      box-sizing border-box
+      width 100%
+      height $border-height
+      background var(--border-color)
+      content ''
+    }
+
+    .tab {
+      position relative
+      box-sizing border-box
+      margin-right 0.8rem
+      padding 1rem 0.6rem
+      overflow hidden
+      color var(--text-color-3)
+      cursor pointer
+
+      &.active {
+        font-weight 600
+
+        &::before {
+          position absolute
+          bottom 0
+          left 50%
+          box-sizing border-box
+          width 100%
+          height $border-height
+          background var(--primary-color)
+          border-radius 0.2rem
+          transform translateX(-50%)
+          content ''
+        }
+      }
+    }
+  }
+
+
+  .tabs-content {
+    position relative
+    box-sizing border-box
+
+    .tab-pane {
+      position relative
+      box-sizing border-box
+      width 100%
+      height auto
+      min-height 10rem
+      padding 0.6rem 0.8rem
+
+      &:not(.active) {
+        display none
+      }
+    }
+  }
+}

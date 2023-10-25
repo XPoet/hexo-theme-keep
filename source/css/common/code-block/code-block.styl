@@ -17,7 +17,7 @@
     .code-tools-box {
       justify-content flex-end
       padding 0.4rem 0.6rem 0.7rem 0.4rem
-      background #21252b
+      background var(--mac-toolbar-background-color)
 
       &::before {
         position absolute
@@ -61,6 +61,7 @@
         position absolute
         top 3rem
         right 0.5rem
+        box-sizing border-box
         padding 0 0.1rem
         opacity 0
         transition-t("opacity", "0", "0.2", "ease-in-out")
@@ -74,6 +75,8 @@
 
 
   .code-tools-box {
+    position relative
+    z-index $z-index-1
     display flex
     align-items center
     justify-content space-between
@@ -98,7 +101,7 @@
       font-weight 600
       font-size 0.9rem
       font-family "Source Code Pro", consolas, Menlo
-      if (hexo-config('code_block.highlight_theme') == 'default') {
+      if (hexo-config('code_block') && hexo-config('code_block.highlight_theme') == 'default') {
         color var(--text-color-3)
       }
     }
@@ -110,7 +113,7 @@
 
       i {
         font-size 0.8rem
-        if (hexo-config('code_block.highlight_theme') == 'default') {
+        if (hexo-config('code_block') && hexo-config('code_block.highlight_theme') == 'default') {
           color var(--text-color-3)
         }
       }
@@ -124,6 +127,8 @@
 
 
   figure.highlight {
+    position relative
+    box-sizing border-box
     margin 0
 
     &.folded {
