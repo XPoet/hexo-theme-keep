@@ -74,20 +74,42 @@ $first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
       .sc-icon-list {
         display flex
         justify-content center
-        box-sizing border-box
-        font-size var(--first-screen-icon-size)
-
-
-        +keep-tablet() {
-          font-size calc(var(--first-screen-icon-size) * 0.9)
-        }
 
         .sc-icon-item {
+          display flex
+          align-items center
           margin 0 1rem
           cursor pointer
 
           i {
             color var(--text-color-3)
+            font-size var(--first-screen-icon-size)
+          }
+
+          svg {
+            width var(--first-screen-icon-size)
+            height var(--first-screen-icon-size)
+
+            path {
+              fill var(--text-color-3)
+            }
+          }
+
+
+          +keep-tablet() {
+            i {
+              font-size calc(var(--first-screen-icon-size) * 0.9)
+            }
+
+            svg {
+              width calc(var(--first-screen-icon-size) * 0.9)
+              height calc(var(--first-screen-icon-size) * 0.9)
+            }
+          }
+
+          a {
+            display flex !important
+            align-items center !important
           }
         }
       }
