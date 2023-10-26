@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.6](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.5...v3.8.6) (2023-10-26)
+
+
+### 🛠 Performance Improvements
+
+* **first-screen:** support for configuring custom svg icons ([#213](https://github.com/XPoet/hexo-theme-keep/issues/213)) ([1198444](https://github.com/XPoet/hexo-theme-keep/commit/1198444c6024862a2c7639032be274ecf5699d4f))
+
 ## [3.8.5](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.4...v3.8.5) (2023-10-17)
 
 
