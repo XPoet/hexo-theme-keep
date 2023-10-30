@@ -24,7 +24,7 @@ KEEP.initHeaderShrink = () => {
 
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       const isHeaderTransparent =
-        KEEP.theme_config?.style?.first_screen?.enable === true &&
+        KEEP.theme_config?.first_screen?.enable === true &&
         !window.location.pathname.includes('/page/')
 
       if (!this.isHeaderShrink && scrollTop > this.headerHeight) {

@@ -1,5 +1,5 @@
 <%
-const { description: fs_description, hitokoto: fs_hitokoto } = theme?.style?.first_screen || {}
+const { description: fs_description, hitokoto: fs_hitokoto } = theme?.first_screen || {}
 let final_description = fs_description || ''
 final_description = final_description.split('||').map(desc => desc.trim())
 if (final_description.length > 2) { final_description.length = 2 }

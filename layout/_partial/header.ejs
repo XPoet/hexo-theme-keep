@@ -1,7 +1,7 @@
 <%
 const { title: bi_title, logo_img: bi_logo_img } = theme?.base_info || {}
-const { logo: s_logo, first_screen: s_first_screen } = theme?.style || {}
-const { enable: s_fs_enable } = s_first_screen || {}
+const { logo: s_logo } = theme?.style || {}
+const { enable: s_fs_enable } = theme?.first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
 const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
 %>

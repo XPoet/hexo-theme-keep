@@ -34,20 +34,6 @@ style:
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.svg
 
-  # First screen style settings
-  first_screen:
-    enable: false  # Option values: true | false
-
-    # First screen background image (You can use local image or image external link)
-    background_img: /images/bg.svg
-
-    # First screen description
-    # You can use the "||" to begin a newline, maximum is two lines.
-    description: Keep writing and Keep loving.
-
-    # If enable hitokoto, first screen description is different every time when you enter the site
-    hitokoto: false      # Option values: true | false
-
   # Page scroll style settings
   scroll:
     # Show progress bar in top when page scroll
@@ -55,6 +41,20 @@ style:
 
     # Show percent when page scroll
     percent: false       # Option values: true | false
+
+# First screen style settings
+first_screen:
+  enable: false  # Option values: true | false
+
+  # First screen background image (You can use local image or image external link)
+  background_img: /images/bg.svg
+
+  # First screen description
+  # You can use the "||" to begin a newline, maximum is two lines.
+  description: Keep writing and Keep loving.
+
+  # If enable hitokoto, first screen description is different every time when you enter the site
+  hitokoto: false      # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu

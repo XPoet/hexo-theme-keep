@@ -21,7 +21,8 @@ KEEP.initUtils = () => {
 
     // initialization data
     initData() {
-      const { scroll, first_screen } = KEEP.theme_config?.style || {}
+      const { scroll } = KEEP.theme_config?.style || {}
+      const first_screen = KEEP.theme_config?.first_screen || {}
       this.isHasScrollProgressBar = scroll?.progress_bar === true
       this.isHasScrollPercent = scroll?.percent === true
       this.isHeaderTransparent =
@@ -576,7 +577,7 @@ KEEP.initUtils = () => {
 
     // first screen typewriter
     initTypewriter() {
-      const fsc = KEEP.theme_config?.style?.first_screen || {}
+      const fsc = KEEP.theme_config?.first_screen || {}
       const isHitokoto = fsc?.hitokoto === true
 
       if (fsc?.enable !== true) {
