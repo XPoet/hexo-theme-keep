@@ -1,17 +1,24 @@
 if (hexo-config('first_screen')) {
-  $temp-img = hexo-config('first_screen.background_img')
+  $temp-fs-bg-img-light = hexo-config('first_screen.background_img')
+  $temp-fs-bg-img-dark = hexo-config('first_screen.background_img_dark')
 }
 else {
-  $temp-img = ''
+  $temp-fs-bg-img-light = ''
+  $temp-fs-bg-img-dark = ''
 }
 
-$first-screen-img = $temp-img ? $temp-img : '/images/bg.svg'
+$fs-bg-img-light = $temp-fs-bg-img-light ? $temp-fs-bg-img-light : '/images/bg.svg'
+$fs-bg-img-dark = $temp-fs-bg-img-dark ? $temp-fs-bg-img-dark : $fs-bg-img-light
 
 .first-screen-container {
   width 100%
   height 100vh
   overflow hidden
-  background url($first-screen-img) center center / cover no-repeat
+  background url($fs-bg-img-light) center center / cover no-repeat
+
+  .dark-mode & {
+    background url($fs-bg-img-dark) center center / cover no-repeat
+  }
 
   .first-screen-content {
     display flex

@@ -46,8 +46,11 @@ style:
 first_screen:
   enable: false  # Option values: true | false
 
-  # First screen background image (You can use local image or image external link)
+  # First screen background image (You can use local image path or image link)
   background_img: /images/bg.svg
+
+  # First screen background image in dark mode (You can use local image path or image link)
+  background_img_dark: /images/bg.svg
 
   # First screen description
   # You can use the "||" to begin a newline, maximum is two lines.
