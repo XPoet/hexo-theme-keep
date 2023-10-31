@@ -33,8 +33,8 @@
                         <div class="info-box">
                             <div class="author">
                                 <span class="name"><%= theme?.base_info?.author || config?.author %></span>
-                                <% if (theme?.post?.author_label?.enable === true) { %>
-                                    <span class="author-label"><%- getAuthorLabel(site.posts.length, theme?.post?.author_label) %></span>
+                                <% if (theme?.post?.author_badge?.enable === true) { %>
+                                    <span class="author-badge"><%- getAuthorBadge(site.posts.length, theme?.post?.author_badge) %></span>
                                 <% } %>
                             </div>
                             <div class="meta-info border-box">

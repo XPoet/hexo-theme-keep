@@ -108,16 +108,16 @@ scroll:
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/post.html
 # ---------------------------------------------------------------------------------------
 post:
-  # Author label in the post
-  author_label:
-    enable: true       # Option values: true | false
+  # Author badge in the post
+  author_badge:
+    enable: true         # Option values: true | false
 
     # If true, show Lv1, Lv2, Lv3 ...
-    # If false, show custom_label_list
-    auto: true    # Option values: true | false
+    # If false, show custom badge
+    level_badge: true    # Option values: true | false
 
-    # Label array item can be fill one or more
-    custom_label_list: ["Trainee", "Engineer", "Architect"]
+    # Badge array item can be fill one or more
+    custom_badge: ["Trainee", "Engineer", "Architect"]
 
   # Post word count
   # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
