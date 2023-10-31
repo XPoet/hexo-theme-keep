@@ -34,15 +34,9 @@ style:
   # Avatar (You can use local image or image external link)
   avatar: /images/avatar.svg
 
-  # Page scroll style settings
-  scroll:
-    # Show progress bar in top when page scroll
-    progress_bar: false  # Option values: true | false
-
-    # Show percent when page scroll
-    percent: false       # Option values: true | false
-
+# ---------------------------------------------------------------------------------------
 # First screen style settings
+# ---------------------------------------------------------------------------------------
 first_screen:
   enable: false  # Option values: true | false
 
@@ -58,6 +52,16 @@ first_screen:
 
   # If enable hitokoto, first screen description is different every time when you enter the site
   hitokoto: false      # Option values: true | false
+
+# ---------------------------------------------------------------------------------------
+# Page scroll style settings
+# ---------------------------------------------------------------------------------------
+scroll:
+  # Show progress bar in top when page scroll
+  progress_bar: false  # Option values: true | false
+
+  # Show percent when page scroll
+  percent: false       # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu

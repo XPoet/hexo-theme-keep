@@ -21,7 +21,7 @@ KEEP.initUtils = () => {
 
     // initialization data
     initData() {
-      const { scroll } = KEEP.theme_config?.style || {}
+      const scroll = KEEP.theme_config?.scroll || {}
       const first_screen = KEEP.theme_config?.first_screen || {}
       this.isHasScrollProgressBar = scroll?.progress_bar === true
       this.isHasScrollPercent = scroll?.percent === true
