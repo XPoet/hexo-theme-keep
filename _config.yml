@@ -10,28 +10,22 @@
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html
 # ---------------------------------------------------------------------------------------
 base_info:
+  # Theme primary color
+  primary_color: "#0066cc"
+
   # Your blog website title
   title: Keep Theme
 
   # Your blog website author name
   author: Keep Team
 
-# ---------------------------------------------------------------------------------------
-# Theme style settings
-# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/style.html
-# ---------------------------------------------------------------------------------------
-style:
-  # Theme primary color
-  primary_color: "#0066cc"
-
-  # Your blog website logo image
-  # You can use local image, image external link or don't fill
+  # Logo (You can use local image path, image link or don't fill)
   logo: /images/logo.svg
 
-  # Favicon (You can use local image or image external link)
+  # Favicon (You can use local image path or image external link)
   favicon: /images/logo.svg
 
-  # Avatar (You can use local image or image external link)
+  # Avatar (You can use local image path or image external link)
   avatar: /images/avatar.svg
 
 # ---------------------------------------------------------------------------------------

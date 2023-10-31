@@ -1,6 +1,5 @@
 <%
-const { title: bi_title, logo_img: bi_logo_img } = theme?.base_info || {}
-const { logo: s_logo } = theme?.style || {}
+const { title: bi_title, logo: bi_logo } = theme?.base_info || {}
 const { enable: s_fs_enable } = theme?.first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
 const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
@@ -9,9 +8,9 @@ const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
 
     <div class="border-box header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left border-box">
-            <% if (s_logo || bi_logo_img) { %>
+            <% if (bi_logo) { %>
                 <a class="logo-image border-box" href="/">
-                    <%- image_tag(s_logo || bi_logo_img) %>
+                    <%- image_tag(bi_logo) %>
                 </a>
             <% } %>
             <a class="site-name border-box" href="/">
