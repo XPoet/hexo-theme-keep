@@ -19,14 +19,30 @@ base_info:
   # Your blog website author name
   author: Keep Team
 
+  # Avatar (You can use local image path or image external link)
+  avatar: /images/avatar.svg
+
   # Logo (You can use local image path, image link or don't fill)
   logo: /images/logo.svg
 
   # Favicon (You can use local image path or image external link)
   favicon: /images/logo.svg
 
-  # Avatar (You can use local image path or image external link)
-  avatar: /images/avatar.svg
+# ---------------------------------------------------------------------------------------
+# Navigation menu
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/menu.html
+# ---------------------------------------------------------------------------------------
+# If you want to enable Categories and Tags, you need to create categories and tags pages
+# e.g. `hexo new page categories` or `hexo new page tags`
+menu:
+  Home: /
+  Archives: /archives
+  # Tags: /tags
+  # Categories: /categories
+  # Links: /links
+  # About: /about
+  # Changelog: /changelog
+  # ......
 
 # ---------------------------------------------------------------------------------------
 # First screen style settings
@@ -46,32 +62,6 @@ first_screen:
 
   # If enable hitokoto, first screen description is different every time when you enter the site
   hitokoto: false      # Option values: true | false
-
-# ---------------------------------------------------------------------------------------
-# Page scroll style settings
-# ---------------------------------------------------------------------------------------
-scroll:
-  # Show progress bar in top when page scroll
-  progress_bar: false  # Option values: true | false
-
-  # Show percent when page scroll
-  percent: false       # Option values: true | false
-
-# ---------------------------------------------------------------------------------------
-# Navigation menu
-# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/menu.html
-# ---------------------------------------------------------------------------------------
-# If you want to enable Categories and Tags, you need to create categories and tags pages
-# e.g. `hexo new page categories` or `hexo new page tags`
-menu:
-  Home: /
-  Archives: /archives
-  # Tags: /tags
-  # Categories: /categories
-  # Links: /links
-  # About: /about
-  # Changelog: /changelog
-  # ......
 
 # ---------------------------------------------------------------------------------------
 # Social contact link
@@ -99,13 +89,19 @@ social_contact:
 # ---------------------------------------------------------------------------------------
 home_article:
   # Show category in home page article block
-  category:
-    enable: false  # Option values: true | false
-    limit: 3       # Max number of categories shown in home page article block
+  category: false  # Option values: true | false
   # Show tags in home page article block
-  tag:
-    enable: false  # Option values: true | false
-    limit: 5       # Max number of tags shown in home page article block
+  tag: false  # Option values: true | false
+
+# ---------------------------------------------------------------------------------------
+# Page scroll style settings
+# ---------------------------------------------------------------------------------------
+scroll:
+  # Show progress bar in top when page scroll
+  progress_bar: false  # Option values: true | false
+
+  # Show percent when page scroll
+  percent: false       # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Post page Settings
