@@ -84,16 +84,6 @@ social_contact:
 
 
 # ---------------------------------------------------------------------------------------
-# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/home_article.html
-# ---------------------------------------------------------------------------------------
-home_article:
-  # Show category in home page article block
-  category: false  # Option values: true | false
-  # Show tags in home page article block
-  tag: false  # Option values: true | false
-
-
-# ---------------------------------------------------------------------------------------
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/scroll.html
 # ---------------------------------------------------------------------------------------
 scroll:
@@ -102,6 +92,18 @@ scroll:
 
   # Show percent when page scroll
   percent: false       # Option values: true | false
+
+
+# ---------------------------------------------------------------------------------------
+# Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/home.html
+# ---------------------------------------------------------------------------------------
+home:
+  # Show category in home page article block
+  category: false  # Option values: true | false
+  # Show tags in home page article block
+  tag: false  # Option values: true | false
+  # Website announcement in home page
+  announcement:
 
 
 # ---------------------------------------------------------------------------------------

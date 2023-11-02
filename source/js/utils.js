@@ -649,6 +649,19 @@ KEEP.initUtils = () => {
         document.querySelector('.article-meta-info-container .article-category-ul')
       )
       this.removeWhitespace(document.querySelector('.article-meta-info-container .article-tag-ul'))
+    },
+
+    // close website announcement
+    closeWebsiteAnnouncement() {
+      if (KEEP.theme_config?.home?.announcement) {
+        const waDom = document.querySelector('.home-content-container .website-announcement')
+        if (waDom) {
+          const closeDom = waDom.querySelector('.close')
+          closeDom.addEventListener('click', () => {
+            waDom.style.display = 'none'
+          })
+        }
+      }
     }
   }
 
@@ -665,4 +678,5 @@ KEEP.initUtils = () => {
   KEEP.utils.tabsActiveHandle()
   KEEP.utils.initTypewriter()
   KEEP.utils.trimPostMetaInfoBar()
+  KEEP.utils.closeWebsiteAnnouncement()
 }
