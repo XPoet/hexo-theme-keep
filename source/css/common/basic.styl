@@ -25,7 +25,7 @@
 
   &::-webkit-scrollbar-thumb {
     background var(--scrollbar-color)
-    border-radius 0.1rem
+    border-radius 0.2rem
   }
 
   &::-webkit-scrollbar-track {
@@ -53,29 +53,19 @@ body {
   background var(--background-color-1)
 
   &::-webkit-scrollbar {
-    width 0.6rem
-    height 0.6rem
-  }
-
-  +keep-tablet() {
-    &::-webkit-scrollbar {
-      width 0.5rem
-      height 0.5rem
-    }
-  }
-
-  +keep-mobile() {
-    &::-webkit-scrollbar {
-      width 0.4rem
-      height 0.4rem
-    }
+    width 0.56rem
+    height 0.56rem
   }
 
   +keep-tablet() {
     font-size calc(var(--base-font-size) * 0.95) !important
     line-height calc(var(--base-line-height) * 0.95) !important
-  }
 
+    &::-webkit-scrollbar {
+      width 0.42rem
+      height 0.42rem
+    }
+  }
 
   +keep-mobile() {
     font-size calc(var(--base-font-size) * 0.9) !important

@@ -1,7 +1,7 @@
-$site-name-font-size = 1.88rem
+$site-name-font-size = 1.8rem
 $pc-search-icon-font-size = 1.5rem
 $menu-bar-line-height = 2.5px
-$logo-image-box-width = 2.8rem
+$logo-image-box-width = 2.68rem
 
 .header-wrapper {
   display flex
@@ -57,10 +57,10 @@ $logo-image-box-width = 2.8rem
       height 100%
       font-size 2rem
 
-      transition-t("transform", "0", "0.2", "linear")
+      transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
 
       .header-shrink & {
-        transform scale(0.72)
+        transform scale(0.78)
         transform-origin left
       }
 
@@ -137,24 +137,29 @@ $logo-image-box-width = 2.8rem
               margin-left 0
             }
 
-
-            a:hover
-            .active {
-
-              &::after {
+            a {
+              &::before {
                 position absolute
                 bottom -10px
                 left 50%
                 box-sizing border-box
-                width 100%
-                height 2px
+                width 0
+                height 2.6px
                 background var(--primary-color)
+                border-radius 3px
                 transform translateX(-50%)
                 content ''
-                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear")
+                transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
 
                 .header-shrink & {
                   bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
+                }
+              }
+
+              &:hover
+              &.active {
+                &::before {
+                  width 100%
                 }
               }
             }
