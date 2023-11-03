@@ -16,8 +16,6 @@ categories: 分類
 tag: 標籤
 tags: 標籤
 tagcloud: 標籤雲
-comment: 留言
-comments: 留言
 home: 首頁
 archive: 歸檔
 archives: 歸檔
@@ -92,3 +90,9 @@ post:
     weibo: "分享到微博"
     wechat_scan: "微信掃壹掃"
   reward: 給作者打賞
+comment:
+  comments: 留言
+  fail_tip: 評論插件加載失敗
+  reload: 點擊重新加載
+  loading: 正在加載評論插件
+  config_error: "請完整填寫 %s 評論插件必需的配置項"

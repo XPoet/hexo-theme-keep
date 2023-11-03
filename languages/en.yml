@@ -16,8 +16,6 @@ categories: Categories
 tag: Tag
 tags: Tags
 tagcloud: Tag Cloud
-comment: Comment
-comments: Comments
 home: Home
 archive: Archive
 archives: Archives
@@ -92,3 +90,9 @@ post:
     weibo: "Share to WeiBo"
     wechat_scan: "Scan by WeChat"
   reward: Reward Author
+comment:
+  comments: Comments
+  fail_tip: Comment plugin failed to load
+  reload: Click to reload
+  loading: Loading comment plugin
+  config_error: "Please fill in the required configuration items for %s comment plugin"

@@ -16,8 +16,6 @@ categories: 分类
 tag: 标签
 tags: 标签
 tagcloud: 标签云
-comment: 评论
-comments: 评论
 home: 首页
 archive: 归档
 archives: 归档
@@ -92,3 +90,9 @@ post:
     weibo: "分享到微博"
     wechat_scan: "微信扫一扫"
   reward: 打赏作者
+comment:
+  comments: 评论
+  fail_tip: 评论插件加载失败
+  reload: 点击重新加载
+  loading: 正在加载评论插件
+  config_error: "请完整填写 %s 评论插件必需的配置项"
