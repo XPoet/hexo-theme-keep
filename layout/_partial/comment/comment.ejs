@@ -21,6 +21,8 @@ const {
             <%- partial('./plugins/waline') %>
         <% } else if (theme_comment_use === 'giscus') { %>
             <%- partial('./plugins/giscus') %>
+        <% } else if (theme_comment_use === 'artalk') { %>
+            <%- partial('./plugins/artalk') %>
         <% } %>
     </div>
 <% } %>
