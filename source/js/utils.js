@@ -17,6 +17,7 @@ KEEP.initUtils = () => {
     isHasScrollProgressBar: false,
     isHasScrollPercent: false,
     isHeaderTransparent: false,
+    isHideHeader: true,
     hasToc: false,
 
     // initialization data
@@ -30,6 +31,7 @@ KEEP.initUtils = () => {
       if (!this.isHeaderTransparent) {
         this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
       }
+      this.isHideHeader = scroll?.hide_header !== false
     },
 
     // scroll Style Handle
@@ -73,12 +75,16 @@ KEEP.initUtils = () => {
 
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTopDom.classList.add('hide')
+        if (this.isHideHeader) {
+          this.pageTopDom.classList.add('hide')
+        }
         if (this.isHeaderTransparent) {
           this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
         }
       } else {
-        this.pageTopDom.classList.remove('hide')
+        if (this.isHideHeader) {
+          this.pageTopDom.classList.remove('hide')
+        }
         if (this.isHeaderTransparent) {
           if (scrollTop <= this.headerWrapperDom.getBoundingClientRect().height) {
             this.headerWrapperDom.classList.remove('transparent-2')
