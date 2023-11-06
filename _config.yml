@@ -203,7 +203,7 @@ local_search:
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
-  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus
+  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus | disqus
 
   # Valine
   # See: https://github.com/xCss/Valine
@@ -251,6 +251,11 @@ comment:
     category: Announcements    # Recommend use Announcements
     category_id:
     reactions_enabled: false   # Option values: true | false
+
+  # Disqus
+  # See: https://disqus.com/
+  disqus:
+    disqus_short_name:           # Site Shortname
 
 # ---------------------------------------------------------------------------------------
 # RSS
