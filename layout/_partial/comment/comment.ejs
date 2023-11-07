@@ -20,6 +20,8 @@ const {
             <%- partial('waline') %>
         <% } else if (theme_comment_use === 'giscus') { %>
             <%- partial('giscus') %>
+        <% } else if (theme_comment_use === 'disqus') {%>
+            <%- partial('disqus') %>
         <% } %>
     </div>
 <% } %>
