@@ -208,7 +208,7 @@ local_search:
 # ---------------------------------------------------------------------------------------
 comment:
   enable: false   # Option values: true | false
-  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus | artalk
+  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus | artalk | disqus
 
   # Valine
   # See: https://github.com/xCss/Valine
@@ -262,6 +262,11 @@ comment:
   #      https://artalk.js.org
   artalk:
     server:     # Server URL
+
+  # Disqus
+  # See: https://disqus.com/
+  disqus:
+    shortname:                 # Disqus Shortname
 
 
 # ---------------------------------------------------------------------------------------

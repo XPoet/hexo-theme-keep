@@ -23,6 +23,8 @@ const {
             <%- partial('./plugins/giscus') %>
         <% } else if (theme_comment_use === 'artalk') { %>
             <%- partial('./plugins/artalk') %>
+        <% } else if (theme_comment_use === 'disqus') { %>
+            <%- partial('./plugins/disqus') %>
         <% } %>
     </div>
 <% } %>
