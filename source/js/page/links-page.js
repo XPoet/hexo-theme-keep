@@ -2,6 +2,11 @@
 
 function linksPageHandle() {
   const friendsLinkBoxDom = document.querySelector('.friends-link-list')
+
+  if (!friendsLinkBoxDom) {
+    return
+  }
+
   const linkTypeDoms = friendsLinkBoxDom.querySelectorAll('.link-type-title')
   const linkItemDoms = friendsLinkBoxDom.querySelectorAll('.friends-link-item')
   const linksCount = linkItemDoms.length
@@ -18,11 +23,7 @@ function linksPageHandle() {
     ltd.style.gridColumn = `span ${columns}`
 
     let folded = false
-
-    // 创建一个数组来存储所有后续兄弟元素
     const siblings = []
-
-    // 开始循环查找后续兄弟元素
     let nextSibling = ltd.nextElementSibling
 
     while (nextSibling) {
@@ -44,7 +45,7 @@ function linksPageHandle() {
   })
 }
 
-if (KEEP.theme_config.pjax.enable === true && KEEP.utils) {
+if (KEEP.theme_config?.pjax?.enable === true && KEEP.utils) {
   linksPageHandle()
 } else {
   window.addEventListener('DOMContentLoaded', linksPageHandle)

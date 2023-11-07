@@ -46,12 +46,17 @@
 
     <!-- category-page -->
     <% if (isCategoriesPage(page.path) === true) { %>
-        <%- __js('js/category-page.js') %>
+        <%- __js('js/page/category-page.js') %>
     <% } %>
 
     <!-- links-page -->
     <% if (isLinksPage(page.path) === true) { %>
-        <%- __js('js/links-page.js') %>
+        <%- __js('js/page/links-page.js') %>
+    <% } %>
+
+    <!-- photos-page -->
+    <% if (isPhotosPage(page.path) === true) { %>
+        <%- __js('js/page/photos-page.js') %>
     <% } %>
 </div>
 

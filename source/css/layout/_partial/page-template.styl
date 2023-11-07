@@ -1,6 +1,7 @@
 $friend-link-item-height = 5.2rem
 $friend-link-item-height-tablet = 4.2rem
 $friend-link-item-border-radius = 0.6rem
+$album-img-gap = 0.8rem
 
 .page-template-container {
   keep-container(1, 2rem, 2rem)
@@ -23,7 +24,6 @@ $friend-link-item-border-radius = 0.6rem
 
 
   if (hexo-config('menu') && hexo-config('menu.Links')) {
-
     .friends-link-list {
       display grid
       grid-gap 1.2rem
@@ -197,6 +197,22 @@ $friend-link-item-border-radius = 0.6rem
             }
           }
         }
+      }
+    }
+  }
+
+
+  if (hexo-config('menu') && hexo-config('menu.Photos')) {
+    .photo-album-box {
+      column-count 3
+      column-gap $album-img-gap
+
+      img.photo {
+        display block
+        width 100%
+        margin-bottom $album-img-gap
+        background var(--background-color-2)
+        border-radius 0.6rem
       }
     }
   }

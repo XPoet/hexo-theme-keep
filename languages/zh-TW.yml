@@ -1,6 +1,20 @@
 # ====================================================================
 # 中文繁体
 # ====================================================================
+menu:
+  category: 分類
+  categories: 分類
+  tag: 標籤
+  tags: 標籤
+  tagcloud: 標籤雲
+  home: 首頁
+  archive: 歸檔
+  archives: 歸檔
+  about: 關於
+  links: 友鏈
+  link: 友鏈
+  photos: 相簿
+  photo: 照片
 search: 搜尋...
 prev: 上一頁
 next: 下一頁
@@ -11,17 +25,6 @@ recent_posts: 之前的文章
 share: 分享
 theme: 主題
 rss_feed: RSS 訂閱
-category: 分類
-categories: 分類
-tag: 標籤
-tags: 標籤
-tagcloud: 標籤雲
-home: 首頁
-archive: 歸檔
-archives: 歸檔
-about: 關於
-links: 友鏈
-link: 友鏈
 top: 頂端
 read_more: 繼續閱讀...
 wordcount: 字數
@@ -60,7 +63,6 @@ copyright:
   license: 許可
   license_title: 版權宣告
   license_content: "這個網站所有文章均使用 %s 授權"
-article-aging: "本文距離上次更新已過去 %s 天，部分內容可能已經過時，請註意甄別。"
 ago:
   second: "%s 秒前"
   minute: "%s 分鐘前"
@@ -84,6 +86,7 @@ footer:
     upyun: 又拍雲
   total_words: 總字數
 post:
+  aging: "本文距離上次更新已過去 %s 天，部分內容可能已經過時，請註意甄別。"
   share:
     qq: "分享到 QQ"
     wechat: "分享到微信"

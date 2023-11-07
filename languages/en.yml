@@ -1,6 +1,20 @@
 # ====================================================================
 # English
 # ====================================================================
+menu:
+  category: Category
+  categories: Categories
+  tag: Tag
+  tags: Tags
+  tagcloud: Tag Cloud
+  home: Home
+  archive: Archive
+  archives: Archives
+  about: About
+  links: Links
+  link: Link
+  photos: Photos
+  photo: Photo
 search: Search...
 prev: Prev
 next: Next
@@ -11,17 +25,6 @@ recent_posts: Recent Posts
 share: Share
 theme: Theme
 rss_feed: RSS Feed
-category: Category
-categories: Categories
-tag: Tag
-tags: Tags
-tagcloud: Tag Cloud
-home: Home
-archive: Archive
-archives: Archives
-about: About
-links: Links
-link: Link
 top: TOP
 read_more: Read more
 wordcount: Words
@@ -60,7 +63,6 @@ copyright:
   license: License
   license_title: Copyright notice
   license_content: "All articles in this blog are licensed under %s unless stating additionally."
-article-aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
 ago:
   second: "%s seconds ago"
   minute: "%s minutes ago"
@@ -84,6 +86,7 @@ footer:
     upyun: UPYUN
   total_words: Total words
 post:
+  aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
   share:
     qq: "Share to QQ"
     wechat: "Share to WeChat"
