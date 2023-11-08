@@ -45,14 +45,12 @@ if (t_cdn_enable === true) {
 
           window.KeepCommentPlugin.initWaline = () => {
             if (window?.Waline) {
-              window.Waline.init({
-                el: '#waline-comment',
-                serverURL: '<%= waline_env_server_url %>',
-                lang: '<%= config.language %>' || 'zh-CN',
-                comment: '.post-comments-count',
-                reaction: '<%= waline_reaction %>' === 'true',
-                ...window.KeepCommentPlugin.walineOptions
-              })
+              window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+              window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+              window.KeepCommentPlugin.walineOptions.serverURL = '<%= waline_env_server_url %>'
+              window.KeepCommentPlugin.walineOptions.lang = '<%= config.language %>' || 'zh-CN'
+              window.KeepCommentPlugin.walineOptions.reaction = '<%= waline_reaction %>' === 'true'
+              window.Waline.init(window.KeepCommentPlugin.walineOptions)
               window.KeepCommentPlugin.hideLoading()
             } else {
               setTimeout(() => {
