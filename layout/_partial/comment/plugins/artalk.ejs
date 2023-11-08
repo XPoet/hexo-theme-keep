@@ -34,18 +34,16 @@ const artalk_js = `${artalk_server_url}/dist/Artalk.js`
           }
 
           window.KeepCommentPlugin.artalkOptions = JSON.parse('<%= JSON.stringify(artalk_options) %>'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.artalkOptions.el = '#artalk-comment'
+          window.KeepCommentPlugin.artalkOptions.server = '<%= artalk_server_url %>'
+          window.KeepCommentPlugin.artalkOptions.locale = '<%= artalk_language %>'
+          window.KeepCommentPlugin.artalkOptions.site = '<%= theme?.base_info?.title %>' || '<%= config?.title %>'
+          window.KeepCommentPlugin.artalkOptions.darkMode = window.KeepCommentPlugin.initArtalkTheme()
+          window.KeepCommentPlugin.artalkOptions.countEl = '.post-comments-count'
 
           window.KeepCommentPlugin.initArtalk = () => {
             if (window?.Artalk) {
-              Artalk.init({
-                el: '#artalk-comment',
-                server: '<%= artalk_server_url %>',
-                locale: '<%= artalk_language %>',
-                site: '<%= theme?.base_info?.title %>' || '<%= config?.title %>',
-                darkMode: window.KeepCommentPlugin.initArtalkTheme(),
-                countEl: '.post-comments-count',
-                ...window.KeepCommentPlugin.artalkOptions
-              })
+              Artalk.init(window.KeepCommentPlugin.artalkOptions)
               window.KeepCommentPlugin.hideLoading()
 
               const toggleThemeBtn = document.querySelector('.tool-dark-light-toggle')
