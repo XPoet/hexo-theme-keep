@@ -89,16 +89,30 @@ $fs-bg-img-dark = $temp-fs-bg-img-dark ? $temp-fs-bg-img-dark : $fs-bg-img-light
           cursor pointer
 
           i {
-            color var(--text-color-3)
+            color var(--first-screen-icon-color-light)
             font-size var(--first-screen-icon-size)
           }
+
 
           svg {
             width var(--first-screen-icon-size)
             height var(--first-screen-icon-size)
 
             path {
-              fill var(--text-color-3)
+              fill var(--first-screen-icon-color-light)
+            }
+          }
+
+
+          .dark-mode & {
+            i {
+              color var(--first-screen-icon-color-dark)
+            }
+
+            svg {
+              path {
+                fill var(--first-screen-icon-color-dark)
+              }
             }
           }
 
@@ -113,6 +127,7 @@ $fs-bg-img-dark = $temp-fs-bg-img-dark ? $temp-fs-bg-img-dark : $fs-bg-img-light
               height calc(var(--first-screen-icon-size) * 0.9)
             }
           }
+
 
           a {
             display flex !important
