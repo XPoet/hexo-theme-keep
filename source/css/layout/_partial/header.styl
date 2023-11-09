@@ -1,4 +1,3 @@
-$site-name-font-size = 1.8rem
 $pc-search-icon-font-size = 1.5rem
 $menu-bar-line-height = 2.5px
 $logo-image-box-width = 2.68rem
@@ -96,16 +95,17 @@ $logo-image-box-width = 2.68rem
       .site-name {
         color var(--text-color-1)
         font-weight 600
-        font-size $site-name-font-size
+        font-size var(--header-title-font-size)
+        font-family var(--header-title-font-family)
         line-height 1
         letter-spacing 1px
 
         +keep-tablet() {
-          font-size $site-name-font-size * 0.9
+          font-size calc(var(--header-title-font-size) * 0.9)
         }
 
         +keep-mobile() {
-          font-size $site-name-font-size * 0.8
+          font-size calc(var(--header-title-font-size) * 0.8)
         }
       }
     }
