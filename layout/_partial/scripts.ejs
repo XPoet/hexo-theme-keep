@@ -4,6 +4,7 @@
     'js/header-shrink.js',
     'js/back2top.js',
     'js/dark-light-toggle.js',
+    'js/code-block.js',
     'js/main.js',
     'js/libs/anime.min.js'
 ]) %>
@@ -11,11 +12,6 @@
 <!-- local-search -->
 <% if (theme?.local_search?.enable === true) { %>
     <%- __js('js/local-search.js') %>
-<% } %>
-
-<!-- code-block -->
-<% if (theme?.code_block?.tools?.enable === true) { %>
-    <%- __js('js/code-block.js') %>
 <% } %>
 
 <!-- lazyload -->

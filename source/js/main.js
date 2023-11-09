@@ -59,14 +59,11 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initHeaderShrink()
     KEEP.initModeToggle()
     KEEP.initBack2Top()
+    KEEP.initCodeBlock()
     KEEP.setFooterVersion()
 
     if (local_search?.enable === true) {
       KEEP.initLocalSearch()
-    }
-
-    if (code_block?.tools?.enable === true) {
-      KEEP.initCodeBlockTools()
     }
 
     if (lazyload?.enable === true) {
