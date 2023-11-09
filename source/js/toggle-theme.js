@@ -2,8 +2,8 @@
 
 KEEP.initModeToggle = () => {
   KEEP.utils.modeToggle = {
-    themeModeToggleBtn: document.querySelector('.tool-dark-light-toggle'),
-    iconDom: document.querySelector('.tool-dark-light-toggle i'),
+    themeModeToggleBtn: document.querySelector('.tool-toggle-theme-mode'),
+    iconDom: document.querySelector('.tool-toggle-theme-mode i'),
 
     enableLightMode() {
       document.body.classList.remove('dark-mode')

@@ -59,7 +59,7 @@ const giscus_language = config?.language || 'zh-CN'
               script.onload = () => {
                 window.KeepCommentPlugin.hideLoading()
               }
-              const toggleThemeBtn = document.querySelector('.tool-dark-light-toggle')
+              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
               toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
                 window.KeepCommentPlugin.changeGiscusTheme()
               })
