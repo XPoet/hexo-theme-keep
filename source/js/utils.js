@@ -154,7 +154,7 @@ KEEP.initUtils = () => {
           `${fs * (1 + fontSizeLevel * 0.05)}px`,
           'important'
         )
-        KEEP.styleStatus.fontSizeLevel = fontSizeLevel
+        KEEP.themeInfo.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
 
@@ -671,6 +671,15 @@ KEEP.initUtils = () => {
           })
         }
       }
+    },
+
+    // wrap table dom with div
+    wrapTableWithBox() {
+      document.querySelectorAll('table').forEach((element) => {
+        const box = document.createElement('div')
+        box.className = 'table-container'
+        element.wrap(box)
+      })
     }
   }
 
@@ -688,4 +697,5 @@ KEEP.initUtils = () => {
   KEEP.utils.initTypewriter()
   KEEP.utils.trimPostMetaInfoBar()
   KEEP.utils.closeWebsiteAnnouncement()
+  KEEP.utils.wrapTableWithBox()
 }

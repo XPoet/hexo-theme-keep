@@ -3,12 +3,6 @@
 KEEP.initCodeBlock = () => {
   if (KEEP.theme_config?.code_block?.tools?.enable === true) {
     KEEP.utils.initCodeBlockTools = () => {
-      HTMLElement.prototype.wrap = function (wrapper) {
-        this.parentNode.insertBefore(wrapper, this)
-        this.parentNode.removeChild(this)
-        wrapper.appendChild(this)
-      }
-
       const { style: codeBlockStyle } = KEEP.theme_config?.code_block || {}
       const { style: codeBlockToolsStyle } = KEEP.theme_config?.code_block?.tools || {}
 

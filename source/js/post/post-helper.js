@@ -15,7 +15,7 @@ function initPostHelper() {
       this.toggleShowTocBtn &&
         this.toggleShowTocBtn.addEventListener('click', () => {
           this.isShowToc = !this.isShowToc
-          KEEP.styleStatus.isShowToc = this.isShowToc
+          KEEP.themeInfo.styleStatus.isShowToc = this.isShowToc
           KEEP.setStyleStatus()
           this.handleToggleToc(this.isShowToc)
         })
