@@ -61,9 +61,19 @@ $post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
       height var(--header-height)
       transition-t("transform, height", "0, 0", "0.3, 0.2", "ease-out, ease")
 
+      +keep-tablet() {
+        height calc(var(--header-height) * 0.9)
+      }
+
+
+      +keep-mobile() {
+        height calc(var(--header-height) * 0.8)
+      }
+
       &.hide {
         transform translateY(-105%)
       }
+
 
       .header-shrink & {
         height var(--header-shrink-height)
@@ -78,13 +88,27 @@ $post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
       }
 
 
-      +keep-tablet() {
-        height calc(var(--header-height) * 0.9)
-      }
+      &.reset-color {
+        .header-content {
+          .site-name {
+            color var(--text-color-1) !important
+          }
+
+          .menu-item {
+            a {
+              color var(--text-color-3) !important
+
+              &:hover {
+                color var(--primary-color) !important
+              }
+            }
 
 
-      +keep-mobile() {
-        height calc(var(--header-height) * 0.8)
+            i.search {
+              color var(--text-color-3) !important
+            }
+          }
+        }
       }
     }
 

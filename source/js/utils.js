@@ -95,6 +95,15 @@ KEEP.initUtils = () => {
         }
       }
 
+      // header font color handle
+      if (KEEP.theme_config?.first_screen?.enable === true) {
+        if (scrollTop > this.innerHeight - this.pageTopDom.getBoundingClientRect().height) {
+          this.pageTopDom.classList.add('reset-color')
+        } else {
+          this.pageTopDom.classList.remove('reset-color')
+        }
+      }
+
       this.prevScrollValue = scrollTop
     },
 

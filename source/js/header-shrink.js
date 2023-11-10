@@ -63,7 +63,7 @@ KEEP.initHeaderShrink = () => {
 
       domList.forEach((v) => {
         v.addEventListener('click', () => {
-          document.body.classList.toggle('header-drawer-show')
+          document.body.classList.toggle('show-header-drawer')
         })
       })
     }
