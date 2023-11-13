@@ -10,7 +10,7 @@ body:
     attributes:
       value: |
         Please follow this Issue template to provide relevant information, such as source code repository, website URL and screenshots, which will help us investigate.
-        请按照此 Issue 模版提供相关信息，例如源码仓库、网站链接和屏幕截图，这将有助于我们进行调查。
+        请按照此 Issue 模版提供相关信息，例如源码仓库、网站链接和屏幕截图，这将有助于我们进行排查。
 
   - type: checkboxes
     id: checklist
@@ -20,11 +20,11 @@ body:
         I made sure I checked
         我确认我已经检查过了
       options:
-        - label: I am using Keep version 3.8.5 or later.
+        - label: I am using Keep version `4.0.0` or later. （使用 Keep 4.0.0 或更高版本）
           required: true
-        - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn).
+        - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn). （已阅读 [Hexo 故障处理页面](https://hexo.io/docs/troubleshooting) 和 [Keep 文档](https://keep-docs.xpoet.cn)）
           required: true
-        - label: I have already searched for current [issues](https://github.com/XPoet/hexo-theme-keep/issues), which does not help me.
+        - label: I have already searched for current [issues](https://github.com/XPoet/hexo-theme-keep/issues), which does not help me. （已搜索 [Issues](https://github.com/XPoet/hexo-theme-keep/issues)，对我没有帮助）
           required: true
 
   - type: textarea
