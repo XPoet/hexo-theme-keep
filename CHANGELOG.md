@@ -1,5 +1,78 @@
 # Changelog
 
+## [4.0.0](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.6...v4.0.0) (2023-11-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* add website announcement settings
+* optimize configuration items of keep theme
+* reconstructs the `post.author_badge` configuration items
+* reconstructs the `home_article` configuration items
+
+### 🌟 Features
+
+* add `scroll.hide_header` configuration item ([1bc6ba1](https://github.com/XPoet/hexo-theme-keep/commit/1bc6ba1f60e03f705599111839cadac45b01d620))
+* add Artalk comment plugin ([#193](https://github.com/XPoet/hexo-theme-keep/issues/193)) ([dbf14a7](https://github.com/XPoet/hexo-theme-keep/commit/dbf14a7127916c9e6e7682a92b55bf31aefdf85b))
+* add photos page template ([9cd51b7](https://github.com/XPoet/hexo-theme-keep/commit/9cd51b7da84abe94edf41e66c3b0dbf033197140))
+* add website announcement settings ([2046a97](https://github.com/XPoet/hexo-theme-keep/commit/2046a971172beb0bf127a69bf9491eb204c66f48))
+* **first-screen:** add `background_img_dark` configuration item ([dceafaa](https://github.com/XPoet/hexo-theme-keep/commit/dceafaad797a77208ba95a3c19d324510d414254))
+* **friends-link:** add classification fold function ([cd6c654](https://github.com/XPoet/hexo-theme-keep/commit/cd6c654cc67197c4321d273b724a54d90e815a79))
+
+
+### 🐞 Bug Fixes
+
+* fixed table content overflow container ([#273](https://github.com/XPoet/hexo-theme-keep/issues/273)) ([6aad228](https://github.com/XPoet/hexo-theme-keep/commit/6aad228b26de99fad90fdb658d19ef56bee1c1c9))
+* **toc:** optimize header hide handle for anchor jump ([671e4c5](https://github.com/XPoet/hexo-theme-keep/commit/671e4c5a424830cbe4992a2490370f8c2f71311a))
+
+
+### 🎨 Styling
+
+* optimal naming of toggle theme ([1fc591d](https://github.com/XPoet/hexo-theme-keep/commit/1fc591dc4c00b0bdef4e34ebda9f934c5eff95c0))
+
+
+### 🍭 Code Refactoring
+
+* reconstructs the `first_screen` configuration items ([ba0d7a1](https://github.com/XPoet/hexo-theme-keep/commit/ba0d7a12ef0e9b69272b02eaf56b6782dc7180c3))
+* reconstructs the `home_article` configuration items ([e07247b](https://github.com/XPoet/hexo-theme-keep/commit/e07247b5469e967aa97ae8bd850a59bf8cde7d22))
+* reconstructs the `post.author_badge` configuration items ([b7f320a](https://github.com/XPoet/hexo-theme-keep/commit/b7f320a8a63bdb42f322bf6a6824578db479a43f))
+* reconstructs the `scroll` configuration items ([a8909aa](https://github.com/XPoet/hexo-theme-keep/commit/a8909aac0635606d2ed6dfe1ea7ac37393dc8d37))
+* reconstructs the `style` configuration items ([f68b369](https://github.com/XPoet/hexo-theme-keep/commit/f68b36966e67a681db99d8b93cbf2b1c1d45a20a))
+
+
+### 🛠 Performance Improvements
+
+* `backdrop-filter: blur()` support Safari browser ([47732b9](https://github.com/XPoet/hexo-theme-keep/commit/47732b9c0ab0fb322de91e7ec5c7a2c4599fd813))
+* **comment:** optimize Artalk init load ([8f633ec](https://github.com/XPoet/hexo-theme-keep/commit/8f633ec1457a2aa0b0eca9d0e8c60f485666a7e9))
+* **comment:** optimize Disqus load ([5d09035](https://github.com/XPoet/hexo-theme-keep/commit/5d09035665dcbaeef755e86b56cd276627f4b941))
+* **comment:** optimize Waline init load ([04d0fd3](https://github.com/XPoet/hexo-theme-keep/commit/04d0fd3ab9bcf0130e19dce834a067871ae871e5))
+* **first-screen:** add font family css variable ([f22fc20](https://github.com/XPoet/hexo-theme-keep/commit/f22fc209467f882faf8457bae45a16605391ea30))
+* **first-screen:** add icon color css variable ([c1f6172](https://github.com/XPoet/hexo-theme-keep/commit/c1f61720ae20a861d0557d420b6dd272a391f6d5))
+* optimize comment plugin load logic ([83711e9](https://github.com/XPoet/hexo-theme-keep/commit/83711e9dff88cd3ee5e85945a010a1b9b033dd49))
+* optimize i18n ([a17b58a](https://github.com/XPoet/hexo-theme-keep/commit/a17b58a8f773cf653d18d97b698c026cf9926b64))
+* use css variable setting blog title ([d485b30](https://github.com/XPoet/hexo-theme-keep/commit/d485b3023c2c686807806d144a152bb6b687b9be))
+
+
+### 📦 Build System
+
+* optimize configuration items of keep theme ([27bb7d9](https://github.com/XPoet/hexo-theme-keep/commit/27bb7d9acac27eefcb80720def0d31a6460f9f54))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([882b921](https://github.com/XPoet/hexo-theme-keep/commit/882b92178278560b4efc8ab16f57182d97eca5fa))
+
+
+### 💄 Improvement UI
+
+* **comment:** add disqus support ([2a6ad4e](https://github.com/XPoet/hexo-theme-keep/commit/2a6ad4e9aee0f675aa615e4f2c6a32b6ef398c7c))
+* **first:** use css variable control offset and display ([c6fd66b](https://github.com/XPoet/hexo-theme-keep/commit/c6fd66b313bc564d2c0682b1bfbc74d8299747a0))
+* **global:** optimize basic style ([dfe304a](https://github.com/XPoet/hexo-theme-keep/commit/dfe304ad4c394ff1d0b41ac13efb9851b306324a))
+* optimize home page style ([19580b3](https://github.com/XPoet/hexo-theme-keep/commit/19580b35ff39842d62f4365b8a9a5716582d9dea))
+* optimize shrink code line style ([9e10353](https://github.com/XPoet/hexo-theme-keep/commit/9e10353d0b00b5fd9bcbd38137cbe7274ef17f5d))
+* **post:** shrink the code block initially ([e833e49](https://github.com/XPoet/hexo-theme-keep/commit/e833e4982220df8fc191448b87f37eb7ed461d41))
+* use css variable setting header font color ([0a139c5](https://github.com/XPoet/hexo-theme-keep/commit/0a139c5b9bb807330fab15428ccffdd2ca8bd869))
+
 ## [3.8.6](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.5...v3.8.6) (2023-10-26)
 
 
