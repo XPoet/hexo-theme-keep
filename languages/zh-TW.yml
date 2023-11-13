@@ -1,20 +1,20 @@
 # ====================================================================
 # 中文繁体
 # ====================================================================
-menu:
-  category: 分類
-  categories: 分類
-  tag: 標籤
-  tags: 標籤
-  tagcloud: 標籤雲
-  home: 首頁
-  archive: 歸檔
-  archives: 歸檔
-  about: 關於
-  links: 友鏈
-  link: 友鏈
-  photos: 相簿
-  photo: 照片
+
+category: 分類
+categories: 分類
+tag: 標籤
+tags: 標籤
+tagcloud: 標籤雲
+home: 首頁
+archive: 歸檔
+archives: 歸檔
+about: 關於
+links: 友鏈
+link: 友鏈
+photos: 相簿
+photo: 照片
 search: 搜尋...
 prev: 上一頁
 next: 下一頁

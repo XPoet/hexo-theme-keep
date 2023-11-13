@@ -1,20 +1,20 @@
 # ====================================================================
 # 中文简体
 # ====================================================================
-menu:
-  category: 分类
-  categories: 分类
-  tag: 标签
-  tags: 标签
-  tagcloud: 标签云
-  home: 首页
-  archive: 归档
-  archives: 归档
-  about: 关于
-  links: 友链
-  link: 友链
-  photos: 相册
-  photo: 照片
+
+category: 分类
+categories: 分类
+tag: 标签
+tags: 标签
+tagcloud: 标签云
+home: 首页
+archive: 归档
+archives: 归档
+about: 关于
+links: 友链
+link: 友链
+photos: 相册
+photo: 照片
 search: 搜索...
 prev: 上一页
 next: 下一页

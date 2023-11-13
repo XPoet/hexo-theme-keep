@@ -1,20 +1,20 @@
 # ====================================================================
 # English
 # ====================================================================
-menu:
-  category: Category
-  categories: Categories
-  tag: Tag
-  tags: Tags
-  tagcloud: Tag Cloud
-  home: Home
-  archive: Archive
-  archives: Archives
-  about: About
-  links: Links
-  link: Link
-  photos: Photos
-  photo: Photo
+
+category: Category
+categories: Categories
+tag: Tag
+tags: Tags
+tagcloud: Tag Cloud
+home: Home
+archive: Archive
+archives: Archives
+about: About
+links: Links
+link: Link
+photos: Photos
+photo: Photo
 search: Search...
 prev: Prev
 next: Next

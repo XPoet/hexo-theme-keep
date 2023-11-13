@@ -26,7 +26,7 @@ const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
                             <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
                                href="<%- url_for(h_menu_nav_object[i]) %>"
                             >
-                                <%= __('menu.' + i.toLowerCase()).toUpperCase() %>
+                                <%= __(i.toLowerCase()).toUpperCase() %>
                             </a>
                         </li>
                     <% } %>
