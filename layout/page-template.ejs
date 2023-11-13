@@ -1,22 +1,27 @@
 <%
-const { type: p_type, title: p_title, content: p_content } = page
-const { menu: t_menu, links: t_links } = theme
-const is_render_friends_link = (
-        t_menu?.Links
-        && t_links
-        && (p_title.toLowerCase() === 'links' || p_title.toLowerCase() === 'link')
+const page_title = page.title.toLowerCase()
+const use_page_template = page?.use_template !== false
+const { menu: t_menu, links: links_data, photos: photos_data } = theme
+const use_friends_link = (
+  t_menu?.Links && links_data && (page_title === 'links' || page_title === 'link')
+)
+const use_photo_album = (
+  t_menu?.Photos && photos_data && (page_title === 'photos' || page_title === 'photo')
 )
 %>
 <div class="fade-in-down-animation">
     <div class="page-template-container border-box">
-        <% if (is_render_friends_link) { %>
-            <%- partial('_partial/friends-link') %>
+        <% if (use_friends_link && use_page_template) { %>
+            <%- partial('_partial/templates/friends-link') %>
+        <% } %>
+        <% if (use_photo_album && use_page_template) { %>
+            <%- partial('_partial/templates/photo-album') %>
         <% } %>
         <div class="page-template-content border-box keep-markdown-body">
-            <% if (is_render_friends_link || p_content) { %>
-                <%- p_content %>
+            <% if (page?.content || use_friends_link || use_photo_album) { %>
+                <%- page.content %>
             <% } else { %>
-                <h1><%= p_title %></h1>
+                <h1><%= page_title.toUpperCase() %></h1>
             <% } %>
         </div>
         <% if (page?.comment === true) { %>

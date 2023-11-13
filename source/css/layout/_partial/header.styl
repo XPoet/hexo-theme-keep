@@ -1,7 +1,6 @@
-$site-name-font-size = 1.88rem
 $pc-search-icon-font-size = 1.5rem
 $menu-bar-line-height = 2.5px
-$logo-image-box-width = 2.8rem
+$logo-image-box-width = 2.68rem
 
 .header-wrapper {
   display flex
@@ -57,15 +56,15 @@ $logo-image-box-width = 2.8rem
       height 100%
       font-size 2rem
 
-      transition-t("transform", "0", "0.2", "linear")
+      transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
 
       .header-shrink & {
-        transform scale(0.72)
+        transform scale(0.78)
         transform-origin left
       }
 
 
-      if (hexo-config('style') && hexo-config('style.logo')) {
+      if (hexo-config('base_info') && hexo-config('base_info.logo')) {
         .logo-image {
           flex-shrink 0
           width $logo-image-box-width
@@ -96,25 +95,40 @@ $logo-image-box-width = 2.8rem
       .site-name {
         color var(--text-color-1)
         font-weight 600
-        font-size $site-name-font-size
+        font-size var(--header-title-font-size)
+        font-family var(--header-title-font-family)
         line-height 1
         letter-spacing 1px
 
         +keep-tablet() {
-          font-size $site-name-font-size * 0.9
+          font-size calc(var(--header-title-font-size) * 0.9)
         }
 
         +keep-mobile() {
-          font-size $site-name-font-size * 0.8
+          font-size calc(var(--header-title-font-size) * 0.8)
+        }
+
+        .is-home & {
+          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+            color var(--first-screen-header-font-color-light)
+            filter brightness(92%)
+
+            .dark-mode & {
+              color var(--first-screen-header-font-color-dark)
+              filter brightness(106%)
+            }
+          }
+        }
+
+        .show-header-drawer & {
+          color var(--text-color-1) !important
         }
       }
     }
 
 
     .right {
-
       .pc {
-
         .menu-list {
           display flex
           align-items center
@@ -129,7 +143,6 @@ $logo-image-box-width = 2.8rem
             float left
             box-sizing border-box
             margin-left 2rem
-            color var(--text-color-3)
             font-size 1rem
             cursor pointer
 
@@ -137,27 +150,34 @@ $logo-image-box-width = 2.8rem
               margin-left 0
             }
 
-
-            a:hover
-            .active {
-
-              &::after {
+            a {
+              &::before {
                 position absolute
                 bottom -10px
                 left 50%
                 box-sizing border-box
-                width 100%
-                height 2px
+                width 0
+                height 2.6px
                 background var(--primary-color)
+                border-radius 3px
                 transform translateX(-50%)
                 content ''
-                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear")
+                transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
 
                 .header-shrink & {
                   bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
                 }
               }
+
+
+              &:hover
+              &.active {
+                &::before {
+                  width 100%
+                }
+              }
             }
+
 
             &.search {
               margin-left 26px
@@ -165,6 +185,38 @@ $logo-image-box-width = 2.8rem
 
               i {
                 color var(--text-color-3)
+              }
+            }
+
+            .is-home & {
+              if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+                a {
+                  color var(--first-screen-header-font-color-light)
+
+                  &:hover {
+                    color var(--primary-color)
+                  }
+                }
+
+
+                i.search {
+                  color var(--first-screen-header-font-color-light)
+                }
+
+
+                .dark-mode & {
+                  a {
+                    color var(--first-screen-header-font-color-dark)
+
+                    &:hover {
+                      color var(--primary-color)
+                    }
+                  }
+
+                  i.search {
+                    color var(--first-screen-header-font-color-dark)
+                  }
+                }
               }
             }
           }
@@ -189,6 +241,14 @@ $logo-image-box-width = 2.8rem
 
           i {
             color var(--text-color-3)
+
+            .show-header-drawer & {
+              color var(--text-color-3) !important
+            }
+
+            .reset-color & {
+              color var(--text-color-3) !important
+            }
           }
 
           &:first-child {
@@ -202,18 +262,13 @@ $logo-image-box-width = 2.8rem
           }
         }
 
-        .menu-bar {
 
+        .menu-bar {
           .menu-bar-middle {
             position relative
             width 18px
             height $menu-bar-line-height
             background var(--text-color-3)
-
-            .header-drawer-show & {
-              background transparent
-            }
-
 
             &::before
             &::after {
@@ -230,7 +285,7 @@ $logo-image-box-width = 2.8rem
             &::before {
               top -6px
 
-              .header-drawer-show & {
+              .show-header-drawer & {
                 transform translateY(6px) rotate(45deg)
               }
             }
@@ -239,8 +294,60 @@ $logo-image-box-width = 2.8rem
             &::after {
               bottom -6px
 
-              .header-drawer-show & {
+              .show-header-drawer & {
                 transform translateY(-6px) rotate(-45deg)
+              }
+            }
+
+
+            .reset-color & {
+              background var(--text-color-3) !important
+
+              &::before
+              &::after {
+                background var(--text-color-3) !important
+              }
+            }
+
+
+            .show-header-drawer & {
+              background transparent !important
+
+              &::before
+              &::after {
+                background var(--text-color-3) !important
+              }
+            }
+          }
+        }
+
+        .is-home & {
+          if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
+            .icon-item i {
+              color var(--first-screen-header-font-color-light)
+            }
+
+            .menu-bar .menu-bar-middle {
+              background var(--first-screen-header-font-color-light)
+
+              &::before
+              &::after {
+                background var(--first-screen-header-font-color-light)
+              }
+            }
+
+            .dark-mode & {
+              .icon-item i {
+                color var(--first-screen-header-font-color-dark)
+              }
+
+              .menu-bar .menu-bar-middle {
+                background var(--first-screen-header-font-color-dark)
+
+                &::before
+                &::after {
+                  background var(--first-screen-header-font-color-dark)
+                }
               }
             }
           }
@@ -262,7 +369,7 @@ $logo-image-box-width = 2.8rem
     transform-origin top
     transition-t("transform", "0", "0.38", "ease")
 
-    .header-drawer-show & {
+    .show-header-drawer & {
       transform scaleY(1)
     }
 
@@ -309,13 +416,14 @@ $logo-image-box-width = 2.8rem
     opacity 0
     transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
 
-    .header-drawer-show & {
+    .show-header-drawer & {
       visibility visible
       opacity 1
     }
   }
 }
 
-.header-drawer-show {
+
+.show-header-drawer {
   overflow hidden
 }

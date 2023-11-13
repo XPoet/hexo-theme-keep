@@ -2,7 +2,7 @@
 <main class="page-container border-box">
 
     <!-- home first screen  -->
-    <% if (is_home() && theme?.style?.first_screen?.enable === true && !page.prev) { %>
+    <% if (is_home() && theme?.first_screen?.enable === true && !page.prev) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 
@@ -15,7 +15,6 @@
         <div class="page-main-content-middle border-box">
 
             <div class="main-content border-box">
-
                 <% if (is_home()) { %>
 
                     <%- partial('home-content') %>

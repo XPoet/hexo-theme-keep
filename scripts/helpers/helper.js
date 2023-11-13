@@ -28,13 +28,15 @@ hexo.extend.helper.register('createNewArchivePosts', function (posts) {
   return postList
 })
 
-hexo.extend.helper.register('getAuthorLabel', function (postCount, authorLabelConfig) {
-  const { auto: isAuto, custom_label_list: labelList } = authorLabelConfig || {}
+hexo.extend.helper.register('getAuthorBadge', function (postCount, authorLabelConfig) {
+  const { level_badge: isAuto, custom_badge: customBadge } = authorLabelConfig || {}
   let level = Math.floor(Math.log2(postCount))
   level = level < 2 ? 1 : level - 1
 
-  if (isAuto === false && Array.isArray(labelList) && labelList.length > 0) {
-    return level > labelList.length ? labelList[labelList.length - 1] : labelList[level - 1]
+  if (isAuto === false && Array.isArray(customBadge) && customBadge.length > 0) {
+    return level > customBadge.length ? customBadge[customBadge.length - 1] : customBadge[level - 1]
+  } else if (isAuto === false && typeof customBadge === 'string' && customBadge !== '') {
+    return customBadge
   } else {
     return `Lv${level}`
   }
@@ -101,6 +103,10 @@ hexo.extend.helper.register('isCssFile', function (path) {
 
 hexo.extend.helper.register('isLinksPage', function (pagePath) {
   return pagePath === 'links/index.html'
+})
+
+hexo.extend.helper.register('isPhotosPage', function (pagePath) {
+  return pagePath === 'photos/index.html'
 })
 
 hexo.extend.helper.register('isCategoriesPage', function (pagePath) {

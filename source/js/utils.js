@@ -17,11 +17,13 @@ KEEP.initUtils = () => {
     isHasScrollProgressBar: false,
     isHasScrollPercent: false,
     isHeaderTransparent: false,
+    isHideHeader: true,
     hasToc: false,
 
     // initialization data
     initData() {
-      const { scroll, first_screen } = KEEP.theme_config?.style || {}
+      const scroll = KEEP.theme_config?.scroll || {}
+      const first_screen = KEEP.theme_config?.first_screen || {}
       this.isHasScrollProgressBar = scroll?.progress_bar === true
       this.isHasScrollPercent = scroll?.percent === true
       this.isHeaderTransparent =
@@ -29,6 +31,7 @@ KEEP.initUtils = () => {
       if (!this.isHeaderTransparent) {
         this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
       }
+      this.isHideHeader = scroll?.hide_header !== false
     },
 
     // scroll Style Handle
@@ -72,12 +75,16 @@ KEEP.initUtils = () => {
 
       // hide header handle
       if (scrollTop > this.prevScrollValue && scrollTop > this.innerHeight) {
-        this.pageTopDom.classList.add('hide')
+        if (this.isHideHeader) {
+          this.pageTopDom.classList.add('hide')
+        }
         if (this.isHeaderTransparent) {
           this.headerWrapperDom.classList.remove('transparent-1', 'transparent-2')
         }
       } else {
-        this.pageTopDom.classList.remove('hide')
+        if (this.isHideHeader) {
+          this.pageTopDom.classList.remove('hide')
+        }
         if (this.isHeaderTransparent) {
           if (scrollTop <= this.headerWrapperDom.getBoundingClientRect().height) {
             this.headerWrapperDom.classList.remove('transparent-2')
@@ -85,6 +92,15 @@ KEEP.initUtils = () => {
           } else if (scrollTop < this.innerHeight) {
             this.headerWrapperDom.classList.add('transparent-2')
           }
+        }
+      }
+
+      // header font color handle
+      if (KEEP.theme_config?.first_screen?.enable === true) {
+        if (scrollTop > this.innerHeight - this.pageTopDom.getBoundingClientRect().height) {
+          this.pageTopDom.classList.add('reset-color')
+        } else {
+          this.pageTopDom.classList.remove('reset-color')
         }
       }
 
@@ -147,7 +163,7 @@ KEEP.initUtils = () => {
           `${fs * (1 + fontSizeLevel * 0.05)}px`,
           'important'
         )
-        KEEP.styleStatus.fontSizeLevel = fontSizeLevel
+        KEEP.themeInfo.styleStatus.fontSizeLevel = fontSizeLevel
         KEEP.setStyleStatus()
       }
 
@@ -184,9 +200,12 @@ KEEP.initUtils = () => {
       let isZoomIn = false
       let curWinScrollY = 0
       let selectedImgDom = null
-      const imgDomList = document.querySelectorAll('.keep-markdown-body img')
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
       const zoomInImg = zoomInImgMask?.querySelector('.zoom-in-image')
+      const imgDomList = [
+        ...document.querySelectorAll('.keep-markdown-body img'),
+        ...document.querySelectorAll('.photo-album-box img')
+      ]
 
       const zoomOut = () => {
         if (isZoomIn) {
@@ -576,7 +595,7 @@ KEEP.initUtils = () => {
 
     // first screen typewriter
     initTypewriter() {
-      const fsc = KEEP.theme_config?.style?.first_screen || {}
+      const fsc = KEEP.theme_config?.first_screen || {}
       const isHitokoto = fsc?.hitokoto === true
 
       if (fsc?.enable !== true) {
@@ -648,6 +667,28 @@ KEEP.initUtils = () => {
         document.querySelector('.article-meta-info-container .article-category-ul')
       )
       this.removeWhitespace(document.querySelector('.article-meta-info-container .article-tag-ul'))
+    },
+
+    // close website announcement
+    closeWebsiteAnnouncement() {
+      if (KEEP.theme_config?.home?.announcement) {
+        const waDom = document.querySelector('.home-content-container .website-announcement')
+        if (waDom) {
+          const closeDom = waDom.querySelector('.close')
+          closeDom.addEventListener('click', () => {
+            waDom.style.display = 'none'
+          })
+        }
+      }
+    },
+
+    // wrap table dom with div
+    wrapTableWithBox() {
+      document.querySelectorAll('table').forEach((element) => {
+        const box = document.createElement('div')
+        box.className = 'table-container'
+        element.wrap(box)
+      })
     }
   }
 
@@ -664,4 +705,6 @@ KEEP.initUtils = () => {
   KEEP.utils.tabsActiveHandle()
   KEEP.utils.initTypewriter()
   KEEP.utils.trimPostMetaInfoBar()
+  KEEP.utils.closeWebsiteAnnouncement()
+  KEEP.utils.wrapTableWithBox()
 }

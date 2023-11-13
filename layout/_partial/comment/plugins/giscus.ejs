@@ -1,0 +1,80 @@
+<%
+const { enable: pjax_enable } = theme?.pjax || {}
+const {
+    repo: giscus_repo,
+    repo_id: giscus_repo_id,
+    category: giscus_category,
+    category_id: giscus_category_id,
+    reactions_enabled: giscus_reactions_enabled,
+} = theme?.comment?.giscus || {}
+const giscus_language = config?.language || 'zh-CN'
+%>
+<% if (giscus_repo && giscus_repo_id && giscus_category && giscus_category_id) { %>
+    <div class="giscus-comments-container">
+        <div class="giscus" id="giscus"></div>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          if (!window.KeepCommentPlugin?.getGiscusTheme) {
+            window.KeepCommentPlugin.getGiscusTheme = () => {
+              return document.body.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.changeGiscusTheme) {
+            window.KeepCommentPlugin.changeGiscusTheme = () => {
+              const iframe = document.querySelector('iframe.giscus-frame')
+              iframe && iframe.contentWindow.postMessage({
+                giscus: {
+                  setConfig: {
+                    theme: window.KeepCommentPlugin.getGiscusTheme()
+                  }
+                }
+              }, 'https://giscus.app')
+            }
+          }
+
+          if (!window.KeepCommentPlugin?.initGiscus) {
+            window.KeepCommentPlugin.initGiscus = () => {
+              const script = document.createElement('script')
+              script.async = true
+              script.src = 'https://giscus.app/client.js'
+              script.setAttribute('data-repo', '<%= giscus_repo %>')
+              script.setAttribute('data-repo-id', '<%= giscus_repo_id %>')
+              script.setAttribute('data-category', '<%= giscus_category %>')
+              script.setAttribute('data-category-id', '<%= giscus_category_id %>')
+              script.setAttribute('data-reactions-enabled', '<%= giscus_reactions_enabled === true ? '1' : '0' %>')
+              script.setAttribute('data-lang', '<%= giscus_language %>')
+              script.setAttribute('data-mapping', 'pathname')
+              script.setAttribute('data-strict', '0')
+              script.setAttribute('data-emit-metadata', '0')
+              script.setAttribute('data-input-position', 'top')
+              script.setAttribute('crossorigin', 'anonymous')
+              script.setAttribute('loading', 'lazy')
+              script.setAttribute('data-theme', window.KeepCommentPlugin.getGiscusTheme())
+              document.querySelector('.giscus-comments-container').appendChild(script)
+              script.onerror = () => {
+                window.KeepCommentPlugin.loadFailHandle()
+              }
+              script.onload = () => {
+                window.KeepCommentPlugin.hideLoading()
+              }
+              const toggleThemeBtn = document.querySelector('.tool-toggle-theme-mode')
+              toggleThemeBtn && toggleThemeBtn.addEventListener('click', () => {
+                window.KeepCommentPlugin.changeGiscusTheme()
+              })
+            }
+          }
+
+          if ('<%= pjax_enable %>' === "true") {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initGiscus()
+            }, 1000)
+          } else {
+            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initGiscus)
+          }
+        </script>
+    </div>
+<% } else { %>
+    <%- partial('../config-error', { comment_plugin: 'Giscus' }) %>
+<% } %>

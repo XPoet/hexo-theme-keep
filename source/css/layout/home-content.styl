@@ -1,6 +1,60 @@
 .home-content-container {
   background var(--background-color-1)
 
+  if (hexo-config('home') && hexo-config('home.announcement')) {
+    .website-announcement {
+      keep-container(var(--home-post-hover-scale), 1rem, 1.8rem)
+      display flex
+      align-items center
+      justify-content space-between
+      margin-top -0.6rem
+
+      +keep-tablet() {
+        margin-top -0.4rem
+      }
+
+      +keep-mobile() {
+        margin-top -0.2rem
+
+        .announcement {
+          font-size 0.9rem
+        }
+
+        .icon {
+          font-size 1rem !important
+        }
+      }
+
+      .announcement {
+        width 100%
+        padding 0 0.4rem
+        color var(--text-color-3)
+      }
+
+
+      .icon {
+        flex-shrink 0
+        padding 0.2rem
+        font-size 1.2rem
+
+        &.left {
+          color var(--keep-danger-color)
+          font-size 1.5rem
+          transform-origin left bottom
+          animation shake 1s ease infinite
+        }
+
+        &.right {
+          color var(--text-color-4)
+          cursor pointer
+
+          &:hover {
+            color var(--text-color-3)
+          }
+        }
+      }
+    }
+  }
 
   .home-article-list {
 

@@ -127,12 +127,52 @@
 
 
   figure.highlight {
-    position relative
-    box-sizing border-box
     margin 0
 
     &.folded {
-      height 0
+      height 0 !important
     }
   }
 }
+
+
+figure.highlight {
+  position relative
+  box-sizing border-box
+  overflow-y hidden
+
+  &::-webkit-scrollbar-thumb {
+    background transparent
+  }
+
+  &::-webkit-scrollbar-track {
+    background transparent
+  }
+
+  transition-t("height", "0", "0.2", "linear")
+
+  .shrink-line {
+    position absolute
+    left 0
+    box-sizing border-box
+    width 100%
+    background linear-gradient(to bottom, var(--shrink-line-background-1), var(--shrink-line-background-2))
+    cursor pointer
+
+    &::before {
+      color var(--text-color-4)
+      font-weight 600
+      font-size 1rem
+      font-family 'Font Awesome 6 Free'
+      content '\f078'
+    }
+
+    &:hover {
+      &::before {
+        font-size 1.1rem
+      }
+    }
+  }
+}
+
+

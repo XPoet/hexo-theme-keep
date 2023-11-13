@@ -37,6 +37,7 @@ function initTOC() {
 
       // register TOC Nav
       registerTocNav() {
+        const isHideHeader = KEEP.theme_config?.scroll?.hide_header
         const register = (tocContainer) => {
           return [...tocContainer.querySelectorAll('.post-toc li a.nav-link')].map((element) => {
             const target = document.getElementById(
@@ -46,7 +47,12 @@ function initTOC() {
               event.preventDefault()
               let winScrollY = window.scrollY
               winScrollY = winScrollY <= 1 ? -19 : winScrollY
-              const offset = target.getBoundingClientRect().top + winScrollY
+              let offset = target.getBoundingClientRect().top + winScrollY
+
+              if (!isHideHeader) {
+                offset = offset - 60
+              }
+
               window.anime({
                 targets: document.scrollingElement,
                 duration: 500,
@@ -54,9 +60,11 @@ function initTOC() {
                 scrollTop: offset,
                 complete: () => {
                   history.pushState(null, document.title, element.href)
-                  setTimeout(() => {
-                    KEEP.utils.pageTopDom.classList.add('hide')
-                  }, 150)
+                  if (isHideHeader) {
+                    setTimeout(() => {
+                      KEEP.utils.pageTopDom.classList.add('hide')
+                    }, 150)
+                  }
                 }
               })
             })

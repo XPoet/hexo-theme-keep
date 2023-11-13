@@ -1,0 +1,73 @@
+<%
+const { enable: pjax_enable } = theme?.pjax || {}
+const {
+    appid,
+    appkey,
+    server_urls,
+    placeholder
+} = theme?.comment?.valine || {}
+let cdn_url = '//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
+const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
+
+if (t_cdn_enable === true) {
+    switch (t_cdn_provider) {
+        case 'jsdelivr':
+            cdn_url = '//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
+            break
+
+        case 'unpkg':
+            cdn_url = '//unpkg.com/valine@latest/dist/Valine.min.js'
+            break
+    }
+}
+%>
+<% if(appid && appkey) { %>
+    <div class="valine-container">
+        <div id="vcomments"></div>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                src="<%= cdn_url %>"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          window.KeepCommentPlugin.initValine = () => {
+            const config = {
+              el: '#vcomments',
+              appId: '<%= appid %>',
+              appKey: '<%= appkey %>',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '<%= placeholder %>',
+              lang: '<%= config?.language || 'zh-CN' %>'.toLowerCase()
+            }
+
+            if ('<%= server_urls %>') {
+              config.serverURLs = '<%= server_urls %>'
+            }
+
+            if (window?.Valine) {
+              new Valine(config)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initValine()
+              }, 1000)
+            }
+          }
+
+          if ('<%= pjax_enable %>' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initValine()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
+          }
+        </script>
+    </div>
+<% } else { %>
+    <%- partial('../config-error', { comment_plugin: 'Valine' }) %>
+<% } %>

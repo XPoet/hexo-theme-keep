@@ -1,4 +1,4 @@
-if (hexo-config('comment') && hexo-config('comment.enable') == true && hexo-config('comment.use') != "") {
+if (hexo-config('comment') && hexo-config('comment.enable') == true && hexo-config('comment.use')) {
   if (hexo-config('comment.use') == "valine") {
     @import "./valine.styl"
   }
@@ -34,9 +34,52 @@ if (hexo-config('comment') && hexo-config('comment.enable') == true && hexo-conf
   }
 
 
-  .error-tips {
+  .configuration-items-error-tip {
+    display flex
+    align-items center
     margin-top 1rem
     color var(--text-color-3)
     font-size 1rem
+
+    i {
+      margin-right 0.3rem
+      color var(--text-color-3)
+      font-size 1.2rem
+    }
+  }
+
+  .comment-plugin-fail {
+    display none
+    flex-direction column
+    align-items center
+    justify-content space-around
+    width 100%
+    padding 2rem
+
+    .fail-tip {
+      color var(--text-color-3)
+      font-size 1.1rem
+    }
+
+    .reload {
+      margin-top 1rem
+    }
+  }
+
+  .comment-plugin-loading {
+    flex-direction column
+    padding 1rem
+    color var(--text-color-3)
+
+    .loading-icon {
+      color var(--text-color-4)
+      font-size 2rem
+    }
+
+    .load-tip {
+      margin-top 1rem
+      color var(--text-color-4)
+      font-size 1.1rem
+    }
   }
 }

@@ -1,6 +1,7 @@
 $friend-link-item-height = 5.2rem
 $friend-link-item-height-tablet = 4.2rem
 $friend-link-item-border-radius = 0.6rem
+$album-img-gap = 0.8rem
 
 .page-template-container {
   keep-container(1, 2rem, 2rem)
@@ -23,19 +24,24 @@ $friend-link-item-border-radius = 0.6rem
 
 
   if (hexo-config('menu') && hexo-config('menu.Links')) {
-
     .friends-link-list {
       display grid
       grid-gap 1.2rem
       grid-template-columns repeat(2, 1fr)
 
       .link-type-title {
+        display flex
         grid-column span 2
-        margin-top 0.5rem
-        padding-left 0.7rem
-        color var(--text-color-3)
+        align-items center
+        justify-content space-between
+        margin-top 0.6rem
+        padding 0.3rem 0 0.2rem 0.8rem
         font-weight bold
-        font-size 1.4rem
+        font-size 1.3rem
+
+        &:first-child {
+          margin-top 0
+        }
 
         &::before {
           position absolute
@@ -49,8 +55,16 @@ $friend-link-item-border-radius = 0.6rem
           content ''
         }
 
-        i.fa-solid {
+
+        .type-name {
           color var(--text-color-3)
+        }
+
+        i.fa-solid {
+          margin-left 1rem
+          color var(--text-color-4)
+          font-size 1.1rem
+          cursor pointer
         }
       }
 
@@ -59,8 +73,13 @@ $friend-link-item-border-radius = 0.6rem
         grid-gap 1.1rem
 
         .link-type-title {
-          margin-top 0.4rem !important
-          font-size 1.1rem !important
+          padding 0.1rem 0 0 0.6rem !important
+          font-size 1.2rem !important
+
+          i.fa-solid {
+            margin-left 0.8rem !important
+            font-size 1rem !important
+          }
         }
 
         .friends-link-item {
@@ -109,6 +128,7 @@ $friend-link-item-border-radius = 0.6rem
         border-radius $friend-link-item-border-radius
         box-shadow 1px 1px 3px var(--shadow-color)
         cursor pointer
+        disable-user-select()
 
         &:hover {
           box-shadow 1px 1px 6px var(--shadow-color)
@@ -177,6 +197,23 @@ $friend-link-item-border-radius = 0.6rem
             }
           }
         }
+      }
+    }
+  }
+
+
+  if (hexo-config('menu') && hexo-config('menu.Photos')) {
+    .photo-album-box {
+      column-count 3
+      column-gap $album-img-gap
+
+      img.photo {
+        display block
+        width 100%
+        margin-bottom $album-img-gap
+        background var(--background-color-2)
+        border-radius 0.6rem
+        cursor zoom-in
       }
     }
   }

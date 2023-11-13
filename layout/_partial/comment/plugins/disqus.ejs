@@ -1,0 +1,39 @@
+<%
+const { enable: pjax_enable } = theme?.pjax || {}
+const { shortname } = theme?.comment?.disqus || {}
+%>
+<% if (shortname) { %>
+    <div class="disqus-comments-container">
+        <div id="disqus_thread"></div>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        >
+          if (!window.KeepCommentPlugin?.initDisqus) {
+            window.KeepCommentPlugin.initDisqus = () => {
+              const script = document.createElement('script')
+              script.async = true
+              script.src = '//<%= shortname %>.disqus.com/embed.js'
+              script.setAttribute('data-timestamp', `${Date.now()}`)
+              document.querySelector('.disqus-comments-container').appendChild(script)
+              script.onerror = () => {
+                window.KeepCommentPlugin.loadFailHandle()
+              }
+              script.onload = () => {
+                window.KeepCommentPlugin.hideLoading()
+              }
+            }
+          }
+
+          if ('<%= pjax_enable %>' === "true") {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initDisqus()
+            }, 1000)
+          } else {
+            window.addEventListener("DOMContentLoaded", window.KeepCommentPlugin.initDisqus)
+          }
+        </script>
+        <script id="dsq-count-scr" src="//<%= shortname %>.disqus.com/count.js" async></script>
+    </div>
+<% } else { %>
+    <%- partial('../config-error', { comment_plugin: 'Disqus' }) %>
+<% } %>

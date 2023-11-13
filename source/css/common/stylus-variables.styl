@@ -26,8 +26,8 @@ $z-index-12 = 1011
 // theme primary color
 // ==============================================================================================
 
-if (hexo-config('style')) {
-  $temp-color = hexo-config('style.primary_color')
+if (hexo-config('base_info')) {
+  $temp-color = hexo-config('base_info.primary_color')
 }
 else {
   $temp-color = ''
@@ -70,7 +70,7 @@ $selection-color = lighten($primary-color, 10%)
 $shadow-color = rgba(0, 0, 0, 0.16)
 $shadow-hover-color = rgba(0, 0, 0, 0.22)
 
-$scrollbar-color = lighten($text-color-3, 10%)
+$scrollbar-color = lighten($text-color-3, 15%)
 $scrollbar-background-color = darken($background-color-1, 10%)
 $toc-scrollbar-color = alpha($text-color-3, 0.1)
 
@@ -133,8 +133,8 @@ $dark-selection-color = darken($selection-color, 20%)
 $dark-shadow-color = rgba(120, 120, 120, 0.18)
 $dark-shadow-hover-color = rgba(120, 120, 120, 0.24)
 
-$dark-scrollbar-color = darken($dark-background-color-1, 10%)
-$dark-scrollbar-background-color = lighten($dark-background-color-1, 20%)
+$dark-scrollbar-color = lighten($dark-background-color-1, 25%)
+$dark-scrollbar-background-color = darken($dark-background-color-1, 15%)
 $dark-toc-scrollbar-color = alpha($dark-text-color-3, 0.1)
 
 $dark-copyright-icon-bg-color = alpha($dark-text-color-3, 0.12)

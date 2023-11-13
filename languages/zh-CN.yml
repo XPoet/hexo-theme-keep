@@ -1,6 +1,20 @@
 # ====================================================================
 # 中文简体
 # ====================================================================
+
+category: 分类
+categories: 分类
+tag: 标签
+tags: 标签
+tagcloud: 标签云
+home: 首页
+archive: 归档
+archives: 归档
+about: 关于
+links: 友链
+link: 友链
+photos: 相册
+photo: 照片
 search: 搜索...
 prev: 上一页
 next: 下一页
@@ -11,19 +25,6 @@ recent_posts: 最新文章
 share: 分享
 theme: 主题
 rss_feed: RSS Feed
-category: 分类
-categories: 分类
-tag: 标签
-tags: 标签
-tagcloud: 标签云
-comment: 评论
-comments: 评论
-home: 首页
-archive: 归档
-archives: 归档
-about: 关于
-links: 友链
-link: 友链
 top: 置顶
 read_more: 阅读全文
 wordcount: 字
@@ -62,7 +63,6 @@ copyright:
   license: 许可
   license_title: 版权声明
   license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
-article-aging: "本文距离上次更新已过去 %s 天，部分内容可能已经过时，请注意甄别。"
 ago:
   second: "%s 秒前"
   minute: "%s 分钟前"
@@ -86,9 +86,16 @@ footer:
     upyun: 又拍云
   total_words: 总字数
 post:
+  aging: "本文距离上次更新已过去 %s 天，部分内容可能已经过时，请注意甄别。"
   share:
     qq: "分享到 QQ"
     wechat: "分享到微信"
     weibo: "分享到微博"
     wechat_scan: "微信扫一扫"
   reward: 打赏作者
+comment:
+  comments: 评论
+  fail_tip: 评论插件加载失败
+  reload: 点击重新加载
+  loading: 正在加载评论插件
+  config_error: "请完整填写 %s 评论插件必需的配置项"

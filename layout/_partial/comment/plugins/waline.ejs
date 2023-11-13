@@ -32,31 +32,42 @@ if (t_cdn_enable === true) {
     <div class="waline-comment-container">
         <link rel="stylesheet" href="<%= cdn_css %>"/>
         <link rel="stylesheet" href="<%= cdn_css_meta %>"/>
-        <script <%= pjax_enable === true ? 'data-pjax' : '' %> src="<%= cdn_js %>"></script>
         <div id="waline-comment"></div>
-        <script <%= pjax_enable === true ? 'data-pjax' : '' %>>
-          function loadWaline() {
-            const tmpOptions = JSON.parse('<%= JSON.stringify(waline_options) %>'.replace(/&#34;/g, '"'))
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                src="<%= cdn_js %>"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+                async
+        >
+          window.KeepCommentPlugin.walineOptions = JSON.parse('<%= JSON.stringify(waline_options) %>'.replace(/&#34;/g, '"'))
 
-            Waline.init({
-              el: '#waline-comment',
-              serverURL: '<%= waline_env_server_url %>',
-              lang: '<%= config.language %>' || 'zh-CN',
-              comment: '.post-comments-count',
-              reaction: '<%= waline_reaction %>' === 'true',
-              ...tmpOptions
-            })
+          window.KeepCommentPlugin.initWaline = () => {
+            if (window?.Waline) {
+              window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+              window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+              window.KeepCommentPlugin.walineOptions.serverURL = '<%= waline_env_server_url %>'
+              window.KeepCommentPlugin.walineOptions.lang = '<%= config.language %>' || 'zh-CN'
+              window.KeepCommentPlugin.walineOptions.reaction = '<%= waline_reaction %>' === 'true'
+              window.Waline.init(window.KeepCommentPlugin.walineOptions)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initWaline()
+              }, 1000)
+            }
           }
 
           if ('<%= pjax_enable %>' === 'true') {
             setTimeout(() => {
-              loadWaline()
-            }, 1000)
+              window.KeepCommentPlugin.initWaline()
+            }, 1200)
           } else {
-            window.addEventListener('DOMContentLoaded', loadWaline)
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
           }
         </script>
     </div>
 <% } else { %>
-    <div class="error-tips">Please fill in Waline complete configuration items.</div>
+    <%- partial('../config-error', { comment_plugin: 'Waline' }) %>
 <% } %>
