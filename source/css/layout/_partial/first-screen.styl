@@ -38,12 +38,14 @@ $fs-bg-img-dark = $temp-fs-bg-img-dark ? $temp-fs-bg-img-dark : $fs-bg-img-light
     }
 
     .description {
+      display var(--first-screen-display)
       color var(--first-screen-font-color-light)
       font-weight bold
       font-size var(--first-screen-font-size)
       font-family var(--first-screen-font-family)
       line-height 1.8
       text-align center
+      transform translateY(var(--first-screen-font-offset))
       opacity 0
 
       .dark-mode & {
