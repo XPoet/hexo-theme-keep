@@ -112,7 +112,7 @@
       cursor pointer
 
       i {
-        font-size 0.8rem
+        font-size 0.9rem
         if (hexo-config('code_block') && hexo-config('code_block.highlight_theme') == 'default') {
           color var(--text-color-3)
         }
@@ -140,14 +140,6 @@ figure.highlight {
   position relative
   box-sizing border-box
   overflow-y hidden
-
-  &::-webkit-scrollbar-thumb {
-    background transparent
-  }
-
-  &::-webkit-scrollbar-track {
-    background transparent
-  }
 
   transition-t("height", "0", "0.2", "linear")
 

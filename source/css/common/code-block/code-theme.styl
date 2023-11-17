@@ -1,9 +1,13 @@
 @import "../stylus-variables.styl"
 
-$code-foreground = lighten($text-color-3, 2%)
-$code-background = darken($background-color-1, 5%)
-$dark-code-foreground = lighten($dark-text-color-3, 2%)
-$dark-code-background = darken($dark-background-color-1, 10%)
+$code-foreground = lighten($text-color-3, 5%)
+$code-background = alpha($primary-color, 15%)
+$code-border-color = lighten($primary-color, 30%)
+
+$dark-code-foreground = lighten($dark-text-color-3, 10%)
+$dark-code-background = alpha($primary-color, 15%)
+$dark-code-border-color = darken($primary-color, 40%)
+
 $mac-toolbar-background-color = #21252b
 $dark-mac-toolbar-background-color = #1f2021
 
@@ -99,6 +103,7 @@ code-theme(mode) {
   --toolbar-background mode == 'light' ? $toolbar-background : $dark-toolbar-background
   --code-foreground mode == 'light' ? $code-foreground : $dark-code-foreground
   --code-background mode == 'light' ? $code-background : $dark-code-background
+  --code-border-color mode == 'light' ? $code-border-color : $dark-code-border-color
   --highlight-background mode == 'light' ? $highlight-background : $dark-highlight-background
   --highlight-foreground mode == 'light' ? $highlight-foreground : $dark-highlight-foreground
   --highlight-comment mode == 'light' ? $highlight-comment : $dark-highlight-comment
