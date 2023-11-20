@@ -1,8 +1,10 @@
+<%
+const post_author = page?.author || theme?.base_info?.author || config?.author
+const post_avatar = page?.avatar || theme?.base_info?.avatar
+%>
 <div class="fade-in-down-animation">
     <div class="post-page-container border-box">
-
         <div class="article-content-container border-box">
-
             <% if (page?.post_cover || page?.home_cover) { %>
                 <div class="article-content-top border-box"
                      style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
@@ -23,16 +25,16 @@
                     </div>
                 <% } %>
 
-                <% if (theme?.base_info?.author || config?.author) { %>
+                <% if (post_author) { %>
                     <div class="article-header border-box">
-                        <% if (theme?.base_info?.avatar) { %>
+                        <% if (post_avatar) { %>
                             <div class="avatar-box border-box">
-                                <%- image_tag(theme?.base_info?.avatar) %>
+                                <%- image_tag(post_avatar) %>
                             </div>
                         <% } %>
                         <div class="info-box">
                             <div class="author">
-                                <span class="name"><%= theme?.base_info?.author || config?.author %></span>
+                                <span class="name"><%= post_author %></span>
                                 <% if (theme?.post?.author_badge?.enable === true) { %>
                                     <span class="author-badge"><%- getAuthorBadge(site.posts.length, theme?.post?.author_badge) %></span>
                                 <% } %>
