@@ -43,6 +43,10 @@
 
                     <%- partial('_partial/tagcloud') %>
 
+                <% } else if (page.type === '404') { %>
+
+                    <%- partial('404') %>
+
                 <% } else { %>
 
                     <%- partial('page-template') %>
