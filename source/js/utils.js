@@ -689,6 +689,44 @@ KEEP.initUtils = () => {
         box.className = 'table-container'
         element.wrap(box)
       })
+    },
+
+    // H tag title to top
+    title2Top4HTag(a, h, isHideHeader, duration = 200) {
+      if (a && h) {
+        a.addEventListener('click', (e) => {
+          e.preventDefault()
+          let winScrollY = window.scrollY
+          winScrollY = winScrollY <= 1 ? -19 : winScrollY
+          let offset = h.getBoundingClientRect().top + winScrollY
+
+          if (!isHideHeader) {
+            offset = offset - 60
+          }
+
+          window.anime({
+            targets: document.scrollingElement,
+            duration,
+            easing: 'linear',
+            scrollTop: offset,
+            complete: () => {
+              history.pushState(null, document.title, a.href)
+              if (isHideHeader) {
+                setTimeout(() => {
+                  KEEP.utils.pageTopDom.classList.add('hide')
+                }, 160)
+              }
+            }
+          })
+        })
+      }
+    },
+
+    // A tag anchor jump handle
+    aAnchorJump() {
+      document.querySelectorAll('a.headerlink').forEach((a) => {
+        this.title2Top4HTag(a, a, this.isHideHeader)
+      })
     }
   }
 
@@ -707,4 +745,5 @@ KEEP.initUtils = () => {
   KEEP.utils.trimPostMetaInfoBar()
   KEEP.utils.closeWebsiteAnnouncement()
   KEEP.utils.wrapTableWithBox()
+  KEEP.utils.aAnchorJump()
 }

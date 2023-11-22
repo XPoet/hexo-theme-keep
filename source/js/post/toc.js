@@ -43,31 +43,7 @@ function initTOC() {
             const target = document.getElementById(
               decodeURI(element.getAttribute('href')).replace('#', '')
             )
-            element.addEventListener('click', (event) => {
-              event.preventDefault()
-              let winScrollY = window.scrollY
-              winScrollY = winScrollY <= 1 ? -19 : winScrollY
-              let offset = target.getBoundingClientRect().top + winScrollY
-
-              if (!isHideHeader) {
-                offset = offset - 60
-              }
-
-              window.anime({
-                targets: document.scrollingElement,
-                duration: 500,
-                easing: 'linear',
-                scrollTop: offset,
-                complete: () => {
-                  history.pushState(null, document.title, element.href)
-                  if (isHideHeader) {
-                    setTimeout(() => {
-                      KEEP.utils.pageTopDom.classList.add('hide')
-                    }, 150)
-                  }
-                }
-              })
-            })
+            KEEP.utils.title2Top4HTag(element, target, isHideHeader, 500)
             return target
           })
         }

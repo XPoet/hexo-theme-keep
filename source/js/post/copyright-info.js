@@ -11,6 +11,11 @@ function initCopyrightInfoHelper() {
     // copy copyright info
     copyCopyrightInfo() {
       const cicDom = document.querySelector('.copyright-info-content')
+
+      if (!cicDom) {
+        return
+      }
+
       const copyDom = document.querySelector('.copy-copyright-info')
       const copyIcon = copyDom.querySelector('i')
 
