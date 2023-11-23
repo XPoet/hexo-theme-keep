@@ -725,7 +725,7 @@ KEEP.initUtils = () => {
     // A tag anchor jump handle
     aAnchorJump() {
       document.querySelectorAll('a.headerlink').forEach((a) => {
-        this.title2Top4HTag(a, a, this.isHideHeader)
+        this.title2Top4HTag(a, a.parentNode, this.isHideHeader, 10)
       })
     }
   }
