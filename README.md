@@ -5,7 +5,7 @@
   <a title="Chinese" href="docs/README_zh-TW.md">繁體中文</a>
 </div>
 
-<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://xpoet.cn/images/keep-slogan.svg"></a>
+<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://keep-docs.xpoet.cn/images/keep-slogan.svg"></a>
 
 # hexo-theme-keep
 

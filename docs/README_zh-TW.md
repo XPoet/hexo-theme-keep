@@ -1,11 +1,11 @@
 <div align="right">
-  語言:
+  語言：
   繁體中文 | 
   <a title="English" href="../README.md">English</a> | 
   <a title="Chinese" href="README_zh-CN.md">简体中文</a>
 </div>
 
-<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://xpoet.cn/images/keep-slogan.svg"></a>
+<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://keep-docs.xpoet.cn/images/keep-slogan.svg"></a>
 
 # hexo-theme-keep
 
