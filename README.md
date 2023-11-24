@@ -32,15 +32,15 @@ If you're using Hexo 5.0 or later, the simplest way to install is through NPM:
 ```sh
 # recommend
 
-$ cd your-hexo
-$ npm install hexo-theme-keep
+cd your-hexo
+npm install hexo-theme-keep
 ```
 
 Or you can clone the entire repository:
 
 ```sh
-$ cd your-hexo
-$ git clone https://github.com/XPoet/hexo-theme-keep themes/keep
+cd your-hexo
+git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 ```
 
 After the installation, open Hexo config file and set `theme` variable to `keep`.
@@ -49,7 +49,7 @@ After the installation, open Hexo config file and set `theme` variable to `keep`
 theme: keep
 ```
 
-## :wrench: Usage
+## :books: Documents
 
 Please see the official documents of **Keep**.
 
@@ -57,39 +57,37 @@ Please see the official documents of **Keep**.
 - **[Keep theme configuration guide](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
 - **[Keep theme advanced usage](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
-It is not recommended to directly modify any files in the **Keep** theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
+## :tada: Update
 
-## :dart: Update
-
-**Keep** releases new versions from time to time. You can update Keep by the following command.
+**Keep** releases new versions from time to time. You can update **Keep** by the following command.
 
 Install the latest version through NPM:
 
 ```sh
 # recommend
 
-$ cd your-hexo
-$ npm install hexo-theme-keep@latest
+cd your-hexo
+npm install hexo-theme-keep@latest
 ```
 
 Or update to the latest master branch:
 
 ```sh
-$ cd themes/keep
-$ git pull
+cd themes/keep
+git pull
 ```
 
-## :art: Contributing
+It is not recommended to directly modify any files in the **Keep** theme. Because this may cause errors (e.g. merge conflicts), and the modified files may be discarded when upgrading the theme.
 
-We welcome you to join the development of **Keep**. Please see [contributing guide](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html).
-
-## :clapper: Contributors
+## :art: Contributors
 
 This project exists thanks to all the people who contribute.
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=XPoet/hexo-theme-keep" />
 </a>
+
+We welcome you to join the development of **Keep**. Please see [contributing guide](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html).
 
 ## :sparkling_heart: Thanks
 

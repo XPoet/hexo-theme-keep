@@ -26,20 +26,20 @@
 
 ## :rocket: 安装
 
-如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 NPM：
+如果你使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 NPM：
 
 ```sh
 # 推荐
 
-$ cd your-hexo
-$ npm install hexo-theme-keep
+cd your-hexo
+npm install hexo-theme-keep
 ```
 
 你也可以直接克隆整个仓库：
 
 ```sh
-$ cd your-hexo
-$ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
+cd your-hexo
+git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 ```
 
 安装完成后，在 Hexo 配置文件中将 `theme` 设置为 `keep`。
@@ -48,7 +48,7 @@ $ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 theme: keep
 ```
 
-## :wrench: 使用
+## :books: 文档
 
 请查看 **Keep** 官方文档：
 
@@ -56,9 +56,7 @@ theme: keep
 - **[Keep 主题配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
 - **[Keep 主题进阶使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
-不推荐直接修改 **Keep** 主题的文件。因为这可能导致错误（例如 git merge 冲突），并且在升级主题时修改的文件可能丢失。
-
-## :dart: 更新
+## :tada: 更新
 
 **Keep** 不定期发布新版本，你可以通过如下命令更新 **Keep**。
 
@@ -78,17 +76,17 @@ $ cd themes/keep
 $ git pull
 ```
 
-## :art: 贡献
+不推荐直接修改 **Keep** 主题的源文件。因为这可能导致错误（例如 git merge 冲突），并且在升级主题时修改的文件可能丢失。
 
-我们欢迎你加入 **Keep** 的开发，贡献出你的一份力量。请看 [Keep 代码贡献指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
-
-## :clapper: 贡献者
+## :art: 贡献者
 
 这个项目的存在多亏了所有的贡献者。
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=XPoet/hexo-theme-keep" />
 </a>
+
+我们欢迎你加入 **Keep** 的开发，贡献出你的一份力量。请看 [Keep 代码贡献指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
 
 ## :sparkling_heart: 鸣谢
 
