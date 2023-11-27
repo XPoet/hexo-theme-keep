@@ -13,6 +13,7 @@
         margin-top -0.4rem
       }
 
+
       +keep-mobile() {
         margin-top -0.2rem
 
@@ -25,10 +26,18 @@
         }
       }
 
+
       .announcement {
         width 100%
-        padding 0 0.4rem
+        padding 0 0.5rem
         color var(--text-color-3)
+
+        p {
+          width 100%
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
+        }
       }
 
 

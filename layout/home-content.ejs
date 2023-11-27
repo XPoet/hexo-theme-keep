@@ -2,7 +2,9 @@
     <% if (theme?.home?.announcement) { %>
         <div class="website-announcement border-box">
             <i class="icon left fa-solid fa-bullhorn"></i>
-            <span class="announcement border-box text-ellipsis"><%= theme?.home?.announcement %></span>
+            <div class="announcement border-box text-ellipsis">
+                <%- markdown(theme?.home?.announcement) %>
+            </div>
             <i class="icon right close fa-solid fa-close"></i>
         </div>
     <% } %>

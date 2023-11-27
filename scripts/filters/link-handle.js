@@ -15,7 +15,6 @@ hexo.extend.filter.register(
     data.content = data.content.replace(
       regPureATag,
       function (match, attrBegin, href, attrEnd, html) {
-        // Exit if the href attribute doesn't exists.
         if (!href) return match
 
         let link = ''
