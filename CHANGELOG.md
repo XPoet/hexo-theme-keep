@@ -1,5 +1,30 @@
 # Changelog
 
+## [4.0.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.0...v4.0.1) (2023-11-22)
+
+
+### 🐞 Bug Fixes
+
+* **copyright-info:** optimize page disable copyright info ([5a0d631](https://github.com/XPoet/hexo-theme-keep/commit/5a0d63171ba9d7cf79eb11f379fe70c1c26f0338))
+
+
+### 🎨 Styling
+
+* print theme information at startup ([82cef1d](https://github.com/XPoet/hexo-theme-keep/commit/82cef1dd7b7301b26e6f16e26354256e2aa8b0a4))
+
+
+### 🛠 Performance Improvements
+
+* optimize a tag anchor jump ([632a182](https://github.com/XPoet/hexo-theme-keep/commit/632a182139711833b98c1ddefe836d9d10d515d2))
+* **post:** enhanced `front-matter` settings ([2cd5444](https://github.com/XPoet/hexo-theme-keep/commit/2cd544469a25302e7e1cf723f03dcd53928ea251))
+
+
+### 💄 Improvement UI
+
+* add 404 page ([5b74110](https://github.com/XPoet/hexo-theme-keep/commit/5b74110dd8f7f668eae680d50d4e45935ea115bc))
+* **comment:** optimize waline style ([a03054b](https://github.com/XPoet/hexo-theme-keep/commit/a03054b5370ce61b4bb61c8a21562bf60e1c0093))
+* **markdown:** optimize code block style ([255910f](https://github.com/XPoet/hexo-theme-keep/commit/255910ff2939cae7efd11959e1dcd688cfb1df47))
+
 ## [4.0.0](https://github.com/XPoet/hexo-theme-keep/compare/v3.8.6...v4.0.0) (2023-11-13)
 
 
