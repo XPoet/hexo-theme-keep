@@ -9,11 +9,11 @@ const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
     <div class="border-box header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left border-box">
             <% if (bi_logo) { %>
-                <a class="logo-image border-box" href="/">
+                <a class="logo-image border-box" href="<%- url_for(h_menu_nav_object['Home']) %>">
                     <%- image_tag(bi_logo) %>
                 </a>
             <% } %>
-            <a class="site-name border-box" href="/">
+            <a class="site-name border-box" href="<%- url_for(h_menu_nav_object['Home']) %>">
                <%= bi_title || config?.title || 'Keep Theme' %>
             </a>
         </div>
