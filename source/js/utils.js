@@ -368,6 +368,7 @@ KEEP.initUtils = () => {
 
     // insert tooltip content dom
     insertTooltipContent() {
+      const { root } = KEEP.theme_config
       const isLazyLoadImg = KEEP.theme_config?.lazyload?.enable === true
 
       const init = () => {
@@ -448,10 +449,11 @@ KEEP.initUtils = () => {
           if (tooltipImgUrl) {
             const imgDomClass = `tooltip-img-${idx}-${tooltipImgName ? tooltipImgName : Date.now()}`
             const nameIdx = `${tooltipImgName}-${idx}`
+            const tmpSrc = (/^(https?:\/\/)/.test(tooltipImgUrl) ? '' : root) + tooltipImgUrl
 
             const imgDom = `<img class="${imgDomClass}"
                               ${isLazyLoadImg ? 'lazyload' : ''}
-                              ${isLazyLoadImg ? 'data-' : ''}src="${tooltipImgUrl}"
+                              ${isLazyLoadImg ? 'data-' : ''}src="${tmpSrc}"
                               alt="${imgDomClass}"
                             >`
 
