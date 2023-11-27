@@ -42,6 +42,32 @@ hexo.extend.helper.register('getAuthorBadge', function (postCount, authorLabelCo
   }
 })
 
+hexo.extend.helper.register('separatePostsByLanguage', function () {
+  if (!this.theme.separate_by_language.enable) {
+    return
+  }
+
+  if (this.page.posts) {
+    this.page.posts = this.page.posts.filter(
+      (post) => post.lang === this.page.lang || post.lang === undefined
+    )
+  }
+
+  if (this.is_post()) {
+    let next = this.page.next
+    while (next && next.lang && next.lang !== this.page.lang) {
+      next = next.next
+    }
+    this.page.next = next
+
+    let prev = this.page.prev
+    while (prev && prev.lang && prev.lang !== this.page.lang) {
+      prev = prev.prev
+    }
+    this.page.prev = prev
+  }
+})
+
 const getSourceCdnUrl = (tyle, themeConfig, path) => {
   const version = require('../../package.json').version
   let { provider } = themeConfig?.cdn || {}

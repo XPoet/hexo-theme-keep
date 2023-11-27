@@ -6,6 +6,9 @@
         <%- partial('_partial/first-screen') %>
     <% } %>
 
+    <!-- separate posts by language -->
+    <% separatePostsByLanguage() %>
+
     <!-- page content -->
     <div class="page-main-content border-box<%= is_home() ? ' is-home' : '' %>">
         <div class="page-main-content-top">

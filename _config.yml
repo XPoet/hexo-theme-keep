@@ -347,3 +347,14 @@ inject:
     # - /js/custom-1.js
     # - /js/custom-2.js
     # - ...
+
+
+# ---------------------------------------------------------------------------------------
+# Only display posts that matches the website's language.
+#
+# The post should include 'lang:' attribute. An empty 'lang:' attribute will always diplay.
+# ---------------------------------------------------------------------------------------
+separate_by_language:
+  enable: false # Option values: true | false
+
+
