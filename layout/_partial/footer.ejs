@@ -67,7 +67,7 @@ const web_master = bi_author || hexo_author
             <div class="copyright-info info-item <%= footer_style_type %>">
                 &copy;&nbsp;<% if (f_since) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= date(new Date(), 'YYYY') %>
                 <% if (web_master) { %>
-                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/"><%= web_master %></a>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
                 <% } %>
             </div>
 
