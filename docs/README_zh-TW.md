@@ -2,7 +2,7 @@
   語言：
   繁體中文 | 
   <a title="English" href="../README.md">English</a> | 
-  <a title="Chinese" href="README_zh-CN.md">简体中文</a>
+  <a title="简体中文" href="README_zh-CN.md">简体中文</a>
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://keep-docs.xpoet.cn/images/keep-slogan.svg"></a>
@@ -24,6 +24,14 @@
 - **[keep 預覽](https://keep.xpoet.cn/)**
 
 > 如果你想把自己的博客鏈接放在線上預覽列表裏，可以給作者提 PR。
+
+## :books: 文檔
+
+請查看 **Keep** 官方文檔：
+
+- **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
+- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
+- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 ## :rocket: 安装
 
@@ -48,14 +56,6 @@ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 ```yml
 theme: keep
 ```
-
-## :books: 文檔
-
-請查看 **Keep** 官方文檔：
-
-- **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
-- **[Keep 主題配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
-- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 ## :tada: 更新
 

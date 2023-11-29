@@ -1,8 +1,8 @@
 <div align="right">
   Language:
   English | 
-  <a title="Chinese" href="docs/README_zh-CN.md">简体中文</a> | 
-  <a title="Chinese" href="docs/README_zh-TW.md">繁體中文</a>
+  <a title="简体中文" href="docs/README_zh-CN.md">简体中文</a> | 
+  <a title="繁體中文" href="docs/README_zh-TW.md">繁體中文</a>
 </div>
 
 <a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://keep-docs.xpoet.cn/images/keep-slogan.svg"></a>
@@ -24,6 +24,14 @@
 - **[Keep Demo](https://keep.xpoet.cn/)**
 
 > If you want to put a link to your blog in the online preview list, you can give the author a PR.
+
+## :books: Documents
+
+Please see the official documents of **Keep**.
+
+- **[Keep official document](https://keep-docs.xpoet.cn/)**
+- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
+- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 ## :rocket: Installation
 
@@ -48,14 +56,6 @@ After the installation, open Hexo config file and set `theme` variable to `keep`
 ```yml
 theme: keep
 ```
-
-## :books: Documents
-
-Please see the official documents of **Keep**.
-
-- **[Keep official document](https://keep-docs.xpoet.cn/)**
-- **[Keep theme configuration guide](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
-- **[Keep theme advanced usage](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 ## :tada: Update
 
