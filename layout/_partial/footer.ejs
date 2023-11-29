@@ -57,7 +57,7 @@ const web_master = bi_author || hexo_author
                                href="<%= item.link_url %>"
                                target="_blank"
                             >
-                                <img src="<%= item.img_url %>">
+                                <img src="<%- url_for(item.img_url) %>">
                             </a>
                         <% } %>
                     <% }) %>
