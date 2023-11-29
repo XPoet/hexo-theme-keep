@@ -10,14 +10,22 @@ else {
 $fs-bg-img-light = $temp-fs-bg-img-light ? $temp-fs-bg-img-light : '/images/bg.svg'
 $fs-bg-img-dark = $temp-fs-bg-img-dark ? $temp-fs-bg-img-dark : $fs-bg-img-light
 
+$root = hexo-config('root')
+
 .first-screen-container {
   width 100%
   height 100vh
   overflow hidden
-  background url($fs-bg-img-light) center center / cover no-repeat
+  background-image url($root + $fs-bg-img-light)
+  background-position-x center
+  background-position-y center
+  background-size cover
+  background-repeat-x no-repeat
+  background-repeat-y no-repeat
+
 
   .dark-mode & {
-    background url($fs-bg-img-dark) center center / cover no-repeat
+    background-image url($root + $fs-bg-img-dark)
   }
 
   .first-screen-content {

@@ -1,11 +1,11 @@
 <div align="right">
-  語言:
+  語言：
   繁體中文 | 
   <a title="English" href="../README.md">English</a> | 
   <a title="Chinese" href="README_zh-CN.md">简体中文</a>
 </div>
 
-<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://xpoet.cn/images/keep-slogan.svg"></a>
+<a href="https://xpoet.cn"><img align="center" alt="Keep" src="https://keep-docs.xpoet.cn/images/keep-slogan.svg"></a>
 
 # hexo-theme-keep
 
@@ -27,20 +27,20 @@
 
 ## :rocket: 安装
 
-如果你在使用 Hexo 5.0 或更高版本，最簡單的安裝方式是透過 NPM：
+如果你使用 Hexo 5.0 或更高版本，最簡單的安裝方式是透過 NPM：
 
 ```sh
 # 推薦
 
-$ cd your-hexo
-$ npm install hexo-theme-keep
+cd your-hexo
+npm install hexo-theme-keep
 ```
 
 你也可以直接 clone 整個原始碼庫：
 
 ```sh
-$ cd your-hexo
-$ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
+cd your-hexo
+git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 ```
 
 安裝完成後，在 Hexo 配置文件中將 `theme` 設定為 `keep`。
@@ -49,7 +49,7 @@ $ git clone https://github.com/XPoet/hexo-theme-keep --depth=1 themes/keep
 theme: keep
 ```
 
-## :wrench: 使用
+## :books: 文檔
 
 請查看 **Keep** 官方文檔：
 
@@ -57,9 +57,7 @@ theme: keep
 - **[Keep 主題配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
 - **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
-不推薦直接修改 **Keep** 主題的文件。因為這可能導致錯誤（例如 git merge 衝突），並且在更新主題時修改的文件可能丟失。
-
-## :dart: 更新
+## :tada: 更新
 
 **Keep** 不定期發布新版本。你可以透過如下命令更新 **Keep**。
 
@@ -79,17 +77,17 @@ $ cd themes/keep
 $ git pull
 ```
 
-## :art: 貢獻
+不推薦直接修改 **Keep** 主題的文件。因為這可能導致錯誤（例如 git merge 衝突），並且在更新主題時修改的文件可能丟失。
 
-我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請看[Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
-
-## :clapper: 貢獻者
+## :art: 貢獻者
 
 這個項目的存在多虧了所有的貢獻者。
 
 <a href="https://github.com/XPoet/hexo-theme-keep/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=XPoet/hexo-theme-keep" />
 </a>
+
+我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請看 [Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
 
 ## :sparkling_heart: 銘謝
 

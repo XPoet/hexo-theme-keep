@@ -25,18 +25,22 @@ hexo.extend.helper.register('exportThemeConfig', function () {
   }
   // -----------------------------------------------------------------------
 
+  // ----------------------------- hexo config -----------------------------
   const hexoConfig = {
     hostname: url.parse(config.url).hostname || config.url,
-    root: config.root,
+    root: config?.root || '/',
     language: config.language
   }
 
   if (config.search) {
     hexoConfig.path = config.search.path
   }
+  // -----------------------------------------------------------------------
 
+  // ----------------------------- theme config ----------------------------
   const themeConfig = theme
   themeConfig.version = require('../../package.json').version
+  // -----------------------------------------------------------------------
 
   return `<script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}

@@ -2,18 +2,21 @@
 const { title: bi_title, logo: bi_logo } = theme?.base_info || {}
 const { enable: s_fs_enable } = theme?.first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
-const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
+const h_menu_nav_object = theme?.menu || { Archives: '/archives' }
+delete h_menu_nav_object['home']
+delete h_menu_nav_object['Home']
+delete h_menu_nav_object['HOME']
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() ? ' transparent-1' : '' %>">
 
     <div class="border-box header-content<%- (s_fs_enable === true && is_home() && !page.prev) ? ' has-first-screen' : '' %>">
         <div class="left border-box">
             <% if (bi_logo) { %>
-                <a class="logo-image border-box" href="/">
+                <a class="logo-image border-box" href="<%- url_for('/') %>">
                     <%- image_tag(bi_logo) %>
                 </a>
             <% } %>
-            <a class="site-name border-box" href="/">
+            <a class="site-name border-box" href="<%- url_for('/') %>">
                <%= bi_title || config?.title || 'Keep Theme' %>
             </a>
         </div>
@@ -21,13 +24,16 @@ const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
         <div class="right border-box">
             <div class="pc">
                 <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class="<%- is_home() ? 'active' : '' %>"
+                           href="<%- url_for('/') %>"
+                        ><%= __('home').toUpperCase() %></a>
+                    </li>
                     <% for (const i in h_menu_nav_object) { %>
                         <li class="menu-item">
-                            <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
+                            <a class="<%- is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
                                href="<%- url_for(h_menu_nav_object[i]) %>"
-                            >
-                                <%= __(i.toLowerCase()).toUpperCase() %>
-                            </a>
+                            ><%= __(i.toLowerCase()).toUpperCase() %></a>
                         </li>
                     <% } %>
                     <% if (local_search_enable === true) { %>
@@ -50,10 +56,16 @@ const h_menu_nav_object = theme?.menu || { Home: '/',  Archives: '/archives' }
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class="<%- is_home() ? 'active' : '' %>"
+                   href="<%- url_for('/') %>"
+                ><%= __('home').toUpperCase() %></a>
+            </li>
             <% for (let i in h_menu_nav_object) { %>
                 <li class="drawer-menu-item flex-center">
-                    <a class="<%- isInHomePaging(page.path, h_menu_nav_object[i]) ? 'active' : is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
-                       href="<%- url_for(h_menu_nav_object[i]) %>"><%= __(i.toLowerCase()).toUpperCase() %></a>
+                    <a class="<%- is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
+                       href="<%- url_for(h_menu_nav_object[i]) %>"
+                    ><%= __(i.toLowerCase()).toUpperCase() %></a>
                 </li>
             <% } %>
         </ul>

@@ -67,7 +67,7 @@ const web_master = bi_author || hexo_author
             <div class="copyright-info info-item <%= footer_style_type %>">
                 &copy;&nbsp;<% if (f_since) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= date(new Date(), 'YYYY') %>
                 <% if (web_master) { %>
-                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/"><%= web_master %></a>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
                 <% } %>
             </div>
 
@@ -87,16 +87,17 @@ const web_master = bi_author || hexo_author
             <% } %>
 
             <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>
+                <% const deploy_provider_img_tag = image_tag('/images/deploy-provider/' + f_site_deploy?.provider + '.png') %>
                 <div class="deploy-info info-item <%= footer_style_type %>">
                     <% if (f_site_deploy?.url) { %>
-                    <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
-                        <% } %>
+                        <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+                    <% } %>
                         <%- __(
                                 'footer.deploy',
-                                '<span class="tooltip" data-tooltip-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '"><img src="/images/deploy-provider/' + f_site_deploy?.provider + '.png"></span>'
+                                '<span class="tooltip" data-tooltip-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '">' + deploy_provider_img_tag + '</span>'
                         ) %>
-                        <% if (f_site_deploy?.url) { %>
-                    </a>
+                    <% if (f_site_deploy?.url) { %>
+                        </a>
                     <% } %>
                 </div>
             <% } %>

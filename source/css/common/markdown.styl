@@ -8,6 +8,7 @@
     justify-content flex-start
     box-sizing border-box
     margin 1.4rem 0
+    padding 0.8rem
     color var(--text-color-3)
     background var(--background-color-2)
     border-left 0.4rem solid var(--text-color-4)
@@ -21,7 +22,6 @@
     footer {
       position relative
       box-sizing border-box
-      padding 0.4rem 0.4rem 0.4rem 0.8rem !important
     }
 
     footer {
@@ -265,7 +265,6 @@
     display block
     box-sizing border-box
     max-width 100%
-    margin var(--post-img-align)
     box-shadow 0 0 0.2rem var(--shadow-color)
     cursor zoom-in
     opacity 1
@@ -277,6 +276,11 @@
     &[lazyload] {
       margin 0.8rem auto 0.2rem
     }
+  }
+
+
+  & > img {
+    margin var(--post-img-align)
   }
 
 
@@ -298,25 +302,30 @@
         }
       }
 
+
       td
       th {
         padding 0
       }
 
+
       td {
         color var(--text-color-3)
       }
+
 
       th {
         color var(--text-color-2)
         font-weight 600
       }
 
+
       td
       th {
         padding 0.5rem 1rem
         border 0.1rem solid var(--border-color)
       }
+
 
       tr {
         background-color var(--background-color-1)
