@@ -1,5 +1,37 @@
 # Changelog
 
+## [4.0.2](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.1...v4.0.2) (2023-11-29)
+
+
+### 🐞 Bug Fixes
+
+* fix click site name/logo changes the language ([49256cb](https://github.com/XPoet/hexo-theme-keep/commit/49256cb5740f9c83063ace8eedc18f8725438cce))
+
+
+### 📖 Docs
+
+* update documents ([88985c2](https://github.com/XPoet/hexo-theme-keep/commit/88985c2a0521a8bfe43e666ec8b922a1441bdcba))
+* update documents ([c353cec](https://github.com/XPoet/hexo-theme-keep/commit/c353cecebdad986e135534e73e8d9c19137a88fd))
+
+
+### 🛠 Performance Improvements
+
+* optimize H tag title anchor jump ([57236c2](https://github.com/XPoet/hexo-theme-keep/commit/57236c2985bea438c008f6fcb2216c66889216e7))
+* optimize img src url generation ([23d6283](https://github.com/XPoet/hexo-theme-keep/commit/23d6283fa64eae57341796175de10bed7599a7cc))
+* optimize root path jump ([046c3f1](https://github.com/XPoet/hexo-theme-keep/commit/046c3f1ce4719319b0638b67cef3727a793114a8))
+* website announcement support the markdown syntax ([7189ead](https://github.com/XPoet/hexo-theme-keep/commit/7189ead987bb070077ad4c22881c943ea028a0ce))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([4f71d3c](https://github.com/XPoet/hexo-theme-keep/commit/4f71d3cd83720904e5a72f36d1945ab489453ed2))
+
+
+### 💄 Improvement UI
+
+* **404:** disable user select ([727046c](https://github.com/XPoet/hexo-theme-keep/commit/727046c3477073cde8fe8c7b926271c003340d75))
+* optimize markdown style ([3540d32](https://github.com/XPoet/hexo-theme-keep/commit/3540d32cc030ca7954e3e94df19a7b8f430095e7))
+
 ## [4.0.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.0...v4.0.1) (2023-11-22)
 
 
