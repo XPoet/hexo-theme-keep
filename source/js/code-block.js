@@ -121,7 +121,7 @@ KEEP.initCodeBlock = () => {
       const codeBoxHeight = codeBox.getBoundingClientRect().height
       if (codeBoxHeight - limitHeight > 50) {
         codeBox.style.position = 'relative'
-        codeBox.style.overflow = 'hidden'
+        codeBox.style.overflowY = 'hidden'
         codeBox.style.height = `${limitHeight}px`
         const shrinkLineDom = document.createElement('div')
         shrinkLineDom.setAttribute('class', 'shrink-line flex-center')
