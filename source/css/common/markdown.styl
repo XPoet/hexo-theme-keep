@@ -280,8 +280,21 @@
   }
 
 
-  & > img {
+  & > img
+  p > img {
     margin var(--post-img-align)
+
+    if (hexo-config('post') && hexo-config('post.img_align') == 'left') {
+      margin 0 auto 0 0
+    }
+
+    if (hexo-config('post') && hexo-config('post.img_align') == 'center') {
+      margin 0 auto
+    }
+
+    if (hexo-config('post') && hexo-config('post.img_align') == 'right') {
+      margin 0 0 0 auto
+    }
   }
 
 
