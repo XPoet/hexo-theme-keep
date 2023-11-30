@@ -1,5 +1,29 @@
 # Changelog
 
+## [4.0.3](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.2...v4.0.3) (2023-11-30)
+
+
+### 📖 Docs
+
+* update documents ([0834663](https://github.com/XPoet/hexo-theme-keep/commit/0834663a593884611f9ecc078dd5cadc79b9bee3))
+
+
+### 🛠 Performance Improvements
+
+* optimize img src url generation ([5a09946](https://github.com/XPoet/hexo-theme-keep/commit/5a099467f33ebd548dd712ad80bc0e5af3044de2))
+* optimize the page path judgment logic ([2437a13](https://github.com/XPoet/hexo-theme-keep/commit/2437a13f096fe96bfc3f069ed8a9eb2bd2d84c55))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([833f510](https://github.com/XPoet/hexo-theme-keep/commit/833f510d32250a3854bec9a1a7c077a88c77223b))
+
+
+### 💄 Improvement UI
+
+* optimize markdown style ([3251093](https://github.com/XPoet/hexo-theme-keep/commit/3251093067d295be20bb3e30aea17b75f7973c9e))
+* **page-template:** add page cover settings ([2b0c227](https://github.com/XPoet/hexo-theme-keep/commit/2b0c22754ccd59aee482f07fdc05b91635315be0))
+
 ## [4.0.2](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.1...v4.0.2) (2023-11-29)
 
 
