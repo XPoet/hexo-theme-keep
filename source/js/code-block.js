@@ -121,13 +121,16 @@ KEEP.initCodeBlock = () => {
       const codeBoxHeight = codeBox.getBoundingClientRect().height
       if (codeBoxHeight - limitHeight > 50) {
         codeBox.style.position = 'relative'
-        codeBox.style.overflowY = 'hidden'
+        codeBox.style.overflow = 'hidden'
         codeBox.style.height = `${limitHeight}px`
         const shrinkLineDom = document.createElement('div')
         shrinkLineDom.setAttribute('class', 'shrink-line flex-center')
         shrinkLineDom.style.height = `${tipNodeH}px`
         shrinkLineDom.style.top = `${limitHeight - tipNodeH}px`
         shrinkLineDom.addEventListener('click', () => {
+          codeBox.style.removeProperty('overflow')
+          codeBox.style.overflowY = 'hidden'
+          codeBox.style.overflowX = 'scroll'
           codeBox.style.height = `${codeBoxHeight}px`
           shrinkLineDom.style.display = 'none'
         })
