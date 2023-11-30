@@ -194,6 +194,12 @@ KEEP.initUtils = () => {
       }
     },
 
+    // get dom zoom value
+    getZoomValueOfDom(dom) {
+      const tmp = Number((dom.style?.zoom || '1').replace('%', ''))
+      return tmp > 1 ? tmp / 100 : tmp
+    },
+
     // zoom in image
     zoomInImage() {
       let SIDE_GAP = 40
@@ -244,16 +250,27 @@ KEEP.initUtils = () => {
       }
 
       if (imgDomList.length) {
+        // Register zoom out events
         zoomOutHandle()
+
         imgDomList.forEach((img) => {
+          // Zoom in handle
           img.addEventListener('click', () => {
             curWinScrollY = window.scrollY
             isZoomIn = !isZoomIn
             setSideGap()
             zoomInImg.setAttribute('src', img.getAttribute('src'))
             selectedImgDom = img
+
             if (isZoomIn) {
               const imgRect = selectedImgDom.getBoundingClientRect()
+
+              const zoom = this.getZoomValueOfDom(selectedImgDom)
+
+              for (let key in imgRect) {
+                imgRect[key] = imgRect[key] * zoom
+              }
+
               const imgW = imgRect.width
               const imgH = imgRect.height
               const imgL = imgRect.left
@@ -268,6 +285,7 @@ KEEP.initUtils = () => {
 
               selectedImgDom.classList.add('hide')
               zoomInImgMask.classList.add('show')
+
               zoomInImg.style.top = imgT + 'px'
               zoomInImg.style.left = imgL + 'px'
               zoomInImg.style.width = imgW + 'px'
