@@ -41,17 +41,17 @@
     <% } %>
 
     <!-- category-page -->
-    <% if (isCategoriesPage(page.path) === true) { %>
+    <% if (is_current('/categories') || is_current('/category')) { %>
         <%- __js('js/page/category-page.js') %>
     <% } %>
 
     <!-- links-page -->
-    <% if (isLinksPage(page.path) === true) { %>
+    <% if (is_current('/links') || is_current('/link')) { %>
         <%- __js('js/page/links-page.js') %>
     <% } %>
 
     <!-- photos-page -->
-    <% if (isPhotosPage(page.path) === true) { %>
+    <% if (is_current('/photos') || is_current('/photo')) { %>
         <%- __js('js/page/photos-page.js') %>
     <% } %>
 </div>
