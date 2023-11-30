@@ -92,15 +92,3 @@ hexo.extend.helper.register('isJsFile', function (path) {
 hexo.extend.helper.register('isCssFile', function (path) {
   return /\.css$/i.test(path)
 })
-
-hexo.extend.helper.register('isLinksPage', function (pagePath) {
-  return pagePath === 'links/index.html'
-})
-
-hexo.extend.helper.register('isPhotosPage', function (pagePath) {
-  return pagePath === 'photos/index.html'
-})
-
-hexo.extend.helper.register('isCategoriesPage', function (pagePath) {
-  return pagePath === 'categories/index.html'
-})

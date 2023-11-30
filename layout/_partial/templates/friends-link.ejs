@@ -10,7 +10,7 @@
                 <a class="a-wrap border-box" href="<%= f?.link %>">
                     <div class="avatar border-box flex-center">
                         <i class="icon fas fa-eye-slash"></i>
-                        <img src="<%= f?.avatar %>"
+                        <img src="<%- url_for(f?.avatar) %>"
                              onerror="this.style.display='none'"
                         >
                     </div>

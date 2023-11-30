@@ -12,7 +12,7 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                     <div class="cover-article-title">
                         <%= page.title %>
                     </div>
-                    <img class="post-cover" src="<%= page.post_cover || page?.home_cover %>"
+                    <img class="post-cover" src="<%- url_for(page.post_cover || page?.home_cover) %>"
                          onerror="this.style.display='none'"
                     >
                 </div>
@@ -100,7 +100,7 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                             <div class="article-prev">
                                 <a class="prev"
                                    rel="prev"
-                                   href="<%= url_for(page.prev.path) %>"
+                                   href="<%- url_for(page.prev.path) %>"
                                    title="<%= page.prev.title %>"
                                 >
                                     <span class="left arrow-icon flex-center">
@@ -117,7 +117,7 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="<%= url_for(page.next.path) %>"
+                                   href="<%- url_for(page.next.path) %>"
                                    title="<%= page.next.title %>"
                                 >
                                     <span class="title flex-center">
