@@ -33,7 +33,6 @@ base_info:
 # If you want to enable Categories and Tags, you need to create categories and tags pages
 # e.g. `hexo new page categories` or `hexo new page tags`
 menu:
-  Home: /
   Archives: /archives
   # Tags: /tags
   # Categories: /categories
