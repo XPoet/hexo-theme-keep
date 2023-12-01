@@ -51,9 +51,9 @@ code_block:
 copy_copyright:
   copy: Copy copyright info
   copied: Copied
-  title: Original article title
-  author: Original article author
-  link: Original article link
+  title: Original post title
+  author: Original post author
+  link: Original post link
 copyright:
   author: Author
   title: Title
@@ -62,7 +62,7 @@ copyright:
   published: Published
   license: License
   license_title: Copyright notice
-  license_content: "All articles in this blog are licensed under %s unless stating additionally."
+  license_content: "All posts in this blog are licensed under %s unless stating additionally."
 ago:
   second: "%s seconds ago"
   minute: "%s minutes ago"
@@ -86,7 +86,7 @@ footer:
     upyun: UPYUN
   total_words: Total words
 post:
-  aging: "It has been %s days since the last update of this article. Some contents may be outdated. Please pay attention to screening."
+  aging: "It has been %s days since the last update of this post. Some contents may be outdated. Please pay attention to screening."
   share:
     qq: "Share to QQ"
     wechat: "Share to WeChat"

@@ -330,9 +330,9 @@ KEEP.initUtils = () => {
       }
     },
 
-    // set how long age in home article block
+    // set how long age in home post block
     setHowLongAgoInHome() {
-      const post = document.querySelectorAll('.article-meta-info .home-article-history')
+      const post = document.querySelectorAll('.post-meta-info .home-post-history')
       post &&
         post.forEach((v) => {
           const nowTimestamp = Date.now()
@@ -541,7 +541,7 @@ KEEP.initUtils = () => {
             ) {
               const tmpDom1 = document.querySelector('.footer .count-item .uv')
               const tmpDom2 = document.querySelector('.footer .count-item .pv')
-              const tmpDom3 = document.querySelector('.article-meta-info .article-pv')
+              const tmpDom3 = document.querySelector('.post-meta-info .post-pv')
               tmpDom1 && (tmpDom1.style.display = 'flex')
               tmpDom2 && (tmpDom2.style.display = 'flex')
               tmpDom3 && (tmpDom3.style.display = 'inline-block')
@@ -683,10 +683,8 @@ KEEP.initUtils = () => {
       }
     },
     trimPostMetaInfoBar() {
-      this.removeWhitespace(
-        document.querySelector('.article-meta-info-container .article-category-ul')
-      )
-      this.removeWhitespace(document.querySelector('.article-meta-info-container .article-tag-ul'))
+      this.removeWhitespace(document.querySelector('.post-meta-info-container .post-category-ul'))
+      this.removeWhitespace(document.querySelector('.post-meta-info-container .post-tag-ul'))
     },
 
     // close website announcement

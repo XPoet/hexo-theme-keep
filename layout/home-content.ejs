@@ -8,12 +8,12 @@
             <i class="icon right close fa-solid fa-close"></i>
         </div>
     <% } %>
-    <ul class="home-article-list border-box">
+    <ul class="home-post-list border-box">
         <% page.posts.forEach(post => { %>
-            <li class="home-article-item">
+            <li class="home-post-item">
 
                 <% if (post?.home_cover) { %>
-                    <div class="home-article-item-top border-box"
+                    <div class="home-post-item-top border-box"
                          style="height: <%= post?.home_cover_height ? post?.home_cover_height + 'px' : '10rem' %>"
                     >
                         <% if (post.sticky) { %>
@@ -27,19 +27,19 @@
                     </div>
                 <% } %>
 
-                <div class="home-article-item-bottom border-box">
+                <div class="home-post-item-bottom border-box">
                     <% if (post.sticky && !post?.home_cover) { %>
                         <div class="post-sticky-box card">
                             <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                         </div>
                     <% } %>
-                    <h3 class="home-article-title border-box">
+                    <h3 class="home-post-title border-box">
                         <a href="<%- url_for(post.path) %>">
                             <%= post.title %>
                         </a>
                     </h3>
 
-                    <div class="home-article-content keep-markdown-body">
+                    <div class="home-post-content keep-markdown-body">
                         <% if (post.excerpt) { %>
                             <%- post.excerpt %>
                         <% } else { %>
@@ -47,7 +47,7 @@
                         <% } %>
                     </div>
 
-                    <%- partial('_partial/article-meta-info', { post: post, page_type: 'home' }) %>
+                    <%- partial('_partial/post/post-meta-info', { post: post, page_type: 'home' }) %>
                 </div>
             </li>
         <% }) %>

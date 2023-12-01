@@ -5,11 +5,11 @@
             <div class="archive-item-header border-box">
                 <span class="archive-year"><%= postItem.year %></span>
             </div>
-            <ul class="article-list border-box">
+            <ul class="archive-item-body border-box">
                 <% postItem.postList.forEach(post => { %>
-                    <li class="article-item border-box">
-                        <span class="article-date border-box"><%= date(post.date, 'MM-DD') %></span>
-                        <a class="article-title border-box text-ellipsis"
+                    <li class="post-item border-box">
+                        <span class="post-date border-box"><%= date(post.date, 'MM-DD') %></span>
+                        <a class="post-title border-box text-ellipsis"
                            href="<%- url_for(post.path) %>"
                         ><%= post.title %></a>
                     </li>

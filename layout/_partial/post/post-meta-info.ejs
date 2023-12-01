@@ -3,31 +3,30 @@ const home_category_limit_number = 3
 const home_tag_limit_number = 5
 %>
 
-<div class="article-meta-info-container border-box <%= page_type %>">
-    <div class="article-meta-info border-box">
+<div class="post-meta-info-container border-box <%= page_type %>">
+    <div class="post-meta-info border-box">
         <% if (page_type === 'home') { %>
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
+                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
 
-
         <% if (page_type === 'post') { %>
-            <span class="meta-info-item article-create-date">
+            <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
                 <span class="pc"><%= date(post.date, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
                 <span class="mobile"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></span>
             </span>
 
-            <span class="meta-info-item article-update-date">
+            <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
                 <span class="pc" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
 
         <% if (post.categories.length && (theme?.home?.category === true || page_type === 'post')) { %>
-            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="article-category-ul">
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
                     <% post.categories.forEach((category, i) => {
                         if (home_category_limit_number === 0 || i + 1 <= home_category_limit_number || page_type === 'post') { %>
                             <li class="category-item"><% if (i !== 0) { %>&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<% } %><a href="<%- url_for(category.path) %>"><%= category.name %></a></li>
@@ -38,9 +37,9 @@ const home_tag_limit_number = 5
         <% } %>
 
         <% if (post.tags.length && (theme?.home?.tag === true || page_type === 'post')) { %>
-            <span class="article-tag meta-info-item border-box">
+            <span class="post-tag meta-info-item border-box">
                 <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
+                <ul class="post-tag-ul">
                     <% post.tags.forEach((tag, i) => {
                         if (home_tag_limit_number === 0 || i + 1 <= home_tag_limit_number || page_type === 'post') { %>
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="<%- url_for(tag.path) %>"><%= tag.name %></a></li>
@@ -61,17 +60,17 @@ const home_tag_limit_number = 5
             }
         %>
         <% if(page_type === 'post' && theme?.post?.word_count?.wordcount === true && temp_wordcount_count){ %>
-            <span class="meta-info-item article-wordcount">
+            <span class="meta-info-item post-wordcount">
                 <i class="icon fas fa-file-word"></i>&nbsp;<span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
             </span>
         <% } %>
         <% if(page_type === 'post' && theme?.post?.word_count?.min2read === true && temp_min2read_count){ %>
-            <span class="meta-info-item article-min2read">
+            <span class="meta-info-item post-min2read">
                 <i class="icon fas fa-clock"></i>&nbsp;<span><%= temp_min2read_count %> <%- __('min2read') %></span>
             </span>
         <% } %>
         <% if (page_type === 'post' && theme?.website_count?.busuanzi_count?.enable === true && theme?.website_count?.busuanzi_count?.page_pv === true) { %>
-            <span class="meta-info-item article-pv">
+            <span class="meta-info-item post-pv">
                 <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
             </span>
         <% } %>
