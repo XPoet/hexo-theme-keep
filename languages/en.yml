@@ -99,4 +99,6 @@ comment:
   reload: Click to reload
   loading: Loading comment plugin
   config_error: "Please fill in the required configuration items for %s comment plugin"
-page_not_found: Page Not Found
+404:
+  page_not_found: Page Not Found
+  go_home: Take me home

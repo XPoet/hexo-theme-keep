@@ -99,4 +99,6 @@ comment:
   reload: 點擊重新加載
   loading: 正在加載評論插件
   config_error: "請完整填寫 %s 評論外掛程式必需的設定項"
-page_not_found: 頁面缺失
+404:
+  page_not_found: 頁面缺失
+  go_home: 前往首頁
