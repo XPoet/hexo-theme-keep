@@ -1,5 +1,36 @@
 # Changelog
 
+## [4.0.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.3...v4.0.4) (2023-12-01)
+
+
+### 🐞 Bug Fixes
+
+* Unable to scroll horizontally when the code length is too long ([8d6ca63](https://github.com/XPoet/hexo-theme-keep/commit/8d6ca63b1eb640969d7bb1b96afeb59ca03adaa0))
+* Unable to scroll horizontally when the code length is too long ([44df85e](https://github.com/XPoet/hexo-theme-keep/commit/44df85e1dc7dddeeff20962762c99e7a1c847c2f))
+
+
+### 🍭 Code Refactoring
+
+* rename `article` -&gt; `post` ([9cac987](https://github.com/XPoet/hexo-theme-keep/commit/9cac987a4561801902585a44e5f0a64d3946ac40))
+
+
+### 🛠 Performance Improvements
+
+* **code-block:** optimize style handle after expand codes ([#284](https://github.com/XPoet/hexo-theme-keep/issues/284)) ([98cda7a](https://github.com/XPoet/hexo-theme-keep/commit/98cda7a6667d2341a4e91f83cac5c9a865db1466))
+* optimize image lazyload ([595812b](https://github.com/XPoet/hexo-theme-keep/commit/595812b47576b26cda7412e8da7c40d1fa2cc204))
+* optimize markdown img align settings ([bd548c9](https://github.com/XPoet/hexo-theme-keep/commit/bd548c9ac13a6e55090e073c1dd84a1b8101681c))
+* optimize zoom in image handle logic ([1f2fbc7](https://github.com/XPoet/hexo-theme-keep/commit/1f2fbc75e19329eb82f601652a7f07f2a0ee00d1))
+
+
+### 📦 Build System
+
+* update _config.yml ([cc37f48](https://github.com/XPoet/hexo-theme-keep/commit/cc37f489cca772b37d6a609cffac8c35b8a86713))
+
+
+### 💄 Improvement UI
+
+* use css variable setting post title align ([71c3150](https://github.com/XPoet/hexo-theme-keep/commit/71c3150189c846d75a22eedd6d0834598a647527))
+
 ## [4.0.3](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.2...v4.0.3) (2023-11-30)
 
 
