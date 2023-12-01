@@ -3,7 +3,7 @@
 $avatar-width = 3.2rem
 $arrow-icon-width = 1rem
 $post-nav-max-width = 14rem
-$article-title-font-size = 1.6rem
+$post-title-font-size = 1.6rem
 $toc-container-width = 15rem
 $spacer-padding = 2rem
 
@@ -65,7 +65,6 @@ $spacer-padding = 2rem
       border-top-left-radius var(--box-border-radius)
       border-top-right-radius var(--box-border-radius)
 
-
       +keep-tablet() {
         height 12.8rem
         padding-top $spacer-padding * 0.8
@@ -73,10 +72,11 @@ $spacer-padding = 2rem
 
         .cover-article-title {
           padding $spacer-padding * 0.5 * 0.8 $spacer-padding * 0.8 !important
-          font-size $article-title-font-size * 0.9 !important
+          font-size $post-title-font-size * 0.9 !important
           line-height 1.5 !important
         }
       }
+
 
       +keep-mobile() {
         height 11.8rem
@@ -85,7 +85,7 @@ $spacer-padding = 2rem
 
         .cover-article-title {
           padding $spacer-padding * 0.5 * 0.6 $spacer-padding * 0.6 !important
-          font-size $article-title-font-size * 0.8 !important
+          font-size $post-title-font-size * 0.8 !important
           line-height 1.4 !important
         }
       }
@@ -101,7 +101,7 @@ $spacer-padding = 2rem
         overflow-y auto
         color var(--text-color-2)
         font-weight 600
-        font-size $article-title-font-size * 1.1
+        font-size $post-title-font-size
         line-height 1.6
         background var(--background-color-1-transparent)
         border-top-right-radius var(--box-border-radius)
@@ -136,15 +136,16 @@ $spacer-padding = 2rem
       .article-title {
         color var(--text-color-2)
         font-weight 600
-        font-size $article-title-font-size
+        font-size $post-title-font-size
         line-height 1.6
+        text-align var(--post-title-align)
 
         +keep-tablet() {
-          font-size $article-title-font-size * 0.9
+          font-size $post-title-font-size * 0.9
         }
 
         +keep-mobile() {
-          font-size $article-title-font-size * 0.8
+          font-size $post-title-font-size * 0.8
         }
       }
 
@@ -214,6 +215,7 @@ $spacer-padding = 2rem
       .article-header-meta-info {
         margin-top 1rem
         +keep-tablet() {
+          margin-top 0.9rem
           transform scale(0.9)
           transform-origin left top
         }
@@ -288,6 +290,7 @@ $spacer-padding = 2rem
           }
         }
       }
+
 
       .article-nav {
         height 2.8rem
@@ -391,6 +394,7 @@ $spacer-padding = 2rem
       max-height calc(100vh - calc(var(--header-shrink-height) + var(--components-spacing)))
     }
   }
+
 
   .hbe-container {
 
