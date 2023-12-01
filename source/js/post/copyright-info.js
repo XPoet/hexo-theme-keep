@@ -4,7 +4,9 @@ function initCopyrightInfoHelper() {
   KEEP.utils.copyrightInfoHelper = {
     // set post link
     initSetPostLink() {
-      const postLinkContentDom = document.querySelector('.copyright-info-content .post-link')
+      const postLinkContentDom = document.querySelector(
+        '.copyright-info-content .copyright-post-link'
+      )
       postLinkContentDom && (postLinkContentDom.innerHTML = decodeURI(window.location.href))
     },
 
@@ -36,8 +38,8 @@ function initCopyrightInfoHelper() {
 
       copyDom.addEventListener('click', () => {
         if (!isCopied) {
-          const author = cicDom.querySelector('.post-author .content').innerHTML
-          const link = cicDom.querySelector('.post-link').innerHTML
+          const author = cicDom.querySelector('.copyright-post-author .content').innerHTML
+          const link = cicDom.querySelector('.copyright-post-link').innerHTML
           const tgtTxt = `${ccLang.author}${colon}${author}\n${ccLang.link}${colon}${link}`
           navigator.clipboard.writeText(tgtTxt).then(() => {
             setCopyDomContent('fa-copy', 'fa-check', ccLang.copied, true)
