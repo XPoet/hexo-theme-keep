@@ -21,7 +21,7 @@ const web_master = bi_author || hexo_author
                     <img src="https://img.shields.io/badge/Since-<%= since_date %>-<%= shields_color_list[0] %>?style=<%= shields_style %>">
                 </a>
                 <% if (web_master) { %>
-                    <a class="shields-item" href="/">
+                    <a class="shields-item" href="<%- url_for('/') %>">
                         <img src="https://img.shields.io/badge/WebMaster-<%= web_master %>-<%= shields_color_list[1] %>?style=<%= shields_style %>">
                     </a>
                 <% } %>

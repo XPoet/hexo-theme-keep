@@ -2,7 +2,10 @@
     <div class="error-404-container border-box">
         <div class="text-1 border-box flex-center">404</div>
         <div class="text-2 border-box flex-center">
-            <%- __('page_not_found') %>
+            <%- __('404.page_not_found') %>
+        </div>
+        <div class="text-3 border-box flex-center">
+            <a class="go-home" href="<%- url_for('/') %>"><%- __('404.go_home') %></a>
         </div>
     </div>
 </div>

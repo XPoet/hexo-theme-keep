@@ -99,4 +99,6 @@ comment:
   reload: 点击重新加载
   loading: 正在加载评论插件
   config_error: "请完整填写 %s 评论插件必需的配置项"
-page_not_found: 页面找不到
+404:
+  page_not_found: 页面找不到
+  go_home: 前往首页
