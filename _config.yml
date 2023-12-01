@@ -33,7 +33,6 @@ base_info:
 # If you want to enable Categories and Tags, you need to create categories and tags pages
 # e.g. `hexo new page categories` or `hexo new page tags`
 menu:
-  Home: /
   Archives: /archives
   # Tags: /tags
   # Categories: /categories
@@ -102,10 +101,10 @@ scroll:
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/home.html
 # ---------------------------------------------------------------------------------------
 home:
-  # Show category in home page article block
+  # Show category in home page post block
   category: false  # Option values: true | false
 
-  # Show tags in home page article block
+  # Show tags in home page post block
   tag: false  # Option values: true | false
 
   # Website announcement in home page
@@ -131,8 +130,8 @@ post:
   # Depend on Hexo Plugin: hexo-wordcount (`npm install hexo-wordcount`)
   # See: https://github.com/willin/hexo-wordcount
   word_count:
-    wordcount: false     # Word count, one article. Option values: true | false
-    min2read: false      # Time to read, one article. Option values: true | false
+    wordcount: false     # Word count, one post. Option values: true | false
+    min2read: false      # Time to read, one post. Option values: true | false
 
   # Post datetime
   datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
@@ -173,10 +172,10 @@ toc:
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false  # Option values: true | false
 
-  # If true, auto open TOC every time when you enter the article page
+  # If true, auto open TOC every time when you enter post page
   init_open: true    # Option values: true | false
 
-  # TOC layout on article page
+  # TOC layout on post page
   layout: right      # Option values: left | right
 
 
@@ -243,7 +242,7 @@ comment:
   #      https://waline.js.org/guide/get-started.html
   waline:
     server_url:     # Server URL
-    reaction: false # Article reactions, Option values: true | false
+    reaction: false # Post reactions, Option values: true | false
     version: 2      # Waline version, default use v2
 
   # Giscus

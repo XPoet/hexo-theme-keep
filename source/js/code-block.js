@@ -127,10 +127,16 @@ KEEP.initCodeBlock = () => {
         shrinkLineDom.setAttribute('class', 'shrink-line flex-center')
         shrinkLineDom.style.height = `${tipNodeH}px`
         shrinkLineDom.style.top = `${limitHeight - tipNodeH}px`
+
+        // expand all codes
         shrinkLineDom.addEventListener('click', () => {
+          codeBox.style.removeProperty('overflow')
+          codeBox.style.overflowY = 'hidden'
+          codeBox.style.overflowX = 'auto'
           codeBox.style.height = `${codeBoxHeight}px`
           shrinkLineDom.style.display = 'none'
         })
+
         codeBox.appendChild(shrinkLineDom)
       }
     }

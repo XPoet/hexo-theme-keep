@@ -3,7 +3,7 @@ $post-page-font-size = 0.86rem
 $meta-icon-interspace = 0.4rem
 
 
-.article-meta-info-container {
+.post-meta-info-container {
   color var(--text-color-4)
 
   &.post {
@@ -39,7 +39,7 @@ $meta-icon-interspace = 0.4rem
 
 
 
-  .article-meta-info {
+  .post-meta-info {
     display flex
     flex-wrap wrap
     justify-content flex-start
@@ -63,7 +63,7 @@ $meta-icon-interspace = 0.4rem
     }
 
 
-    .article-create-date {
+    .post-create-date {
       display var(--post-create-datetime)
 
       .mobile {
@@ -82,7 +82,7 @@ $meta-icon-interspace = 0.4rem
     }
 
 
-    .article-update-date {
+    .post-update-date {
       display var(--post-update-datetime)
 
       +keep-tablet() {
@@ -91,7 +91,7 @@ $meta-icon-interspace = 0.4rem
     }
 
 
-    .article-category {
+    .post-category {
       word-spacing 0
 
       .category-item {
@@ -108,7 +108,7 @@ $meta-icon-interspace = 0.4rem
     }
 
 
-    .article-tag {
+    .post-tag {
       word-spacing 0
 
       .tag-item {
@@ -122,7 +122,7 @@ $meta-icon-interspace = 0.4rem
           margin-right $meta-icon-interspace * 0.5
 
           i.icon {
-            font-size $home-page-font-size * 0.7
+            font-size $home-page-font-size * 0.8
           }
         }
       }
@@ -134,7 +134,7 @@ $meta-icon-interspace = 0.4rem
     }
 
 
-    .article-pv {
+    .post-pv {
       display none
     }
   }

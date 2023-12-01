@@ -194,6 +194,12 @@ KEEP.initUtils = () => {
       }
     },
 
+    // get dom zoom value
+    getZoomValueOfDom(dom) {
+      const tmp = Number((dom.style?.zoom || '1').replace('%', ''))
+      return tmp > 1 ? tmp / 100 : tmp
+    },
+
     // zoom in image
     zoomInImage() {
       let SIDE_GAP = 40
@@ -244,16 +250,27 @@ KEEP.initUtils = () => {
       }
 
       if (imgDomList.length) {
+        // Register zoom out events
         zoomOutHandle()
+
         imgDomList.forEach((img) => {
+          // Zoom in handle
           img.addEventListener('click', () => {
             curWinScrollY = window.scrollY
             isZoomIn = !isZoomIn
             setSideGap()
             zoomInImg.setAttribute('src', img.getAttribute('src'))
             selectedImgDom = img
+
             if (isZoomIn) {
               const imgRect = selectedImgDom.getBoundingClientRect()
+
+              const zoom = this.getZoomValueOfDom(selectedImgDom)
+
+              for (let key in imgRect) {
+                imgRect[key] = imgRect[key] * zoom
+              }
+
               const imgW = imgRect.width
               const imgH = imgRect.height
               const imgL = imgRect.left
@@ -268,6 +285,7 @@ KEEP.initUtils = () => {
 
               selectedImgDom.classList.add('hide')
               zoomInImgMask.classList.add('show')
+
               zoomInImg.style.top = imgT + 'px'
               zoomInImg.style.left = imgL + 'px'
               zoomInImg.style.width = imgW + 'px'
@@ -312,9 +330,9 @@ KEEP.initUtils = () => {
       }
     },
 
-    // set how long age in home article block
+    // set how long age in home post block
     setHowLongAgoInHome() {
-      const post = document.querySelectorAll('.article-meta-info .home-article-history')
+      const post = document.querySelectorAll('.post-meta-info .home-post-history')
       post &&
         post.forEach((v) => {
           const nowTimestamp = Date.now()
@@ -523,7 +541,7 @@ KEEP.initUtils = () => {
             ) {
               const tmpDom1 = document.querySelector('.footer .count-item .uv')
               const tmpDom2 = document.querySelector('.footer .count-item .pv')
-              const tmpDom3 = document.querySelector('.article-meta-info .article-pv')
+              const tmpDom3 = document.querySelector('.post-meta-info .post-pv')
               tmpDom1 && (tmpDom1.style.display = 'flex')
               tmpDom2 && (tmpDom2.style.display = 'flex')
               tmpDom3 && (tmpDom3.style.display = 'inline-block')
@@ -665,10 +683,8 @@ KEEP.initUtils = () => {
       }
     },
     trimPostMetaInfoBar() {
-      this.removeWhitespace(
-        document.querySelector('.article-meta-info-container .article-category-ul')
-      )
-      this.removeWhitespace(document.querySelector('.article-meta-info-container .article-tag-ul'))
+      this.removeWhitespace(document.querySelector('.post-meta-info-container .post-category-ul'))
+      this.removeWhitespace(document.querySelector('.post-meta-info-container .post-tag-ul'))
     },
 
     // close website announcement

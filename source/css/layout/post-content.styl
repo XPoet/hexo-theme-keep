@@ -3,7 +3,7 @@
 $avatar-width = 3.2rem
 $arrow-icon-width = 1rem
 $post-nav-max-width = 14rem
-$article-title-font-size = 1.6rem
+$post-title-font-size = 1.6rem
 $toc-container-width = 15rem
 $spacer-padding = 2rem
 
@@ -19,7 +19,7 @@ $spacer-padding = 2rem
       display block
     }
 
-    .article-content-container {
+    .post-content-container {
       width 'calc(100% - %s)' % $toc-container-width
     }
   }
@@ -30,13 +30,13 @@ $spacer-padding = 2rem
       display none !important
     }
 
-    .article-content-container {
+    .post-content-container {
       width 100% !important
     }
   }
 
 
-  .article-content-container {
+  .post-content-container {
     order 0
     width 100%
     height 100%
@@ -54,7 +54,7 @@ $spacer-padding = 2rem
     }
 
 
-    .article-content-top {
+    .post-content-top {
       display flex
       align-items flex-end
       width 100%
@@ -65,33 +65,33 @@ $spacer-padding = 2rem
       border-top-left-radius var(--box-border-radius)
       border-top-right-radius var(--box-border-radius)
 
-
       +keep-tablet() {
         height 12.8rem
         padding-top $spacer-padding * 0.8
         padding-right $spacer-padding  * 0.8
 
-        .cover-article-title {
+        .cover-post-title {
           padding $spacer-padding * 0.5 * 0.8 $spacer-padding * 0.8 !important
-          font-size $article-title-font-size * 0.9 !important
+          font-size $post-title-font-size * 0.9 !important
           line-height 1.5 !important
         }
       }
+
 
       +keep-mobile() {
         height 11.8rem
         padding-top $spacer-padding * 0.6
         padding-right $spacer-padding  * 0.6
 
-        .cover-article-title {
+        .cover-post-title {
           padding $spacer-padding * 0.5 * 0.6 $spacer-padding * 0.6 !important
-          font-size $article-title-font-size * 0.8 !important
+          font-size $post-title-font-size * 0.8 !important
           line-height 1.4 !important
         }
       }
 
 
-      .cover-article-title {
+      .cover-post-title {
         position relative
         z-index $z-index-1
         box-sizing border-box
@@ -101,7 +101,7 @@ $spacer-padding = 2rem
         overflow-y auto
         color var(--text-color-2)
         font-weight 600
-        font-size $article-title-font-size * 1.1
+        font-size $post-title-font-size
         line-height 1.6
         background var(--background-color-1-transparent)
         border-top-right-radius var(--box-border-radius)
@@ -122,7 +122,7 @@ $spacer-padding = 2rem
     }
 
 
-    .article-content-bottom {
+    .post-content-bottom {
       padding $spacer-padding
 
       &.has-cover {
@@ -133,26 +133,34 @@ $spacer-padding = 2rem
         padding $spacer-padding * 0.5 0 !important
       }
 
-      .article-title {
+      .post-title {
         color var(--text-color-2)
         font-weight 600
-        font-size $article-title-font-size
+        font-size $post-title-font-size
         line-height 1.6
+        text-align var(--post-title-align)
 
         +keep-tablet() {
-          font-size $article-title-font-size * 0.9
+          font-size $post-title-font-size * 0.9
         }
 
         +keep-mobile() {
-          font-size $article-title-font-size * 0.8
+          font-size $post-title-font-size * 0.8
         }
       }
 
 
-      .article-header {
+      .post-header {
         display flex
         justify-content flex-start
         width 100%
+        margin-top 1rem
+
+        +keep-tablet() {
+          margin-top 0.9rem
+          transform scale(0.9)
+          transform-origin left top
+        }
 
         .avatar-box {
           display var(--post-author-avatar)
@@ -198,7 +206,7 @@ $spacer-padding = 2rem
               color #fff
               font-weight 500
               font-size 0.8rem
-              background var(--selection-color)
+              background var(--primary-color)
               border-radius 0.4rem
             }
           }
@@ -210,17 +218,7 @@ $spacer-padding = 2rem
       }
 
 
-      .article-header
-      .article-header-meta-info {
-        margin-top 1rem
-        +keep-tablet() {
-          transform scale(0.9)
-          transform-origin left top
-        }
-      }
-
-
-      .article-content {
+      .post-content {
         margin-top calc(var(--components-spacing) * 0.8)
         padding-bottom calc(var(--components-spacing) * 0.8)
         color var(--text-color-3)
@@ -233,7 +231,7 @@ $spacer-padding = 2rem
         }
 
 
-        .article-aging-tips {
+        .post-aging-tips {
           position relative
           display none
           box-sizing border-box
@@ -289,12 +287,13 @@ $spacer-padding = 2rem
         }
       }
 
-      .article-nav {
+
+      .post-nav {
         height 2.8rem
         margin-top var(--components-spacing)
 
-        .article-prev
-        .article-next {
+        .prev-post
+        .next-post {
           box-sizing border-box
           max-width $post-nav-max-width
           height 100%
@@ -339,11 +338,11 @@ $spacer-padding = 2rem
           }
         }
 
-        .article-prev {
+        .prev-post {
           float left
         }
 
-        .article-next {
+        .next-post {
           float right
         }
 
@@ -391,6 +390,7 @@ $spacer-padding = 2rem
       max-height calc(100vh - calc(var(--header-shrink-height) + var(--components-spacing)))
     }
   }
+
 
   .hbe-container {
 

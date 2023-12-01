@@ -8,19 +8,20 @@ KEEP.initLazyLoad = () => {
   function lazyload(imgs) {
     now = Date.now()
     needLoad = Array.from(imgs).some((i) => i.hasAttribute('lazyload'))
-
-    const h = window.innerHeight
-    const s = document.documentElement.scrollTop || document.body.scrollTop
+    const viewOffsetTop =
+      window.innerHeight + document.documentElement.scrollTop || document.body.scrollTop
 
     imgs.forEach((img) => {
       if (img.hasAttribute('lazyload') && !img.hasAttribute('loading')) {
-        if (h + s > img.offsetTop) {
+        const imgOffsetTop = window.scrollY + img.getBoundingClientRect().top
+
+        if (viewOffsetTop > imgOffsetTop) {
           img.setAttribute('loading', true)
           const loadImageTimeout = setTimeout(() => {
-            const temp = new Image()
+            const tempImg = new Image()
             const src = img.getAttribute('data-src')
-            temp.src = src
-            temp.onload = () => {
+            tempImg.src = src
+            tempImg.onload = () => {
               img.src = src
               img.removeAttribute('lazyload')
               img.removeAttribute('loading')
@@ -36,7 +37,9 @@ KEEP.initLazyLoad = () => {
 
   window.onscroll = () => {
     if (Date.now() - now > 50 && needLoad) {
-      lazyload(imgs)
+      if (imgs.length) {
+        lazyload(imgs)
+      }
     }
   }
 }

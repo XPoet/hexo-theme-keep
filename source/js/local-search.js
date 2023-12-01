@@ -161,16 +161,9 @@ KEEP.initLocalSearch = () => {
             return sliceLeft.start - sliceRight.start
           })
 
-          // Select top N slices in content
-          let upperBound = parseInt(
-            KEEP.theme_config.local_search.top_n_per_article
-              ? KEEP.theme_config.local_search.top_n_per_article
-              : 1,
-            10
-          )
-          if (upperBound >= 0) {
-            slicesOfContent = slicesOfContent.slice(0, upperBound)
-          }
+          // Limit search result length
+          const upperBound = 1
+          slicesOfContent = slicesOfContent.slice(0, upperBound)
 
           let resultItem = ''
 
@@ -240,7 +233,7 @@ KEEP.initLocalSearch = () => {
               }
             )
           : JSON.parse(res)
-        // Only match articles with not empty titles
+        // Only match posts with not empty titles
         datas = datas
           .filter((data) => data.title)
           .map((data) => {

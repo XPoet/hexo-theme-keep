@@ -4,12 +4,12 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
 %>
 <div class="fade-in-down-animation">
     <div class="post-page-container border-box">
-        <div class="article-content-container border-box">
+        <div class="post-content-container border-box">
             <% if (page?.post_cover || page?.home_cover) { %>
-                <div class="article-content-top border-box"
+                <div class="post-content-top border-box"
                      style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
                 >
-                    <div class="cover-article-title">
+                    <div class="cover-post-title">
                         <%= page.title %>
                     </div>
                     <img class="post-cover" src="<%- url_for(page.post_cover || page?.home_cover) %>"
@@ -18,43 +18,41 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                 </div>
             <% } %>
 
-            <div class="article-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
+            <div class="post-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
                 <% if (!page?.post_cover && !page?.home_cover) { %>
-                    <div class="article-title">
+                    <div class="post-title">
                         <%= page.title %>
                     </div>
                 <% } %>
 
                 <% if (post_author) { %>
-                    <div class="article-header border-box">
+                    <div class="post-header border-box">
                         <% if (post_avatar) { %>
                             <div class="avatar-box border-box">
                                 <%- image_tag(post_avatar) %>
                             </div>
                         <% } %>
                         <div class="info-box">
-                            <div class="author">
+                            <div class="author border-box">
                                 <span class="name"><%= post_author %></span>
                                 <% if (theme?.post?.author_badge?.enable === true) { %>
                                     <span class="author-badge"><%- getAuthorBadge(site.posts.length, theme?.post?.author_badge) %></span>
                                 <% } %>
                             </div>
                             <div class="meta-info border-box">
-                                <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
+                                <%- partial('_partial/post/post-meta-info', { post: page, page_type: 'post' }) %>
                             </div>
                         </div>
                     </div>
                 <% } else { %>
-                    <div class="article-header-meta-info">
-                        <div class="meta-info border-box">
-                            <%- partial('_partial/article-meta-info', { post: page, page_type: 'post' }) %>
-                        </div>
+                    <div class="post-header border-box">
+                        <%- partial('_partial/post/post-meta-info', { post: page, page_type: 'post' }) %>
                     </div>
                 <% } %>
 
-                <div class="article-content keep-markdown-body">
+                <div class="post-content keep-markdown-body">
                     <% if (page?.aging === true) { %>
-                        <div class="article-aging-tips"
+                        <div class="post-aging-tips"
                              data-update-date="<%= page.updated %>"
                              data-aging-days="<%= page?.aging_days %>"
                         >
@@ -95,18 +93,18 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                 <% } %>
 
                 <% if (page.prev || page.next) { %>
-                    <div class="article-nav">
+                    <div class="post-nav border-box">
                         <% if (page.prev) { %>
-                            <div class="article-prev">
+                            <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
                                    href="<%- url_for(page.prev.path) %>"
                                    title="<%= page.prev.title %>"
                                 >
                                     <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
+                                        <i class="fas fa-chevron-left"></i>
                                     </span>
-                                            <span class="title flex-center">
+                                    <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis"><%= page.prev.title %></span>
                                         <span class="post-nav-item"><%= __('prev_posts') %></span>
                                     </span>
@@ -114,7 +112,7 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                             </div>
                         <% } %>
                         <% if (page.next) { %>
-                            <div class="article-next">
+                            <div class="next-post">
                                 <a class="next"
                                    rel="next"
                                    href="<%- url_for(page.next.path) %>"
@@ -124,8 +122,8 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                                         <span class="post-nav-title-item text-ellipsis"><%= page.next.title %></span>
                                         <span class="post-nav-item"><%= __('next_posts') %></span>
                                     </span>
-                                            <span class="right arrow-icon flex-center">
-                                      <i class="fas fa-chevron-right"></i>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
                                     </span>
                                 </a>
                             </div>

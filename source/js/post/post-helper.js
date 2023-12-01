@@ -144,9 +144,9 @@ function initPostHelper() {
       observer.observe(commentsCountDom, config)
     },
 
-    // set article aging tips
+    // set post aging tips
     setArticleAgingDays() {
-      const agingTipsDom = document.querySelector('.article-content .article-aging-tips')
+      const agingTipsDom = document.querySelector('.post-content .post-aging-tips')
       if (agingTipsDom) {
         const daysDom = agingTipsDom.querySelector('.days')
         const nowTimestamp = Date.now()
@@ -194,7 +194,7 @@ function initPostHelper() {
 
     resetPostUpdateDate() {
       const updateDateDom = document.querySelector(
-        '.article-meta-info-container .article-update-date .pc'
+        '.post-meta-info-container .post-update-date .pc'
       )
       const updated = new Date(updateDateDom.dataset.updated).getTime()
       const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
