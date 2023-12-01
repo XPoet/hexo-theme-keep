@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.0.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.4...v4.0.5) (2023-12-01)
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([2128d1d](https://github.com/XPoet/hexo-theme-keep/commit/2128d1d8a67ce292c13e2f1167ff1781f4805484))
+
+
+### 💄 Improvement UI
+
+* optimize 404 page style ([403e8e2](https://github.com/XPoet/hexo-theme-keep/commit/403e8e29d604878184f835281d98378e28e7e09e))
+* optimize copyright info style ([3ed9c56](https://github.com/XPoet/hexo-theme-keep/commit/3ed9c5659f36ff920856bf93b17f29e2bdeac2a7))
+
 ## [4.0.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.3...v4.0.4) (2023-12-01)
 
 
