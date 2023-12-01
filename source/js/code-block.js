@@ -128,6 +128,9 @@ KEEP.initCodeBlock = () => {
         shrinkLineDom.style.height = `${tipNodeH}px`
         shrinkLineDom.style.top = `${limitHeight - tipNodeH}px`
         shrinkLineDom.addEventListener('click', () => {
+          codeBox.style.removeProperty('overflow')
+          codeBox.style.overflowY = 'hidden'
+          codeBox.style.overflowX = 'scroll'
           codeBox.style.height = `${codeBoxHeight}px`
           shrinkLineDom.style.display = 'none'
         })
