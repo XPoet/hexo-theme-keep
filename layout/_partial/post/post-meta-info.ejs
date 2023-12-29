@@ -13,14 +13,13 @@ const home_tag_limit_number = 5
 
         <% if (page_type === 'post') { %>
             <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc"><%= date(post.date, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
-                <span class="mobile"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></span>
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime"><%= date(post.date, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
+                <span class="datetime" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
 
