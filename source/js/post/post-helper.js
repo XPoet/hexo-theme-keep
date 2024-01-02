@@ -194,7 +194,7 @@ function initPostHelper() {
 
     resetPostUpdateDate() {
       const updateDateDom = document.querySelector(
-        '.post-meta-info-container .post-update-date .pc'
+        '.post-meta-info-container .post-update-date .datetime'
       )
       const updated = new Date(updateDateDom.dataset.updated).getTime()
       const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
