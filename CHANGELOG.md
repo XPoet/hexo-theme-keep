@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.0.6](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.5...v4.0.6) (2024-01-02)
+
+
+### 🛠 Performance Improvements
+
+* cdn configuration adds cdnjs settings item ([f21ee56](https://github.com/XPoet/hexo-theme-keep/commit/f21ee564fd22abdbba45e4087df8071885006bf1))
+* optimize post meta info ([ad55c9f](https://github.com/XPoet/hexo-theme-keep/commit/ad55c9f28a2c9245f818b41b6b3b4155319b9045))
+
+
+### 💄 Improvement UI
+
+* modify code block shrink line icon ([812dfbf](https://github.com/XPoet/hexo-theme-keep/commit/812dfbf216337469827f3ca99b4957558343da3c))
+* optimize theme mode settings ([#295](https://github.com/XPoet/hexo-theme-keep/issues/295)) ([22d8b8e](https://github.com/XPoet/hexo-theme-keep/commit/22d8b8ead99403f2268eb8074cd29e32da1781ce))
+
 ## [4.0.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.4...v4.0.5) (2023-12-01)
 
 
