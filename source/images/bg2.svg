@@ -5,7 +5,7 @@
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 1400 800"
 >
-  <rect x="1300" y="400" rx="40" ry="40" width="300" height="300" stroke="rgb(129, 201, 149)" fill="rgb(129, 201, 149)">
+  <rect x="1300" y="400" rx="40" ry="40" width="300" height="300" stroke="#0066cc" fill="#0066cc">
     <animateTransform attributeType="XML" attributeName="transform" begin="0s" dur="35s" type="rotate" from="0 1450 550" to="360 1450 550" repeatCount="indefinite" />
   </rect>
 
@@ -14,7 +14,7 @@
     <animateTransform attributeType="XML" attributeName="transform" begin="0s" dur="30s" type="rotate" values="0 210 530 ; -30 210 530 ; 0 210 530" keyTimes="0 ; 0.5 ; 1" repeatCount="indefinite" />
   </path>
 
-  <circle cx="200" cy="150" r="20" stroke="#1a73e8" fill="#1a73e8">
+  <circle cx="200" cy="150" r="20" stroke="#4954e6" fill="#4954e6">
     <animateMotion path="M 0 0 L 40 20 Z" dur="5s" repeatCount="indefinite" />
   </circle>
 
