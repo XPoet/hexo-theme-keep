@@ -23,7 +23,7 @@ const artalk_js = `${artalk_server_url}/dist/Artalk.js`
         >
           if (!window.KeepCommentPlugin?.initArtalkTheme) {
             window.KeepCommentPlugin.initArtalkTheme = () => {
-              return document.body.classList.contains('dark-mode')
+              return document.documentElement.classList.contains('dark-mode')
             }
           }
 

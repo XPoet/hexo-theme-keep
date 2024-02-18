@@ -17,7 +17,7 @@ const giscus_language = config?.language || 'zh-CN'
         >
           if (!window.KeepCommentPlugin?.getGiscusTheme) {
             window.KeepCommentPlugin.getGiscusTheme = () => {
-              return document.body.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
+              return document.documentElement.classList.contains('dark-mode') ? 'dark_dimmed' : 'light_tritanopia'
             }
           }
 
