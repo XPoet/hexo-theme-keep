@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.0.7](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.6...v4.0.7) (2024-02-18)
+
+
+### 📖 Docs
+
+* update README ([41ba74d](https://github.com/XPoet/hexo-theme-keep/commit/41ba74d5b3a9ecbbf3da0e544558bf61986ee563))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([4670827](https://github.com/XPoet/hexo-theme-keep/commit/4670827740bd5dbaeb37b75ee57b0bacff2133a5))
+
+
+### 💄 Improvement UI
+
+* **comment:** optimize light and dark mode switch ([5aa2cca](https://github.com/XPoet/hexo-theme-keep/commit/5aa2cca6a9b58c2b24dd0a64d3a2af87e6751049))
+* optimize category item style ([#299](https://github.com/XPoet/hexo-theme-keep/issues/299)) ([0943611](https://github.com/XPoet/hexo-theme-keep/commit/09436117322ad50d8bd50c178eb445a7b7890053))
+* update first screen background images ([c068e7a](https://github.com/XPoet/hexo-theme-keep/commit/c068e7acce17b4e9ae8fbc7986f9c4562ce48d6b))
+* use css variable to control the display of post author name ([#302](https://github.com/XPoet/hexo-theme-keep/issues/302)) ([95ac9c1](https://github.com/XPoet/hexo-theme-keep/commit/95ac9c1e65b256409a3d3dfa1388023246e4c1a9))
+
 ## [4.0.6](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.5...v4.0.6) (2024-01-02)
 
 
