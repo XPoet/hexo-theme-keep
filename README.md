@@ -94,7 +94,7 @@ We welcome you to join the development of **Keep**. Please see [contributing gui
 **Keep** send special thanks to these great services that sponsor our core infrastructure:
 
 - [GitHub](https://github.com) allows us to host the Git repository and run the test suite.
-- Thanks [jsDelivr](https://www.jsdelivr.com) and [UNPKG](https://www.unpkg.com) for providing public CDN service.
+- Thanks [cdnjs](https://cdnjs.com), [jsDelivr](https://www.jsdelivr.com) and [UNPKG](https://www.unpkg.com) for providing public CDN service.
 
 ## :memo: License
 
