@@ -93,7 +93,7 @@ $ git pull
 **Keep** 特别感谢这些支持我们核心基础设施的优质服务：
 
 - [GitHub](https://github.com) 容许我们托管 Git 仓库及运行测试。
-- [jsDelivr](https://www.jsdelivr.com) 和 [UNPKG](https://www.unpkg.com) 提供了 CDN 服务。
+- [cdnjs](https://cdnjs.com)、[jsDelivr](https://www.jsdelivr.com) 和 [UNPKG](https://www.unpkg.com) 提供了 CDN 服务。
 
 ## :memo: 许可
 

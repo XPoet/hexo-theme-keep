@@ -94,7 +94,7 @@ $ git pull
 **Keep** 特别感謝這些支持我們核心基本設施的優質服務：
 
 - [GitHub](https://github.com) 允許我們存放 Git 原始碼庫及運行測試。
-- [jsDelivr](https://www.jsdelivr.com) 和 [UNPKG](https://www.unpkg.com) 提供了 CDN 服務。
+- [cdnjs](https://cdnjs.com)、[jsDelivr](https://www.jsdelivr.com) 和 [UNPKG](https://www.unpkg.com) 提供了 CDN 服務。
 
 ## :memo: 許可
 

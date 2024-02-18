@@ -1,6 +1,12 @@
+$left-gap = 1.6rem
+$spacing-padding = 0.6rem
+
 .category-list-container {
 
   keep-container(1, 2rem, 0)
+
+  padding-top 1.2rem
+  padding-bottom 1.2rem
 
   .category-list-content {
 
@@ -17,32 +23,58 @@
           margin-bottom 0
         }
 
+
         .self-category-info {
-          position relative
           display flex
           align-items center
           justify-content space-between
-          box-sizing border-box
-          padding 0.5rem 0
+          height 2.6rem
 
           .left {
-            position relative
-            box-sizing border-box
+            display flex
+            align-items center
+            justify-content flex-start
+            width 100%
+            height 100%
+
 
             .icon {
-              padding-right 0.4rem
+              display flex
+              flex-shrink 0
+              align-items center
+              justify-content flex-start
+              width $left-gap
+              height 100%
               color var(--text-color-3)
-              font-size 0.8rem
+              font-size 1.06rem
               cursor pointer
             }
 
+
             .site-all-category-list-link {
+              position relative
+              display flex
+              align-items center
+              justify-content flex-start
+              box-sizing border-box
+              width 100%
+              height 100%
+              font-size 1.02rem
             }
           }
 
+
           .right {
+            display flex
+            flex-shrink 0
+            align-items center
+            justify-content flex-end
+            width 1.6rem
+            height 100%
+
             .site-all-category-list-count {
               color var(--text-color-3)
+              font-size 1.08rem
             }
           }
         }
@@ -52,7 +84,7 @@
           position relative
           box-sizing border-box
           height 0
-          margin-left 1.5rem
+          margin-left $left-gap
           overflow hidden
           visibility hidden
         }
