@@ -30,16 +30,18 @@ base_info:
 # ---------------------------------------------------------------------------------------
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/menu.html
 # ---------------------------------------------------------------------------------------
-# If you want to enable Categories and Tags, you need to create categories and tags pages
-# e.g. `hexo new page categories` or `hexo new page tags`
+# If you want to enable a new navigation menu, you need to create a corresponding page
+# e.g. to enable categories, you need to execute `hexo new page categories`
+# Use `||` to set icon for navigation menu, e.g. `home: / || fa-solid fa-home`
 menu:
-  Archives: /archives
-  # Tags: /tags
-  # Categories: /categories
-  # Links: /links
-  # About: /about
-  # Changelog: /changelog
-  # Photos: /photos
+  home: /                       # || fa-solid fa-home
+  archives: /archives           # || fa-solid fa-box-archive
+  # tags: /tags                 # || fa-solid fa-tags
+  # categories: /categories     # || fa-solid fa-layer-group
+  # links: /links               # || fa-solid fa-link
+  # about: /about               # || fa-solid fa-user-graduate
+  # changelog: /changelog       # || fa-solid fa-bookmark
+  # photos: /photos             # || fa-solid fa-image
   # ......
 
 
@@ -263,7 +265,7 @@ comment:
   # See: https://github.com/ArtalkJS/Artalk
   #      https://artalk.js.org
   artalk:
-    server:     # Server URL
+    server:                    # Server URL
 
   # Disqus
   # See: https://disqus.com/
