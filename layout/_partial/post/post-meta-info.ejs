@@ -1,13 +1,16 @@
 <%
 const home_category_limit_number = 3
 const home_tag_limit_number = 5
+const home_post_block_datetime = theme.home?.post_datetime === 'created' ? post.date : post.updated
+const home_post_block_datetime_icon = theme.home?.post_datetime === 'created' ? 'fa-solid fa-file-circle-plus' : 'fa-solid fa-history'
+const show_home_post_block_datetime = theme.home.hasOwnProperty('post_datetime') ? !!theme.home.post_datetime : true
 %>
 
 <div class="post-meta-info-container border-box <%= page_type %>">
     <div class="post-meta-info border-box">
-        <% if (page_type === 'home') { %>
+        <% if (page_type === 'home' && show_home_post_block_datetime) { %>
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
+                <i class="icon <%= home_post_block_datetime_icon %>"></i>&nbsp;<span class="home-post-history" data-updated="<%= home_post_block_datetime %>"><%= date(home_post_block_datetime, 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
 

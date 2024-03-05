@@ -101,14 +101,17 @@ scroll:
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/home.html
 # ---------------------------------------------------------------------------------------
 home:
-  # Show category in home page post block
-  category: false  # Option values: true | false
-
-  # Show tags in home page post block
-  tag: false  # Option values: true | false
-
   # Website announcement in home page
   announcement:
+
+  # Show category in home page post block
+  category: false           # Option values: true | false
+
+  # Show tags in home page post block
+  tag: false                # Option values: true | false
+
+  # Set the datetime type of home page post block
+  post_datetime: updated    # Option values: updated | created
 
 
 # ---------------------------------------------------------------------------------------
