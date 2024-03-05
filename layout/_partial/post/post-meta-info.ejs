@@ -40,7 +40,6 @@ const show_home_post_block_datetime = theme.home.hasOwnProperty('post_datetime')
 
         <% if (post.tags.length && (theme?.home?.tag === true || page_type === 'post')) { %>
             <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="post-tag-ul">
                     <% post.tags.forEach((tag, i) => {
                         if (home_tag_limit_number === 0 || i + 1 <= home_tag_limit_number || page_type === 'post') { %>
