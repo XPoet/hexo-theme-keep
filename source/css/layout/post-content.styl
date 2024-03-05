@@ -219,15 +219,15 @@ $spacer-padding = 2rem
 
 
       .post-content {
-        margin-top calc(var(--components-spacing) * 0.8)
-        padding-bottom calc(var(--components-spacing) * 0.8)
+        margin-top calc(var(--component-gap) * 0.8)
+        padding-bottom calc(var(--component-gap) * 0.8)
         color var(--text-color-3)
         text-align justify
         word-wrap break-word
 
         +keep-tablet() {
-          margin-top calc(var(--components-spacing) * 0.6)
-          padding-bottom calc(var(--components-spacing) * 0.6)
+          margin-top calc(var(--component-gap) * 0.6)
+          padding-bottom calc(var(--component-gap) * 0.6)
         }
 
 
@@ -290,7 +290,7 @@ $spacer-padding = 2rem
 
       .post-nav {
         height 2.8rem
-        margin-top var(--components-spacing)
+        margin-top var(--component-gap)
 
         .prev-post
         .next-post {
@@ -367,12 +367,12 @@ $spacer-padding = 2rem
 
   .pc-post-toc {
     position sticky
-    top calc(var(--header-height) + var(--components-spacing))
+    top calc(var(--header-height) + var(--component-gap))
     display none
     flex-shrink 0
     box-sizing border-box
     width $toc-container-width
-    max-height calc(100vh - calc(var(--header-height) + var(--components-spacing)))
+    max-height calc(100vh - calc(var(--header-height) + var(--component-gap)))
     transition-t("top, display, max-height", "0, 0, 0", "0.2, 0.1, 0.2", "ease, ease, ease")
 
     &.right-toc {
@@ -386,8 +386,8 @@ $spacer-padding = 2rem
     }
 
     .header-shrink & {
-      top calc(var(--header-shrink-height) + var(--components-spacing))
-      max-height calc(100vh - calc(var(--header-shrink-height) + var(--components-spacing)))
+      top calc(var(--header-shrink-height) + var(--component-gap))
+      max-height calc(100vh - calc(var(--header-shrink-height) + var(--component-gap)))
     }
   }
 
