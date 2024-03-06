@@ -193,7 +193,6 @@ $logo-image-box-width = 2.68rem
             .menu-icon {
               display var(--header-menu-icon)
               margin-right 0.1rem
-              color var(--text-color-3)
             }
 
             .is-home & {
@@ -201,8 +200,16 @@ $logo-image-box-width = 2.68rem
                 a {
                   color var(--first-screen-header-font-color-light)
 
+                  .menu-icon {
+                    color var(--first-screen-header-font-color-light)
+                  }
+
                   &:hover {
                     color var(--primary-color)
+
+                    .menu-icon {
+                      color var(--primary-color)
+                    }
                   }
                 }
 
@@ -216,8 +223,16 @@ $logo-image-box-width = 2.68rem
                   a {
                     color var(--first-screen-header-font-color-dark)
 
+                    .menu-icon {
+                      color var(--first-screen-header-font-color-dark)
+                    }
+
                     &:hover {
                       color var(--primary-color)
+
+                      .menu-icon {
+                        color var(--primary-color)
+                      }
                     }
                   }
 
