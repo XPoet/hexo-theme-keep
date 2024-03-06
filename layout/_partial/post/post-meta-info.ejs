@@ -1,9 +1,19 @@
 <%
 const home_category_limit_number = 3
 const home_tag_limit_number = 5
-const home_post_block_datetime = theme.home?.post_datetime === 'created' ? post.date : post.updated
-const home_post_block_datetime_icon = theme.home?.post_datetime === 'created' ? 'fa-solid fa-file-circle-plus' : 'fa-solid fa-history'
+
 const show_home_post_block_datetime = theme.home.hasOwnProperty('post_datetime') ? !!theme.home.post_datetime : true
+const post_datetime_value = (theme.home.hasOwnProperty('post_datetime') ? theme.home?.post_datetime : 'updated') || 'updated'
+
+const post_datetime_split_list = post_datetime_value?.split('||')
+const post_datetime_type = post_datetime_split_list[0]?.trim()?.toLowerCase()
+const post_datetime_icon = post_datetime_split_list[1]?.trim()?.toLowerCase()
+
+const post_datetime_created_icon = post_datetime_icon || 'fa-solid fa-file-circle-plus'
+const post_datetime_updated_icon = post_datetime_icon || 'fa-solid fa-history'
+
+const home_post_block_datetime_icon = post_datetime_type === 'created' ? post_datetime_created_icon : post_datetime_updated_icon
+const home_post_block_datetime = post_datetime_type === 'created' ? post.date : post.updated
 %>
 
 <div class="post-meta-info-container border-box <%= page_type %>">
