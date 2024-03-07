@@ -719,7 +719,7 @@ KEEP.initUtils = () => {
           let offset = h.getBoundingClientRect().top + winScrollY
 
           if (!isHideHeader) {
-            offset = offset - 60
+            offset = offset - this.headerWrapperDom.getBoundingClientRect().height
           }
 
           window.anime({
@@ -731,7 +731,7 @@ KEEP.initUtils = () => {
               history.pushState(null, document.title, a.href)
               if (isHideHeader) {
                 setTimeout(() => {
-                  KEEP.utils.pageTopDom.classList.add('hide')
+                  this.pageTopDom.classList.add('hide')
                 }, 160)
               }
             }

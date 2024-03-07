@@ -1,6 +1,8 @@
 /* global KEEP */
 
 function initPostHelper() {
+  const isHideHeader = KEEP.theme_config?.scroll?.hide_header
+
   KEEP.utils.postHelper = {
     postPageContainerDom: document.querySelector('.post-page-container'),
     toggleShowTocBtn: document.querySelector('.toggle-show-toc'),
@@ -97,25 +99,7 @@ function initPostHelper() {
       ]
 
       goToCommentsBtnList.forEach((btn) => {
-        if (btn && commentsAnchor) {
-          btn.addEventListener('click', (event) => {
-            event.preventDefault()
-            let winScrollY = window.scrollY
-            winScrollY = winScrollY === 0 ? -20 : winScrollY
-            const offset = commentsAnchor.getBoundingClientRect().top + winScrollY
-            window.anime({
-              targets: document.scrollingElement,
-              duration: 300,
-              easing: 'linear',
-              scrollTop: offset,
-              complete: () => {
-                setTimeout(() => {
-                  KEEP.utils.pageTopDom.classList.add('hide')
-                }, 150)
-              }
-            })
-          })
-        }
+        KEEP.utils.title2Top4HTag(btn, commentsAnchor, isHideHeader, 300)
       })
     },
 
