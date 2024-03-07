@@ -1,6 +1,9 @@
 <%- partial('_partial/progress-bar') %>
+<%
+const page_title = page?.title?.toLowerCase()
+const page_type = page?.type
+%>
 <main class="page-container border-box">
-
     <!-- home first screen  -->
     <% if (is_home() && theme?.first_screen?.enable === true && !page.prev) { %>
         <%- partial('_partial/first-screen') %>
@@ -35,25 +38,24 @@
 
                     <%- partial('tag-content') %>
 
-                <% } else if (page.title.toLowerCase() === 'category' || page.title.toLowerCase() === 'categories') { %>
+                <% } else if (page_title === 'category' || page_title === 'categories') { %>
 
                     <%- partial('category-list') %>
 
-                <% } else if (page.title.toLowerCase() === 'tag' || page.title.toLowerCase() === 'tags') { %>
+                <% } else if (page_title === 'tag' || page_title === 'tags') { %>
 
                     <%- partial('_partial/tagcloud') %>
 
-                <% } else if (page.type === '404') { %>
+                <% } else if (page_type === '404') { %>
 
                     <%- partial('404') %>
 
                 <% } else { %>
 
-                    <%- partial('page-template') %>
+                    <%- partial('_template/page-template') %>
 
                 <% } %>
             </div>
-
         </div>
 
         <div class="page-main-content-bottom border-box">

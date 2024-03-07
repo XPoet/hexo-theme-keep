@@ -62,6 +62,16 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   KEEP.initPrototype()
 
+  KEEP.setPageTemplateWidth = () => {
+    const ptc = document.querySelector('.page-template-container')
+    const targetClass = 'max-content'
+    if (ptc && ptc.classList.contains(targetClass)) {
+      document.body.classList.add(targetClass)
+    } else {
+      document.body.classList.remove(targetClass)
+    }
+  }
+
   KEEP.initExecute = () => {
     KEEP.initUtils()
     KEEP.initHeaderShrink()
@@ -69,6 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initBack2Top()
     KEEP.initCodeBlock()
     KEEP.setFooterVersion()
+    KEEP.setPageTemplateWidth()
 
     if (local_search?.enable === true) {
       KEEP.initLocalSearch()

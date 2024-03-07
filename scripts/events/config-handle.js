@@ -33,19 +33,26 @@ hexo.on('generateBefore', function () {
         hexo.theme.config = { ...hexo.theme.config, ...data.keep }
       }
 
+      hexo.theme.config.source_data = {}
+
       // friends link data
       if (data.links) {
-        hexo.theme.config.links = data.links
+        hexo.theme.config.source_data.links = data.links
       }
 
       // custom social contact icon data
       if (data.icons) {
-        hexo.theme.config.icons = data.icons
+        hexo.theme.config.source_data.icons = data.icons
       }
 
       // photo album data
       if (data.photos) {
-        hexo.theme.config.photos = data.photos
+        hexo.theme.config.source_data.photos = data.photos
+      }
+
+      // tools nav data
+      if (data.tools) {
+        hexo.theme.config.source_data.tools = data.tools
       }
     }
   }
