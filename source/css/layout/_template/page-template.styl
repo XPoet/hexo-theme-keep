@@ -1,5 +1,22 @@
+$page-container-gap = 2rem
+
 .page-template-container {
-  keep-container(1, 0, 2rem)
+
+  &.keep-container {
+    keep-container(1, 0, $page-container-gap)
+
+    .page-template-bottom {
+      padding $page-container-gap
+    }
+  }
+
+  &.has-page-cover {
+    .page-template-bottom {
+      padding-top $page-container-gap
+      padding-bottom $page-container-gap
+    }
+  }
+
 
   .page-template-top {
     width 100%
@@ -22,7 +39,6 @@
 
   .page-template-bottom {
     width 100%
-    padding 2rem
 
     .page-content {
       color var(--text-color-3)

@@ -2,10 +2,11 @@
 const page_title = page?.title?.toLowerCase()
 const use_page_template = page?.use_template !== false
 const { links: links_data, photos: photos_data, tools: tools_data } = theme?.source_data
+const has_page_cover = page?.page_cover ? 'has-page-cover' : ''
 
 let current_page_data = null
 let current_page_template = null
-let is_tools_page = false
+let keep_container = 'keep-container'
 
 if (page_title === 'links' || page_title === 'link') {
   current_page_data = links_data
@@ -20,11 +21,11 @@ if (page_title === 'photos' || page_title === 'photo') {
 if (page_title === 'tools' || page_title === 'tool') {
   current_page_data = tools_data
   current_page_template = 'tools-nav'
-  is_tools_page = true
+  keep_container = ''
 }
 %>
 <div class="fade-in-down-animation">
-    <div class="page-template-container border-box <%= is_tools_page ? 'max-content' : '' %>">
+    <div class="page-template-container border-box <%= keep_container %> <%= has_page_cover %>">
         <!-- page top -->
         <% if (page?.page_cover) { %>
             <div class="page-template-top border-box"
