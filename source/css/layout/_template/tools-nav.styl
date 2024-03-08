@@ -1,0 +1,204 @@
+$tool-item-height = 5.8rem
+$tool-item-logo-size = 3rem
+$tool-item-height-tablet = 4.6rem
+$tool-item-border-radius = 0.6rem
+
+if (hexo-config('menu') && hexo-config('menu.tools')) {
+  .page-template-container {
+    .tools-nav-box {
+      display flex
+      justify-content space-between
+
+
+      .tools-nav-list {
+        position sticky
+        top calc(var(--header-height) + var(--component-gap))
+        flex-shrink 0
+        box-sizing border-box
+        width 12rem
+        max-height calc(100vh - calc(var(--header-height) + var(--component-gap)))
+        margin-right 20px
+
+        .header-shrink & {
+          top calc(var(--header-shrink-height) + var(--component-gap))
+          max-height calc(100vh - calc(var(--header-shrink-height) + var(--component-gap)))
+        }
+
+
+        .tool-nav-category {
+          margin-bottom 0.2rem
+          padding 0.7rem 0.8rem
+          color var(--text-color-3)
+          font-weight bold
+          font-size 1rem
+          border-radius 0.4rem
+          cursor pointer
+
+          &:hover
+          &.active {
+            color var(--primary-color)
+            background var(--background-color-2)
+          }
+
+          &:last-child {
+            margin-bottom 0
+          }
+        }
+      }
+
+
+      .tool-item-list {
+        display grid
+        grid-gap 1.2rem
+        grid-template-columns repeat(2, 1fr)
+        width 100%
+
+        .tool-category-name {
+          display flex
+          grid-column span 2
+          align-items center
+          justify-content space-between
+          margin-top 0.6rem
+          padding 0.2rem 0 0.2rem 0.8rem
+          font-weight bold
+          font-size 1.3rem
+          line-height 1.6
+
+          &:first-child {
+            margin-top 0
+          }
+
+          &::before {
+            position absolute
+            top 50%
+            left 0
+            width 0.3rem
+            height 80%
+            background var(--primary-color)
+            border-radius 0.2rem
+            transform translateY(-50%)
+            content ''
+          }
+
+
+          .category-name {
+            color var(--text-color-3)
+          }
+
+          i.fa-solid {
+            margin-left 1rem
+            color var(--text-color-4)
+            font-size 1.1rem
+            cursor pointer
+          }
+        }
+
+
+        +keep-tablet() {
+          grid-gap 1.1rem
+          grid-template-columns repeat(2, 1fr) !important
+
+          .tool-category-name {
+            grid-column span 2 !important
+            padding 0.1rem 0 0 0.6rem !important
+            font-size 1.2rem !important
+
+            i.fa-solid {
+              margin-left 0.8rem !important
+              font-size 1rem !important
+            }
+          }
+        }
+
+
+        +keep-mobile() {
+          grid-gap 1rem !important
+          grid-template-columns repeat(1, 1fr) !important
+
+          .tool-category-name {
+            grid-column span 1 !important
+          }
+        }
+
+
+        .tool-item {
+          width 100%
+          height $tool-item-height
+          overflow hidden
+          border-radius $tool-item-border-radius
+          box-shadow 1px 1px 3px var(--shadow-color)
+          cursor pointer
+          disable-user-select()
+
+          &:hover {
+            box-shadow 1px 1px 6px var(--shadow-color)
+
+            .logo {
+              img {
+                transform scale(1.12)
+              }
+            }
+          }
+
+
+          .a-wrap {
+            display flex
+            flex-direction column
+            justify-content space-between
+            width 100%
+            height 100%
+            padding 0.6rem
+
+            .top {
+              display flex
+              justify-content space-between
+              width 100%
+              height 100%
+
+              .logo {
+                flex-shrink 0
+                width $tool-item-logo-size
+                height $tool-item-logo-size
+                overflow hidden
+                background-color var(--background-color-2)
+                border-radius 50%
+
+                img {
+                  position absolute
+                  top 0
+                  left 0
+                  width 100%
+                  height 100%
+                  object-fit cover
+                  background-color var(--background-color-2)
+                  transform-origin center center
+                  transition-t("transform", "0.1", "0.8", "linear")
+                }
+
+
+                i.icon {
+                  font-size 1.6rem
+                }
+              }
+
+
+              .name {
+                width 100%
+                padding 0 0.6rem
+                font-size 1.2rem
+              }
+            }
+
+
+            .bottom {
+              flex-shrink 0
+              width 100%
+              height 2.2rem
+              font-size 0.9rem
+            }
+          }
+        }
+      }
+    }
+  }
+}

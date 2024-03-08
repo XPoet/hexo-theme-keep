@@ -1,8 +1,6 @@
 /* global KEEP */
 
 function initPostHelper() {
-  const isHideHeader = KEEP.theme_config?.scroll?.hide_header
-
   KEEP.utils.postHelper = {
     postPageContainerDom: document.querySelector('.post-page-container'),
     toggleShowTocBtn: document.querySelector('.toggle-show-toc'),
@@ -99,7 +97,7 @@ function initPostHelper() {
       ]
 
       goToCommentsBtnList.forEach((btn) => {
-        KEEP.utils.title2Top4HTag(btn, commentsAnchor, isHideHeader, 300)
+        KEEP.utils.title2Top4HTag(btn, commentsAnchor, 300)
       })
     },
 

@@ -1,3 +1,50 @@
 <div class="tools-nav-box border-box">
-    Tools Nav
+    <ul class="tools-nav-list">
+        <% for (let i = 0; i < theme.source_data.tools.length; i++) { %>
+            <% const tool = theme.source_data.tools[i] %>
+            <% const anchor_id = tool.category + i %>
+            <% if (tool?.category) { %>
+                <li class="tool-nav-category text-ellipsis border-box <%= i === 0 ? 'active' : '' %>"
+                    data-anchor="<%= anchor_id %>"
+                >
+                    <%= tool.category %>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
+    <ul class="tool-item-list border-box">
+        <% for (let i = 0; i < theme.source_data.tools.length; i++) { %>
+            <% const tool = theme.source_data.tools[i] %>
+            <% const anchor_id = tool.category + i %>
+            <% if (tool?.category) { %>
+                <li class="tool-category-name text-ellipsis border-box" id="<%= anchor_id %>">
+                    <span class="category-name text-ellipsis"><%= tool.category %></span>
+                    <i class="fa-solid fa-chevron-down fold"></i>
+                </li>
+            <% } else { %>
+                <li class="tool-item border-box">
+                    <a class="a-wrap border-box" href="<%= tool?.link %>">
+                        <div class="top border-box">
+                            <div class="logo border-box flex-center">
+                                <i class="icon fas fa-tools text-color-4"></i>
+                                <img src="<%- url_for(tool?.image) %>"
+                                     onerror="this.style.display = 'none'"
+                                >
+                            </div>
+                            <div class="name flex-start border-box text-ellipsis">
+                                <div class="border-box text-color-3 text-ellipsis">
+                                    <%= tool?.name %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom flex-start border-box text-ellipsis">
+                            <div class="border-box text-color-4 text-ellipsis">
+                                <%= tool?.description %>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
 </div>

@@ -40,19 +40,24 @@
         <% } %>
     <% } %>
 
-    <!-- category-page -->
+    <!-- categories page -->
     <% if (is_current('/categories') || is_current('/category')) { %>
         <%- __js('js/page/category-page.js') %>
     <% } %>
 
-    <!-- links-page -->
+    <!-- links page -->
     <% if (is_current('/links') || is_current('/link')) { %>
         <%- __js('js/page/links-page.js') %>
     <% } %>
 
-    <!-- photos-page -->
+    <!-- photos page -->
     <% if (is_current('/photos') || is_current('/photo')) { %>
         <%- __js('js/page/photos-page.js') %>
+    <% } %>
+
+    <!-- tools page -->
+    <% if (is_current('/tools') || is_current('/tool')) { %>
+        <%- __js('js/page/tools-page.js') %>
     <% } %>
 </div>
 

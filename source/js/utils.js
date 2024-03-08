@@ -710,15 +710,18 @@ KEEP.initUtils = () => {
     },
 
     // H tag title to top
-    title2Top4HTag(a, h, isHideHeader, duration = 200) {
+    title2Top4HTag(a, h, duration, cb) {
       if (a && h) {
         a.addEventListener('click', (e) => {
           e.preventDefault()
+
+          cb && cb()
+
           let winScrollY = window.scrollY
           winScrollY = winScrollY <= 1 ? -19 : winScrollY
           let offset = h.getBoundingClientRect().top + winScrollY
 
-          if (!isHideHeader) {
+          if (!this.isHideHeader) {
             offset = offset - this.headerWrapperDom.getBoundingClientRect().height
           }
 
@@ -729,7 +732,7 @@ KEEP.initUtils = () => {
             scrollTop: offset,
             complete: () => {
               history.pushState(null, document.title, a.href)
-              if (isHideHeader) {
+              if (this.isHideHeader) {
                 setTimeout(() => {
                   this.pageTopDom.classList.add('hide')
                 }, 160)
@@ -743,7 +746,7 @@ KEEP.initUtils = () => {
     // A tag anchor jump handle
     aAnchorJump() {
       document.querySelectorAll('a.headerlink').forEach((a) => {
-        this.title2Top4HTag(a, a.parentNode, this.isHideHeader, 10)
+        this.title2Top4HTag(a, a.parentNode, 10)
       })
     }
   }

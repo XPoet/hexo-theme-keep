@@ -5,6 +5,7 @@ const { links: links_data, photos: photos_data, tools: tools_data } = theme?.sou
 
 let current_page_data = null
 let current_page_template = null
+let is_tools_page = false
 
 if (page_title === 'links' || page_title === 'link') {
   current_page_data = links_data
@@ -19,12 +20,12 @@ if (page_title === 'photos' || page_title === 'photo') {
 if (page_title === 'tools' || page_title === 'tool') {
   current_page_data = tools_data
   current_page_template = 'tools-nav'
+  is_tools_page = true
 }
-
-const max_content = page_title === 'tools' ? 'max-content' : ''
 %>
 <div class="fade-in-down-animation">
-    <div class="page-template-container border-box">
+    <div class="page-template-container border-box <%= is_tools_page ? 'max-content' : '' %>">
+        <!-- page top -->
         <% if (page?.page_cover) { %>
             <div class="page-template-top border-box"
                  style="height: <%= page?.page_cover_height ? page?.page_cover_height + 'px' : '200px' %>"
@@ -35,6 +36,7 @@ const max_content = page_title === 'tools' ? 'max-content' : ''
             </div>
         <% } %>
 
+        <!-- page bottom -->
         <div class="page-template-bottom border-box">
             <!-- use page template -->
             <% if (use_page_template && current_page_data && current_page_template) { %>
