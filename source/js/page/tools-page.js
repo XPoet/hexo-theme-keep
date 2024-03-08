@@ -1,18 +1,18 @@
 /* global KEEP */
 
 function toolsPageHandle() {
-  const isHideHeader = KEEP.theme_config?.scroll?.hide_header
-
   const toolsNavBox = document.querySelector('.tools-nav-box')
 
   if (!toolsNavBox) {
     return
   }
 
+  const toolItemList = toolsNavBox.querySelector('.tool-item-list')
+  const toolItemDoms = toolItemList.querySelectorAll('.tool-item')
+  const toolCategoryAnchorDoms = toolItemList.querySelectorAll('.tool-category-name')
+  const toolNavList = toolsNavBox.querySelectorAll('.tools-nav-list .tool-nav-category')
+
   const toolItemHandle = () => {
-    const toolItemList = toolsNavBox.querySelector('.tool-item-list')
-    const toolTypeNameDoms = toolItemList.querySelectorAll('.tool-category-name')
-    const toolItemDoms = toolItemList.querySelectorAll('.tool-item')
     const toolsCount = toolItemDoms.length
     let columns = 2
 
@@ -23,7 +23,7 @@ function toolsPageHandle() {
     }
 
     toolItemList.style.gridTemplateColumns = `repeat(${columns}, 1fr)`
-    toolTypeNameDoms.forEach((ltd) => {
+    toolCategoryAnchorDoms.forEach((ltd) => {
       ltd.style.gridColumn = `span ${columns}`
 
       let folded = false
@@ -50,8 +50,6 @@ function toolsPageHandle() {
   }
   toolItemHandle()
 
-  const toolNavList = toolsNavBox.querySelectorAll('.tools-nav-list .tool-nav-category')
-
   const clearToolNavActive = () => {
     toolNavList.forEach((tn) => tn.classList.remove('active'))
   }
@@ -62,6 +60,24 @@ function toolsPageHandle() {
       KEEP.utils.title2Top4HTag(tn, anchor, 300, () => {
         clearToolNavActive()
         tn.classList.add('active')
+      })
+    })
+
+    const toolCategoryAnchorScrollTopList = [...toolCategoryAnchorDoms].map(
+      (x) => x.getBoundingClientRect().top
+    )
+    let headerHeight = KEEP.utils.headerWrapperDom.getBoundingClientRect().height
+    if (KEEP.utils.isHideHeader) {
+      headerHeight = 0
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      toolCategoryAnchorScrollTopList.forEach((st, idx) => {
+        if (scrollTop + headerHeight > st) {
+          clearToolNavActive()
+          toolNavList[idx].classList.add('active')
+        }
       })
     })
   }

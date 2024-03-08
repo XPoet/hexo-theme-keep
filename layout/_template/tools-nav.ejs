@@ -1,10 +1,11 @@
+<% const btoaStr = (str) => btoa(encodeURIComponent(str)).trim().replaceAll('=', '') %>
 <div class="tools-nav-box border-box">
     <ul class="tools-nav-list">
         <% for (let i = 0; i < theme.source_data.tools.length; i++) { %>
             <% const tool = theme.source_data.tools[i] %>
-            <% const anchor_id = tool.category + i %>
+            <% const anchor_id = btoaStr(tool.category) + i %>
             <% if (tool?.category) { %>
-                <li class="tool-nav-category text-ellipsis border-box <%= i === 0 ? 'active' : '' %>"
+                <li class="tool-nav-category text-ellipsis border-box <%= anchor_id %> <%= i === 0 ? 'active' : '' %>"
                     data-anchor="<%= anchor_id %>"
                 >
                     <%= tool.category %>
@@ -15,7 +16,7 @@
     <ul class="tool-item-list border-box">
         <% for (let i = 0; i < theme.source_data.tools.length; i++) { %>
             <% const tool = theme.source_data.tools[i] %>
-            <% const anchor_id = tool.category + i %>
+            <% const anchor_id = btoaStr(tool.category) + i %>
             <% if (tool?.category) { %>
                 <li class="tool-category-name text-ellipsis border-box" id="<%= anchor_id %>">
                     <span class="category-name text-ellipsis"><%= tool.category %></span>
