@@ -45,7 +45,7 @@ if (page_title === 'tools' || page_title === 'tool') {
             <% } %>
 
             <!-- page content -->
-            <div class="page-content border-box keep-markdown-body">
+            <div class="page-content border-box keep-markdown-body <%= current_page_data ? 'has-data' : '' %>">
                 <% if (page?.content || current_page_data) { %>
                     <%- page.content %>
                 <% } else { %>
