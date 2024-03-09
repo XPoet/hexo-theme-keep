@@ -3,9 +3,10 @@ const home_category_limit_number = 3
 const home_tag_limit_number = 5
 
 const show_home_post_block_datetime = theme.home.hasOwnProperty('post_datetime') ? !!theme.home.post_datetime : true
-const post_datetime_value = (theme.home.hasOwnProperty('post_datetime') ? theme.home?.post_datetime : 'updated') || 'updated'
+const home_post_datetime_value = (theme.home.hasOwnProperty('post_datetime') ? theme.home?.post_datetime : 'updated') || 'updated'
+const home_post_datetime_format = (theme.home.hasOwnProperty('post_datetime_format') ? theme.home?.post_datetime_format : 'ago') || 'ago'
 
-const post_datetime_split_list = post_datetime_value?.split('||')
+const post_datetime_split_list = home_post_datetime_value?.split('||')
 const post_datetime_type = post_datetime_split_list[0]?.trim()?.toLowerCase()
 const post_datetime_icon = post_datetime_split_list[1]?.trim()?.toLowerCase()
 
@@ -20,7 +21,9 @@ const home_post_block_datetime = post_datetime_type === 'created' ? post.date : 
     <div class="post-meta-info border-box">
         <% if (page_type === 'home' && show_home_post_block_datetime) { %>
             <span class="meta-info-item border-box">
-                <i class="icon <%= home_post_block_datetime_icon %>"></i>&nbsp;<span class="home-post-history" data-updated="<%= home_post_block_datetime %>"><%= date(home_post_block_datetime, 'YYYY-MM-DD HH:mm:ss') %></span>
+                <i class="icon <%= home_post_block_datetime_icon %>"></i>&nbsp;<span class="home-post-history"
+                                                                                data-updated="<%= home_post_block_datetime %>"
+                ><%= date(home_post_block_datetime, home_post_datetime_format === 'ago' ? 'YYYY-MM-DD HH:mm:ss' : home_post_datetime_format) %></span>
             </span>
         <% } %>
 

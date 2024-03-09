@@ -332,6 +332,12 @@ KEEP.initUtils = () => {
 
     // set how long age in home post block
     setHowLongAgoInHome() {
+      const { post_datetime_format } = KEEP.theme_config?.home || {}
+
+      if (post_datetime_format && post_datetime_format !== 'ago') {
+        return
+      }
+
       const post = document.querySelectorAll('.post-meta-info .home-post-history')
       post &&
         post.forEach((v) => {
