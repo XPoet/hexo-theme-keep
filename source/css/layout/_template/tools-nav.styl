@@ -1,7 +1,9 @@
 $tool-item-height = 5.8rem
-$tool-item-logo-size = 3rem
+$tool-item-logo-size = 2.8rem
 $tool-item-height-tablet = 4.6rem
 $tool-item-border-radius = 0.6rem
+$tool-item-grid-column = 4
+$left-tools-nav-width = 9rem
 
 if (hexo-config('menu') && hexo-config('menu.tools')) {
   .page-template-container {
@@ -15,9 +17,19 @@ if (hexo-config('menu') && hexo-config('menu.tools')) {
         top calc(var(--header-height) + var(--component-gap))
         flex-shrink 0
         box-sizing border-box
-        width 12rem
+        width $left-tools-nav-width
         max-height calc(100vh - calc(var(--header-height) + var(--component-gap)))
-        margin-right 1.8rem
+        margin-right 1.6rem
+
+        +keep-tablet() {
+          width $left-tools-nav-width * 0.85
+          margin-right 1.3rem
+        }
+
+        +keep-mobile() {
+          width $left-tools-nav-width * 0.7
+          margin-right 1rem
+        }
 
         .header-shrink & {
           top calc(var(--header-shrink-height) + var(--component-gap))
@@ -27,9 +39,8 @@ if (hexo-config('menu') && hexo-config('menu.tools')) {
 
         .tool-nav-category {
           margin-bottom 0.2rem
-          padding 0.7rem 0.8rem
+          padding 0.6rem 0.8rem
           color var(--text-color-3)
-          font-weight bold
           font-size 1rem
           border-radius 0.4rem
           cursor pointer
@@ -50,12 +61,12 @@ if (hexo-config('menu') && hexo-config('menu.tools')) {
       .tool-item-list {
         display grid
         grid-gap 1.2rem
-        grid-template-columns repeat(2, 1fr)
+        grid-template-columns repeat($tool-item-grid-column, 1fr)
         width 100%
 
         .tool-category-name {
           display flex
-          grid-column span 2
+          grid-column span $tool-item-grid-column
           align-items center
           justify-content space-between
           margin-top 0.6rem
@@ -126,18 +137,12 @@ if (hexo-config('menu') && hexo-config('menu.tools')) {
           height $tool-item-height
           overflow hidden
           border-radius $tool-item-border-radius
-          box-shadow 1px 1px 3px var(--shadow-color)
+          box-shadow 0 1px 3px var(--shadow-color)
           cursor pointer
           disable-user-select()
 
           &:hover {
-            box-shadow 1px 1px 6px var(--shadow-color)
-
-            .logo {
-              img {
-                transform scale(1.12)
-              }
-            }
+            box-shadow 0 1px 6px var(--shadow-color)
           }
 
 
@@ -155,29 +160,31 @@ if (hexo-config('menu') && hexo-config('menu.tools')) {
               width 100%
               height 100%
 
+
               .logo {
                 flex-shrink 0
                 width $tool-item-logo-size
                 height $tool-item-logo-size
                 overflow hidden
-                background-color var(--background-color-2)
+                font-size 1.6rem
                 border-radius 50%
 
-                img {
-                  position absolute
-                  top 0
-                  left 0
-                  width 100%
-                  height 100%
-                  object-fit cover
+
+                &.has-bg {
                   background-color var(--background-color-2)
-                  transform-origin center center
-                  transition-t("transform", "0.1", "0.8", "linear")
                 }
 
 
-                i.icon {
-                  font-size 1.4rem
+                img {
+                  position absolute
+                  top 50%
+                  left 50%
+                  width 80%
+                  height 80%
+                  object-fit cover
+                  background-color var(--background-color-1)
+                  transform translateX(-50%) translateY(-50%)
+                  transform-origin center center
                 }
               }
 

@@ -21,7 +21,7 @@ if (page_title === 'photos' || page_title === 'photo') {
 if (page_title === 'tools' || page_title === 'tool') {
   current_page_data = tools_data
   current_page_template = 'tools-nav'
-  keep_container = ''
+  if (current_page_data) { keep_container = '' }
 }
 %>
 <div class="fade-in-down-animation">

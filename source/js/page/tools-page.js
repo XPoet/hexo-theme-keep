@@ -8,24 +8,11 @@ function toolsPageHandle() {
   }
 
   const toolItemList = toolsNavBox.querySelector('.tool-item-list')
-  const toolItemDoms = toolItemList.querySelectorAll('.tool-item')
   const toolCategoryAnchorDoms = toolItemList.querySelectorAll('.tool-category-name')
   const toolNavList = toolsNavBox.querySelectorAll('.tools-nav-list .tool-nav-category')
 
   const toolItemHandle = () => {
-    const toolsCount = toolItemDoms.length
-    let columns = 2
-
-    if (toolsCount >= 80) {
-      columns = 4
-    } else if (toolsCount >= 60) {
-      columns = 3
-    }
-
-    toolItemList.style.gridTemplateColumns = `repeat(${columns}, 1fr)`
     toolCategoryAnchorDoms.forEach((ltd) => {
-      ltd.style.gridColumn = `span ${columns}`
-
       let folded = false
       const siblings = []
       let nextSibling = ltd.nextElementSibling
