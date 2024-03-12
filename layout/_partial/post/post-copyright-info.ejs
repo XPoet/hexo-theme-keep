@@ -1,13 +1,11 @@
 <%
-let  licenseLang = ''
+let license_lang = ''
+if (config?.language === 'zh-CN') { license_lang = '.zh-hans' }
+if (config?.language === 'zh-TW') { license_lang = '.zh-hant' }
+let license_url = 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed' + license_lang
 
-if (config?.language === 'zh-CN') {
-    licenseLang = '.zh-hans'
-}
-
-if (config?.language === 'zh-TW') {
-    licenseLang = '.zh-hant'
-}
+const use_custom = theme?.post?.copyright_info !== true && theme?.post?.copyright_info?.custom_license && theme?.post?.copyright_info?.custom_link
+if (use_custom) { license_url = theme?.post?.copyright_info?.custom_link }
 %>
 <div class="post-copyright-info-container border-box">
     <div class="copyright-info-content border-box">
@@ -41,12 +39,16 @@ if (config?.language === 'zh-TW') {
                 <div class="type">
                     <%- __('copyright.license') %>
                 </div>
-                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed<%= licenseLang %>">
-                        <i class="fa-brands fa-creative-commons"></i>
-                        <i class="fa-brands fa-creative-commons-by"></i>
-                        <i class="fa-brands fa-creative-commons-nc"></i>
-                        <i class="fa-brands fa-creative-commons-sa"></i>
+                <div class="content tooltip" data-tooltip-content="<%= use_custom ? '' : 'CC BY-NC-SA 4.0' %>">
+                    <a href="<%= license_url %>" target="_blank">
+                        <% if (use_custom) { %>
+                            <%= theme?.post?.copyright_info?.custom_license %>
+                        <% } else { %>
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        <% } %>
                     </a>
                 </div>
             </div>

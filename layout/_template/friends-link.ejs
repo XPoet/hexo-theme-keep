@@ -1,5 +1,5 @@
 <ul class="friends-link-list border-box">
-    <% for (const f of theme?.links) { %>
+    <% for (const f of theme.source_data?.links) { %>
         <% if (f?.title) { %>
            <li class="link-type-title text-ellipsis border-box">
                <span class="type-name text-ellipsis"><%= f.title %></span>

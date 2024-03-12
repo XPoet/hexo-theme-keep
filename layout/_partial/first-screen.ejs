@@ -57,11 +57,12 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
                                         <i class="fas fa-envelope"></i>
                                     </a>
                                 <% } else { %>
+                                    <% const sc_icon = key === 'x' ? 'x-twitter' : key %>
                                     <% if(isImg) { %>
-                                        <i class="fab fa-<%= key %>"></i>
+                                        <i class="fab fa-<%= sc_icon %>"></i>
                                     <% } else { %>
                                         <a target="_blank" href="<%- link %>">
-                                            <i class="fab fa-<%= key %>"></i>
+                                            <i class="fab fa-<%= sc_icon %>"></i>
                                         </a>
                                     <% } %>
                                 <% } %>
@@ -70,13 +71,14 @@ const { enable: sc_enable, links: sc_links } = theme?.social_contact || {}
                     <% } %>
 
                     <!-- custom svg icons -->
-                    <% for (const icon in theme?.icons) { %>
-                        <% if(theme.icons[icon]) { %>
+                    <% const custom_icons = theme.source_data?.icons || {} %>
+                    <% for (const icon in custom_icons) { %>
+                        <% if(custom_icons[icon]) { %>
                             <%
-                                const custom_tmpl = theme.icons[icon].link.split('|').map(x => x.trim())
+                                const custom_tmpl = custom_icons[icon].link.split('|').map(x => x.trim())
                                 let custom_is_img = false
-                                let custom_link = theme.icons[icon].link
-                                const custom_svg = theme.icons[icon].svg
+                                let custom_link = custom_icons[icon].link
+                                const custom_svg = custom_icons[icon].svg
                                 if (custom_tmpl.length > 1) {
                                     custom_link = custom_tmpl[1]
                                     custom_is_img = custom_tmpl[0] === 'img'

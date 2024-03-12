@@ -1,0 +1,63 @@
+$page-container-gap = 2rem
+
+.page-template-container {
+
+  &.keep-container {
+    keep-container(1, 0, $page-container-gap)
+
+    .page-template-bottom {
+      padding $page-container-gap
+    }
+  }
+
+  &.has-page-cover {
+    .page-template-bottom {
+      padding-top $page-container-gap
+      padding-bottom $page-container-gap
+    }
+  }
+
+
+  .page-template-top {
+    width 100%
+    overflow hidden
+    background-color var(--background-color-2)
+    border-top-left-radius var(--box-border-radius)
+    border-top-right-radius var(--box-border-radius)
+
+    .page-cover {
+      position absolute
+      top 0
+      left 0
+      box-sizing border-box
+      width 100%
+      height 100%
+      object-fit cover
+    }
+  }
+
+
+  .page-template-bottom {
+    width 100%
+
+    .page-content {
+      color var(--text-color-3)
+
+      &.has-data {
+        margin-top $page-container-gap
+      }
+
+      h1
+      h2
+      h3
+      h4
+      h5
+      h6 {
+
+        &:first-child {
+          margin-top 0
+        }
+      }
+    }
+  }
+}

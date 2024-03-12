@@ -1,0 +1,55 @@
+<%
+const btoaStr = (str) => btoa(encodeURIComponent(str)).trim().replaceAll('=', '')
+const tools_data = theme.source_data.tools
+const tools_nav_data = theme.source_data.tools.filter((t) => t?.category)
+%>
+<div class="tools-nav-box border-box">
+    <% if (tools_nav_data.length) { %>
+        <ul class="tools-nav-list">
+            <% for (let i = 0; i < tools_nav_data.length; i++) { %>
+                <% const tool = tools_nav_data[i] %>
+                <% const anchor_id = btoaStr(tool.category) %>
+                <li class="tool-nav-category text-ellipsis border-box <%= anchor_id %> <%= i === 0 ? 'active' : '' %>"
+                    data-anchor="<%= anchor_id %>"
+                >
+                    <%= tool.category %>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
+    <ul class="tool-item-list border-box">
+        <% for (let i = 0; i < tools_data.length; i++) { %>
+            <% const tool = tools_data[i] %>
+            <% if (tool?.category) { %>
+                <% const anchor_id = btoaStr(tool.category) %>
+                <li class="tool-category-name text-ellipsis border-box" id="<%= anchor_id %>">
+                    <span class="category-name text-ellipsis"><%= tool.category %></span>
+                    <i class="fa-solid fa-chevron-down fold"></i>
+                </li>
+            <% } else if (tool?.name && tool?.link) { %>
+                <li class="tool-item border-box">
+                    <a class="a-wrap border-box" href="<%= tool?.link %>">
+                        <div class="top border-box">
+                            <div class="logo border-box flex-center <%= tool?.image ? '' : 'has-bg' %>">
+                                <span class="text-color-4"><%= tool?.name.charAt(0).toUpperCase() %></span>
+                                <img src="<%- url_for(tool?.image) %>"
+                                     onerror="this.style.display = 'none'"
+                                >
+                            </div>
+                            <div class="name flex-start border-box text-ellipsis">
+                                <div class="border-box text-color-3 text-ellipsis">
+                                    <%= tool?.name %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom flex-start border-box text-ellipsis">
+                            <div class="border-box text-color-4 text-ellipsis">
+                                <%= tool?.description %>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
+</div>

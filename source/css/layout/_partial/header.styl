@@ -150,6 +150,7 @@ $logo-image-box-width = 2.68rem
               margin-left 0
             }
 
+
             a {
               &::before {
                 position absolute
@@ -180,7 +181,7 @@ $logo-image-box-width = 2.68rem
 
 
             &.search {
-              margin-left 26px
+              margin-left 1.6rem
               font-size $pc-search-icon-font-size
 
               i {
@@ -188,13 +189,27 @@ $logo-image-box-width = 2.68rem
               }
             }
 
+
+            .menu-icon {
+              display var(--header-menu-icon)
+              margin-right 0.1rem
+            }
+
             .is-home & {
               if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
                 a {
                   color var(--first-screen-header-font-color-light)
 
+                  .menu-icon {
+                    color var(--first-screen-header-font-color-light)
+                  }
+
                   &:hover {
                     color var(--primary-color)
+
+                    .menu-icon {
+                      color var(--primary-color)
+                    }
                   }
                 }
 
@@ -208,8 +223,16 @@ $logo-image-box-width = 2.68rem
                   a {
                     color var(--first-screen-header-font-color-dark)
 
+                    .menu-icon {
+                      color var(--first-screen-header-font-color-dark)
+                    }
+
                     &:hover {
                       color var(--primary-color)
+
+                      .menu-icon {
+                        color var(--primary-color)
+                      }
                     }
                   }
 

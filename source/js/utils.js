@@ -332,6 +332,12 @@ KEEP.initUtils = () => {
 
     // set how long age in home post block
     setHowLongAgoInHome() {
+      const { post_datetime_format } = KEEP.theme_config?.home || {}
+
+      if (post_datetime_format && post_datetime_format !== 'ago') {
+        return
+      }
+
       const post = document.querySelectorAll('.post-meta-info .home-post-history')
       post &&
         post.forEach((v) => {
@@ -710,16 +716,19 @@ KEEP.initUtils = () => {
     },
 
     // H tag title to top
-    title2Top4HTag(a, h, isHideHeader, duration = 200) {
+    title2Top4HTag(a, h, duration, cb) {
       if (a && h) {
         a.addEventListener('click', (e) => {
           e.preventDefault()
+
+          cb && cb()
+
           let winScrollY = window.scrollY
           winScrollY = winScrollY <= 1 ? -19 : winScrollY
           let offset = h.getBoundingClientRect().top + winScrollY
 
-          if (!isHideHeader) {
-            offset = offset - 60
+          if (!this.isHideHeader) {
+            offset = offset - this.headerWrapperDom.getBoundingClientRect().height
           }
 
           window.anime({
@@ -729,9 +738,9 @@ KEEP.initUtils = () => {
             scrollTop: offset,
             complete: () => {
               history.pushState(null, document.title, a.href)
-              if (isHideHeader) {
+              if (this.isHideHeader) {
                 setTimeout(() => {
-                  KEEP.utils.pageTopDom.classList.add('hide')
+                  this.pageTopDom.classList.add('hide')
                 }, 160)
               }
             }
@@ -743,7 +752,7 @@ KEEP.initUtils = () => {
     // A tag anchor jump handle
     aAnchorJump() {
       document.querySelectorAll('a.headerlink').forEach((a) => {
-        this.title2Top4HTag(a, a.parentNode, this.isHideHeader, 10)
+        this.title2Top4HTag(a, a.parentNode, 10)
       })
     }
   }

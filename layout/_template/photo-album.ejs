@@ -1,5 +1,5 @@
 <div class="photo-album-box border-box">
-    <% for (const img of theme?.photos) { %>
+    <% for (const img of theme.source_data?.photos) { %>
         <img class="photo border-box" src="<%- url_for(img?.url) %>"
              title="<%= img.name %>"
              onerror="this.style.display='none'"

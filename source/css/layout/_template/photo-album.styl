@@ -1,0 +1,19 @@
+$album-img-gap = 0.8rem
+
+if (hexo-config('menu') && hexo-config('menu.photos')) {
+  .page-template-container {
+    .photo-album-box {
+      column-count 3
+      column-gap $album-img-gap
+
+      img.photo {
+        display block
+        width 100%
+        margin-bottom $album-img-gap
+        background var(--background-color-2)
+        border-radius 0.6rem
+        cursor zoom-in
+      }
+    }
+  }
+}

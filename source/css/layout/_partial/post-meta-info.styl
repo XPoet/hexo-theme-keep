@@ -1,6 +1,7 @@
 $home-page-font-size = 0.92rem
 $post-page-font-size = 0.86rem
 $meta-icon-interspace = 0.4rem
+$meta-item-interspace = 0.7rem
 
 
 .post-meta-info-container {
@@ -50,7 +51,7 @@ $meta-icon-interspace = 0.4rem
       align-items center
       justify-content flex-start
       box-sizing border-box
-      margin-right 0.6rem
+      margin-right $meta-item-interspace
 
       &:last-child {
         margin-right 0
@@ -94,7 +95,7 @@ $meta-icon-interspace = 0.4rem
       word-spacing 0
 
       .tag-item {
-        margin-right $meta-icon-interspace
+        margin-right $meta-icon-interspace * 0.8
 
         &:last-child {
           margin-right 0
@@ -104,7 +105,7 @@ $meta-icon-interspace = 0.4rem
           margin-right $meta-icon-interspace * 0.5
 
           i.icon {
-            font-size $home-page-font-size * 0.8
+            font-size $home-page-font-size * 0.92
           }
         }
       }

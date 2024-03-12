@@ -1,24 +1,42 @@
 <%
 const home_category_limit_number = 3
 const home_tag_limit_number = 5
+
+const show_home_post_block_datetime = theme.home.hasOwnProperty('post_datetime') ? !!theme.home.post_datetime : true
+const home_post_datetime_value = (theme.home.hasOwnProperty('post_datetime') ? theme.home?.post_datetime : 'updated') || 'updated'
+const home_post_datetime_format = (theme.home.hasOwnProperty('post_datetime_format') ? theme.home?.post_datetime_format : 'ago') || 'ago'
+
+const home_post_datetime_split_list = home_post_datetime_value?.split('||')
+const home_post_datetime_type = home_post_datetime_split_list[0]?.trim()?.toLowerCase()
+const home_post_datetime_icon = home_post_datetime_split_list[1]?.trim()?.toLowerCase()
+
+const home_post_datetime_created_icon = home_post_datetime_icon || 'fa-solid fa-file-circle-plus'
+const home_post_datetime_updated_icon = home_post_datetime_icon || 'fa-solid fa-history'
+
+const home_post_block_datetime_icon = home_post_datetime_type === 'created' ? home_post_datetime_created_icon : home_post_datetime_updated_icon
+const home_post_block_datetime = home_post_datetime_type === 'created' ? post.date : post.updated
+
+const { created_datetime_icon, updated_datetime_icon } = theme?.post || {}
 %>
 
 <div class="post-meta-info-container border-box <%= page_type %>">
     <div class="post-meta-info border-box">
-        <% if (page_type === 'home') { %>
+        <% if (page_type === 'home' && show_home_post_block_datetime) { %>
             <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-post-history" data-updated="<%= post.updated %>"><%= date(post.updated, 'YYYY-MM-DD HH:mm:ss') %></span>
+                <i class="icon <%= home_post_block_datetime_icon %>"></i>&nbsp;<span class="home-post-history"
+                                                                                data-updated="<%= home_post_block_datetime %>"
+                ><%= date(home_post_block_datetime, home_post_datetime_format === 'ago' ? 'YYYY-MM-DD HH:mm:ss' : home_post_datetime_format) %></span>
             </span>
         <% } %>
 
         <% if (page_type === 'post') { %>
             <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <i class="icon <%= created_datetime_icon || 'fa-solid fa-calendar-plus' %>"></i>&nbsp;
                 <span class="datetime"><%= date(post.date, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
 
             <span class="meta-info-item post-update-date">
-                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <i class="icon <%= updated_datetime_icon || 'fa-solid fa-file-pen' %>"></i>&nbsp;
                 <span class="datetime" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
         <% } %>
@@ -37,7 +55,6 @@ const home_tag_limit_number = 5
 
         <% if (post.tags.length && (theme?.home?.tag === true || page_type === 'post')) { %>
             <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="post-tag-ul">
                     <% post.tags.forEach((tag, i) => {
                         if (home_tag_limit_number === 0 || i + 1 <= home_tag_limit_number || page_type === 'post') { %>

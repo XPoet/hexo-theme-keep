@@ -2,10 +2,7 @@
 const { title: bi_title, logo: bi_logo } = theme?.base_info || {}
 const { enable: s_fs_enable } = theme?.first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
-const h_menu_nav_object = theme?.menu || { Archives: '/archives' }
-delete h_menu_nav_object['home']
-delete h_menu_nav_object['Home']
-delete h_menu_nav_object['HOME']
+const h_menu_nav_object = theme?.menu || { archives: '/archives' }
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() ? ' transparent-1' : '' %>">
 
@@ -24,16 +21,21 @@ delete h_menu_nav_object['HOME']
         <div class="right border-box">
             <div class="pc">
                 <ul class="menu-list">
-                    <li class="menu-item">
-                        <a class="<%- is_home() ? 'active' : '' %>"
-                           href="<%- url_for('/') %>"
-                        ><%= __('home').toUpperCase() %></a>
-                    </li>
                     <% for (const i in h_menu_nav_object) { %>
+                        <%
+                            const temp_menu_list = h_menu_nav_object[i]?.split('||')
+                            const nav_path = temp_menu_list[0]?.trim()?.toLowerCase()
+                            const nav_icon = temp_menu_list[1]?.trim()?.toLowerCase()
+                        %>
                         <li class="menu-item">
-                            <a class="<%- is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
-                               href="<%- url_for(h_menu_nav_object[i]) %>"
-                            ><%= __(i.toLowerCase()).toUpperCase() %></a>
+                            <a class="<%- is_current(nav_path) ? 'active' : '' %>"
+                               href="<%- url_for(nav_path) %>"
+                            >
+                                <% if (nav_icon) { %>
+                                    <i class="menu-icon <%= nav_icon %>"></i>
+                                <% } %>
+                                <%= __(i.toLowerCase()).toUpperCase() %>
+                            </a>
                         </li>
                     <% } %>
                     <% if (local_search_enable === true) { %>
@@ -56,15 +58,14 @@ delete h_menu_nav_object['HOME']
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
-            <li class="drawer-menu-item flex-center">
-                <a class="<%- is_home() ? 'active' : '' %>"
-                   href="<%- url_for('/') %>"
-                ><%= __('home').toUpperCase() %></a>
-            </li>
             <% for (let i in h_menu_nav_object) { %>
+                <%
+                    const temp_menu_list2 = h_menu_nav_object[i]?.split('||')
+                    const nav_path2 = temp_menu_list2[0]?.trim()?.toLowerCase()
+                %>
                 <li class="drawer-menu-item flex-center">
-                    <a class="<%- is_current(h_menu_nav_object[i]) ? 'active' : '' %>"
-                       href="<%- url_for(h_menu_nav_object[i]) %>"
+                    <a class="<%- is_current(nav_path2) ? 'active' : '' %>"
+                       href="<%- url_for(nav_path2) %>"
                     ><%= __(i.toLowerCase()).toUpperCase() %></a>
                 </li>
             <% } %>

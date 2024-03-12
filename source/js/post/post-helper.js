@@ -97,25 +97,7 @@ function initPostHelper() {
       ]
 
       goToCommentsBtnList.forEach((btn) => {
-        if (btn && commentsAnchor) {
-          btn.addEventListener('click', (event) => {
-            event.preventDefault()
-            let winScrollY = window.scrollY
-            winScrollY = winScrollY === 0 ? -20 : winScrollY
-            const offset = commentsAnchor.getBoundingClientRect().top + winScrollY
-            window.anime({
-              targets: document.scrollingElement,
-              duration: 300,
-              easing: 'linear',
-              scrollTop: offset,
-              complete: () => {
-                setTimeout(() => {
-                  KEEP.utils.pageTopDom.classList.add('hide')
-                }, 150)
-              }
-            })
-          })
-        }
+        KEEP.utils.title2Top4HTag(btn, commentsAnchor, 300)
       })
     },
 
@@ -199,12 +181,67 @@ function initPostHelper() {
       const updated = new Date(updateDateDom.dataset.updated).getTime()
       const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
       updateDateDom.innerHTML = this.formatDatetime(format, updated)
+    },
+
+    // enable full screen
+    enableFullScreen() {
+      const fsb = document.querySelector('.post-tools-container .full-screen')
+      if (fsb) {
+        const icon = fsb.querySelector('i')
+
+        const isFullScreen = () => {
+          return (
+            document.fullscreenElement ||
+            document.mozFullScreenElement ||
+            document.webkitFullscreenElement
+          )
+        }
+
+        const toggleFullScreen = () => {
+          if (!isFullScreen()) {
+            if (document.documentElement.requestFullscreen) {
+              document.documentElement.requestFullscreen()
+            } else if (document.documentElement.mozRequestFullScreen) {
+              document.documentElement.mozRequestFullScreen()
+            } else if (document.documentElement.webkitRequestFullScreen) {
+              document.documentElement.webkitRequestFullScreen()
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen()
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen()
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen()
+            }
+          }
+        }
+
+        const handleFullscreenChange = () => {
+          if (isFullScreen()) {
+            icon.classList.remove('fa-expand')
+            icon.classList.add('fa-compress')
+          } else {
+            icon.classList.remove('fa-compress')
+            icon.classList.add('fa-expand')
+          }
+        }
+
+        fsb.addEventListener('click', function () {
+          toggleFullScreen()
+        })
+
+        document.addEventListener('fullscreenchange', handleFullscreenChange)
+        document.addEventListener('mozfullscreenchange', handleFullscreenChange)
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
+      }
     }
   }
 
   KEEP.utils.postHelper.initSetPostToolsLeft()
   KEEP.utils.postHelper.setArticleAgingDays()
   KEEP.utils.postHelper.resetPostUpdateDate()
+  KEEP.utils.postHelper.enableFullScreen()
 
   if (KEEP.theme_config.toc?.enable === true) {
     KEEP.utils.postHelper.initToggleToc()

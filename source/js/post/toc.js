@@ -37,13 +37,12 @@ function initTOC() {
 
       // register TOC Nav
       registerTocNav() {
-        const isHideHeader = KEEP.theme_config?.scroll?.hide_header
         const register = (tocContainer) => {
           return [...tocContainer.querySelectorAll('.post-toc li a.nav-link')].map((element) => {
             const target = document.getElementById(
               decodeURI(element.getAttribute('href')).replace('#', '')
             )
-            KEEP.utils.title2Top4HTag(element, target, isHideHeader, 500)
+            KEEP.utils.title2Top4HTag(element, target, 500)
             return target
           })
         }
