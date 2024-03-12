@@ -1,5 +1,48 @@
 # Changelog
 
+## [4.1.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.7...v4.1.0) (2024-03-12)
+
+
+### 🌟 Features
+
+* active tool category tab when scroll ([d095039](https://github.com/XPoet/hexo-theme-keep/commit/d0950398a260cf49203e53352e80be2639fb866f))
+* add custom setting post copyright info ([#305](https://github.com/XPoet/hexo-theme-keep/issues/305)) ([8e4e1e4](https://github.com/XPoet/hexo-theme-keep/commit/8e4e1e49434e2879aebc2ca8c8af6354f92b5c78))
+* add tools page template ([f48d6bd](https://github.com/XPoet/hexo-theme-keep/commit/f48d6bd7f1b766e059c9b0cf8a99ce29a7091acf))
+* can set icon for navigation menu ([2301d8c](https://github.com/XPoet/hexo-theme-keep/commit/2301d8c844179d7f07320be7e9792f019bad4719))
+* can set the datetime type of home page post block ([#300](https://github.com/XPoet/hexo-theme-keep/issues/300)) ([18f28d1](https://github.com/XPoet/hexo-theme-keep/commit/18f28d1a1fd69570fc79890d4dee392f1f48650e))
+* post can be viewed in full screen ([188c70c](https://github.com/XPoet/hexo-theme-keep/commit/188c70c07ee6e8837eacdd944505db3350388173))
+* social contact links add X ([39df4b7](https://github.com/XPoet/hexo-theme-keep/commit/39df4b7ac89699c5270f2a633d425b30d6ea0aaa))
+* support custom set datetime icon in home post block ([#300](https://github.com/XPoet/hexo-theme-keep/issues/300)) ([fc9a1de](https://github.com/XPoet/hexo-theme-keep/commit/fc9a1de2d720c0581ad6d8c92c3d55ef66da6498))
+* support custom set datetime icon of post page ([#301](https://github.com/XPoet/hexo-theme-keep/issues/301)) ([5459de6](https://github.com/XPoet/hexo-theme-keep/commit/5459de6d2d393a4833a4fff1af31ec4ea1c5481b))
+* support set datetime format in home post block ([#300](https://github.com/XPoet/hexo-theme-keep/issues/300)) ([7c0665e](https://github.com/XPoet/hexo-theme-keep/commit/7c0665e865008bc0d045eae4aab0bbb921cfd2b1))
+
+
+### 🐞 Bug Fixes
+
+* optimize the settings of menu icon ([5762a9c](https://github.com/XPoet/hexo-theme-keep/commit/5762a9c77ded9a7ca3f538dbf7cf019364480dee))
+
+
+### 🛠 Performance Improvements
+
+* optimize comment plugin anchor jump ([cc194a4](https://github.com/XPoet/hexo-theme-keep/commit/cc194a440073ebd1b961cdf124814a699b4b55f7))
+* optimize page template render ([b667036](https://github.com/XPoet/hexo-theme-keep/commit/b667036ae1a8a360f9d97b576ab3602ab2caa849))
+
+
+### 💄 Improvement UI
+
+* optimize home cover style in mobile ([5eb0512](https://github.com/XPoet/hexo-theme-keep/commit/5eb05125f4f52d75c306417f50f3815dc88fc46e))
+* optimize page content max width ([82aa999](https://github.com/XPoet/hexo-theme-keep/commit/82aa999380178f703346c33fc0db0a4492a33607))
+* optimize page template style ([0d23aa6](https://github.com/XPoet/hexo-theme-keep/commit/0d23aa6b02ae86ddfe9a65ce3c8de3b6bba7186f))
+* optimize post meta info tag style ([6915333](https://github.com/XPoet/hexo-theme-keep/commit/69153332a21092a692e94512de2f7d060a75e41d))
+* optimize tools page style ([1417b2c](https://github.com/XPoet/hexo-theme-keep/commit/1417b2c04356e1f28d640e4ce15a7892112b73bf))
+* optimize tools page template style ([f415514](https://github.com/XPoet/hexo-theme-keep/commit/f415514367b80dd6956d111a2ab7cddfaaf5b94c))
+
+
+### 🚦 Chore
+
+* rename `--components-spacing` -&gt; `--component-gap` ([a8d2d96](https://github.com/XPoet/hexo-theme-keep/commit/a8d2d960c096c2d51f03072d2079511a94d6642d))
+* update theme config ([29b6182](https://github.com/XPoet/hexo-theme-keep/commit/29b6182128b4a10aa1c5811fe603d2c46bc2ce2f))
+
 ## [4.0.7](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.6...v4.0.7) (2024-02-18)
 
 
