@@ -87,7 +87,7 @@ const web_master = bi_author || hexo_author
             <% } %>
 
             <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>
-                <% const deploy_provider_img_tag = image_tag('/images/deploy-provider/' + f_site_deploy?.provider + '.png') %>
+                <% const deploy_provider_img_tag = image_tag('/images/brands/' + f_site_deploy?.provider + '.png') %>
                 <div class="deploy-info info-item <%= footer_style_type %>">
                     <% if (f_site_deploy?.url) { %>
                         <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">

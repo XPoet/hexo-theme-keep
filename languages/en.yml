@@ -84,6 +84,7 @@ footer:
     vercel: Vercel
     netlify: Netlify
     gitee: Gitee Pages
+    cloudflare: Cloudflare
     aliyun: Alibaba Cloud
     tencent_cloud: Tencent Cloud
     upyun: UPYUN
