@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.1.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.0...v4.1.1) (2024-04-03)
+
+
+### 🐞 Bug Fixes
+
+* **toc:** fixed active index error when header is displayed ([fdd76b3](https://github.com/XPoet/hexo-theme-keep/commit/fdd76b313afcf734fe23622c6a7ae508cf5b1ec4))
+
+
+### 💄 Improvement UI
+
+* add site deploy provider ([7af3c52](https://github.com/XPoet/hexo-theme-keep/commit/7af3c523457c476149714a0eca36e3f5fe7d02b5))
+
 ## [4.1.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.0.7...v4.1.0) (2024-03-12)
 
 
