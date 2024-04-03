@@ -319,7 +319,7 @@ footer:
 
   site_deploy:
     enable: false        # Option values: true | false
-    provider: github     # Option values: github | vercel | netlify | gitee | aliyun | tencent_cloud | upyun
+    provider: github     # Option values: github | vercel | netlify | cloudflare | gitee | aliyun | tencent_cloud | upyun
     url:                 # Your deployment provider url, Can be null
 
   # When the footer style is shields, you can customize the shields configuration
