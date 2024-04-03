@@ -15,9 +15,13 @@ function initTOC() {
       // get active index
       getActiveIndex(navSections) {
         if (!Array.isArray(navSections)) return
+        const offsetY = 20
+        const { isHideHeader, headerWrapperDom } = KEEP.utils
+        const headerH = isHideHeader ? 0 : headerWrapperDom.getBoundingClientRect().height
         let index = navSections.findIndex((element) => {
-          return element && element.getBoundingClientRect().top - 20 > 0
+          return element && element.getBoundingClientRect().top - (offsetY + headerH) > 0
         })
+
         if (index === -1) {
           index = navSections.length - 1
         } else if (index > 0) {
