@@ -20,35 +20,35 @@ const page_type = page?.type
             <div class="main-content border-box">
                 <% if (is_home()) { %>
 
-                    <%- partial('home-content') %>
+                    <%- partial('_page/home') %>
 
                 <% } else if (is_archive()) { %>
 
-                    <%- partial('archive-content') %>
+                    <%- partial('_page/archive') %>
 
                 <% } else if (is_post()) { %>
 
-                    <%- partial('post-content') %>
+                    <%- partial('_page/post') %>
 
                 <% } else if (is_category()) { %>
 
-                    <%- partial('category-content') %>
+                    <%- partial('_page/category-archive') %>
 
                 <% } else if (is_tag()) { %>
 
-                    <%- partial('tag-content') %>
+                    <%- partial('_page/tag-archive') %>
 
                 <% } else if (page_title === 'category' || page_title === 'categories') { %>
 
-                    <%- partial('category-list') %>
+                    <%- partial('_page/category') %>
 
                 <% } else if (page_title === 'tag' || page_title === 'tags') { %>
 
-                    <%- partial('_partial/tagcloud') %>
+                    <%- partial('_page/tag') %>
 
                 <% } else if (page_type === '404') { %>
 
-                    <%- partial('404') %>
+                    <%- partial('_page/404') %>
 
                 <% } else { %>
 
