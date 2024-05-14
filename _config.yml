@@ -309,30 +309,22 @@ pjax:
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/footer.html
 # ---------------------------------------------------------------------------------------
 footer:
-  since: 2020           # The starting year of your website, Can be null
-  word_count: false     # Option values: true | false
-
-  icp:
-    enable: false                    # Option values: true | false
-    record_code:                     # ICP record code of your website
-    url: https://beian.miit.gov.cn   # Your ICP link url, Can be null
+  since: 2020            # The starting year of your website, Can be null
+  word_count: false      # Option values: true | false
 
   site_deploy:
     enable: false        # Option values: true | false
     provider: github     # Option values: github | vercel | netlify | cloudflare | gitee | aliyun | tencent_cloud | upyun
     url:                 # Your deployment provider url, Can be null
 
-  # When the footer style is shields, you can customize the shields configuration
-  # See: https://shields.io
-  shields_style:
+  record:
     enable: false        # Option values: true | false
-    custom:
-      - link_url:        # Your link url, Can be null
-        img_url:         # Shields image url
+    list:
+      - code:            # record code of your website
+        link:            # record link of your website, Can be null
       # e.g.
-      # - link_url: https://github.com/XPoet/hexo-theme-keep
-      #   img_url: https://img.shields.io/badge/Hexo-Keep%20v3.7.3-blue?style=flat-square&logo=hexo
-      # - ...
+      # - code: ICP 001
+      # - link: https://beian.miit.gov.cn
 
 
 # ---------------------------------------------------------------------------------------

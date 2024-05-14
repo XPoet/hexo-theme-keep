@@ -29,8 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
   KEEP.setFooterVersion = () => {
     const vd = document.querySelector('.footer .keep-version')
     vd && (vd.innerHTML = KEEP.themeInfo.theme)
-    const vd2 = document.querySelector('.footer .shields-keep-version')
-    vd2 && (vd2.src = vd2.src.replace('Keep', KEEP.themeInfo.theme))
   }
 
   // set styleStatus to localStorage
