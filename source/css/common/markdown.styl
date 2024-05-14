@@ -153,19 +153,27 @@
   h5
   h6 {
     position relative
+    display flex
+    justify-content space-between
+    order 0
     box-sizing border-box
     padding-top 0.4rem
     padding-bottom 0.2rem
     overflow hidden
     color var(--text-color-2)
-    line-height 1.5
-    white-space nowrap
-    text-overflow ellipsis
+    line-height 1.6
     border-bottom 1px solid var(--post-h-bottom-border-color)
 
+
     +keep-tablet() {
-      line-height 1.25
+      line-height 1.4
     }
+
+
+    +keep-mobile() {
+      line-height 1.3
+    }
+
 
     &:hover {
       a.headerlink {
@@ -173,12 +181,13 @@
       }
     }
 
+
     a.headerlink {
       position relative
-      float right
+      order 1
       box-sizing border-box
-      margin-left 0.32rem
-      padding-top 0.25rem
+      margin-left 0.4rem
+      padding-top 0.2rem
       color var(--text-color-4)
       font-size 1.2rem
       text-decoration none
@@ -189,6 +198,7 @@
       &:hover {
         color var(--text-color-3)
       }
+
 
       &::before {
         font-weight 600
@@ -204,7 +214,11 @@
     font-size 1.8rem
 
     +keep-tablet() {
-      font-size 1.7rem
+      font-size 1.6rem
+    }
+
+    +keep-mobile() {
+      line-height 1.5rem
     }
   }
 
@@ -214,7 +228,11 @@
     font-size 1.7rem
 
     +keep-tablet() {
-      font-size 1.6rem
+      font-size 1.5rem
+    }
+
+    +keep-mobile() {
+      line-height 1.4rem
     }
   }
 
@@ -224,27 +242,47 @@
     font-size 1.6rem
 
     +keep-tablet() {
-      font-size 1.5rem
+      font-size 1.4rem
+    }
+
+    +keep-mobile() {
+      line-height 1.3rem
     }
   }
 
 
   h4 {
     font-weight 550
-    font-size 1.5rem
+    font-size 1.4rem
 
     +keep-tablet() {
-      font-size 1.4rem
+      font-size 1.2rem
+    }
+
+    +keep-mobile() {
+      line-height 1.1rem
+    }
+
+    a.headerlink {
+      font-size 1.1rem
     }
   }
 
 
   h5 {
     font-weight 500
-    font-size 1.28rem
+    font-size 1.3rem
 
     +keep-tablet() {
-      font-size 1.18rem
+      font-size 1.2rem
+    }
+
+    +keep-mobile() {
+      line-height 1.1rem
+    }
+
+    a.headerlink {
+      font-size 1.1rem
     }
   }
 
@@ -257,6 +295,10 @@
     +keep-tablet() {
       font-size 1.1rem
       line-height 1.1
+    }
+
+    a.headerlink {
+      font-size 1rem
     }
   }
 
