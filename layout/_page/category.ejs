@@ -1,12 +1,9 @@
 <div class="fade-in-down-animation">
-    <div class="tagcloud-container">
-        <% if (site.tags.length){ %>
-            <div class="tagcloud-content">
-                <%- tagcloud({
-                    min_font: 1,
-                    max_font: 1.6,
-                    unit: 'rem',
-                    amount: 100
+    <div class="category-page-container">
+        <% if (site.categories.length > 0) { %>
+            <div class="category-list-content">
+                <%- list_categories(site.categories, {
+                    class: 'site-all-category'
                 }) %>
             </div>
         <% } else { %>

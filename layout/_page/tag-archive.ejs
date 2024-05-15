@@ -1,9 +1,8 @@
 <div class="fade-in-down-animation">
-    <div class="category-container border-box">
-        <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;<%= page.category %>
+    <div class="tag-archive-container border-box">
+        <div class="tag-name"><i class="fas fa-hashtag"></i>&nbsp;<%= page.tag %>
         </div>
-        <div class="category-post-list">
+        <div class="tag-post-list">
             <%- partial('_partial/archive-list', { archive_posts: page.posts }) %>
         </div>
     </div>

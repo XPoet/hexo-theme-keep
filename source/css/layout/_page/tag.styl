@@ -1,0 +1,54 @@
+.tag-page-container {
+
+  keep-container(1, 2rem, 0)
+
+  .tagcloud-content {
+
+    text-align justify
+
+    a {
+      display inline-block
+      box-sizing border-box
+      padding 0.68rem 0.5rem
+    }
+  }
+
+
+  .tag-list-content {
+    .tag-list {
+      position relative
+      display flex
+      flex-wrap wrap
+      gap 0.82rem
+      justify-content flex-start
+      box-sizing border-box
+
+      .tag-list-item {
+        position relative
+        box-sizing border-box
+        overflow hidden
+        border-radius 0.3rem
+
+
+        .tag-list-link {
+          display inline-block
+          padding 0.4rem 0.6rem
+          color var(--text-color-3)
+          background var(--background-color-2)
+
+          &:hover {
+            color var(--primary-color)
+          }
+        }
+
+
+        .tag-list-count {
+          display inline-block
+          padding 0.4rem 0.6rem
+          color var(--text-color-3)
+          background var(--background-color-3)
+        }
+      }
+    }
+  }
+}

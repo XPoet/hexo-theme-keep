@@ -545,8 +545,8 @@ KEEP.initUtils = () => {
               getText('#busuanzi_value_site_pv') ||
               getText('#busuanzi_value_page_pv')
             ) {
-              const tmpDom1 = document.querySelector('.footer .count-item .uv')
-              const tmpDom2 = document.querySelector('.footer .count-item .pv')
+              const tmpDom1 = document.querySelector('.footer .count-info .uv')
+              const tmpDom2 = document.querySelector('.footer .count-info .pv')
               const tmpDom3 = document.querySelector('.post-meta-info .post-pv')
               tmpDom1 && (tmpDom1.style.display = 'flex')
               tmpDom2 && (tmpDom2.style.display = 'flex')
