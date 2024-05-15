@@ -1,5 +1,31 @@
 # Changelog
 
+## [4.1.2](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.1...v4.1.2) (2024-05-15)
+
+
+### 🍭 Code Refactoring
+
+* **footer:** support fill in more record information ([#316](https://github.com/XPoet/hexo-theme-keep/issues/316)) ([c2c9232](https://github.com/XPoet/hexo-theme-keep/commit/c2c92322814a926464fb74197a7e6f86c8f28b37))
+* optimize the directory structure of the page ([b758c89](https://github.com/XPoet/hexo-theme-keep/commit/b758c89317f359321dc8a70bb19c40a5bcef8f31))
+
+
+### 🛠 Performance Improvements
+
+* **comment:** optimize version matching of waline ([1c2895b](https://github.com/XPoet/hexo-theme-keep/commit/1c2895bec72fdb9f1f1b6e1828514b362b8e2b47))
+* **comment:** support Waline v3 ([#322](https://github.com/XPoet/hexo-theme-keep/issues/322)) ([4145926](https://github.com/XPoet/hexo-theme-keep/commit/414592613f79ffe10f2f392d5abf3a7c57cef399))
+* **toc:** support encrypted article display toc ([#323](https://github.com/XPoet/hexo-theme-keep/issues/323)) ([1529ba0](https://github.com/XPoet/hexo-theme-keep/commit/1529ba0068888e64eba536476bce009ef4cd2279))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([c8140e6](https://github.com/XPoet/hexo-theme-keep/commit/c8140e6797208e1cc7f9bea10d928ec666dde9e5))
+
+
+### 💄 Improvement UI
+
+* add display format to tag page ([#303](https://github.com/XPoet/hexo-theme-keep/issues/303)) ([2d6bfb6](https://github.com/XPoet/hexo-theme-keep/commit/2d6bfb6be7321dfcbf862d355e5e6564939d5dd2))
+* optimize markdown style ([43cd77b](https://github.com/XPoet/hexo-theme-keep/commit/43cd77bfe7309c8848edf0da146a7194a615ab9e))
+
 ## [4.1.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.0...v4.1.1) (2024-04-03)
 
 
