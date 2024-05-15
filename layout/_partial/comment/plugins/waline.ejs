@@ -7,9 +7,11 @@ let {
     options: waline_options = {}
 } = theme?.comment?.waline || {}
 
-if (!waline_version) { waline_version = '2' }
+waline_version = String(waline_version).trim()
 
-const esm_load = String(waline_version) === '3'
+if (!waline_version) { waline_version = '3' }
+
+const esm_load = waline_version === '3' || /^3\..*/.test(waline_version)
 
 let cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`
 let cdn_css_meta = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline-meta.css`

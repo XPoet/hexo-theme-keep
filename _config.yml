@@ -249,7 +249,7 @@ comment:
   waline:
     server_url:     # Server URL
     reaction: false # Post reactions, Option values: true | false
-    version: 2      # Waline version, default use v2
+    version: 3      # Waline version, default use v3
 
   # Giscus
   # See: https://github.com/giscus/giscus
