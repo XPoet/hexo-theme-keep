@@ -241,7 +241,7 @@ comment:
   twikoo:
     env_id:          # Environment ID
     region:          # Environment region, Can be null
-    version: 1.6.21  # Twikoo version, default use 1.6.21
+    version: 1.6.36  # Twikoo version, default use v1.6.36
 
   # Waline
   # See: https://github.com/walinejs/waline
