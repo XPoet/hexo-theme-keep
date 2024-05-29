@@ -5,7 +5,7 @@ let {
     region: tk_region,
     version: tk_version
 } = theme?.comment?.twikoo || {}
-if (!tk_version) { tk_version = '1.6.7' }
+if (!tk_version) { tk_version = '1.6.36' }
 let twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
 const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
 
@@ -17,6 +17,13 @@ if (t_cdn_enable === true) {
 
         case 'unpkg':
             twikoo_cdn_url = `//unpkg.com/twikoo@${tk_version}/dist/twikoo.all.min.js`
+            break
+
+        case 'cdnjs':
+            if (!(/^(\d+)\.(\d+)\.(\d+)$/.test(tk_version))) {
+                tk_version = '1.6.36'
+            }
+            twikoo_cdn_url = `https://cdnjs.cloudflare.com/ajax/libs/twikoo/${tk_version}/twikoo.all.min.js`
             break
     }
 }

@@ -1,6 +1,7 @@
 <%
 const post_author = page?.author || theme?.base_info?.author || config?.author
 const post_avatar = page?.avatar || theme?.base_info?.avatar
+const is_code_block_unshrink = page?.code_block_shrink === false
 %>
 <div class="fade-in-down-animation">
     <div class="post-page-container border-box">
@@ -50,7 +51,7 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
                     </div>
                 <% } %>
 
-                <div class="post-content keep-markdown-body">
+                <div class="post-content keep-markdown-body <%= is_code_block_unshrink ? 'code-block-unshrink' : '' %>">
                     <% if (page?.aging === true) { %>
                         <div class="post-aging-tips"
                              data-update-date="<%= page.updated %>"

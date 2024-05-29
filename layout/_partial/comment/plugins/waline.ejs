@@ -32,6 +32,15 @@ if (t_cdn_enable === true) {
             cdn_css_meta = `//unpkg.com/@waline/client@v${waline_version}/dist/waline-meta.css`
             cdn_js = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.js`
             break
+
+        case 'cdnjs':
+            if (!(/^(\d+)\.(\d+)\.(\d+)$/.test(waline_version))) {
+                waline_version = '3.2.1'
+            }
+            cdn_css = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline.css`
+            cdn_css_meta = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline-meta.css`
+            cdn_js = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline.js`
+            break
     }
 }
 %>

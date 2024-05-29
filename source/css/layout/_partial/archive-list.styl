@@ -38,35 +38,59 @@ $timeline-circle-width = 0.6rem
         align-items center
         justify-content space-between
         width 100%
-        padding ($post-item-padding * 0.68) 0 ($post-item-padding * 0.68) $post-item-padding
+        padding ($post-item-padding * 0.8) 0 ($post-item-padding * 0.8) $post-item-padding * 1.6
         font-size 1rem
-        border-left 1px dashed var(--border-color)
 
-        &::before {
+        .starting-point {
           position absolute
-          top 50%
-          left -($timeline-circle-width * 0.5)
-          z-index $z-index-1
-          box-sizing border-box
-          width $timeline-circle-width
-          height $timeline-circle-width
-          background var(--text-color-5)
-          border-radius 50%
-          transform translateY(-50%)
-          content ''
+          top 0
+          left 0
+          width 1rem
+          height 100%
+
+
+          &::after {
+            position absolute
+            top 0
+            left 50%
+            z-index $z-index-1
+            box-sizing border-box
+            width 0
+            height 100%
+            border-left 1px dashed var(--text-color-5)
+            transform translateX(-50%)
+            content ''
+          }
+
+
+          &::before {
+            top 50%
+            left 0
+            z-index $z-index-2
+            box-sizing border-box
+            width $timeline-circle-width * 0.8
+            height $timeline-circle-width * 2
+            background var(--text-color-5)
+            border-radius 0.2rem
+            content ''
+            transition-t("height", "0", "0.2", "ease")
+          }
         }
 
 
         &:hover {
-          &::before {
-            background var(--text-color-4)
+          .starting-point {
+            &::before {
+              height $timeline-circle-width * 2.4
+              background var(--text-color-4)
+            }
           }
-
 
           a.post-title {
             color var(--primary-color)
           }
         }
+
 
         .post-date {
           width $post-date-width

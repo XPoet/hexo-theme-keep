@@ -2,7 +2,13 @@
 const { title: bi_title, logo: bi_logo } = theme?.base_info || {}
 const { enable: s_fs_enable } = theme?.first_screen || {}
 const { enable: local_search_enable } = theme?.local_search || {}
-const h_menu_nav_object = theme?.menu || { archives: '/archives' }
+const origin_h_menu_nav_object = theme?.menu || { archives: '/archives' }
+
+const h_menu_nav_object = {}
+for (const key in origin_h_menu_nav_object) {
+    const temp_key = key.trim().toLowerCase()
+    h_menu_nav_object[temp_key] = origin_h_menu_nav_object[key]
+}
 %>
 <header class="header-wrapper<%= s_fs_enable === true && is_home() ? ' transparent-1' : '' %>">
 

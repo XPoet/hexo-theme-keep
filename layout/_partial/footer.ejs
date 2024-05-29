@@ -2,12 +2,26 @@
 const {
     since: f_since,
     record: f_record,
-    site_deploy: f_site_deploy
+    site_deploy: f_site_deploy,
+    word_count: f_word_count
 } = theme?.footer || {}
 const { author: bi_author } = theme?.base_info || {}
 const { author: hexo_author } = config
 const { site_uv: bsz_site_uv, site_pv: bsz_site_pv, enable: bsz_enable } = theme?.website_count?.busuanzi_count || {}
 const web_master = bi_author || hexo_author
+
+const show_pv = bsz_enable === true && bsz_site_pv === true
+const show_uv = bsz_enable === true && bsz_site_uv === true
+
+let f_temp_total_word = 0
+try {
+    f_temp_total_word = totalcount(site)
+} catch {
+    f_temp_total_word = 0
+}
+const show_word_count = f_word_count === true && f_temp_total_word !== 0
+
+const has_count_info = show_pv || show_uv || show_word_count
 %>
 <footer class="footer border-box">
     <div class="copyright-info info-item">
@@ -37,35 +51,30 @@ const web_master = bi_author || hexo_author
         </div>
     <% } %>
 
-    <div class="count-info info-item">
-        <%
-        let f_temp_total_word;
-        try {
-            f_temp_total_word = totalcount(site);
-        } catch (e) {
-            f_temp_total_word = 0;
-        }
-        if (theme.footer?.word_count === true && f_temp_total_word !== 0) { %>
-            <span class="count-item border-box word">
+    <% if (has_count_info) { %>
+        <div class="count-info info-item">
+            <% if (show_word_count) { %>
+                <span class="count-item border-box word">
                     <span class="item-type border-box"><%- __('footer.total_words') %></span>
                     <span class="item-value border-box word"><%= totalcount(site) %></span>
                 </span>
-        <% } %>
+            <% } %>
 
-        <% if (bsz_enable === true && bsz_site_uv === true) { %>
-            <span class="count-item border-box uv">
+            <% if (show_uv) { %>
+                <span class="count-item border-box uv">
                     <span class="item-type border-box"><%- __('footer.site_uv') %></span>
                     <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
                 </span>
-        <% } %>
+            <% } %>
 
-        <% if (bsz_enable === true && bsz_site_pv === true) { %>
-            <span class="count-item border-box pv">
+            <% if (show_pv) { %>
+                <span class="count-item border-box pv">
                     <span class="item-type border-box"><%- __('footer.site_pv') %></span>
                     <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
                 </span>
-        <% } %>
-    </div>
+            <% } %>
+        </div>
+    <% } %>
 
     <% if (f_record?.enable === true) { %>
         <div class="record-info info-item">
