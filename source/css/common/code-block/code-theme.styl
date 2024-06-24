@@ -27,8 +27,8 @@ if (hexo-config('code_block') && hexo-config('code_block.highlight_theme') == 'o
   $highlight-aqua = #458383
   $highlight-blue = #6e95bd
   $highlight-purple = #b18bb7
-  $highlight-deletion = #ff9999
-  $highlight-addition = #ccff99
+  $highlight-deletion = #f39090
+  $highlight-addition = #7ccf26
   $shrink-line-foreground = $dark-text-color-4
   $shrink-line-background-1 = rgba(40, 40, 40, 0.9)
   $shrink-line-background-2 = rgba(40, 40, 40, 0.6)
@@ -48,8 +48,8 @@ if (hexo-config('code_block') && hexo-config('code_block.highlight_theme') == 'o
   $dark-highlight-aqua = darken($highlight-aqua, 2%)
   $dark-highlight-blue = darken($highlight-blue, 2%)
   $dark-highlight-purple = darken($highlight-purple, 2%)
-  $dark-highlight-deletion = darken($highlight-deletion, 2%)
-  $dark-highlight-addition = darken($highlight-addition, 2%)
+  $dark-highlight-deletion = darken($highlight-deletion, 20%)
+  $dark-highlight-addition = darken($highlight-addition, 20%)
   $dark-shrink-line-foreground = $dark-text-color-4
   $dark-shrink-line-background-1 = rgba(40, 40, 40, 0.9)
   $dark-shrink-line-background-2 = rgba(40, 40, 40, 0.6)
@@ -90,8 +90,8 @@ else {
   $dark-highlight-aqua = #8abeb7
   $dark-highlight-blue = #81a2be
   $dark-highlight-purple = #b294bb
-  $dark-highlight-deletion = #008000
-  $dark-highlight-addition = #800000
+  $dark-highlight-addition = darken($highlight-addition, 80%)
+  $dark-highlight-deletion = darken($highlight-deletion, 75%)
   $dark-shrink-line-foreground = $dark-text-color-4
   $dark-shrink-line-background-1 = rgba(38, 38, 38, 0.9)
   $dark-shrink-line-background-2 = rgba(52, 52, 52, 0.6)
@@ -114,6 +114,8 @@ code-theme(mode) {
   --highlight-aqua mode == 'light' ? $highlight-aqua : $dark-highlight-aqua
   --highlight-blue mode == 'light' ? $highlight-blue : $dark-highlight-blue
   --highlight-purple mode == 'light' ? $highlight-purple : $dark-highlight-purple
+  --highlight-deletion mode == 'light' ? $highlight-deletion : $dark-highlight-deletion
+  --highlight-addition mode == 'light' ? $highlight-addition : $dark-highlight-addition
   --highlight-gutter-color mode == 'light' ? $highlight-gutter-color : $dark-highlight-gutter-color
   --highlight-gutter-bg-color mode == 'light' ? $highlight-gutter-bg-color : $dark-highlight-gutter-bg-color
   --mac-toolbar-background-color mode == 'light' ? $mac-toolbar-background-color : $dark-mac-toolbar-background-color
