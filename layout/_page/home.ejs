@@ -40,10 +40,10 @@
                     </h3>
 
                     <div class="home-post-content keep-markdown-body">
-                        <% if (post.excerpt) { %>
-                            <%- post.excerpt %>
+                        <% if (post?.password) { %>
+                            <%= __('encryption.excerpt') %>
                         <% } else { %>
-                            <%- truncate(strip_html(post.content), { length: 128 }) %>
+                            <%- post?.excerpt || truncate(strip_html(post.content), { length: 128 }) %>
                         <% } %>
                     </div>
 

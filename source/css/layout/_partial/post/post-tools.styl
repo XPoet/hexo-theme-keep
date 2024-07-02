@@ -4,7 +4,7 @@ $post-tool-button-width = 2.5rem
 .post-tools-container {
   padding-top var(--component-gap)
 
-  .tools-list {
+  .post-tools-list {
 
     li {
       position relative
@@ -33,7 +33,7 @@ $post-tool-button-width = 2.5rem
         background var(--primary-color)
 
         i {
-          color var(--background-color-1)
+          color var(--background-color-1) !important
         }
       }
 
@@ -67,6 +67,31 @@ $post-tool-button-width = 2.5rem
 
           +keep-tablet() {
             display none !important
+          }
+        }
+      }
+
+      &.post-lock {
+        cursor default
+
+        .fa-lock-open {
+          display none
+          color var(--keep-success-color)
+        }
+
+        .fa-lock {
+          color var(--keep-warning-color)
+        }
+
+        &.decrypt {
+          cursor pointer
+
+          .fa-lock-open {
+            display block
+          }
+
+          .fa-lock {
+            display none
           }
         }
       }

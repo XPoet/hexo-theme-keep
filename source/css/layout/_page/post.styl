@@ -25,6 +25,13 @@ $spacer-padding = 2rem
   }
 
 
+  &.encrypt {
+    .post-aging-tips {
+      display none !important
+    }
+  }
+
+
   +keep-tablet() {
     .pc-post-toc {
       display none !important
@@ -266,6 +273,40 @@ $spacer-padding = 2rem
         }
 
 
+        .post-encrypt-box {
+          margin-left $avatar-width + 0.8rem
+          padding 1rem 0
+
+          .password-input {
+            width 20rem
+            margin 0
+            padding 0.8rem 1.2rem
+            color var(--text-color-3)
+            font-weight 400 !important
+            font-size 1.2rem
+            letter-spacing 2px
+            background none
+            border none
+            border-bottom 0.2rem solid var(--border-color)
+            outline none
+
+            &.error {
+              border 0.2rem solid var(--keep-danger-color)
+            }
+
+            &::placeholder {
+              color var(--text-color-4)
+              font-size 1.1rem
+              letter-spacing 1px
+            }
+
+            &:hover
+            &:focus {
+              background var(--background-color-2)
+            }
+          }
+        }
+
         if (hexo-config('post') && hexo-config('post.copyright_info') == true) {
           border-bottom 2px dashed var(--border-color)
         }
@@ -400,35 +441,6 @@ $spacer-padding = 2rem
     .header-shrink & {
       top calc(var(--header-shrink-height) + var(--component-gap))
       max-height calc(100vh - calc(var(--header-shrink-height) + var(--component-gap)))
-    }
-  }
-
-
-  .hbe-container {
-
-    .hbe-input-field {
-      color var(--text-color-3) !important
-      background var(--background-color-3) !important
-    }
-
-
-    .hbe-input-label {
-      &::before {
-        display none !important
-      }
-
-      &::after {
-        background var(--text-color-4) !important
-      }
-
-      .hbe-input-label-content {
-        color var(--text-color-4) !important
-      }
-    }
-
-
-    .hbe-button {
-      margin-top 2rem
     }
   }
 }

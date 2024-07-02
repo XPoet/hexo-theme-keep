@@ -1,5 +1,13 @@
 <div class="post-tools-container border-box">
-    <ul class="tools-list border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        <% if (page?.password) { %>
+            <li class="tools-item flex-center post-lock">
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-lock-open"></i>
+            </li>
+        <% } %>
+
         <!-- PC TOC show toggle -->
         <% if (page?.toc !== false && theme?.toc?.enable === true) { %>
             <li class="tools-item flex-center toggle-show-toc">
