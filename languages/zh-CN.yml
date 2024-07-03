@@ -106,3 +106,6 @@ comment:
 404:
   page_not_found: 页面找不到
   go_home: 前往首页
+encryption:
+  excerpt: 🔒 文章已加密，请在输入密码后查看。
+  input_password: 请输入密码...

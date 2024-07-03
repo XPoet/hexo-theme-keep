@@ -48,10 +48,13 @@ KEEP.initModeToggle = () => {
     },
 
     initModeToggleButton() {
-      this.themeModeToggleBtn.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.contains('dark-mode')
-        isDark ? this.enableLightMode() : this.enableDarkMode()
-      })
+      if (!this.themeModeToggleBtn?.hasClickListener) {
+        this.themeModeToggleBtn.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.contains('dark-mode')
+          isDark ? this.enableLightMode() : this.enableDarkMode()
+        })
+        this.themeModeToggleBtn.hasClickListener = true
+      }
     },
 
     initModeAutoTrigger() {

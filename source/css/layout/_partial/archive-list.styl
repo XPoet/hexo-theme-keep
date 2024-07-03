@@ -3,7 +3,7 @@ $post-title-font-size = 1.2rem
 $post-date-font-size = 1rem
 $post-date-width = 3.6rem
 $post-item-padding = 1.2rem
-$timeline-circle-width = 0.6rem
+$timeline-circle-size = 0.5rem
 
 .archive-list-container {
 
@@ -68,10 +68,10 @@ $timeline-circle-width = 0.6rem
             left 0
             z-index $z-index-2
             box-sizing border-box
-            width $timeline-circle-width * 0.8
-            height $timeline-circle-width * 2
+            width $timeline-circle-size
+            height $timeline-circle-size
             background var(--text-color-5)
-            border-radius 0.2rem
+            border-radius 50%
             content ''
             transition-t("height", "0", "0.2", "ease")
           }
@@ -81,7 +81,8 @@ $timeline-circle-width = 0.6rem
         &:hover {
           .starting-point {
             &::before {
-              height $timeline-circle-width * 2.4
+              width $timeline-circle-size * 1.2
+              height $timeline-circle-size * 1.2
               background var(--text-color-4)
             }
           }

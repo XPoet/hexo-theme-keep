@@ -4,7 +4,7 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
 const is_code_block_unshrink = page?.code_block_shrink === false
 %>
 <div class="fade-in-down-animation">
-    <div class="post-page-container border-box">
+    <div class="post-page-container border-box<%= page?.password ? ' encrypt' : '' %>">
         <div class="post-content-container border-box">
             <% if (page?.post_cover || page?.home_cover) { %>
                 <div class="post-content-top border-box"
@@ -61,8 +61,21 @@ const is_code_block_unshrink = page?.code_block_shrink === false
                         </div>
                     <% } %>
 
-                    <%- page.content %>
+                    <% if (page?.password) { %>
+                        <div class="post-encrypt-box border-box"
+                             data-secret="<%= page.secretKey %>"
+                             data-iv="<%= page.iv %>"
+                             data-ep="<%= page.encryptedPassword %>"
+                             data-content="<%= page.encryptedContent %>"
+                        >
+                            <input type="password" class="password-input border-box" placeholder="<%- __('encryption.input_password') %>">
+                        </div>
+                        <div class="post"></div>
+                    <% } else { %>
+                         <%- page.content %>
+                    <% } %>
                 </div>
+
                 <% if (
                         (
                           theme?.post?.copyright_info === true

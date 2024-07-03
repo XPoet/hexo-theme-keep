@@ -130,10 +130,15 @@ KEEP.initUtils = () => {
     toggleShowToolsList() {
       const sideToolsListDom = document.querySelector('.side-tools-list')
       const toggleShowToolsDom = document.querySelector('.tool-toggle-show')
-      toggleShowToolsDom.addEventListener('click', (e) => {
-        sideToolsListDom.classList.toggle('show')
-        e.stopPropagation()
-      })
+
+      if (!toggleShowToolsDom?.hasClickListener) {
+        toggleShowToolsDom.addEventListener('click', (e) => {
+          sideToolsListDom.classList.toggle('show')
+          e.stopPropagation()
+        })
+        toggleShowToolsDom.hasClickListener = true
+      }
+
       sideToolsListDom.querySelectorAll('.tools-item').forEach((item) => {
         item.addEventListener('click', (e) => {
           e.stopPropagation()
@@ -498,17 +503,20 @@ KEEP.initUtils = () => {
               eventTrigger = 'mouseover'
             }
 
-            dom.addEventListener(eventTrigger, (e) => {
-              if (isLazyLoadImg && !imgsSet[nameIdx].imgLoaded) {
-                loadImg(
-                  document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
-                  imgsSet[nameIdx].imgLoaded
-                )
-              }
-              imgsSet[nameIdx].isShowImg = !imgsSet[nameIdx].isShowImg
-              dom.classList.toggle('show-img')
-              e.stopPropagation()
-            })
+            if (!dom?.hasEventListener) {
+              dom.addEventListener(eventTrigger, (e) => {
+                if (isLazyLoadImg && !imgsSet[nameIdx].imgLoaded) {
+                  loadImg(
+                    document.querySelector(`.tooltip-img-box img.${imgDomClass}`),
+                    imgsSet[nameIdx].imgLoaded
+                  )
+                }
+                imgsSet[nameIdx].isShowImg = !imgsSet[nameIdx].isShowImg
+                dom.classList.toggle('show-img')
+                e.stopPropagation()
+              })
+              dom.hasEventListener = true
+            }
 
             hideTooltipImg(dom, nameIdx, tooltipImgTrigger)
           }
@@ -718,34 +726,37 @@ KEEP.initUtils = () => {
     // H tag title to top
     title2Top4HTag(a, h, duration, cb) {
       if (a && h) {
-        a.addEventListener('click', (e) => {
-          e.preventDefault()
+        if (!a?.hasEventListener) {
+          a.addEventListener('click', (e) => {
+            e.preventDefault()
 
-          cb && cb()
+            cb && cb()
 
-          let winScrollY = window.scrollY
-          winScrollY = winScrollY <= 1 ? -19 : winScrollY
-          let offset = h.getBoundingClientRect().top + winScrollY
+            let winScrollY = window.scrollY
+            winScrollY = winScrollY <= 1 ? -19 : winScrollY
+            let offset = h.getBoundingClientRect().top + winScrollY
 
-          if (!this.isHideHeader) {
-            offset = offset - this.headerWrapperDom.getBoundingClientRect().height
-          }
-
-          window.anime({
-            targets: document.scrollingElement,
-            duration,
-            easing: 'linear',
-            scrollTop: offset,
-            complete: () => {
-              history.pushState(null, document.title, a.href)
-              if (this.isHideHeader) {
-                setTimeout(() => {
-                  this.pageTopDom.classList.add('hide')
-                }, 160)
-              }
+            if (!this.isHideHeader) {
+              offset = offset - this.headerWrapperDom.getBoundingClientRect().height
             }
+
+            window.anime({
+              targets: document.scrollingElement,
+              duration,
+              easing: 'linear',
+              scrollTop: offset,
+              complete: () => {
+                history.pushState(null, document.title, a.href)
+                if (this.isHideHeader) {
+                  setTimeout(() => {
+                    this.pageTopDom.classList.add('hide')
+                  }, 160)
+                }
+              }
+            })
           })
-        })
+          a.hasEventListener = true
+        }
       }
     },
 
@@ -757,20 +768,25 @@ KEEP.initUtils = () => {
     }
   }
 
+  // global
   KEEP.utils.initData()
   KEEP.utils.registerWindowScroll()
   KEEP.utils.toggleShowToolsList()
   KEEP.utils.globalFontAdjust()
   KEEP.utils.initHasToc()
-  KEEP.utils.zoomInImage()
-  KEEP.utils.setHowLongAgoInHome()
-  KEEP.utils.insertTooltipContent()
   KEEP.utils.siteCountInitialize()
   KEEP.utils.pageNumberJump()
-  KEEP.utils.tabsActiveHandle()
+
+  // home page
+  KEEP.utils.setHowLongAgoInHome()
   KEEP.utils.initTypewriter()
-  KEEP.utils.trimPostMetaInfoBar()
   KEEP.utils.closeWebsiteAnnouncement()
+  KEEP.utils.trimPostMetaInfoBar()
+
+  // post page
+  KEEP.utils.insertTooltipContent()
+  KEEP.utils.zoomInImage()
+  KEEP.utils.tabsActiveHandle()
   KEEP.utils.wrapTableWithBox()
   KEEP.utils.aAnchorJump()
 }
