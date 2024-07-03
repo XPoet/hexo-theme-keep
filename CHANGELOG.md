@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.1.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.3...v4.1.4) (2024-07-03)
+
+
+### 🐞 Bug Fixes
+
+* **code-block:** support diff highlight ([#330](https://github.com/XPoet/hexo-theme-keep/issues/330)) ([6e5aec1](https://github.com/XPoet/hexo-theme-keep/commit/6e5aec13ef732fe48639ac62ccf07fb3a830f216))
+
+
+### 🛠 Performance Improvements
+
+* built-in article encryption function ([54bf474](https://github.com/XPoet/hexo-theme-keep/commit/54bf47499f95ff0a27d54fd494de920f9e0461fd))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([2d1c1c8](https://github.com/XPoet/hexo-theme-keep/commit/2d1c1c88aa91e4fed4fa51fef5b126fbe40daa03))
+
+
+### 💄 Improvement UI
+
+* optimize archive page style ([58aaf7d](https://github.com/XPoet/hexo-theme-keep/commit/58aaf7d0ae636232d7a16c7cf98a1a836f5d9e7d))
+
 ## [4.1.3](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.2...v4.1.3) (2024-05-29)
 
 
