@@ -20,6 +20,12 @@
 <% } %>
 
 <div class="<%= theme?.pjax?.enable === true ? 'pjax' : '' %>">
+    <!-- home page -->
+    <% if (is_home()) { %>
+        <%- __js('js/page/home-page.js') %>
+    <% } %>
+
+    <!-- post page -->
     <% if (is_post()) { %>
         <!-- post-helper -->
         <%- __js('js/post/post-helper.js') %>

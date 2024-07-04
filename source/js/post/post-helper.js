@@ -143,43 +143,14 @@ async function initPostHelper() {
       }
     },
 
-    formatDatetime(fmt = 'YYYY-MM-DD hh:mm:ss', timestamp = Date.now()) {
-      function padLeftZero(str) {
-        return `00${str}`.substr(str.length)
-      }
-
-      const date = new Date(timestamp)
-
-      if (/(y+)/.test(fmt) || /(Y+)/.test(fmt)) {
-        fmt = fmt.replace(RegExp.$1, `${date.getFullYear()}`.substr(4 - RegExp.$1.length))
-      }
-
-      const obj = {
-        'M+': date.getMonth() + 1,
-        'D+': date.getDate(),
-        'd+': date.getDate(),
-        'H+': date.getHours(),
-        'h+': date.getHours(),
-        'm+': date.getMinutes(),
-        's+': date.getSeconds()
-      }
-
-      for (const key in obj) {
-        if (new RegExp(`(${key})`).test(fmt)) {
-          const str = `${obj[key]}`
-          fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str))
-        }
-      }
-      return fmt
-    },
-
+    // reset post update datetime
     resetPostUpdateDate() {
       const updateDateDom = document.querySelector(
         '.post-meta-info-container .post-update-date .datetime'
       )
       const updated = new Date(updateDateDom.dataset.updated).getTime()
-      const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
-      updateDateDom.innerHTML = this.formatDatetime(format, updated)
+      const format = KEEP.theme_config.post?.datetime_format || KEEP.themeInfo.defaultDatetimeFormat
+      updateDateDom.innerHTML = KEEP.utils.formatDatetime(format, updated)
     },
 
     // enable full screen

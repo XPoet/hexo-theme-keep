@@ -13,7 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
       isDark: false,
       fontSizeLevel: 0,
       isShowToc: true
-    }
+    },
+    defaultDatetimeFormat: 'YYYY-MM-DD HH:mm:ss'
   }
 
   // print theme base info
