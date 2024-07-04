@@ -107,5 +107,6 @@ comment:
   page_not_found: Page Not Found
   go_home: Take me home
 encryption:
-  excerpt: 🔒 The post has been encrypted, please enter the password to view it.
+  excerpt: 🔒 The post has been encrypted and can only be viewed after entering the password.
   input_password: Please enter password ...
+  re_encryption: Re-encryption

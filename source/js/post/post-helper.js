@@ -1,18 +1,22 @@
 /* global KEEP */
 
 async function initPostHelper() {
+  const encryptClassName = 'encrypt'
+
   KEEP.utils.postHelper = {
     postPageContainerDom: document.querySelector('.post-page-container'),
     toggleShowTocBtn: document.querySelector('.toggle-show-toc'),
     toggleShowTocTabletBtn: document.querySelector('.toggle-show-toc-tablet'),
     mainContentDom: document.querySelector('.main-content'),
     postToolsDom: document.querySelector('.post-tools'),
-
     isShowToc: false,
 
     initToggleToc() {
       this.toggleShowTocBtn &&
         this.toggleShowTocBtn.addEventListener('click', () => {
+          if (this.postPageContainerDom.classList.contains(encryptClassName)) {
+            return
+          }
           this.isShowToc = !this.isShowToc
           KEEP.themeInfo.styleStatus.isShowToc = this.isShowToc
           KEEP.setStyleStatus()
@@ -21,6 +25,10 @@ async function initPostHelper() {
 
       this.toggleShowTocTabletBtn &&
         this.toggleShowTocTabletBtn.addEventListener('click', () => {
+          if (this.postPageContainerDom.classList.contains(encryptClassName)) {
+            return
+          }
+
           const tabletTocMask = document.querySelector('.tablet-post-toc-mask')
           const tabletToc = tabletTocMask.querySelector('.tablet-post-toc')
 
@@ -272,7 +280,7 @@ async function initPostHelper() {
             const dc = await this.decrypt({ iv, encryptedData: content }, secret)
             encryptBoxDom.style.display = 'none'
             postContentDom.removeChild(encryptBoxDom)
-            this.postPageContainerDom.classList.remove('encrypt')
+            this.postPageContainerDom.classList.remove(encryptClassName)
             this.encryptTocHandle(true)
             postContentDom.querySelector('.post').innerHTML = dc
             setTimeout(() => {
@@ -286,6 +294,7 @@ async function initPostHelper() {
               KEEP.utils.aAnchorJump()
             })
             lockIconDom.classList.add(lockClassName)
+            lockIconDom.classList.add('tooltip')
             sessionStorage.setItem(`${KEEP.themeInfo.encryptKey}#${location.pathname}`, '1')
           }
 
@@ -340,7 +349,7 @@ async function initPostHelper() {
   KEEP.utils.postHelper.resetPostUpdateDate()
   KEEP.utils.postHelper.enableFullScreen()
 
-  if (KEEP.utils.postHelper.postPageContainerDom.classList.contains('encrypt')) {
+  if (KEEP.utils.postHelper.postPageContainerDom.classList.contains(encryptClassName)) {
     await KEEP.utils.postHelper.postEncryptHandle()
   }
 

@@ -107,5 +107,6 @@ comment:
   page_not_found: 页面找不到
   go_home: 前往首页
 encryption:
-  excerpt: 🔒 文章已加密，请在输入密码后查看。
+  excerpt: 🔒 文章已加密，输入密码后才能查看。
   input_password: 请输入密码...
+  re_encryption: 重新加密

@@ -278,7 +278,7 @@ $spacer-padding = 2rem
           padding 1rem 0
 
           .password-input {
-            width 20rem
+            width 60%
             margin 0
             padding 0.8rem 1.2rem
             color var(--text-color-3)
@@ -289,6 +289,10 @@ $spacer-padding = 2rem
             border none
             border-bottom 0.2rem solid var(--border-color)
             outline none
+
+            +keep-tablet() {
+              width 80%
+            }
 
             &.error {
               border 0.2rem solid var(--keep-danger-color)
