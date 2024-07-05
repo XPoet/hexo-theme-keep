@@ -5,13 +5,20 @@ $post-tool-button-width = 2.5rem
   padding-top var(--component-gap)
 
   .post-tools-list {
-
     li {
+      margin-bottom $li-margin-bottom
+
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+
+
+    li.tools-item {
       position relative
       box-sizing border-box
       width $post-tool-button-width
       height $post-tool-button-width
-      margin-bottom $li-margin-bottom
       color var(--text-color-3)
       font-size 1.2rem
       background var(--background-color-1)
@@ -35,11 +42,6 @@ $post-tool-button-width = 2.5rem
         i {
           color var(--background-color-1) !important
         }
-      }
-
-
-      &:last-child {
-        margin-bottom 0
       }
 
 
@@ -70,6 +72,16 @@ $post-tool-button-width = 2.5rem
           }
         }
       }
+    }
+
+
+    li.status-item {
+      width $post-tool-button-width
+      height $post-tool-button-width
+      color var(--text-color-3)
+      font-size 1.6rem
+      cursor pointer
+
 
       &.post-lock {
         cursor default
@@ -77,10 +89,6 @@ $post-tool-button-width = 2.5rem
         .fa-lock-open {
           display none
           color var(--keep-success-color)
-        }
-
-        .fa-lock {
-          color var(--keep-warning-color)
         }
 
         &.decrypt {

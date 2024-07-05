@@ -1,18 +1,22 @@
 /* global KEEP */
 
 async function initPostHelper() {
+  const encryptClassName = 'encrypt'
+
   KEEP.utils.postHelper = {
     postPageContainerDom: document.querySelector('.post-page-container'),
     toggleShowTocBtn: document.querySelector('.toggle-show-toc'),
     toggleShowTocTabletBtn: document.querySelector('.toggle-show-toc-tablet'),
     mainContentDom: document.querySelector('.main-content'),
     postToolsDom: document.querySelector('.post-tools'),
-
     isShowToc: false,
 
     initToggleToc() {
       this.toggleShowTocBtn &&
         this.toggleShowTocBtn.addEventListener('click', () => {
+          if (this.postPageContainerDom.classList.contains(encryptClassName)) {
+            return
+          }
           this.isShowToc = !this.isShowToc
           KEEP.themeInfo.styleStatus.isShowToc = this.isShowToc
           KEEP.setStyleStatus()
@@ -21,6 +25,10 @@ async function initPostHelper() {
 
       this.toggleShowTocTabletBtn &&
         this.toggleShowTocTabletBtn.addEventListener('click', () => {
+          if (this.postPageContainerDom.classList.contains(encryptClassName)) {
+            return
+          }
+
           const tabletTocMask = document.querySelector('.tablet-post-toc-mask')
           const tabletToc = tabletTocMask.querySelector('.tablet-post-toc')
 
@@ -143,43 +151,14 @@ async function initPostHelper() {
       }
     },
 
-    formatDatetime(fmt = 'YYYY-MM-DD hh:mm:ss', timestamp = Date.now()) {
-      function padLeftZero(str) {
-        return `00${str}`.substr(str.length)
-      }
-
-      const date = new Date(timestamp)
-
-      if (/(y+)/.test(fmt) || /(Y+)/.test(fmt)) {
-        fmt = fmt.replace(RegExp.$1, `${date.getFullYear()}`.substr(4 - RegExp.$1.length))
-      }
-
-      const obj = {
-        'M+': date.getMonth() + 1,
-        'D+': date.getDate(),
-        'd+': date.getDate(),
-        'H+': date.getHours(),
-        'h+': date.getHours(),
-        'm+': date.getMinutes(),
-        's+': date.getSeconds()
-      }
-
-      for (const key in obj) {
-        if (new RegExp(`(${key})`).test(fmt)) {
-          const str = `${obj[key]}`
-          fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str))
-        }
-      }
-      return fmt
-    },
-
+    // reset post update datetime
     resetPostUpdateDate() {
       const updateDateDom = document.querySelector(
         '.post-meta-info-container .post-update-date .datetime'
       )
       const updated = new Date(updateDateDom.dataset.updated).getTime()
-      const format = KEEP.theme_config.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss'
-      updateDateDom.innerHTML = this.formatDatetime(format, updated)
+      const format = KEEP.theme_config.post?.datetime_format || KEEP.themeInfo.defaultDatetimeFormat
+      updateDateDom.innerHTML = KEEP.utils.formatDatetime(format, updated)
     },
 
     // enable full screen
@@ -301,7 +280,7 @@ async function initPostHelper() {
             const dc = await this.decrypt({ iv, encryptedData: content }, secret)
             encryptBoxDom.style.display = 'none'
             postContentDom.removeChild(encryptBoxDom)
-            this.postPageContainerDom.classList.remove('encrypt')
+            this.postPageContainerDom.classList.remove(encryptClassName)
             this.encryptTocHandle(true)
             postContentDom.querySelector('.post').innerHTML = dc
             setTimeout(() => {
@@ -315,6 +294,7 @@ async function initPostHelper() {
               KEEP.utils.aAnchorJump()
             })
             lockIconDom.classList.add(lockClassName)
+            lockIconDom.classList.add('tooltip')
             sessionStorage.setItem(`${KEEP.themeInfo.encryptKey}#${location.pathname}`, '1')
           }
 
@@ -369,7 +349,7 @@ async function initPostHelper() {
   KEEP.utils.postHelper.resetPostUpdateDate()
   KEEP.utils.postHelper.enableFullScreen()
 
-  if (KEEP.utils.postHelper.postPageContainerDom.classList.contains('encrypt')) {
+  if (KEEP.utils.postHelper.postPageContainerDom.classList.contains(encryptClassName)) {
     await KEEP.utils.postHelper.postEncryptHandle()
   }
 
