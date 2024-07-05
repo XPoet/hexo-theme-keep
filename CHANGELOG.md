@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.1.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.4...v4.1.5) (2024-07-05)
+
+
+### 🛠 Performance Improvements
+
+* **home:** optimize post updated time settings ([b444efd](https://github.com/XPoet/hexo-theme-keep/commit/b444efd8558835b3149133c8bed7bd34d074995e))
+* **post:** optimize article encryption function ([b189db5](https://github.com/XPoet/hexo-theme-keep/commit/b189db5e7a10d31dd3f132520188ce4d3324ee51))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([27ef552](https://github.com/XPoet/hexo-theme-keep/commit/27ef552086d272df395322ccf181ec6a84eb1e8c))
+
 ## [4.1.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.3...v4.1.4) (2024-07-03)
 
 
