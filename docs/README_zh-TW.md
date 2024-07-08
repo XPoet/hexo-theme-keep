@@ -21,9 +21,9 @@
 ## :star2: 線上預覽
 
 - **[XPoet's Blog](https://xpoet.cn/)**
-- **[keep 預覽](https://keep.xpoet.cn/)**
+- **[Keep 預覽](https://keep.xpoet.cn/)**
 
-> 如果你想把自己的博客鏈接放在線上預覽列表裏，可以給作者提 PR。
+> 如果你想把自己的部落格連結放在線上預覽列表裏，可以給作者提 PR。
 
 ## :books: 文檔
 
@@ -31,7 +31,7 @@
 
 - **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
 - **[Keep 主題配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
-- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
+- **[Keep 主題進階用法](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 ## :rocket: 安装
 
@@ -87,7 +87,7 @@ $ git pull
   <img src="https://contrib.rocks/image?repo=XPoet/hexo-theme-keep" />
 </a>
 
-我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請看 [Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
+我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請查看 [Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
 
 ## :sparkling_heart: 銘謝
 
