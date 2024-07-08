@@ -720,6 +720,9 @@ KEEP.initUtils = () => {
       document.querySelectorAll('a.headerlink').forEach((a) => {
         this.title2Top4HTag(a, a.parentNode, 10)
       })
+      document.querySelectorAll('a.markdownIt-Anchor').forEach((a) => {
+        this.title2Top4HTag(a, a.parentNode, 10)
+      })
     }
   }
 

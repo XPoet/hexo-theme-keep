@@ -1,3 +1,11 @@
+$h1-font-size = 1.7rem
+$h2-font-size = 1.6rem
+$h3-font-size = 1.5rem
+$h4-font-size = 1.4rem
+$h5-font-size = 1.3rem
+$h6-font-size = 1.2rem
+
+
 .keep-markdown-body
 .keep-markdown-body > .post {
   font-size 1rem
@@ -177,13 +185,15 @@
 
 
     &:hover {
-      a.headerlink {
+      a.headerlink
+      a.markdownIt-Anchor {
         visibility visible
       }
     }
 
 
-    a.headerlink {
+    a.headerlink
+    a.markdownIt-Anchor {
       position relative
       order 1
       box-sizing border-box
@@ -212,94 +222,112 @@
 
   h1 {
     font-weight 600
-    font-size 1.8rem
+    font-size $h1-font-size
 
     +keep-tablet() {
-      font-size 1.6rem
+      font-size $h1-font-size * 0.9
     }
 
     +keep-mobile() {
-      line-height 1.5rem
+      line-height $h1-font-size * 0.8
+    }
+
+    a.headerlink
+    a.markdownIt-Anchor {
+      font-size $h1-font-size * 0.8
     }
   }
 
 
   h2 {
     font-weight 600
-    font-size 1.7rem
+    font-size $h2-font-size
 
     +keep-tablet() {
-      font-size 1.5rem
+      font-size $h2-font-size * 0.9
     }
 
     +keep-mobile() {
-      line-height 1.4rem
+      line-height $h2-font-size * 0.8
+    }
+
+    a.headerlink
+    a.markdownIt-Anchor {
+      font-size $h2-font-size * 0.8
     }
   }
 
 
   h3 {
     font-weight 550
-    font-size 1.6rem
+    font-size $h3-font-size
 
     +keep-tablet() {
-      font-size 1.4rem
+      font-size $h3-font-size * 0.9
     }
 
     +keep-mobile() {
-      line-height 1.3rem
+      line-height $h3-font-size * 0.8
+    }
+
+    a.headerlink
+    a.markdownIt-Anchor {
+      font-size $h3-font-size * 0.8
     }
   }
 
 
   h4 {
     font-weight 550
-    font-size 1.4rem
+    font-size $h4-font-size
 
     +keep-tablet() {
-      font-size 1.2rem
+      font-size $h4-font-size * 0.9
     }
 
     +keep-mobile() {
-      line-height 1.1rem
+      line-height $h4-font-size * 0.8
     }
 
-    a.headerlink {
-      font-size 1.1rem
+    a.headerlink
+    a.markdownIt-Anchor {
+      font-size $h4-font-size * 0.8
     }
   }
 
 
   h5 {
     font-weight 500
-    font-size 1.3rem
+    font-size $h5-font-size
 
     +keep-tablet() {
-      font-size 1.2rem
+      font-size $h5-font-size * 0.9
     }
 
     +keep-mobile() {
-      line-height 1.1rem
+      line-height $h5-font-size * 0.8
     }
 
-    a.headerlink {
-      font-size 1.1rem
+    a.headerlink
+    a.markdownIt-Anchor {
+      font-size $h5-font-size * 0.8
     }
   }
 
 
   h6 {
     font-weight 500
-    font-size 1.2rem
+    font-size $h6-font-size
     line-height 1.2
 
     +keep-tablet() {
-      font-size 1.1rem
+      font-size $h6-font-size
       line-height 1.1
     }
 
-    a.headerlink {
-      font-size 1rem
+    a.headerlink
+    a.markdownIt-Anchor {
+      font-size $h6-font-size
     }
   }
 
