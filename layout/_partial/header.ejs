@@ -26,22 +26,34 @@ for (const key in origin_h_menu_nav_object) {
 
         <div class="right border-box">
             <div class="pc">
-                <ul class="menu-list">
+                <ul class="menu-list border-box">
                     <% for (const i in h_menu_nav_object) { %>
-                        <%
-                            const temp_menu_list = h_menu_nav_object[i]?.split('||')
-                            const nav_path = temp_menu_list[0]?.trim()?.toLowerCase()
-                            const nav_icon = temp_menu_list[1]?.trim()?.toLowerCase()
-                        %>
-                        <li class="menu-item">
-                            <a class="<%- is_current(nav_path) ? 'active' : '' %>"
-                               href="<%- url_for(nav_path) %>"
-                            >
-                                <% if (nav_icon) { %>
-                                    <i class="menu-icon <%= nav_icon %>"></i>
+                        <% const { path, icon, name, children } = getMenuItemObj(h_menu_nav_object, i) %>
+                        <li class="menu-item border-box<%- children.length ? ' has-sub-menu' : '' %><%- is_current(path) && !children.length ? ' active' : '' %>">
+                            <a class="border-box" href="<%- !children.length ? url_for(path) : 'javascript:void(0);' %>">
+                                <% if (icon) { %>
+                                    <i class="menu-icon <%= icon %>"></i>
                                 <% } %>
-                                <%= __(i.toLowerCase()).toUpperCase() %>
+                                <%= __(name).toUpperCase() %>
+                                <% if (children.length) { %>
+                                    <i class="collapse-icon fa-solid fa-angle-down"></i>
+                                <% } %>
                             </a>
+                            <% if (children.length) { %>
+                                <ul class="sub-menu-list border-box">
+                                    <% for (const smi of children) { %>
+                                        <% const { path: p2, icon: i2, name: n2 } = parseMenuItem(smi) %>
+                                        <li class="sub-menu-item border-box <%- is_current(p2) ? ' active' : '' %>">
+                                            <a class="border-box" href="<%- url_for(p2) %>">
+                                                <% if (i2) { %>
+                                                    <i class="sub-menu-icon <%= i2 %>"></i>
+                                                <% } %>
+                                                <%= __(n2).toUpperCase() %>
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            <% } %>
                         </li>
                     <% } %>
                     <% if (local_search_enable === true) { %>
@@ -64,15 +76,12 @@ for (const key in origin_h_menu_nav_object) {
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
-            <% for (let i in h_menu_nav_object) { %>
-                <%
-                    const temp_menu_list2 = h_menu_nav_object[i]?.split('||')
-                    const nav_path2 = temp_menu_list2[0]?.trim()?.toLowerCase()
-                %>
+            <% for (const i in h_menu_nav_object) { %>
+                <% const { path, name} = getMenuItemObj(h_menu_nav_object, i) %>
                 <li class="drawer-menu-item flex-center">
-                    <a class="<%- is_current(nav_path2) ? 'active' : '' %>"
-                       href="<%- url_for(nav_path2) %>"
-                    ><%= __(i.toLowerCase()).toUpperCase() %></a>
+                    <a class="<%- is_current(path) ? 'active' : '' %>"
+                       href="<%- url_for(path) %>"
+                    ><%= __(name).toUpperCase() %></a>
                 </li>
             <% } %>
         </ul>

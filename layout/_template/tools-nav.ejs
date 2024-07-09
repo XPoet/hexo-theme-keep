@@ -32,9 +32,11 @@ const tools_nav_data = theme.source_data.tools.filter((t) => t?.category)
                         <div class="top border-box">
                             <div class="logo border-box flex-center <%= tool?.image ? '' : 'has-bg' %>">
                                 <span class="text-color-4"><%= tool?.name.charAt(0).toUpperCase() %></span>
-                                <img src="<%- url_for(tool?.image) %>"
-                                     onerror="this.style.display = 'none'"
-                                >
+                                <% if (tool?.image) { %>
+                                    <img src="<%- url_for(tool?.image) %>"
+                                         onerror="this.style.display = 'none'"
+                                    >
+                                <% } %>
                             </div>
                             <div class="name flex-start border-box text-ellipsis">
                                 <div class="border-box text-color-3 text-ellipsis">
