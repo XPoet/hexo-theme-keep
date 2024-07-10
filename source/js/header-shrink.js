@@ -5,6 +5,8 @@ KEEP.initHeaderShrink = () => {
     headerWrapperDom: null,
     isHeaderShrink: false,
     headerHeight: 70,
+    drawerMenuListDom: document.querySelector('.header-drawer .drawer-menu-list'),
+    windowMaskDom: document.querySelector('.window-mask'),
 
     init() {
       this.headerWrapperDom = document.querySelector('.header-wrapper')
@@ -53,12 +55,11 @@ KEEP.initHeaderShrink = () => {
     },
 
     toggleHeaderDrawerShow() {
-      const domList = [document.querySelector('.window-mask'), document.querySelector('.menu-bar')]
+      const domList = [this.windowMaskDom, document.querySelector('.menu-bar')]
 
       if (KEEP.theme_config?.pjax?.enable === true) {
-        domList.push(
-          ...document.querySelectorAll('.header-drawer .drawer-menu-list .drawer-menu-item')
-        )
+        domList.push(...this.drawerMenuListDom.querySelectorAll('.not-sub-menu'))
+        domList.push(...this.drawerMenuListDom.querySelectorAll('.has-sub-menu .sub-menu-item'))
       }
 
       domList.forEach((v) => {
@@ -66,9 +67,28 @@ KEEP.initHeaderShrink = () => {
           document.body.classList.toggle('show-header-drawer')
         })
       })
+    },
+
+    // menu nav jump handle
+    menuNavJumpHandle() {
+      const menuLabels = this.drawerMenuListDom.querySelectorAll('.has-sub-menu .drawer-menu-label')
+      menuLabels.forEach((menu) => {
+        menu.addEventListener('click', () => {
+          menu.parentElement.classList.toggle('show-sub-menu')
+        })
+      })
+    },
+
+    closeHeaderDrawer() {
+      const siteInfoDom = document.querySelector('.header-wrapper .header-content .left')
+      siteInfoDom.addEventListener('click', () => {
+        document.body.classList.remove('show-header-drawer')
+      })
     }
   }
   KEEP.utils.headerShrink.init()
   KEEP.utils.headerShrink.headerShrink()
   KEEP.utils.headerShrink.toggleHeaderDrawerShow()
+  KEEP.utils.headerShrink.menuNavJumpHandle()
+  KEEP.utils.headerShrink.closeHeaderDrawer()
 }
