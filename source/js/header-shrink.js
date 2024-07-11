@@ -16,15 +16,12 @@ KEEP.initHeaderShrink = () => {
     },
 
     headerShrink() {
-      const fullPageHeight = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight
-      )
+      const fullPageHeight = KEEP.utils.getFullPageHeight()
       if (fullPageHeight < window.innerHeight + 2 * this.headerHeight) {
         return
       }
 
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const scrollTop = KEEP.utils.getScrollTop()
       const isHeaderTransparent =
         KEEP.theme_config?.first_screen?.enable === true &&
         !window.location.pathname.includes('/page/')
@@ -45,7 +42,7 @@ KEEP.initHeaderShrink = () => {
     },
 
     sideToolsBarShowHandle() {
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const scrollTop = KEEP.utils.getScrollTop()
       const sideToolsDom = document.querySelector('.side-tools .side-tools-container')
       if (scrollTop > this.headerHeight / 2) {
         sideToolsDom.classList.add('show')

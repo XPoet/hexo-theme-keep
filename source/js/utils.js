@@ -102,7 +102,7 @@ KEEP.initUtils = () => {
 
     // scroll Style Handle
     styleHandleWhenScroll() {
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const scrollTop = this.getScrollTop()
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
       const clientHeight = window.innerHeight || document.documentElement.clientHeight
 
@@ -690,9 +690,15 @@ KEEP.initUtils = () => {
             let winScrollY = window.scrollY
             winScrollY = winScrollY <= 1 ? -19 : winScrollY
             let offset = h.getBoundingClientRect().top + winScrollY
+            const headerHeader = this.headerWrapperDom.getBoundingClientRect().height
 
             if (!this.isHideHeader) {
-              offset = offset - this.headerWrapperDom.getBoundingClientRect().height
+              offset = offset - headerHeader
+            }
+
+            const fullPageHeight = this.getFullPageHeight()
+            if (fullPageHeight <= window.innerHeight) {
+              return
             }
 
             window.anime({
@@ -723,6 +729,14 @@ KEEP.initUtils = () => {
       document.querySelectorAll('a.markdownIt-Anchor').forEach((a) => {
         this.title2Top4HTag(a, a.parentNode, 10)
       })
+    },
+
+    getScrollTop() {
+      return document.body.scrollTop || document.documentElement.scrollTop
+    },
+
+    getFullPageHeight() {
+      return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
     }
   }
 
