@@ -41,6 +41,11 @@ KEEP.initHeaderShrink = () => {
       }
     },
 
+    cleanHeaderShrink() {
+      document.body.classList.remove('header-shrink')
+      this.isHeaderShrink = false
+    },
+
     sideToolsBarShowHandle() {
       const scrollTop = KEEP.utils.getScrollTop()
       const sideToolsDom = document.querySelector('.side-tools .side-tools-container')
@@ -88,4 +93,5 @@ KEEP.initHeaderShrink = () => {
   KEEP.utils.headerShrink.toggleHeaderDrawerShow()
   KEEP.utils.headerShrink.menuNavJumpHandle()
   KEEP.utils.headerShrink.closeHeaderDrawer()
+  KEEP.utils.headerShrink.cleanHeaderShrink()
 }
