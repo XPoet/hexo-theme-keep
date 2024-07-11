@@ -1,4 +1,9 @@
-<!-- common -->
+<%
+const { links: links_data, photos: photos_data, tools: tools_data } = theme?.source_data
+const page_template = page?.template?.toLowerCase()
+%>
+
+<!-- common js -->
 <%- __js([
     'js/utils.js',
     'js/header-shrink.js',
@@ -9,7 +14,7 @@
     'js/libs/anime.min.js'
 ]) %>
 
-<!-- local-search -->
+<!-- local search -->
 <% if (theme?.local_search?.enable === true) { %>
     <%- __js('js/local-search.js') %>
 <% } %>
@@ -52,17 +57,17 @@
     <% } %>
 
     <!-- links page -->
-    <% if (is_current('/links') || is_current('/link')) { %>
+    <% if ((page_template === 'links' || page_template === 'link') && links_data) { %>
         <%- __js('js/page/links-page.js') %>
     <% } %>
 
     <!-- photos page -->
-    <% if (is_current('/photos') || is_current('/photo')) { %>
+    <% if ((page_template === 'photos' || page_template === 'photo') && photos_data) { %>
         <%- __js('js/page/photos-page.js') %>
     <% } %>
 
     <!-- tools page -->
-    <% if (is_current('/tools') || is_current('/tool')) { %>
+    <% if ((page_template === 'tools' || page_template === 'tool') && tools_data) { %>
         <%- __js('js/page/tools-page.js') %>
     <% } %>
 </div>
