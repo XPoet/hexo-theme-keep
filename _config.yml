@@ -153,6 +153,7 @@ post:
     enable: false        # Option values: true | false
     img_link:            # Image link for the payment QR code
     text:                # Custom reward text, Can be null
+    icon:                # Custom reward icon, Can be null
 
 
 # ---------------------------------------------------------------------------------------

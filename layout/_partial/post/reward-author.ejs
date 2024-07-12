@@ -1,10 +1,13 @@
+<%
+const { img_link, text, icon } = theme?.post?.reward || {}
+%>
+
 <div class="reward-author-container border-box flex-center">
-    <div class="reward-btn keep-button border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="<%= theme?.post?.reward?.text ||  __('post.reward') %>"
-            data-tooltip-img-url="<%= theme?.post?.reward?.img_link %>"
+    <div class="reward-btn border-box flex-center tooltip tooltip-img"
+            data-tooltip-img-url="<%= img_link %>"
             data-tooltip-img-trigger="click"
-            data-tooltip-img-style="top: -8px;"
+            data-tooltip-img-style="top: -6px;"
     >
-        <i class="fa-solid fa-hand-holding-heart"></i>
+        <i class="<%= icon || 'fa-solid fa-gift' %>"></i>&nbsp;<%= (text ||  __('post.reward')).toUpperCase() %>
     </div>
 </div>
