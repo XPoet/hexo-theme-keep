@@ -111,3 +111,59 @@ hexo.extend.helper.register('isJsFile', function (path) {
 hexo.extend.helper.register('isCssFile', function (path) {
   return /\.css$/i.test(path)
 })
+
+const parseMenuItemValue = (menuItemVal) => {
+  let path = ''
+  let icon = ''
+  let children = []
+
+  if (typeof menuItemVal === 'string') {
+    const menu_split_list = menuItemVal?.split('||')
+    path = menu_split_list[0]?.trim()?.toLowerCase() || ''
+    icon = menu_split_list[1]?.trim()?.toLowerCase() || ''
+  }
+
+  if (typeof menuItemVal === 'object') {
+    children = menuItemVal?.children || []
+    path = menuItemVal?.path || ''
+    if (children.length) {
+      path = ''
+    }
+    icon = menuItemVal?.icon || ''
+  }
+
+  return {
+    path,
+    icon,
+    children
+  }
+}
+
+hexo.extend.helper.register('parseMenuItem', function (menuItem) {
+  let name = ''
+  let menuItemValue = ''
+
+  if (typeof menuItem === 'object') {
+    name = Object.keys(menuItem)[0]
+    menuItemValue = Object.values(menuItem)[0]
+  }
+
+  const temp = parseMenuItemValue(menuItemValue)
+
+  return {
+    name,
+    ...temp
+  }
+})
+
+hexo.extend.helper.register('getMenuItemObj', function (menuObj, menuKey) {
+  const menuItemVal = menuObj[menuKey]
+  menuKey = menuKey.toLowerCase()
+
+  const temp = parseMenuItemValue(menuItemVal)
+
+  return {
+    name: menuKey,
+    ...temp
+  }
+})

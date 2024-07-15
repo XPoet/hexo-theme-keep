@@ -232,18 +232,6 @@ $spacer-padding = 2rem
         text-align justify
         word-wrap break-word
 
-        &.code-block-unshrink {
-          figure.highlight {
-            height auto !important
-            overflow auto !important
-
-            .shrink-line {
-              display none !important
-            }
-          }
-        }
-
-
         +keep-tablet() {
           margin-top calc(var(--component-gap) * 0.6)
           padding-bottom calc(var(--component-gap) * 0.6)

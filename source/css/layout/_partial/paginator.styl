@@ -1,26 +1,13 @@
 .paginator {
-  margin-top 2rem
-  padding-top 0.2rem
+  gap 1rem
+  margin-top $page-container-gap
   user-select none
 
-  .btn-wrap {
+  .paginator-btn {
     cursor not-allowed
 
-    &.allowed {
-      cursor pointer
-
-      a.jump-btn {
-        pointer-events auto
-
-
-        i {
-          color var(--text-color-3)
-        }
-      }
-    }
-
-    a.jump-btn {
-      padding 0.2rem
+    a {
+      padding 0.3rem 0.6rem
       pointer-events none
 
       i {
@@ -28,30 +15,54 @@
         font-size 1rem
       }
     }
+
+
+    &.allowed {
+      cursor pointer
+
+      a {
+        pointer-events auto
+
+        i {
+          color var(--text-color-3)
+        }
+      }
+
+      &:hover {
+        a {
+          i {
+            color var(--primary-color)
+          }
+        }
+      }
+    }
   }
 
 
-
-  .base-color-size {
-    color var(--text-color-3)
-    font-size 1rem
+  .base-style {
+    color var(--text-color-4)
+    font-size 1.1rem
   }
+
 
   .page-number-box {
-    margin 0 1rem
+    margin 0 0.2rem
 
     .page-number-input {
       width 2.8rem
-      height 1.8rem
+      height 2rem
       margin 0
       padding 0
       font-weight 400 !important
+      font-size 1rem
       text-align center
       background none
       border 0.1rem solid var(--border-color)
       border-radius 0.3rem
       outline none
       -webkit-appearance none
+      transition-t("width, border-color", "0, 0", "0.2, 0.2", "ease, ease")
+
 
       &::-webkit-outer-spin-button
       &::-webkit-inner-spin-button {
@@ -60,6 +71,7 @@
 
       &:hover
       &:focus {
+        width 3.8rem
         border-color var(--primary-color)
       }
     }
@@ -70,6 +82,9 @@
     }
   }
 }
+
+
+
 
 
 

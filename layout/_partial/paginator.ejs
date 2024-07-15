@@ -1,26 +1,34 @@
 <% if (page.total > 1) { %>
     <div class="paginator border-box flex-center">
-        <div class="btn-wrap<%= page_info.prev ? ' allowed' : '' %>">
-            <a class="jump-btn"
+        <div class="border-box first-page paginator-btn <%= page_info.prev ? 'allowed' : 'not-allow' %>">
+            <a class="border-box"><i class="fa-solid fa-angle-double-left"></i></a>
+        </div>
+
+        <div class="border-box paginator-btn<%= page_info.prev ? ' allowed' : '' %>">
+            <a class="border-box"
                href="<%- url_for(page_info.prev_link) %>"
             ><i class="fa-solid fa-chevron-left"></i></a>
         </div>
 
 
         <div class="page-number-box border-box flex-center">
-            <input class="page-number-input border-box base-color-size"
+            <input class="page-number-input border-box base-style"
                    type="number"
                    value="<%- page.current %>"
                    min="1"
                    max="<%- page.total %>"
-            ><span class="delimiter base-color-size">/</span><span class="base-color-size"><%- page.total %></span>
+            /><span class="delimiter base-style">/</span><span class="base-style"><%- page.total %></span>
         </div>
 
 
-        <div class="btn-wrap<%= page_info.next ? ' allowed' : '' %>">
-            <a class="jump-btn"
+        <div class="border-box paginator-btn<%= page_info.next ? ' allowed' : '' %>">
+            <a class="border-box"
                href="<%- url_for(page_info.next_link) %>"
             ><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div class="border-box last-page paginator-btn <%= page_info.next ? 'allowed' : 'not-allow' %>">
+            <a class="border-box"><i class="fa-solid fa-angle-double-right"></i></a>
         </div>
     </div>
 <% } %>

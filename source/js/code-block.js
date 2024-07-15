@@ -114,36 +114,39 @@ KEEP.initCodeBlock = () => {
     KEEP.utils.initCodeBlockTools()
   }
 
-  KEEP.utils.shrinkCodeBlock = () => {
-    const shrinkHandle = (codeBox) => {
-      const limitHeight = 200
-      const tipNodeH = 30
-      const codeBoxHeight = codeBox.getBoundingClientRect().height
-      if (codeBoxHeight - limitHeight > 50) {
-        codeBox.style.position = 'relative'
-        codeBox.style.overflow = 'hidden'
-        codeBox.style.height = `${limitHeight}px`
-        const shrinkLineDom = document.createElement('div')
-        shrinkLineDom.setAttribute('class', 'shrink-line flex-center')
-        shrinkLineDom.style.height = `${tipNodeH}px`
-        shrinkLineDom.style.top = `${limitHeight - tipNodeH}px`
+  const postContentDom = document.querySelector('.post-content')
+  if (postContentDom && !postContentDom.classList.contains('code-block-unshrink')) {
+    KEEP.utils.shrinkCodeBlock = () => {
+      const shrinkHandle = (codeBox) => {
+        const limitHeight = 200
+        const tipNodeH = 30
+        const codeBoxHeight = codeBox.getBoundingClientRect().height
+        if (codeBoxHeight - limitHeight > 50) {
+          codeBox.style.position = 'relative'
+          codeBox.style.overflow = 'hidden'
+          codeBox.style.height = `${limitHeight}px`
+          const shrinkLineDom = document.createElement('div')
+          shrinkLineDom.setAttribute('class', 'shrink-line flex-center')
+          shrinkLineDom.style.height = `${tipNodeH}px`
+          shrinkLineDom.style.top = `${limitHeight - tipNodeH}px`
 
-        // expand all codes
-        shrinkLineDom.addEventListener('click', () => {
-          codeBox.style.removeProperty('overflow')
-          codeBox.style.overflowY = 'hidden'
-          codeBox.style.overflowX = 'auto'
-          codeBox.style.height = `${codeBoxHeight}px`
-          shrinkLineDom.style.display = 'none'
-        })
+          // expand all codes
+          shrinkLineDom.addEventListener('click', () => {
+            codeBox.style.removeProperty('overflow')
+            codeBox.style.overflowY = 'hidden'
+            codeBox.style.overflowX = 'auto'
+            codeBox.style.height = `${codeBoxHeight}px`
+            shrinkLineDom.style.display = 'none'
+          })
 
-        codeBox.appendChild(shrinkLineDom)
+          codeBox.appendChild(shrinkLineDom)
+        }
       }
-    }
 
-    document.querySelectorAll('figure.highlight').forEach((element) => {
-      shrinkHandle(element)
-    })
+      document.querySelectorAll('figure.highlight').forEach((element) => {
+        shrinkHandle(element)
+      })
+    }
+    KEEP.utils.shrinkCodeBlock()
   }
-  KEEP.utils.shrinkCodeBlock()
 }

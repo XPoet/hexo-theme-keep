@@ -8,9 +8,12 @@
             <i class="fas fa-search-minus"></i>
         </li>
 
-        <li class="tools-item tool-toggle-theme-mode flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
+        <!-- toggle mode -->
+        <% if (theme?.base_info?.mode !== 'dark' && theme?.base_info?.mode !== 'light') { %>
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        <% } %>
 
         <!-- rss -->
         <% if (theme?.rss?.enable === true && config.feed) { %>
@@ -24,6 +27,7 @@
             </li>
         <% } %>
 
+        <!-- to bottom -->
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
         </li>

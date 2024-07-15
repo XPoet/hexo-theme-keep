@@ -59,7 +59,7 @@ function toolsPageHandle() {
     }
 
     window.addEventListener('scroll', () => {
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const scrollTop = KEEP.utils.getScrollTop()
       toolCategoryAnchorScrollTopList.forEach((st, idx) => {
         if (scrollTop + headerHeight > st) {
           clearToolNavActive()

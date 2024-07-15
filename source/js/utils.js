@@ -102,7 +102,7 @@ KEEP.initUtils = () => {
 
     // scroll Style Handle
     styleHandleWhenScroll() {
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const scrollTop = this.getScrollTop()
       const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
       const clientHeight = window.innerHeight || document.documentElement.clientHeight
 
@@ -584,30 +584,58 @@ KEEP.initUtils = () => {
     // page number jump handle
     pageNumberJump() {
       const inputDom = document.querySelector('.paginator .page-number-input')
-      inputDom &&
-        inputDom.addEventListener('change', (e) => {
-          const min = 1
-          const max = Number(e.target.max)
-          let current = Number(e.target.value)
 
-          if (current <= 0) {
-            inputDom.value = min
-            current = min
-          }
+      if (!inputDom) {
+        return
+      }
 
-          if (current > max) {
-            inputDom.value = max
-            current = max
-          }
+      const firstPageDom = document.querySelector('.paginator .first-page')
+      const lastPageDom = document.querySelector('.paginator .last-page')
 
-          const tempHref = window.location.href.replace(/\/$/, '').split('/page/')[0]
+      const min = Number(inputDom.min)
+      const max = Number(inputDom.max)
 
-          if (current === 1) {
-            window.location.href = tempHref
-          } else {
-            window.location.href = tempHref + '/page/' + current
-          }
-        })
+      const tempClass = 'not-allow'
+
+      firstPageDom.addEventListener('click', () => {
+        if (!firstPageDom.classList.contains(tempClass)) {
+          inputDom.value = min
+          jump()
+        }
+      })
+
+      lastPageDom.addEventListener('click', () => {
+        if (!lastPageDom.classList.contains(tempClass)) {
+          inputDom.value = max
+          jump()
+        }
+      })
+
+      const jump = () => {
+        let current = Number(inputDom.value)
+
+        if (current <= 0) {
+          inputDom.value = min
+          current = min
+        }
+
+        if (current > max) {
+          inputDom.value = max
+          current = max
+        }
+
+        const tempHref = window.location.href.replace(/\/$/, '').split('/page/')[0]
+
+        if (current === 1) {
+          window.location.href = tempHref
+        } else {
+          window.location.href = tempHref + '/page/' + current
+        }
+      }
+
+      inputDom.addEventListener('change', (e) => {
+        jump()
+      })
     },
 
     // custom tabs tag active handle
@@ -690,9 +718,15 @@ KEEP.initUtils = () => {
             let winScrollY = window.scrollY
             winScrollY = winScrollY <= 1 ? -19 : winScrollY
             let offset = h.getBoundingClientRect().top + winScrollY
+            const headerHeader = this.headerWrapperDom.getBoundingClientRect().height
 
             if (!this.isHideHeader) {
-              offset = offset - this.headerWrapperDom.getBoundingClientRect().height
+              offset = offset - headerHeader
+            }
+
+            const fullPageHeight = this.getFullPageHeight()
+            if (fullPageHeight <= window.innerHeight) {
+              return
             }
 
             window.anime({
@@ -720,6 +754,17 @@ KEEP.initUtils = () => {
       document.querySelectorAll('a.headerlink').forEach((a) => {
         this.title2Top4HTag(a, a.parentNode, 10)
       })
+      document.querySelectorAll('a.markdownIt-Anchor').forEach((a) => {
+        this.title2Top4HTag(a, a.parentNode, 10)
+      })
+    },
+
+    getScrollTop() {
+      return document.body.scrollTop || document.documentElement.scrollTop
+    },
+
+    getFullPageHeight() {
+      return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
     }
   }
 

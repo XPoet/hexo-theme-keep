@@ -1,6 +1,12 @@
 $pc-search-icon-font-size = 1.5rem
 $menu-bar-line-height = 2.5px
+$menu-icon-gap = 0.1rem
+$pc-menu-item-gap = 1.8rem
+$mobile-menu-item-gap = 1.2rem
 $logo-image-box-width = 2.68rem
+$mobile-menu-icon-wrap-width = 1.6rem
+$mobile-menu-icon-wrap-margin = 0.4rem
+
 
 .header-wrapper {
   display flex
@@ -17,6 +23,7 @@ $logo-image-box-width = 2.68rem
     box-shadow 1px 2px 10px var(--shadow-hover-color)
   }
 
+
   .header-content {
     z-index $z-index-5
     display flex
@@ -27,7 +34,6 @@ $logo-image-box-width = 2.68rem
     max-width var(--page-content-max-width)
     height 100%
     transition-t("max-width, width", "0, 0", "0.1, 0.1", "ease, ease")
-
 
     &.has-first-screen {
       max-width var(--page-content-max-width-2)
@@ -50,9 +56,6 @@ $logo-image-box-width = 2.68rem
 
 
     .left {
-      display flex
-      align-items center
-      justify-content flex-start
       height 100%
       font-size 2rem
 
@@ -104,9 +107,11 @@ $logo-image-box-width = 2.68rem
           font-size calc(var(--header-title-font-size) * 0.9)
         }
 
+
         +keep-mobile() {
           font-size calc(var(--header-title-font-size) * 0.8)
         }
+
 
         .is-home & {
           if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
@@ -120,6 +125,7 @@ $logo-image-box-width = 2.68rem
           }
         }
 
+
         .show-header-drawer & {
           color var(--text-color-1) !important
         }
@@ -131,6 +137,7 @@ $logo-image-box-width = 2.68rem
       .pc {
         .menu-list {
           display flex
+          gap $pc-menu-item-gap
           align-items center
 
           +keep-tablet() {
@@ -139,107 +146,134 @@ $logo-image-box-width = 2.68rem
 
 
           .menu-item {
-            position relative
-            float left
-            box-sizing border-box
-            margin-left 2rem
             font-size 1rem
             cursor pointer
 
-            &:first-child {
-              margin-left 0
-            }
-
-
-            a {
-              &::before {
-                position absolute
-                bottom -10px
-                left 50%
-                box-sizing border-box
-                width 0
-                height 2.6px
-                background var(--primary-color)
-                border-radius 3px
-                transform translateX(-50%)
-                content ''
-                transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
-
-                .header-shrink & {
-                  bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
-                }
-              }
-
-
-              &:hover
-              &.active {
-                &::before {
-                  width 100%
-                }
-              }
-            }
-
-
             &.search {
-              margin-left 1.6rem
               font-size $pc-search-icon-font-size
+              &::before {
+                display none !important
+              }
+            }
 
-              i {
-                color var(--text-color-3)
+
+            .menu-text-color {
+              color var(--text-color-3)
+            }
+
+
+            &::before {
+              position absolute
+              bottom -10px
+              left 50%
+              box-sizing border-box
+              width 0
+              height 2.6px
+              background var(--primary-color)
+              border-radius 3px
+              transform translateX(-50%)
+              content ''
+              transition-t("transform, bottom, width", "0, 0, 0", "0.2, 0.2, 0.2", "linear, linear, ease")
+
+              .header-shrink & {
+                bottom calc(-1 * calc(var(--header-shrink-height) * 0.5 - 12px))
+              }
+            }
+
+
+            &:hover
+            &.active {
+              &::before {
+                width 100%
               }
             }
 
 
             .menu-icon {
               display var(--header-menu-icon)
-              margin-right 0.1rem
+              margin-right $menu-icon-gap
             }
+
 
             .is-home & {
               if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
-                a {
-                  color var(--first-screen-header-font-color-light)
-
-                  .menu-icon {
-                    color var(--first-screen-header-font-color-light)
-                  }
-
-                  &:hover {
-                    color var(--primary-color)
-
-                    .menu-icon {
-                      color var(--primary-color)
-                    }
-                  }
-                }
-
-
-                i.search {
+                .menu-text-color {
                   color var(--first-screen-header-font-color-light)
                 }
 
 
                 .dark-mode & {
-                  a {
-                    color var(--first-screen-header-font-color-dark)
-
-                    .menu-icon {
-                      color var(--first-screen-header-font-color-dark)
-                    }
-
-                    &:hover {
-                      color var(--primary-color)
-
-                      .menu-icon {
-                        color var(--primary-color)
-                      }
-                    }
-                  }
-
-                  i.search {
+                  .menu-text-color {
                     color var(--first-screen-header-font-color-dark)
                   }
                 }
+              }
+            }
+
+
+            &.has-sub-menu {
+              &::after {
+                position absolute
+                bottom 0
+                left 0
+                box-sizing border-box
+                width 100%
+                height 100%
+                content ''
+              }
+
+              &:hover {
+                &::after {
+                  bottom -100%
+                }
+
+                .collapse-icon {
+                  transform rotate(180deg)
+                }
+
+                .sub-menu-list {
+                  display flex
+                }
+              }
+            }
+
+
+            .collapse-icon {
+              margin-left $menu-icon-gap
+              transition-t("transform", "0", "0.3", "ease")
+            }
+          }
+
+
+          .sub-menu-list {
+            position absolute
+            bottom -280%
+            left 50%
+            display none
+            gap $pc-menu-item-gap
+            justify-content flex-start
+            box-sizing border-box
+            padding 0.8rem 1.6rem
+            background var(--background-color-1)
+            border-radius 0.6rem
+            box-shadow 0 0 8px var(--shadow-color)
+            transform translateX(-50%)
+
+            .sub-menu-item {
+              .menu-text-color {
+                color var(--text-color-3) !important
+              }
+
+              &:hover
+              &.active {
+                .menu-text-color {
+                  color var(--primary-color) !important
+                }
+              }
+
+              .sub-menu-icon {
+                display var(--header-menu-icon)
+                margin-right $menu-icon-gap * 4
               }
             }
           }
@@ -248,18 +282,15 @@ $logo-image-box-width = 2.68rem
 
 
       .mobile {
-        display flex
-        align-items center
-        justify-content space-between
+        gap 1rem
 
         .icon-item {
           position relative
           display none
           width 20px
           height 20px
-          margin-left 12px
           color var(--text-color-3)
-          font-size 18px
+          font-size 1.2rem
           cursor pointer
 
           i {
@@ -274,9 +305,6 @@ $logo-image-box-width = 2.68rem
             }
           }
 
-          &:first-child {
-            margin-left 0
-          }
 
           +keep-tablet() {
             display flex
@@ -344,6 +372,7 @@ $logo-image-box-width = 2.68rem
           }
         }
 
+
         .is-home & {
           if (hexo-config('first_screen') && hexo-config('first_screen.enable') == true) {
             .icon-item i {
@@ -385,42 +414,131 @@ $logo-image-box-width = 2.68rem
     top 0
     left 0
     z-index $z-index-2
+    display none
+    justify-content center
+    box-sizing border-box
     width 100%
-    padding var(--header-height) 0 20px 0
+    padding var(--header-height) 0 2rem 0
     background var(--background-color-1)
     transform scaleY(0)
     transform-origin top
     transition-t("transform", "0", "0.38", "ease")
 
+    +keep-tablet() {
+      display flex
+    }
+
+
     .show-header-drawer & {
       transform scaleY(1)
     }
 
+
     .drawer-menu-list {
       display flex
       flex-direction column
-      align-items center
+      gap 1.2rem
+      align-items flex-start
       justify-content flex-start
+      width var(--page-content-width)
+      max-width var(--page-content-max-width)
+      height 100%
+      margin-top 1rem
+
+      +keep-tablet() {
+        width var(--page-content-width-tablet)
+      }
+
+
+      +keep-mobile() {
+        width var(--page-content-width-mobile)
+      }
+
 
       .drawer-menu-item {
-        height 38px
-        margin 6px 0
-        font-size 1rem
+        width 100%
+        padding 0.6rem 0
+        font-size 1.06rem
+        border-bottom 0.1rem solid var(--background-color-3)
 
-        a {
-          padding 6px 20px
-          color var(--text-color-3)
-          border-radius 20px
+        &.active {
+          .drawer-menu-label {
+            .drawer-menu-text-color {
+              color var(--primary-color)
+            }
+          }
+        }
 
-          &:hover {
-            color var(--text-color-2)
-            border 1px solid var(--text-color-3)
+
+        &.show-sub-menu {
+          .collapse-icon {
+            transform rotate(-90deg)
           }
 
 
+          .drawer-sub-menu-list {
+            display flex
+            height auto
+          }
+        }
+
+
+        .drawer-menu-label {
+          display flex
+          align-items center
+          justify-content space-between
+          width 100%
+
+          .left-side {
+            width 100%
+
+            .menu-icon-wrap {
+              display var(--header-menu-icon)
+              width $mobile-menu-icon-wrap-width
+              margin-right $mobile-menu-icon-wrap-margin
+            }
+          }
+
+
+          .right-side {
+            margin-left 0.4rem
+            cursor pointer
+            transition-t("transform", "0", "0.2", "ease")
+          }
+        }
+      }
+
+
+      .drawer-sub-menu-list {
+        position relative
+        display none
+        flex-direction column
+        justify-content flex-start
+        box-sizing border-box
+        width 100%
+        height 0
+        padding-top 0.6rem
+        padding-bottom 0.6rem
+        padding-left $mobile-menu-icon-wrap-width
+        transition-t("display, height", "0, 0", "0.2, 0.2", "linear, linear")
+        disable-user-select()
+
+        .sub-menu-item {
+          margin-top 1rem
+          padding 0.6rem 0
+
           &.active {
-            color var(--text-color-2)
-            border 1px solid var(--text-color-3)
+            a
+            a i {
+              color var(--primary-color)
+            }
+          }
+
+
+          .sub-menu-icon-wrap {
+            display var(--header-menu-icon)
+            width $mobile-menu-icon-wrap-width
+            margin-right $mobile-menu-icon-wrap-margin
           }
         }
       }
@@ -431,13 +549,21 @@ $logo-image-box-width = 2.68rem
   .window-mask {
     position absolute
     top 0
+    left 0
     z-index $z-index-1
+    display none
+    box-sizing border-box
     width 100%
     height 100vh
     background rgba(0, 0, 0, 0.4)
     visibility hidden
     opacity 0
     transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
+
+    +keep-tablet() {
+      display block
+    }
+
 
     .show-header-drawer & {
       visibility visible

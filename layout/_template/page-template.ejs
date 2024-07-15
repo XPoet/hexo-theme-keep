@@ -1,39 +1,50 @@
 <%
 const page_title = page?.title?.toLowerCase()
+const page_template = page?.template?.toLowerCase()
 const use_page_template = page?.use_template !== false
 const { links: links_data, photos: photos_data, tools: tools_data } = theme?.source_data
-const has_page_cover = page?.page_cover ? 'has-page-cover' : ''
 
 let current_page_data = null
 let current_page_template = null
 let keep_container = 'keep-container'
 
-if (page_title === 'links' || page_title === 'link') {
+if (page_template === 'links' || page_template === 'link') {
   current_page_data = links_data
   current_page_template = 'friends-link'
 }
 
-if (page_title === 'photos' || page_title === 'photo') {
+if (page_template === 'photos' || page_template === 'photo') {
   current_page_data = photos_data
   current_page_template = 'photo-album'
 }
 
-if (page_title === 'tools' || page_title === 'tool') {
+if (page_template === 'tools' || page_template === 'tool') {
   current_page_data = tools_data
   current_page_template = 'tools-nav'
   if (current_page_data) { keep_container = '' }
 }
+
+const page_cover = page?.page_cover || ''
+const has_page_cover = page_cover ? 'has-page-cover' : ''
+const page_cover_title = page?.page_cover_title || ''
+const page_cover_height = page?.page_cover_height ? page?.page_cover_height + 'px' : '200px'
 %>
+
 <div class="fade-in-down-animation">
     <div class="page-template-container border-box <%= keep_container %> <%= has_page_cover %>">
         <!-- page top -->
         <% if (page?.page_cover) { %>
             <div class="page-template-top border-box"
-                 style="height: <%= page?.page_cover_height ? page?.page_cover_height + 'px' : '200px' %>"
+                 style="height: <%= page_cover_height %>"
             >
-                <img class="page-cover" src="<%- url_for(page.page_cover) %>"
+                <img class="page-cover" src="<%- url_for(page_cover) %>"
                      onerror="this.style.display = 'none'"
                 >
+                <% if (page_cover_title) { %>
+                    <span class="page-cover-title">
+                        <%= page_cover_title %>
+                    </span>
+                <% } %>
             </div>
         <% } %>
 
