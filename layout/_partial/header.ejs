@@ -29,8 +29,8 @@ for (const key in origin_h_menu_nav_object) {
                 <ul class="menu-list border-box">
                     <% for (const i in h_menu_nav_object) { %>
                         <% const { path, icon, name, children } = getMenuItemObj(h_menu_nav_object, i) %>
-                        <li class="menu-item flex-start border-box<%- children.length ? ' has-sub-menu' : '' %><%- is_current(path) && !children.length ? ' active' : '' %>">
-                            <a class="menu-text-color border-box" href="<%- !children.length ? url_for(path) : 'javascript:void(0);' %>">
+                        <li class="menu-item flex-start border-box<%- children.length ? ' has-sub-menu' : '' %><%- path && is_current(path) && !children.length ? ' active' : '' %>">
+                            <a class="menu-text-color border-box" href="<%- path && !children.length ? url_for(path) : 'javascript:void(0);' %>">
                                 <% if (icon) { %>
                                     <i class="menu-text-color menu-icon <%= icon %>"></i>
                                 <% } %>
@@ -78,9 +78,9 @@ for (const key in origin_h_menu_nav_object) {
         <ul class="drawer-menu-list border-box">
             <% for (const i in h_menu_nav_object) { %>
                 <% const { path, icon, name, children } = getMenuItemObj(h_menu_nav_object, i) %>
-                <li class="drawer-menu-item border-box<%- children.length ? ' has-sub-menu' : ' not-sub-menu' %><%- is_current(path) && !children.length ? ' active' : '' %>">
+                <li class="drawer-menu-item border-box<%- children.length ? ' has-sub-menu' : ' not-sub-menu' %><%- path && is_current(path) && !children.length ? ' active' : '' %>">
                     <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="<%- !children.length ? url_for(path) : 'javascript:void(0);' %>">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="<%- path && !children.length ? url_for(path) : 'javascript:void(0);' %>">
                             <% if (icon) { %>
                                 <span class="menu-icon-wrap border-box flex-center">
                                     <i class="drawer-menu-text-color menu-icon <%= icon %>"></i>
