@@ -1,5 +1,38 @@
 # Changelog
 
+## [4.2.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.5...v4.2.0) (2024-07-15)
+
+
+### 🌟 Features
+
+* supports secondary menu configuration in mobile ([7b32ee5](https://github.com/XPoet/hexo-theme-keep/commit/7b32ee56511c776fb33e6bdebf9a48d7fc9ee6a7))
+* supports secondary menu configuration in pc ([ae9fa33](https://github.com/XPoet/hexo-theme-keep/commit/ae9fa33fa225847ed1fd157333dd144fb6bd196d))
+
+
+### 🐞 Bug Fixes
+
+* fixed the problem of code block fold failure ([#346](https://github.com/XPoet/hexo-theme-keep/issues/346)) ([dfb0758](https://github.com/XPoet/hexo-theme-keep/commit/dfb07584852d8ed5f236d3681cb4d79dccee3cc7))
+* optimize judgment logic of scroll to top of page ([#342](https://github.com/XPoet/hexo-theme-keep/issues/342)) ([017540a](https://github.com/XPoet/hexo-theme-keep/commit/017540a649a883fc9e700a264688f1a68f29b9fb))
+
+
+### 🍭 Code Refactoring
+
+* refactoring page template usage logic ([ab51486](https://github.com/XPoet/hexo-theme-keep/commit/ab5148648cc304021d7d0ebd49294b66c8329123))
+
+
+### 🛠 Performance Improvements
+
+* optimize menu nav active setting ([81f2c77](https://github.com/XPoet/hexo-theme-keep/commit/81f2c77f5008eb7fe02a3e4764c6ba2c392892c4))
+* optimize paginator ([e1cb4c2](https://github.com/XPoet/hexo-theme-keep/commit/e1cb4c2509637e6cabf16a8d7bd21ebab72a52f8))
+* optimize theme mode toggle ([#339](https://github.com/XPoet/hexo-theme-keep/issues/339)) ([8928105](https://github.com/XPoet/hexo-theme-keep/commit/8928105bef2bd4406d5cd2b57dcb834da7208e4e))
+
+
+### 💄 Improvement UI
+
+* clear header shrink after page jump ([748ed43](https://github.com/XPoet/hexo-theme-keep/commit/748ed436795a4798ceda181ce9745870d3341070))
+* optimize markdown style ([d486a7d](https://github.com/XPoet/hexo-theme-keep/commit/d486a7d26e34802f9797043b9217d64b4e231bb1))
+* optimize reward author style ([12d9215](https://github.com/XPoet/hexo-theme-keep/commit/12d9215a4ab42c9631df45e8100c0c012f40ed4e))
+
 ## [4.1.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.4...v4.1.5) (2024-07-05)
 
 
