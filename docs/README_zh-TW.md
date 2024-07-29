@@ -9,7 +9,7 @@
 
 # hexo-theme-keep
 
-**Keep** 是一款簡約輕快的 [Hexo](https://hexo.io) 主題。它能讓你更專注於寫作。
+**Keep** 是一款簡約輕快的 [Hexo](https://hexo.io) 主題，它能讓你更專注於寫作。
 
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep?style=flat-square&logo=github&color=3366cc)](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep?style=flat-square&logo=github&color=mediumpurple)](https://github.com/XPoet/hexo-theme-ils/releases)
@@ -21,9 +21,9 @@
 ## :star2: 線上預覽
 
 - **[XPoet's Blog](https://xpoet.cn/)**
-- **[keep 預覽](https://keep.xpoet.cn/)**
+- **[Keep 預覽](https://keep.xpoet.cn/)**
 
-> 如果你想把自己的博客鏈接放在線上預覽列表裏，可以給作者提 PR。
+> 如果你想把自己的部落格連結放在線上預覽列表裏，可以給作者提 PR。
 
 ## :books: 文檔
 
@@ -31,7 +31,7 @@
 
 - **[Keep 官方文檔](https://keep-docs.xpoet.cn/)**
 - **[Keep 主題配置指南](https://keep-docs.xpoet.cn/basis/configuration-guide/base_info.html)**
-- **[Keep 主題進階使用](https://keep-docs.xpoet.cn/advanced/set-language.html)**
+- **[Keep 主題進階用法](https://keep-docs.xpoet.cn/advanced/set-language.html)**
 
 ## :rocket: 安装
 
@@ -87,7 +87,7 @@ $ git pull
   <img src="https://contrib.rocks/image?repo=XPoet/hexo-theme-keep" />
 </a>
 
-我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請看 [Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
+我們歡迎你加入 **Keep** 的開發，貢獻出你的一份力量。請查看 [Keep 原始碼貢獻指南](https://keep-docs.xpoet.cn/user-notice/contribution-guide.html)。
 
 ## :sparkling_heart: 銘謝
 
@@ -98,6 +98,6 @@ $ git pull
 
 ## :memo: 許可
 
-[AGPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)  
+[AGPL-3.0](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)
 
 Copyright © 2020-present XPoet

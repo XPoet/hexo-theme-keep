@@ -8,7 +8,7 @@
 
 # hexo-theme-keep
 
-**Keep** 是一款简约轻快的 [Hexo](https://hexo.io) 主题。它能让你更专注于写作。
+**Keep** 是一款简约轻快的 [Hexo](https://hexo.io) 主题，它能让你更专注于写作。
 
 [![Github License](https://img.shields.io/github/license/XPoet/hexo-theme-keep?style=flat-square&logo=github&color=3366cc)](https://github.com/XPoet/hexo-theme-keep/blob/master/LICENSE)
 [![Github Release](https://img.shields.io/github/release/XPoet/hexo-theme-keep?style=flat-square&logo=github&color=mediumpurple)](https://github.com/XPoet/hexo-theme-ils/releases)
