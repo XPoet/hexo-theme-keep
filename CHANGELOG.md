@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.2.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.0...v4.2.1) (2024-07-29)
+
+
+### 📖 Docs
+
+* **language:** update Traditional Chinese ([9330df8](https://github.com/XPoet/hexo-theme-keep/commit/9330df8e3cb7e795197c414f9d40cf6ddaa2d9a4))
+
+
+### 💄 Improvement UI
+
+* optimize the style of the secondary navigation menu ([075429b](https://github.com/XPoet/hexo-theme-keep/commit/075429b6ef9d93a822c46adb2d19dad240072195))
+
 ## [4.2.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.5...v4.2.0) (2024-07-15)
 
 
