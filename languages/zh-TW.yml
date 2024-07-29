@@ -1,5 +1,5 @@
 # ====================================================================
-# 中文繁体
+# 中文繁體
 # ====================================================================
 
 category: 分類
@@ -47,13 +47,13 @@ x: X
 facebook: Facebook
 email: Email
 code_block:
-  copy: 復製代碼
-  copied: 已復製
+  copy: 複製代碼
+  copied: 已複製
   fold: 折疊代碼塊
   folded: 已折疊
 copy_copyright:
-  copy: 復製版權信息
-  copied: 已復製
+  copy: 複製版權資訊
+  copied: 已複製
   title: 原文標題
   author: 原文作者
   link: 原文連結
@@ -62,8 +62,8 @@ copyright:
   title: 標題
   link: 連結
   create_time: 撰寫時間
-  published: 發布于
-  license: 許可
+  published: 發布於
+  license: 版權
   license_title: 版權宣告
   license_content: "這個網站所有文章均使用 %s 授權"
 ago:
@@ -85,7 +85,7 @@ footer:
     netlify: Netlify
     cloudflare: Cloudflare
     gitee: Gitee Pages
-    aliyun: 阿裏雲
+    aliyun: 阿里雲
     tencent_cloud: 騰訊雲
     upyun: 又拍雲
   total_words: 總字數
@@ -95,14 +95,14 @@ post:
     qq: "分享到 QQ"
     wechat: "分享到微信"
     weibo: "分享到微博"
-    wechat_scan: "微信掃壹掃"
+    wechat_scan: "微信掃一掃"
   reward: 給作者打賞
 comment:
   comments: 留言
-  fail_tip: 評論插件加載失敗
+  fail_tip: 留言插件加載失敗
   reload: 點擊重新加載
-  loading: 正在加載評論插件
-  config_error: "請完整填寫 %s 評論外掛程式必需的設定項"
+  loading: 正在載入留言插件
+  config_error: "請完整填寫 %s 留言插件的必填設定項"
 404:
   page_not_found: 頁面缺失
   go_home: 前往首頁
