@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.2](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.1...v4.2.2) (2024-08-19)
+
+
+### 🐞 Bug Fixes
+
+* fix the error caused by closing lazy loading of images ([#365](https://github.com/XPoet/hexo-theme-keep/issues/365)) ([5dede08](https://github.com/XPoet/hexo-theme-keep/commit/5dede083c1976f385fe371b0f0e9c2a577207512))
+
 ## [4.2.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.0...v4.2.1) (2024-07-29)
 
 
