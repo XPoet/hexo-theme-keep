@@ -1,7 +1,7 @@
 /* global KEEP */
 
 window.addEventListener('DOMContentLoaded', () => {
-  const { version, local_search } = KEEP.theme_config
+  const { version, local_search, lazyload } = KEEP.theme_config
 
   KEEP.themeInfo = {
     theme: `Keep v${version}`,
@@ -69,7 +69,10 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initBack2Top()
     KEEP.initCodeBlock()
     KEEP.setFooterVersion()
-    KEEP.initLazyLoad()
+
+    if (lazyload?.enable === true) {
+      KEEP.initLazyLoad()
+    }
 
     if (local_search?.enable === true) {
       KEEP.initLocalSearch()
