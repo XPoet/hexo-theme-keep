@@ -3,3 +3,7 @@ contact_links:
   - name: GitHub Discussions
     url: https://github.com/XPoet/hexo-theme-keep/discussions
     about: Please ask and answer questions here.
+
+  - name: Keep Documents | Keep 文档
+    url: https://keep-docs.xpoet.cn
+    about: Official user manual of Keep Theme
