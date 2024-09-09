@@ -1,5 +1,22 @@
 # Changelog
 
+## [4.2.3](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.2...v4.2.3) (2024-09-09)
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([3ec3c52](https://github.com/XPoet/hexo-theme-keep/commit/3ec3c5219bc8a94c9806be09517e0738802cfb2e))
+
+
+### 💄 Improvement UI
+
+* optimize table style ([#361](https://github.com/XPoet/hexo-theme-keep/issues/361)) ([8a94da3](https://github.com/XPoet/hexo-theme-keep/commit/8a94da3d73a69bedcb7d9b0f1ce61ddf73315e1a))
+
+
+### 🚦 Chore
+
+* **i18n:** update languages ([502109a](https://github.com/XPoet/hexo-theme-keep/commit/502109ab53a1deef786d6ecc255c70fe6e6d052b))
+
 ## [4.2.2](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.1...v4.2.2) (2024-08-19)
 
 
