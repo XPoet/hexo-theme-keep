@@ -21,7 +21,7 @@ const { created_datetime_icon, updated_datetime_icon } = theme?.post || {}
 
 <div class="post-meta-info-container border-box <%= page_type %>">
     <div class="post-meta-info border-box">
-        <% if (page_type === 'home' && show_home_post_block_datetime) { %>
+        <% if (page_type === 'home' && show_home_post_block_datetime && home_post_block_datetime) { %>
             <span class="meta-info-item border-box">
                 <i class="icon <%= home_post_block_datetime_icon %>"></i>&nbsp;<span class="home-post-history"
                                                                                 data-updated="<%= home_post_block_datetime %>"
@@ -35,10 +35,12 @@ const { created_datetime_icon, updated_datetime_icon } = theme?.post || {}
                 <span class="datetime"><%= date(post.date, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
             </span>
 
-            <span class="meta-info-item post-update-date">
-                <i class="icon <%= updated_datetime_icon || 'fa-solid fa-file-pen' %>"></i>&nbsp;
-                <span class="datetime" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
-            </span>
+            <% if (post.updated) { %>
+                <span class="meta-info-item post-update-date">
+                    <i class="icon <%= updated_datetime_icon || 'fa-solid fa-file-pen' %>"></i>&nbsp;
+                    <span class="datetime" data-updated="<%= post.updated %>"><%= date(post.updated, theme.post?.datetime_format || 'YYYY-MM-DD HH:mm:ss') %></span>
+                </span>
+            <% } %>
         <% } %>
 
         <% if (post.categories.length && (theme?.home?.category === true || page_type === 'post')) { %>
