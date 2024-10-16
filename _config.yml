@@ -242,7 +242,7 @@ comment:
   twikoo:
     env_id:          # Environment ID
     region:          # Environment region, Can be null
-    version: 1.6.36  # Twikoo version, default use v1.6.36
+    version: 1.6.39  # Twikoo version, default use v1.6.39
 
   # Waline
   # See: https://github.com/walinejs/waline
@@ -250,7 +250,7 @@ comment:
   waline:
     server_url:         # Server URL
     reaction: false     # Post reactions, option values: true | false
-    version: 3.2.1      # Waline version, default use v3.2.1
+    version: 3.3.2      # Waline version, default use v3.3.2
 
   # Giscus
   # See: https://github.com/giscus/giscus
