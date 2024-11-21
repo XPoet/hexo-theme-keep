@@ -22,11 +22,13 @@ try {
 const show_word_count = f_word_count === true && f_temp_total_word !== 0
 
 const has_count_info = show_pv || show_uv || show_word_count
+
+const current_year = String(date(new Date(), 'YYYY'))
 %>
 <footer class="footer border-box">
     <div class="copyright-info info-item">
-        &copy;&nbsp;<% if (f_since) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= date(new Date(), 'YYYY') %>
-        <% if (web_master) { %>
+    &copy;&nbsp;<% if (f_since && String(f_since) !== current_year) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= current_year %>
+    <% if (web_master) { %>
             &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
         <% } %>
     </div>
