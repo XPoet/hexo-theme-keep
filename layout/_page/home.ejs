@@ -17,7 +17,7 @@
                          style="height: <%= post?.home_cover_height ? post?.home_cover_height + 'px' : '10rem' %>"
                     >
                         <% if (post.sticky) { %>
-                            <div class="post-sticky-box cover">
+                            <div class="post-sticky-box cover-offset">
                                 <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                             </div>
                         <% } %>
@@ -29,7 +29,7 @@
 
                 <div class="home-post-item-bottom border-box">
                     <% if (post.sticky && !post?.home_cover) { %>
-                        <div class="post-sticky-box card">
+                        <div class="post-sticky-box card-offset">
                             <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
                         </div>
                     <% } %>
