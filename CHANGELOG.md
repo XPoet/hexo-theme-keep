@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.2.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.3...v4.2.4) (2024-11-21)
+
+
+### 🐞 Bug Fixes
+
+* fix the footer copyright period when it is within the same year ([c999714](https://github.com/XPoet/hexo-theme-keep/commit/c9997143d83c0d0ca42f153ddc4990cf3583ba3b))
+
+
+### 🎨 Styling
+
+* optimize element block z-index order ([#366](https://github.com/XPoet/hexo-theme-keep/issues/366)) ([b654489](https://github.com/XPoet/hexo-theme-keep/commit/b654489ad72c8ecd4157b76806e6fb0e2f70cf1c))
+
+
+### 🛠 Performance Improvements
+
+* enhanced protection against third-party css style intrusions ([#370](https://github.com/XPoet/hexo-theme-keep/issues/370)) ([573bc3c](https://github.com/XPoet/hexo-theme-keep/commit/573bc3c479a3e63752eadaad6a31661b2d1f94fc))
+* optimize footer since year settings ([19be89b](https://github.com/XPoet/hexo-theme-keep/commit/19be89b327e46b9708320125b29ef0836eea0d6f))
+* optimize the display of post update time ([#369](https://github.com/XPoet/hexo-theme-keep/issues/369)) ([c57764d](https://github.com/XPoet/hexo-theme-keep/commit/c57764dd6364460e42ee6d915bcbfdf830c3b82d))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([80ae08f](https://github.com/XPoet/hexo-theme-keep/commit/80ae08fd1fe8538b3408e1b2b58749e01f70d711))
+
+
+### 💄 Improvement UI
+
+* optimize markdown style ([#365](https://github.com/XPoet/hexo-theme-keep/issues/365)) ([1295c4e](https://github.com/XPoet/hexo-theme-keep/commit/1295c4ea3480f710648cdfe905f61982aac878ef))
+
+
+### 🚦 Chore
+
+* upgrade the comment plugins version ([59dc05e](https://github.com/XPoet/hexo-theme-keep/commit/59dc05eb6bf6a4eeceb7401dd4bf01fa9f7f3c39))
+
 ## [4.2.3](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.2...v4.2.3) (2024-09-09)
 
 
