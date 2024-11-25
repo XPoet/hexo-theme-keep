@@ -160,6 +160,7 @@ $post-tools-offset = calc((100vw - var(--page-content-max-width) / 2) - 5rem)
   .post-tools {
     position fixed
     top calc(var(--header-height) + var(--component-gap))
+    z-index $z-index-3
     box-sizing border-box
     opacity 0
     transition-t("top, transform, opacity, left", "0, 0, 0.2, 0", "0.2, 0.2, 0.2, 0.2", "ease, ease, ease, ease")

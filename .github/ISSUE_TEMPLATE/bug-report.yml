@@ -20,7 +20,7 @@ body:
         I made sure I checked
         我确认我已经检查过了
       options:
-        - label: I am using Keep version `4.2.4` or later. （使用 Keep `4.2.4` 或更高版本）
+        - label: I am using Keep version `4.2.5` or later. （使用 Keep `4.2.5` 或更高版本）
           required: true
         - label: I have already read the [Troubleshooting page of Hexo](https://hexo.io/docs/troubleshooting) and [Keep documents](https://keep-docs.xpoet.cn). （已阅读 [Hexo 故障处理页面](https://hexo.io/docs/troubleshooting) 和 [Keep 文档](https://keep-docs.xpoet.cn)）
           required: true
