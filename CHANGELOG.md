@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.2.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.4...v4.2.5) (2024-11-25)
+
+
+### 🐞 Bug Fixes
+
+* fixed post tools can't be clicked ([#377](https://github.com/XPoet/hexo-theme-keep/issues/377)) ([7ed1f24](https://github.com/XPoet/hexo-theme-keep/commit/7ed1f2478d52e9b0fce6567ed00c215e469549a3))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([f59348c](https://github.com/XPoet/hexo-theme-keep/commit/f59348cb7ccf73a1e8cc976a53e6ccbae428c19a))
+
 ## [4.2.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.3...v4.2.4) (2024-11-21)
 
 
