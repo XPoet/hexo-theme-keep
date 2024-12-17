@@ -29,12 +29,12 @@ const current_year = String(date(new Date(), 'YYYY'))
     <div class="copyright-info info-item">
     &copy;&nbsp;<% if (f_since && String(f_since) !== current_year) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= current_year %>
     <% if (web_master) { %>
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
-        <% } %>
+        &nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
+    <% } %>
     </div>
 
     <div class="theme-info info-item">
-        <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;&&nbsp;<%- __('theme') %>&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+        <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;|&nbsp;<%- __('theme', '<a class="keep-version" target="_blank" href="https://github.com/yanzhenjie/hexo-theme-keep">Keep</a>') %>
     </div>
 
     <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>

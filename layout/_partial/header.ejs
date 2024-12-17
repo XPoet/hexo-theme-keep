@@ -28,14 +28,14 @@ for (const key in origin_h_menu_nav_object) {
             <div class="pc border-box">
                 <ul class="menu-list border-box">
                     <% for (const i in h_menu_nav_object) { %>
-                        <% const { path, icon, name, children } = getMenuItemObj(h_menu_nav_object, i) %>
-                        <li class="menu-item flex-start border-box<%- children.length ? ' has-sub-menu' : '' %><%- path && is_current(path) && !children.length ? ' active' : '' %>">
-                            <a class="menu-text-color border-box" href="<%- path && !children.length ? url_for(path) : 'javascript:void(0);' %>">
+                        <% const { path, icon, img, name, children, hasSubMenu } = getMenuItemObj(h_menu_nav_object, i) %>
+                        <li class="menu-item flex-start border-box<%- hasSubMenu ? ' has-sub-menu' : '' %><%- path && is_current(path) && !hasSubMenu ? ' active' : '' %>">
+                            <a class="menu-text-color border-box" href="<%- path && !hasSubMenu ? url_for(path) : 'javascript:void(0);' %>">
                                 <% if (icon) { %>
                                     <i class="menu-text-color menu-icon <%= icon %>"></i>
                                 <% } %>
-                                <%= __(name).toUpperCase() %>
-                                <% if (children.length) { %>
+                                <%= __(name) %>
+                                <% if (hasSubMenu) { %>
                                     <i class="menu-text-color collapse-icon fa-solid fa-angle-down"></i>
                                 <% } %>
                             </a>
@@ -48,11 +48,16 @@ for (const key in origin_h_menu_nav_object) {
                                                 <% if (i2) { %>
                                                     <i class="menu-text-color sub-menu-icon <%= i2 %>"></i>
                                                 <% } %>
-                                                <%= __(n2).toUpperCase() %>
+                                                <%= __(n2) %>
                                             </a>
                                         </li>
                                     <% } %>
                                 </ul>
+                            <% } %>
+                            <% if (img) { %>
+                                <div class="sub-menu-list sub-menu-img-wrapper border-box">
+                                    <img class="sub-menu-img" data-src="<%- __(img) %>" src="<%- __(img) %>">
+                                </div>
                             <% } %>
                         </li>
                     <% } %>
@@ -77,16 +82,16 @@ for (const key in origin_h_menu_nav_object) {
     <div class="header-drawer">
         <ul class="drawer-menu-list border-box">
             <% for (const i in h_menu_nav_object) { %>
-                <% const { path, icon, name, children } = getMenuItemObj(h_menu_nav_object, i) %>
-                <li class="drawer-menu-item border-box<%- children.length ? ' has-sub-menu' : ' not-sub-menu' %><%- path && is_current(path) && !children.length ? ' active' : '' %>">
+                <% const { path, icon, img, name, children, hasSubMenu } = getMenuItemObj(h_menu_nav_object, i) %>
+                <li class="drawer-menu-item border-box<%- hasSubMenu ? ' has-sub-menu' : ' not-sub-menu' %><%- path && is_current(path) && !hasSubMenu ? ' active' : '' %>">
                     <label class="drawer-menu-label border-box">
-                        <a class="drawer-menu-text-color left-side flex-start border-box" href="<%- path && !children.length ? url_for(path) : 'javascript:void(0);' %>">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="<%- path && !hasSubMenu ? url_for(path) : 'javascript:void(0);' %>">
                             <% if (icon) { %>
                                 <span class="menu-icon-wrap border-box flex-center">
                                     <i class="drawer-menu-text-color menu-icon <%= icon %>"></i>
                                 </span>
                             <% } %>
-                            <%= __(name).toUpperCase() %>
+                            <%= __(name) %>
                         </a>
                         <% if (children.length) { %>
                             <i class="right-side collapse-icon fa-solid fa-angle-left"></i>
@@ -103,11 +108,16 @@ for (const key in origin_h_menu_nav_object) {
                                                 <i class="drawer-menu-text-color sub-menu-icon <%= i2 %>"></i>
                                             </span>
                                         <% } %>
-                                        <%= __(n2).toUpperCase() %>
+                                        <%= __(n2) %>
                                     </a>
                                 </li>
                             <% } %>
                         </ul>
+                    <% } %>
+                    <% if (img) { %>
+                        <div class="drawer-sub-menu-list drawer-sub-menu-img-wrapper border-box">
+                            <img class="drawer-sub-menu-img" data-src="<%- __(img) %>" src="<%- __(img) %>">
+                        </div>
                     <% } %>
                 </li>
             <% } %>

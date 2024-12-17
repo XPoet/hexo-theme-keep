@@ -11,8 +11,8 @@ home: 首頁
 archive: 歸檔
 archives: 歸檔
 about: 關於
-links: 友鏈
-link: 友鏈
+links: 我的朋友們
+link: 我的朋友們
 photos: 相簿
 photo: 照片
 tool: 工具
@@ -26,7 +26,7 @@ next_posts: 下一篇
 page: 第 %d 頁
 recent_posts: 之前的文章
 share: 分享
-theme: 主題
+theme: 基於&nbsp;%s&nbsp;主題
 rss_feed: RSS 訂閱
 top: 頂端
 read_more: 繼續閱讀...
@@ -76,7 +76,7 @@ ago:
   month: "%s 個月前"
   year: "%s 年前"
 footer:
-  powered_by: "%s&nbsp;框架"
+  powered_by: "本站由&nbsp;%s&nbsp;技術駆動"
   site_uv: 讀者
   site_pv: 閱覽
   deploy: "本站由 %s 提供部署服務"

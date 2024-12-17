@@ -11,8 +11,8 @@ home: 首页
 archive: 归档
 archives: 归档
 about: 关于
-links: 友链
-link: 友链
+links: 我的朋友们
+link: 我的朋友们
 photos: 相册
 photo: 照片
 tool: 工具
@@ -26,7 +26,7 @@ next_posts: 下一篇
 page: 第 %d 页
 recent_posts: 最新文章
 share: 分享
-theme: 主题
+theme: 基于&nbsp;%s&nbsp;主题
 rss_feed: RSS Feed
 top: 置顶
 read_more: 阅读全文
@@ -76,7 +76,7 @@ ago:
   month: "%s 个月前"
   year: "%s 年前"
 footer:
-  powered_by: "由&nbsp;%s&nbsp;驱动"
+  powered_by: "本站由&nbsp;%s&nbsp;技术驱动"
   site_uv: 访客数
   site_pv: 访问量
   deploy: "本站由 %s 提供部署服务"

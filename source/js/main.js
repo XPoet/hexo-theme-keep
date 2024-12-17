@@ -5,8 +5,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
     theme: `Keep v${version}`,
-    author: 'XPoet',
-    repository: 'https://github.com/XPoet/hexo-theme-keep',
+    author: 'XPoet, Zhenjie Yan',
+    repository: 'https://github.com/yanzhenjie/hexo-theme-keep',
     localStorageKey: 'KEEP-THEME-STATUS',
     encryptKey: 'KEEP-ENCRYPT',
     styleStatus: {

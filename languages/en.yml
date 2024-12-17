@@ -11,8 +11,8 @@ home: Home
 archive: Archive
 archives: Archives
 about: About
-links: Links
-link: Link
+links: My Friends
+link: My Friends
 photos: Photos
 photo: Photo
 tool: Tool
@@ -26,7 +26,7 @@ next_posts: Next posts
 page: Page %d
 recent_posts: Recent Posts
 share: Share
-theme: Theme
+theme: Theme by
 rss_feed: RSS Feed
 top: TOP
 read_more: Read more

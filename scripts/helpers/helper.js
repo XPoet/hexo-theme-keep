@@ -115,18 +115,25 @@ hexo.extend.helper.register('isCssFile', function (path) {
 const parseMenuItemValue = (menuItemVal) => {
   let path = ''
   let icon = ''
+  let img = ''
   let children = []
+  let hasSubMenu = false
 
   if (typeof menuItemVal === 'string') {
     const menu_split_list = menuItemVal?.split('||')
     path = menu_split_list[0]?.trim()?.toLowerCase() || ''
     icon = menu_split_list[1]?.trim()?.toLowerCase() || ''
+    img = menu_split_list[2]?.trim()?.toLowerCase() || ''
+    hasSubMenu = (img !== '')
   }
 
   if (typeof menuItemVal === 'object') {
+    img = menuItemVal?.img || ''
     children = menuItemVal?.children || []
+    hasSubMenu = (img !== '') || (children.length > 0)
+
     path = menuItemVal?.path || ''
-    if (children.length) {
+    if (hasSubMenu) {
       path = ''
     }
     icon = menuItemVal?.icon || ''
@@ -135,7 +142,9 @@ const parseMenuItemValue = (menuItemVal) => {
   return {
     path,
     icon,
-    children
+    img,
+    children,
+    hasSubMenu
   }
 }
 

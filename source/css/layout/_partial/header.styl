@@ -62,7 +62,7 @@ $mobile-menu-icon-wrap-margin = 0.4rem
       transition-t("transform, transform-origin", "0, 0", "0.2, 0.2", "linear, linear")
 
       .header-shrink & {
-        transform scale(0.78)
+        //transform scale(0.78)
         transform-origin left
       }
 
@@ -247,10 +247,12 @@ $mobile-menu-icon-wrap-margin = 0.4rem
 
           .sub-menu-list {
             position absolute
-            bottom -280%
+            // bottom -280%
             left 50%
             display none
             gap $pc-menu-item-gap
+            flex-direction var(--sub-menu-list-direction)
+            top calc(var(--header-height)*0.75)
             justify-content flex-start
             box-sizing border-box
             padding 0.8rem 1.6rem
@@ -274,9 +276,22 @@ $mobile-menu-icon-wrap-margin = 0.4rem
               }
 
               .sub-menu-icon {
+                display flex
+                justify-content center
+                align-items center
+                width 16.5px
                 display var(--header-menu-icon)
                 margin-right $menu-icon-gap * 4
               }
+            }
+          }
+
+          .sub-menu-img-wrapper {
+            padding 0.5rem 0.5rem
+
+            .sub-menu-img {
+              width 220px
+              height 220px
             }
           }
         }
@@ -543,6 +558,15 @@ $mobile-menu-icon-wrap-margin = 0.4rem
             margin-right $mobile-menu-icon-wrap-margin
           }
         }
+      }
+    }
+
+    .drawer-sub-menu-img-wrapper {
+      padding 0rem 0rem
+
+      .drawer-sub-menu-img {
+        width 200px
+        height 200px
       }
     }
   }
