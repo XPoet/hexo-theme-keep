@@ -155,28 +155,16 @@ root-color(mode) {
 
 :root {
   root-color('light')
+  display: none
 }
-
-
-@media (prefers-color-scheme light) {
-  :root {
-    root-color('light')
-  }
-}
-
-
-@media (prefers-color-scheme dark) {
-  :root {
-    root-color('dark')
-  }
-}
-
 
 .light-mode {
   root-color('light')
+  display: unset
 }
 
 
 .dark-mode {
   root-color('dark')
+  display: unset
 }
