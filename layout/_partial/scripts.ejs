@@ -41,7 +41,7 @@ const page_template = page?.template?.toLowerCase()
         <% } %>
 
         <!-- copyright-info -->
-        <% if (theme?.post?.copyright_info === true) { %>
+        <% if (theme?.post?.copyright_info === true || (theme?.post?.copyright_info?.custom_license && theme?.post?.copyright_info?.custom_link)) { %>
             <%- __js('js/post/copyright-info.js') %>
         <% } %>
 
