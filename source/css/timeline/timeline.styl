@@ -1,0 +1,101 @@
+/* 时间轴样式 */
+.keep-timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  
+  /* 垂直时间线 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background-color: var(--primary-color, #0066cc);
+    border-radius: 2px;
+  }
+  
+  /* 时间轴项目 */
+  .keep-timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* 时间点（圆点） */
+  .keep-timeline-dot {
+    position: absolute;
+    left: -1.5rem;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color, #0066cc);
+    border-radius: 50%;
+    transform: translateX(-6px);
+    z-index: 1;
+  }
+  
+  /* 日期标签 */
+  .keep-timeline-date {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--primary-color, #0066cc);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  
+  /* 内容卡片 */
+  .keep-timeline-card {
+    padding: 1.5rem;
+    background-color: var(--card-background-color, #f8f8f8);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .keep-timeline {
+    .keep-timeline-card {
+      background-color: var(--card-background-color, #2d2d2d);
+    }
+  }
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .keep-timeline {
+    padding-left: 1.25rem;
+    
+    .keep-timeline-dot {
+      width: 12px;
+      height: 12px;
+      left: -1.25rem;
+      transform: translateX(-4px);
+    }
+    
+    .keep-timeline-date {
+      font-size: 0.8rem;
+    }
+    
+    .keep-timeline-card {
+      padding: 1rem;
+    }
+  }
+}
