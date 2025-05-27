@@ -99,6 +99,11 @@ $h6-font-size = 1.2rem
   }
 
 
+  del {
+    color var(--text-color-3)
+  }
+
+
   ul
   ol {
     li {
@@ -163,7 +168,8 @@ $h6-font-size = 1.2rem
   h6 {
     position relative
     display flex
-    justify-content space-between
+    gap 0.5rem  /* should be same with text word space */
+    justify-content left
     order 0
     box-sizing border-box
     padding-top 0.4rem
@@ -172,6 +178,17 @@ $h6-font-size = 1.2rem
     color var(--text-color-2)
     line-height 1.6
     border-bottom 1px solid var(--post-h-bottom-border-color)
+
+
+    em, del, code, strong {
+      margin 0
+    }
+
+
+    code {
+      padding-top 0.1rem
+      padding-bottom 0.4rem
+    }
 
 
     +keep-tablet() {
@@ -224,6 +241,10 @@ $h6-font-size = 1.2rem
     font-weight 600
     font-size $h1-font-size
 
+    code {
+      font-size $h1-font-size * 0.9
+    }
+
     +keep-tablet() {
       font-size $h1-font-size * 0.9
     }
@@ -243,6 +264,10 @@ $h6-font-size = 1.2rem
     font-weight 600
     font-size $h2-font-size
 
+    code {
+      font-size $h2-font-size * 0.9
+    }
+
     +keep-tablet() {
       font-size $h2-font-size * 0.9
     }
@@ -261,6 +286,10 @@ $h6-font-size = 1.2rem
   h3 {
     font-weight 550
     font-size $h3-font-size
+
+    code {
+      font-size $h3-font-size * 0.9
+    }
 
     +keep-tablet() {
       font-size $h3-font-size * 0.9
@@ -283,6 +312,10 @@ $h6-font-size = 1.2rem
     font-weight 550
     font-size $h4-font-size
 
+    code {
+      font-size $h4-font-size * 0.9
+    }
+
     +keep-tablet() {
       font-size $h4-font-size * 0.9
     }
@@ -304,6 +337,10 @@ $h6-font-size = 1.2rem
     font-weight 500
     font-size $h5-font-size
 
+    code {
+      font-size $h5-font-size * 0.9
+    }
+
     +keep-tablet() {
       font-size $h5-font-size * 0.9
     }
@@ -324,6 +361,10 @@ $h6-font-size = 1.2rem
   h6 {
     font-weight 500
     font-size $h6-font-size
+
+    code {
+      font-size $h6-font-size * 0.9
+    }
 
     +keep-tablet() {
       font-size $h6-font-size * 0.9
@@ -433,4 +474,3 @@ $h6-font-size = 1.2rem
     border-radius 0.3rem
   }
 }
-
