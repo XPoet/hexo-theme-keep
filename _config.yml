@@ -297,6 +297,11 @@ lazyload:
 cdn:
   enable: false       # Option values: true | false
   provider: cdnjs     # Option values: cdnjs | jsdelivr | unpkg
+  custom:
+    enable: false     # Option values: true | false
+    url:              # Your custom cdn url, eg: https://cdn.com/npm/hexo-theme-keep
+
+
 
 
 # ---------------------------------------------------------------------------------------
