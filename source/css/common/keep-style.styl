@@ -87,6 +87,7 @@ root-color(mode) {
   --text-color-4 mode == 'light' ? $text-color-4 : $dark-text-color-4
   --text-color-5 mode == 'light' ? $text-color-5 : $dark-text-color-5
   --text-color-6 mode == 'light' ? $text-color-6 : $dark-text-color-6
+  --text-color-badge mode == 'light' ? $text-color-badge : $dark-text-color-badge
 
   // toc text color
   --toc-text-color mode == 'light' ? $toc-text-color : $dark-toc-text-color
@@ -155,16 +156,16 @@ root-color(mode) {
 
 :root {
   root-color('light')
-  display: none
+  display none
 }
 
 .light-mode {
   root-color('light')
-  display: unset
+  display unset
 }
 
 
 .dark-mode {
   root-color('dark')
-  display: unset
+  display unset
 }
