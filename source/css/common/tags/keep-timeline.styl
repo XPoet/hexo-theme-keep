@@ -1,0 +1,55 @@
+$timeline-dots-size = 1rem
+$timeline-gap = 2rem
+$timeline-line-width = 0.2rem
+
+.keep-timeline {
+  margin $timeline-gap 0
+  padding-top $timeline-gap
+  padding-left $timeline-gap
+
+
+  &::before {
+    position absolute
+    top 0
+    bottom 0
+    left $timeline-dots-size * 0.5 - $timeline-line-width * 0.5
+    width $timeline-line-width
+    background-color var(--primary-color)
+    border-radius 0.1rem
+    content ''
+  }
+
+
+  .keep-timeline-item {
+    margin-bottom $timeline-gap
+
+    &::before {
+      position absolute
+      top 0
+      left -($timeline-gap)
+      width $timeline-dots-size
+      height $timeline-dots-size
+      background-color var(--primary-color)
+      border-radius 50%
+      content ''
+    }
+
+    &:last-child {
+      margin-bottom 0
+    }
+  }
+
+  .keep-timeline-date {
+    margin-bottom $timeline-gap * 0.25
+    color var(--text-color-2)
+    font-size 1.02rem
+    transform translateY(-0.2rem)
+  }
+
+  .keep-timeline-card {
+    padding 1.2rem 1.4rem
+    background-color var(--background-color-2)
+    border-radius 0.5rem
+  }
+}
+

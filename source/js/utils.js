@@ -638,8 +638,8 @@ KEEP.initUtils = () => {
       })
     },
 
-    // custom tabs tag active handle
-    tabsActiveHandle() {
+    // init custom tag tabs
+    initCustomTagTabs() {
       const activeHandle = (navList, paneList, tab) => {
         navList.forEach((nav) => {
           if (tab.dataset.href === nav.dataset.href) {
@@ -669,6 +669,43 @@ KEEP.initUtils = () => {
             })
           })
         })
+    },
+
+    // init custom tag timeline
+    initCustomTagTimeline() {
+      const timelines = document.querySelectorAll('.keep-timeline')
+
+      // Add scrolling animation effects to each timeline
+      timelines.forEach((timeline) => {
+        const timelineItems = timeline.querySelectorAll('.keep-timeline-item')
+
+        timelineItems.forEach((item) => {
+          item.style.opacity = '0'
+          item.style.transform = 'translateY(20px)'
+          item.style.transition = 'opacity 0.5s ease, transform 0.5s ease'
+        })
+
+        // Create `IntersectionObserver()` to detect whether an element enters the viewport.
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1'
+                entry.target.style.transform = 'translateY(0)'
+                observer.unobserve(entry.target)
+              }
+            })
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          }
+        )
+
+        timelineItems.forEach((item) => {
+          observer.observe(item)
+        })
+      })
     },
 
     // remove white space between children
@@ -783,7 +820,8 @@ KEEP.initUtils = () => {
   // post page
   KEEP.utils.insertTooltipContent()
   KEEP.utils.zoomInImage()
-  KEEP.utils.tabsActiveHandle()
+  KEEP.utils.initCustomTagTabs()
+  KEEP.utils.initCustomTagTimeline()
   KEEP.utils.wrapTableWithBox()
   KEEP.utils.aAnchorJump()
 }

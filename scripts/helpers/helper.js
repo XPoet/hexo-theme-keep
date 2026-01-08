@@ -80,9 +80,10 @@ const getSourceCdnUrl = (tyle, themeConfig, path) => {
 
 hexo.extend.helper.register('__js', function (path) {
   const { enable } = this.theme?.cdn || {}
+  const developMode = this.config?.theme_develop || false
   const _js = hexo.extend.helper.get('js').bind(hexo)
   const cdnPathHandle = (pa) => {
-    return enable ? getSourceCdnUrl('js', this.theme, pa) : _js(pa)
+    return enable && !developMode ? getSourceCdnUrl('js', this.theme, pa) : _js(pa)
   }
 
   let t = ``
