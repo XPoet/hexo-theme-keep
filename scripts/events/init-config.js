@@ -21,6 +21,7 @@ const themeRootHandle = (root) => {
 
 hexo.on('generateBefore', function () {
   hexo.theme.config.root = themeRootHandle(this.config.root)
+  hexo.theme.config.search_db_path = 'keep-search.json'
 
   if (hexo.locals.get) {
     const data = hexo.locals.get('data')
