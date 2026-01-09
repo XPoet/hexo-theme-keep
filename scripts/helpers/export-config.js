@@ -33,7 +33,7 @@ hexo.extend.helper.register('exportThemeConfig', function () {
   }
 
   if (config.search) {
-    hexoConfig.path = config.search.path
+    hexoConfig.path = config.path
   }
   // -----------------------------------------------------------------------
 
