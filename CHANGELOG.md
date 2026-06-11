@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.3.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.5...v4.3.0) (2026-06-11)
+
+
+### 🌟 Features
+
+* add custom cdn configuration ([#380](https://github.com/XPoet/hexo-theme-keep/issues/380)) ([96a39c2](https://github.com/XPoet/hexo-theme-keep/commit/96a39c26c46cacccb93517db9cc884aa0dd740db))
+* add custom tag timeline ([07a1d98](https://github.com/XPoet/hexo-theme-keep/commit/07a1d98bca594381bbd8ba813f5030e04d639f08))
+* built-in search data generation function, no longer dependent on Hexo plugin ([#385](https://github.com/XPoet/hexo-theme-keep/issues/385)) ([59b4c89](https://github.com/XPoet/hexo-theme-keep/commit/59b4c89f3cdc25079f29c760179bf022fbbc5afa))
+* optimize toggle theme logic ([bd29980](https://github.com/XPoet/hexo-theme-keep/commit/bd299803fa12e3fac9c8feb74c55909e6e891b6a))
+
+
+### 🐞 Bug Fixes
+
+* fix copyright script logic ([7b29304](https://github.com/XPoet/hexo-theme-keep/commit/7b29304174c74d4e32d50db75fd5d892edecd04c))
+* fix scren flash when load ([27f35be](https://github.com/XPoet/hexo-theme-keep/commit/27f35be75bb0c2adf516519e8b280a59e3f4fcd2))
+* Fix the low visibility of addition and deletion highlights in the default highlight theme ([a1280ee](https://github.com/XPoet/hexo-theme-keep/commit/a1280ee9bdad6b04b4d24dbb1bdeb01ce4d67733))
+* fixed the issue of abnormal display of the code element in the header ([#388](https://github.com/XPoet/hexo-theme-keep/issues/388)) ([d737858](https://github.com/XPoet/hexo-theme-keep/commit/d7378587c96e0c52089041cbc84e731abd927455))
+* **head.ejs:** fix screen flash when loading ([727dbf2](https://github.com/XPoet/hexo-theme-keep/commit/727dbf23b97490b75a415d184dabf9aa6303b061))
+
+
+### 🎨 Styling
+
+* add author badge text color variable ([426a8f2](https://github.com/XPoet/hexo-theme-keep/commit/426a8f28026926503d62defd12c77b3f180aeca1))
+
+
+### 🛠 Performance Improvements
+
+* disable pjax in Google translate service ([#384](https://github.com/XPoet/hexo-theme-keep/issues/384)) ([46a7f01](https://github.com/XPoet/hexo-theme-keep/commit/46a7f0134f426be3cc1b082ed547caede848372c))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([cc9dd99](https://github.com/XPoet/hexo-theme-keep/commit/cc9dd99e94e1e1e49c913b427a1e78b3f301986c))
+
 ## [4.2.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.4...v4.2.5) (2024-11-25)
 
 
