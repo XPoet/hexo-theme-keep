@@ -98,6 +98,9 @@ $h6-font-size = 1.2rem
     color var(--text-color-3)
   }
 
+  del {
+    color var(--text-color-3)
+  }
 
   ul
   ol {
@@ -162,27 +165,23 @@ $h6-font-size = 1.2rem
   h5
   h6 {
     position relative
-    display flex
-    justify-content space-between
-    order 0
+    display block
     box-sizing border-box
     padding-top 0.4rem
+    padding-right 2.2rem
     padding-bottom 0.2rem
     overflow hidden
     color var(--text-color-2)
     line-height 1.6
     border-bottom 1px solid var(--post-h-bottom-border-color)
 
-
     +keep-tablet() {
       line-height 1.5
     }
 
-
     +keep-mobile() {
       line-height 1.4
     }
-
 
     &:hover {
       a.headerlink
@@ -191,31 +190,44 @@ $h6-font-size = 1.2rem
       }
     }
 
-
     a.headerlink
     a.markdownIt-Anchor {
-      position relative
-      order 1
+      position absolute
+      top 0.4rem
+      right 0
+      z-index 1
+      display inline-flex
+      align-items center
+      justify-content center
       box-sizing border-box
-      margin-left 0.4rem
-      padding-top 0.2rem
+      width 1.6em
+      height 1.6em
+      margin-left 0
+      padding 0
       color var(--text-color-4)
       font-size 1.2rem
+      line-height 1
       text-decoration none
       border none
       visibility hidden
-
+      cursor pointer
 
       &:hover {
         color var(--text-color-3)
+        text-decoration none
       }
-
 
       &::before {
         font-weight 600
         font-family 'Font Awesome 6 Free'
         content '\f0c1'
       }
+    }
+
+    code {
+      position relative
+      display inline-block
+      transform translateY(-0.2rem) !important
     }
   }
 
@@ -266,11 +278,9 @@ $h6-font-size = 1.2rem
       font-size $h3-font-size * 0.9
     }
 
-
     +keep-mobile() {
       font-size $h3-font-size * 0.8
     }
-
 
     a.headerlink
     a.markdownIt-Anchor {
@@ -287,11 +297,9 @@ $h6-font-size = 1.2rem
       font-size $h4-font-size * 0.9
     }
 
-
     +keep-mobile() {
       font-size $h4-font-size * 0.8
     }
-
 
     a.headerlink
     a.markdownIt-Anchor {
@@ -308,11 +316,9 @@ $h6-font-size = 1.2rem
       font-size $h5-font-size * 0.9
     }
 
-
     +keep-mobile() {
       font-size $h5-font-size * 0.8
     }
-
 
     a.headerlink
     a.markdownIt-Anchor {
