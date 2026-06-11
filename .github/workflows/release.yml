@@ -5,16 +5,22 @@ on:
 
 name: release
 
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
           release-type: node
-          package-name: standard-version
+          package-name: hexo-theme-keep
           changelog-types: '[
             {
               "type": "feat",
@@ -78,21 +84,17 @@ jobs:
             }
           ]'
 
-      # The logic below handles the npm publication
-
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
+        if: ${{ steps.release.outputs.release_created }}
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - run: npm ci
         if: ${{ steps.release.outputs.release_created }}
 
-      - run: npm install
-        if: ${{ steps.release.outputs.release_created }}
-
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+      - run: npm publish --provenance
         if: ${{ steps.release.outputs.release_created }}
