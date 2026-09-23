@@ -29,6 +29,10 @@ share: 分享
 theme: 主題
 rss_feed: RSS 訂閱
 top: 頂端
+chinese_switch:
+  to_simplified: 切換為簡體中文
+  to_traditional: 切換為繁體中文
+  load_failed: 繁簡轉換載入失敗，點擊重試
 read_more: 繼續閱讀...
 wordcount: 字數
 min2read: 分鐘

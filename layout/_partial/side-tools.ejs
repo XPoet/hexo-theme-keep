@@ -8,6 +8,21 @@
             <i class="fas fa-search-minus"></i>
         </li>
 
+        <!-- toggle chinese -->
+        <% if (config.language === 'zh-CN' || config.language === 'zh-TW') { %>
+            <li class="tools-item tool-toggle-chinese flex-center">
+                <button type="button"
+                        data-native-script="<%= config.language === 'zh-TW' ? 'tw' : 'cn' %>"
+                        data-opencc-src="<%= url_for('js/libs/opencc.full.js') %>"
+                        data-label-cn="<%= __('chinese_switch.to_simplified') %>"
+                        data-label-tw="<%= __('chinese_switch.to_traditional') %>"
+                        data-label-error="<%= __('chinese_switch.load_failed') %>"
+                >
+                    <%= config.language === 'zh-TW' ? '简' : '繁' %>
+                </button>
+            </li>
+        <% } %>
+
         <!-- toggle mode -->
         <% if (theme?.base_info?.mode !== 'dark' && theme?.base_info?.mode !== 'light') { %>
             <li class="tools-item tool-toggle-theme-mode flex-center">

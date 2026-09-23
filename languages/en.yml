@@ -29,6 +29,10 @@ share: Share
 theme: Theme
 rss_feed: RSS Feed
 top: TOP
+chinese_switch:
+  to_simplified: Switch to Simplified Chinese
+  to_traditional: Switch to Traditional Chinese
+  load_failed: Chinese conversion failed to load. Click to retry.
 read_more: Read more
 wordcount: Words
 min2read: Mins

@@ -40,6 +40,21 @@ $tools-item-border-radius = 0.2rem
       }
     }
 
+    &.tool-toggle-chinese button {
+      width 100%
+      height 100%
+      padding 0
+      color inherit
+      font inherit
+      background none
+      border 0
+      cursor pointer
+
+      &:disabled {
+        cursor wait
+      }
+    }
+
 
     +keep-tablet() {
       width $tools-item-width * 0.9

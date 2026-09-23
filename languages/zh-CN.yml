@@ -29,6 +29,10 @@ share: 分享
 theme: 主题
 rss_feed: RSS Feed
 top: 置顶
+chinese_switch:
+  to_simplified: 切换为简体中文
+  to_traditional: 切换为繁体中文
+  load_failed: 简繁转换加载失败，点击重试
 read_more: 阅读全文
 wordcount: 字
 min2read: 分钟

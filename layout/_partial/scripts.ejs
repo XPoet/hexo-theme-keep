@@ -1,6 +1,7 @@
 <%
 const { links: links_data, photos: photos_data, tools: tools_data } = theme?.source_data
 const page_template = page?.template?.toLowerCase()
+const is_chinese_language = config.language === 'zh-CN' || config.language === 'zh-TW'
 %>
 
 <!-- common js -->
@@ -9,6 +10,7 @@ const page_template = page?.template?.toLowerCase()
     'js/header-shrink.js',
     'js/back2top.js',
     'js/toggle-theme.js',
+    ...(is_chinese_language ? ['js/chinese-convert.js'] : []),
     'js/code-block.js',
     'js/main.js',
     'js/libs/anime.min.js'

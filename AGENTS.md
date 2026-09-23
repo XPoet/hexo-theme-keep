@@ -20,6 +20,7 @@ Keep 是供 Hexo 站点安装的主题，本仓库不是独立的 Hexo 站点。
 - `scripts/helpers/export-config.js` 将主题配置和浏览器文案注入 `KEEP`。涉及配置传递时检查服务端与浏览器端是否一致。
 - 修改页面行为时，检查 `layout/_partial/scripts.ejs` 的资源加载条件。涉及 PJAX 的交互还需检查首次加载和页面切换后的初始化。
 - 新增用户可见文案时，同步检查三个 `languages/*.yml` 文件。EJS 输出文章、配置等动态内容时，按 HTML 上下文正确转义。
+- 新增或修改界面时，不使用 `aria-*` 属性；交互控件使用原生 HTML 元素。
 - `source/js/libs/` 中的压缩库及 `source/font/` 中的字体属于第三方资源；不要直接手改。
 
 ## 验证与交付
