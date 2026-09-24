@@ -4,160 +4,160 @@ const post_avatar = page?.avatar || theme?.base_info?.avatar
 const is_code_block_unshrink = page?.code_block_shrink === false
 %>
 <div class="fade-in-down-animation">
-    <div class="post-page-container border-box<%= page?.password ? ' encrypt' : '' %>">
-        <div class="post-content-container border-box">
-            <% if (page?.post_cover || page?.home_cover) { %>
-                <div class="post-content-top border-box"
-                     style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
-                >
-                    <div class="cover-post-title">
-                        <%= page.title %>
-                    </div>
-                    <img class="post-cover" src="<%- url_for(page.post_cover || page?.home_cover) %>"
-                         onerror="this.style.display='none'"
-                    >
-                </div>
+  <div class="post-page-container border-box<%= page?.password ? ' encrypt' : '' %>">
+    <div class="post-content-container border-box">
+      <% if (page?.post_cover || page?.home_cover) { %>
+        <div class="post-content-top border-box"
+          style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
+        >
+          <div class="cover-post-title">
+            <%= page.title %>
+          </div>
+          <img class="post-cover" src="<%- url_for(page.post_cover || page?.home_cover) %>"
+            onerror="this.style.display='none'"
+          >
+        </div>
+      <% } %>
+
+      <div class="post-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
+        <% if (!page?.post_cover && !page?.home_cover) { %>
+          <div class="post-title">
+            <%= page.title %>
+          </div>
+        <% } %>
+
+        <% if (post_author) { %>
+          <div class="post-header border-box">
+            <% if (post_avatar) { %>
+              <div class="avatar-box border-box">
+                <%- image_tag(post_avatar) %>
+              </div>
             <% } %>
-
-            <div class="post-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
-                <% if (!page?.post_cover && !page?.home_cover) { %>
-                    <div class="post-title">
-                        <%= page.title %>
-                    </div>
+            <div class="info-box">
+              <div class="author border-box">
+                <span class="name"><%= post_author %></span>
+                <% if (theme?.post?.author_badge?.enable === true) { %>
+                  <span class="author-badge"><%- getAuthorBadge(site.posts.length, theme?.post?.author_badge) %></span>
                 <% } %>
-
-                <% if (post_author) { %>
-                    <div class="post-header border-box">
-                        <% if (post_avatar) { %>
-                            <div class="avatar-box border-box">
-                                <%- image_tag(post_avatar) %>
-                            </div>
-                        <% } %>
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name"><%= post_author %></span>
-                                <% if (theme?.post?.author_badge?.enable === true) { %>
-                                    <span class="author-badge"><%- getAuthorBadge(site.posts.length, theme?.post?.author_badge) %></span>
-                                <% } %>
-                            </div>
-                            <div class="meta-info border-box">
-                                <%- partial('_partial/post/post-meta-info', { post: page, page_type: 'post' }) %>
-                            </div>
-                        </div>
-                    </div>
-                <% } else { %>
-                    <div class="post-header border-box">
-                        <%- partial('_partial/post/post-meta-info', { post: page, page_type: 'post' }) %>
-                    </div>
-                <% } %>
-
-                <div class="post-content keep-markdown-body <%= is_code_block_unshrink ? 'code-block-unshrink' : '' %>">
-                    <% if (page?.aging === true) { %>
-                        <div class="post-aging-tips"
-                             data-update-date="<%= page.updated %>"
-                             data-aging-days="<%= page?.aging_days %>"
-                        >
-                            <i class="fa-solid fa-circle-exclamation"></i><%- __('post.aging', '<span class="days">0</span>') %>
-                        </div>
-                    <% } %>
-
-                    <% if (page?.password) { %>
-                        <div class="post-encrypt-box border-box"
-                             data-secret="<%= page.secretKey %>"
-                             data-iv="<%= page.iv %>"
-                             data-ep="<%= page.encryptedPassword %>"
-                             data-content="<%= page.encryptedContent %>"
-                        >
-                            <input type="password" class="password-input border-box" placeholder="<%- __('encryption.input_password') %>">
-                        </div>
-                        <div class="post"></div>
-                    <% } else { %>
-                         <%- page.content %>
-                    <% } %>
-                </div>
-
-                <% if (
-                        (
-                          theme?.post?.copyright_info === true
-                          || (theme?.post?.copyright_info?.custom_license && theme?.post?.copyright_info?.custom_link)
-                        )
-                        && page?.copyright_info !== false
-                ) { %>
-                        <%- partial('_partial/post/post-copyright-info') %>
-                <% } %>
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        <% if (page.tags.length) { %>
-                            <ul class="post-tags-box border-box">
-                                <% page.tags.forEach((tag) => { %>
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
-                                    </li>
-                                <% }) %>
-                            </ul>
-                        <% } %>
-                    </div>
-                    <div>
-                        <% if (theme?.post?.share === true && page?.share !== false) { %>
-                            <%- partial('_partial/post/post-share') %>
-                        <% } %>
-                    </div>
-                </div>
-
-                <% if (theme?.post?.reward?.enable === true && theme?.post?.reward?.img_link && page?.reward !== false) { %>
-                    <%- partial('_partial/post/reward-author') %>
-                <% } %>
-
-                <% if (page.prev || page.next) { %>
-                    <div class="post-nav border-box">
-                        <% if (page.prev) { %>
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="<%- url_for(page.prev.path) %>"
-                                   title="<%= page.prev.title %>"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis"><%= page.prev.title %></span>
-                                        <span class="post-nav-item"><%= __('prev_posts') %></span>
-                                    </span>
-                                </a>
-                            </div>
-                        <% } %>
-                        <% if (page.next) { %>
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="<%- url_for(page.next.path) %>"
-                                   title="<%= page.next.title %>"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis"><%= page.next.title %></span>
-                                        <span class="post-nav-item"><%= __('next_posts') %></span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        <% } %>
-                    </div>
-                <% } %>
-
-                <% if (page?.comment !== false) { %>
-                    <%- partial('_partial/comment/comment') %>
-                <% } %>
+              </div>
+              <div class="meta-info border-box">
+                <%- partial('_partial/post/post-meta-info', { post: page, page_type: 'post' }) %>
+              </div>
             </div>
+          </div>
+        <% } else { %>
+          <div class="post-header border-box">
+            <%- partial('_partial/post/post-meta-info', { post: page, page_type: 'post' }) %>
+          </div>
+        <% } %>
+
+        <div class="post-content keep-markdown-body <%= is_code_block_unshrink ? 'code-block-unshrink' : '' %>">
+          <% if (page?.aging === true) { %>
+            <div class="post-aging-tips"
+              data-update-date="<%= page.updated %>"
+              data-aging-days="<%= page?.aging_days %>"
+            >
+              <i class="fa-solid fa-circle-exclamation"></i><%- __('post.aging', '<span class="days">0</span>') %>
+            </div>
+          <% } %>
+
+          <% if (page?.password) { %>
+            <div class="post-encrypt-box border-box"
+              data-secret="<%= page.secretKey %>"
+              data-iv="<%= page.iv %>"
+              data-ep="<%= page.encryptedPassword %>"
+              data-content="<%= page.encryptedContent %>"
+            >
+              <input type="password" class="password-input border-box" placeholder="<%- __('encryption.input_password') %>">
+            </div>
+            <div class="post"></div>
+          <% } else { %>
+            <%- page.content %>
+          <% } %>
         </div>
 
-        <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>
-            <div class="pc-post-toc <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
-                <%- partial('_partial/toc') %>
-            </div>
+        <% if (
+            (
+              theme?.post?.copyright_info === true
+              || (theme?.post?.copyright_info?.custom_license && theme?.post?.copyright_info?.custom_link)
+            )
+            && page?.copyright_info !== false
+        ) { %>
+            <%- partial('_partial/post/post-copyright-info') %>
         <% } %>
+
+        <div class="post-bottom-tags-and-share border-box">
+          <div>
+            <% if (page.tags.length) { %>
+              <ul class="post-tags-box border-box">
+                <% page.tags.forEach((tag) => { %>
+                  <li class="tag-item border-box">
+                    <i class="icon fas fa-hashtag"></i>&nbsp;<a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+                  </li>
+                <% }) %>
+              </ul>
+            <% } %>
+          </div>
+          <div>
+            <% if (theme?.post?.share === true && page?.share !== false) { %>
+              <%- partial('_partial/post/post-share') %>
+            <% } %>
+          </div>
+        </div>
+
+        <% if (theme?.post?.reward?.enable === true && theme?.post?.reward?.img_link && page?.reward !== false) { %>
+          <%- partial('_partial/post/reward-author') %>
+        <% } %>
+
+        <% if (page.prev || page.next) { %>
+          <div class="post-nav border-box">
+            <% if (page.prev) { %>
+              <div class="prev-post">
+                <a class="prev"
+                  rel="prev"
+                  href="<%- url_for(page.prev.path) %>"
+                  title="<%= page.prev.title %>"
+                >
+                  <span class="left arrow-icon flex-center">
+                    <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="title flex-center">
+                    <span class="post-nav-title-item text-ellipsis"><%= page.prev.title %></span>
+                    <span class="post-nav-item"><%= __('prev_posts') %></span>
+                  </span>
+                </a>
+              </div>
+            <% } %>
+            <% if (page.next) { %>
+              <div class="next-post">
+                <a class="next"
+                  rel="next"
+                  href="<%- url_for(page.next.path) %>"
+                  title="<%= page.next.title %>"
+                >
+                  <span class="title flex-center">
+                    <span class="post-nav-title-item text-ellipsis"><%= page.next.title %></span>
+                    <span class="post-nav-item"><%= __('next_posts') %></span>
+                  </span>
+                  <span class="right arrow-icon flex-center">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                </a>
+              </div>
+            <% } %>
+          </div>
+        <% } %>
+
+        <% if (page?.comment !== false) { %>
+          <%- partial('_partial/comment/comment') %>
+        <% } %>
+      </div>
     </div>
+
+    <% if (is_post() && theme?.toc?.enable === true && page?.toc !== false) { %>
+      <div class="pc-post-toc <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
+        <%- partial('_partial/toc') %>
+      </div>
+    <% } %>
+  </div>
 </div>

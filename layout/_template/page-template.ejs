@@ -31,43 +31,43 @@ const page_cover_height = page?.page_cover_height ? page?.page_cover_height + 'p
 %>
 
 <div class="fade-in-down-animation">
-    <div class="page-template-container border-box <%= keep_container %> <%= has_page_cover %>">
-        <!-- page top -->
-        <% if (page?.page_cover) { %>
-            <div class="page-template-top border-box"
-                 style="height: <%= page_cover_height %>"
-            >
-                <img class="page-cover" src="<%- url_for(page_cover) %>"
-                     onerror="this.style.display = 'none'"
-                >
-                <% if (page_cover_title) { %>
-                    <span class="page-cover-title">
-                        <%= page_cover_title %>
-                    </span>
-                <% } %>
-            </div>
+  <div class="page-template-container border-box <%= keep_container %> <%= has_page_cover %>">
+    <!-- page top -->
+    <% if (page?.page_cover) { %>
+      <div class="page-template-top border-box"
+        style="height: <%= page_cover_height %>"
+      >
+        <img class="page-cover" src="<%- url_for(page_cover) %>"
+          onerror="this.style.display = 'none'"
+        >
+        <% if (page_cover_title) { %>
+          <span class="page-cover-title">
+            <%= page_cover_title %>
+          </span>
         <% } %>
+      </div>
+    <% } %>
 
-        <!-- page bottom -->
-        <div class="page-template-bottom border-box">
-            <!-- use page template -->
-            <% if (use_page_template && current_page_data && current_page_template) { %>
-                <%- partial(current_page_template) %>
-            <% } %>
+    <!-- page bottom -->
+    <div class="page-template-bottom border-box">
+      <!-- use page template -->
+      <% if (use_page_template && current_page_data && current_page_template) { %>
+        <%- partial(current_page_template) %>
+      <% } %>
 
-            <!-- page content -->
-            <div class="page-content border-box keep-markdown-body <%= current_page_data ? 'has-data' : '' %>">
-                <% if (page?.content || current_page_data) { %>
-                    <%- page.content %>
-                <% } else { %>
-                    <h1><%= page_title.toUpperCase() %></h1>
-                <% } %>
-            </div>
+      <!-- page content -->
+      <div class="page-content border-box keep-markdown-body <%= current_page_data ? 'has-data' : '' %>">
+        <% if (page?.content || current_page_data) { %>
+          <%- page.content %>
+        <% } else { %>
+          <h1><%= page_title.toUpperCase() %></h1>
+        <% } %>
+      </div>
 
-            <!-- comment plugin -->
-            <% if (page?.comment === true) { %>
-                <%- partial('_partial/comment/comment') %>
-            <% } %>
-        </div>
+      <!-- comment plugin -->
+      <% if (page?.comment === true) { %>
+        <%- partial('_partial/comment/comment') %>
+      <% } %>
     </div>
+  </div>
 </div>

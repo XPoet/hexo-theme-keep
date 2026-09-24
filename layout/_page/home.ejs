@@ -1,56 +1,56 @@
 <div class="home-content-container fade-in-down-animation">
-    <% if (theme?.home?.announcement) { %>
-        <div class="website-announcement border-box">
-            <i class="icon left fa-solid fa-bullhorn"></i>
-            <div class="announcement border-box text-ellipsis">
-                <%- markdown(theme?.home?.announcement) %>
+  <% if (theme?.home?.announcement) { %>
+    <div class="website-announcement border-box">
+      <i class="icon left fa-solid fa-bullhorn"></i>
+      <div class="announcement border-box text-ellipsis">
+        <%- markdown(theme?.home?.announcement) %>
+      </div>
+      <i class="icon right close fa-solid fa-close"></i>
+    </div>
+  <% } %>
+  <ul class="home-post-list border-box">
+    <% page.posts.forEach(post => { %>
+      <li class="home-post-item">
+
+        <% if (post?.home_cover) { %>
+          <div class="home-post-item-top border-box"
+            style="height: <%= post?.home_cover_height ? post?.home_cover_height + 'px' : '10rem' %>"
+          >
+            <% if (post.sticky) { %>
+              <div class="post-sticky-box cover-offset">
+                <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
+              </div>
+            <% } %>
+            <img class="home-cover" src="<%- url_for(post.home_cover) %>"
+              onerror="this.style.display='none'"
+            >
+          </div>
+        <% } %>
+
+        <div class="home-post-item-bottom border-box">
+          <% if (post.sticky && !post?.home_cover) { %>
+            <div class="post-sticky-box card-offset">
+              <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
             </div>
-            <i class="icon right close fa-solid fa-close"></i>
+          <% } %>
+          <h3 class="home-post-title border-box">
+            <a href="<%- url_for(post.path) %>">
+              <%= post.title %>
+            </a>
+          </h3>
+
+          <div class="home-post-content keep-markdown-body">
+            <% if (post?.password) { %>
+              <%= __('encryption.excerpt') %>
+            <% } else { %>
+              <%- post?.excerpt || truncate(strip_html(post.content), { length: 128 }) %>
+            <% } %>
+          </div>
+
+          <%- partial('_partial/post/post-meta-info', { post: post, page_type: 'home' }) %>
         </div>
-    <% } %>
-    <ul class="home-post-list border-box">
-        <% page.posts.forEach(post => { %>
-            <li class="home-post-item">
-
-                <% if (post?.home_cover) { %>
-                    <div class="home-post-item-top border-box"
-                         style="height: <%= post?.home_cover_height ? post?.home_cover_height + 'px' : '10rem' %>"
-                    >
-                        <% if (post.sticky) { %>
-                            <div class="post-sticky-box cover-offset">
-                                <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
-                            </div>
-                        <% } %>
-                        <img class="home-cover" src="<%- url_for(post.home_cover) %>"
-                             onerror="this.style.display='none'"
-                        >
-                    </div>
-                <% } %>
-
-                <div class="home-post-item-bottom border-box">
-                    <% if (post.sticky && !post?.home_cover) { %>
-                        <div class="post-sticky-box card-offset">
-                            <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
-                        </div>
-                    <% } %>
-                    <h3 class="home-post-title border-box">
-                        <a href="<%- url_for(post.path) %>">
-                            <%= post.title %>
-                        </a>
-                    </h3>
-
-                    <div class="home-post-content keep-markdown-body">
-                        <% if (post?.password) { %>
-                            <%= __('encryption.excerpt') %>
-                        <% } else { %>
-                            <%- post?.excerpt || truncate(strip_html(post.content), { length: 128 }) %>
-                        <% } %>
-                    </div>
-
-                    <%- partial('_partial/post/post-meta-info', { post: post, page_type: 'home' }) %>
-                </div>
-            </li>
-        <% }) %>
-    </ul>
-    <%- partial('_partial/paginator', { page_info: page }) %>
+      </li>
+    <% }) %>
+  </ul>
+  <%- partial('_partial/paginator', { page_info: page }) %>
 </div>

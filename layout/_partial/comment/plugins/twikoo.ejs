@@ -1,70 +1,70 @@
 <%
 const { enable: pjax_enable } = theme?.pjax || {}
 let {
-    env_id: tk_env_id,
-    region: tk_region,
-    version: tk_version
+  env_id: tk_env_id,
+  region: tk_region,
+  version: tk_version
 } = theme?.comment?.twikoo || {}
 if (!tk_version) { tk_version = '1.6.36' }
 let twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
 const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
 
 if (t_cdn_enable === true) {
-    switch (t_cdn_provider) {
-        case 'jsdelivr':
-            twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
-            break
+  switch (t_cdn_provider) {
+    case 'jsdelivr':
+      twikoo_cdn_url = `//cdn.jsdelivr.net/npm/twikoo@${tk_version}/dist/twikoo.all.min.js`
+      break
 
-        case 'unpkg':
-            twikoo_cdn_url = `//unpkg.com/twikoo@${tk_version}/dist/twikoo.all.min.js`
-            break
+    case 'unpkg':
+      twikoo_cdn_url = `//unpkg.com/twikoo@${tk_version}/dist/twikoo.all.min.js`
+      break
 
-        case 'cdnjs':
-            if (!(/^(\d+)\.(\d+)\.(\d+)$/.test(tk_version))) {
-                tk_version = '1.6.36'
-            }
-            twikoo_cdn_url = `https://cdnjs.cloudflare.com/ajax/libs/twikoo/${tk_version}/twikoo.all.min.js`
-            break
-    }
+    case 'cdnjs':
+      if (!(/^(\d+)\.(\d+)\.(\d+)$/.test(tk_version))) {
+        tk_version = '1.6.36'
+      }
+      twikoo_cdn_url = `https://cdnjs.cloudflare.com/ajax/libs/twikoo/${tk_version}/twikoo.all.min.js`
+      break
+  }
 }
 %>
 <% if(tk_env_id) { %>
-    <div class="twikoo-container">
-        <div id="twikoo-comment"></div>
-        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
-                src="<%= twikoo_cdn_url %>"
-                async
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        ></script>
-        <script <%= pjax_enable === true ? 'data-pjax' : '' %>
-                async
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        >
-          window.KeepCommentPlugin.initTwikoo = () => {
-            if (window?.twikoo) {
-              twikoo.init({
-                el: '#twikoo-comment',
-                envId: '<%= tk_env_id %>',
-                region: '<%= tk_region %>',
-                lang: '<%= config.language %>' || 'zh-CN'
-              })
-              window.KeepCommentPlugin.hideLoading()
-            } else {
-              setTimeout(() => {
-                window.KeepCommentPlugin.initTwikoo()
-              }, 1000)
-            }
-          }
+  <div class="twikoo-container">
+    <div id="twikoo-comment"></div>
+    <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+      src="<%= twikoo_cdn_url %>"
+      async
+      onerror="window.KeepCommentPlugin.loadFailHandle()"
+    ></script>
+    <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+      async
+      onerror="window.KeepCommentPlugin.loadFailHandle()"
+    >
+      window.KeepCommentPlugin.initTwikoo = () => {
+        if (window?.twikoo) {
+          twikoo.init({
+            el: '#twikoo-comment',
+            envId: '<%= tk_env_id %>',
+            region: '<%= tk_region %>',
+            lang: '<%= config.language %>' || 'zh-CN'
+          })
+          window.KeepCommentPlugin.hideLoading()
+        } else {
+          setTimeout(() => {
+            window.KeepCommentPlugin.initTwikoo()
+          }, 1000)
+        }
+      }
 
-          if ('<%= pjax_enable %>' === 'true') {
-            setTimeout(() => {
-              window.KeepCommentPlugin.initTwikoo()
-            }, 1200)
-          } else {
-            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initTwikoo)
-          }
-        </script>
-    </div>
+      if ('<%= pjax_enable %>' === 'true') {
+        setTimeout(() => {
+          window.KeepCommentPlugin.initTwikoo()
+        }, 1200)
+      } else {
+        window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initTwikoo)
+      }
+    </script>
+  </div>
 <% } else { %>
-    <%- partial('../config-error', { comment_plugin: 'Twikoo' }) %>
+  <%- partial('../config-error', { comment_plugin: 'Twikoo' }) %>
 <% } %>

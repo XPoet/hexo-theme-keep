@@ -8,55 +8,55 @@ const use_custom = theme?.post?.copyright_info !== true && theme?.post?.copyrigh
 if (use_custom) { license_url = theme?.post?.copyright_info?.custom_link }
 %>
 <div class="post-copyright-info-container border-box">
-    <div class="copyright-info-content border-box">
-        <div class="copyright-info-top border-box">
-            <div class="copyright-post-title border-box text-ellipsis">
-                <%= page.title %>
-            </div>
+  <div class="copyright-info-content border-box">
+    <div class="copyright-info-top border-box">
+      <div class="copyright-post-title border-box text-ellipsis">
+        <%= page.title %>
+      </div>
 
-            <div class="copyright-post-link border-box text-ellipsis">
-                <%= page.path %>
-            </div>
-        </div>
-
-        <div class="copyright-info-bottom border-box">
-            <div class="copyright-post-author bottom-item">
-                <div class="type">
-                    <%- __('copyright.author') %>
-                </div>
-                <div class="content"><%= theme?.base_info?.author || config?.author || 'Anonymous' %></div>
-            </div>
-
-            <div class="post-time bottom-item">
-                <div class="type">
-                    <%- __('copyright.published') %>
-                </div>
-                <div class="content"><%= date(page.date, 'YYYY-MM-DD HH:mm') %></div>
-            </div>
-
-
-            <div class="post-license bottom-item">
-                <div class="type">
-                    <%- __('copyright.license') %>
-                </div>
-                <div class="content tooltip" data-tooltip-content="<%= use_custom ? '' : 'CC BY-NC-SA 4.0' %>">
-                    <a href="<%= license_url %>" target="_blank">
-                        <% if (use_custom) { %>
-                            <%= theme?.post?.copyright_info?.custom_license %>
-                        <% } else { %>
-                            <i class="fa-brands fa-creative-commons"></i>
-                            <i class="fa-brands fa-creative-commons-by"></i>
-                            <i class="fa-brands fa-creative-commons-nc"></i>
-                            <i class="fa-brands fa-creative-commons-sa"></i>
-                        <% } %>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <i class="copyright-bg fa-solid fa-copyright"></i>
+      <div class="copyright-post-link border-box text-ellipsis">
+        <%= page.path %>
+      </div>
     </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="<%= __('copy_copyright.copy') %>" data-tooltip-offset-y="-2px">
-        <i class="fa-solid fa-copy"></i>
+
+    <div class="copyright-info-bottom border-box">
+      <div class="copyright-post-author bottom-item">
+        <div class="type">
+          <%- __('copyright.author') %>
+        </div>
+        <div class="content"><%= theme?.base_info?.author || config?.author || 'Anonymous' %></div>
+      </div>
+
+      <div class="post-time bottom-item">
+        <div class="type">
+          <%- __('copyright.published') %>
+        </div>
+        <div class="content"><%= date(page.date, 'YYYY-MM-DD HH:mm') %></div>
+      </div>
+
+
+      <div class="post-license bottom-item">
+        <div class="type">
+          <%- __('copyright.license') %>
+        </div>
+        <div class="content tooltip" data-tooltip-content="<%= use_custom ? '' : 'CC BY-NC-SA 4.0' %>">
+          <a href="<%= license_url %>" target="_blank">
+            <% if (use_custom) { %>
+              <%= theme?.post?.copyright_info?.custom_license %>
+            <% } else { %>
+              <i class="fa-brands fa-creative-commons"></i>
+              <i class="fa-brands fa-creative-commons-by"></i>
+              <i class="fa-brands fa-creative-commons-nc"></i>
+              <i class="fa-brands fa-creative-commons-sa"></i>
+            <% } %>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <i class="copyright-bg fa-solid fa-copyright"></i>
+  </div>
+  <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="<%= __('copy_copyright.copy') %>" data-tooltip-offset-y="-2px">
+    <i class="fa-solid fa-copy"></i>
+  </div>
 </div>

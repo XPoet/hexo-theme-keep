@@ -1,10 +1,10 @@
 <%
 const { enable: pjax_enable } = theme?.pjax || {}
 let {
-    server_url: waline_env_server_url,
-    version: waline_version,
-    reaction: waline_reaction,
-    options: waline_options = {}
+  server_url: waline_env_server_url,
+  version: waline_version,
+  reaction: waline_reaction,
+  options: waline_options = {}
 } = theme?.comment?.waline || {}
 
 waline_version = String(waline_version).trim()
@@ -20,101 +20,101 @@ let cdn_js = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/wali
 const { enable: t_cdn_enable, provider: t_cdn_provider } = theme?.cdn || {}
 
 if (t_cdn_enable === true) {
-    switch (t_cdn_provider) {
-        case 'jsdelivr':
-            cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`
-            cdn_css_meta = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline-meta.css`
-            cdn_js = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.js`
-            break
+  switch (t_cdn_provider) {
+    case 'jsdelivr':
+      cdn_css = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.css`
+      cdn_css_meta = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline-meta.css`
+      cdn_js = `//cdn.jsdelivr.net/npm/@waline/client@v${waline_version}/dist/waline.js`
+      break
 
-        case 'unpkg':
-            cdn_css = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.css`
-            cdn_css_meta = `//unpkg.com/@waline/client@v${waline_version}/dist/waline-meta.css`
-            cdn_js = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.js`
-            break
+    case 'unpkg':
+      cdn_css = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.css`
+      cdn_css_meta = `//unpkg.com/@waline/client@v${waline_version}/dist/waline-meta.css`
+      cdn_js = `//unpkg.com/@waline/client@v${waline_version}/dist/waline.js`
+      break
 
-        case 'cdnjs':
-            if (!(/^(\d+)\.(\d+)\.(\d+)$/.test(waline_version))) {
-                waline_version = '3.15.2'
-            }
-            cdn_css = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline.css`
-            cdn_css_meta = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline-meta.css`
-            cdn_js = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline.js`
-            break
-    }
+    case 'cdnjs':
+      if (!(/^(\d+)\.(\d+)\.(\d+)$/.test(waline_version))) {
+        waline_version = '3.15.2'
+      }
+      cdn_css = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline.css`
+      cdn_css_meta = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline-meta.css`
+      cdn_js = `https://cdnjs.cloudflare.com/ajax/libs/waline/${waline_version}/waline.js`
+      break
+  }
 }
 %>
 <% if(waline_env_server_url) { %>
-    <div class="waline-comment-container">
-        <link rel="stylesheet" href="<%= cdn_css %>"/>
-        <link rel="stylesheet" href="<%= cdn_css_meta %>"/>
-        <div id="waline-comment"></div>
-        <script data-pjax>
-          window.KeepCommentPlugin.walineOptions = JSON.parse('<%= JSON.stringify(waline_options) %>'.replace(/&#34;/g, '"'))
-          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
-          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
-          window.KeepCommentPlugin.walineOptions.serverURL = '<%= waline_env_server_url %>'
-          window.KeepCommentPlugin.walineOptions.lang = '<%= config.language %>' || 'zh-CN'
-          window.KeepCommentPlugin.walineOptions.reaction = '<%= waline_reaction %>' === 'true'
-        </script>
+  <div class="waline-comment-container">
+    <link rel="stylesheet" href="<%= cdn_css %>"/>
+    <link rel="stylesheet" href="<%= cdn_css_meta %>"/>
+    <div id="waline-comment"></div>
+    <script data-pjax>
+      window.KeepCommentPlugin.walineOptions = JSON.parse('<%= JSON.stringify(waline_options) %>'.replace(/&#34;/g, '"'))
+      window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+      window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+      window.KeepCommentPlugin.walineOptions.serverURL = '<%= waline_env_server_url %>'
+      window.KeepCommentPlugin.walineOptions.lang = '<%= config.language %>' || 'zh-CN'
+      window.KeepCommentPlugin.walineOptions.reaction = '<%= waline_reaction %>' === 'true'
+    </script>
 
-        <% if (!esm_load) { %>
-            <script <%= pjax_enable === true ? 'data-pjax' : '' %>
-                    src="<%= cdn_js %>"
-                    async
-                    onerror="window.KeepCommentPlugin.loadFailHandle()"
-            ></script>
-            <script <%= pjax_enable === true ? 'data-pjax' : '' %>
-                    async
-            >
-              window.KeepCommentPlugin.initWaline = () => {
-                if (window?.Waline) {
-                  window.Waline.init(window.KeepCommentPlugin.walineOptions)
-                  window.KeepCommentPlugin.hideLoading()
-                } else {
-                  setTimeout(() => {
-                    window.KeepCommentPlugin.initWaline()
-                  }, 1000)
-                }
-              }
+    <% if (!esm_load) { %>
+      <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+        src="<%= cdn_js %>"
+        async
+        onerror="window.KeepCommentPlugin.loadFailHandle()"
+      ></script>
+      <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+        async
+      >
+        window.KeepCommentPlugin.initWaline = () => {
+          if (window?.Waline) {
+            window.Waline.init(window.KeepCommentPlugin.walineOptions)
+            window.KeepCommentPlugin.hideLoading()
+          } else {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initWaline()
+            }, 1000)
+          }
+        }
 
-              if ('<%= pjax_enable %>' === 'true') {
-                setTimeout(() => {
-                  window.KeepCommentPlugin.initWaline()
-                }, 1200)
-              } else {
-                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
-              }
-            </script>
-        <% } %>
+        if ('<%= pjax_enable %>' === 'true') {
+          setTimeout(() => {
+            window.KeepCommentPlugin.initWaline()
+          }, 1200)
+        } else {
+          window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+        }
+      </script>
+    <% } %>
 
-        <% if (esm_load) { %>
-            <script <%= pjax_enable === true ? 'data-pjax' : '' %>
-                    async
-                    type="module"
-            >
-              import { init } from '<%= cdn_js %>'
-              window.KeepCommentPlugin.initWaline = () => {
-                if (init) {
-                  init(window.KeepCommentPlugin.walineOptions)
-                  window.KeepCommentPlugin.hideLoading()
-                } else {
-                  setTimeout(() => {
-                    window.KeepCommentPlugin.initWaline()
-                  }, 1000)
-                }
-              }
+    <% if (esm_load) { %>
+      <script <%= pjax_enable === true ? 'data-pjax' : '' %>
+        async
+        type="module"
+      >
+        import { init } from '<%= cdn_js %>'
+        window.KeepCommentPlugin.initWaline = () => {
+          if (init) {
+            init(window.KeepCommentPlugin.walineOptions)
+            window.KeepCommentPlugin.hideLoading()
+          } else {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initWaline()
+            }, 1000)
+          }
+        }
 
-              if ('<%= pjax_enable %>' === 'true') {
-                setTimeout(() => {
-                  window.KeepCommentPlugin.initWaline()
-                }, 1200)
-              } else {
-                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
-              }
-            </script>
-        <% } %>
-    </div>
+        if ('<%= pjax_enable %>' === 'true') {
+          setTimeout(() => {
+            window.KeepCommentPlugin.initWaline()
+          }, 1200)
+        } else {
+          window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+        }
+      </script>
+    <% } %>
+  </div>
 <% } else { %>
-    <%- partial('../config-error', { comment_plugin: 'Waline' }) %>
+  <%- partial('../config-error', { comment_plugin: 'Waline' }) %>
 <% } %>

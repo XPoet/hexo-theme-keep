@@ -1,21 +1,21 @@
 <% const archive_post_list = createNewArchivePosts(archive_posts) %>
 <div class="archive-list-container border-box">
-    <% archive_post_list.forEach(postItem => { %>
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year"><%= postItem.year %></span>
-            </div>
-            <ul class="archive-item-body border-box">
-                <% postItem.postList.forEach(post => { %>
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box"><%= date(post.date, 'MM-DD') %></span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="<%- url_for(post.path) %>"
-                        ><%= post.title %></a>
-                    </li>
-                <% }) %>
-            </ul>
-        </section>
-    <% }) %>
+  <% archive_post_list.forEach(postItem => { %>
+    <section class="archive-item border-box">
+      <div class="archive-item-header border-box">
+        <span class="archive-year"><%= postItem.year %></span>
+      </div>
+      <ul class="archive-item-body border-box">
+        <% postItem.postList.forEach(post => { %>
+          <li class="post-item border-box">
+            <span class="starting-point border-box flex-center"></span>
+            <span class="post-date border-box"><%= date(post.date, 'MM-DD') %></span>
+            <a class="post-title border-box text-ellipsis"
+              href="<%- url_for(post.path) %>"
+            ><%= post.title %></a>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+  <% }) %>
 </div>

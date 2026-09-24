@@ -1,9 +1,9 @@
 <%
 const {
-    since: f_since,
-    record: f_record,
-    site_deploy: f_site_deploy,
-    word_count: f_word_count
+  since: f_since,
+  record: f_record,
+  site_deploy: f_site_deploy,
+  word_count: f_word_count
 } = theme?.footer || {}
 const { author: bi_author } = theme?.base_info || {}
 const { author: hexo_author } = config
@@ -15,9 +15,9 @@ const show_uv = bsz_enable === true && bsz_site_uv === true
 
 let f_temp_total_word = 0
 try {
-    f_temp_total_word = totalcount(site)
+  f_temp_total_word = totalcount(site)
 } catch {
-    f_temp_total_word = 0
+  f_temp_total_word = 0
 }
 const show_word_count = f_word_count === true && f_temp_total_word !== 0
 
@@ -26,72 +26,72 @@ const has_count_info = show_pv || show_uv || show_word_count
 const current_year = String(date(new Date(), 'YYYY'))
 %>
 <footer class="footer border-box">
-    <div class="copyright-info info-item">
-    &copy;&nbsp;<% if (f_since && String(f_since) !== current_year) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= current_year %>
-    <% if (web_master) { %>
-            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
+  <div class="copyright-info info-item">
+  &copy;&nbsp;<% if (f_since && String(f_since) !== current_year) { %><span><%= f_since %></span>&nbsp;-&nbsp;<% } %><%= current_year %>
+  <% if (web_master) { %>
+      &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="<%- url_for('/') %>"><%= web_master %></a>
+    <% } %>
+  </div>
+
+  <div class="theme-info info-item">
+    <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;&&nbsp;<%- __('theme') %>&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+  </div>
+
+  <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>
+    <% const deploy_provider_img_tag = image_tag('/images/brands/' + f_site_deploy?.provider + '.png') %>
+    <div class="deploy-info info-item">
+      <% if (f_site_deploy?.url) { %>
+        <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
+      <% } %>
+      <%- __(
+          'footer.deploy',
+          '<span class="tooltip" data-tooltip-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '">' + deploy_provider_img_tag + '</span>'
+      ) %>
+      <% if (f_site_deploy?.url) { %>
+        </a>
+      <% } %>
+    </div>
+  <% } %>
+
+  <% if (has_count_info) { %>
+    <div class="count-info info-item">
+      <% if (show_word_count) { %>
+        <span class="count-item border-box word">
+          <span class="item-type border-box"><%- __('footer.total_words') %></span>
+          <span class="item-value border-box word"><%= totalcount(site) %></span>
+        </span>
+      <% } %>
+
+      <% if (show_uv) { %>
+        <span class="count-item border-box uv">
+          <span class="item-type border-box"><%- __('footer.site_uv') %></span>
+          <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+        </span>
+      <% } %>
+
+      <% if (show_pv) { %>
+        <span class="count-item border-box pv">
+          <span class="item-type border-box"><%- __('footer.site_pv') %></span>
+          <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+        </span>
+      <% } %>
+    </div>
+  <% } %>
+
+  <% if (f_record?.enable === true) { %>
+    <div class="record-info info-item">
+      <% for (let i = 0; i < f_record?.list?.length; i++) { %>
+        <% if (f_record?.list[i]?.code) { %>
+          <div class="record-item border-box">
+            <a class="<%= f_record?.list[i]?.link ? '' : ' no-pointer' %>"
+              target="_blank"
+              href="<%= f_record?.list[i]?.link %>"
+            >
+              <%= f_record?.list[i].code %>
+            </a>
+          </div>
         <% } %>
+      <% } %>
     </div>
-
-    <div class="theme-info info-item">
-        <%- __('footer.powered_by', '<a target="_blank" href="https://hexo.io">Hexo</a>') %>&nbsp;&&nbsp;<%- __('theme') %>&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-    </div>
-
-    <% if (f_site_deploy?.enable === true && f_site_deploy?.provider) { %>
-        <% const deploy_provider_img_tag = image_tag('/images/brands/' + f_site_deploy?.provider + '.png') %>
-        <div class="deploy-info info-item">
-            <% if (f_site_deploy?.url) { %>
-                <a target="_blank" rel="nofollow" href="<%= f_site_deploy?.url %>">
-            <% } %>
-            <%- __(
-                    'footer.deploy',
-                    '<span class="tooltip" data-tooltip-content="' + __('footer.deploy_provider.' + f_site_deploy?.provider) + '">' + deploy_provider_img_tag + '</span>'
-            ) %>
-            <% if (f_site_deploy?.url) { %>
-                </a>
-            <% } %>
-        </div>
-    <% } %>
-
-    <% if (has_count_info) { %>
-        <div class="count-info info-item">
-            <% if (show_word_count) { %>
-                <span class="count-item border-box word">
-                    <span class="item-type border-box"><%- __('footer.total_words') %></span>
-                    <span class="item-value border-box word"><%= totalcount(site) %></span>
-                </span>
-            <% } %>
-
-            <% if (show_uv) { %>
-                <span class="count-item border-box uv">
-                    <span class="item-type border-box"><%- __('footer.site_uv') %></span>
-                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
-                </span>
-            <% } %>
-
-            <% if (show_pv) { %>
-                <span class="count-item border-box pv">
-                    <span class="item-type border-box"><%- __('footer.site_pv') %></span>
-                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
-                </span>
-            <% } %>
-        </div>
-    <% } %>
-
-    <% if (f_record?.enable === true) { %>
-        <div class="record-info info-item">
-            <% for (let i = 0; i < f_record?.list?.length; i++) { %>
-                <% if (f_record?.list[i]?.code) { %>
-                    <div class="record-item border-box">
-                        <a class="<%= f_record?.list[i]?.link ? '' : ' no-pointer' %>"
-                           target="_blank"
-                           href="<%= f_record?.list[i]?.link %>"
-                        >
-                            <%= f_record?.list[i].code %>
-                        </a>
-                    </div>
-                <% } %>
-            <% } %>
-        </div>
-    <% } %>
+  <% } %>
 </footer>

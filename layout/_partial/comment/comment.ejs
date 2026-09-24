@@ -1,32 +1,32 @@
 <%
 const {
-    enable: theme_comment_enable,
-    use: theme_comment_use
+  enable: theme_comment_enable,
+  use: theme_comment_use
 } = theme?.comment || {}
 %>
 
 <% if (theme_comment_enable === true && theme_comment_use) { %>
-    <div class="comments-container border-box">
-        <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;<%- __('comment.comments') %>
-        </div>
-        <%- partial('load-handler') %>
-        <% if  (theme_comment_use === 'valine') { %>
-            <%- partial('./plugins/valine') %>
-        <% } else if (theme_comment_use === 'gitalk') { %>
-            <%- partial('./plugins/gitalk') %>
-        <% } else if (theme_comment_use === 'twikoo') { %>
-            <%- partial('./plugins/twikoo') %>
-        <% } else if (theme_comment_use === 'waline') { %>
-            <%- partial('./plugins/waline') %>
-        <% } else if (theme_comment_use === 'giscus') { %>
-            <%- partial('./plugins/giscus') %>
-        <% } else if (theme_comment_use === 'artalk') { %>
-            <%- partial('./plugins/artalk') %>
-        <% } else if (theme_comment_use === 'disqus') { %>
-            <%- partial('./plugins/disqus') %>
-        <% } %>
+  <div class="comments-container border-box">
+    <div id="comments-anchor" class="comment-area-title border-box">
+      <i class="fas fa-comments"></i>&nbsp;<%- __('comment.comments') %>
     </div>
+    <%- partial('load-handler') %>
+    <% if  (theme_comment_use === 'valine') { %>
+      <%- partial('./plugins/valine') %>
+    <% } else if (theme_comment_use === 'gitalk') { %>
+      <%- partial('./plugins/gitalk') %>
+    <% } else if (theme_comment_use === 'twikoo') { %>
+      <%- partial('./plugins/twikoo') %>
+    <% } else if (theme_comment_use === 'waline') { %>
+      <%- partial('./plugins/waline') %>
+    <% } else if (theme_comment_use === 'giscus') { %>
+      <%- partial('./plugins/giscus') %>
+    <% } else if (theme_comment_use === 'artalk') { %>
+      <%- partial('./plugins/artalk') %>
+    <% } else if (theme_comment_use === 'disqus') { %>
+      <%- partial('./plugins/disqus') %>
+    <% } %>
+  </div>
 <% } %>
 
 

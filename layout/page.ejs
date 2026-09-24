@@ -4,93 +4,93 @@ const page_title = page?.title?.toLowerCase()
 const page_type = page?.type
 %>
 <main class="page-container border-box">
-    <!-- home first screen  -->
-    <% if (is_home() && theme?.first_screen?.enable === true && !page.prev) { %>
-        <%- partial('_partial/first-screen') %>
-    <% } %>
+  <!-- home first screen  -->
+  <% if (is_home() && theme?.first_screen?.enable === true && !page.prev) { %>
+    <%- partial('_partial/first-screen') %>
+  <% } %>
 
-    <!-- page content -->
-    <div class="page-main-content border-box<%= is_home() ? ' is-home' : '' %>">
-        <div class="page-main-content-top">
-            <%- partial('_partial/header') %>
-        </div>
-
-        <div class="page-main-content-middle border-box">
-
-            <div class="main-content border-box">
-                <% if (is_home()) { %>
-
-                    <%- partial('_page/home') %>
-
-                <% } else if (is_archive()) { %>
-
-                    <%- partial('_page/archive') %>
-
-                <% } else if (is_post()) { %>
-
-                    <%- partial('_page/post') %>
-
-                <% } else if (is_category()) { %>
-
-                    <%- partial('_page/category-archive') %>
-
-                <% } else if (is_tag()) { %>
-
-                    <%- partial('_page/tag-archive') %>
-
-                <% } else if (page_title === 'category' || page_title === 'categories') { %>
-
-                    <%- partial('_page/category') %>
-
-                <% } else if (page_title === 'tag' || page_title === 'tags') { %>
-
-                    <%- partial('_page/tag') %>
-
-                <% } else if (page_type === '404') { %>
-
-                    <%- partial('_page/404') %>
-
-                <% } else { %>
-
-                    <%- partial('_template/page-template') %>
-
-                <% } %>
-            </div>
-        </div>
-
-        <div class="page-main-content-bottom border-box">
-            <%- partial('_partial/footer') %>
-        </div>
+  <!-- page content -->
+  <div class="page-main-content border-box<%= is_home() ? ' is-home' : '' %>">
+    <div class="page-main-content-top">
+      <%- partial('_partial/header') %>
     </div>
 
-    <!-- post tools -->
-    <% if (is_post()) { %>
-        <div class="post-tools <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
-            <%- partial('_partial/post/post-tools') %>
-        </div>
-    <% } %>
+    <div class="page-main-content-middle border-box">
 
-    <!-- side tools -->
-    <div class="side-tools">
-        <%- partial('_partial/side-tools') %>
+      <div class="main-content border-box">
+        <% if (is_home()) { %>
+
+          <%- partial('_page/home') %>
+
+        <% } else if (is_archive()) { %>
+
+          <%- partial('_page/archive') %>
+
+        <% } else if (is_post()) { %>
+
+          <%- partial('_page/post') %>
+
+        <% } else if (is_category()) { %>
+
+          <%- partial('_page/category-archive') %>
+
+        <% } else if (is_tag()) { %>
+
+          <%- partial('_page/tag-archive') %>
+
+        <% } else if (page_title === 'category' || page_title === 'categories') { %>
+
+          <%- partial('_page/category') %>
+
+        <% } else if (page_title === 'tag' || page_title === 'tags') { %>
+
+          <%- partial('_page/tag') %>
+
+        <% } else if (page_type === '404') { %>
+
+          <%- partial('_page/404') %>
+
+        <% } else { %>
+
+          <%- partial('_template/page-template') %>
+
+        <% } %>
+      </div>
     </div>
 
-    <!-- image mask -->
-    <%- partial('_partial/image-mask') %>
+    <div class="page-main-content-bottom border-box">
+      <%- partial('_partial/footer') %>
+    </div>
+  </div>
 
-    <!-- local search -->
-    <% if (theme?.local_search?.enable === true) { %>
-        <%- partial('_partial/local-search') %>
-    <% } %>
+  <!-- post tools -->
+  <% if (is_post()) { %>
+    <div class="post-tools <%= theme?.toc?.layout === 'left' ? 'left-toc' : 'right-toc' %>">
+      <%- partial('_partial/post/post-tools') %>
+    </div>
+  <% } %>
 
-    <!-- tablet toc -->
-    <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <%- partial('_partial/toc') %>
-            </div>
-        </div>
-    <% } %>
+  <!-- side tools -->
+  <div class="side-tools">
+    <%- partial('_partial/side-tools') %>
+  </div>
+
+  <!-- image mask -->
+  <%- partial('_partial/image-mask') %>
+
+  <!-- local search -->
+  <% if (theme?.local_search?.enable === true) { %>
+    <%- partial('_partial/local-search') %>
+  <% } %>
+
+  <!-- tablet toc -->
+  <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
+    <div class="tablet-post-toc-mask">
+      <div class="tablet-post-toc">
+        <%- partial('_partial/toc') %>
+      </div>
+    </div>
+  <% } %>
 </main>
 
 

@@ -1,73 +1,73 @@
 <div class="side-tools-container border-box <%= is_home() ? 'side-tools-show-handle' : '' %>">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
+  <ul class="side-tools-list side-tools-show-handle border-box">
+    <li class="tools-item tool-font-adjust-plus flex-center">
+      <i class="fas fa-search-plus"></i>
+    </li>
 
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
+    <li class="tools-item tool-font-adjust-minus flex-center">
+      <i class="fas fa-search-minus"></i>
+    </li>
 
-        <!-- toggle chinese -->
-        <% if (config.language === 'zh-CN' || config.language === 'zh-TW') { %>
-            <li class="tools-item tool-toggle-chinese flex-center">
-                <button type="button"
-                        data-native-script="<%= config.language === 'zh-TW' ? 'tw' : 'cn' %>"
-                        data-opencc-src="<%= url_for('js/libs/opencc.full.js') %>"
-                        data-label-cn="<%= __('chinese_switch.to_simplified') %>"
-                        data-label-tw="<%= __('chinese_switch.to_traditional') %>"
-                        data-label-error="<%= __('chinese_switch.load_failed') %>"
-                >
-                    <%= config.language === 'zh-TW' ? '简' : '繁' %>
-                </button>
-            </li>
-        <% } %>
+    <!-- toggle chinese -->
+    <% if (config.language === 'zh-CN' || config.language === 'zh-TW') { %>
+      <li class="tools-item tool-toggle-chinese flex-center">
+        <button type="button"
+            data-native-script="<%= config.language === 'zh-TW' ? 'tw' : 'cn' %>"
+            data-opencc-src="<%= url_for('js/libs/opencc.full.js') %>"
+            data-label-cn="<%= __('chinese_switch.to_simplified') %>"
+            data-label-tw="<%= __('chinese_switch.to_traditional') %>"
+            data-label-error="<%= __('chinese_switch.load_failed') %>"
+        >
+          <%= config.language === 'zh-TW' ? '简' : '繁' %>
+        </button>
+      </li>
+    <% } %>
 
-        <!-- toggle mode -->
-        <% if (theme?.base_info?.mode !== 'dark' && theme?.base_info?.mode !== 'light') { %>
-            <li class="tools-item tool-toggle-theme-mode flex-center">
-                <i class="fas fa-moon"></i>
-            </li>
-        <% } %>
+    <!-- toggle mode -->
+    <% if (theme?.base_info?.mode !== 'dark' && theme?.base_info?.mode !== 'light') { %>
+      <li class="tools-item tool-toggle-theme-mode flex-center">
+        <i class="fas fa-moon"></i>
+      </li>
+    <% } %>
 
-        <!-- rss -->
-        <% if (theme?.rss?.enable === true && config.feed) { %>
-            <li class="tools-item rss flex-center">
-                <a class="flex-center"
-                   href="<%= '/' + config.feed.path %>"
-                   target="_blank"
-                >
-                    <i class="fas fa-rss"></i>
-                </a>
-            </li>
-        <% } %>
+    <!-- rss -->
+    <% if (theme?.rss?.enable === true && config.feed) { %>
+      <li class="tools-item rss flex-center">
+        <a class="flex-center"
+          href="<%= '/' + config.feed.path %>"
+          target="_blank"
+        >
+          <i class="fas fa-rss"></i>
+        </a>
+      </li>
+    <% } %>
 
-        <!-- to bottom -->
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
+    <!-- to bottom -->
+    <li class="tools-item tool-scroll-to-bottom flex-center">
+      <i class="fas fa-arrow-down"></i>
+    </li>
+  </ul>
 
-    <ul class="exposed-tools-list border-box">
-        <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        <% } %>
+  <ul class="exposed-tools-list border-box">
+    <% if (is_post() && page?.toc !== false && theme?.toc?.enable === true) { %>
+      <li class="tools-item toggle-show-toc-tablet flex-center">
+        <i class="fas fa-list"></i>
+      </li>
+    <% } %>
 
-        <% if (is_post() && page?.comment !== false && theme?.comment?.enable === true && theme?.comment?.use) { %>
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
-        <% } %>
+    <% if (is_post() && page?.comment !== false && theme?.comment?.enable === true && theme?.comment?.use) { %>
+      <li class="tools-item go-to-comments-tablet flex-center">
+        <i class="fas fa-comment"></i>
+      </li>
+    <% } %>
 
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
+    <li class="tools-item tool-toggle-show flex-center">
+      <i class="fas fa-cog fa-spin"></i>
+    </li>
 
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
+    <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+      <i class="arrow fas fa-arrow-up"></i>
+      <span class="percent"></span>
+    </li>
+  </ul>
 </div>

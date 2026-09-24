@@ -6,80 +6,80 @@ const is_chinese_language = config.language === 'zh-CN' || config.language === '
 
 <!-- common js -->
 <%- __js([
-    'js/utils.js',
-    'js/header-shrink.js',
-    'js/back2top.js',
-    'js/toggle-theme.js',
-    ...(is_chinese_language ? ['js/chinese-convert.js'] : []),
-    'js/code-block.js',
-    'js/main.js',
-    'js/libs/anime.min.js'
+  'js/utils.js',
+  'js/header-shrink.js',
+  'js/back2top.js',
+  'js/toggle-theme.js',
+  ...(is_chinese_language ? ['js/chinese-convert.js'] : []),
+  'js/code-block.js',
+  'js/main.js',
+  'js/libs/anime.min.js'
 ]) %>
 
 <!-- local search -->
 <% if (theme?.local_search?.enable === true) { %>
-    <%- __js('js/local-search.js') %>
+  <%- __js('js/local-search.js') %>
 <% } %>
 
 <!-- lazyload -->
 <% if (theme?.lazyload?.enable === true) { %>
-    <%- __js('js/lazyload.js') %>
+  <%- __js('js/lazyload.js') %>
 <% } %>
 
 <div class="<%= theme?.pjax?.enable === true ? 'pjax' : '' %>">
-    <!-- home page -->
-    <% if (is_home()) { %>
-        <%- __js('js/page/home-page.js') %>
+  <!-- home page -->
+  <% if (is_home()) { %>
+    <%- __js('js/page/home-page.js') %>
+  <% } %>
+
+  <!-- post page -->
+  <% if (is_post()) { %>
+    <!-- post-helper -->
+    <%- __js('js/post/post-helper.js') %>
+
+    <!-- toc -->
+    <% if (theme?.toc?.enable === true) { %>
+      <%- __js('js/post/toc.js') %>
     <% } %>
 
-    <!-- post page -->
-    <% if (is_post()) { %>
-        <!-- post-helper -->
-        <%- __js('js/post/post-helper.js') %>
-
-        <!-- toc -->
-        <% if (theme?.toc?.enable === true) { %>
-            <%- __js('js/post/toc.js') %>
-        <% } %>
-
-        <!-- copyright-info -->
-        <% if (theme?.post?.copyright_info === true || (theme?.post?.copyright_info?.custom_license && theme?.post?.copyright_info?.custom_link)) { %>
-            <%- __js('js/post/copyright-info.js') %>
-        <% } %>
-
-        <!-- share -->
-        <% if (theme?.post?.share === true) { %>
-            <%- __js('js/post/share.js') %>
-        <% } %>
+    <!-- copyright-info -->
+    <% if (theme?.post?.copyright_info === true || (theme?.post?.copyright_info?.custom_license && theme?.post?.copyright_info?.custom_link)) { %>
+      <%- __js('js/post/copyright-info.js') %>
     <% } %>
 
-    <!-- categories page -->
-    <% if (is_current('/categories') || is_current('/category')) { %>
-        <%- __js('js/page/category-page.js') %>
+    <!-- share -->
+    <% if (theme?.post?.share === true) { %>
+      <%- __js('js/post/share.js') %>
     <% } %>
+  <% } %>
 
-    <!-- links page -->
-    <% if ((page_template === 'links' || page_template === 'link') && links_data) { %>
-        <%- __js('js/page/links-page.js') %>
-    <% } %>
+  <!-- categories page -->
+  <% if (is_current('/categories') || is_current('/category')) { %>
+    <%- __js('js/page/category-page.js') %>
+  <% } %>
 
-    <!-- photos page -->
-    <% if ((page_template === 'photos' || page_template === 'photo') && photos_data) { %>
-        <%- __js('js/page/photos-page.js') %>
-    <% } %>
+  <!-- links page -->
+  <% if ((page_template === 'links' || page_template === 'link') && links_data) { %>
+    <%- __js('js/page/links-page.js') %>
+  <% } %>
 
-    <!-- tools page -->
-    <% if ((page_template === 'tools' || page_template === 'tool') && tools_data) { %>
-        <%- __js('js/page/tools-page.js') %>
-    <% } %>
+  <!-- photos page -->
+  <% if ((page_template === 'photos' || page_template === 'photo') && photos_data) { %>
+    <%- __js('js/page/photos-page.js') %>
+  <% } %>
+
+  <!-- tools page -->
+  <% if ((page_template === 'tools' || page_template === 'tool') && tools_data) { %>
+    <%- __js('js/page/tools-page.js') %>
+  <% } %>
 </div>
 
 <!-- mermaid -->
 <% if (config?.mermaid?.enable === true) { %>
-    <%- partial('common/mermaid') %>
+  <%- partial('common/mermaid') %>
 <% } %>
 
 <!-- pjax -->
 <% if (theme?.pjax?.enable === true) { %>
-    <%- partial('pjax/pjax') %>
+  <%- partial('pjax/pjax') %>
 <% } %>
