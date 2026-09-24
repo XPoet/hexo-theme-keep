@@ -68,23 +68,17 @@ const { created_datetime_icon, updated_datetime_icon } = theme?.post || {}
     <% } %>
 
     <%
-      let temp_wordcount_count, temp_min2read_count = null
-      try {
-        temp_wordcount_count = wordcount(page.content)
-        temp_min2read_count = min2read(page.content)
-      } catch (e) {
-        temp_wordcount_count = 0
-        temp_min2read_count = 0
-      }
+    const post_word_count = page_type === 'post' ? keepWordCount(post.content) : 0
+    const post_min2read = page_type === 'post' ? keepMin2Read(post.content) : 0
     %>
-    <% if(page_type === 'post' && theme?.post?.word_count?.wordcount === true && temp_wordcount_count){ %>
-      <span class="meta-info-item post-wordcount">
-        <i class="icon fas fa-file-word"></i>&nbsp;<span><%= temp_wordcount_count %> <%- __('wordcount') %></span>
+    <% if (post_word_count) { %>
+      <span class="meta-info-item post-word-count">
+        <i class="icon fas fa-file-word"></i>&nbsp;<span><%= post_word_count %> <%- __('post.word') %></span>
       </span>
     <% } %>
-    <% if(page_type === 'post' && theme?.post?.word_count?.min2read === true && temp_min2read_count){ %>
+    <% if (post_min2read) { %>
       <span class="meta-info-item post-min2read">
-        <i class="icon fas fa-clock"></i>&nbsp;<span><%= temp_min2read_count %> <%- __('min2read') %></span>
+        <i class="icon fas fa-clock"></i>&nbsp;<span><%= post_min2read %> <%- __('post.min2read') %></span>
       </span>
     <% } %>
     <% if (page_type === 'post' && theme?.website_count?.busuanzi_count?.enable === true && theme?.website_count?.busuanzi_count?.page_pv === true) { %>

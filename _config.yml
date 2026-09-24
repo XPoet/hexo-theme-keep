@@ -133,10 +133,8 @@ post:
     custom_badge: ["One", "Two", "Three"]
 
   # Post word count
-  # Depend on Hexo Plugin: hexo-wordcount (`npm install hexo-wordcount`)
-  # See: https://github.com/willin/hexo-wordcount
   word_count:
-    wordcount: false     # Word count, one post. Option values: true | false
+    word: false          # Word count, one post. Option values: true | false
     min2read: false      # Time to read, one post. Option values: true | false
 
   # Post datetime
@@ -201,8 +199,6 @@ website_count:
 
 # ---------------------------------------------------------------------------------------
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/local_search.html
-# Depend on Hexo Plugin: hexo-generator-searchdb (`npm install hexo-generator-searchdb`)
-# See: https://github.com/theme-next/hexo-generator-searchdb
 # ---------------------------------------------------------------------------------------
 local_search:
   enable: false   # Option values: true | false

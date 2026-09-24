@@ -13,13 +13,8 @@ const web_master = bi_author || hexo_author
 const show_pv = bsz_enable === true && bsz_site_pv === true
 const show_uv = bsz_enable === true && bsz_site_uv === true
 
-let f_temp_total_word = 0
-try {
-  f_temp_total_word = totalcount(site)
-} catch {
-  f_temp_total_word = 0
-}
-const show_word_count = f_word_count === true && f_temp_total_word !== 0
+const total_word_count = f_word_count === true ? keepTotalCount(site) : 0
+const show_word_count = total_word_count !== 0
 
 const has_count_info = show_pv || show_uv || show_word_count
 
@@ -58,7 +53,7 @@ const current_year = String(date(new Date(), 'YYYY'))
       <% if (show_word_count) { %>
         <span class="count-item border-box word">
           <span class="item-type border-box"><%- __('footer.total_words') %></span>
-          <span class="item-value border-box word"><%= totalcount(site) %></span>
+          <span class="item-value border-box word"><%= total_word_count %></span>
         </span>
       <% } %>
 

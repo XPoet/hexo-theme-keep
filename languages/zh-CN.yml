@@ -34,8 +34,6 @@ chinese_switch:
   to_traditional: 切换为繁体中文
   load_failed: 简繁转换加载失败，点击重试
 read_more: 阅读全文
-wordcount: 字
-min2read: 分钟
 changelog: 更新日志
 social_contact: 社交
 github: GitHub
@@ -96,6 +94,8 @@ footer:
   total_words: 总字数
 post:
   aging: "本文距离上次更新已过去 %s 天，部分内容可能已经过时，请注意甄别。"
+  word: 字
+  min2read: 分钟
   share:
     qq: "分享到 QQ"
     wechat: "分享到微信"

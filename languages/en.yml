@@ -34,8 +34,6 @@ chinese_switch:
   to_traditional: Switch to Traditional Chinese
   load_failed: Chinese conversion failed to load. Click to retry.
 read_more: Read more
-wordcount: Words
-min2read: Mins
 changelog: Changelog
 social_contact: Social contact
 github: GitHub
@@ -96,6 +94,8 @@ footer:
   total_words: Total words
 post:
   aging: "It has been %s days since the last update of this post. Some contents may be outdated. Please pay attention to screening."
+  word: Words
+  min2read: Mins
   share:
     qq: "Share to QQ"
     wechat: "Share to WeChat"
