@@ -1,5 +1,5 @@
 $tool-item-height = 5.8rem
-$tool-item-logo-size = 2.8rem
+$tool-item-logo-size = 2.2rem
 $tool-item-height-tablet = 4.6rem
 $tool-item-border-radius = 0.6rem
 $tool-item-grid-column = 4
@@ -16,10 +16,12 @@ if (hexo-config('source_data.tools')) {
         position sticky
         top calc(var(--header-height) + var(--component-gap))
         flex-shrink 0
+        align-self flex-start
         box-sizing border-box
         width $left-tools-nav-width
         max-height calc(100vh - calc(var(--header-height) + var(--component-gap)))
         margin-right 1.6rem
+        overflow-y auto
 
         +keep-tablet() {
           width $left-tools-nav-width * 0.85
