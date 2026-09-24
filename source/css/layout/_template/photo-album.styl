@@ -6,12 +6,39 @@ if (hexo-config('source_data.photos')) {
       column-count 3
       column-gap $album-img-gap
 
+      .photo-item {
+        position relative
+        margin 0 0 $album-img-gap
+        overflow hidden
+        border-radius 0.6rem
+        break-inside avoid
+
+        .photo-name {
+          position absolute
+          right 0
+          bottom 0
+          left 0
+          padding 3rem 0.8rem 0.7rem
+          color #fff
+          font-size 1.05rem
+          line-height 1.5
+          background linear-gradient(transparent, rgba(0, 0, 0, 0.7))
+          pointer-events none
+
+          .photo-name-text {
+            display -webkit-box
+            overflow hidden
+            overflow-wrap anywhere
+            -webkit-box-orient vertical
+            -webkit-line-clamp 2
+          }
+        }
+      }
+
       img.photo {
         display block
         width 100%
-        margin-bottom $album-img-gap
         background var(--background-color-2)
-        border-radius 0.6rem
         cursor zoom-in
       }
     }

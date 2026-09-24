@@ -1,8 +1,15 @@
 <div class="photo-album-box border-box">
   <% for (const img of theme.source_data?.photos) { %>
-    <img class="photo border-box" src="<%- url_for(img?.url) %>"
-      title="<%= img.name %>"
-      onerror="this.style.display='none'"
-    >
+    <figure class="photo-item">
+      <img class="photo border-box"
+            src="<%- url_for(img?.url) %>"
+            onerror="this.parentElement.style.display='none'"
+      >
+      <% if (img?.name) { %>
+        <figcaption class="photo-name">
+          <span class="photo-name-text"><%= img.name %></span>
+        </figcaption>
+      <% } %>
+    </figure>
   <% } %>
 </div>
