@@ -1,4 +1,4 @@
-/* global KEEP */
+/* global KEEP, qrcode */
 
 function initPostShareHelper() {
   KEEP.utils.postShareHelper = {
@@ -10,11 +10,13 @@ function initPostShareHelper() {
 
       // WeChat share
       const wechatShare = shareContainer.querySelector('.wechat')
-      wechatShare &&
-        wechatShare.setAttribute(
-          'data-tooltip-img-url',
-          `https://api.qrserver.com/v1/create-qr-code?data=${pageUrl}`
-        )
+      if (wechatShare) {
+        qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8']
+        const qr = qrcode(0, 'M')
+        qr.addData(pageUrl)
+        qr.make()
+        wechatShare.setAttribute('data-tooltip-img-url', qr.createDataURL(4, 8))
+      }
 
       shareContainer.querySelectorAll('.share-item').forEach((item) => {
         item.addEventListener('click', () => {

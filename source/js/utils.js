@@ -494,7 +494,8 @@ KEEP.initUtils = () => {
           if (tooltipImgUrl) {
             const imgDomClass = `tooltip-img-${idx}-${tooltipImgName ? tooltipImgName : Date.now()}`
             const nameIdx = `${tooltipImgName}-${idx}`
-            const tmpSrc = (/^(https?:\/\/)/.test(tooltipImgUrl) ? '' : root) + tooltipImgUrl
+            const tmpSrc =
+              (/^(https?:\/\/|data:image\/)/.test(tooltipImgUrl) ? '' : root) + tooltipImgUrl
 
             const imgDom = `<img class="${imgDomClass}"
                               ${isLazyLoadImg ? 'lazyload' : ''}
