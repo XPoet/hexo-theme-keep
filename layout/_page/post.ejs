@@ -6,21 +6,21 @@ const is_code_block_unshrink = page?.code_block_shrink === false
 <div class="fade-in-down-animation">
   <div class="post-page-container border-box<%= page?.password ? ' encrypt' : '' %>">
     <div class="post-content-container border-box">
-      <% if (page?.post_cover || page?.home_cover) { %>
+      <% if (page?.cover || page?.post_cover || page?.home_cover) { %>
         <div class="post-content-top border-box"
           style="height: <%= page?.post_cover_height ? page?.post_cover_height + 'px' : '13.8rem' %>"
         >
           <div class="cover-post-title">
             <%= page.title %>
           </div>
-          <img class="post-cover" src="<%- url_for(page.post_cover || page?.home_cover) %>"
+          <img class="post-cover" src="<%- url_for(page?.cover || page?.post_cover || page?.home_cover) %>"
             onerror="this.style.display='none'"
           >
         </div>
       <% } %>
 
-      <div class="post-content-bottom border-box<%= (page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
-        <% if (!page?.post_cover && !page?.home_cover) { %>
+      <div class="post-content-bottom border-box<%= (page?.cover || page?.post_cover || page?.home_cover) ? ' has-cover' : '' %>">
+        <% if (!page?.cover && !page?.post_cover && !page?.home_cover) { %>
           <div class="post-title">
             <%= page.title %>
           </div>
