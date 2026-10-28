@@ -21,7 +21,7 @@
                 <i class="fas fa-thumbtack"></i><span class="sticky-name">&nbsp;<%- __('top') %></span>
               </div>
             <% } %>
-            <img class="home-cover" src="<%- url_for(post?.cover || post?.home_cover) %>"
+            <img class="home-cover" src="<%= getPostCoverUrl(post, post?.cover || post?.home_cover) %>"
               onerror="this.style.display='none'"
             >
           </div>
