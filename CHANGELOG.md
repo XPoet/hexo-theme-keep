@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.4.0...v4.4.1) (2026-10-28)
+
+
+### 🎯 CI
+
+* fix npm release workflow ([dcdcda1](https://github.com/XPoet/hexo-theme-keep/commit/dcdcda16a63a3ae1ba3f8e62cfa08ee59b0ab45f))
+
 ## [4.4.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.3.0...v4.4.0) (2026-10-28)
 
 
