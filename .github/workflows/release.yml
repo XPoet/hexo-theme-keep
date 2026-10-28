@@ -2,6 +2,12 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing release tag to publish'
+        required: true
+        type: string
 
 name: release
 
@@ -17,11 +23,13 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
+        if: ${{ github.event_name == 'push' }}
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
           release-type: node
           package-name: hexo-theme-keep
-          changelog-types: '[
+          changelog-types: >-
+            [
             {
               "type": "feat",
               "section": "🌟 Features",
@@ -82,19 +90,38 @@ jobs:
               "section": "🚦 Chore",
               "hidden": false
             }
-          ]'
+            ]
 
       - uses: actions/checkout@v4
-        if: ${{ steps.release.outputs.release_created }}
-
-      - uses: actions/setup-node@v4
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.release.outputs.release_created == 'true' }}
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          ref: refs/tags/${{ inputs.tag || steps.release.outputs.tag_name }}
 
-      - run: npm ci
-        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v6
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.release.outputs.release_created == 'true' }}
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
+          package-manager-cache: false
+
+      - name: Verify release tag
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.release.outputs.release_created == 'true' }}
+        env:
+          RELEASE_TAG: ${{ inputs.tag || steps.release.outputs.tag_name }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          node <<'NODE'
+          const { version } = require('./package.json')
+          if (process.env.RELEASE_TAG !== `v${version}`) {
+            throw new Error('Release tag must match the version in package.json')
+          }
+          NODE
+          gh release view "$RELEASE_TAG" --json isDraft --jq 'if .isDraft then error("Cannot publish a draft release") else .isDraft end'
+
+      # This theme intentionally does not commit a package-lock.json.
+      - run: npm install --no-package-lock
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.release.outputs.release_created == 'true' }}
 
       - run: npm publish --provenance
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.release.outputs.release_created == 'true' }}
