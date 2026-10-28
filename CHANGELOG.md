@@ -1,5 +1,49 @@
 # Changelog
 
+## [4.4.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.3.0...v4.4.0) (2026-10-28)
+
+
+### 🌟 Features
+
+* add simplified and traditional Chinese toggle ([7adc7c4](https://github.com/XPoet/hexo-theme-keep/commit/7adc7c42c0b920103f42a9cebcab42c64497f2d7))
+* built-in post word count ([ef51238](https://github.com/XPoet/hexo-theme-keep/commit/ef5123803b1a2f3503cbc403d1e7120d354783f7))
+
+
+### 🐞 Bug Fixes
+
+* **cdn:** support path format for custom cdn provider via custom.type ([a00aad7](https://github.com/XPoet/hexo-theme-keep/commit/a00aad78c55a7798198a786945ab49a8e06c39f8)), closes [#407](https://github.com/XPoet/hexo-theme-keep/issues/407)
+* support post asset folders for cover images ([463cbaa](https://github.com/XPoet/hexo-theme-keep/commit/463cbaa120b1670a8d02eff96bd33f88fe0e10f9))
+
+
+### 🎨 Styling
+
+* photos page support display name ([aeb60c1](https://github.com/XPoet/hexo-theme-keep/commit/aeb60c12bcbfc1b633f1e00ec770c683233cf02e))
+* pin navigation bar on tools page ([4d53534](https://github.com/XPoet/hexo-theme-keep/commit/4d535347c178dc8fc73eac36ccf6c107fa2670f1))
+
+
+### 🍭 Code Refactoring
+
+* generate WeChat share QR codes locally ([15da9b6](https://github.com/XPoet/hexo-theme-keep/commit/15da9b63f6ff4a65a0bacf409eff9499f40e227e))
+
+
+### 🎯 CI
+
+* update .github/workflows/release.yml ([f8d568a](https://github.com/XPoet/hexo-theme-keep/commit/f8d568a555c41deed1f6ae8d86c0e4eb52aba444))
+
+
+### 💄 Improvement UI
+
+* improve home post cards with cover titles ([6ae2dd4](https://github.com/XPoet/hexo-theme-keep/commit/6ae2dd4ee796e0aa990c619eba7a314f27fb00f0))
+
+
+### 🚦 Chore
+
+* add AGENTS.md ([c86fe3d](https://github.com/XPoet/hexo-theme-keep/commit/c86fe3de45e1b69e5c3781a6989e347d04860032))
+* cover settings are compatible with the `cover` field ([3d4aef8](https://github.com/XPoet/hexo-theme-keep/commit/3d4aef89e3ed5dd30a2c10282b15038b6376529f))
+* **ejs:** add formatting and lint tooling ([2ce7b22](https://github.com/XPoet/hexo-theme-keep/commit/2ce7b220feb4d6d89829e3a938a06bb8a18b0dba))
+* update AGENTS.md ([80d7770](https://github.com/XPoet/hexo-theme-keep/commit/80d7770b362abe58ae1a43284f77efebf83d4780))
+* update comment plugin configuration settings ([a5ec539](https://github.com/XPoet/hexo-theme-keep/commit/a5ec539d04ae7dc7bf59373e9d7a9dc29dc69cee))
+
 ## [4.3.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.2.5...v4.3.0) (2026-06-11)
 
 
