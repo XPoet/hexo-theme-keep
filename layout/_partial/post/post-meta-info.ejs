@@ -71,12 +71,12 @@ const { created_datetime_icon, updated_datetime_icon } = theme?.post || {}
     const post_word_count = page_type === 'post' ? keepWordCount(post.content) : 0
     const post_min2read = page_type === 'post' ? keepMin2Read(post.content) : 0
     %>
-    <% if (post_word_count) { %>
+    <% if (post_word_count && theme?.post?.word_count?.word === true) { %>
       <span class="meta-info-item post-word-count">
         <i class="icon fas fa-file-word"></i>&nbsp;<span><%= post_word_count %> <%- __('post.word') %></span>
       </span>
     <% } %>
-    <% if (post_min2read) { %>
+    <% if (post_min2read && theme?.post?.word_count?.min2read === true) { %>
       <span class="meta-info-item post-min2read">
         <i class="icon fas fa-clock"></i>&nbsp;<span><%= post_min2read %> <%- __('post.min2read') %></span>
       </span>
