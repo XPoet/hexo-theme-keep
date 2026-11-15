@@ -6,6 +6,26 @@ $tool-item-grid-column = 4
 $left-tools-nav-width = 9rem
 
 if (hexo-config('source_data.tools')) {
+  .tool-item-tooltip {
+    position fixed
+    z-index $z-index-10
+    box-sizing border-box
+    width max-content
+    max-width unquote('min(22rem, calc(100vw - 24px))')
+    padding 0.5rem 0.75rem
+    color #fff
+    font-weight normal
+    font-size 0.9rem
+    line-height 1.5
+    white-space normal
+    text-align left
+    overflow-wrap anywhere
+    background #303133
+    border-radius 0.3rem
+    pointer-events none
+  }
+
+
   .page-template-container {
     .tools-nav-box {
       display flex
