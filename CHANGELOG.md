@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.5.0](https://github.com/XPoet/hexo-theme-keep/compare/v4.4.1...v4.5.0) (2026-11-19)
+
+
+### 🌟 Features
+
+* **head:** generate page meta tags with open_graph ([745c0ae](https://github.com/XPoet/hexo-theme-keep/commit/745c0ae1dff96ba692d6a9dbd036940153e60b9c))
+* **tools:** add tooltips for truncated card text ([b0e36ef](https://github.com/XPoet/hexo-theme-keep/commit/b0e36ef8c2181c6d392788c73c81006a508c3b85))
+
+
+### 🐞 Bug Fixes
+
+* fixed failure of the post.word_count.word and post.word_count.min2read configuration items ([f3821f4](https://github.com/XPoet/hexo-theme-keep/commit/f3821f46e395eb2837b14e95a365cceaa735b2f0))
+
+
+### 💄 Improvement UI
+
+* **home:** replace announcement icon with a breathing dot ([87127c2](https://github.com/XPoet/hexo-theme-keep/commit/87127c2dacfdeb21a91b0d7fea94dfdb1986520d))
+* **paginator:** match navigation buttons to side tools ([a66a5ae](https://github.com/XPoet/hexo-theme-keep/commit/a66a5ae6e2c20bcf6b3653dd7c72cc76525e1a1e))
+
 ## [4.4.1](https://github.com/XPoet/hexo-theme-keep/compare/v4.4.0...v4.4.1) (2026-10-28)
 
 
