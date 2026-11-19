@@ -19,8 +19,10 @@ tool: 工具
 tools: 工具
 me: 我的
 search: 搜索...
+first_page: 首页
 prev: 上一页
 next: 下一页
+last_page: 末页
 prev_posts: 上一篇
 next_posts: 下一篇
 page: 第 %d 页

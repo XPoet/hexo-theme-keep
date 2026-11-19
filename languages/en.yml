@@ -19,8 +19,10 @@ tool: Tool
 tools: Tools
 me: Me
 search: Search...
+first_page: First page
 prev: Prev
 next: Next
+last_page: Last page
 prev_posts: Prev posts
 next_posts: Next posts
 page: Page %d
