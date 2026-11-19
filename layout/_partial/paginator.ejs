@@ -1,35 +1,43 @@
 <% if (page.total > 1) { %>
   <div class="paginator border-box flex-center">
-    <div class="border-box first-page paginator-btn <%= page_info.prev ? 'allowed' : 'not-allow' %>">
-      <a class="border-box"><i class="fa-solid fa-angle-double-left"></i></a>
-    </div>
+    <button class="paginator-btn first-page border-box flex-center<%= page_info.prev ? '' : ' not-allow' %>"
+      type="button"
+      title="<%= __('first_page') %>"
+      <% if (!page_info.prev) { %>disabled<% } %>
+    >
+      <i class="fa-solid fa-angle-double-left"></i>
+    </button>
 
-    <div class="border-box paginator-btn<%= page_info.prev ? ' allowed' : '' %>">
-      <a class="border-box"
-        href="<%- url_for(page_info.prev_link) %>"
-      ><i class="fa-solid fa-chevron-left"></i></a>
-    </div>
-
+    <a class="paginator-btn border-box flex-center"
+      title="<%= __('prev') %>"
+      <% if (page_info.prev) { %>href="<%= url_for(page_info.prev_link) %>"<% } %>
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </a>
 
     <div class="page-number-box border-box flex-center">
       <input class="page-number-input border-box base-style"
-          type="number"
-          value="<%- page.current %>"
-          min="1"
-          max="<%- page.total %>"
+        type="number"
+        value="<%- page.current %>"
+        min="1"
+        max="<%- page.total %>"
       /><span class="delimiter base-style">/</span><span class="base-style"><%- page.total %></span>
     </div>
 
+    <a class="paginator-btn border-box flex-center"
+      title="<%= __('next') %>"
+      <% if (page_info.next) { %>href="<%= url_for(page_info.next_link) %>"<% } %>
+    >
+      <i class="fa-solid fa-chevron-right"></i>
+    </a>
 
-    <div class="border-box paginator-btn<%= page_info.next ? ' allowed' : '' %>">
-      <a class="border-box"
-        href="<%- url_for(page_info.next_link) %>"
-      ><i class="fa-solid fa-chevron-right"></i></a>
-    </div>
-
-    <div class="border-box last-page paginator-btn <%= page_info.next ? 'allowed' : 'not-allow' %>">
-      <a class="border-box"><i class="fa-solid fa-angle-double-right"></i></a>
-    </div>
+    <button class="paginator-btn last-page border-box flex-center<%= page_info.next ? '' : ' not-allow' %>"
+      type="button"
+      title="<%= __('last_page') %>"
+      <% if (!page_info.next) { %>disabled<% } %>
+    >
+      <i class="fa-solid fa-angle-double-right"></i>
+    </button>
   </div>
 <% } %>
 

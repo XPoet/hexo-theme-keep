@@ -1,39 +1,36 @@
 .paginator {
-  gap 1rem
+  gap 0.5rem
   margin-top $page-container-gap
   user-select none
 
   .paginator-btn {
+    flex none
+    width 2.2rem
+    height 2.2rem
+    padding 0
+    color var(--text-color-4)
+    font-size 1rem
+    background var(--background-color-2)
+    border 0
+    border-radius 0.2rem
     cursor not-allowed
 
-    a {
-      padding 0.3rem 0.6rem
-      pointer-events none
-
-      i {
-        color var(--text-color-4)
-        font-size 1rem
-      }
+    i {
+      color inherit
     }
 
-
-    &.allowed {
+    &[href]
+    &:enabled {
+      color var(--text-color-3)
+      background var(--background-color-1)
+      box-shadow 0.1rem 0.1rem 0.2rem var(--shadow-color)
       cursor pointer
 
-      a {
-        pointer-events auto
-
-        i {
-          color var(--text-color-3)
-        }
-      }
-
-      &:hover {
-        a {
-          i {
-            color var(--primary-color)
-          }
-        }
+      &:hover
+      &:focus-visible {
+        color var(--background-color-1)
+        background var(--primary-color)
+        box-shadow 0.2rem 0.2rem 0.4rem var(--shadow-color)
       }
     }
   }
@@ -49,7 +46,7 @@
     margin 0 0.2rem
 
     .page-number-input {
-      width 2.8rem
+      width 3.6rem
       height 2rem
       margin 0
       padding 0
@@ -61,7 +58,7 @@
       border-radius 0.3rem
       outline none
       -webkit-appearance none
-      transition-t("width, border-color", "0, 0", "0.2, 0.2", "ease, ease")
+      transition-t("border-color", "0, 0", "0.2, 0.2", "ease, ease")
 
 
       &::-webkit-outer-spin-button
@@ -71,7 +68,6 @@
 
       &:hover
       &:focus {
-        width 3.8rem
         border-color var(--primary-color)
       }
     }
