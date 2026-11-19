@@ -1,9 +1,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="<%= page?.keywords || config?.keywords || 'Hexo Theme Keep' %>">
-  <meta name="description" content="<%= page?.description || config?.description || 'Hexo Theme Keep' %>">
-  <meta name="author" content="<%= theme?.base_info?.author || config?.author || 'Keep Team' %>">
   <%
   let title = page.title;
   if (is_archive()) {
@@ -21,12 +18,18 @@
     title = __(page.title);
   }
   %>
-  <title>
-    <% if (title) { %>
-      <%= title %> |
-    <% } %>
-    <%= theme?.base_info?.title || config?.title || 'Keep Theme' %>
-  </title>
+  <%
+    const ogOptions = { title: title || config.title }
+    const cover = page?.cover || page?.post_cover || page?.page_cover || page?.home_cover
+    if (cover) ogOptions.image = getPostCoverUrl(page, cover)
+  %>
+  <%- open_graph(ogOptions) %>
+  <% if (page?.keywords || config?.keywords) { %>
+    <meta name="keywords" content="<%= page?.keywords || config?.keywords %>">
+  <% } %>
+  <meta name="author" content="<%= theme?.base_info?.author || config?.author || 'Keep Team' %>">
+  <link rel="canonical" href="<%= full_url_for(page.path) %>">
+  <title><%= title ? title + ' | ' : '' %><%= theme?.base_info?.title || config?.title || 'Keep Theme' %></title>
   <%- css('css/style') %>
   <% if (theme?.base_info?.favicon) { %>
     <%- favicon_tag(theme?.base_info?.favicon) %>
